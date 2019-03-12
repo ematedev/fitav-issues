@@ -1,0 +1,71 @@
+
+// Panels
+
+.panel {
+	border: $panelBorder;
+	background: $panelBackground;
+	padding: $panelPadding;
+
+	// Background overrides
+
+	.nav-tabs > .active > a,
+	.nav-tabs > .active > a:hover,
+	.nav-tabs > .active > a:focus {
+		background-color: $panelBackground;
+	}
+}
+
+// Modals
+
+.modal {
+	@extend .panel;
+	padding: 0px;
+}
+
+// Portlets
+
+.portlet,
+.forced-box .portlet-borderless-container {
+	@extend .panel;
+	padding-bottom: 0px;
+}
+
+.section-portlet > .portlet {
+	border: 0 none;
+	@include border-radius(0);
+	@include box-shadow(none);
+
+	/*border-bottom: 1px solid rgba(0,0,0,0.2);*/
+
+	// Full page hack
+	padding: 160px 400px;
+	margin: 0px -400px;
+}
+
+.section-portlet.alternate > .portlet {
+	background: $grayLighter;
+}
+
+// Sticky Interaction
+
+.sticky-wrapper {
+	background: none;
+	border: 0 none;
+	margin: 0px;
+	overflow: hidden;
+	padding: 0px;
+}
+
+.sticky-sticked {
+	position: fixed;
+	z-index: 300;
+}
+
+.sticky-wrapper ul {
+	display: inline-block;
+}
+
+ul.nav.nav-pills.nav-stacked {
+		display: block;
+		text-align: left;
+}

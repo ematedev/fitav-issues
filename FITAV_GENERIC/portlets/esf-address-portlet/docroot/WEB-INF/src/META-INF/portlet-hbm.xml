@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="it.ethica.esf.model.City" />
+	<import class="it.ethica.esf.model.Country" />
+	<import class="it.ethica.esf.model.ESFAddress" />
+	<import class="it.ethica.esf.model.Province" />
+	<import class="it.ethica.esf.model.Region" />
+	<class name="it.ethica.esf.model.impl.CityImpl" table="ESF_City">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.CityPK">
+			<key-property name="idCity" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="idProvince" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="idRegion" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="idCountry" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		</composite-id>
+		<property name="zip" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="latitude" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="longitude" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="altitude" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="website" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.CountryImpl" table="ESF_Country">
+		<cache usage="read-write" />
+		<id name="idCountry" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFAddressImpl" table="ESF_ESFAddress">
+		<cache usage="read-write" />
+		<id name="esfAddressId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="latitude" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="longitude" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="esfCountryId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esfRegionId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esfProvinceId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esfCityId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ProvinceImpl" table="ESF_Province">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.ProvincePK">
+			<key-property name="idProvince" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="idRegion" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="idCountry" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		</composite-id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.RegionImpl" table="ESF_Region">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.RegionPK">
+			<key-property name="idRegion" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="idCountry" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		</composite-id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>

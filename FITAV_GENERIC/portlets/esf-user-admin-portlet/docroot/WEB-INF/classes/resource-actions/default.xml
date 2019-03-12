@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 6.2.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_2_0.dtd">
+
+<resource-action-mapping>
+	<model-resource>
+		<model-name>it.ethica.esf.ESFUser</model-name>
+		<portlet-ref>
+			<portlet-name>esf-user-admin</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>				
+				<action-key>ADD_ESFUSER</action-key>
+				<action-key>UPDATE_ESFUSER</action-key>
+				<action-key>DELETE_ESFUSER</action-key>				
+			</supports>
+			<site-member-defaults/>
+			<guest-defaults />
+			<guest-unsupported>
+				<action-key>ADD_ESFUSER</action-key>
+				<action-key>UPDATE_ESFUSER</action-key>
+				<action-key>DELETE_ESFUSER</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>	
+</resource-action-mapping>

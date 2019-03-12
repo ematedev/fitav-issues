@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="it.ethica.esf.model.ESFUser" />
+	<import class="it.ethica.esf.model.ESFUserESFUserRole" />
+	<import class="it.ethica.esf.model.ESFUserRole" />
+	<class name="it.ethica.esf.model.impl.ESFUserImpl" table="ESFUser">
+		<cache usage="read-write" />
+		<id name="esfUserId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFUserESFUserRoleImpl" table="ESFUserESFUserRole">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.ESFUserESFUserRolePK">
+			<key-property name="esfUserRoleId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
+		<property name="esfOrganizationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="startDate" type="org.hibernate.type.TimestampType" />
+		<property name="endDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFUserRoleImpl" table="ESFUserRole">
+		<cache usage="read-write" />
+		<id name="esfUserRoleId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="isBDO" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="isLEA" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+</hibernate-mapping>

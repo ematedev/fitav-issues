@@ -1,0 +1,1326 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="it.ethica.esf.model.ESFAddress" />
+	<import class="it.ethica.esf.model.ESFAirport" />
+	<import class="it.ethica.esf.model.ESFAnnualConiReport" />
+	<import class="it.ethica.esf.model.ESFAnnualFreeCard" />
+	<import class="it.ethica.esf.model.ESFBrand" />
+	<import class="it.ethica.esf.model.ESFCane" />
+	<import class="it.ethica.esf.model.ESFCard" />
+	<import class="it.ethica.esf.model.ESFCategory" />
+	<import class="it.ethica.esf.model.ESFCatridge" />
+	<import class="it.ethica.esf.model.ESFCity" />
+	<import class="it.ethica.esf.model.ESFCodeOrg" />
+	<import class="it.ethica.esf.model.ESFConfiguration" />
+	<import class="it.ethica.esf.model.ESFCountry" />
+	<import class="it.ethica.esf.model.ESFDeparture" />
+	<import class="it.ethica.esf.model.ESFDescription" />
+	<import class="it.ethica.esf.model.ESFDocument" />
+	<import class="it.ethica.esf.model.ESFElectronic" />
+	<import class="it.ethica.esf.model.ESFEntityState" />
+	<import class="it.ethica.esf.model.ESFEventType" />
+	<import class="it.ethica.esf.model.ESFFederalRole" />
+	<import class="it.ethica.esf.model.ESFFederalRoleESFSpecific" />
+	<import class="it.ethica.esf.model.ESFField" />
+	<import class="it.ethica.esf.model.ESFFieldESFElectronic" />
+	<import class="it.ethica.esf.model.ESFFieldESFSportType" />
+	<import class="it.ethica.esf.model.ESFForniture" />
+	<import class="it.ethica.esf.model.ESFFornitureRel" />
+	<import class="it.ethica.esf.model.ESFFornitureType" />
+	<import class="it.ethica.esf.model.ESFFornitureUser" />
+	<import class="it.ethica.esf.model.ESFGun" />
+	<import class="it.ethica.esf.model.ESFGunKind" />
+	<import class="it.ethica.esf.model.ESFGunType" />
+	<import class="it.ethica.esf.model.ESFgunUser" />
+	<import class="it.ethica.esf.model.ESFHistoricalAssociation" />
+	<import class="it.ethica.esf.model.ESFInstructsShootingDirector" />
+	<import class="it.ethica.esf.model.ESFJob" />
+	<import class="it.ethica.esf.model.ESFJuniores" />
+	<import class="it.ethica.esf.model.ESFLentField" />
+	<import class="it.ethica.esf.model.ESFMatch" />
+	<import class="it.ethica.esf.model.ESFMatchResult" />
+	<import class="it.ethica.esf.model.ESFMatchType" />
+	<import class="it.ethica.esf.model.ESFNational" />
+	<import class="it.ethica.esf.model.ESFNationalDelegation" />
+	<import class="it.ethica.esf.model.ESFNationalMatchResult" />
+	<import class="it.ethica.esf.model.ESFOrganization" />
+	<import class="it.ethica.esf.model.ESFOrganizationUnitservice" />
+	<import class="it.ethica.esf.model.ESFPartecipant" />
+	<import class="it.ethica.esf.model.ESFPartecipantInfo" />
+	<import class="it.ethica.esf.model.ESFPartecipantType" />
+	<import class="it.ethica.esf.model.ESFPhone" />
+	<import class="it.ethica.esf.model.ESFProvince" />
+	<import class="it.ethica.esf.model.ESFRegion" />
+	<import class="it.ethica.esf.model.ESFRenewal" />
+	<import class="it.ethica.esf.model.ESFResult" />
+	<import class="it.ethica.esf.model.ESFShooterAffiliationChrono" />
+	<import class="it.ethica.esf.model.ESFShooterCategory" />
+	<import class="it.ethica.esf.model.ESFShooterCategoryESFMatch" />
+	<import class="it.ethica.esf.model.ESFShooterCategoryESFTournament" />
+	<import class="it.ethica.esf.model.ESFShooterQualification" />
+	<import class="it.ethica.esf.model.ESFShooterQualificationESFMatch" />
+	<import class="it.ethica.esf.model.ESFShooterQualificationESFTournament" />
+	<import class="it.ethica.esf.model.ESFShootingDirector" />
+	<import class="it.ethica.esf.model.ESFShootingDirectorQualification" />
+	<import class="it.ethica.esf.model.ESFSpecific" />
+	<import class="it.ethica.esf.model.ESFSportType" />
+	<import class="it.ethica.esf.model.ESFState" />
+	<import class="it.ethica.esf.model.ESFStateAssEntity" />
+	<import class="it.ethica.esf.model.ESFSuspensiveCode" />
+	<import class="it.ethica.esf.model.ESFSuspensiveShootingDirector" />
+	<import class="it.ethica.esf.model.ESFTeam" />
+	<import class="it.ethica.esf.model.ESFTournament" />
+	<import class="it.ethica.esf.model.ESFTransition" />
+	<import class="it.ethica.esf.model.ESFUnitservice" />
+	<import class="it.ethica.esf.model.ESFUser" />
+	<import class="it.ethica.esf.model.ESFUserCategory" />
+	<import class="it.ethica.esf.model.ESFUserESFFederalRole" />
+	<import class="it.ethica.esf.model.ESFUserESFUserRole" />
+	<import class="it.ethica.esf.model.ESFUserRole" />
+	<class name="it.ethica.esf.model.impl.ESFAddressImpl" table="ESFAddress">
+		<cache usage="read-write" />
+		<id name="esfAddressId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="longitude" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="latitude" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="esfCountryId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esfRegionId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esfProvinceId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esfCityId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="type" type="com.liferay.portal.dao.orm.hibernate.StringType" column="type_" />
+		<property name="isNotNational" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="listTypeId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFAirportImpl" table="ESFAirport">
+		<cache usage="read-write" />
+		<id name="esfAirportId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="city" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="country" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFAnnualConiReportImpl" table="ESFAnnualConiReport">
+		<cache usage="read-write" />
+		<id name="annualConiReportId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="assId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="year" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFAnnualFreeCardImpl" table="ESFAnnualFreeCard">
+		<cache usage="read-write" />
+		<id name="annualFreeCardId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="assId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+		<property name="cardCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="assCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="assName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFBrandImpl" table="ESFBrand">
+		<cache usage="read-write" />
+		<id name="brandId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFCaneImpl" table="ESFCane">
+		<id name="esfCaneId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+		<property name="esfGunKindId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfOrganizationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="caneCaliber" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="isFavoriteGun" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="typeId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="measures" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="shooterId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfGunTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFCardImpl" table="ESFCard">
+		<id name="esfCardId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="codeAlfa" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="codeNum" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfOrganizationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="temporary" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+		<property name="oldCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFCategoryImpl" table="ESFCategory">
+		<cache usage="read-write" />
+		<id name="esfCategoryId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFCatridgeImpl" table="ESFCatridge">
+		<id name="esfCatridgeId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfGunTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="catridgeModel" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="catridgeCaliber" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="note" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFCityImpl" table="ESFCity">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.ESFCityPK">
+			<key-property name="idCity" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="idProvince" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="idRegion" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="idCountry" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		</composite-id>
+		<property name="zip" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="latitude" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="longitude" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="altitude" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="website" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFCodeOrgImpl" table="ESFCodeOrg">
+		<id name="esfCodeOrgId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="className" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+		<property name="sequence" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFConfigurationImpl" table="ESFConfiguration">
+		<cache usage="read-write" />
+		<id name="esfConfigurationId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="key" type="com.liferay.portal.dao.orm.hibernate.StringType" column="key_" />
+		<property name="value" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFCountryImpl" table="ESFCountry">
+		<cache usage="read-write" />
+		<id name="idCountry" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFDepartureImpl" table="ESFDeparture">
+		<cache usage="read-write" />
+		<id name="esfDepartureId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="leaveDate" type="org.hibernate.type.TimestampType" />
+		<property name="leaveHour" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="arriveDate" type="org.hibernate.type.TimestampType" />
+		<property name="arriveHour" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+		<property name="companyName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="departureFrom" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="arrivalTo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esfMatchId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="isReturn" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="meetingPlace" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="typeTravel" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="stopoverId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFDescriptionImpl" table="ESFDescription">
+		<cache usage="read-write" />
+		<id name="esfDescriptionId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="isNational" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFDocumentImpl" table="ESFDocument">
+		<cache usage="read-write" />
+		<id name="esfDocumentId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+		<property name="releasedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="releaseDate" type="org.hibernate.type.TimestampType" />
+		<property name="expirationDate" type="org.hibernate.type.TimestampType" />
+		<property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="type" type="com.liferay.portal.dao.orm.hibernate.StringType" column="type_" />
+		<property name="path" type="com.liferay.portal.dao.orm.hibernate.StringType" column="path_" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFElectronicImpl" table="ESFElectronic">
+		<cache usage="read-write" />
+		<id name="electronicId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFEntityStateImpl" table="ESFEntityState">
+		<cache usage="read-write" />
+		<id name="esfEntityStateId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="className" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="classPK" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="startDate" type="org.hibernate.type.TimestampType" />
+		<property name="endDate" type="org.hibernate.type.TimestampType" />
+		<property name="esfStateId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFEventTypeImpl" table="ESFEventType">
+		<cache usage="read-write" />
+		<id name="esfEventTypeId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="macrocategory" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="eventType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFFederalRoleImpl" table="ESFFederalRole">
+		<cache usage="read-write" />
+		<id name="esfFederalRoleId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="regional" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="provincial" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFFederalRoleESFSpecificImpl" table="ESFFederalRoleESFSpecific">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.ESFFederalRoleESFSpecificPK">
+			<key-property name="esfSpecificId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="esfFederalRoleId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFFieldImpl" table="ESFField">
+		<id name="esfFieldId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ownerOrganizationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfAddressId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="billboard" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="billboardStations" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="backgroundRampart" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="backgroundNet" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="backgroundLeadRecovery" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="disabledAccess" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="note" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFFieldESFElectronicImpl" table="ESFFieldESFElectronic">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="brandId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="electronicId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="fieldId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFFieldESFSportTypeImpl" table="ESFFieldESFSportType">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.ESFFieldESFSportTypePK">
+			<key-property name="esfFieldId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="esfSportTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFFornitureImpl" table="ESFForniture">
+		<cache usage="read-write" />
+		<id name="esfFornitureId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="type" type="com.liferay.portal.dao.orm.hibernate.LongType" column="type_" />
+		<property name="insertDate" type="org.hibernate.type.TimestampType" />
+		<property name="numberFornitures" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="size" type="com.liferay.portal.dao.orm.hibernate.StringType" column="size_" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFFornitureRelImpl" table="ESFFornitureRel">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.ESFFornitureRelPK">
+			<key-property name="esfToolId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="className" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="classPK" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="assignmentDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFFornitureTypeImpl" table="ESFFornitureType">
+		<cache usage="read-write" />
+		<id name="esfFornitureTypeId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFFornitureUserImpl" table="ESFFornitureUser">
+		<cache usage="read-write" />
+		<id name="esfFornitureUserID" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="esfIDForniture" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfIdUser" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfQuantity" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfDateAssign" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFGunImpl" table="ESFGun">
+		<id name="esfGunId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+		<property name="esfGunKindId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfOrganizationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="registrationNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="catridgeCaliber" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="isFavoriteGun" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="typeId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="measures" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="note" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFGunKindImpl" table="ESFGunKind">
+		<cache usage="read-write" />
+		<id name="esfGunKindId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esfGunTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFGunTypeImpl" table="ESFGunType">
+		<cache usage="read-write" />
+		<id name="esfGunTypeId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="isCatridgeProductor" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFgunUserImpl" table="ESFgunUser">
+		<cache usage="read-write" />
+		<id name="esfGunUserId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="esfGunId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+		<property name="isFavorite" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="type" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="type_" />
+		<property name="note" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esfGunnTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfGunKindId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="typeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfMeasures" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esfCaliber" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFHistoricalAssociationImpl" table="ESFHistoricalAssociation">
+		<cache usage="read-write" />
+		<id name="idHistoricalAssociation" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+		<property name="dateChange" type="org.hibernate.type.TimestampType" />
+		<property name="endDate" type="org.hibernate.type.TimestampType" />
+		<property name="organizationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="stateId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="variationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFInstructsShootingDirectorImpl" table="ESFInstructsShootingDirector">
+		<cache usage="read-write" />
+		<id name="esfInstructsShootingDirectorId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="esfInstructsShootingDirectorCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esfInstructsShootingDirectorDesc" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFJobImpl" table="ESFJob">
+		<cache usage="read-write" />
+		<id name="esfJobId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="esfName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFJunioresImpl" table="ESFJuniores">
+		<cache usage="read-write" />
+		<id name="ESFUserId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="startDate" type="org.hibernate.type.TimestampType" />
+		<property name="endDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFLentFieldImpl" table="ESFLentField">
+		<id name="lentFieldId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="esfEntityStateId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfFieldId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="realOwnerId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="actualOwnerId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFMatchImpl" table="ESFMatch">
+		<id name="esfMatchId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="startDate" type="org.hibernate.type.TimestampType" />
+		<property name="startHour" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esfSportTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfMatchTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="isDraft" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="isTeamMatch" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="isIndividualMatch" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="isJuniorMatch" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="numDisk" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="numDiskTeam" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="esfAssociationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="notes" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="endDate" type="org.hibernate.type.TimestampType" />
+		<property name="numFields" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="isSingleMatch" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="site" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="countryId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+		<property name="isNational" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="HasPenality" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="isOlimpicQualificationMatch" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="eventType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="notNationalAssotiation" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="isChangeCategoryMatch" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="esfNationalSportTypeId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="oldCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFMatchResultImpl" table="ESFMatchResult">
+		<cache usage="read-write" />
+		<id name="esfMatchResultId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="esfMatchId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfPartecipantId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="cardCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="generalClassPosition" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="categoryClassPosition" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="categoryName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="qualification" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="first" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="second" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="third" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="fourth" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="fifth" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="total" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="firstPlayOff" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="secondPlayOff" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="thirdPlayOff" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="totalAfterPlayOff" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="nextFirstPlayOff" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="nextSecondPlayOff" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="nextTotalPlayOff" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="fiscalCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFMatchTypeImpl" table="ESFMatchType">
+		<cache usage="read-write" />
+		<id name="esfMatchTypeId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="isCategoryQualification" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="isNational" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFNationalImpl" table="ESFNational">
+		<id name="esfNationalId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfSportTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="startDate" type="org.hibernate.type.TimestampType" />
+		<property name="endDate" type="org.hibernate.type.TimestampType" />
+		<property name="BDODate" type="org.hibernate.type.TimestampType" />
+		<property name="idInternational" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="isUniversity" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="isNational" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="deliberate" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="deliberateDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFNationalDelegationImpl" table="ESFNationalDelegation">
+		<cache usage="read-write" />
+		<id name="esfNationalDelgationId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="leaveDate" type="org.hibernate.type.TimestampType" />
+		<property name="returnDate" type="org.hibernate.type.TimestampType" />
+		<property name="esfMatchId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfSportTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfShooterQualificationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfGunId1" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfGunId2" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfPartecipantTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="nominationDate" type="org.hibernate.type.TimestampType" />
+		<property name="refusalDate" type="org.hibernate.type.TimestampType" />
+		<property name="taskId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="refusal" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFNationalMatchResultImpl" table="ESFNationalMatchResult">
+		<cache usage="read-write" />
+		<id name="esfNationalMatchResultId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="esfMatchId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="position" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="qualification" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="shootOff" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="clayPigeonTotal" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="finalResult" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="shootOffFinal" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="externalShooter" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="externalName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esfSportTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userNationality" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esfUserQualification" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFOrganizationImpl" table="ESFOrganization">
+		<cache usage="read-write" />
+		<id name="esfOrganizationId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+		<property name="vat" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="fiscalCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ibanCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="isMultiSport" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="legalForm" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="category" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="establishmentDate" type="org.hibernate.type.TimestampType" />
+		<property name="closureDate" type="org.hibernate.type.TimestampType" />
+		<property name="type" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="type_" />
+		<property name="insertDate" type="org.hibernate.type.TimestampType" />
+		<property name="coniDate" type="org.hibernate.type.TimestampType" />
+		<property name="coniCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="isYouthActive" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="firstAffiliationDate" type="org.hibernate.type.TimestampType" />
+		<property name="variations" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="regionCode" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="idFatherAssociation" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="constitutiveAct" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="registeredStatus" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="planimetrySportsStand" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="certificateFITAV" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="note" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="isSimplyOrganizzation" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="webSite" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="includeConiReport" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="organizzationCategory" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFOrganizationUnitserviceImpl" table="ESFOrganizationUnitservice">
+		<cache usage="read-write" />
+		<id name="esfOrganizationUnitserviceId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="esfOrganizationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfUnitserviceId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="numberUnitservices" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFPartecipantImpl" table="ESFPartecipant">
+		<id name="esfPartecipantId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfMatchId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfTeamId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="ct" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfPartecipantTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="result" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFPartecipantInfoImpl" table="ESFPartecipantInfo">
+		<cache usage="read-write" />
+		<id name="esfPartecipantInfoId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="isPortalUser" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="protocol" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="firstName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="lastName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="placeOfBirth" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dateOfBirth" type="org.hibernate.type.TimestampType" />
+		<property name="residenceCity" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="province" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="zip" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="address" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="phonNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="maritialStatus" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="fiscalCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="passport" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="releasedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="passportReleaseDate" type="org.hibernate.type.TimestampType" />
+		<property name="passportExpirationDate" type="org.hibernate.type.TimestampType" />
+		<property name="europeanCardNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="europeanCardReleaseDate" type="org.hibernate.type.TimestampType" />
+		<property name="europeanCardExpirationDate" type="org.hibernate.type.TimestampType" />
+		<property name="gunLicenceNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="gunLicenceReleaseDate" type="org.hibernate.type.TimestampType" />
+		<property name="gunLicenceExpirationDate" type="org.hibernate.type.TimestampType" />
+		<property name="firstGunType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="firstGunKind" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="firstGunCaliber" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="firstGunCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="firstGunExtraCanes" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="secondGunType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="secondGunKind" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="secondGunCaliber" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="secondGunCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="secondGunExtraCanes" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="gunCartridgeType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="gunCartridgeKind" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="cartridgeCaliber" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esfMatchId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfGunTypeIdOne" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfGunKindIdOne" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfGunTypeIdTwo" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfGunKindIdTwo" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFPartecipantTypeImpl" table="ESFPartecipantType">
+		<id name="esfPartecipantTypeId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFPhoneImpl" table="ESFPhone">
+		<cache usage="read-write" />
+		<id name="esfPhoneId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="listTypeId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFProvinceImpl" table="ESFProvince">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.ESFProvincePK">
+			<key-property name="idProvince" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="idRegion" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="idCountry" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		</composite-id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFRegionImpl" table="ESFRegion">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.ESFRegionPK">
+			<key-property name="idRegion" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="idCountry" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		</composite-id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFRenewalImpl" table="ESFRenewal">
+		<cache usage="read-write" />
+		<id name="esfRenewalId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="quantity" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="paymentReason" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="paymentType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="paymentDate" type="org.hibernate.type.TimestampType" />
+		<property name="paymentReceived" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="info" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="madeBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="amount" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="organizationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="reportingYear" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="amountTotal" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="isTotal" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="renewalFatherId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="affiliates" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFResultImpl" table="ESFResult">
+		<cache usage="read-write" />
+		<id name="esfResultId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="matchYear" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="numberMatch" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="esfMatchId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="name2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esfAssociationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="sportTypeCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="startdDate" type="org.hibernate.type.TimestampType" />
+		<property name="endDate" type="org.hibernate.type.TimestampType" />
+		<property name="groupRanking" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="descGroupRanking" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="position" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="cardNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="shooterName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="nationCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="category" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="qualificationCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="resultS1" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="resultS2" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="resultS3" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="resultS4" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="resultS5" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="resultS6" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="resultS7" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="resultS8" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="totalS" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="barrage" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="finalS" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="finalTotal" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="american1" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="american2" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="american3" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="rifle" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="caliber" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="catridge" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="finalType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="semifinalResult" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="shootOff1s" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="shootOff2s" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="shootOff3s" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="bronzeResult" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="shootOffBronze" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="goldResult" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="shootOffGold" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="teamCategory" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="teamName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="naz_int" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="showTypeCode" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="showType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="variationDate" type="org.hibernate.type.TimestampType" />
+		<property name="sent" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="youthQualification" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esfMatchTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="resultClassTeam" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="spare1" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="spare2" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="shooterCode" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="shooterQualification" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFShooterAffiliationChronoImpl" table="ESFShooterAffiliationChrono">
+		<cache usage="read-write" />
+		<id name="esfShooterAffiliationChronoId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="esfuserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="affiliationDate" type="org.hibernate.type.TimestampType" />
+		<property name="year" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="Vcampo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="paymentDate" type="org.hibernate.type.TimestampType" />
+		<property name="payment" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="card" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esfOrganization" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="note" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFShooterCategoryImpl" table="ESFShooterCategory">
+		<cache usage="read-write" />
+		<id name="esfShooterCategoryId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFShooterCategoryESFMatchImpl" table="ESFShooterCategoryESFMatch">
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.ESFShooterCategoryESFMatchPK">
+			<key-property name="esfShooterCategoryId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="esfMatchId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFShooterCategoryESFTournamentImpl" table="ESFShooterCategoryESFTournament">
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.ESFShooterCategoryESFTournamentPK">
+			<key-property name="esfShooterCategoryId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="esfTournamentId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFShooterQualificationImpl" table="ESFShooterQualification">
+		<cache usage="read-write" />
+		<id name="esfShooterQualificationId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="isJunior" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFShooterQualificationESFMatchImpl" table="ESFShooterQualificationESFMatch">
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.ESFShooterQualificationESFMatchPK">
+			<key-property name="esfShooterQualificationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="esfMatchId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFShooterQualificationESFTournamentImpl" table="ESFShooterQualificationESFTournament">
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.ESFShooterQualificationESFTournamentPK">
+			<key-property name="esfShooterQualificationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="esfTournamentId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFShootingDirectorImpl" table="ESFShootingDirector">
+		<cache usage="read-write" />
+		<id name="esfShootingDirectorId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="esfCodeData" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esfStartData" type="org.hibernate.type.TimestampType" />
+		<property name="esfEndData" type="org.hibernate.type.TimestampType" />
+		<property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="codeUser" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="shootingDirectorQualificationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="sportTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="regionId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="provinceId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="flagCrea" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="DateVar" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFShootingDirectorQualificationImpl" table="ESFShootingDirectorQualification">
+		<cache usage="read-write" />
+		<id name="esfShootingDirectorQualificationId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="esfShootingDirectorQualificationDesc" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFSpecificImpl" table="ESFSpecific">
+		<cache usage="read-write" />
+		<id name="esfSpecificId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFSportTypeImpl" table="ESFSportType">
+		<cache usage="read-write" />
+		<id name="esfSportTypeId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="national" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+		<property name="isChangeCategory" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="isOlimpic" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFStateImpl" table="ESFState">
+		<cache usage="read-write" />
+		<id name="esfStateId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFStateAssEntityImpl" table="ESFStateAssEntity">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.ESFStateAssEntityPK">
+			<key-property name="esfStateId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="className" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		</composite-id>
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFSuspensiveCodeImpl" table="ESFSuspensiveCode">
+		<cache usage="read-write" />
+		<id name="esfSuspensiveCodeId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFSuspensiveShootingDirectorImpl" table="ESFSuspensiveShootingDirector">
+		<cache usage="read-write" />
+		<id name="esfSuspensiveShooingDirectorId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="esfData" type="org.hibernate.type.TimestampType" />
+		<property name="esfCodeData" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esfStartData" type="org.hibernate.type.TimestampType" />
+		<property name="esfEndData" type="org.hibernate.type.TimestampType" />
+		<property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="codeUser" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="Codice_Sosp" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="note" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Qualif1_Utiliz" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="Qualif2_Utiliz" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="Qualif3_Utiliz" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="Tipo_Gara1_noUtil" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="Tipo_Gara2_noUtil" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="Tipo_Gara3_noUtil" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="Tipo_Gara4_noUtil" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="Tipo_Gara5_noUtil" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="Tipo_Gara6_noUtil" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="Tipo_Gara7_noUtil" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="Tipo_Gara8_noUtil" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="Tipo_Gara9_noUtil" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="Tipo_Gara10_noUtil" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfVariationData" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFTeamImpl" table="ESFTeam">
+		<id name="esfTeamId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="esfTournamentId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFTournamentImpl" table="ESFTournament">
+		<id name="esfTournamentId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="esfOrganizationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="maxnum" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="minnum" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="isSingleMatch" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="isTeamMatch" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="isIndividualMatch" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="isJuniorMatch" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="isNationalMatch" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="isFinal" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="startDate" type="org.hibernate.type.TimestampType" />
+		<property name="endDate" type="org.hibernate.type.TimestampType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFTransitionImpl" table="ESFTransition">
+		<cache usage="read-write" />
+		<id name="esfTransitionId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfCategoryId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="season" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFUnitserviceImpl" table="ESFUnitservice">
+		<cache usage="read-write" />
+		<id name="esfUnitserviceId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFUserImpl" table="ESFUser">
+		<id name="esfUserId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+		<property name="typearmy" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="fiscalCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="birthcity" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="nationality" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="isSportsGroups" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="job" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="issfIdNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="categoryId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="pin" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="codeUser" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="DateOfDeath" type="org.hibernate.type.TimestampType" />
+		<property name="privacy1" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="privacy2" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="privacy3" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="datePrivacy1" type="org.hibernate.type.TimestampType" />
+		<property name="datePrivacy2" type="org.hibernate.type.TimestampType" />
+		<property name="datePrivacy3" type="org.hibernate.type.TimestampType" />
+		<property name="validateCF" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFUserCategoryImpl" table="ESFUserCategory">
+		<cache usage="read-write" />
+		<id name="esfUserCategoryId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="startDate" type="org.hibernate.type.TimestampType" />
+		<property name="endDate" type="org.hibernate.type.TimestampType" />
+		<property name="esfCategoryId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfSportTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFUserESFFederalRoleImpl" table="ESFUserESFFederalRole">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.ESFUserESFFederalRolePK">
+			<key-property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="esfFederalRoleId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="startDate" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
+		<property name="endDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="active" type="com.liferay.portal.dao.orm.hibernate.BooleanType" column="active_" />
+		<property name="esfSpecificId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="regionId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="provinceId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="notes" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFUserESFUserRoleImpl" table="ESFUserESFUserRole">
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.ESFUserESFUserRolePK">
+			<key-property name="esfUserRoleId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="esfOrganizationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="startDate" type="org.hibernate.type.TimestampType" />
+		</composite-id>
+		<property name="endDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFUserRoleImpl" table="ESFUserRole">
+		<cache usage="read-write" />
+		<id name="esfUserRoleId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="isBDO" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="isLEA" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="type" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="type_" />
+		<property name="maxUser" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="isOrgAdmin" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="isEditable" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+</hibernate-mapping>

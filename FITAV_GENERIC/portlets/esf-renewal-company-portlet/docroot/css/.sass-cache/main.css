@@ -1,0 +1,38 @@
+.aui table td.firstCss {
+  width: 25%; }
+
+.label-pay {
+  float: left;
+  width: 20%;
+  line-height: 55px; }
+
+.div-pay {
+  width: 100%;
+  float: left; }
+
+.div-pay1 {
+  float: left; }
+
+.label-pay1 {
+  float: left;
+  width: 20%;
+  font-weight: bold; }
+
+.span-pay {
+  padding: 20px 20px 20px 0; }
+
+.span-pay1 {
+  padding: 14px 20px 20px 0; }
+
+.aui .row-fluid .span-form {
+  margin-left: 20px; }
+
+.aui .cards-number-wrapper {
+  display: inline;
+  position: relative; }
+  .aui .cards-number-wrapper img {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%); }
+

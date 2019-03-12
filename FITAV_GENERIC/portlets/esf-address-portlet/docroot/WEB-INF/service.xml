@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="it.ethica.esf">
+	<author>Ethica</author>
+	<namespace>ESF</namespace>
+	<entity name="ESFAddress" remote-service="false" local-service="true"
+		uuid="true">
+		
+		<column name="esfAddressId" primary="true" type="long"></column>
+		<column name="latitude" type="double"></column>
+		<column name="longitude" type="double"></column>
+        <column name="esfCountryId" type="String"></column>
+        <column name="esfRegionId" type="String"></column>
+        <column name="esfProvinceId" type="String"></column>
+        <column name="esfCityId" type="long"></column>
+		<column name="groupId" type="long"></column>
+
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+		</finder>
+		<finder name="L_L" return-type="ESFAddress">
+			<finder-column name="longitude"></finder-column>
+			<finder-column name="latitude"></finder-column>
+		</finder>
+
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset"></reference>
+		<reference entity="AssetLink" package-path="com.liferay.portlet.asset"></reference>
+	</entity>
+    <entity name="Country" uuid="false" local-service="true" remote-service="false">
+        <column name="idCountry" type="String" primary="true"></column>
+        <column name="name" type="String"></column>
+    </entity>
+    <entity name="Region" local-service="true" remote-service="false">
+        <column name="idRegion" type="String" primary="true"></column>
+        <column name="idCountry" primary="true" type="String"></column>
+        <column name="name" type="String"></column>
+        <finder name="Country" return-type="Collection">
+            <finder-column name="idCountry"></finder-column>
+        </finder>
+    </entity>
+    <entity name="Province" local-service="true" remote-service="false">
+        <column name="idProvince" type="String" primary="true"></column>
+        <column name="idRegion" type="String" primary="true"></column>
+        <column name="idCountry" type="String" primary="true"></column>
+        <column name="name" type="String"></column>
+        <finder name="C_R" return-type="Collection">
+            <finder-column name="idRegion"></finder-column>
+            <finder-column name="idCountry"></finder-column>
+        </finder>
+    </entity>
+    <entity name="City" local-service="true" remote-service="false">
+        <column name="idCity" type="long" primary="true"></column>
+        <column name="idProvince" type="String" primary="true"></column>
+        <column name="idRegion" type="String" primary="true"></column>
+        <column primary="true" type="String" name="idCountry"></column>
+        <column name="zip" type="long"></column>
+        <column name="name" type="String"></column>
+        <column name="latitude" type="double"></column>
+        <column name="longitude" type="double"></column>
+        <column name="altitude" type="double"></column>
+        <column name="website" type="String"></column>
+        <finder name="C_R_P" return-type="Collection">
+            <finder-column name="idCountry"></finder-column>
+            <finder-column name="idRegion"></finder-column>
+            <finder-column name="idProvince"></finder-column>
+        </finder>
+    </entity>
+    <exceptions>
+        <exception>ESFAddressLongitude</exception>
+        <exception>ESFAddressLatitude</exception>
+    </exceptions>
+</service-builder>

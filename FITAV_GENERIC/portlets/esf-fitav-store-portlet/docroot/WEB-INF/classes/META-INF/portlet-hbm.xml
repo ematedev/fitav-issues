@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.ethica.esf.model.ESFArticle" />
+	<import class="com.ethica.esf.model.ESFArticleDelivered" />
+	<import class="com.ethica.esf.model.ESFArticleType" />
+	<import class="com.ethica.esf.model.ESFOrder" />
+	<import class="com.ethica.esf.model.ESFStockist" />
+	<class name="com.ethica.esf.model.impl.ESFArticleImpl" table="ESFArticle">
+		<cache usage="read-write" />
+		<id name="esfArticleId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esfArticleTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="xxxlQty" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="xxlQty" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="xlQty" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="lQty" access="com.liferay.portal.dao.orm.hibernate.CamelCasePropertyAccessor" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="mQty" access="com.liferay.portal.dao.orm.hibernate.CamelCasePropertyAccessor" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="sQty" access="com.liferay.portal.dao.orm.hibernate.CamelCasePropertyAccessor" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="xsQty" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="xxsQty" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="otherQty" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="price" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="tax" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="sale" type="com.liferay.portal.dao.orm.hibernate.DoubleType" column="sale_" />
+	</class>
+	<class name="com.ethica.esf.model.impl.ESFArticleDeliveredImpl" table="ESFArticleDelivered">
+		<cache usage="read-write" />
+		<id name="esfArticleDeliveredId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="data" type="org.hibernate.type.TimestampType" column="data_" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esfArticleId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfShooterId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="xxxlQty" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="xxlQty" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="xlQty" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="lQty" access="com.liferay.portal.dao.orm.hibernate.CamelCasePropertyAccessor" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="mQty" access="com.liferay.portal.dao.orm.hibernate.CamelCasePropertyAccessor" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="sQty" access="com.liferay.portal.dao.orm.hibernate.CamelCasePropertyAccessor" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="xsQty" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="xxsQty" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="otherQty" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.ethica.esf.model.impl.ESFArticleTypeImpl" table="ESFArticleType">
+		<cache usage="read-write" />
+		<id name="esfArticleTypeId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="department" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="area" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ethica.esf.model.impl.ESFOrderImpl" table="ESFOrder">
+		<cache usage="read-write" />
+		<id name="esfOrderId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+		<property name="data" type="org.hibernate.type.TimestampType" column="data_" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esfStockistId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="qty" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfArticleId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.ethica.esf.model.impl.ESFStockistImpl" table="ESFStockist">
+		<cache usage="read-write" />
+		<id name="esfStockistId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="phone" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="address" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="nameReference" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="lastNameReference" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="emailReference" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="phoneReference" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="other" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>

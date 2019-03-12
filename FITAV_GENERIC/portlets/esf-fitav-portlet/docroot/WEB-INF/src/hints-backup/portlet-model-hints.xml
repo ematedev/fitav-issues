@@ -1,0 +1,327 @@
+<?xml version="1.0"?>
+
+<!-- Backup del portlet-model-hints.xml -->
+<model-hints>
+	<model name="it.ethica.esf.model.ESFAddress">
+		<field name="uuid" type="String" />
+		<field name="esfAddressId" type="long" />
+		<field name="latitude" type="double" />
+		<field name="longitude" type="double" />
+		<field name="esfCountryId" type="String" />
+		<field name="esfRegionId" type="String" />
+		<field name="esfProvinceId" type="String" />
+		<field name="esfCityId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="street1" type="String" />
+		<field name="street2" type="String" />
+		<field name="street3" type="String" />
+		<field name="postalCode" type="String" />
+		<field name="zip" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.ESFCard">
+		<field name="uuid" type="String" />
+		<field name="esfCardId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="code" type="String" />
+		<field name="esfUserId" type="long" />
+		<field name="esfOrganizationId" type="long" />
+		<field name="esfStateId" type="long" />
+	</model>
+	<model name="it.ethica.esf.model.ESFCity">
+		<field name="idCity" type="long" />
+		<field name="idProvince" type="String" />
+		<field name="idRegion" type="String" />
+		<field name="idCountry" type="String" />
+		<field name="zip" type="long" />
+		<field name="name" type="String" />
+		<field name="latitude" type="double" />
+		<field name="longitude" type="double" />
+		<field name="altitude" type="double" />
+		<field name="website" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.ESFCountry">
+		<field name="idCountry" type="String" />
+		<field name="name" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.ESFEntityState">
+		<field name="esfEntityStateId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="className" type="String" />
+		<field name="classPK" type="long" />
+		<field name="startDate" type="Date" />
+		<field name="endDate" type="Date" />
+		<field name="esfStateId" type="long" />
+	</model>
+	<model name="it.ethica.esf.model.ESFField">
+		<field name="uuid" type="String" />
+		<field name="esfFieldId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="ownerOrganizationId" type="long" />
+		<field name="esfAddressId" type="long" />
+	</model>
+	<model name="it.ethica.esf.model.ESFFieldESFSportType">
+		<field name="esfFieldId" type="long" />
+		<field name="esfSportTypeId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="it.ethica.esf.model.ESFForniture">
+		<field name="uuid" type="String" />
+		<field name="esfFornitureId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="code" type="String" />
+		<field name="name" type="String" />
+		<field name="description" type="String" />
+		<field name="type" type="long" />
+		<field name="insertDate" type="Date" />
+		<field name="numberFornitures" type="long" />
+	</model>
+	<model name="it.ethica.esf.model.ESFFornitureRel">
+		<field name="esfToolId" type="long" />
+		<field name="className" type="String" />
+		<field name="classPK" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="assignmentDate" type="Date" />
+	</model>
+	<model name="it.ethica.esf.model.ESFFornitureType">
+		<field name="uuid" type="String" />
+		<field name="esfFornitureTypeId" type="long" />
+		<field name="description" type="String" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="it.ethica.esf.model.ESFGun">
+		<field name="uuid" type="String" />
+		<field name="esfGunId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="esfUserId" type="long" />
+		<field name="code" type="String" />
+		<field name="esfGunKindId" type="long" />
+		<field name="esfGunTypeId" type="long" />
+		<field name="esfOrganizationId" type="long" />
+		<field name="registrationNumber" type="String" />
+		<field name="canesExtra" type="String" />
+		<field name="catridgeName" type="String" />
+		<field name="catridgeModel" type="String" />
+		<field name="catridgeCaliber" type="long" />
+	</model>
+	<model name="it.ethica.esf.model.ESFGunKind">
+		<field name="uuid" type="String" />
+		<field name="esfGunKindId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="description" type="String" />
+		<field name="model" type="String" />
+		<field name="caliber" type="long" />
+		<field name="esfGunTypeId" type="long" />
+	</model>
+	<model name="it.ethica.esf.model.ESFGunType">
+		<field name="uuid" type="String" />
+		<field name="esfGunTypeId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="description" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.ESFOrganization">
+		<field name="uuid" type="String" />
+		<field name="esfOrganizationId" type="long" />
+		<field name="code" type="String" />
+		<field name="vat" type="String" />
+		<field name="fiscalCode" type="String" />
+		<field name="ibanCode" type="String" />
+		<field name="isMultiSport" type="boolean" />
+		<field name="legalForm" type="String" />
+		<field name="category" type="String" />
+		<field name="establishmentDate" type="Date" />
+		<field name="closureDate" type="Date" />
+		<field name="insertDate" type="Date" />
+		<field name="coniDate" type="Date" />
+		<field name="coniCode" type="String" />
+		<field name="groupId" type="long" />
+		<field name="type" type="int" />
+		<field name="name" type="String" />
+		<field name="emailAddress" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.ESFOrganizationUnitservice">
+		<field name="uuid" type="String" />
+		<field name="esfOrganizationUnitserviceId" type="long" />
+		<field name="esfOrganizationId" type="long" />
+		<field name="esfUnitserviceId" type="long" />
+		<field name="numberUnitservices" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="it.ethica.esf.model.ESFProvince">
+		<field name="idProvince" type="String" />
+		<field name="idRegion" type="String" />
+		<field name="idCountry" type="String" />
+		<field name="name" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.ESFRegion">
+		<field name="idRegion" type="String" />
+		<field name="idCountry" type="String" />
+		<field name="name" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.ESFSportType">
+		<field name="uuid" type="String" />
+		<field name="esfSportTypeId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="description" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.ESFState">
+		<field name="esfStateId" type="long" />
+		<field name="name" type="String" />
+		<field name="description" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.ESFUnitservice">
+		<field name="uuid" type="String" />
+		<field name="esfUnitserviceId" type="long" />
+		<field name="description" type="String" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="it.ethica.esf.model.ESFUser">
+		<field name="uuid" type="String" />
+		<field name="esfUserId" type="long" />
+		<field name="code" type="String" />
+		<field name="screenName" type="String" />
+		<field name="firstName" type="String" />
+		<field name="lastName" type="String" />
+		<field name="userEmail" type="String" />
+		<field name="birthday" type="Date" />
+	</model>
+	<model name="it.ethica.esf.model.ESFUserESFUserRole">
+		<field name="esfUserRoleId" type="long" />
+		<field name="esfUserId" type="long" />
+		<field name="esfOrganizationId" type="long" />
+		<field name="startDate" type="Date" />
+		<field name="endDate" type="Date" />
+	</model>
+	<model name="it.ethica.esf.model.ESFUserRole">
+		<field name="uuid" type="String" />
+		<field name="esfUserRoleId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="name" type="String" />
+		<field name="title" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="isBDO" type="boolean" />
+		<field name="isLEA" type="boolean" />
+		<field name="type" type="int" />
+		<field name="maxUser" type="int" />
+	</model>
+	<model name="it.ethica.esf.model.ESFTeam">
+		<field name="esfTeamId" type="long" />
+		<field name="esfTournamentId" type="long" />
+		<field name="name" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.ESFTournament">
+		<field name="uuid" type="String" />
+		<field name="esfTournamentId" type="long" />
+		<field name="esfOrganizationId" type="long" />
+		<field name="title" type="String" />
+		<field name="description" type="String" />
+		<field name="maxnum" type="long" />
+		<field name="minnum" type="long" />
+		<field name="isSingleMatch" type="boolean" />
+		<field name="isTeamMatch" type="boolean" />
+		<field name="startDate" type="Date" >
+			<hint name="show-time">false</hint>
+		</field>
+		<field name="endDate" type="Date" >
+			<hint name="show-time">false</hint>
+		</field>
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="it.ethica.esf.model.ESFMatch">
+		<field name="uuid" type="String" />
+		<field name="esfMatchId" type="long" />
+		<field name="esfTorunamentId" type="long" />
+		<field name="esfFieldId" type="long" />
+		<field name="startDate" type="Date" >
+			<hint name="show-time">false</hint>
+		</field>
+		<field name="startHour" type="String" />
+		<field name="endHour" type="String" />
+		<field name="esfSportTypeid" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="numDisk" type="int" />
+		<field name="esfAssociationId" type="long" />
+	</model>
+</model-hints>

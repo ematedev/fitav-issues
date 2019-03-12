@@ -1,0 +1,22 @@
+form.form-table {
+  overflow: overlay; }
+  form.form-table table thead > tr > th {
+    width: 200px; }
+  form.form-table table tbody > tr > td .control-group {
+    margin-bottom: 0; }
+    form.form-table table tbody > tr > td .control-group.shooter-name {
+      position: relative; }
+      form.form-table table tbody > tr > td .control-group.shooter-name .delete-icon {
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        right: 0;
+        top: 3px;
+        background-image: url("images/delete.png");
+        cursor: pointer;
+        cursor: hand; }
+  form.form-table table tbody > tr > td:not(:first-child) {
+    text-align: center; }
+    form.form-table table tbody > tr > td:not(:first-child) input[type='number'] {
+      width: 80%; }
+

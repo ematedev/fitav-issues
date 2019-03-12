@@ -1,0 +1,279 @@
+/**
+ * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation; either version 2.1 of the License, or (at your option)
+ * any later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
+ */
+
+package it.ethica.esf.service.persistence;
+
+import com.liferay.portal.kernel.bean.PortletBeanLocatorUtil;
+import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.OrderByComparator;
+import com.liferay.portal.kernel.util.ReferenceRegistry;
+import com.liferay.portal.service.ServiceContext;
+
+import it.ethica.esf.model.ESFCategory;
+
+import java.util.List;
+
+/**
+ * The persistence utility for the e s f category service. This utility wraps {@link ESFCategoryPersistenceImpl} and provides direct access to the database for CRUD operations. This utility should only be used by the service layer, as it must operate within a transaction. Never access this utility in a JSP, controller, model, or other front-end class.
+ *
+ * <p>
+ * Caching information and settings can be found in <code>portal.properties</code>
+ * </p>
+ *
+ * @author Ethica
+ * @see ESFCategoryPersistence
+ * @see ESFCategoryPersistenceImpl
+ * @generated
+ */
+public class ESFCategoryUtil {
+	/*
+	 * NOTE FOR DEVELOPERS:
+	 *
+	 * Never modify this class directly. Modify <code>service.xml</code> and rerun ServiceBuilder to regenerate this class.
+	 */
+
+	/**
+	 * @see com.liferay.portal.service.persistence.BasePersistence#clearCache()
+	 */
+	public static void clearCache() {
+		getPersistence().clearCache();
+	}
+
+	/**
+	 * @see com.liferay.portal.service.persistence.BasePersistence#clearCache(com.liferay.portal.model.BaseModel)
+	 */
+	public static void clearCache(ESFCategory esfCategory) {
+		getPersistence().clearCache(esfCategory);
+	}
+
+	/**
+	 * @see com.liferay.portal.service.persistence.BasePersistence#countWithDynamicQuery(DynamicQuery)
+	 */
+	public static long countWithDynamicQuery(DynamicQuery dynamicQuery)
+		throws SystemException {
+		return getPersistence().countWithDynamicQuery(dynamicQuery);
+	}
+
+	/**
+	 * @see com.liferay.portal.service.persistence.BasePersistence#findWithDynamicQuery(DynamicQuery)
+	 */
+	public static List<ESFCategory> findWithDynamicQuery(
+		DynamicQuery dynamicQuery) throws SystemException {
+		return getPersistence().findWithDynamicQuery(dynamicQuery);
+	}
+
+	/**
+	 * @see com.liferay.portal.service.persistence.BasePersistence#findWithDynamicQuery(DynamicQuery, int, int)
+	 */
+	public static List<ESFCategory> findWithDynamicQuery(
+		DynamicQuery dynamicQuery, int start, int end)
+		throws SystemException {
+		return getPersistence().findWithDynamicQuery(dynamicQuery, start, end);
+	}
+
+	/**
+	 * @see com.liferay.portal.service.persistence.BasePersistence#findWithDynamicQuery(DynamicQuery, int, int, OrderByComparator)
+	 */
+	public static List<ESFCategory> findWithDynamicQuery(
+		DynamicQuery dynamicQuery, int start, int end,
+		OrderByComparator orderByComparator) throws SystemException {
+		return getPersistence()
+				   .findWithDynamicQuery(dynamicQuery, start, end,
+			orderByComparator);
+	}
+
+	/**
+	 * @see com.liferay.portal.service.persistence.BasePersistence#update(com.liferay.portal.model.BaseModel)
+	 */
+	public static ESFCategory update(ESFCategory esfCategory)
+		throws SystemException {
+		return getPersistence().update(esfCategory);
+	}
+
+	/**
+	 * @see com.liferay.portal.service.persistence.BasePersistence#update(com.liferay.portal.model.BaseModel, ServiceContext)
+	 */
+	public static ESFCategory update(ESFCategory esfCategory,
+		ServiceContext serviceContext) throws SystemException {
+		return getPersistence().update(esfCategory, serviceContext);
+	}
+
+	/**
+	* Caches the e s f category in the entity cache if it is enabled.
+	*
+	* @param esfCategory the e s f category
+	*/
+	public static void cacheResult(it.ethica.esf.model.ESFCategory esfCategory) {
+		getPersistence().cacheResult(esfCategory);
+	}
+
+	/**
+	* Caches the e s f categories in the entity cache if it is enabled.
+	*
+	* @param esfCategories the e s f categories
+	*/
+	public static void cacheResult(
+		java.util.List<it.ethica.esf.model.ESFCategory> esfCategories) {
+		getPersistence().cacheResult(esfCategories);
+	}
+
+	/**
+	* Creates a new e s f category with the primary key. Does not add the e s f category to the database.
+	*
+	* @param esfCategoryId the primary key for the new e s f category
+	* @return the new e s f category
+	*/
+	public static it.ethica.esf.model.ESFCategory create(long esfCategoryId) {
+		return getPersistence().create(esfCategoryId);
+	}
+
+	/**
+	* Removes the e s f category with the primary key from the database. Also notifies the appropriate model listeners.
+	*
+	* @param esfCategoryId the primary key of the e s f category
+	* @return the e s f category that was removed
+	* @throws it.ethica.esf.NoSuchCategoryException if a e s f category with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static it.ethica.esf.model.ESFCategory remove(long esfCategoryId)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			it.ethica.esf.NoSuchCategoryException {
+		return getPersistence().remove(esfCategoryId);
+	}
+
+	public static it.ethica.esf.model.ESFCategory updateImpl(
+		it.ethica.esf.model.ESFCategory esfCategory)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().updateImpl(esfCategory);
+	}
+
+	/**
+	* Returns the e s f category with the primary key or throws a {@link it.ethica.esf.NoSuchCategoryException} if it could not be found.
+	*
+	* @param esfCategoryId the primary key of the e s f category
+	* @return the e s f category
+	* @throws it.ethica.esf.NoSuchCategoryException if a e s f category with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static it.ethica.esf.model.ESFCategory findByPrimaryKey(
+		long esfCategoryId)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			it.ethica.esf.NoSuchCategoryException {
+		return getPersistence().findByPrimaryKey(esfCategoryId);
+	}
+
+	/**
+	* Returns the e s f category with the primary key or returns <code>null</code> if it could not be found.
+	*
+	* @param esfCategoryId the primary key of the e s f category
+	* @return the e s f category, or <code>null</code> if a e s f category with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static it.ethica.esf.model.ESFCategory fetchByPrimaryKey(
+		long esfCategoryId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().fetchByPrimaryKey(esfCategoryId);
+	}
+
+	/**
+	* Returns all the e s f categories.
+	*
+	* @return the e s f categories
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<it.ethica.esf.model.ESFCategory> findAll()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findAll();
+	}
+
+	/**
+	* Returns a range of all the e s f categories.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link it.ethica.esf.model.impl.ESFCategoryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param start the lower bound of the range of e s f categories
+	* @param end the upper bound of the range of e s f categories (not inclusive)
+	* @return the range of e s f categories
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<it.ethica.esf.model.ESFCategory> findAll(
+		int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findAll(start, end);
+	}
+
+	/**
+	* Returns an ordered range of all the e s f categories.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link it.ethica.esf.model.impl.ESFCategoryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param start the lower bound of the range of e s f categories
+	* @param end the upper bound of the range of e s f categories (not inclusive)
+	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	* @return the ordered range of e s f categories
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<it.ethica.esf.model.ESFCategory> findAll(
+		int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findAll(start, end, orderByComparator);
+	}
+
+	/**
+	* Removes all the e s f categories from the database.
+	*
+	* @throws SystemException if a system exception occurred
+	*/
+	public static void removeAll()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		getPersistence().removeAll();
+	}
+
+	/**
+	* Returns the number of e s f categories.
+	*
+	* @return the number of e s f categories
+	* @throws SystemException if a system exception occurred
+	*/
+	public static int countAll()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().countAll();
+	}
+
+	public static ESFCategoryPersistence getPersistence() {
+		if (_persistence == null) {
+			_persistence = (ESFCategoryPersistence)PortletBeanLocatorUtil.locate(it.ethica.esf.service.ClpSerializer.getServletContextName(),
+					ESFCategoryPersistence.class.getName());
+
+			ReferenceRegistry.registerReference(ESFCategoryUtil.class,
+				"_persistence");
+		}
+
+		return _persistence;
+	}
+
+	/**
+	 * @deprecated As of 6.2.0
+	 */
+	public void setPersistence(ESFCategoryPersistence persistence) {
+	}
+
+	private static ESFCategoryPersistence _persistence;
+}

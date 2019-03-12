@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="it.ethica.esf.model.ESFCard">
+		<field name="uuid" type="String" />
+		<field name="esfCardId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="esfUserId" type="long" />
+		<field name="esfOrganizationId" type="long" />
+	</model>
+	<model name="it.ethica.esf.model.ESFDocument">
+		<field name="uuid" type="String" />
+		<field name="esfDocumentId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="ownerId" type="long" />
+		<field name="ownerType" type="String" />
+		<field name="name" type="String" />
+		<field name="number" type="long" />
+		<field name="releaseDate" type="Date" />
+		<field name="expireDate" type="Date" />
+		<field name="issuer" type="String" />
+		<field name="contents" type="String" />
+		<field name="locationReference" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.ESFDocumentType">
+		<field name="esfDocumentTypeId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="esfDocumentId" type="long" />
+		<field name="esfTypeId" type="long" />
+	</model>
+	<model name="it.ethica.esf.model.ESFOrganization">
+		<field name="uuid" type="String" />
+		<field name="esfOrganizationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="portalOrganizationId" type="long" />
+	</model>
+	<model name="it.ethica.esf.model.ESFOrganizationType">
+		<field name="esfOrganizationTypeId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="esfOrganizationId" type="long" />
+		<field name="esfTypeId" type="long" />
+	</model>
+	<model name="it.ethica.esf.model.ESFType">
+		<field name="esfTypeId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="code" type="String" />
+		<field name="name" type="String" />
+		<field name="description" type="String" />
+		<field name="className" type="String" />
+		<field name="status" type="String" />
+		<field name="typeParentId" type="long" />
+	</model>
+	<model name="it.ethica.esf.model.ESFUser">
+		<field name="uuid" type="String" />
+		<field name="esfUserId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="portalUserId" type="long" />
+		<field name="code" type="String" />
+	</model>
+</model-hints>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE display PUBLIC "-//Liferay//DTD Display 6.2.0//EN" "http://www.liferay.com/dtd/liferay-display_6_2_0.dtd">
+
+<display>
+	<category name="category.esf">
+		<portlet id="1"></portlet>
+		<portlet id="2"></portlet>
+		<portlet id="3"></portlet>
+		<portlet id="4"></portlet>
+		<portlet id="5"></portlet>
+		<portlet id="6"></portlet>
+		<portlet id="7"></portlet>
+		<portlet id="8"></portlet>
+		<portlet id="9"></portlet>
+		<portlet id="10"></portlet>
+		<portlet id="11"></portlet>
+		<portlet id="12"></portlet>
+		<portlet id="13"></portlet>
+		<portlet id="14"></portlet>
+		<portlet id="15"></portlet>
+		<portlet id="16"></portlet>
+		<portlet id="17"></portlet>
+		<portlet id="18"></portlet>
+		<portlet id="19"></portlet>
+		<portlet id="20"></portlet>
+		<portlet id="21"></portlet>
+		<portlet id="22"></portlet>
+		<portlet id="23"></portlet>
+		<portlet id="24"></portlet>
+		<portlet id="25"></portlet>
+		<portlet id="26"></portlet>
+		<portlet id="27"></portlet>
+		<portlet id="28"></portlet>
+		<portlet id="29"></portlet>
+		<portlet id="30"></portlet>
+		<portlet id="31"></portlet>
+		<portlet id="32"></portlet>
+		<portlet id="33"></portlet>
+		<portlet id="34"></portlet>
+		<portlet id="35"></portlet>
+		<portlet id="36"></portlet>
+		<portlet id="37"></portlet>
+		<portlet id="38"></portlet>
+		<portlet id="39"></portlet>
+		<portlet id="40"></portlet>
+		<portlet id="41"></portlet>
+		<portlet id="42"></portlet>
+		<portlet id="43"></portlet>
+		<portlet id="44"></portlet>
+	</category>
+</display>

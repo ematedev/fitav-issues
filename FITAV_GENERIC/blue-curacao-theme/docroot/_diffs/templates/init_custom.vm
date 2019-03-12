@@ -1,0 +1,28 @@
+#set($isPoweUser = false)
+#set ($rService = $serviceLocator.findService("com.liferay.portal.service.RoleService"))
+#set ($usrRoles = $theme_display.user.getRoles()) 
+#foreach( $usrRole in $usrRoles )
+	#if ( $usrRole.getName() == "Power User")
+		#set($isPoweUser = true)
+    #end
+#end
+     
+#set ($show_dockbar = $isPoweUser || $theme.getSetting("show-dockbar") || $portalUtil.isGroupAdmin($user, $group_id) || $portalUtil.isGroupOwner($user, $group_id))
+
+#macro(glarticle $temp_article_id)
+	#if ($validator.isNotNull($temp_article_id))
+		#set ($temp_content = "")
+
+		#set ($scope_group_id = $theme_display.scopeGroupId)
+		#set ($global_group_id = $theme_display.companyGroupId)
+
+		#set ($temp_content = $journalContentUtil.getContent($scope_group_id, $temp_article_id, null, "$locale", $theme_display))
+		#set ($temp_content = "$!{temp_content}")
+
+		#if ($temp_content.length() == 0)
+			#set ($temp_content = $journalContentUtil.getContent($global_group_id, $temp_article_id, null, "$locale", $theme_display))
+		#end
+
+		$!{temp_content}
+	#end
+#end

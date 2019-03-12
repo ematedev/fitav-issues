@@ -1,0 +1,338 @@
+
+@import "compass";
+@import "variables";
+
+#wrapper {
+	overflow-x: hidden;
+}
+
+.aui {
+
+	// Portlets
+	// ========
+
+	@import "portlets/calendar";
+
+	// Taglibs
+	// =======
+
+	@import "taglibs/datepicker";
+	@import "taglibs/page_iterator";
+	
+	//Typography
+	// ======
+
+	h1 small, h2 small, h3 small,
+	h4 small, h5 small, h6 small {
+		color: #959292;
+	}
+
+	// Header
+	// ======
+
+	.brand.logo > img {
+		display: inline-block;
+		//margin: -40px 0;
+		margin-right: 15px;
+		vertical-align: middle;
+		position: relative;
+		top: -2px;
+		width: auto;
+		height: 60px;
+	}
+
+	// Navigation
+	// ==========
+	
+	#navigation {
+		li {
+			line-height: 40px;
+			font-size: 15px;
+		}
+	}
+	
+	#main-content{
+		background: #fff;
+		
+		.portlet{
+			border:none;
+		}
+	}
+	
+	.modify-pages .delete-tab {
+		@include transition(opacity 200ms);
+		top: 12px;
+		right: 5px;
+		text-shadow:
+			0px 1px #FFF,
+			0px -1px white,
+			1px 0px white,
+			-1px 0px white;
+	}
+
+	.nav-menu {
+
+		ul {
+			padding-left: 0;
+
+			li {
+				list-style: none;
+
+				a {
+
+					&.selected {
+					}
+				}
+			}
+		}
+
+		.horizontal & {
+			ul {
+				margin: 0;
+			}
+
+			li {
+				*zoom: 1;
+				*width: 20%;
+				display: inline-block;
+				min-width: 20%;
+				vertical-align: top;
+			}
+		}
+	}
+
+	// Portlets
+	// ========
+
+	// Main portlet styles are in _extensions.scss
+
+	.portlet,
+	.forced-box .portlet-borderless-container {
+		margin: 0 0 1em;
+	}
+
+	.portlet-topper {
+		margin: 2px 0px;
+/* 		.portlet-topper-toolbar .portlet-icon-back { */
+/* 			background-color: #1A4775; */
+/* 			padding: 5px; */
+/* 		} */
+	}
+
+
+	.portlet-title {
+		font-size: $fontSizeLarge;
+		line-height: 1em;
+		margin: 0px;
+		text-transform: uppercase;
+	}
+
+	.portlet-title-text {
+		font-size: 1em;
+		line-height: $fontSizeLarge * 1.4;
+	}
+
+	.portlet-content,
+	.portlet-minimized .portlet-content-container {
+		padding: 0px;
+		margin: 1em 0;
+	}
+
+	// Fixes
+	// =====
+
+	// Removing useless margin-collapse-glitches-induncing margins
+	.sticky .nav {
+		margin-bottom: 0px;
+	}
+
+	// Giving the page_navigation some room
+	span[id^='p_'] {
+		position: relative;
+		top: -3em;
+	}
+
+	.navbar {
+		.brand {
+			padding: 5px 20px;
+		}
+		.nav {
+			> li > a.user-notification-link {
+				padding-top: 10px;
+				padding-bottom: 9px;
+			}
+	
+			> li.message > a {
+				&,
+				&:hover,
+				&:focus,
+				&:active {
+					background: $dropdownBackground;
+				}
+			}
+		}
+	}
+
+	.dockbar-user-notifications .user-notifications-count,
+	.notifications-portlet .user-notifications-count {
+		background: $blue;
+		color: $white;
+		text-shadow: none;
+	}
+
+	.dockbar .nav li.dropdown.dockbar-user-notifications .dropdown-menu {
+		padding: 5px 0px;
+	}
+	
+	#idOne p{
+		font-size:18px; 
+	}
+	#idtwo p{
+		font-size:22px; 
+	}
+	.renewal-form{
+		label{
+			vertical-align: bottom;
+		}
+		.control-group{
+		vertical-align: 1.5px;
+		
+		}
+	}
+	
+	
+	.aui-search-bar {
+		.control-label{
+	    	margin-bottom: 4px;
+		}
+		.btn{
+			vertical-align: 4px;
+		}
+	}
+	
+	.btn-field-align .btn{
+			vertical-align: 4px;
+	}
+	
+	.organization-history { 
+		&>div {
+	    	display: inline-block;
+	    	margin-right: 15px;
+	    	
+	    	&.name{
+	    		width:28%;
+	    	}
+	    	&.code{
+	    		width:9%;
+	    	}
+	    	&.state{
+	    		width:11%;
+	    	}
+	    	&.variation{
+	    		width:25%;
+	    	}
+	    	&.dateChange{
+	    		width:11%;
+	    	}
+		}
+		.control-group{
+			width: 100%;
+			
+			input{
+				width: 100%;
+			}
+		}
+	}
+	
+	.detail h4{
+		font-size: 18px;
+		font-weight: bold;
+		
+	}
+	.detail p{
+		font-size: 16px;
+		min-height: 20px;
+	}
+	
+	.detail-error .warning{
+		font-size: 18px;
+		color: orange;
+	}
+	
+	.detail-error .error{
+		font-size: 18px;
+		color: red;
+	}
+	
+	.soonExpiration{
+		color : red !important; 
+	}
+	.flightDates{
+		font-size : 15px;
+	}
+	
+	.formButton{
+		float : left;
+		margin-right : 15px;
+	}
+	.row{
+		margin-left:0 !important;
+		
+	}
+	
+	
+	.box{
+		display: flex;
+		padding-top:10px;	
+		padding-bottom:10px;
+	}
+	.interBox{
+		padding-right: 10px; 
+	}
+	.taglib-page-iterator {
+	
+		.search-results{
+		    float: none;
+	   		line-height: normal;
+	    	margin-left: 10px;
+	    	vertical-align: -5px;
+		}
+		.lfr-pagination-buttons {
+		    float: right;
+		    margin: 0;
+		}
+		.lfr-pagination-config {
+			line-height:normal;
+		}
+		
+	}
+	
+	.regions-last-card{
+		display: inline-block;
+		
+		.button-holder {
+			text-align: right;
+		}
+	}
+	
+	
+	
+	//Breadcrumb
+	@import url(breadcrumb.css);
+
+}
+
+// - - -
+
+@import url(custom_responsive.css);
+
+// tables
+
+
+#_22_WAR_esffitavportlet_esFgunUsersSearchContainer_col-9 {
+    width: 90px;
+}
+
+.gun_actions_button{
+	width: 85px;
+}

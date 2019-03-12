@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="it.ethica.esf.service.persistence.ESFUserFinder.findShooter">
+		Select eu.* from user_ u, esfuser eu where u.lastName like
+		? and u.firstName
+		like ? and u.userId in
+		(Select esfUserId from esfcard
+		c, esfentitystate e where esforganizationId in
+		(select organizationId
+		from organization_ o where o.treePath LIKE ?)
+		and
+		e.esfStateId = ? and
+		c.esfcardId = e.classPK and e.endDate is null and e.className
+		=
+		'it.ethica.esf.model.ESFCard' and c.code_ LIKE ?) and u.userId =
+		eu.esfUserId order by u.lastName, u.firstName, c.code_)
+	</sql>
+	
+	<sql id="it.ethica.esf.service.persistence.ESFUserFinder.findAllShooter">
+	select distinct test.* from (SELECT  eu.* FROM user_ u,esfuser eu,esfcard c,esfentitystate e,organization_ o WHERE 
+	u.userId = eu.esfUserId AND c.esfuserid=eu.esfUserId  AND c.esfcardId = e.classPK 
+	AND e.className = 'it.ethica.esf.model.ESFCard' AND c.esforganizationId=o.organizationId 
+ 	AND e.esfStateId = 1 AND u.lastName LIKE ? AND u.firstName LIKE ? AND o.treePath LIKE ? 
+ 	AND c.code_ LIKE ? 	order by u.lastName, u.firstName, c.code_) test 
+	</sql>
+
+	<sql
+		id="it.ethica.esf.service.persistence.ESFUserFinder.findShooterFiscalCode">
+		Select eu.* from user_ u, esfuser eu where u.lastName like ? and
+		u.firstName
+		like ? and eu.fiscalCode like ? and u.userId in
+		(Select
+		esfUserId from esfcard c, esfentitystate e where esforganizationId in
+		(select organizationId from organization_ o where o.treePath LIKE ?)
+		and
+		e.esfStateId = ? and c.esfcardId = e.classPK and e.endDate is null
+		and e.className
+		= 'it.ethica.esf.model.ESFCard' ) and u.userId =
+		eu.esfUserId
+		order by u.lastname, u.firstname, eu.fiscalCode
+	</sql>
+
+
+	<sql id="it.ethica.esf.service.persistence.ESFUserFinder.findShooterRole">
+		Select eu.* from esfuser eu, user_ u,esfcard c,
+		esfentitystate e, esfentitystate e1,
+		esfuseresfuserrole uur where
+		c.esforganizationId in
+		(select organizationId from organization_ o
+		where o.treePath LIKE ?)
+		and e.esfStateId = ? and e.className =
+		'it.ethica.esf.model.ESFCard' and
+		c.esfcardId = e.classPK and e.endDate
+		is null
+		and e1.esfStateId = ? and e1.className =
+		'it.ethica.esf.model.ESFUser'
+		and c.esfUserId = e1.classPK and
+		e1.endDate is null
+		and c.esfUserId= uur.esfUserId and
+		uur.esfUserRoleId= ? and eu.esfUserId= c.esfUserId
+		and u.userId =
+		eu.esfUserId
+		order by u.lastname, u.firstname, eu.fiscalCode
+	</sql>
+
+
+	
+	<sql
+		id="it.ethica.esf.service.persistence.ESFCardFinder.findCardByOrganizationId">
+		Select  c.* 
+		from fitav.esfentitystate e,  fitav.esfcard c,  fitav.organization_ o
+		where  
+		c.esfcardid = e.classPk  
+ 		and c.esforganizationid=o.organizationid
+        and e.classname = 'it.ethica.esf.model.ESFCard'
+        and e.endDate is null
+        and e.esfstateid= 1
+		and o.treePath like ?
+	
+	</sql>
+	
+	<sql
+		id="it.ethica.esf.service.persistence.ESFCardFinder.findCardByOrgId">
+		SELECT c.* 
+		FROM  
+			fitav.esfcard c , fitav.esfentitystate e
+		where 
+				c.esfCardId = e.classPK
+		and 	e.endDate is null
+		and 	e.esfStateId = ?
+		and 	c.esfOrganizationId = ?
+	
+	</sql>
+	
+	<sql
+		id="it.ethica.esf.service.persistence.ESFCardFinder.findCardByOrganizationIdFree">
+		Select  c.* 
+		from fitav.esfentitystate e,  fitav.esfcard c,  fitav.organization_ o
+		where  
+		c.esfcardid = e.classPk  
+ 		and c.esforganizationid=o.organizationid
+        and e.classname = 'it.ethica.esf.model.ESFCard'
+        and e.endDate is null
+        and e.esfstateid = 1
+        and c.esfuserid = 0
+		and o.treePath like ?
+	
+	</sql>
+	
+	<sql
+		id="it.ethica.esf.service.persistence.ESFCardFinder.findFreeCards">
+		Select  c.* 
+		from fitav.esfentitystate e,  fitav.esfcard c
+		where  
+		c.esfcardid = e.classPk  
+ 		
+        and e.classname = 'it.ethica.esf.model.ESFCard'
+        and e.endDate is null
+        and e.esfstateid = 1
+        and c.esfuserid = 0
+		and c.esfOrganizationId = 0
+	
+	</sql>
+	
+	<sql
+		id="it.ethica.esf.service.persistence.ESFCardFinder.findActualUserCards">
+		SELECT *
+		FROM fitav.esfcard
+		where fitav.esfcard.esfCardId in(	
+			SELECT e.classPK  
+			FROM fitav.esfentitystate e
+			where 
+			e.className = 'it.ethica.esf.model.ESFCard'
+			and e.esfStateId = 1
+			and e.endDate is null 
+			and e.classPK in(
+				select c.esfCardId 
+	    		FROM fitav.esfcard c
+	   			 where c.esfUserId = ?
+			)
+		)
+	</sql>
+	
+	
+	<sql
+		id="it.ethica.esf.service.persistence.ESFgunUserFinder.findRifleByKindShooter">
+		Select g.* 
+		from fitav.esfgunuser g,  fitav.user_ u
+		where  
+        u.userId = g.esfUserId
+        
+        and u.firstName like ?
+        and u.lastName like ?
+        and g.esfGunId = ?
+        and g.type_ = 1
+	
+	</sql>
+	
+	<sql
+		id="it.ethica.esf.service.persistence.ESFgunUserFinder.findRifleByShooter">
+		Select g.* 
+
+		from fitav.esfgunuser g,  fitav.user_ u
+		where  
+        u.userId = g.esfUserId
+        
+        and u.firstName like ?
+        and u.lastName like ?
+        and g.type_ = 1
+	
+	</sql>
+	
+	<sql
+		id="it.ethica.esf.service.persistence.ESFgunUserFinder.findCaneByKindShooter">
+		Select g.* 
+
+		from fitav.esfgunuser g,  fitav.user_ u, fitav.esfcane c
+		where  
+        u.userId = g.esfUserId
+        
+        and u.firstName like ?
+        and u.lastName like ?
+        and c.esfGunKindId = ?
+        and c.esfCaneId = g.esfGunId
+        and g.type_ = 2
+	
+	</sql>
+	
+	<sql
+		id="it.ethica.esf.service.persistence.ESFgunUserFinder.findCaneByShooter">
+		Select g.* 
+
+		from fitav.esfgunuser g,  fitav.user_ u, fitav.esfcane c
+		where  
+        u.userId = g.esfUserId
+        
+        and u.firstName like ?
+        and u.lastName like ?
+        and c.esfCaneId = g.esfGunId
+        and g.type_ = 2
+	
+	</sql>
+	
+	<sql
+		id="it.ethica.esf.service.persistence.ESFUserFinder.findShooterRoleName">
+		select  eu.*
+
+		from  fitav.esfuser eu  , fitav.user_ u
+	    
+	    
+		where 
+		eu.esfUserId = u.userId 
+	    
+	    and	u.firstName like ?
+	    and u.lastName like ?
+	    and eu.esfUserId in (
+    
+			select c.esfUserId
+			from esfcard c
+	        
+	        where 
+	        
+	        c.esfCardId in(
+        
+	        
+				select c.esfCardId 
+				
+			   from   esfentitystate e, esfentitystate e1
+			   where (
+			
+					e.esfStateId = 1
+					and e.className = 'it.ethica.esf.model.ESFCard'
+					and c.esfcardId = e.classPK 
+					and e.endDate is null 
+
+					and e1.esfStateId = 1 
+					and e1.className = 'it.ethica.esf.model.ESFUser'
+					and c.esfUserId = e1.classPK 
+					and e1.endDate is null
+                    
+			)
+			
+         )
+        
+	)
+    and eu.esfUserId not in(
+
+			select 
+		
+			ur.esfUserId from fitav.esfuseresfuserrole ur
+			where(
+			
+			ur.esfUserRoleId = ?
+			and ur.esfOrganizationId = ?
+			and endDate is null
+			
+			)
+        
+    )
+	</sql>
+	
+	<sql
+		id="it.ethica.esf.service.persistence.ESFUserFinder.findShooterRoleAssignedName">
+		select  eu.* 
+
+			from  fitav.esfuser eu , fitav.user_ u 
+			
+			where 
+				eu.esfUserId = u.userId 
+				and	u.firstName like ?
+			    and u.lastName like ?
+			    
+			    and eu.esfUserId in(
+				    select 
+				    ur.esfUserId from fitav.esfuseresfuserrole ur
+					where 	(ur.esfUserRoleId = ? 
+				    and ur.esfOrganizationId = ?
+				    and ur.endDate is null)
+			    )
+		
+	</sql>
+	
+	<sql
+		id="it.ethica.esf.service.persistence.ESFUserFinder.findStaffMatch">
+		
+		Select  u.* 
+
+		FROM fitav.esfuser u, fitav.user_ us
+
+		where 
+					u.esfUserId = us.userId
+			and 	upper(us.firstName) like upper(?)
+			and   	upper(us.lastName) like upper(?)
+			and 	upper(u.fiscalCode) like upper(?)
+			and 	u.esfUserId in(
+		       Select ur.esfUserId 
+		       FROM fitav.esfuseresfuserrole ur
+				where (
+						ur.endDate is null
+				and     ur.esfOrganizationId = ?
+				and 	ur.esfUserRoleId in (
+		                    select ru.esfUserRoleId
+		                    FROM  fitav.esfuserrole ru
+		                    where (
+								ru.isBDO = 0
+		                    )
+					)
+		       )
+		)
+			and u.esfUserId not in (		
+			       Select nd.esfUserId 
+			       FROM  fitav.esfnationaldelegation nd
+					where (
+						nd.esfMatchId = ?
+			        )
+		)
+	</sql>
+	
+	<sql
+		id="it.ethica.esf.service.persistence.ESFUserESFUserRoleFinder.findStaffRole">
+			SELECT ur.* 
+			FROM fitav.esfuseresfuserrole ur
+				where 
+					ur.esfUserId = ?
+					and	ur.endDate is null
+					and ur.esfUserRoleId in(
+    					SELECT ru.esfUserRoleId 
+    					FROM fitav.esfuserrole ru
+						where
+							ru.isBDO = 0
+					)
+	</sql>
+	
+	<sql
+		id="it.ethica.esf.service.persistence.ESFUserFinder.findStaffNormalMatch">
+			Select  u.* 
+
+			FROM fitav.esfuser u, fitav.user_ us
+
+			where 
+					u.esfUserId = us.userId
+				and 	upper(us.firstName) like upper(?)
+				and   	upper(us.lastName) like upper(?)
+				and 	upper(u.fiscalCode) like upper(?)
+				and 	u.esfUserId in(
+      				Select ur.esfUserId 
+     				FROM fitav.esfuseresfuserrole ur
+					where (
+							ur.endDate is null
+						and ur.esfUserRoleId in (
+                   			select ru.esfUserRoleId
+                    		FROM  fitav.esfuserrole ru
+                    		where (
+							ru.isBDO = 0
+                    		)
+						)
+       				)
+				)
+				and u.esfUserId not in (		
+       				Select p.esfUserId 
+       				FROM  fitav.esfpartecipant p
+					where (
+						p.esfMatchId = ?
+       				 )
+			)
+		
+		</sql>
+	
+	<sql
+		id="it.ethica.esf.service.persistence.ESFMatchFinder.findDelegationActiveMatch">
+		
+		SELECT m.* 
+		FROM fitav.esfmatch m
+		
+		where (
+     		 and  m.isNational = 1
+	 		 and  m.esfMatchId in (
+			
+	            SELECT nd.esfMatchId 
+				FROM fitav.esfnationaldelegation nd
+				where (
+						nd.esfUserId = ?
+				and		nd.esfPartecipantTypeId = 1
+	
+				)
+		)
+	)
+	</sql>
+	
+	
+	
+	<sql
+		id="it.ethica.esf.service.persistence.ESFCardFinder.findCardByUserState">
+		SELECT c.* FROM fitav.esfentitystate e,fitav.esfcard c,fitav.esfuser u 
+		WHERE c.esfcardid = e.classPk AND c.esfuserid = u.esfuserid 
+		AND e.classname = 'it.ethica.esf.model.ESFCard' aND endDate is null 
+		and esfStateId= ? and u.esfuserid= ?
+	</sql>
+	
+	
+	<sql
+		id="it.ethica.esf.service.persistence.ESFCardFinder.findLastCardByUser">
+		SELECT c.* FROM fitav.esfentitystate e,fitav.esfcard c
+		WHERE c.esfcardid = e.classPk AND e.classname = 'it.ethica.esf.model.ESFCard' 
+		and c.esfuserid= ? and esfStateId= 1 AND (endDate is null or endDate in(SELECT max(endDate) FROM fitav.esfentitystate e,fitav.esfcard c
+		WHERE c.esfcardid = e.classPk AND e.classname = 'it.ethica.esf.model.ESFCard' and
+		esfStateId= 1 AND endDate is not null and c.esfuserid= ?)) 
+	</sql>
+	
+</custom-sql>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="$root_css_class" dir="#language ("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<title>$the_title - $company_name</title>
+
+	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+
+	$theme.include($top_head_include)
+</head>
+
+<body class="$css_class">
+
+<span id="top"></span>
+
+<a href="#main-content" id="skip-to-content">#language ("skip-to-content")</a>
+
+$theme.include($body_top_include)
+
+#if ($show_dockbar)
+	#dockbar()
+#end
+
+<div class="navbar navbar-inverse navbar-static-top">
+	<div class="navbar-inner">
+		<a class="brand $logo_css_class" href="$site_default_url" title="#language_format ("go-to-x", [$site_name])">
+			<img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
+
+			#if ($theme.getSetting("show-site-name") == true)
+				<span class="site-name" title="#language_format ("go-to-x", [$site_name])">
+					$site_name
+				</span>
+			#end
+		</a>
+
+		#if ($has_navigation || $is_signed_in)
+			#parse ("$full_templates_path/navigation.vm")
+		#end
+	</div>
+</div>
+
+<div class="container-fluid" id="wrapper">
+	<div id="content">
+		#set ($show_breadcrumbs = $themeDisplay.getThemeSetting("show-breadcrumbs"))
+
+		##if ($show_breadcrumbs == true)
+			<nav id="breadcrumbs">#breadcrumbs()</nav>
+		##end
+
+		#if ($selectable)
+			$theme.include($content_include)
+		#else
+			$portletDisplay.recycle()
+
+			$portletDisplay.setTitle($the_title)
+
+			$theme.wrapPortlet("portlet.vm", $content_include)
+		#end
+	</div>
+
+</div>
+
+<footer id="footer" role="contentinfo">
+	<div class="footer-content">
+
+		#set ($temp_article_id = $themeDisplay.getThemeSetting("footer-id"))
+
+		#glarticle($temp_article_id)
+
+		#if ($temp_content.length() == 0 && $is_signed_in)
+			<span class="alert alert-error"> #language("no-web-content-was-found") </span>
+		#end
+
+	</div>
+</footer>
+
+$theme.include($body_bottom_include)
+
+$theme.include($bottom_include)
+
+</body>
+
+</html>
