@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="it.ethica.esf.model.ESFField">
+		<field name="uuid" type="String" />
+		<field name="esfFieldId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="ownerOrganizationId" type="long" />
+		<field name="esfAddressId" type="long" />
+	</model>
+	<model name="it.ethica.esf.model.ESFFieldESFSportType">
+		<field name="uuid" type="String" />
+		<field name="esfFieldId" type="long" />
+		<field name="esfSportTypeId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="it.ethica.esf.model.ESFSportType">
+		<field name="uuid" type="String" />
+		<field name="esfSportTypeId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="description" type="String" />
+	</model>
+</model-hints>

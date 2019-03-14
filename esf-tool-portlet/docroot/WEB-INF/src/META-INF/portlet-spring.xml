@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="it.ethica.esf.service.ESFToolLocalService" class="it.ethica.esf.service.impl.ESFToolLocalServiceImpl" />
+	<bean id="it.ethica.esf.service.persistence.ESFToolPersistence" class="it.ethica.esf.service.persistence.ESFToolPersistenceImpl" parent="basePersistence" />
+	<bean id="it.ethica.esf.service.ESFToolRelLocalService" class="it.ethica.esf.service.impl.ESFToolRelLocalServiceImpl" />
+	<bean id="it.ethica.esf.service.persistence.ESFToolRelPersistence" class="it.ethica.esf.service.persistence.ESFToolRelPersistenceImpl" parent="basePersistence" />
+</beans>

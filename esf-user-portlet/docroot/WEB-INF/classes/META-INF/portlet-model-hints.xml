@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="it.ethica.esf.model.ESFUser">
+		<field name="uuid" type="String" />
+		<field name="esfUserId" type="long" />
+		<field name="code" type="String" />
+		<field name="firstName" type="String" />
+		<field name="lastName" type="String" />
+		<field name="screenName" type="String" />
+		<field name="userEmail" type="String" />
+		<field name="birthday" type="Date" />
+	</model>
+	<model name="it.ethica.esf.model.ESFUserESFUserRole">
+		<field name="esfUserRoleId" type="long" />
+		<field name="esfUserId" type="long" />
+		<field name="esfOrganizationId" type="long" />
+		<field name="startDate" type="Date" />
+		<field name="endDate" type="Date" />
+	</model>
+	<model name="it.ethica.esf.model.ESFUserRole">
+		<field name="uuid" type="String" />
+		<field name="esfUserRoleId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="description" type="String" />
+		<field name="isBDO" type="boolean" />
+		<field name="isLEA" type="boolean" />
+	</model>
+</model-hints>

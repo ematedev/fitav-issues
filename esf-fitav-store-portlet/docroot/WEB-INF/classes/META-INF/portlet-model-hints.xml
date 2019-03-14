@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.ethica.esf.model.ESFArticle">
+		<field name="esfArticleId" type="long" />
+		<field name="code" type="String">
+			<hint name="max-length">256</hint>
+		</field>
+		<field name="name" type="String">
+			<hint name="max-length">256</hint>
+		</field>
+		<field name="description" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="esfArticleTypeId" type="long" />
+		<field name="xxxlQty" type="long" />
+		<field name="xxlQty" type="long" />
+		<field name="xlQty" type="long" />
+		<field name="lQty" type="long" />
+		<field name="mQty" type="long" />
+		<field name="sQty" type="long" />
+		<field name="xsQty" type="long" />
+		<field name="xxsQty" type="long" />
+		<field name="otherQty" type="long" />
+		<field name="price" type="double" />
+		<field name="tax" type="double" />
+		<field name="sale" type="double" />
+	</model>
+	<model name="com.ethica.esf.model.ESFArticleDelivered">
+		<field name="esfArticleDeliveredId" type="long" />
+		<field name="data" type="Date" />
+		<field name="description" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="esfArticleId" type="long" />
+		<field name="esfShooterId" type="long" />
+		<field name="xxxlQty" type="long" />
+		<field name="xxlQty" type="long" />
+		<field name="xlQty" type="long" />
+		<field name="lQty" type="long" />
+		<field name="mQty" type="long" />
+		<field name="sQty" type="long" />
+		<field name="xsQty" type="long" />
+		<field name="xxsQty" type="long" />
+		<field name="otherQty" type="long" />
+	</model>
+	<model name="com.ethica.esf.model.ESFArticleType">
+		<field name="esfArticleTypeId" type="long" />
+		<field name="description" type="String">
+			<hint name="max-length">256</hint>
+		</field>
+		<field name="department" type="String">
+			<hint name="max-length">256</hint>
+		</field>
+		<field name="area" type="String">
+			<hint name="max-length">256</hint>
+		</field>
+	</model>
+	<model name="com.ethica.esf.model.ESFOrder">
+		<field name="esfOrderId" type="long" />
+		<field name="code" type="String">
+			<hint name="max-length">256</hint>
+		</field>
+		<field name="data" type="Date" />
+		<field name="description" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="esfStockistId" type="long" />
+		<field name="qty" type="long" />
+		<field name="esfArticleId" type="long" />
+	</model>
+	<model name="com.ethica.esf.model.ESFStockist">
+		<field name="esfStockistId" type="long" />
+		<field name="name" type="String">
+			<hint name="max-length">256</hint>
+		</field>
+		<field name="email" type="String">
+			<hint name="max-length">256</hint>
+		</field>
+		<field name="phone" type="String">
+			<hint name="max-length">256</hint>
+		</field>
+		<field name="address" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="nameReference" type="String">
+			<hint name="max-length">256</hint>
+		</field>
+		<field name="lastNameReference" type="String">
+			<hint name="max-length">256</hint>
+		</field>
+		<field name="emailReference" type="String">
+			<hint name="max-length">256</hint>
+		</field>
+		<field name="phoneReference" type="String">
+			<hint name="max-length">256</hint>
+		</field>
+		<field name="description" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="other" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+	</model>
+</model-hints>

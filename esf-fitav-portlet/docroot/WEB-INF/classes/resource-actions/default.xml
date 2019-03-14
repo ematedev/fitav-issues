@@ -1,0 +1,1517 @@
+<?xml version="1.0"?>
+<!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 6.2.0//EN"
+"http://www.liferay.com/dtd/liferay-resource-action- mapping_6_2_0.dtd">
+
+<resource-action-mapping>
+	<!-- it.ethica.esf.model.ESFUser / ESFUserAdmin =1 -->
+	<portlet-resource>
+		<portlet-name>1</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported />
+		</permissions>
+	</portlet-resource>
+
+	<!-- it.ethica.esf.model.ESFOrganization / ESFOrganizationAdmin =2 -->
+	<portlet-resource>
+		<portlet-name>2</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported />
+		</permissions>
+	</portlet-resource>
+	
+		<!-- it.ethica.esf.model.ESFUserRoleModel / ESFUserRole =3 -->
+	<portlet-resource>
+		<portlet-name></portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported />
+		</permissions>
+	</portlet-resource>
+	
+	<!-- it.ethica.esf.model.ESFSportTupeModel / ESFSportTupe =4 -->
+	<portlet-resource>
+		<portlet-name></portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported />
+		</permissions>
+	</portlet-resource>
+
+	<!-- it.ethica.esf.model.ESField / ESFField =5 -->
+	<portlet-resource>
+		<portlet-name>5</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported />
+		</permissions>
+	</portlet-resource>
+
+	<!-- it.ethica.esf.model.ESCard / ESFCardPortlet =6 -->
+	<portlet-resource>
+		<portlet-name>6</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported />
+		</permissions>
+	</portlet-resource>
+
+	<!-- it.ethica.esf.model.ESFUserRole / ESFBdoadmin =8 -->
+	<portlet-resource>
+		<portlet-name>9</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported />
+		</permissions>
+	</portlet-resource>
+
+	<!-- it.ethica.esf.model.ESFOrganization / ESFOrganizationDisplay =9 -->
+	<portlet-resource>
+		<portlet-name>10</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported />
+		</permissions>
+	</portlet-resource>
+
+	<!-- it.ethica.esf.model.ESFUser / ESFShooterPortlet =11 -->
+	<portlet-resource>
+		<portlet-name>11</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported />
+		</permissions>
+	</portlet-resource>
+	
+		<!-- it.ethica.esf.model.ESFUnitService / ESFUnitService =14 -->
+	<portlet-resource>
+		<portlet-name>11</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported />
+		</permissions>
+	</portlet-resource>
+
+	<!-- it.ethica.esf.model.ESOrganizationUnitService / ESOrganizationUnitServicePortlet 
+		=15 -->
+	<portlet-resource>
+		<portlet-name>15</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported />
+		</permissions>
+	</portlet-resource>
+	
+	<!-- it.ethica.esf.model.ESFConfigurationState / ESFConfigurationState =16 -->
+	<portlet-resource>
+		<portlet-name>16</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported />
+		</permissions>
+	</portlet-resource>
+	
+	
+		<!-- it.ethica.esf.model.ESFGun / ESFGunPortlet 
+		=17 -->
+	<portlet-resource>
+		<portlet-name>17</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported />
+		</permissions>
+	</portlet-resource>
+		<!-- it.ethica.esf.model.ESFGuncategorization/ ESFGuncategorizationPortlet =18 -->
+	<portlet-resource>
+		<portlet-name>18</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported />
+		</permissions>
+	</portlet-resource>
+	
+	<!-- it.ethica.esf.model.ESFShooterCategory / ESFShooterCategoryPortlet 
+		=23 -->
+	<portlet-resource>
+		<portlet-name>23</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported />
+		</permissions>
+	</portlet-resource>
+	
+	<!-- it.ethica.esf.model.ESfShooterQualification / ESfShooterQualification =24 -->
+	<portlet-resource>
+		<portlet-name>25</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported />
+		</permissions>
+	</portlet-resource>
+
+	<!-- it.ethica.esf.model.ESMatch / ESFNormalMatch =25 -->
+	<portlet-resource>
+		<portlet-name>25</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported />
+		</permissions>
+	</portlet-resource>
+	
+	<!-- it.ethica.esf.model.ESFBrandModel / ESFBrand =26 -->
+	<portlet-resource>
+		<portlet-name>27</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported />
+		</permissions>
+	</portlet-resource>
+	
+	<!-- it.ethica.esf.model.ESFElectronicModel / ESFElectronic =27 -->
+	<portlet-resource>
+		<portlet-name>27</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported />
+		</permissions>
+	</portlet-resource>
+	
+		<!-- it.ethica.esf.model.ESFMatchTypeModel / ESFMatchType =29 -->
+	<portlet-resource>
+		<portlet-name>29</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported />
+		</permissions>
+	</portlet-resource>
+
+	<!-- it.ethica.esf.model.ESMatch / ESFNationalMatch =30 -->
+	<portlet-resource>
+		<portlet-name>30</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported />
+		</permissions>
+	</portlet-resource>
+	
+		<!-- it.ethica.esf.model.ESFDescriptionmodel / ESFDescription =33 -->
+	<portlet-resource>
+		<portlet-name>33</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported />
+		</permissions>
+	</portlet-resource>
+
+	<!-- it.ethica.esf.portlet.ESFFederaLRolePortlet -->
+	<portlet-resource>
+		<portlet-name>esf-federal-role</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported />
+		</permissions>
+	</portlet-resource>
+	<!-- it.ethica.esf.model.ESUser / ESFNationalDelegation =39 -->
+	<portlet-resource>
+		<portlet-name>39</portlet-name>
+		<permissions>
+			<supports>
+				<action-key>ADD_TO_PAGE</action-key>
+				<action-key>VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+				<action-key>VIEW</action-key>
+			</site-member-defaults>
+			<guest-defaults>
+				<action-key>VIEW</action-key>
+			</guest-defaults>
+			<guest-unsupported />
+		</permissions>
+	</portlet-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfuseradmins</model-name>
+		<portlet-ref>
+			<portlet-name>1</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFUSERADMIN_ADD</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+				<action-key>ESFUSERADMIN_ADD</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.ESFUser</model-name>
+		<portlet-ref>
+			<portlet-name>1</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFUSERADMIN_UPDATE</action-key>
+				<action-key>ESFUSERADMIN_VIEW</action-key>
+				<action-key>ESFUSERADMIN_ASSIGN_CARD</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+				<action-key>ESFUSERADMIN_UPDATE</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esforganizations</model-name>
+		<portlet-ref>
+			<portlet-name>2</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFORGANIZATIONADMIN_ADD</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+				<action-key>ESFORGANIZATIONADMIN_ADD</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.ESFOrganization</model-name>
+		<portlet-ref>
+			<portlet-name>2</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFORGANIZATIONADMIN_VIEW</action-key>
+				<action-key>ESFORGANIZATIONADMIN_VIEW_CHILD</action-key>
+				<action-key>ESFORGANIZATIONADMIN_UPDATE_INFO</action-key>
+				<action-key>ESFORGANIZATIONADMIN_VIEW_ACTION</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+				<action-key></action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+	
+		<model-resource>
+		<model-name>it.ethica.esf.model.esfuserrolemodel</model-name>
+		<portlet-ref>
+			<portlet-name>3</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFUSERROLE_ADD</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+				<action-key>ESFUSERROLE_ADD</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfuserrole</model-name>
+		<portlet-ref>
+			<portlet-name>3</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFUSERROLE_VIEWACTION</action-key>
+				<action-key>ESFUSERROLE_EDIT</action-key>
+				<action-key>ESFUSERROLE_STATE</action-key>
+				<action-key>ESFUSERROLE_ASSIGN</action-key>
+				<action-key>ESFUSERROLE_PERMISSION</action-key>
+				<action-key>ESFUSERROLE_DEFINEPERMISSION</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+				<action-key></action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+	
+		<model-resource>
+		<model-name>it.ethica.esf.model.esfsporttypemodel</model-name>
+		<portlet-ref>
+			<portlet-name>4</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFSPORTTYPE_ADD</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+				<action-key>ESFSPORTTYPE_ADD</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfsporttype</model-name>
+		<portlet-ref>
+			<portlet-name>4</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFSPORTTYPE_VIEW_ACTION</action-key>
+				<action-key>ESFSPORTTYPE_UPDATE</action-key>
+				<action-key>ESFSPORTTYPE_DELETE</action-key>
+				<action-key>ESFSPORTTYPE_PERMISSION</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esffields</model-name>
+		<portlet-ref>
+			<portlet-name>5</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFFIELD_ADD</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+				<action-key>ESFFIELD_ADD</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.ESFField</model-name>
+		<portlet-ref>
+			<portlet-name>5</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFFIELD_VIEW_ACTION_ENABLE</action-key>
+				<action-key>ESFFIELD_VIEW_ACTION_DISABLE</action-key>
+				<action-key>ESFFIELD_UPDATE</action-key>
+				<action-key>ESFFIELD_GIVEWAY</action-key>
+				<action-key>ESFFIELD_RETURN_GIVEWAY</action-key>
+				<action-key>ESFFIELD_UPDATE_STATE</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfcards</model-name>
+		<portlet-ref>
+			<portlet-name>6</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFCARD_CREATE</action-key>
+				<action-key>ESFCARD_ASSIGN</action-key>
+				<action-key>ESFCARD_SELECT</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+				<action-key>ESFCARD_CREATE</action-key>
+				<action-key>ESFCARD_ASSIGN</action-key>
+				<action-key>ESFCARD_SELECT</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.ESFCard</model-name>
+		<portlet-ref>
+			<portlet-name>6</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFCARD_VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfbdos</model-name>
+		<portlet-ref>
+			<portlet-name>8</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfbdo</model-name>
+		<portlet-ref>
+			<portlet-name>8</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFBDO_UPDATE</action-key>
+				<action-key>ESFBDO_UPDATE_ADD</action-key>
+				<action-key>ESFBDO_UPDATE_REMOVE</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esforganizationdisplays</model-name>
+		<portlet-ref>
+			<portlet-name>9</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esforganizationdisplay</model-name>
+		<portlet-ref>
+			<portlet-name>9</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFORGANIZATIONDISPLAY_UPDATE</action-key>
+				<action-key>ESFORGANIZATIONDISPLAY_UPDATE_CODE</action-key>
+				<action-key>ESFORGANIZATIONDISPLAY_UPDATE_NAME</action-key>
+				<action-key>ESFORGANIZATIONDISPLAY_UPDATE_ADDRESS_FIELD</action-key>
+				<action-key>ESFORGANIZATIONDISPLAY_UPDATE_ADDRESS_LEGAL</action-key>
+				<action-key>ESFORGANIZATIONDISPLAY_UPDATE_ADDRESS_MAIL</action-key>
+				<action-key>ESFORGANIZATIONDISPLAY_UPDATE_AFFILIATION</action-key>
+				<action-key>ESFORGANIZATIONDISPLAY_UPDATE_FISCAL_CODE</action-key>
+				<action-key>ESFORGANIZATIONDISPLAY_UPDATE_STATE</action-key>
+				<action-key>ESFORGANIZATIONDISPLAY_UPDATE_CONI</action-key>
+				<action-key>ESFORGANIZATIONDISPLAY_UPDATE_MORE_DEATILS</action-key>
+				<action-key>ESFORGANIZATIONDISPLAY_UPDATE_ASSOCIATED_COMPANY</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfsportassociations</model-name>
+		<portlet-ref>
+			<portlet-name>10</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFSPORTASSOCIATOIN_ADD</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+				<action-key>ESFSPORTASSOCIATOIN_ADD</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfsportassociation</model-name>
+		<portlet-ref>
+			<portlet-name>10</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFSPORTASSOCIATOIN_VIEW</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfshooters</model-name>
+		<portlet-ref>
+			<portlet-name>11</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFSHOOTER_ADD</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+				<action-key>ESFSHOOTER_ADD</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfshooter</model-name>
+		<portlet-ref>
+			<portlet-name>11</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFSHOOTER_VIEW</action-key>
+				<action-key>ESFSHOOTER_UPDATE</action-key>
+				<action-key>ESFSHOOTER_DOC_ADD</action-key>
+				<action-key>ESFSHOOTER_DOC_UPDATE</action-key>
+				<action-key>ESFSHOOTER_GUN_ADD </action-key>
+				<action-key>ESFSHOOTER_GUN_VIEW_ACTION</action-key>
+				<action-key>ESFSHOOTER_GUN_UPDATE</action-key>
+				<action-key>ESFSHOOTER_GUN_DELETE</action-key>
+				<action-key>ESFSHOOTER_GUN_CANE_ADD</action-key>
+				<action-key>ESFSHOOTER_GUN_CANE_VIEW_ACTION</action-key>
+				<action-key>ESFSHOOTER_GUN_CANE_UPDATE</action-key>
+				<action-key>ESFSHOOTER_GUN_CANE_DELETE</action-key>
+				<action-key>ESFSHOOTER_GUN_CATRIDGE_ADD</action-key>
+				<action-key>ESFSHOOTER_GUN_CATRIDGE_VIEW_ACTION</action-key>
+				<action-key>ESFSHOOTER_GUN_CATRIDGE_DELETE</action-key>
+				<action-key>ESFSHOOTER_ROLE_VIEW_ACTION</action-key>
+				<action-key>ESFSHOOTER_ROLE_ASSIGN</action-key>
+				<action-key>ESFSHOOTER_ROLE_DELETE</action-key>
+				<action-key>ESFSHOOTER_CHANGE_CARD</action-key>
+				<action-key>ESFSHOOTER_REMOVE_CARD</action-key>
+				<action-key>ESFSHOOTER_VIEW_CURRICULUM</action-key>
+
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+	
+		<model-resource>
+		<model-name>it.ethica.esf.model.esfunitservicesmodel</model-name>
+		<portlet-ref>
+			<portlet-name>14</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFUNITSERVICE_ADD</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+				<action-key>ESFUNITSERVICE_ADD</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.ESFUnitservice</model-name>
+		<portlet-ref>
+			<portlet-name>14</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFUNITSERVICE_VIEW_ACTION</action-key>
+				<action-key>ESFUNITSERVICE_UPDATE</action-key>
+				<action-key>ESFUNITSERVICE_DELETE</action-key>
+				<action-key>ESFUNITSERVICE_PERMISSION</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esforganizationunitservices</model-name>
+		<portlet-ref>
+			<portlet-name>15</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFORGANIZATIONUNITSERVICE_ADD</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+				<action-key>ESFORGANIZATIONUNITSERVICE_ADD</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.ESFOrganizationUnitservice</model-name>
+		<portlet-ref>
+			<portlet-name>15</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFORGANIZATIONUNITSERVICE_VIEW_ACTION</action-key>
+				<action-key>ESFORGANIZATIONUNITSERVICE_UPDATE</action-key>
+				<action-key>ESFORGANIZATIONUNITSERVICE_DELETE</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfconfigurationstatemodel</model-name>
+		<portlet-ref>
+			<portlet-name>16</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFCONFIGURATIONSTATE_ADD</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+				<action-key>ESFCONFIGURATIONSTATE_ADD</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.ESFConfigurationState</model-name>
+		<portlet-ref>
+			<portlet-name>16</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFCONFIGURATIONSTATE_VIEW_ACTION</action-key>
+				<action-key>ESFCONFIGURATIONSTATE_UPDATE</action-key>
+				<action-key>ESFCONFIGURATIONSTATE_DELETE</action-key>
+				<action-key>ESFCONFIGURATIONSTATE_ASSIGN</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfgun</model-name>
+		<portlet-ref>
+			<portlet-name>17</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFGUN_ADD</action-key>
+				<action-key>ESFGUNCATEGORIZTION_ADD</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+				<action-key>ESFGUN_ADD</action-key>
+				<action-key>ESFGUNCATEGORIZTION_ADD</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+	
+		<model-resource>
+		<model-name>it.ethica.esf.model.ESFGun</model-name>
+		<portlet-ref>
+			<portlet-name>17</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFGUN_VIEW_ACTION</action-key>
+				<action-key>ESFGUN_UPDATE</action-key>
+				<action-key>ESFGUN_DELETE</action-key>
+				<action-key>ESFGUN_ASSIGN</action-key>
+				<action-key>ESFGUN_PERMISSION</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfguncategorization</model-name>
+		<portlet-ref>
+			<portlet-name>18</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFGUNCATEGORIZZATION_ADD</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+				<action-key>ESFGUNCATEGORIZZATION_ADD</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+	
+		<model-resource>
+		<model-name>it.ethica.esf.model.ESFGunCategorizationPortlet</model-name>
+		<portlet-ref>
+			<portlet-name>18</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFGUNCATEGORIZZATION__ACTION_VIEW</action-key>
+				<action-key>ESFGUNCATEGORIZZATION__UPDATE</action-key>
+				<action-key>ESFGUNCATEGORIZZATION__DELETE</action-key>
+				<action-key>ESFGUNCATEGORIZZATION__VIEW</action-key>
+				<action-key>ESFGUNCATEGORIZZATION__PERMISSION</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfshootercategory</model-name>
+		<portlet-ref>
+			<portlet-name>23</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFSHOOTERCATEGORY_ADD</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+				<action-key>ESFSHOOTERCATEGORY_ADD</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+	
+		<model-resource>
+		<model-name>it.ethica.esf.model.ESFShooterCategory</model-name>
+		<portlet-ref>
+			<portlet-name>23</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFSHOOTERCATEGORY_ACTION_VIEW</action-key>
+				<action-key>ESFSHOOTERCATEGORY_UPDATE</action-key>
+				<action-key>ESFSHOOTERCATEGORY_DELETE</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+	
+		<model-resource>
+		<model-name>it.ethica.esf.model.esfshooterqualificationmodel</model-name>
+		<portlet-ref>
+			<portlet-name>24</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFSHOOTERQUALIFICATION_ADD</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+				<action-key>ESFSHOOTERQUALIFICATION_ADD</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfshooterqualification</model-name>
+		<portlet-ref>
+			<portlet-name>24</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFSHOOTERQUALIFICATION_VIEW_ACTION</action-key>
+				<action-key>ESFSHOOTERQUALIFICATION_UPDATE</action-key>
+				<action-key>ESFSHOOTERQUALIFICATION_DELETE</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfnormalmatchs</model-name>
+		<portlet-ref>
+			<portlet-name>25</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFNORMALMATCH_ADD</action-key>
+				<action-key>ESFNORMALMATCH_MATCHTYPE_ADD</action-key>
+				<action-key>ESFNORMALMATCH_DESCRIPTION_ADD</action-key>
+				<action-key>ESFNORMALMATCH_UPDATE</action-key>
+				
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+				<action-key>ESFNORMALMATCH_ADD</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfnormalmatch</model-name>
+		<portlet-ref>
+			<portlet-name>25</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFNORMALMATCH_ADD</action-key>
+				<action-key>ESFNORMALMATCH_VIEW_ACTION</action-key>
+				<action-key>ESFNORMALMATCH_VIEW</action-key>
+				<action-key>ESFNORMALMATCH_VIEW_STAFF</action-key>
+				<action-key>ESFNORMALMATCH_UPDATE_STAFF_ADD</action-key>
+				<action-key>ESFNORMALMATCH_UPDATE_STAFF_REMOVE</action-key>
+				<action-key>ESFNORMALMATCH_VIEW_RESULT</action-key>
+				<action-key>ESFNORMALMATCH_DELETE</action-key>
+				<action-key>ESFNORMALMATCH_MATCHTYPE_ADD</action-key>
+				<action-key>ESFNORMALMATCH_DESCRIPTION_ADD</action-key>
+				<action-key>ESFNORMALMATCH_UPDATE</action-key>
+				<action-key>ESFNORMALMATCH_UPLOAD_RESULT</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+	
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfbrandmodel</model-name>
+		<portlet-ref>
+			<portlet-name>26</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFBRAND_ADD</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+				<action-key>ESFBRAND_ADD</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfbrand</model-name>
+		<portlet-ref>
+			<portlet-name>26</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFBRAND_VIEW_ACTION</action-key>
+				<action-key>ESFBRAND_UPDATE</action-key>
+				<action-key>ESFBRAND_DELETE</action-key>
+				<action-key>ESFBRAND_PERMISSION</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+		
+		<model-resource>
+		<model-name>it.ethica.esf.model.esfelectronicmodel</model-name>
+		<portlet-ref>
+			<portlet-name>27</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFELECTRONIC_ADD</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+				<action-key>ESFELECTRONIC_ADD</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfelectronic</model-name>
+		<portlet-ref>
+			<portlet-name>27</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFELECTRONIC_VIEW_ACTION</action-key>
+				<action-key>ESFELECTRONIC_UPDATE</action-key>
+				<action-key>ESFELECTRONIC_DELETE</action-key>
+				<action-key>ESFELECTRONIC_PERMISSION</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+	
+			<model-resource>
+		<model-name>it.ethica.esf.model.esfmatchtypemodel</model-name>
+		<portlet-ref>
+			<portlet-name>29</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFMATCHTYPE_ADD</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+				<action-key>ESFMATCHTYPE_ADD</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfmatchtype</model-name>
+		<portlet-ref>
+			<portlet-name>29</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFMATCHTYPE_VIEW_ACTION</action-key>
+				<action-key>ESFMATCHTYPE_UPDATE</action-key>
+				<action-key>ESFMATCHTYPE_DELETE</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+	
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfnationalmatchs</model-name>
+		<portlet-ref>
+			<portlet-name>30</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFNATIONALMATCH_ADD</action-key>
+				<action-key>ESFNATIONALMATCH_ADD_EX_SHOOTER_DOUBLE_TRAP</action-key>
+				<action-key>ESFNATIONALMATCH_ADD_EX_SHOOTER_SKEET</action-key>
+				<action-key>ESFNATIONALMATCH_ADD_EX_SHOOTER_FOSSA_OLIMPICA</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+				<action-key>ESFNATIONALMATCH_ADD</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfnationalmatch</model-name>
+		<portlet-ref>
+			<portlet-name>30</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFNATIONALMATCH_VIEW_ACTION</action-key>
+				<action-key>ESFNATIONALMATCH_VIEW_MATCH</action-key>
+				<action-key>ESFNATIONALMATCH_UPLOAD_FILE</action-key>
+				<action-key>ESFNATIONALMATCH_VIEW_ADD_DESCRIPTION</action-key>
+				<action-key>ESFNATIONALMATCH_VIEW_ADD_MATCH_TYPE</action-key>
+				<action-key>ESFNATIONALMATCH_VIEW_ADD_ASSOCIATION</action-key>
+				<action-key>ESFNATIONALMATCH_VIEW_DELETE_ASSOCIATION</action-key>
+				<action-key>ESFNATIONALMATCH_UPDATE</action-key>
+				<action-key>ESFNATIONALMATCH_VIEW_STAFF</action-key>
+				<action-key>ESFNATIONALMATCH_EDIT_STAFF</action-key>
+				<action-key>ESFNATIONALMATCH_DELETE_STAFF</action-key>
+				<action-key>ESFNATIONALMATCH_VIEW_RESULT</action-key>
+				<action-key>ESFNATIONALMATCH_UPDATE_RESULT</action-key>
+				<action-key>ESFNATIONALMATCH_VIEW_SHOOTER</action-key>
+				<action-key>ESFNATIONALMATCH_EDIT_SHOOTER_DELETE</action-key>
+				<action-key>ESFNATIONALMATCH_EDIT_SHOOTER_ADD</action-key>
+				<action-key>ESFNATIONALMATCH_EDIT_SHOOTER_ADD_DOC</action-key>
+				<action-key>ESFNATIONALMATCH_EDIT_SHOOTER_UPDATE</action-key>
+				<action-key>ESFNATIONALMATCH_EDIT_SHOOTER_CHANGE_CARD</action-key>
+				<action-key>ESFNATIONALMATCH_VIEW_NATIONAL_SHOOTER</action-key>
+				<action-key>ESFNATIONALMATCH_EDIT_NATIONAL_SHOOTER_DELETE</action-key>
+				<action-key>ESFNATIONALMATCH_EDIT_NATIONAL_SHOOTER_ADD</action-key>
+				<action-key>ESFNATIONALMATCH_DELETE</action-key>
+				<action-key>ESFNATIONALMATCH_MANAGEMENT</action-key>
+				<action-key>ESFNATIONALMATCH_UPDATE_ITINERARY</action-key>
+				<action-key>ESFNATIONALMATCH_ITINERARY_ADD_DEPARTURE</action-key>
+				<action-key>ESFNATIONALMATCH_ITINERARY_UPDATE_DEPARTURE</action-key>
+				<action-key>ESFNATIONALMATCH_ITINERARY_DELETE_DEPARTURE</action-key>
+				<action-key>ESFNATIONALMATCH_ITINERARY_DELETE_USER_FROM_DEPARTURE</action-key>
+				<action-key>ESFNATIONALMATCH_ITINERARY_ADD_USER_FROM_DEPARTURE</action-key>
+				<action-key>ESFNATIONALMATCH_ITINERARY_ADD_AIRPORT</action-key>
+				<action-key>ESFNATIONALMATCH_ITINERARY_ADD_ITINERARY</action-key>
+				<action-key>ESFNATIONALMATCH_DOC_UPDATE</action-key>
+				<action-key>ESFNATIONALMATCH_ROLE_DELETE</action-key>
+				<action-key>ESFNATIONALMATCH_ROLE_VIEW_ACTION</action-key>
+				<action-key>ESFNATIONALMATCH_ROLE_ASSIGN</action-key>
+				<action-key>ESFNATIONALMATCH_GUN_ADD</action-key>
+				<action-key>ESFNATIONALMATCH_GUN_CANE_ADD</action-key>
+				<action-key>ESFNATIONALMATCH_GUN_CATRIDGE_ADD</action-key>
+				<action-key>ESFNATIONALMATCH_GUN_VIEW</action-key>
+				<action-key>ESFNATIONALMATCH_GUN_CANE_VIEW</action-key>
+				<action-key>ESFNATIONALMATCH_GUN_CATRIDGE_VIEW</action-key>
+				<action-key>ESFNATIONALMATCH_GENERATE_DOCUEMNT</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+	
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfdescriptionmodel</model-name>
+		<portlet-ref>
+			<portlet-name>33</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFDESCRIPTION_ADD</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+				<action-key>ESFDESCRIPTION_ADD</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfdescription</model-name>
+		<portlet-ref>
+			<portlet-name>33</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFDESCRIPTION_VIEW_ACTION</action-key>
+				<action-key>ESFDESCRIPTION_DELETE</action-key>
+				<action-key>ESFDESCRIPTION_UPDATE</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfnationaldelegations</model-name>
+		<portlet-ref>
+			<portlet-name>39</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFNATIONALDELEGATION_ADD</action-key>
+				<action-key>ESFNATIONALDELEGATION_ADD_EX_SHOOTER_DOUBLE_TRAP</action-key>
+				<action-key>ESFNATIONALDELEGATION_ADD_EX_SHOOTER_FOSSA_OLIMPICA__TRAP</action-key>
+				<action-key>ESFNATIONALDELEGATION_ADD_EX_SHOOTER_SKEET</action-key>
+				<action-key>ESFNATIONALDELEGATION_VIEW_ACTION</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+				<action-key>ESFNATIONALDELEGATION_ADD</action-key>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfnationaldelegation</model-name>
+		<portlet-ref>
+			<portlet-name>39</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFNATIONALDELEGATION_VIEW</action-key>
+				<action-key>ESFNATIONALDELEGATION_UPDATE</action-key>
+				<action-key>ESFNATIONALDELEGATION_ADD_EX_SHOOTER</action-key>
+				<action-key>ESFNATIONALDELEGATION_SHOOTER_VIEW</action-key>
+				<action-key>ESFNATIONALDELEGATION_SHOOTER_UPDATE</action-key>
+				<action-key>ESFNATIONALDELEGATION_SHOOTER_UPDATE_CARD</action-key>
+				<action-key>ESFNATIONALDELEGATION_UPDATE_START_END_DATE </action-key>
+				<action-key>ESFNATIONALDELEGATION_UPDATE_DELIBEDELIB_DATE</action-key>
+				<action-key>ESFNATIONALDELEGATION_DELETE</action-key>
+				<action-key>ESFNATIONALDELEGATION_VIEW_ACTION</action-key>
+				<action-key>ESFNATIONALDELEGATION_DOC_ADD</action-key>
+				<action-key>ESFNATIONALDELEGATION_DOC_UPDATE</action-key>
+				<action-key>ESFNATIONALDELEGATION_ROLE_DELETE</action-key>
+				<action-key>ESFNATIONALDELEGATION_ROLE_VIEW_ACTION</action-key>
+				<action-key>ESFNATIONALDELEGATION_ROLE_ASSIGN</action-key>
+				<action-key>ESFNATIONALDELEGATION_GUN_ADD</action-key>
+				<action-key>ESFNATIONALDELEGATION_GUN_CANE_ADD</action-key>
+				<action-key>ESFNATIONALDELEGATION_GUN_CATRIDGE_ADD</action-key>
+				<action-key>ESFNATIONALDELEGATION_GUN_VIEW</action-key>
+				<action-key>ESFNATIONALDELEGATION_GUN_CANE_VIEW</action-key>
+				<action-key>ESFNATIONALDELEGATION_GUN_CATRIDGE_VIEW</action-key>
+				<action-key>ESFNATIONALDELEGATION_ADD_EX_SHOOTER_DOUBLE_TRAP </action-key>
+				<action-key>ESFNATIONALDELEGATION_ADD_EX_SHOOTER_FOSSA_OLIMPICA</action-key>
+				<action-key>ESFNATIONALDELEGATION_ADD_EX_SHOOTER_SKEET</action-key>
+				<action-key>ESFNATIONALDELEGATION_ADD</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults>
+			</guest-defaults>
+			<guest-unsupported>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.esfnationalPass</model-name>
+		<portlet-ref>
+			<portlet-name>47</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ESFGENERATE_PASS</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+	<model-resource>
+		<model-name>it.ethica.esf.model.ESFFederalRole</model-name>
+		<portlet-ref>
+			<portlet-name>esf-federal-role</portlet-name>
+		</portlet-ref>
+		<permissions>
+			<supports>
+				<action-key>ADD</action-key>
+				<action-key>UPDATE</action-key>
+			</supports>
+			<site-member-defaults>
+			</site-member-defaults>
+			<guest-defaults />
+			<guest-unsupported>
+			</guest-unsupported>
+		</permissions>
+	</model-resource>
+
+
+</resource-action-mapping>

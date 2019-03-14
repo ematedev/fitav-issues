@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="it.ethica.esf.model.ESFCard">
+		<field name="uuid" type="String" />
+		<field name="esfCardId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="code" type="String" />
+		<field name="startDate" type="Date">
+			<hint name="year-range-delta">120</hint>
+			<hint name="year-range-future">false</hint>
+			<hint name="show-time">false</hint>
+			<hint name=""></hint>
+		</field>
+		<field name="endDate" type="Date">
+			<hint name="year-range-delta">120</hint>
+			<hint name="year-range-future">false</hint>
+			<hint name="show-time">false</hint>
+		</field>
+		<field name="esfUserId" type="long" />
+		<field name="esfOrganizationId" type="long" />
+	</model>
+</model-hints>

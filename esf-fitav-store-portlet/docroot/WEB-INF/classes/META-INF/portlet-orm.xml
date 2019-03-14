@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.ethica.esf.model.impl.ESFArticleModelImpl">
+		<attributes>
+			<id name="esfArticleId" />
+			<basic name="code">
+				<column name="CODE_" />
+			</basic>
+			<basic name="name" />
+			<basic name="description" />
+			<basic name="esfArticleTypeId" />
+			<basic name="xxxlQty" />
+			<basic name="xxlQty" />
+			<basic name="xlQty" />
+			<basic name="lQty" />
+			<basic name="mQty" />
+			<basic name="sQty" />
+			<basic name="xsQty" />
+			<basic name="xxsQty" />
+			<basic name="otherQty" />
+			<basic name="price" />
+			<basic name="tax" />
+			<basic name="sale">
+				<column name="SALE_" />
+			</basic>
+			<transient name="LQty" />
+			<transient name="MQty" />
+			<transient name="SQty" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ethica.esf.model.impl.ESFArticleDeliveredModelImpl">
+		<attributes>
+			<id name="esfArticleDeliveredId" />
+			<basic name="data">
+				<column name="DATA_" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="description" />
+			<basic name="esfArticleId" />
+			<basic name="esfShooterId" />
+			<basic name="xxxlQty" />
+			<basic name="xxlQty" />
+			<basic name="xlQty" />
+			<basic name="lQty" />
+			<basic name="mQty" />
+			<basic name="sQty" />
+			<basic name="xsQty" />
+			<basic name="xxsQty" />
+			<basic name="otherQty" />
+			<transient name="LQty" />
+			<transient name="MQty" />
+			<transient name="SQty" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ethica.esf.model.impl.ESFArticleTypeModelImpl">
+		<attributes>
+			<id name="esfArticleTypeId" />
+			<basic name="description" />
+			<basic name="department" />
+			<basic name="area" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ethica.esf.model.impl.ESFOrderModelImpl">
+		<attributes>
+			<id name="esfOrderId" />
+			<basic name="code">
+				<column name="CODE_" />
+			</basic>
+			<basic name="data">
+				<column name="DATA_" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="description" />
+			<basic name="esfStockistId" />
+			<basic name="qty" />
+			<basic name="esfArticleId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ethica.esf.model.impl.ESFStockistModelImpl">
+		<attributes>
+			<id name="esfStockistId" />
+			<basic name="name" />
+			<basic name="email" />
+			<basic name="phone" />
+			<basic name="address" />
+			<basic name="nameReference" />
+			<basic name="lastNameReference" />
+			<basic name="emailReference" />
+			<basic name="phoneReference" />
+			<basic name="description" />
+			<basic name="other" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.ethica.esf.model.impl.ESFArticleImpl" name="ESFArticle">
+		<table name="ESFArticle" />
+		<attributes />
+	</entity>
+	<entity class="com.ethica.esf.model.impl.ESFArticleDeliveredImpl" name="ESFArticleDelivered">
+		<table name="ESFArticleDelivered" />
+		<attributes />
+	</entity>
+	<entity class="com.ethica.esf.model.impl.ESFArticleTypeImpl" name="ESFArticleType">
+		<table name="ESFArticleType" />
+		<attributes />
+	</entity>
+	<entity class="com.ethica.esf.model.impl.ESFOrderImpl" name="ESFOrder">
+		<table name="ESFOrder" />
+		<attributes />
+	</entity>
+	<entity class="com.ethica.esf.model.impl.ESFStockistImpl" name="ESFStockist">
+		<table name="ESFStockist" />
+		<attributes />
+	</entity>
+</entity-mappings>

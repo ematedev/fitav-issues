@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.ethica.esf.service.ESFArticleLocalService" class="com.ethica.esf.service.impl.ESFArticleLocalServiceImpl" />
+	<bean id="com.ethica.esf.service.persistence.ESFArticlePersistence" class="com.ethica.esf.service.persistence.ESFArticlePersistenceImpl" parent="basePersistence" />
+	<bean id="com.ethica.esf.service.ESFArticle_ESFOrderLocalService" class="com.ethica.esf.service.impl.ESFArticle_ESFOrderLocalServiceImpl" />
+	<bean id="com.ethica.esf.service.persistence.ESFArticle_ESFOrderPersistence" class="com.ethica.esf.service.persistence.ESFArticle_ESFOrderPersistenceImpl" parent="basePersistence" />
+	<bean id="com.ethica.esf.service.ESFArticle_ESFUserLocalService" class="com.ethica.esf.service.impl.ESFArticle_ESFUserLocalServiceImpl" />
+	<bean id="com.ethica.esf.service.persistence.ESFArticle_ESFUserPersistence" class="com.ethica.esf.service.persistence.ESFArticle_ESFUserPersistenceImpl" parent="basePersistence" />
+	<bean id="com.ethica.esf.service.ESFArticleTypeLocalService" class="com.ethica.esf.service.impl.ESFArticleTypeLocalServiceImpl" />
+	<bean id="com.ethica.esf.service.persistence.ESFArticleTypePersistence" class="com.ethica.esf.service.persistence.ESFArticleTypePersistenceImpl" parent="basePersistence" />
+	<bean id="com.ethica.esf.service.ESFBillLocalService" class="com.ethica.esf.service.impl.ESFBillLocalServiceImpl" />
+	<bean id="com.ethica.esf.service.persistence.ESFBillPersistence" class="com.ethica.esf.service.persistence.ESFBillPersistenceImpl" parent="basePersistence" />
+	<bean id="com.ethica.esf.service.ESFOrderLocalService" class="com.ethica.esf.service.impl.ESFOrderLocalServiceImpl" />
+	<bean id="com.ethica.esf.service.persistence.ESFOrderPersistence" class="com.ethica.esf.service.persistence.ESFOrderPersistenceImpl" parent="basePersistence" />
+	<bean id="com.ethica.esf.service.ESFStockistLocalService" class="com.ethica.esf.service.impl.ESFStockistLocalServiceImpl" />
+	<bean id="com.ethica.esf.service.persistence.ESFStockistPersistence" class="com.ethica.esf.service.persistence.ESFStockistPersistenceImpl" parent="basePersistence" />
+</beans>

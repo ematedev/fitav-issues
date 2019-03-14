@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="it.ethica.esf.service.ESFFieldLocalService" class="it.ethica.esf.service.impl.ESFFieldLocalServiceImpl" />
+	<bean id="it.ethica.esf.service.persistence.ESFFieldPersistence" class="it.ethica.esf.service.persistence.ESFFieldPersistenceImpl" parent="basePersistence" />
+	<bean id="it.ethica.esf.service.ESFFieldESFSportTypeLocalService" class="it.ethica.esf.service.impl.ESFFieldESFSportTypeLocalServiceImpl" />
+	<bean id="it.ethica.esf.service.persistence.ESFFieldESFSportTypePersistence" class="it.ethica.esf.service.persistence.ESFFieldESFSportTypePersistenceImpl" parent="basePersistence" />
+	<bean id="it.ethica.esf.service.ESFSportTypeLocalService" class="it.ethica.esf.service.impl.ESFSportTypeLocalServiceImpl" />
+	<bean id="it.ethica.esf.service.persistence.ESFSportTypePersistence" class="it.ethica.esf.service.persistence.ESFSportTypePersistenceImpl" parent="basePersistence" />
+</beans>

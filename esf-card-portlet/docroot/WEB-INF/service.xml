@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="it.ethica.esf">
+	<author>Ethica</author>
+	<namespace>ESF</namespace>
+
+	<entity name="ESFCard" local-service="true" remote-service="false"
+		uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="esfCardId" type="long" primary="true"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="code" type="String"></column>
+		<column name="startDate" type="Date"></column>
+		<column name="endDate" type="Date"></column>
+		<column name="esfUserId" type="long"></column>
+		<column name="esfOrganizationId" type="long"></column>
+
+		<finder name="findBySD_ED" return-type="Collection">
+			<finder-column name="startDate"></finder-column>
+			<finder-column name="endDate"></finder-column>
+		</finder>
+		
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset"></reference>
+		<reference entity="AssetLink" package-path="com.liferay.portlet.asset"></reference>
+	</entity>
+	<exceptions>
+		<exception>ESFCardCode</exception>
+		<exception>ESFCardStartDate</exception>
+		<exception>ESFCardEndDate</exception>
+	</exceptions>
+</service-builder>

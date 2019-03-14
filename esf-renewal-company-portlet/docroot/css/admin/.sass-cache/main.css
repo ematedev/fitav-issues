@@ -1,0 +1,12 @@
+.euro {
+  display: inline-block;
+  position: relative; }
+  .euro > i.icon-euro {
+    position: absolute;
+    bottom: 18px;
+    right: 5px; }
+  .euro.disabled-wrapper > i.icon-euro {
+    cursor: not-allowed; }
+  .euro.active-wrapper > .field:focus + i, .euro.active-wrapper > .field:hover + i {
+    display: none; }
+

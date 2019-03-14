@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="it.ethica.esf"
+	auto-namespace-tables="false">
+	<author>Ethica</author>
+	<namespace>ESF</namespace>
+
+	<entity name="ESFUser" uuid="true" local-service="true"
+		remote-service="false">
+
+		<!-- PK fields -->
+
+		<column name="esfUserId" type="long" primary="true" />
+
+		<!-- Other fields -->
+
+		<column name="code" type="String" />
+
+		<!-- Finder methods -->
+		<finder name="Code" return-type="ESFUser">
+			<finder-column name="code" comparator="="
+				case-sensitive="true" />
+		</finder>
+		
+		<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+		<reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
+	</entity>
+	<exceptions>
+		<exception>ESFUserPortalUser</exception>
+	</exceptions>
+</service-builder>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<custom-sql>
+	<sql id="it.ethica.esf.renewal.service.persistence.ESFRenewalCompanyFinder.getESFRenewalCompanyByN_C_R_Y">
+		SELECT
+			r.*
+		FROM
+			organization_ AS c
+		LEFT JOIN
+			esforganization AS a ON a.esfOrganizationId = c.organizationId
+		LEFT JOIN
+			esfrenewalcompany AS r ON r.esfOrganizationId = c.organizationId
+		WHERE
+			r.year = ?
+			AND a.code_ LIKE ?
+			AND c.name LIKE ?
+			AND c.treepath LIKE ?
+	</sql>
+</custom-sql>
