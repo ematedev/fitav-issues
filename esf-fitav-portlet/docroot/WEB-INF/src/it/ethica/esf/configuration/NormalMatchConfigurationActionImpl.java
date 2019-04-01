@@ -24,9 +24,6 @@ public class NormalMatchConfigurationActionImpl extends DefaultConfigurationActi
 		
 		String isViewMode = prefs.getValue("isViewMode", StringPool.TRUE);
 		
-		/*if(_log.isInfoEnabled()){
-			_log.info("normal match view mode is set to : " + isViewMode);
-		}*/
 	}
 	
 	private static Log _log = LogFactoryUtil.getLog(NormalMatchConfigurationActionImpl.class);
