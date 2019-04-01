@@ -70,8 +70,8 @@ public class ClpSerializer {
 				}
 			}
 			catch (Throwable t) {
-				if (_log.isInfoEnabled()) {
-					_log.info(
+				if (_log.isErrorEnabled() ) {
+					_log.error(
 						"Unable to locate deployment context from portlet properties");
 				}
 			}

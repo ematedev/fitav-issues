@@ -172,7 +172,7 @@ public class ConiReport extends MVCPortlet{
 			}else{
 				organizations = ESFOrganizationLocalServiceUtil.findNewAffilationConiReportAndArmy(year);
 			}
-			_log.info("******");
+			_log.debug("******");
 			
 			Collections.sort(
 				organizations, new Comparator<ESFOrganization>() {
@@ -516,7 +516,7 @@ public class ConiReport extends MVCPortlet{
 		}
 		catch (Exception e) {
 			// TODO: handle exception
-			_log.info("errore compilazione excel ");
+			_log.error("errore compilazione excel ");
 			error = true;
 		}
 		return error;
