@@ -168,7 +168,7 @@ public class GenerateShooterCV extends MVCPortlet{
 			}
 			catch (Exception e) {
 				// TODO: handle exception
-				_log.info("ERRORE, match non trovato");
+				_log.error("ERRORE, match non trovato");
 			}
 			
 			if(Validator.isNotNull(match)){
@@ -196,7 +196,7 @@ public class GenerateShooterCV extends MVCPortlet{
 					}
 					catch (Exception e) {
 						// TODO: handle exception
-						_log.info("ERRORE, associazione non trovata");
+						_log.error("ERRORE, associazione non trovata");
 					}
 					
 				}else if(!StringPool.BLANK.equals(match.getNotNationalAssotiation())){
@@ -214,7 +214,7 @@ public class GenerateShooterCV extends MVCPortlet{
 				}
 				catch (Exception e) {
 					// TODO: handle exception
-					_log.info("ERRORE, specialità non trovata");
+					_log.error("ERRORE, specialità non trovata");
 				}
 				
 			}

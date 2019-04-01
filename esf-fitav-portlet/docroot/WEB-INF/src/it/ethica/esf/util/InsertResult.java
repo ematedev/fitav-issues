@@ -86,7 +86,7 @@ public class InsertResult {
 	
 	public void insertSingleMatchResult( BufferedReader buffer, long matchId, long associationId, long sptId)
 					throws IOException{
-		_log.info("entro in insertSingleMatchResult");
+		_log.debug("entro in insertSingleMatchResult");
 		String newLine = "";
 		BufferedReader bufferedReader = buffer;
 		
@@ -245,7 +245,7 @@ public class InsertResult {
 					}
 					catch (Exception e) {
 						// TODO: handle exception
-						_log.info("errore formato numero ");
+						_log.error("errore formato numero ");
 						
 						SessionErrors.add(request, "errorMessage");
 						request.setAttribute("errorMessage","errore formato numero");
@@ -259,7 +259,7 @@ public class InsertResult {
 					}
 					catch (Exception e) {
 						// TODO: handle exception
-						_log.info("errore formato data");
+						_log.error("errore formato data");
 						SessionErrors.add(request, "errorMessage");
 						request.setAttribute("errorMessage","errore formato data");
 						return;
@@ -293,7 +293,7 @@ public class InsertResult {
 					}
 					catch (Exception e) {
 						// TODO: handle exception
-						_log.info("errore ricerca card");
+						_log.error("errore ricerca card");
 					}
 					
 					if(Validator.isNotNull(userCard) && Validator.isNotNull(userCard.getEsfUserId())){
@@ -329,7 +329,7 @@ public class InsertResult {
 	
 	public void insertTeamMatchResult( BufferedReader buffer, long matchId, long associationId, long sptId)
 					throws IOException{
-		_log.info("entro in insertTeamMatchResult");
+		_log.error("entro in insertTeamMatchResult");
 		
 		String newLine = "";
 		BufferedReader bufferedReader = buffer;
@@ -452,7 +452,7 @@ public class InsertResult {
 				}
 				catch (Exception e) {
 					// TODO: handle exception
-					_log.info("errore formato numero ");
+					_log.error("errore formato numero ");
 					
 					SessionErrors.add(request, "errorMessage");
 					request.setAttribute("errorMessage","errore formato numero");
@@ -466,7 +466,7 @@ public class InsertResult {
 				}
 				catch (Exception e) {
 					// TODO: handle exception
-					_log.info("errore formato data");
+					_log.error("errore formato data");
 					SessionErrors.add(request, "errorMessage");
 					request.setAttribute("errorMessage","errore formato data");
 					return;

@@ -73,25 +73,20 @@ public class ESFPartecipantUtil {
 
 	
 	public static void generatePasses(long esfPartecipantInfoId){
-		
-		System.out.println("----------------1----------");
-		
+				
 		Connection conn = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			conn =
 				(Connection) DriverManager.getConnection(
 					"jdbc:mysql://127.0.0.1:3306/lportal", "root", "password");
-		
-		
-			System.out.println("----------------2----------");
+				
 			
 			// Compile jrxml file.
 	
 			JasperReport jasperReport = JasperCompileManager.compileReport("/home/igor/Scrivania/report/LettereAutorizzazione.jrxml/");
 			// Parameters for report
-			
-			System.out.println("----------------3----------");
+
 
 			
 /*!!!!!!!!!!!!!!!!!!!
@@ -105,7 +100,6 @@ public class ESFPartecipantUtil {
 			Map<String, Object> parameters = new HashMap<String, Object>();
 			parameters.put("P_MatchId", esfPartecipantInfoId);
 			
-			System.out.println("----------------4----------");
 			
 			JasperPrint jasperPrint =
 				JasperFillManager.fillReport(jasperReport, parameters, conn);

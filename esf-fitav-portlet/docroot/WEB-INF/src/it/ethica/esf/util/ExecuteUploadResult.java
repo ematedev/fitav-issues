@@ -1,37 +1,17 @@
 
 package it.ethica.esf.util;
 
-import it.ethica.esf.model.ESFMatch;
-import it.ethica.esf.model.ESFMatchResult;
-import it.ethica.esf.model.ESFUser;
-import it.ethica.esf.portlet.ESFUserAdminPortlet;
-import it.ethica.esf.service.ESFMatchLocalServiceUtil;
-import it.ethica.esf.service.ESFMatchResultLocalServiceUtil;
-import it.ethica.esf.service.ESFUserLocalServiceUtil;
-import it.ethica.esf.service.impl.ESFMatchResultLocalServiceImpl;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 
-import com.liferay.counter.service.CounterLocalServiceUtil;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
-import com.liferay.portal.kernel.upload.UploadPortletRequest;
 import com.liferay.portal.kernel.util.ParamUtil;
-import com.liferay.portal.util.PortalUtil;
+
+import it.ethica.esf.model.ESFMatch;
+import it.ethica.esf.service.ESFMatchLocalServiceUtil;
 
 public class ExecuteUploadResult implements Runnable {
 	private ActionRequest request;
@@ -82,19 +62,19 @@ public class ExecuteUploadResult implements Runnable {
 		
 		long esfMatchId = ParamUtil.getLong(request, "esfMatchId");
 		
-		_log.info("--------esfMatchId="+esfMatchId);
+		_log.debug("--------esfMatchId="+esfMatchId);
 		
 		boolean isIndividual = ParamUtil.getBoolean(request, "isIndividual");
-		_log.info("----------isIndividual="+isIndividual);
-		_log.info("----------fileName="+fileName);
+		_log.debug("----------isIndividual="+isIndividual);
+		_log.debug("----------fileName="+fileName);
 		
 		ESFMatch esfMatch = null;
 		
 		if(isIndividual){
-			_log.info("individuale");
+			_log.debug("individuale");
 			
 		}else if(!isIndividual){
-			_log.info("a squadre");
+			_log.debug("a squadre");
 		}
 		
 		try {

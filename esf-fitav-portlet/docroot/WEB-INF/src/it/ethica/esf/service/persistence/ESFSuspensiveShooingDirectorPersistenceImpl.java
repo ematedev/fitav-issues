@@ -14,6 +14,11 @@
 
 package it.ethica.esf.service.persistence;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import com.liferay.portal.kernel.cache.CacheRegistryUtil;
 import com.liferay.portal.kernel.dao.orm.EntityCacheUtil;
 import com.liferay.portal.kernel.dao.orm.FinderCacheUtil;
@@ -40,12 +45,6 @@ import it.ethica.esf.NoSuchSuspensiveShooingDirectorException;
 import it.ethica.esf.model.ESFSuspensiveShooingDirector;
 import it.ethica.esf.model.impl.ESFSuspensiveShooingDirectorImpl;
 import it.ethica.esf.model.impl.ESFSuspensiveShooingDirectorModelImpl;
-
-import java.io.Serializable;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * The persistence implementation for the e s f suspensive shooing director service.

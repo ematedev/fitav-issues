@@ -52,7 +52,7 @@ public class ESFOrganizationFinderImpl extends BasePersistenceImpl<ESFOrganizati
 			
 		}
 		catch (Exception e) {
-			_log.info("findAllAffilationConiReportAndArmy e="+e);
+			_log.error("findAllAffilationConiReportAndArmy e="+e);
 		}
 		finally {
 			closeSession(session);
@@ -89,7 +89,7 @@ public List<ESFOrganization> findNewAffilationConiReportAndArmy( int year){
 			return u;
 		}
 		catch (Exception e) {
-			_log.info("findNewAffilationConiReportAndArmy e="+e);
+			_log.error("findNewAffilationConiReportAndArmy e="+e);
 		}
 		finally {
 			closeSession(session);

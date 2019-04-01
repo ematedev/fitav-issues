@@ -14,6 +14,11 @@
 
 package it.ethica.esf.service.base;
 
+import java.io.Serializable;
+import java.util.List;
+
+import javax.sql.DataSource;
+
 import com.liferay.portal.kernel.bean.BeanReference;
 import com.liferay.portal.kernel.bean.IdentifiableBean;
 import com.liferay.portal.kernel.dao.jdbc.SqlUpdate;
@@ -105,12 +110,6 @@ import it.ethica.esf.service.persistence.ESFUserPersistence;
 import it.ethica.esf.service.persistence.ESFUserRolePersistence;
 import it.ethica.esf.service.persistence.ESFgunUserFinder;
 import it.ethica.esf.service.persistence.ESFgunUserPersistence;
-
-import java.io.Serializable;
-
-import java.util.List;
-
-import javax.sql.DataSource;
 
 /**
  * Provides the base implementation for the e s f not olimpic match result local service.

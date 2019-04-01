@@ -2451,7 +2451,7 @@ public int getAllEsfOrganizationDisabled(String name, String code ) throws Porta
 				esfOrganizationsNamed.add(o);
 			}
 			} catch (Exception e){
-				_log.info ("errore org -->");
+				_log.error ("errore org -->");
 			}
 		}
 		tot=esfOrganizationsNamed.size();
@@ -2487,7 +2487,7 @@ public int getAllEsfOrganizationDisabled(String name, String code ) throws Porta
 				esfOrganizationsNamed.add(o);
 			}
 			} catch (Exception e){
-				_log.info ("errore org -->");
+				_log.error ("errore org -->");
 			}
 		}
 		if(end > esfOrganizationsNamed.size()){
