@@ -336,7 +336,7 @@ public class ESFNormalMatchPortlet extends MVCPortlet {
 			ServiceContextFactory.getInstance(ESFMatch.class.getName(), request);
 
 		long esfMatchId = ParamUtil.getLong(request, "esfMatchId");
-		_log.info("nella portlet esfMatchId="+esfMatchId);
+		_log.debug("nella portlet esfMatchId="+esfMatchId);
 		String code = ParamUtil.getString(request, "code");
 		String sd = ParamUtil.getString(request, "startDate");
 		String ed = ParamUtil.getString(request, "endDate");
@@ -525,7 +525,7 @@ public class ESFNormalMatchPortlet extends MVCPortlet {
 		}
 		catch (Exception e) {
 			// TODO: handle exception
-			_log.info("errore nel match");
+			_log.debug("errore nel match");
 		}
 		
 		ESFNationalDelegation del = new ESFNationalDelegationImpl();
@@ -680,7 +680,7 @@ public class ESFNormalMatchPortlet extends MVCPortlet {
 		ActionRequest request, ActionResponse response)
 		throws PortalException, SystemException {
 		
-		_log.info("-1-");
+		_log.debug("-1-");
 		
 		long delegationId =
 						ParamUtil.getLong(request, "delegationId");
@@ -698,15 +698,15 @@ public class ESFNormalMatchPortlet extends MVCPortlet {
 		}
 		
 		
-		_log.info("-1-delegationId="+delegationId);
-		_log.info("-1-instruct="+instructId);
-		_log.info("-1-refusalMotivation="+refusalMotivation);
-		_log.info("-1-refusalString="+refusalString);
-		_log.info("-1-refusalDate="+refusalDate);
+		_log.debug("-1-delegationId="+delegationId);
+		_log.debug("-1-instruct="+instructId);
+		_log.debug("-1-refusalMotivation="+refusalMotivation);
+		_log.debug("-1-refusalString="+refusalString);
+		_log.debug("-1-refusalDate="+refusalDate);
 		
 		ESFNationalDelegation delegation = ESFNationalDelegationLocalServiceUtil.fetchESFNationalDelegation(delegationId);
 		
-		_log.info("-1-delegation="+delegation);
+		_log.debug("-1-delegation="+delegation);
 		
 		delegation.setRefusalDate(refusalDate);
 		delegation.setRefusal(refusalMotivation);
@@ -714,7 +714,7 @@ public class ESFNormalMatchPortlet extends MVCPortlet {
 		
 		ESFNationalDelegationLocalServiceUtil.updateESFNationalDelegation(delegation);
 		
-		_log.info("-2-delegation="+delegation);
+		_log.debug("-2-delegation="+delegation);
 		
 		response.setRenderParameter(
 			"mvcPath", "/html/esfnormalmatch/edit_staff.jsp");
@@ -953,7 +953,7 @@ public class ESFNormalMatchPortlet extends MVCPortlet {
 		boolean isViewMode = Boolean.valueOf(prefs.getValue("isViewMode", StringPool.TRUE));
 		
 		if(_log.isInfoEnabled()){
-			_log.info("view mode is set to : " + isViewMode);
+			_log.debug("view mode is set to : " + isViewMode);
 		}
 		if(isViewMode){
 			

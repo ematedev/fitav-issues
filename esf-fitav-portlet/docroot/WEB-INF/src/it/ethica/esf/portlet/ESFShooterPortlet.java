@@ -129,7 +129,7 @@ public class ESFShooterPortlet extends MVCPortlet {
 	public void serveResource(
 		ResourceRequest resourceRequest, ResourceResponse resourceResponse)
 		throws IOException, PortletException {
-		_log.info("serveresource");
+		_log.debug("serveresource");
 		HttpServletRequest httpReq =
 				PortalUtil.getHttpServletRequest(resourceRequest);
 		httpReq = PortalUtil.getOriginalServletRequest(httpReq);
@@ -171,7 +171,7 @@ public class ESFShooterPortlet extends MVCPortlet {
 		try {
 			
 			if (Validator.isNotNull(resourceID) &&  resourceID.equals("fiscalCode")) {
-				_log.info("nella serveresource fiscal code");
+				_log.debug("nella serveresource fiscal code");
 				JSONObject fiscalcode = serveFiscalCode(resourceRequest,resourceResponse);
 				resourceResponse.getWriter().print(fiscalcode);
 				
@@ -1087,8 +1087,8 @@ public class ESFShooterPortlet extends MVCPortlet {
 		Date data = new Date();
 		long newCardId = CounterLocalServiceUtil.increment(ESFCard.class.getName());
 		
-		_log.info("remove card cardUserId="+esfCardId);
-		_log.info("remove card esfUserId="+esfUserId);
+		_log.debug("remove card cardUserId="+esfCardId);
+		_log.debug("remove card esfUserId="+esfUserId);
 		
 		if(esfUserId > 0){
 			uroles = ESFUserESFUserRoleLocalServiceUtil.getESFUserESFUserRoleByESFUserId_ED(esfUserId);
@@ -1141,7 +1141,7 @@ public class ESFShooterPortlet extends MVCPortlet {
 			newCard.setUserName(userName);
 			
 			ESFCardLocalServiceUtil.addESFCard(newCard);
-			_log.info("newCard"+newCard);
+			_log.debug("newCard"+newCard);
 		}
 		SessionMessages.add(actionRequest, "card_Removed");
 		actionResponse.setRenderParameter("mvcPath", "/html/esfshooter/edit_esfShooter.jsp");
@@ -1193,8 +1193,8 @@ public class ESFShooterPortlet extends MVCPortlet {
 				_log.fatal(e.getMessage());
 			}
 		}
-		_log.info("SPECIFIC ID: "+esfSpecificId);
-		_log.info("NOTES: "+notes);
+		_log.debug("SPECIFIC ID: "+esfSpecificId);
+		_log.debug("NOTES: "+notes);
 		response.setRenderParameter("mvcCommand", "getEsfFederalRoles");
 		response.setRenderParameter("esfUserId", String.valueOf(esfUserId));
 		response.setRenderParameter("mvcPath", mvcPath);
@@ -1220,7 +1220,7 @@ public class ESFShooterPortlet extends MVCPortlet {
 	Date data, String comune){
 		
 		List <ESFCity>comuni = new ArrayList<ESFCity>();
-		_log.info("comune: "+comune);
+		_log.debug("comune: "+comune);
 		try {
 			comuni=ESFCityLocalServiceUtil.getESFCity(comune);
 			if(comuni.isEmpty()){

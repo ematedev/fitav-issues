@@ -502,8 +502,8 @@ public class ESFChangeOfCategoryPortlet extends MVCPortlet {
 				
 				
 				for(Integer key : setKey2Pass){
-					_log.info("key="+key);
-					_log.info("minPercent2TO3="+minPercent2TO3);
+					_log.debug("key="+key);
+					_log.debug("minPercent2TO3="+minPercent2TO3);
 					if(key < minPercent2TO3){
 						idPossiblePass2To3.addAll(shooterSecondCategoryResult.get(key));
 					}else if(key > minPercent2TO1){
@@ -670,8 +670,8 @@ public class ESFChangeOfCategoryPortlet extends MVCPortlet {
 					idUserPass3_2SK.add(key);
 				}
 			}
-			_log.info("entro in skeet idUserPass3_2SK="+idUserPass3_2SK);
-			_log.info("entro in skeet idUserPass2_1SK="+idUserPass2_1SK);
+			_log.debug("entro in skeet idUserPass3_2SK="+idUserPass3_2SK);
+			_log.debug("entro in skeet idUserPass2_1SK="+idUserPass2_1SK);
 			
 			for(Long l : idUserPass3_2SK){
 				userPromovedThirdCategorySK.add(ESFUserLocalServiceUtil.fetchESFUser(l));
@@ -680,8 +680,8 @@ public class ESFChangeOfCategoryPortlet extends MVCPortlet {
 			for(Long l : idUserPass2_1SK){
 				userPromovedSecondCategorySK.add(ESFUserLocalServiceUtil.fetchESFUser(l));
 			}
-			_log.info("entro in skeet userPromovedThirdCategorySK="+userPromovedThirdCategorySK);
-			_log.info("entro in skeet userPromovedSecondCategorySK="+userPromovedSecondCategorySK);
+			_log.debug("entro in skeet userPromovedThirdCategorySK="+userPromovedThirdCategorySK);
+			_log.debug("entro in skeet userPromovedSecondCategorySK="+userPromovedSecondCategorySK);
 			
 			
 			session.setAttribute("userPromovedThirdCategorySK", userPromovedThirdCategorySK);

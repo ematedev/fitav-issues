@@ -647,12 +647,12 @@ public class ESFNationalMatchPortlet extends MVCPortlet {
     					
         			}
 				} catch (SystemException e) {
-					_log.info(" nel serve resurce catch 1");
+					_log.error(" nel serve resurce catch 1");
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (PortalException e) {
 					// TODO Auto-generated catch block
-					_log.info(" nel serve resurce catch 2");
+					_log.error(" nel serve resurce catch 2");
 					e.printStackTrace();
 				} catch (com.lowagie.text.DocumentException e) {
 					// TODO Auto-generated catch block
@@ -4448,7 +4448,7 @@ ServiceContext serviceContext =
 				for (ESFNationalDelegation e : esfNationalDelegations) {
 					
 					long esfUserId = ParamUtil.getLong(request, "ESFShooterId" + i, -2);
-					_log.info("esfUserId="+esfUserId);
+					_log.debug("esfUserId="+esfUserId);
 					
 					if (esfUserId == -2) {
 						continue;
@@ -4921,10 +4921,10 @@ ServiceContext serviceContext =
 			int shootOffFinal = ParamUtil.getInteger(request, "shoot-off-final"+ i);
 			String userNationality = ParamUtil.getString(request, "user-nationality"+ i);
 			i++;
-			_log.info("dati in back-end:shooterId="+shooterId+",sportTypeId="+sportTypeId+",qualificationId="+qualificationId+",position="+position+",qualification="+qualification+",");
-			_log.info("dati in back-end2:shootOff="+shootOff+",clayPigeon="+clayPigeon+",finalResult="+finalResult+",shootOffFinal="+shootOffFinal+",userNationality="+userNationality+".");
-			_log.info("i="+i);
-			_log.info("********************************************************************************************************************************************************************");
+			_log.debug("dati in back-end:shooterId="+shooterId+",sportTypeId="+sportTypeId+",qualificationId="+qualificationId+",position="+position+",qualification="+qualification+",");
+			_log.debug("dati in back-end2:shootOff="+shootOff+",clayPigeon="+clayPigeon+",finalResult="+finalResult+",shootOffFinal="+shootOffFinal+",userNationality="+userNationality+".");
+			_log.debug("i="+i);
+			_log.debug("********************************************************************************************************************************************************************");
 			
 			
 		}

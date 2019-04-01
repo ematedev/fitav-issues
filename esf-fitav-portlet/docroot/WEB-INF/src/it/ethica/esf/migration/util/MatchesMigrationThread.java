@@ -124,7 +124,7 @@ public class MatchesMigrationThread implements Runnable {
 
 			// interrogazione del db
 			stat = connection.createStatement();
-			_log.info("Start migration import");
+			_log.debug("Start migration import");
 			ResultSet res = stat.executeQuery(selectMatch);
 
 			int count = 0;
@@ -166,7 +166,7 @@ public class MatchesMigrationThread implements Runnable {
 			}
 			int counter = 1;
 			while (res.next()) {
-				_log.info("Processing " + counter + " of " + rowcount);
+				_log.debug("Processing " + counter + " of " + rowcount);
 				counter++;
 				boolean noQualifs = true;
 				count++;
@@ -320,7 +320,7 @@ public class MatchesMigrationThread implements Runnable {
 //
 //				}
 			}
-			_log.info("End match import");
+			_log.debug("End match import");
 		}
 		catch (SQLException sqlex) {
 			sqlex.printStackTrace();

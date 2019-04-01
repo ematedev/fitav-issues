@@ -122,11 +122,11 @@ public class ESFCardPortlet extends MVCPortlet {
 			catch (PortalException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-				_log.info("PortalException="+e.getMessage());
+				_log.error("PortalException="+e.getMessage());
 			}
 			catch (SystemException e) {
 				// TODO Auto-generated catch block
-				_log.info("SystemException="+e.getMessage());
+				_log.error("SystemException="+e.getMessage());
 			}
 			
 			if(!"error".equals(code)){
@@ -244,7 +244,7 @@ public class ESFCardPortlet extends MVCPortlet {
 			}
 			catch (Exception e) {
 				// TODO: handle exception
-				_log.info("errore ricerca società e regione");
+				_log.error("errore ricerca società e regione");
 				//SessionErrors.add(request, "error-find-ass");
 			}
 		}
@@ -290,7 +290,7 @@ public class ESFCardPortlet extends MVCPortlet {
 		}else if("VEN".equals(regionCode)){
 			conf = ESFConfigurationLocalServiceUtil.getESFConfigurationByESFKey("MAXCODECARD_VEN");
 		}else{
-			_log.info("errore ricerca società e regione");
+			_log.error("errore ricerca società e regione");
 			SessionErrors.add(request, "error-find-ass");
 			return "error";
 		}*/
@@ -336,7 +336,7 @@ public class ESFCardPortlet extends MVCPortlet {
 		}else if("VN".equals(regionCode.toUpperCase()) || "VEN".equals(regionCode)){
 			conf = ESFConfigurationLocalServiceUtil.getESFConfigurationByESFKey("MAXCODECARD_VEN");
 		}else{
-			_log.info("errore ricerca società e regione");
+			_log.error("errore ricerca società e regione");
 			SessionErrors.add(request, "error-find-ass");
 			return "error";
 		}
@@ -349,7 +349,7 @@ public class ESFCardPortlet extends MVCPortlet {
 		}
 		catch (Exception e) {
 			// TODO: handle exception
-			_log.info("errore codice regione o formato numero dell' ultima tessera");
+			_log.error("errore codice regione o formato numero dell' ultima tessera");
 			return "error";
 		}
 		code = String.valueOf(esfOrganizationId+String.valueOf(year)+String.valueOf(month)+String.valueOf(day));
@@ -413,7 +413,7 @@ public class ESFCardPortlet extends MVCPortlet {
 		}
 		catch (Exception e) {
 			// TODO: handle exception
-			_log.info("errore nella creazione delle entità");
+			_log.error("errore nella creazione delle entita'");
 			return "error";
 		}
 		

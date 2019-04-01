@@ -75,7 +75,7 @@ public class ESFFederalRolePortlet extends MVCPortlet {
  
 
 	public void updateEsfFederalRole(ActionRequest request, ActionResponse response){
-		_log.info("Inside updateEsfFederalRole action");
+		_log.debug("Inside updateEsfFederalRole action");
 		long esfFederalRoleId = ParamUtil.getLong(request, "esfFederalRoleId", -1);
 		String code = ParamUtil.getString(request, "code", null);
 		String description = ParamUtil.getString(request, "description", null);
@@ -102,7 +102,7 @@ public class ESFFederalRolePortlet extends MVCPortlet {
 	}
 	
 	public void deleteEsfFederalRole(ActionRequest request, ActionResponse response){
-		_log.info("Inside deleteEsfFederalRole action");
+		_log.debug("Inside deleteEsfFederalRole action");
 		long esfFederalRoleId = ParamUtil.getLong(request, "esfFederalRoleId", -1);
 		ESFFederalRole federalRole = null;
 		String errorKey = null;

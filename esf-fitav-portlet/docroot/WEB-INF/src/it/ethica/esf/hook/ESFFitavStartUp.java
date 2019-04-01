@@ -39,7 +39,7 @@ public class ESFFitavStartUp extends SimpleAction {
 	public void run(String[] ids)
 		throws ActionException {
 
-		_log.info("Start up event's running...");
+		_log.debug("Start up event's running...");
 
 		List<ESFUserRole> esfUserRolesCT =
 			ESFUserRoleLocalServiceUtil.getAllUserRoleByLikeT_N(

@@ -38,17 +38,17 @@ public class ShooterMigrationThreadTemp implements Runnable {
 			connection = DriverManager.getConnection(dbUrl, user, pass);
 			String selectShooter="select * from anagrate.anatiratori  a, anagrate.tessere where a.codice =numero_tiratore  and anno >= 2010 order by numero_tiratore,anno,tessera ;";
 			stat = connection.createStatement();
-			_log.info("Start query");
+			_log.debug("Start query");
 			ResultSet res = stat.executeQuery(selectShooter);
 			int count = 0;
-			_log.info("Start shooter import");
+			_log.debug("Start shooter import");
 			String lastcode="";
 			int pos=1;
 			Statement stat1 = connection.createStatement();
 			
 			while (res.next()) {
 				count++;
-				_log.info("COUNT-->" + count);
+				_log.debug("COUNT-->" + count);
 				String code = res.getString("Codice").trim();
 				if(!code.equals(lastcode)){
 					pos=1;
@@ -66,20 +66,20 @@ public class ShooterMigrationThreadTemp implements Runnable {
 					
 					ESFOrganization org = ESFOrganizationLocalServiceUtil.findByCode(organization);
 					if (org == null) {
-						_log.info("No Organization");
+						_log.debug("No Organization");
 					} else {
 						
 						String query=assignCard( code,  year , cardCode  , data_Creazione , pos);
 						stat1.execute(query);
 					}
 					
-					_log.info("Processed element " + totElement++);
+					_log.debug("Processed element " + totElement++);
 				} catch (Exception e) {
 					errorList.add("&&&&&&&&&>>>>>>>> Dati " + code + " " + e.toString());
 				}
 				
 			}
-			_log.info("End shooter import --->end count:" + count);
+			_log.debug("End shooter import --->end count:" + count);
 		} catch (SQLException sqlex) {
 			sqlex.printStackTrace();
 		} catch (ClassNotFoundException classN) {
@@ -96,17 +96,17 @@ public class ShooterMigrationThreadTemp implements Runnable {
 				ex.printStackTrace();
 			}
 		}
-		_log.info("Errori " + errorList.size());
+		_log.debug("Errori " + errorList.size());
 		for (String error : errorList) {
 
-			_log.info(error);
+			_log.debug(error);
 		}
 
 	}
 
 	private String assignCard(String code, String year ,String cardCode ,	String data_Creazione ,int pos) {
 
-		_log.info("code-->" + code);
+		_log.debug("code-->" + code);
 		
 		String tmp="insert into fitav.tessere_appo (ordine,tiratore,tessera,anno,dataIni,dataFine) values ("+pos+","+code+",'"+cardCode+"',"+ year+",'"+data_Creazione+"'";
 		if (!year.equals("2016" )) {

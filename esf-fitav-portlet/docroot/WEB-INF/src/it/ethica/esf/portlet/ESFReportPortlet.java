@@ -2943,7 +2943,7 @@ public class ESFReportPortlet extends MVCPortlet {
 			boolean error = false;
 			boolean notNewAssociation = ParamUtil.getBoolean(request, "notNewAssociation");
 			
-			_log.info("notnewAssociation="+notNewAssociation);
+			_log.debug("notnewAssociation="+notNewAssociation);
 			
 			ConiReport coni = new ConiReport();
 			coni.init(this.getPortletConfig());
@@ -2959,9 +2959,9 @@ public class ESFReportPortlet extends MVCPortlet {
 				e.printStackTrace();
 			}
 			
-			_log.info("--0  error ="+error);
+			_log.debug("--0  error ="+error);
 			if(error){
-				_log.info("--1  error ="+error);
+				_log.debug("--1  error ="+error);
 				SessionErrors.add(request, "error-Coni-Report");
 			}
 			

@@ -125,7 +125,7 @@ public class ESFGunUserPortlet extends MVCPortlet {
 		boolean find = false;
 		int totGun = 0;
 		totGun = ESFGunLocalServiceUtil.getESFGunsCount();
-		_log.info("esfGunKindId="+esfGunKindId);
+		_log.debug("esfGunKindId="+esfGunKindId);
 		List<ESFGun> guns = new ArrayList<ESFGun>();
 		guns = ESFGunLocalServiceUtil.getESFGuns(0, totGun);
 		

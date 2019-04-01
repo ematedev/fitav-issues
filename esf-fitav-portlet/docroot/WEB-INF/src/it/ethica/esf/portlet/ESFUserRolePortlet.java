@@ -200,7 +200,7 @@ public class ESFUserRolePortlet extends MVCPortlet {
 						esfEntityState, serviceContext);
 
 				SessionMessages.add(actionRequest, "addESFUserRole");
-				_log.info("Adding User Role: " + eSFUserRole.getEsfUserRoleId());
+				_log.debug("Adding User Role: " + eSFUserRole.getEsfUserRoleId());
 			}
 		}
 		catch (Exception e) {
@@ -250,7 +250,7 @@ public class ESFUserRolePortlet extends MVCPortlet {
 						isOrgAdmin, true, maxUser, serviceContext);
 
 				SessionMessages.add(actionRequest, "updateESFUserRole");
-				_log.info("Updating User Role: " + esfUserRoleId);
+				_log.debug("Updating User Role: " + esfUserRoleId);
 			}
 		}
 		catch (Exception e) {
@@ -274,7 +274,7 @@ public class ESFUserRolePortlet extends MVCPortlet {
 				esfUserRoleId, serviceContext);
 
 			SessionMessages.add(actionRequest, "deleteESFUserRole");
-			_log.info("Deleting User Role: " + esfUserRoleId);
+			_log.debug("Deleting User Role: " + esfUserRoleId);
 		}
 		catch (Exception e) {
 			_log.error("Error in deleteESFUserRole method: " + e.getMessage());

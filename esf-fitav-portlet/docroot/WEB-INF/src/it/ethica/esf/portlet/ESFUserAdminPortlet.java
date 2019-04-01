@@ -136,7 +136,7 @@ public class ESFUserAdminPortlet extends MVCPortlet {
 				try {
 					esfJsonUtil.prepareJSONUpdAssociationsCards(request, response);
 				} catch (Exception e) {
-					_log.info("errore card");
+					_log.error("errore card");
 				}
 
 			} catch (PortalException e) {

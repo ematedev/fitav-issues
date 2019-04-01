@@ -162,21 +162,6 @@ public class ESFMigrationPortlet extends MVCPortlet {
 
 	
 	//inserimento delle tessere per i tiratori tesserati prima del 2018 che hanno semplicemnte cambiato tessera
-	//private String selectShooter ="select distinct b.esfuserid, a.codice  from anagrate.anatiratori a, fitav_import.esfuser b where a.codice = b.codeuser and "+ 
-								//"a.codice in (SELECT numero_tiratore from anagrate.tessere_2018 where tessera not in (select code_ from fitav_import.esfcard));";
-	/*
-	private String selectCard =
-			"SELECT * FROM anagrate.Tessere "
-					+"where numero_tiratore = 'id' " 
-					 +"and Societa in (SELECT a2.codiSo FROM societa.affilia a1,societa.anagra a2 where a1.codiSo = a2.codiSo and a1.anno>=annoOrgMigration and a1.data_versamento is not null) "
-					 +"and anno>= annoOrgMigration " 
-					+"order by anno desc;";*/
-	
-	/*private String selectCard =
-					"SELECT t.*,s.denominazione_societa FROM anagrate.Tessere_2018 t,societa.anagra s " +
-					"where numero_tiratore = 'id' and" +
-					" Societa in (SELECT a2.codiSo FROM societa.affilia a1,societa.anagra a2 " +
-					"where a1.codiSo = a2.codiSo) and t.societa = s.codiso order by anno desc";*/
 	
 	
 	//per importare le tessere del 2018 dei tiratori tesserati prima del 2018 che hanno semplicemnte cambiato tessera
@@ -234,27 +219,27 @@ public class ESFMigrationPortlet extends MVCPortlet {
 //					11045, 0, false, false, false, false, false,
 //					esfOrgServiceContext);
 
-					_log.info("Created region: " + esfRegion.getIdRegion());
+					_log.debug("Created region: " + esfRegion.getIdRegion());
 			}
 			else {
-				_log.info("Region " + esfRegion.getIdRegion() + " already exists");
+				_log.debug("Region " + esfRegion.getIdRegion() + " already exists");
 			}
 			
 
 			List<ESFProvince> esfProvinces =
 				ESFProvinceLocalServiceUtil.getByRegionCode(esfRegion.getIdRegion());
 			
-			_log.info("Number of provinces for region " + esfRegion.getName() + ": " + esfProvinces.size());
+			_log.debug("Number of provinces for region " + esfRegion.getName() + ": " + esfProvinces.size());
 
 			for (ESFProvince esfProvince : esfProvinces) {
 				ESFOrganization esfOrganizationProvince = ESFOrganizationLocalServiceUtil.findByCode(esfProvince.getIdProvince());
 				
 				if (Validator.isNotNull(esfOrganizationProvince)) {
-					_log.info("Province " + esfProvince.getIdProvince() + " already exists");
+					_log.debug("Province " + esfProvince.getIdProvince() + " already exists");
 					continue;
 				}
 				
-				_log.info("Create province: " + esfProvince.getIdProvince());
+				_log.debug("Create province: " + esfProvince.getIdProvince());
 				
 //				esfOrganizationProvince = ESFOrganizationLocalServiceUtil.addESFOrganization(
 //					esfOrgServiceContext.getUserId(), (long) esfOrganizationRegion.getEsfOrganizationId(),
@@ -266,7 +251,7 @@ public class ESFMigrationPortlet extends MVCPortlet {
 //					11045, 0, false, false, false, false, false,
 //					esfOrgServiceContext);
 				
-				_log.info("Created province: " + esfProvince.getIdProvince());
+				_log.debug("Created province: " + esfProvince.getIdProvince());
 			}
 		}
 	}
@@ -315,7 +300,7 @@ public class ESFMigrationPortlet extends MVCPortlet {
 				throw new PortalException(e1);
 			}
 		}
-		_log.info("Adding Organization " + name + " codice " + code);
+		_log.debug("Adding Organization " + name + " codice " + code);
 		String provincia = "";
 		try {
 			provincia = res.getString("Provincia_Societa").trim();
@@ -324,7 +309,7 @@ public class ESFMigrationPortlet extends MVCPortlet {
 			}
 		}
 		catch (NullPointerException ex) {
-			_log.info("Provincia_Societa errata o assente /errore regione " + res.getString("CodiSo"));
+			_log.debug("Provincia_Societa errata o assente /errore regione " + res.getString("CodiSo"));
 		}
 
 		// A partire dalla provincia associo un organizzazione padre
@@ -338,10 +323,10 @@ public class ESFMigrationPortlet extends MVCPortlet {
 					serviceContext.getUserId(), parentOrganizationId, name,
 					"regular-organization", 0, 0, 12017, StringPool.BLANK,
 					true, serviceContext);
-			_log.info("Added organization " + organization.getName());
+			_log.debug("Added organization " + organization.getName());
 		}
 		else {
-			_log.info("Retrieve organization " + organization.getName());
+			_log.debug("Retrieve organization " + organization.getName());
 		}
 
 		
@@ -512,7 +497,7 @@ public class ESFMigrationPortlet extends MVCPortlet {
 	public void migrationOrganization(
 		ActionRequest request, ActionResponse response)
 		throws PortalException, SystemException {
-		_log.info("Inizio import organizzazioni");
+		_log.debug("Inizio import organizzazioni");
 		long companyId = PortalUtil.getCompanyId(request);
 		
 		annoOrgMigration=ParamUtil.getString(request, "annoMigOrg","2017");
@@ -570,7 +555,7 @@ public class ESFMigrationPortlet extends MVCPortlet {
 			while (res.next()) {
 				
 				if (counter % 100 == 0) {
-					_log.info("Processing " + counter + " of " + rowcount);
+					_log.debug("Processing " + counter + " of " + rowcount);
 				}
 				
 				ESFOrganization esfOrganization = addESFOrganization(res, companyId, serviceContext);
@@ -578,7 +563,7 @@ public class ESFMigrationPortlet extends MVCPortlet {
 				//ESFOrganization esfOrganization = ESFOrganizationLocalServiceUtil.findByCode(res.getString("CodIso"));
 				//long esfOrganizationId = res.getShort("esfOrganizationId");
 				long esfOrganizationId=esfOrganization.getEsfOrganizationId();
-				_log.info("Id società="+esfOrganizationId);
+				_log.debug("Id società="+esfOrganizationId);
 				
 				
 				/* ----------------------------------------------------------------------------------------------- */
@@ -586,7 +571,7 @@ public class ESFMigrationPortlet extends MVCPortlet {
 				/* ----------------------------------------------------------------------------------------------- */
 				
 //				try {
-//					_log.info("Start layout template");
+//					_log.debug("Start layout template");
 //					String uuid = "1d970b3a-2fef-463d-b291-e419799746e2";		
 //					Group organizationSite = GroupLocalServiceUtil.getOrganizationGroup(esfOrganization.getCompanyId(), esfOrganization.getEsfOrganizationId()) ;
 //					LayoutSetLocalServiceUtil.updateLayoutSetPrototypeLinkEnabled(organizationSite.getGroupId(), true, true,uuid );
@@ -595,7 +580,7 @@ public class ESFMigrationPortlet extends MVCPortlet {
 //					SitesUtil.mergeLayoutSetPrototypeLayouts(organizationSite, layoutSet);
 //				}
 //				catch (Exception e) {
-//					_log.info("Errore layout template--->orgId"+esfOrganization.getEsfOrganizationId());
+//					_log.debug("Errore layout template--->orgId"+esfOrganization.getEsfOrganizationId());
 //					e.printStackTrace();
 //				}
 				
@@ -607,7 +592,7 @@ public class ESFMigrationPortlet extends MVCPortlet {
 					}
 				}
 				catch (NullPointerException ex) {
-					_log.info("Provincia_Societa errata o assente /errore regione " + res.getString("CodiSo"));
+					_log.error("Provincia_Societa errata o assente /errore regione " + res.getString("CodiSo"));
 				}
 
 				ESFAddress esfAddress = ESFAddressLocalServiceUtil.createESFAddress(0);
@@ -623,7 +608,7 @@ public class ESFMigrationPortlet extends MVCPortlet {
 						"Localita_Societa").trim()));
 				}
 				catch (NullPointerException ex) {
-					_log.info("Città da località non trovata");
+					_log.error("Citta' da localita' non trovata");
 				}
 				String indirizzo_societa = res.getString("Indirizzo_Societa") != null ? res.getString("Indirizzo_Societa").trim() : StringPool.BLANK;
 				esfAddress.setStreet1(indirizzo_societa);
@@ -719,7 +704,7 @@ public class ESFMigrationPortlet extends MVCPortlet {
 					esfAddress.setEsfCityId(res.getString("Localita")== null ? null : 
 										ManageAddress.getCityId(res.getString("Localita").trim()));
 				}catch(NullPointerException ex){
-					_log.info("Località non trovata: "+res.getString("Localita")+ " associazione "+res.getString("CodiSo").trim());
+					_log.error("Localita' non trovata: "+res.getString("Localita")+ " associazione "+res.getString("CodiSo").trim());
 					esfAddress.setEsfCityId(0);
 				}
 				esfAddress.setStreet1(res.getString("Indirizzo")== null ? null : res.getString("Indirizzo").trim());
@@ -748,7 +733,7 @@ public class ESFMigrationPortlet extends MVCPortlet {
 					esfAddress.getMailing(), esfAddress.getPrimary_(),
 					false,serviceContext);
 
-				_log.info("End Address ");
+				_log.debug("End Address ");
 
 				/* parte tolta per inserimento dei solio indirizzi
 				List<ListType> emailListType =
@@ -764,7 +749,7 @@ public class ESFMigrationPortlet extends MVCPortlet {
 						? res.getString("IndMail").trim() : StringPool.BLANK;
 				if (emailAddress.equals(StringPool.BLANK)|| !Validator.isEmailAddress(emailAddress)){
 					emailAddress = esfOrganization.getCode() + "@fitavprova.it";
-					_log.info("emailAddress-->"+emailAddress);
+					_log.debug("emailAddress-->"+emailAddress);
 				}
 				
 				EmailAddressLocalServiceUtil.addEmailAddress(
@@ -772,7 +757,7 @@ public class ESFMigrationPortlet extends MVCPortlet {
 					esfOrganization.getEsfOrganizationId(), emailAddress,
 					typeId, true, serviceContext);
 
-				_log.info("Added Organization");
+				_log.debug("Added Organization");
 
 				int tabVideo = res.getInt("Tabelloni_Video");
 				int tabMunuali = res.getInt("Tabelloni_Manuali");
@@ -789,13 +774,13 @@ public class ESFMigrationPortlet extends MVCPortlet {
 					cal.setTime(dataYear);
 					 year = cal.get(Calendar.YEAR);
 				}
-				_log.info("Start addField ");
+				_log.debug("Start addField ");
 				addField(
 					serviceContext, connection,
 					esfOrganization.getEsfOrganizationId(), esfOrganization.getCode(), year,
 					tabVideo, tabMunuali, accessoDis);
 
-				_log.info("End addField ");
+				_log.debug("End addField ");
 
 				int segreteria = res.getInt("Segreteria");
 				int salaRiposo = res.getInt("Sala_Riposo");
@@ -853,9 +838,9 @@ public class ESFMigrationPortlet extends MVCPortlet {
 		int annoRif = Integer.parseInt(annoOrgMigration);
 		annoRif = 2017;
 		
-		_log.info("selectShooter "+selectShooter);
-		_log.info("selectCard "+selectCard);
-		_log.info("findLastCard "+findLastCard);
+		_log.debug("selectShooter "+selectShooter);
+		_log.debug("selectCard "+selectCard);
+		_log.debug("findLastCard "+findLastCard);
 		
 		
 		ServiceContext serviceContext =
@@ -911,9 +896,9 @@ public class ESFMigrationPortlet extends MVCPortlet {
 				res.beforeFirst();
 			}
 			int counter = 1;
-			_log.info("Number of match types " + rowcount);
+			_log.debug("Number of match types " + rowcount);
 			while (res.next()) {
-				_log.info("Adding match type " + counter + " of " + rowcount);
+				_log.debug("Adding match type " + counter + " of " + rowcount);
 
 				codice = res.getString("Codice");
 				descrizione = res.getString("Descrizione");
@@ -967,9 +952,9 @@ public class ESFMigrationPortlet extends MVCPortlet {
 				res.beforeFirst();
 			}
 			int counter = 1;
-			_log.info("Number of category " + rowcount);
+			_log.debug("Number of category " + rowcount);
 			while (res.next()) {
-				_log.info("Adding category " + counter + " of " + rowcount);
+				_log.debug("Adding category " + counter + " of " + rowcount);
 
 				codice = res.getString("Codice");
 				descrizione = res.getString("Descrizione");
@@ -988,9 +973,9 @@ public class ESFMigrationPortlet extends MVCPortlet {
 				res.beforeFirst();
 			}
 			counter = 1;
-			_log.info("Number of qualification " + rowcount);
+			_log.debug("Number of qualification " + rowcount);
 			while (res.next()) {
-				_log.info("Adding qualification " + counter + " of " + rowcount);
+				_log.debug("Adding qualification " + counter + " of " + rowcount);
 
 				codice = res.getString("Codice");
 				descrizione = res.getString("Descrizione");
@@ -1019,7 +1004,7 @@ public class ESFMigrationPortlet extends MVCPortlet {
 		boolean insertResults = ParamUtil.getBoolean(request, "insertResults", false);
 		String selectMatch =
 			"select * from " + schemaDotTableName + " ORDER BY Codice";
-		_log.info("selectMatche " + selectMatch);
+		_log.debug("selectMatche " + selectMatch);
 
 		ServiceContext serviceContext =
 			ServiceContextFactory.getInstance(
@@ -1108,16 +1093,16 @@ public class ESFMigrationPortlet extends MVCPortlet {
 					res.beforeFirst();
 				}
 				int counter = 1;
-				_log.info("Number of item " + rowcount);
+				_log.debug("Number of item " + rowcount);
 				
 				while (res.next()) {
 					
-					_log.info("Processing item " + counter + " of " + rowcount);
+					_log.debug("Processing item " + counter + " of " + rowcount);
 					counter++;
 					
 					String organization = res.getString("codiSo");
 					String anno = res.getString("Anno");
-					_log.info("_start import ORG-->"+organization+" --Anno-->"+anno);
+					_log.debug("_start import ORG-->"+organization+" --Anno-->"+anno);
 					ESFOrganization org = ESFOrganizationLocalServiceUtil.findByCode(organization);
 					if (Validator.isNull(org)) {
 						continue;
@@ -1483,9 +1468,9 @@ public class ESFMigrationPortlet extends MVCPortlet {
 						}
 					}
 					
-					_log.info("_end import ORG-->"+organization+" --Anno-->"+anno);
+					_log.debug("_end import ORG-->"+organization+" --Anno-->"+anno);
 				}
-				_log.info("_END IMPORT");
+				_log.debug("_END IMPORT");
 			}
 			catch (SQLException sqlex) {
 				sqlex.printStackTrace();
@@ -1639,7 +1624,7 @@ public class ESFMigrationPortlet extends MVCPortlet {
 			for (int i = 0; i < esfSportTypeId.size(); i++) {
 				stId[i] = esfSportTypeId.get(i);
 			}
-			_log.info("ESFField start  ");
+			_log.debug("ESFField start  ");
 
 			long esfStateId = ESFKeys.ESFStateType.DISABLE;
 			if (yearField == year)
@@ -1653,7 +1638,7 @@ public class ESFMigrationPortlet extends MVCPortlet {
 			count++;
 			cont1++;
 			
-			_log.info("ESFField end  ");
+			_log.debug("ESFField end  ");
 			}
 		}
 	}
@@ -1941,7 +1926,7 @@ public class ESFMigrationPortlet extends MVCPortlet {
 	public void addNewCardOldShooter(ActionRequest request, ActionResponse response)
 					throws PortalException, SystemException {
 		
-				_log.info("entro nella portlet");
+				_log.debug("entro nella portlet");
 		
 		String queryCard = "SELECT Indice,Anno,Tessera,Numero_Tiratore,Societa,Codice_Regione,Provincia, STR_TO_DATE(data_creazione, '%Y-%m-%d') as Data_Creazione,STR_TO_DATE(data_variazione, '%Y-%m-%d') as Data_Variazione,"+
 							"substr(tessera,3) as codeNum from anagrate.tessere a;";
@@ -1970,11 +1955,11 @@ public class ESFMigrationPortlet extends MVCPortlet {
 				res.beforeFirst();
 			}
 			int counter = 1;
-			_log.info("Number of item " + rowcount);
+			_log.debug("Number of item " + rowcount);
 			
 			while (res.next()) {
 				
-				_log.info("Processing item " + counter + " of " + rowcount);
+				_log.debug("Processing item " + counter + " of " + rowcount);
 				counter++;
 				
 				String userCodeS = res.getString("Numero_Tiratore");
@@ -2003,8 +1988,8 @@ public class ESFMigrationPortlet extends MVCPortlet {
 				}
 				catch (Exception e) {
 					// TODO: handle exception
-					_log.info("errore ricerca tiratore");
-					_log.info(e);
+					_log.error("errore ricerca tiratore");
+					_log.error(e);
 				}
 				
 				try {
@@ -2013,22 +1998,22 @@ public class ESFMigrationPortlet extends MVCPortlet {
 				}
 				catch (Exception e) {
 					// TODO: handle exception
-					_log.info("errore ricerca società");
-					_log.info(e);
+					_log.error("errore ricerca società");
+					_log.error(e);
 				}
 				
 				org = ESFOrganizationLocalServiceUtil.findByCode(orgCode);
 				orgId = org.getEsfOrganizationId();
 				
-				_log.info("user="+user);
-				_log.info("org="+org);
-				_log.info("userId="+userId);
-				_log.info("orgId="+orgId);
-				_log.info("tessera="+tessera);
-				_log.info("dataCreazione="+dataCreazione);
-				_log.info("dataVariazione="+dataVariazione);
-				_log.info("codeNum="+codeNum);
-				_log.info("indice="+indice);
+				_log.debug("user="+user);
+				_log.debug("org="+org);
+				_log.debug("userId="+userId);
+				_log.debug("orgId="+orgId);
+				_log.debug("tessera="+tessera);
+				_log.debug("dataCreazione="+dataCreazione);
+				_log.debug("dataVariazione="+dataVariazione);
+				_log.debug("codeNum="+codeNum);
+				_log.debug("indice="+indice);
 				
 				
 				
@@ -2037,9 +2022,7 @@ public class ESFMigrationPortlet extends MVCPortlet {
 				
 				ESFCard card = new ESFCardImpl();
 				ESFEntityState est = new ESFEntityStateImpl();
-				
-				//Date now = new Date();
-				
+								
 				card.setUuid(serviceContext.getUuid());
 				card.setEsfCardId(cardId);
 				card.setUserId(10198);
@@ -2057,7 +2040,7 @@ public class ESFMigrationPortlet extends MVCPortlet {
 				card.setOldCode(indice);
 				ESFCardLocalServiceUtil.addESFCard(card);
 				
-				_log.info("fine creazione tessera :"+card);
+				_log.debug("fine creazione tessera :"+card);
 				
 				Date now = new Date();
 				
@@ -2069,7 +2052,7 @@ public class ESFMigrationPortlet extends MVCPortlet {
 				Date endDate = null;
 				
 				if(Integer.parseInt(anno)  < 2018){
-					_log.info("entro in < 2018");
+					_log.debug("entro in < 2018");
 					stateId = 2;
 					String endDateS = anno+"-12-31 00:00:00";
 					endDate = sdf.parse(endDateS);
@@ -2077,9 +2060,9 @@ public class ESFMigrationPortlet extends MVCPortlet {
 
 				sdf.parse(createDateES);
 				
-				_log.info("createDateES="+createDateES);
-				_log.info("endDate="+endDate);
-				_log.info("stateId="+stateId);
+				_log.debug("createDateES="+createDateES);
+				_log.debug("endDate="+endDate);
+				_log.debug("stateId="+stateId);
 				
 				est.setEsfEntityStateId(esId);
 				est.setUserId(10198);
@@ -2095,7 +2078,7 @@ public class ESFMigrationPortlet extends MVCPortlet {
 				est.setEndDate(endDate);
 				ESFEntityStateLocalServiceUtil.addESFEntityState(est);
 				
-				_log.info("fine creazione entity :"+est);
+				_log.debug("fine creazione entity :"+est);
 			}
 		}
 		catch (SQLException sqlex) {
@@ -2107,7 +2090,7 @@ public class ESFMigrationPortlet extends MVCPortlet {
 		catch (Exception classN) {
 			classN.printStackTrace();
 		}
-		_log.info("FINE");
+		_log.debug("FINE");
 	}
 	
 

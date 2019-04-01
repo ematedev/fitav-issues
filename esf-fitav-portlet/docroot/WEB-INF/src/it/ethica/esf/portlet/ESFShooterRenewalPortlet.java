@@ -137,7 +137,7 @@ public class ESFShooterRenewalPortlet extends MVCPortlet{
 		renewalAffiliation.setResponse(response);
 		error = renewalAffiliation.renewalAffiliation(bufferedReader,creditDate);
 		if(0 < error){
-			_log.info("numero di errori ="+error);
+			_log.error("numero di errori ="+error);
 			response.setRenderParameter("numberLineError",String.valueOf(error) );
 			SessionErrors.add(request, "error-Shooter-Affiliation");
 		}
