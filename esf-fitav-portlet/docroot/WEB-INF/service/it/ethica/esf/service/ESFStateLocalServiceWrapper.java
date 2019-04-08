@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -311,10 +311,10 @@ public class ESFStateLocalServiceWrapper implements ESFStateLocalService,
 	}
 
 	/**
-	* Torna tutti i className associati alle entitÃ¯Â¿Â½ portlet ESF giÃ¯Â¿Â½ assegnati
+	* Torna tutti i className associati alle entit� portlet ESF gi� assegnati
 	* allo stato con id esfStateId
 	*
-	* @return entitÃ¯Â¿Â½ portlet ESF giÃ¯Â¿Â½ assegnati ad uno stato
+	* @return entit� portlet ESF gi� assegnati ad uno stato
 	* @throws SystemException
 	*/
 	@Override
@@ -325,10 +325,10 @@ public class ESFStateLocalServiceWrapper implements ESFStateLocalService,
 	}
 
 	/**
-	* Torna tutti i className associati alle entitÃ¯Â¿Â½ portlet ESF e ancora non
+	* Torna tutti i className associati alle entit� portlet ESF e ancora non
 	* assegnati allo stato con id esfStateId
 	*
-	* @return entitÃ¯Â¿Â½ portlet ESF non assegnati ad uno stato
+	* @return entit� portlet ESF non assegnati ad uno stato
 	* @throws SystemException
 	*/
 	@Override
@@ -387,7 +387,7 @@ public class ESFStateLocalServiceWrapper implements ESFStateLocalService,
 	}
 
 	/**
-	* Verifica se Ã¯Â¿Â½ stato assegnata una o piÃ¯Â¿Â½ entitÃ¯Â¿Â½ allo stato con id
+	* Verifica se � stato assegnata una o pi� entit� allo stato con id
 	* esfStateId
 	*
 	* @return true se gia assegnata

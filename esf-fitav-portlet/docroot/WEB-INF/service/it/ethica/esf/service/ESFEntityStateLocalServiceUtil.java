@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -276,7 +276,7 @@ public class ESFEntityStateLocalServiceUtil {
 	}
 
 	/**
-	* Ricerca l'entitÃ¯Â¿Â½ ESFEntityState sulla base dei sequenti filtri: -
+	* Ricerca l'entit� ESFEntityState sulla base dei sequenti filtri: -
 	* className; - classPK; - WHERE CONDITION ( endDate=null )
 	*
 	* @throws SystemException
@@ -294,7 +294,7 @@ public class ESFEntityStateLocalServiceUtil {
 	}
 
 	/**
-	* Ricerca l'entitÃ¯Â¿Â½ ESFEntityState sulla base dei sequenti filtri: -
+	* Ricerca l'entit� ESFEntityState sulla base dei sequenti filtri: -
 	* className; - classPK; - esfStateId - WHERE CONDITION ( endDate=null )
 	*/
 	public static it.ethica.esf.model.ESFEntityState findESFEntityStateByC_PK_S(
@@ -305,7 +305,7 @@ public class ESFEntityStateLocalServiceUtil {
 	}
 
 	/**
-	* Ricerca le entitÃ¯Â¿Â½ ESFEntityState sulla base dei sequenti filtri: -
+	* Ricerca le entit� ESFEntityState sulla base dei sequenti filtri: -
 	* className; - esfStateId - WHERE CONDITION ( endDate=null )
 	*/
 	public static java.util.List<it.ethica.esf.model.ESFEntityState> findESFEntityStateByC_S(
@@ -321,7 +321,7 @@ public class ESFEntityStateLocalServiceUtil {
 	}
 
 	/**
-	* Ricerca le entitÃ¯Â¿Â½ ESFEntityState sulla base dei sequenti filtri: -
+	* Ricerca le entit� ESFEntityState sulla base dei sequenti filtri: -
 	* className; - esfStateId - WHERE CONDITION ( endDate=null )
 	*/
 	public static java.util.List<it.ethica.esf.model.ESFEntityState> findESFEntityStateByC_S(
@@ -376,7 +376,7 @@ public class ESFEntityStateLocalServiceUtil {
 	}
 
 	/**
-	* Ricerca l'entitÃ¯Â¿Â½ ESFEntityState sulla base dei sequenti filtri: -
+	* Ricerca l'entit� ESFEntityState sulla base dei sequenti filtri: -
 	* className; - classPK;
 	*/
 	public static it.ethica.esf.model.ESFEntityState findAllESFEntityStateByClassName_ClassPK(

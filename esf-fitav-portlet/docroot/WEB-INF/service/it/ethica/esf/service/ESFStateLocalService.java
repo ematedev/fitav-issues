@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -262,10 +262,10 @@ public interface ESFStateLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**
-	* Torna tutti i className associati alle entitï¿½ portlet ESF giï¿½ assegnati
+	* Torna tutti i className associati alle entit� portlet ESF gi� assegnati
 	* allo stato con id esfStateId
 	*
-	* @return entitï¿½ portlet ESF giï¿½ assegnati ad uno stato
+	* @return entit� portlet ESF gi� assegnati ad uno stato
 	* @throws SystemException
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -274,10 +274,10 @@ public interface ESFStateLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**
-	* Torna tutti i className associati alle entitï¿½ portlet ESF e ancora non
+	* Torna tutti i className associati alle entit� portlet ESF e ancora non
 	* assegnati allo stato con id esfStateId
 	*
-	* @return entitï¿½ portlet ESF non assegnati ad uno stato
+	* @return entit� portlet ESF non assegnati ad uno stato
 	* @throws SystemException
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -314,7 +314,7 @@ public interface ESFStateLocalService extends BaseLocalService,
 			com.liferay.portal.kernel.exception.SystemException;
 
 	/**
-	* Verifica se ï¿½ stato assegnata una o piï¿½ entitï¿½ allo stato con id
+	* Verifica se � stato assegnata una o pi� entit� allo stato con id
 	* esfStateId
 	*
 	* @return true se gia assegnata

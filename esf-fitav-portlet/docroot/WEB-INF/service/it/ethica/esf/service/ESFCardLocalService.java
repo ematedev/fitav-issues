@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -369,11 +369,11 @@ public interface ESFCardLocalService extends BaseLocalService,
 			com.liferay.portal.kernel.exception.SystemException;
 
 	/**
-	* Effettua l'update dell'entitï¿½ ESFCard. Nel caso in cui viene fatto il
+	* Effettua l'update dell'entit� ESFCard. Nel caso in cui viene fatto il
 	* cambio di stato della card, viene aggiornata la tabella corrispondente.
 	* Da notare che se isNotChangeState = true viene baipassato il controllo
-	* sulla scelta di uno stato differente a quello giï¿½ assegnato
-	* all'entitï¿½. Questo perchï¿½ delle volte bisogna creare un riferimento
+	* sulla scelta di uno stato differente a quello gi� assegnato
+	* all'entit�. Questo perch� delle volte bisogna creare un riferimento
 	* nella tabella degli stati mantenendo lo stato preesistente (per lo
 	* storico)
 	*
@@ -477,7 +477,7 @@ public interface ESFCardLocalService extends BaseLocalService,
 		long organizationId, int state, int start, int end);
 
 	/**
-	* Cerca la Card che ha uno stato [attivo o disattivo] e che ï¿½ associata
+	* Cerca la Card che ha uno stato [attivo o disattivo] e che � associata
 	* all' organizzazione con Id = organizationId e cardId = esfCardId
 	*/
 	public it.ethica.esf.model.ESFCard findESFCardByO_C(long organizationId,

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -464,7 +464,7 @@ public class ESFGunLocalServiceUtil {
 	}
 
 	/**
-	* Ritorna la quantitÃ¯Â¿Â½ di oggetti ESFGun sulla base della tipologia di arma.
+	* Ritorna la quantit� di oggetti ESFGun sulla base della tipologia di arma.
 	*
 	* @param esfGunKindId l'identificativo del tipo di arma
 	* @return List<ESFGun>
@@ -482,7 +482,7 @@ public class ESFGunLocalServiceUtil {
 	*
 	* @param code il codice dell'arma
 	* @param esfGunKindId l'identificativo del tipo di arma
-	* @param catridgeName identifica la cartuccia, se Ã¯Â¿Â½ vuoto, indica un arma di tipo fucile
+	* @param catridgeName identifica la cartuccia, se � vuoto, indica un arma di tipo fucile
 	* @param start
 	* @param end
 	* @return List<ESFGun>
@@ -502,7 +502,7 @@ public class ESFGunLocalServiceUtil {
 	*
 	* @param code il codice dell'arma
 	* @param esfGunKindId l'identificativo del tipo di arma
-	* @param catridgeName identifica la cartuccia, se Ã¯Â¿Â½ vuoto, indica un arma di tipo fucile
+	* @param catridgeName identifica la cartuccia, se � vuoto, indica un arma di tipo fucile
 	* @return List<ESFGun>
 	*/
 	public static java.util.List<it.ethica.esf.model.ESFGun> getESFGunByLikeC_K_M_U(
