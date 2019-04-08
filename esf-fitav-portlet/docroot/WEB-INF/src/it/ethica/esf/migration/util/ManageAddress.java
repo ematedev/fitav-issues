@@ -82,11 +82,11 @@ public class ManageAddress {
 			stat.executeQuery("select idRegion from fitav.ESFProvince " +
 				"where idProvince like '" + id + "'");
 
-		// _log.info("getRegionIdFromProvince= select idRegion from ESFProvince "
+		// _log.debug("getRegionIdFromProvince= select idRegion from ESFProvince "
 		// +
 		// "where idProvince like '" + id + "'");
 		while (res.next()) {
-			// _log.info("getRegionIdFromProvince= "+res.getString("idRegion"));
+			// _log.debug("getRegionIdFromProvince= "+res.getString("idRegion"));
 			return res.getString("idRegion");
 		}
 		return null;
@@ -106,11 +106,11 @@ public class ManageAddress {
 		throws SystemException {
 
 		List<ESFCity> cities = ESFCityLocalServiceUtil.getESFCity(name);
-		// _log.info("getCityId= "+cities);
+		// _log.debug("getCityId= "+cities);
 		if (Validator.isNull(cities) || cities.size() == 0)
 			return 0;
-		// _log.info("getCityId= "+cities.size());
-		// _log.info("getCityId= "+cities.get(0).getIdCity());
+		// _log.debug("getCityId= "+cities.size());
+		// _log.debug("getCityId= "+cities.get(0).getIdCity());
 		return cities.get(0).getIdCity();
 
 	}

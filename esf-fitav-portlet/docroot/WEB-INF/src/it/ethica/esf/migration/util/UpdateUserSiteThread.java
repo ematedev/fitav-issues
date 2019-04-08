@@ -51,7 +51,7 @@ public class UpdateUserSiteThread implements Runnable {
 				SitesUtil.mergeLayoutSetProtypeLayouts(shoterGroup, layoutSetPrivate);*/
 				List newLayouts = LayoutLocalServiceUtil.getLayouts(shoterGroup.getGroupId(), false, LayoutConstants.DEFAULT_PARENT_LAYOUT_ID);
 				userProcessati++;
-				_log.info("Processato "+userProcessati);
+				_log.error("Processato "+userProcessati);
 			}
 
 		} catch (Exception e) {

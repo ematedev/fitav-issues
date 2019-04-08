@@ -62,8 +62,8 @@ public class SendEmail implements MessageListener  {
 		triggerDate.add(Calendar.MONTH, -1*(monthSendMail));
 		String oggi = today.get(Calendar.DAY_OF_MONTH)+"/"+today.get(Calendar.MONTH)+"/"+today.get(Calendar.YEAR);
 		String innesco = triggerDate.get(Calendar.DAY_OF_MONTH)+"/"+triggerDate.get(Calendar.MONTH)+"/"+triggerDate.get(Calendar.YEAR);
-		log.info("Sto confrontando "+ oggi +" con "+innesco);
-		log.info("Valori recuperati per configurazione invio email: "+configurationMonthsMail.getValue());
+		log.debug("Sto confrontando "+ oggi +" con "+innesco);
+		log.debug("Valori recuperati per configurazione invio email: "+configurationMonthsMail.getValue());
 		if(today.equals(triggerDate)){
 			
 				List<ESFOrganization> allOrganitations = new ArrayList<ESFOrganization>();

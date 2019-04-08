@@ -78,12 +78,12 @@ public class ShooterMigrationThread implements Runnable {
 			}
 			// interrogazone del db
 			stat = connection.createStatement();
-			_log.info("Start shooter import");
+			_log.debug("Start shooter import");
 			long startTime = System.nanoTime();
 			ResultSet res = stat.executeQuery(selectShooter);
 			long endTime = System.nanoTime();
 			long duration = (endTime - startTime); 
-			_log.info("Query completata in: "+(duration/1000000)+"ms");
+			_log.debug("Query completata in: "+(duration/1000000)+"ms");
 			int count = 0;
 			long esfStateId = ESFKeys.ESFStateType.ENABLE;
 			int rowcount = 0;
@@ -91,14 +91,14 @@ public class ShooterMigrationThread implements Runnable {
 				rowcount = res.getRow();
 				res.beforeFirst();
 			}
-			_log.info("Numero di risultati: " + rowcount);
+			_log.debug("Numero di risultati: " + rowcount);
 			while (res.next()) {
 				count++;
 				
 				String code = res.getString("Codice").trim();
-				_log.info("Inserimento tiratore con codice: "+code);
+				_log.debug("Inserimento tiratore con codice: "+code);
 //				if (count % 100 == 0) {
-				/*	_log.info("Processing " + count + " of " + rowcount + " with code " + code);*/
+				/*	_log.debug("Processing " + count + " of " + rowcount + " with code " + code);*/
 //				}
 
 				long codeUs = new Long(code);
@@ -220,16 +220,16 @@ public class ShooterMigrationThread implements Runnable {
 						}
 //					}
 //					else {
-//						_log.info("User with code " + code + " has not cards");
+//						_log.debug("User with code " + code + " has not cards");
 //					}
 				}
 				catch (Exception e) {
 					e.printStackTrace();
-					_log.info("Problem retrieving cards for user " + code);
+					_log.debug("Problem retrieving cards for user " + code);
 				}
 			}
-			_log.info("Tiratori importati: "+totShooterImp);
-			_log.info("Card create: "+totCardImp);
+			_log.debug("Tiratori importati: "+totShooterImp);
+			_log.debug("Card create: "+totCardImp);
 		} catch (SQLException sqlex) {
 			sqlex.printStackTrace();
 		} catch (ClassNotFoundException classN) {
@@ -320,7 +320,7 @@ public class ShooterMigrationThread implements Runnable {
 				dateCreazione.setMonth(Integer.parseInt(data[1]));
 				int a = Integer.parseInt(data[0]) - 1900;
 				dateCreazione.setYear(a);
-				//_log.info("data creazione: "+dateCreazione);
+				//_log.debug("data creazione: "+dateCreazione);
 			}
 			
 			ESFOrganization org =
@@ -357,10 +357,10 @@ public class ShooterMigrationThread implements Runnable {
 				cardCount++;
 			}
 			else{
-				_log.info("Card "+oldCode+ " non importata per associazione "+organization+" non trovata ");
+				_log.debug("Card "+oldCode+ " non importata per associazione "+organization+" non trovata ");
 			}
 		}
-		_log.info("Card importate ed assegnate: "+cardCount);
+		_log.debug("Card importate ed assegnate: "+cardCount);
 		
 		
 	}
@@ -379,7 +379,7 @@ public class ShooterMigrationThread implements Runnable {
 			rowcount = res.getRow();
 			res.beforeFirst();
 		}
-//		_log.info("L'utente " + code + " ha " + rowcount + " cards");
+//		_log.debug("L'utente " + code + " ha " + rowcount + " cards");
 		while (res.next()) {
 
 			String year = res.getString("Anno").trim();
@@ -395,7 +395,7 @@ public class ShooterMigrationThread implements Runnable {
 				dateCreazione.setMonth(Integer.parseInt(data[1]));
 				int a = Integer.parseInt(data[0]) - 1900;
 				dateCreazione.setYear(a);
-				//_log.info("data creazione: "+dateCreazione);
+				//_log.debug("data creazione: "+dateCreazione);
 			}
 			
 			ESFOrganization org =
@@ -431,7 +431,7 @@ public class ShooterMigrationThread implements Runnable {
 				cards.add(card);
 			}
 			else{
-				_log.info("Card "+oldCode+ " non importata per associazione "+organization+" non trovata ");
+				_log.debug("Card "+oldCode+ " non importata per associazione "+organization+" non trovata ");
 			}
 		}
 
@@ -444,9 +444,9 @@ public class ShooterMigrationThread implements Runnable {
 				List<ESFCard> cards = new ArrayList<ESFCard>();
 				Statement stat = connection.createStatement();
 				String selectCard1 = selectOlderCard.replace("id", code);
-				_log.info("Assegno le vecchie tessere per utente: "+userId);
+				_log.debug("Assegno le vecchie tessere per utente: "+userId);
 				ResultSet res = stat.executeQuery(selectCard1);
-				_log.info("Tessere :");
+				_log.debug("Tessere :");
 				while (res.next()) {
 					
 					String year = res.getString("Anno").trim();
@@ -455,7 +455,7 @@ public class ShooterMigrationThread implements Runnable {
 					String provinceCode = res.getString("Provincia").trim();
 					String data_Creazione = res.getString("Data_Pagamento").trim();
 					String oldCode= res.getString("Indice").trim();
-					_log.info(oldCode);
+					_log.debug(oldCode);
 					Date dateCreazione = new Date();
 					if (Validator.isNotNull(data_Creazione)) {
 						String[] data = data_Creazione.split(" ")[0].split("-");
@@ -473,16 +473,16 @@ public class ShooterMigrationThread implements Runnable {
 							org=ESFOrganizationLocalServiceUtil.fetchESFOrganization(orgId);
 						}catch(Exception ex)
 						{
-							_log.info("Organization: "+organization+" anno: "+year+" non trovata per nome");
+							_log.debug("Organization: "+organization+" anno: "+year+" non trovata per nome");
 						}
 					}
 					if (org == null) {
 						
-						_log.info("No Organization: "+organization+" anno: "+year);
+						_log.debug("No Organization: "+organization+" anno: "+year);
 					} else {
 
 						ESFEntityState esfEntityState = ESFEntityStateLocalServiceUtil.createESFEntityState(0);//
-						_log.info("Anno tessera: "+year);
+						_log.debug("Anno tessera: "+year);
 						if (!year.equals("" + annoRif)) {
 							String dataFine = res.getString("Anno").trim();
 							Date datefine = new Date();
@@ -516,12 +516,12 @@ public class ShooterMigrationThread implements Runnable {
 
 		Statement stat = connection.createStatement();
 		String findLastCardQuery = findLastCard.replace("id", "" + userCode);
-		_log.info("findLastCardQuery " + findLastCardQuery);
+		_log.debug("findLastCardQuery " + findLastCardQuery);
 
 		ResultSet res = stat.executeQuery(findLastCardQuery);
 		if (res.next()) {
 			String year = res.getString("Anno").trim();
-			_log.info("Year " + year + " " + userId + " " + annoRif + " " + (year.equals("" + annoRif)));
+			_log.debug("Year " + year + " " + userId + " " + annoRif + " " + (year.equals("" + annoRif)));
 			if (year.equals("" + annoRif)) {
 				countDue++;
 				String organization = res.getString("Societa").trim();
@@ -533,11 +533,11 @@ public class ShooterMigrationThread implements Runnable {
 						org=ESFOrganizationLocalServiceUtil.fetchESFOrganization(orgId);
 					}catch(Exception ex)
 					{
-						_log.info("Organization: "+organization+" anno: "+year+" non trovata per nome");
+						_log.debug("Organization: "+organization+" anno: "+year+" non trovata per nome");
 					}
 				}
 				if (org == null) {
-					_log.info("No Organization");
+					_log.debug("No Organization");
 				} else {
 					String cardCode = res.getString("Tessera").trim();
 					String provinceCode = res.getString("Provincia").trim();
@@ -560,7 +560,7 @@ public class ShooterMigrationThread implements Runnable {
 							Long.parseLong(cardCode.substring(2)), esfEntityState, userId, org.getEsfOrganizationId(),
 							serviceContext);
 
-					_log.info("Card old user: " + dateCreazione + " " + userId + " " + cardCode + " " + provinceCode
+					_log.debug("Card old user: " + dateCreazione + " " + userId + " " + cardCode + " " + provinceCode
 							+ " " + Long.parseLong(cardCode.substring(2)) + " " + userId);
 				}
 			}

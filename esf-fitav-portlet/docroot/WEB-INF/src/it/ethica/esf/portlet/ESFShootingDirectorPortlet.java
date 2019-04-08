@@ -442,7 +442,7 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 		}
 		catch (Exception e) {
 			// TODO: handle exception
-			_log.info("errore nel match");
+			_log.error("errore nel match");
 		}
 		
 		ESFNationalDelegation del = new ESFNationalDelegationImpl();
