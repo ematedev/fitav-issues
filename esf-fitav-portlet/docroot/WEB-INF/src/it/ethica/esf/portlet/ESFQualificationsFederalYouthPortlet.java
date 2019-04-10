@@ -26,6 +26,7 @@ import it.ethica.esf.service.ESFSportTypeLocalServiceUtil;
 import it.ethica.esf.service.ESFUserCategoryLocalServiceUtil;
 import it.ethica.esf.service.ESFUserLocalServiceUtil;
 
+
 /**
  * Portlet implementation class QualificationsFederalYouth
  */
@@ -200,4 +201,3 @@ public class ESFQualificationsFederalYouthPortlet extends MVCPortlet {
 	private static Log _log =
 					LogFactoryUtil.getLog(ESFQualificationsFederalYouthPortlet.class);
 }
-

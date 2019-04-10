@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -541,7 +541,7 @@ public interface ESFUserLocalService extends BaseLocalService,
 
 	/**
 	* Ricerca tutti gli utenti che sono stati assegnati ad un match nazionale
-	* con ruolo Allenatore. L'utetne puï¿½ esseree gia' stati associato ad una
+	* con ruolo Allenatore. L'utetne pu� esseree gia' stati associato ad una
 	* gara con id <b>idMatch</b> (caso <b>isPartecipant</b> = true) o ancora
 	* non associati (caso <b>isPartecipant</b> = false)
 	*
@@ -563,7 +563,7 @@ public interface ESFUserLocalService extends BaseLocalService,
 
 	/**
 	* Ricerca tutti gli utenti che sono stati assegnati ad un match nazionale
-	* con ruolo Allenatore. L'utetne puï¿½ esseree gia' stati associato ad una
+	* con ruolo Allenatore. L'utetne pu� esseree gia' stati associato ad una
 	* gara con id <b>idMatch</b> (caso <b>isPartecipant</b> = true) o ancora
 	* non associati (caso <b>isPartecipant</b> = false)
 	*

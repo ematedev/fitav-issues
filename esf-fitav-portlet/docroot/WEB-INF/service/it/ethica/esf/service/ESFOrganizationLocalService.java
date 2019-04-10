@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -550,7 +550,7 @@ public interface ESFOrganizationLocalService extends BaseLocalService,
 
 	/**
 	* Ricerca tutte le organizzazioni sportive foglie a partire
-	* dall'organizzazione con id = organizationId. Se l'organizationId ï¿½ di
+	* dall'organizzazione con id = organizationId. Se l'organizationId � di
 	* un organizzazione foglia, ritorna una lista con solo quella
 	* organizzazione.
 	*/
@@ -571,7 +571,7 @@ public interface ESFOrganizationLocalService extends BaseLocalService,
 
 	/**
 	* Ricerca tutte le organizzazioni sportive foglie a partire
-	* dall'organizzazione con id = organizationId. Se l'organizationId ï¿½ di
+	* dall'organizzazione con id = organizationId. Se l'organizationId � di
 	* un organizzazione foglia, ritorna una lista con solo quella
 	* organizzazione.
 	*/
@@ -584,7 +584,7 @@ public interface ESFOrganizationLocalService extends BaseLocalService,
 	/**
 	* Ricerca tutte le organizzazioni sportive foglie a partire
 	* dall'organizzazione con id = organizationId con stato pari a state. Se
-	* l'organizationId ï¿½ di un organizzazione foglia, ritorna una lista con
+	* l'organizationId � di un organizzazione foglia, ritorna una lista con
 	* solo quella organizzazione.
 	*/
 	public java.util.List<it.ethica.esf.model.ESFOrganization> findAllLeafOrganizations(
@@ -595,7 +595,7 @@ public interface ESFOrganizationLocalService extends BaseLocalService,
 	/**
 	* Ricerca tutte le organizzazioni sportive foglie a partire
 	* dall'organizzazione con id = organizationId con stato pari a state. Se
-	* l'organizationId ï¿½ di un organizzazione foglia, ritorna una lista con
+	* l'organizationId � di un organizzazione foglia, ritorna una lista con
 	* solo quella organizzazione.
 	*/
 	public java.util.List<it.ethica.esf.model.ESFOrganization> findAllLeafOrganizations(

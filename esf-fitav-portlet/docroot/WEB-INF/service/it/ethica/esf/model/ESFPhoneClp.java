@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -140,34 +140,15 @@ public class ESFPhoneClp extends BaseModelImpl<ESFPhone> implements ESFPhone {
 	}
 
 	@Override
-	public void setClassPk(long classPk) {
+	public void setClassNameId(long classNameId) {
 		try {
-			String methodName = "setClassPk";
+			String methodName = "setClassNameId";
 
 			Class<?>[] parameterTypes = new Class<?>[] { long.class };
 
-			Object[] parameterValues = new Object[] { classPk };
+			Object[] parameterValues = new Object[] { classNameId };
 
 			invokeOnRemoteModel(methodName, parameterTypes, parameterValues);
-		}
-		catch (Exception e) {
-			throw new UnsupportedOperationException(e);
-		}
-	}
-
-	@Override
-	public int getTypeId() {
-		try {
-			String methodName = "getTypeId";
-
-			Class<?>[] parameterTypes = new Class<?>[] {  };
-
-			Object[] parameterValues = new Object[] {  };
-
-			Integer returnObj = (Integer)invokeOnRemoteModel(methodName,
-					parameterTypes, parameterValues);
-
-			return returnObj;
 		}
 		catch (Exception e) {
 			throw new UnsupportedOperationException(e);
@@ -194,51 +175,45 @@ public class ESFPhoneClp extends BaseModelImpl<ESFPhone> implements ESFPhone {
 	}
 
 	@Override
-	public long getUserId() {
+	public void setCompanyId(long companyId) {
 		try {
-			String methodName = "getUserId";
-
-			Class<?>[] parameterTypes = new Class<?>[] {  };
-
-			Object[] parameterValues = new Object[] {  };
-
-			Long returnObj = (Long)invokeOnRemoteModel(methodName,
-					parameterTypes, parameterValues);
-
-			return returnObj;
-		}
-		catch (Exception e) {
-			throw new UnsupportedOperationException(e);
-		}
-	}
-
-	@Override
-	public java.util.Date getCreateDate() {
-		try {
-			String methodName = "getCreateDate";
-
-			Class<?>[] parameterTypes = new Class<?>[] {  };
-
-			Object[] parameterValues = new Object[] {  };
-
-			java.util.Date returnObj = (java.util.Date)invokeOnRemoteModel(methodName,
-					parameterTypes, parameterValues);
-
-			return returnObj;
-		}
-		catch (Exception e) {
-			throw new UnsupportedOperationException(e);
-		}
-	}
-
-	@Override
-	public void setClassNameId(long classNameId) {
-		try {
-			String methodName = "setClassNameId";
+			String methodName = "setCompanyId";
 
 			Class<?>[] parameterTypes = new Class<?>[] { long.class };
 
-			Object[] parameterValues = new Object[] { classNameId };
+			Object[] parameterValues = new Object[] { companyId };
+
+			invokeOnRemoteModel(methodName, parameterTypes, parameterValues);
+		}
+		catch (Exception e) {
+			throw new UnsupportedOperationException(e);
+		}
+	}
+
+	@Override
+	public void setTypeId(int typeId) {
+		try {
+			String methodName = "setTypeId";
+
+			Class<?>[] parameterTypes = new Class<?>[] { int.class };
+
+			Object[] parameterValues = new Object[] { typeId };
+
+			invokeOnRemoteModel(methodName, parameterTypes, parameterValues);
+		}
+		catch (Exception e) {
+			throw new UnsupportedOperationException(e);
+		}
+	}
+
+	@Override
+	public void setUserId(long userId) {
+		try {
+			String methodName = "setUserId";
+
+			Class<?>[] parameterTypes = new Class<?>[] { long.class };
+
+			Object[] parameterValues = new Object[] { userId };
 
 			invokeOnRemoteModel(methodName, parameterTypes, parameterValues);
 		}
@@ -264,13 +239,13 @@ public class ESFPhoneClp extends BaseModelImpl<ESFPhone> implements ESFPhone {
 	}
 
 	@Override
-	public void setCompanyId(long companyId) {
+	public void setUserName(java.lang.String userName) {
 		try {
-			String methodName = "setCompanyId";
+			String methodName = "setUserName";
 
-			Class<?>[] parameterTypes = new Class<?>[] { long.class };
+			Class<?>[] parameterTypes = new Class<?>[] { java.lang.String.class };
 
-			Object[] parameterValues = new Object[] { companyId };
+			Object[] parameterValues = new Object[] { userName };
 
 			invokeOnRemoteModel(methodName, parameterTypes, parameterValues);
 		}
@@ -299,86 +274,6 @@ public class ESFPhoneClp extends BaseModelImpl<ESFPhone> implements ESFPhone {
 	}
 
 	@Override
-	public void setCreateDate(java.util.Date createDate) {
-		try {
-			String methodName = "setCreateDate";
-
-			Class<?>[] parameterTypes = new Class<?>[] { java.util.Date.class };
-
-			Object[] parameterValues = new Object[] { createDate };
-
-			invokeOnRemoteModel(methodName, parameterTypes, parameterValues);
-		}
-		catch (Exception e) {
-			throw new UnsupportedOperationException(e);
-		}
-	}
-
-	@Override
-	public void setPrimary(boolean primary) {
-		try {
-			String methodName = "setPrimary";
-
-			Class<?>[] parameterTypes = new Class<?>[] { boolean.class };
-
-			Object[] parameterValues = new Object[] { primary };
-
-			invokeOnRemoteModel(methodName, parameterTypes, parameterValues);
-		}
-		catch (Exception e) {
-			throw new UnsupportedOperationException(e);
-		}
-	}
-
-	@Override
-	public void setTypeId(int typeId) {
-		try {
-			String methodName = "setTypeId";
-
-			Class<?>[] parameterTypes = new Class<?>[] { int.class };
-
-			Object[] parameterValues = new Object[] { typeId };
-
-			invokeOnRemoteModel(methodName, parameterTypes, parameterValues);
-		}
-		catch (Exception e) {
-			throw new UnsupportedOperationException(e);
-		}
-	}
-
-	@Override
-	public void setNumber(java.lang.String number) {
-		try {
-			String methodName = "setNumber";
-
-			Class<?>[] parameterTypes = new Class<?>[] { java.lang.String.class };
-
-			Object[] parameterValues = new Object[] { number };
-
-			invokeOnRemoteModel(methodName, parameterTypes, parameterValues);
-		}
-		catch (Exception e) {
-			throw new UnsupportedOperationException(e);
-		}
-	}
-
-	@Override
-	public void setUserName(java.lang.String userName) {
-		try {
-			String methodName = "setUserName";
-
-			Class<?>[] parameterTypes = new Class<?>[] { java.lang.String.class };
-
-			Object[] parameterValues = new Object[] { userName };
-
-			invokeOnRemoteModel(methodName, parameterTypes, parameterValues);
-		}
-		catch (Exception e) {
-			throw new UnsupportedOperationException(e);
-		}
-	}
-
-	@Override
 	public java.lang.String getUserName() {
 		try {
 			String methodName = "getUserName";
@@ -388,60 +283,6 @@ public class ESFPhoneClp extends BaseModelImpl<ESFPhone> implements ESFPhone {
 			Object[] parameterValues = new Object[] {  };
 
 			java.lang.String returnObj = (java.lang.String)invokeOnRemoteModel(methodName,
-					parameterTypes, parameterValues);
-
-			return returnObj;
-		}
-		catch (Exception e) {
-			throw new UnsupportedOperationException(e);
-		}
-	}
-
-	@Override
-	public boolean isPrimary() {
-		try {
-			String methodName = "isPrimary";
-
-			Class<?>[] parameterTypes = new Class<?>[] {  };
-
-			Object[] parameterValues = new Object[] {  };
-
-			Boolean returnObj = (Boolean)invokeOnRemoteModel(methodName,
-					parameterTypes, parameterValues);
-
-			return returnObj;
-		}
-		catch (Exception e) {
-			throw new UnsupportedOperationException(e);
-		}
-	}
-
-	@Override
-	public void setWrapper(boolean isWrapper) {
-		try {
-			String methodName = "setWrapper";
-
-			Class<?>[] parameterTypes = new Class<?>[] { boolean.class };
-
-			Object[] parameterValues = new Object[] { isWrapper };
-
-			invokeOnRemoteModel(methodName, parameterTypes, parameterValues);
-		}
-		catch (Exception e) {
-			throw new UnsupportedOperationException(e);
-		}
-	}
-
-	@Override
-	public boolean isWrapper() {
-		try {
-			String methodName = "isWrapper";
-
-			Class<?>[] parameterTypes = new Class<?>[] {  };
-
-			Object[] parameterValues = new Object[] {  };
-
-			Boolean returnObj = (Boolean)invokeOnRemoteModel(methodName,
 					parameterTypes, parameterValues);
 
 			return returnObj;
@@ -471,6 +312,60 @@ public class ESFPhoneClp extends BaseModelImpl<ESFPhone> implements ESFPhone {
 	}
 
 	@Override
+	public void setNumber(java.lang.String number) {
+		try {
+			String methodName = "setNumber";
+
+			Class<?>[] parameterTypes = new Class<?>[] { java.lang.String.class };
+
+			Object[] parameterValues = new Object[] { number };
+
+			invokeOnRemoteModel(methodName, parameterTypes, parameterValues);
+		}
+		catch (Exception e) {
+			throw new UnsupportedOperationException(e);
+		}
+	}
+
+	@Override
+	public int getTypeId() {
+		try {
+			String methodName = "getTypeId";
+
+			Class<?>[] parameterTypes = new Class<?>[] {  };
+
+			Object[] parameterValues = new Object[] {  };
+
+			Integer returnObj = (Integer)invokeOnRemoteModel(methodName,
+					parameterTypes, parameterValues);
+
+			return returnObj;
+		}
+		catch (Exception e) {
+			throw new UnsupportedOperationException(e);
+		}
+	}
+
+	@Override
+	public boolean isPrimary() {
+		try {
+			String methodName = "isPrimary";
+
+			Class<?>[] parameterTypes = new Class<?>[] {  };
+
+			Object[] parameterValues = new Object[] {  };
+
+			Boolean returnObj = (Boolean)invokeOnRemoteModel(methodName,
+					parameterTypes, parameterValues);
+
+			return returnObj;
+		}
+		catch (Exception e) {
+			throw new UnsupportedOperationException(e);
+		}
+	}
+
+	@Override
 	public java.util.Date getModifiedDate() {
 		try {
 			String methodName = "getModifiedDate";
@@ -480,6 +375,73 @@ public class ESFPhoneClp extends BaseModelImpl<ESFPhone> implements ESFPhone {
 			Object[] parameterValues = new Object[] {  };
 
 			java.util.Date returnObj = (java.util.Date)invokeOnRemoteModel(methodName,
+					parameterTypes, parameterValues);
+
+			return returnObj;
+		}
+		catch (Exception e) {
+			throw new UnsupportedOperationException(e);
+		}
+	}
+
+	@Override
+	public void setClassPk(long classPk) {
+		try {
+			String methodName = "setClassPk";
+
+			Class<?>[] parameterTypes = new Class<?>[] { long.class };
+
+			Object[] parameterValues = new Object[] { classPk };
+
+			invokeOnRemoteModel(methodName, parameterTypes, parameterValues);
+		}
+		catch (Exception e) {
+			throw new UnsupportedOperationException(e);
+		}
+	}
+
+	@Override
+	public void setWrapper(boolean isWrapper) {
+		try {
+			String methodName = "setWrapper";
+
+			Class<?>[] parameterTypes = new Class<?>[] { boolean.class };
+
+			Object[] parameterValues = new Object[] { isWrapper };
+
+			invokeOnRemoteModel(methodName, parameterTypes, parameterValues);
+		}
+		catch (Exception e) {
+			throw new UnsupportedOperationException(e);
+		}
+	}
+
+	@Override
+	public void setCreateDate(java.util.Date createDate) {
+		try {
+			String methodName = "setCreateDate";
+
+			Class<?>[] parameterTypes = new Class<?>[] { java.util.Date.class };
+
+			Object[] parameterValues = new Object[] { createDate };
+
+			invokeOnRemoteModel(methodName, parameterTypes, parameterValues);
+		}
+		catch (Exception e) {
+			throw new UnsupportedOperationException(e);
+		}
+	}
+
+	@Override
+	public long getUserId() {
+		try {
+			String methodName = "getUserId";
+
+			Class<?>[] parameterTypes = new Class<?>[] {  };
+
+			Object[] parameterValues = new Object[] {  };
+
+			Long returnObj = (Long)invokeOnRemoteModel(methodName,
 					parameterTypes, parameterValues);
 
 			return returnObj;
@@ -509,15 +471,53 @@ public class ESFPhoneClp extends BaseModelImpl<ESFPhone> implements ESFPhone {
 	}
 
 	@Override
-	public void setUserId(long userId) {
+	public void setPrimary(boolean primary) {
 		try {
-			String methodName = "setUserId";
+			String methodName = "setPrimary";
 
-			Class<?>[] parameterTypes = new Class<?>[] { long.class };
+			Class<?>[] parameterTypes = new Class<?>[] { boolean.class };
 
-			Object[] parameterValues = new Object[] { userId };
+			Object[] parameterValues = new Object[] { primary };
 
 			invokeOnRemoteModel(methodName, parameterTypes, parameterValues);
+		}
+		catch (Exception e) {
+			throw new UnsupportedOperationException(e);
+		}
+	}
+
+	@Override
+	public java.util.Date getCreateDate() {
+		try {
+			String methodName = "getCreateDate";
+
+			Class<?>[] parameterTypes = new Class<?>[] {  };
+
+			Object[] parameterValues = new Object[] {  };
+
+			java.util.Date returnObj = (java.util.Date)invokeOnRemoteModel(methodName,
+					parameterTypes, parameterValues);
+
+			return returnObj;
+		}
+		catch (Exception e) {
+			throw new UnsupportedOperationException(e);
+		}
+	}
+
+	@Override
+	public boolean isWrapper() {
+		try {
+			String methodName = "isWrapper";
+
+			Class<?>[] parameterTypes = new Class<?>[] {  };
+
+			Object[] parameterValues = new Object[] {  };
+
+			Boolean returnObj = (Boolean)invokeOnRemoteModel(methodName,
+					parameterTypes, parameterValues);
+
+			return returnObj;
 		}
 		catch (Exception e) {
 			throw new UnsupportedOperationException(e);

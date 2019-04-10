@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -250,7 +250,7 @@ public interface ESFEntityStateLocalService extends BaseLocalService,
 		throws java.lang.Throwable;
 
 	/**
-	* Ricerca l'entitï¿½ ESFEntityState sulla base dei sequenti filtri: -
+	* Ricerca l'entit� ESFEntityState sulla base dei sequenti filtri: -
 	* className; - classPK; - WHERE CONDITION ( endDate=null )
 	*
 	* @throws SystemException
@@ -264,7 +264,7 @@ public interface ESFEntityStateLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**
-	* Ricerca l'entitï¿½ ESFEntityState sulla base dei sequenti filtri: -
+	* Ricerca l'entit� ESFEntityState sulla base dei sequenti filtri: -
 	* className; - classPK; - esfStateId - WHERE CONDITION ( endDate=null )
 	*/
 	public it.ethica.esf.model.ESFEntityState findESFEntityStateByC_PK_S(
@@ -272,7 +272,7 @@ public interface ESFEntityStateLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**
-	* Ricerca le entitï¿½ ESFEntityState sulla base dei sequenti filtri: -
+	* Ricerca le entit� ESFEntityState sulla base dei sequenti filtri: -
 	* className; - esfStateId - WHERE CONDITION ( endDate=null )
 	*/
 	public java.util.List<it.ethica.esf.model.ESFEntityState> findESFEntityStateByC_S(
@@ -284,7 +284,7 @@ public interface ESFEntityStateLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**
-	* Ricerca le entitï¿½ ESFEntityState sulla base dei sequenti filtri: -
+	* Ricerca le entit� ESFEntityState sulla base dei sequenti filtri: -
 	* className; - esfStateId - WHERE CONDITION ( endDate=null )
 	*/
 	public java.util.List<it.ethica.esf.model.ESFEntityState> findESFEntityStateByC_S(
@@ -321,7 +321,7 @@ public interface ESFEntityStateLocalService extends BaseLocalService,
 			com.liferay.portal.kernel.exception.SystemException;
 
 	/**
-	* Ricerca l'entitï¿½ ESFEntityState sulla base dei sequenti filtri: -
+	* Ricerca l'entit� ESFEntityState sulla base dei sequenti filtri: -
 	* className; - classPK;
 	*/
 	public it.ethica.esf.model.ESFEntityState findAllESFEntityStateByClassName_ClassPK(
