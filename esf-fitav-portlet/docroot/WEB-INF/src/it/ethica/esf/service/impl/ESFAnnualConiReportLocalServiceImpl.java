@@ -49,7 +49,7 @@ public class ESFAnnualConiReportLocalServiceImpl
 		boolean find = false;
 		ESFAnnualConiReport annualConiAffiliation = null;
 		annualConiAffiliation = esfAnnualConiReportPersistence.fetchByAssYear(assId, year);
-		_log.info("annualConiAffiliation="+annualConiAffiliation);
+		_log.debug("annualConiAffiliation="+annualConiAffiliation);
 		
 		if(Validator.isNotNull(annualConiAffiliation)){
 			find = true;

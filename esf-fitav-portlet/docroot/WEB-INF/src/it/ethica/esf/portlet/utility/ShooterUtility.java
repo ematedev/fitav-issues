@@ -709,8 +709,8 @@ public class ShooterUtility extends MVCPortlet {
 			ParamUtil.getString(actionRequest, "issfIdNumber");
 
 		boolean disable = ParamUtil.getBoolean(actionRequest, "disable");
-		_log.info("State da request: "+esfEntityStateId);
-		_log.info("variabile disabled: "+disable);
+		_log.debug("State da request: "+esfEntityStateId);
+		_log.debug("variabile disabled: "+disable);
 		ESFUser esfUserToUpdate = null;
 
 		try {
@@ -865,7 +865,7 @@ public class ShooterUtility extends MVCPortlet {
 	
 	public void editESFCard(ActionRequest actionRequest, ActionResponse actionResponse,String dir) 
 			throws SystemException, PortalException{
-		_log.info("entro in editESFCard");
+		_log.debug("entro in editESFCard");
 		
 		String operation= ParamUtil.getString(actionRequest, "typeOperation");
 		String mvcPath  = ParamUtil.getString(actionRequest, "mvcPath");
@@ -896,7 +896,7 @@ public class ShooterUtility extends MVCPortlet {
 		
 		try {
 			oldCard = ESFCardLocalServiceUtil.fetchESFCard(cardUserId);
-			_log.info("oldCard="+oldCard);
+			_log.debug("oldCard="+oldCard);
 		} catch (Exception e) {
 			// TODO: handle exception
 			actionRequest.setAttribute("esfMatchId", esfMatchId);
@@ -913,7 +913,7 @@ public class ShooterUtility extends MVCPortlet {
 		try{
 			
 			newCard = ESFCardLocalServiceUtil.fetchESFCard(newCardId);
-			_log.info("newCard="+newCard);
+			_log.debug("newCard="+newCard);
 		} catch (Exception e) {
 			// TODO: handle exception
 			actionRequest.setAttribute("esfMatchId", esfMatchId);
@@ -930,8 +930,8 @@ public class ShooterUtility extends MVCPortlet {
 		try{
 			long oldOrgId = oldCard.getEsfOrganizationId();
 			long newOrgId = newCard.getEsfOrganizationId();
-			_log.info("oldOrgId="+oldOrgId);
-			_log.info("newOrgId="+newOrgId);
+			_log.debug("oldOrgId="+oldOrgId);
+			_log.debug("newOrgId="+newOrgId);
 			
 			oldOrg = ESFOrganizationLocalServiceUtil.fetchESFOrganization(oldOrgId);
 			newOrg = ESFOrganizationLocalServiceUtil.fetchESFOrganization(newOrgId);
@@ -942,11 +942,11 @@ public class ShooterUtility extends MVCPortlet {
 			String[] oldCardTreepathSplit = oldCardTreepath.split("/");
 			String[] newCardTreepathSplit = newCardTreepath.split("/");
 			
-			_log.info("oldCardTreepathSplit[2]="+oldCardTreepathSplit[2]);
-			_log.info("newCardTreepathSplit[2]="+newCardTreepathSplit[2]);
+			_log.debug("oldCardTreepathSplit[2]="+oldCardTreepathSplit[2]);
+			_log.debug("newCardTreepathSplit[2]="+newCardTreepathSplit[2]);
 			
 			if(oldCardTreepathSplit[2].equals(newCardTreepathSplit[2]) ){
-				_log.info("nel if");
+				_log.debug("nel if");
 				ESFCardLocalServiceUtil.deleteESFCard(newCard);
 				
 				
@@ -955,13 +955,13 @@ public class ShooterUtility extends MVCPortlet {
 				ESFCardLocalServiceUtil.updateESFCard(oldCard);
 				
 			}else{
-				_log.info("in else");
+				_log.debug("in else");
 				try {
 					
 					oldCardEntityState = ESFEntityStateLocalServiceUtil.findESFEntityStateByC_PK("it.ethica.esf.model.ESFCard", cardUserId);
 					oldCardEntityState.setEndDate(newData);
 					ESFEntityStateLocalServiceUtil.updateESFEntityState(oldCardEntityState);
-					_log.info("oldCardEntityState dopo="+oldCardEntityState);
+					_log.debug("oldCardEntityState dopo="+oldCardEntityState);
 					
 				} catch (Exception e) {
 					// TODO: handle exception
@@ -986,7 +986,7 @@ public class ShooterUtility extends MVCPortlet {
 				newCard.setEsfUserId(esfUserId);
 				ESFCardLocalServiceUtil.updateESFCard(newCard);
 				
-				_log.info("newCard dopo="+newCard);
+				_log.debug("newCard dopo="+newCard);
 				
 				
 				newCardEntityState.setEsfEntityStateId(CounterLocalServiceUtil.increment("it.ethica.esf.model.ESFEntityState"));
@@ -1002,12 +1002,12 @@ public class ShooterUtility extends MVCPortlet {
 				newCardEntityState.setUserName(userName);
 				ESFEntityStateLocalServiceUtil.updateESFEntityState(newCardEntityState);
 				
-				_log.info("newCardEntityState dopo="+newCardEntityState);
+				_log.debug("newCardEntityState dopo="+newCardEntityState);
 				
 				oldCard.setEsfUserId(0);
 				ESFCardLocalServiceUtil.updateESFCard(oldCard);
 				
-				_log.info("oldCard dopo="+oldCard);
+				_log.debug("oldCard dopo="+oldCard);
 			}
 			
 			
@@ -1044,21 +1044,21 @@ public class ShooterUtility extends MVCPortlet {
 	
 	public void newCard(ActionRequest actionRequest, ActionResponse actionResponse,String dir) 
 			throws SystemException{
-		_log.info("****************in shooterUtility in newcard");
+		_log.debug("****************in shooterUtility in newcard");
 		String mvcPath  = ParamUtil.getString(actionRequest, "mvcPath");
 		long esfUserId = ParamUtil.getLong(actionRequest, "esfUserId");
-		_log.info("****************in shooterUtility in newcard esfUserId = "+esfUserId);
+		_log.debug("****************in shooterUtility in newcard esfUserId = "+esfUserId);
 		long esfOrganizationId =
 			ParamUtil.getLong(actionRequest, "esfOrganizationId");
-		_log.info("****************in shooterUtility in newcard esfOrganizationId = "+esfOrganizationId);
+		_log.debug("****************in shooterUtility in newcard esfOrganizationId = "+esfOrganizationId);
 		Date data = new Date();
 		long newCardId = ParamUtil.getLong(actionRequest,"esfCardId");
-		_log.info("****************in shooterUtility in newcard newCardId = "+newCardId);
+		_log.debug("****************in shooterUtility in newcard newCardId = "+newCardId);
 		ESFCard newCard = ESFCardLocalServiceUtil.fetchESFCard(newCardId);
-		_log.info("****************in shooterUtility in newcard newCard = "+newCard);
+		_log.debug("****************in shooterUtility in newcard newCard = "+newCard);
 		newCard.setEsfUserId(esfUserId);
 		ESFCardLocalServiceUtil.updateESFCard(newCard);
-		_log.info("****************in shooterUtility in newcard newCard.userit = "+newCard.getUserId());
+		_log.debug("****************in shooterUtility in newcard newCard.userit = "+newCard.getUserId());
 		
 		actionRequest.setAttribute("esfUserId", esfUserId);
 		actionRequest.setAttribute("organizationId", esfOrganizationId);

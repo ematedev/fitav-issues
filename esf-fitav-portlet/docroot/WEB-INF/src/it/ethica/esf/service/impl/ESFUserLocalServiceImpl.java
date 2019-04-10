@@ -494,7 +494,7 @@ public class ESFUserLocalServiceImpl extends ESFUserLocalServiceBaseImpl {
 					ESFKeys.ESFUserRoleDefault.FITAVMANGAR,
 					ESFKeys.ESFStateType.ENABLE);
 
-			_log.info("esfUserRolesFitavManager "+esfUserRolesFitavManager);
+			_log.debug("esfUserRolesFitavManager "+esfUserRolesFitavManager);
 			
 			if (esfUserRolesFitavManager == null ||
 				esfUserRolesFitavManager.size() == 0)
@@ -503,7 +503,7 @@ public class ESFUserLocalServiceImpl extends ESFUserLocalServiceBaseImpl {
 			Long fitavManagerRoleId =
 				esfUserRolesFitavManager.get(0).getEsfUserRoleId();
 
-			_log.info("fitavManagerRoleId "+fitavManagerRoleId);
+			_log.debug("fitavManagerRoleId "+fitavManagerRoleId);
 			
 			
 			List<User> userTemp =
@@ -521,8 +521,8 @@ public class ESFUserLocalServiceImpl extends ESFUserLocalServiceBaseImpl {
 					users.add(userTemp.get(i));
 			}
 
-			_log.info("userTemp "+userTemp.size());
-			_log.info("users "+users.size());
+			_log.debug("userTemp "+userTemp.size());
+			_log.debug("users "+users.size());
 			
 
 			if (Validator.isNull(users) || users.size() == 0)
@@ -561,7 +561,7 @@ public class ESFUserLocalServiceImpl extends ESFUserLocalServiceBaseImpl {
 				esfUsers.add(esfUser);
 
 			}
-			_log.info("esfUsers "+esfUsers.size());
+			_log.debug("esfUsers "+esfUsers.size());
 			
 		}
 		catch (Exception e) {
@@ -3055,7 +3055,7 @@ public class ESFUserLocalServiceImpl extends ESFUserLocalServiceBaseImpl {
 						portalUserServiceContext);
 
 		} catch (Exception e) {
-			_log.info(e);
+			_log.debug(e);
 		}
 
 		long portalUserId = portalUser.getUserId();
@@ -3480,7 +3480,7 @@ public class ESFUserLocalServiceImpl extends ESFUserLocalServiceBaseImpl {
 		throws SystemException, PortalException {
 		
 		
-		_log.info("in updateESFShooter validateCF="+validateCF);
+		_log.debug("in updateESFShooter validateCF="+validateCF);
 		
 		ESFUser esfUser = null;
 		User portalUser = userPersistence.findByPrimaryKey(esfUserId);
