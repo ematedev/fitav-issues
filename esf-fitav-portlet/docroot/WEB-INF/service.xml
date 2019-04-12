@@ -2094,6 +2094,8 @@
 		<column name="expirationDate" type="Date"></column>
 		<column name="esfUserId" type="long"></column>
 		<column name="type" type="String"></column>
+		<!-- ADDED for anomalia-id16 -->
+		<column name="esfDocumentTypeId" type="long"></column>
 		<column name="path" type="String"></column>
 		<finder name="Code" return-type="Collection">
 			<finder-column name="code"></finder-column>
@@ -2524,6 +2526,18 @@
 			<finder-column name="assId"></finder-column>
 			<finder-column name="year"></finder-column>
 		</finder>
+	</entity>
+	<!-- ADDED for anomalia-id16 -->
+	<entity name="ESFDocumentType" local-service="true" remote-service="false">
+		<!-- PK fields -->
+		<column name="esfDocumentTypeId" type="long" primary="true"></column>
+		<!-- Audit fields -->
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<column name="description" type="String"></column>
+		<column name="expirationDayNotice" type="int"></column>
+		
 	</entity>
 	
 	<exceptions>
