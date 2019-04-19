@@ -35,6 +35,8 @@
 	<bean id="it.ethica.esf.service.persistence.ESFDescriptionPersistence" class="it.ethica.esf.service.persistence.ESFDescriptionPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFDocumentLocalService" class="it.ethica.esf.service.impl.ESFDocumentLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFDocumentPersistence" class="it.ethica.esf.service.persistence.ESFDocumentPersistenceImpl" parent="basePersistence" />
+	<bean id="it.ethica.esf.service.ESFDocumentTypeLocalService" class="it.ethica.esf.service.impl.ESFDocumentTypeLocalServiceImpl" />
+	<bean id="it.ethica.esf.service.persistence.ESFDocumentTypePersistence" class="it.ethica.esf.service.persistence.ESFDocumentTypePersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFElectronicLocalService" class="it.ethica.esf.service.impl.ESFElectronicLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFElectronicPersistence" class="it.ethica.esf.service.persistence.ESFElectronicPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFEntityStateLocalService" class="it.ethica.esf.service.impl.ESFEntityStateLocalServiceImpl" />
@@ -112,6 +114,8 @@
 	<bean id="it.ethica.esf.service.persistence.ESFPhonePersistence" class="it.ethica.esf.service.persistence.ESFPhonePersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFProvinceLocalService" class="it.ethica.esf.service.impl.ESFProvinceLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFProvincePersistence" class="it.ethica.esf.service.persistence.ESFProvincePersistenceImpl" parent="basePersistence" />
+	<bean id="it.ethica.esf.service.ESFPublicAuthorityLocalService" class="it.ethica.esf.service.impl.ESFPublicAuthorityLocalServiceImpl" />
+	<bean id="it.ethica.esf.service.persistence.ESFPublicAuthorityPersistence" class="it.ethica.esf.service.persistence.ESFPublicAuthorityPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFRegionLocalService" class="it.ethica.esf.service.impl.ESFRegionLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFRegionPersistence" class="it.ethica.esf.service.persistence.ESFRegionPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFRenewalLocalService" class="it.ethica.esf.service.impl.ESFRenewalLocalServiceImpl" />

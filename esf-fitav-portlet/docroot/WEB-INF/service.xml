@@ -2096,6 +2096,8 @@
 		<column name="type" type="String"></column>
 		<!-- ADDED for anomalia-id16 -->
 		<column name="esfDocumentTypeId" type="long"></column>
+		<!-- ADDED for anomalia-id16 -->
+		<column name="esfPublicAuthorityId" type="long"></column>
 		<column name="path" type="String"></column>
 		<finder name="Code" return-type="Collection">
 			<finder-column name="code"></finder-column>
@@ -2534,12 +2536,20 @@
 		<!-- Audit fields -->
 		<column name="createDate" type="Date"></column>
 		<column name="modifiedDate" type="Date"></column>
-		
+		<!-- Entity Fields -->
 		<column name="description" type="String"></column>
-		<column name="expirationDayNotice" type="int"></column>
-		
+		<column name="expirationMonthsNotice" type="int"></column>
 	</entity>
-	
+	<!-- ADDED for anomalia-id16 -->
+	<entity name="ESFPublicAuthority" local-service="true" remote-service="false">
+		<!-- PK fields -->
+		<column name="esfPublicAuthorityId" type="long" primary="true"></column>
+		<!-- Audit fields -->
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Entity Fields -->
+		<column name="description" type="String"></column>
+	</entity>
 	<exceptions>
 		<exception>ESFAddressLatitude</exception>
 		<exception>ESFAddressLongitude</exception>
