@@ -15,6 +15,7 @@
 package it.ethica.esf.model;
 
 import com.liferay.portal.kernel.bean.AutoEscape;
+import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
@@ -136,28 +137,43 @@ public interface ESFSuspensiveShootingDirectorModel extends BaseModel<ESFSuspens
 	 *
 	 * @return the esf user ID of this e s f suspensive shooting director
 	 */
-	public Long getEsfUserId();
+	public long getEsfUserId();
 
 	/**
 	 * Sets the esf user ID of this e s f suspensive shooting director.
 	 *
 	 * @param esfUserId the esf user ID of this e s f suspensive shooting director
 	 */
-	public void setEsfUserId(Long esfUserId);
+	public void setEsfUserId(long esfUserId);
+
+	/**
+	 * Returns the esf user uuid of this e s f suspensive shooting director.
+	 *
+	 * @return the esf user uuid of this e s f suspensive shooting director
+	 * @throws SystemException if a system exception occurred
+	 */
+	public String getEsfUserUuid() throws SystemException;
+
+	/**
+	 * Sets the esf user uuid of this e s f suspensive shooting director.
+	 *
+	 * @param esfUserUuid the esf user uuid of this e s f suspensive shooting director
+	 */
+	public void setEsfUserUuid(String esfUserUuid);
 
 	/**
 	 * Returns the code user of this e s f suspensive shooting director.
 	 *
 	 * @return the code user of this e s f suspensive shooting director
 	 */
-	public Long getCodeUser();
+	public long getCodeUser();
 
 	/**
 	 * Sets the code user of this e s f suspensive shooting director.
 	 *
 	 * @param codeUser the code user of this e s f suspensive shooting director
 	 */
-	public void setCodeUser(Long codeUser);
+	public void setCodeUser(long codeUser);
 
 	/**
 	 * Returns the codice_ sosp of this e s f suspensive shooting director.

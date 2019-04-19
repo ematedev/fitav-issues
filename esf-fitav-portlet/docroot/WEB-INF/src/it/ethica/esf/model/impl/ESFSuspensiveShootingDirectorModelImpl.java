@@ -15,6 +15,7 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -22,6 +23,7 @@ import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.model.impl.BaseModelImpl;
 import com.liferay.portal.service.ServiceContext;
+import com.liferay.portal.util.PortalUtil;
 
 import com.liferay.portlet.expando.model.ExpandoBridge;
 import com.liferay.portlet.expando.util.ExpandoBridgeFactoryUtil;
@@ -381,12 +383,12 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 	}
 
 	@Override
-	public Long getEsfUserId() {
+	public long getEsfUserId() {
 		return _esfUserId;
 	}
 
 	@Override
-	public void setEsfUserId(Long esfUserId) {
+	public void setEsfUserId(long esfUserId) {
 		_columnBitmask |= ESFUSERID_COLUMN_BITMASK;
 
 		if (!_setOriginalEsfUserId) {
@@ -398,17 +400,27 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 		_esfUserId = esfUserId;
 	}
 
-	public Long getOriginalEsfUserId() {
+	@Override
+	public String getEsfUserUuid() throws SystemException {
+		return PortalUtil.getUserValue(getEsfUserId(), "uuid", _esfUserUuid);
+	}
+
+	@Override
+	public void setEsfUserUuid(String esfUserUuid) {
+		_esfUserUuid = esfUserUuid;
+	}
+
+	public long getOriginalEsfUserId() {
 		return _originalEsfUserId;
 	}
 
 	@Override
-	public Long getCodeUser() {
+	public long getCodeUser() {
 		return _codeUser;
 	}
 
 	@Override
-	public void setCodeUser(Long codeUser) {
+	public void setCodeUser(long codeUser) {
 		_codeUser = codeUser;
 	}
 
@@ -965,10 +977,11 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 	private Date _esfStartData;
 	private Date _esfEndData;
 	private Date _originalEsfEndData;
-	private Long _esfUserId;
-	private Long _originalEsfUserId;
+	private long _esfUserId;
+	private String _esfUserUuid;
+	private long _originalEsfUserId;
 	private boolean _setOriginalEsfUserId;
-	private Long _codeUser;
+	private long _codeUser;
 	private long _Codice_Sosp;
 	private String _note;
 	private long _Qualif1_Utiliz;

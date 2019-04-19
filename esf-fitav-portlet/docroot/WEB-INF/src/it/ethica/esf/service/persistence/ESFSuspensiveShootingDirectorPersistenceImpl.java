@@ -35,7 +35,6 @@ import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.kernel.util.StringUtil;
 import com.liferay.portal.kernel.util.UnmodifiableList;
-import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.model.ModelListener;
 import com.liferay.portal.service.persistence.impl.BasePersistenceImpl;
@@ -119,7 +118,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<ESFSuspensiveShootingDirector> findBybyUserId(Long esfUserId)
+	public List<ESFSuspensiveShootingDirector> findBybyUserId(long esfUserId)
 		throws SystemException {
 		return findBybyUserId(esfUserId, QueryUtil.ALL_POS, QueryUtil.ALL_POS,
 			null);
@@ -139,7 +138,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<ESFSuspensiveShootingDirector> findBybyUserId(Long esfUserId,
+	public List<ESFSuspensiveShootingDirector> findBybyUserId(long esfUserId,
 		int start, int end) throws SystemException {
 		return findBybyUserId(esfUserId, start, end, null);
 	}
@@ -159,7 +158,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<ESFSuspensiveShootingDirector> findBybyUserId(Long esfUserId,
+	public List<ESFSuspensiveShootingDirector> findBybyUserId(long esfUserId,
 		int start, int end, OrderByComparator orderByComparator)
 		throws SystemException {
 		boolean pagination = true;
@@ -182,8 +181,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 
 		if ((list != null) && !list.isEmpty()) {
 			for (ESFSuspensiveShootingDirector esfSuspensiveShootingDirector : list) {
-				if (!Validator.equals(esfUserId,
-							esfSuspensiveShootingDirector.getEsfUserId())) {
+				if ((esfUserId != esfSuspensiveShootingDirector.getEsfUserId())) {
 					list = null;
 
 					break;
@@ -226,7 +224,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 
 				QueryPos qPos = QueryPos.getInstance(q);
 
-				qPos.add(esfUserId.longValue());
+				qPos.add(esfUserId);
 
 				if (!pagination) {
 					list = (List<ESFSuspensiveShootingDirector>)QueryUtil.list(q,
@@ -268,7 +266,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public ESFSuspensiveShootingDirector findBybyUserId_First(Long esfUserId,
+	public ESFSuspensiveShootingDirector findBybyUserId_First(long esfUserId,
 		OrderByComparator orderByComparator)
 		throws NoSuchSuspensiveShootingDirectorException, SystemException {
 		ESFSuspensiveShootingDirector esfSuspensiveShootingDirector = fetchBybyUserId_First(esfUserId,
@@ -299,7 +297,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public ESFSuspensiveShootingDirector fetchBybyUserId_First(Long esfUserId,
+	public ESFSuspensiveShootingDirector fetchBybyUserId_First(long esfUserId,
 		OrderByComparator orderByComparator) throws SystemException {
 		List<ESFSuspensiveShootingDirector> list = findBybyUserId(esfUserId, 0,
 				1, orderByComparator);
@@ -321,7 +319,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public ESFSuspensiveShootingDirector findBybyUserId_Last(Long esfUserId,
+	public ESFSuspensiveShootingDirector findBybyUserId_Last(long esfUserId,
 		OrderByComparator orderByComparator)
 		throws NoSuchSuspensiveShootingDirectorException, SystemException {
 		ESFSuspensiveShootingDirector esfSuspensiveShootingDirector = fetchBybyUserId_Last(esfUserId,
@@ -352,7 +350,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public ESFSuspensiveShootingDirector fetchBybyUserId_Last(Long esfUserId,
+	public ESFSuspensiveShootingDirector fetchBybyUserId_Last(long esfUserId,
 		OrderByComparator orderByComparator) throws SystemException {
 		int count = countBybyUserId(esfUserId);
 
@@ -382,7 +380,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 	 */
 	@Override
 	public ESFSuspensiveShootingDirector[] findBybyUserId_PrevAndNext(
-		long esfSuspensiveShooingDirectorId, Long esfUserId,
+		long esfSuspensiveShooingDirectorId, long esfUserId,
 		OrderByComparator orderByComparator)
 		throws NoSuchSuspensiveShootingDirectorException, SystemException {
 		ESFSuspensiveShootingDirector esfSuspensiveShootingDirector = findByPrimaryKey(esfSuspensiveShooingDirectorId);
@@ -417,7 +415,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 	protected ESFSuspensiveShootingDirector getBybyUserId_PrevAndNext(
 		Session session,
 		ESFSuspensiveShootingDirector esfSuspensiveShootingDirector,
-		Long esfUserId, OrderByComparator orderByComparator, boolean previous) {
+		long esfUserId, OrderByComparator orderByComparator, boolean previous) {
 		StringBundler query = null;
 
 		if (orderByComparator != null) {
@@ -500,7 +498,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 
 		QueryPos qPos = QueryPos.getInstance(q);
 
-		qPos.add(esfUserId.longValue());
+		qPos.add(esfUserId);
 
 		if (orderByComparator != null) {
 			Object[] values = orderByComparator.getOrderByConditionValues(esfSuspensiveShootingDirector);
@@ -527,7 +525,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public void removeBybyUserId(Long esfUserId) throws SystemException {
+	public void removeBybyUserId(long esfUserId) throws SystemException {
 		for (ESFSuspensiveShootingDirector esfSuspensiveShootingDirector : findBybyUserId(
 				esfUserId, QueryUtil.ALL_POS, QueryUtil.ALL_POS, null)) {
 			remove(esfSuspensiveShootingDirector);
@@ -542,7 +540,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public int countBybyUserId(Long esfUserId) throws SystemException {
+	public int countBybyUserId(long esfUserId) throws SystemException {
 		FinderPath finderPath = FINDER_PATH_COUNT_BY_BYUSERID;
 
 		Object[] finderArgs = new Object[] { esfUserId };
@@ -568,7 +566,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 
 				QueryPos qPos = QueryPos.getInstance(q);
 
-				qPos.add(esfUserId.longValue());
+				qPos.add(esfUserId);
 
 				count = (Long)q.uniqueResult();
 
@@ -613,7 +611,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 	 */
 	@Override
 	public List<ESFSuspensiveShootingDirector> findByDate(Date esfEndData,
-		Long esfUserId) throws SystemException {
+		long esfUserId) throws SystemException {
 		return findByDate(esfEndData, esfUserId, QueryUtil.ALL_POS,
 			QueryUtil.ALL_POS, null);
 	}
@@ -634,7 +632,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 	 */
 	@Override
 	public List<ESFSuspensiveShootingDirector> findByDate(Date esfEndData,
-		Long esfUserId, int start, int end) throws SystemException {
+		long esfUserId, int start, int end) throws SystemException {
 		return findByDate(esfEndData, esfUserId, start, end, null);
 	}
 
@@ -655,7 +653,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 	 */
 	@Override
 	public List<ESFSuspensiveShootingDirector> findByDate(Date esfEndData,
-		Long esfUserId, int start, int end, OrderByComparator orderByComparator)
+		long esfUserId, int start, int end, OrderByComparator orderByComparator)
 		throws SystemException {
 		boolean pagination = true;
 		FinderPath finderPath = null;
@@ -675,8 +673,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 			for (ESFSuspensiveShootingDirector esfSuspensiveShootingDirector : list) {
 				if ((esfEndData.getTime() >= esfSuspensiveShootingDirector.getEsfEndData()
 																			  .getTime()) ||
-						!Validator.equals(esfUserId,
-							esfSuspensiveShootingDirector.getEsfUserId())) {
+						(esfUserId != esfSuspensiveShootingDirector.getEsfUserId())) {
 					list = null;
 
 					break;
@@ -734,7 +731,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 					qPos.add(CalendarUtil.getTimestamp(esfEndData));
 				}
 
-				qPos.add(esfUserId.longValue());
+				qPos.add(esfUserId);
 
 				if (!pagination) {
 					list = (List<ESFSuspensiveShootingDirector>)QueryUtil.list(q,
@@ -778,7 +775,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 	 */
 	@Override
 	public ESFSuspensiveShootingDirector findByDate_First(Date esfEndData,
-		Long esfUserId, OrderByComparator orderByComparator)
+		long esfUserId, OrderByComparator orderByComparator)
 		throws NoSuchSuspensiveShootingDirectorException, SystemException {
 		ESFSuspensiveShootingDirector esfSuspensiveShootingDirector = fetchByDate_First(esfEndData,
 				esfUserId, orderByComparator);
@@ -813,7 +810,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 	 */
 	@Override
 	public ESFSuspensiveShootingDirector fetchByDate_First(Date esfEndData,
-		Long esfUserId, OrderByComparator orderByComparator)
+		long esfUserId, OrderByComparator orderByComparator)
 		throws SystemException {
 		List<ESFSuspensiveShootingDirector> list = findByDate(esfEndData,
 				esfUserId, 0, 1, orderByComparator);
@@ -837,7 +834,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 	 */
 	@Override
 	public ESFSuspensiveShootingDirector findByDate_Last(Date esfEndData,
-		Long esfUserId, OrderByComparator orderByComparator)
+		long esfUserId, OrderByComparator orderByComparator)
 		throws NoSuchSuspensiveShootingDirectorException, SystemException {
 		ESFSuspensiveShootingDirector esfSuspensiveShootingDirector = fetchByDate_Last(esfEndData,
 				esfUserId, orderByComparator);
@@ -872,7 +869,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 	 */
 	@Override
 	public ESFSuspensiveShootingDirector fetchByDate_Last(Date esfEndData,
-		Long esfUserId, OrderByComparator orderByComparator)
+		long esfUserId, OrderByComparator orderByComparator)
 		throws SystemException {
 		int count = countByDate(esfEndData, esfUserId);
 
@@ -903,7 +900,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 	 */
 	@Override
 	public ESFSuspensiveShootingDirector[] findByDate_PrevAndNext(
-		long esfSuspensiveShooingDirectorId, Date esfEndData, Long esfUserId,
+		long esfSuspensiveShooingDirectorId, Date esfEndData, long esfUserId,
 		OrderByComparator orderByComparator)
 		throws NoSuchSuspensiveShootingDirectorException, SystemException {
 		ESFSuspensiveShootingDirector esfSuspensiveShootingDirector = findByPrimaryKey(esfSuspensiveShooingDirectorId);
@@ -938,7 +935,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 	protected ESFSuspensiveShootingDirector getByDate_PrevAndNext(
 		Session session,
 		ESFSuspensiveShootingDirector esfSuspensiveShootingDirector,
-		Date esfEndData, Long esfUserId, OrderByComparator orderByComparator,
+		Date esfEndData, long esfUserId, OrderByComparator orderByComparator,
 		boolean previous) {
 		StringBundler query = null;
 
@@ -1037,7 +1034,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 			qPos.add(CalendarUtil.getTimestamp(esfEndData));
 		}
 
-		qPos.add(esfUserId.longValue());
+		qPos.add(esfUserId);
 
 		if (orderByComparator != null) {
 			Object[] values = orderByComparator.getOrderByConditionValues(esfSuspensiveShootingDirector);
@@ -1065,7 +1062,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public void removeByDate(Date esfEndData, Long esfUserId)
+	public void removeByDate(Date esfEndData, long esfUserId)
 		throws SystemException {
 		for (ESFSuspensiveShootingDirector esfSuspensiveShootingDirector : findByDate(
 				esfEndData, esfUserId, QueryUtil.ALL_POS, QueryUtil.ALL_POS,
@@ -1083,7 +1080,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public int countByDate(Date esfEndData, Long esfUserId)
+	public int countByDate(Date esfEndData, long esfUserId)
 		throws SystemException {
 		FinderPath finderPath = FINDER_PATH_WITH_PAGINATION_COUNT_BY_DATE;
 
@@ -1125,7 +1122,7 @@ public class ESFSuspensiveShootingDirectorPersistenceImpl
 					qPos.add(CalendarUtil.getTimestamp(esfEndData));
 				}
 
-				qPos.add(esfUserId.longValue());
+				qPos.add(esfUserId);
 
 				count = (Long)q.uniqueResult();
 

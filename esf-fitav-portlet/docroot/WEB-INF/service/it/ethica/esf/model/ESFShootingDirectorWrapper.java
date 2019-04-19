@@ -250,7 +250,7 @@ public class ESFShootingDirectorWrapper implements ESFShootingDirector,
 	* @return the esf user ID of this e s f shooting director
 	*/
 	@Override
-	public java.lang.Long getEsfUserId() {
+	public long getEsfUserId() {
 		return _esfShootingDirector.getEsfUserId();
 	}
 
@@ -260,8 +260,30 @@ public class ESFShootingDirectorWrapper implements ESFShootingDirector,
 	* @param esfUserId the esf user ID of this e s f shooting director
 	*/
 	@Override
-	public void setEsfUserId(java.lang.Long esfUserId) {
+	public void setEsfUserId(long esfUserId) {
 		_esfShootingDirector.setEsfUserId(esfUserId);
+	}
+
+	/**
+	* Returns the esf user uuid of this e s f shooting director.
+	*
+	* @return the esf user uuid of this e s f shooting director
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public java.lang.String getEsfUserUuid()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _esfShootingDirector.getEsfUserUuid();
+	}
+
+	/**
+	* Sets the esf user uuid of this e s f shooting director.
+	*
+	* @param esfUserUuid the esf user uuid of this e s f shooting director
+	*/
+	@Override
+	public void setEsfUserUuid(java.lang.String esfUserUuid) {
+		_esfShootingDirector.setEsfUserUuid(esfUserUuid);
 	}
 
 	/**
@@ -270,7 +292,7 @@ public class ESFShootingDirectorWrapper implements ESFShootingDirector,
 	* @return the code user of this e s f shooting director
 	*/
 	@Override
-	public java.lang.Long getCodeUser() {
+	public long getCodeUser() {
 		return _esfShootingDirector.getCodeUser();
 	}
 
@@ -280,7 +302,7 @@ public class ESFShootingDirectorWrapper implements ESFShootingDirector,
 	* @param codeUser the code user of this e s f shooting director
 	*/
 	@Override
-	public void setCodeUser(java.lang.Long codeUser) {
+	public void setCodeUser(long codeUser) {
 		_esfShootingDirector.setCodeUser(codeUser);
 	}
 
@@ -290,7 +312,7 @@ public class ESFShootingDirectorWrapper implements ESFShootingDirector,
 	* @return the shooting director qualification ID of this e s f shooting director
 	*/
 	@Override
-	public java.lang.Long getShootingDirectorQualificationId() {
+	public long getShootingDirectorQualificationId() {
 		return _esfShootingDirector.getShootingDirectorQualificationId();
 	}
 
@@ -301,7 +323,7 @@ public class ESFShootingDirectorWrapper implements ESFShootingDirector,
 	*/
 	@Override
 	public void setShootingDirectorQualificationId(
-		java.lang.Long shootingDirectorQualificationId) {
+		long shootingDirectorQualificationId) {
 		_esfShootingDirector.setShootingDirectorQualificationId(shootingDirectorQualificationId);
 	}
 
@@ -311,7 +333,7 @@ public class ESFShootingDirectorWrapper implements ESFShootingDirector,
 	* @return the sport type ID of this e s f shooting director
 	*/
 	@Override
-	public java.lang.Long getSportTypeId() {
+	public long getSportTypeId() {
 		return _esfShootingDirector.getSportTypeId();
 	}
 
@@ -321,7 +343,7 @@ public class ESFShootingDirectorWrapper implements ESFShootingDirector,
 	* @param sportTypeId the sport type ID of this e s f shooting director
 	*/
 	@Override
-	public void setSportTypeId(java.lang.Long sportTypeId) {
+	public void setSportTypeId(long sportTypeId) {
 		_esfShootingDirector.setSportTypeId(sportTypeId);
 	}
 

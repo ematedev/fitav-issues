@@ -129,36 +129,36 @@ public class ESFShootingDirectorSoap implements Serializable {
 		_esfEndData = esfEndData;
 	}
 
-	public Long getEsfUserId() {
+	public long getEsfUserId() {
 		return _esfUserId;
 	}
 
-	public void setEsfUserId(Long esfUserId) {
+	public void setEsfUserId(long esfUserId) {
 		_esfUserId = esfUserId;
 	}
 
-	public Long getCodeUser() {
+	public long getCodeUser() {
 		return _codeUser;
 	}
 
-	public void setCodeUser(Long codeUser) {
+	public void setCodeUser(long codeUser) {
 		_codeUser = codeUser;
 	}
 
-	public Long getShootingDirectorQualificationId() {
+	public long getShootingDirectorQualificationId() {
 		return _shootingDirectorQualificationId;
 	}
 
 	public void setShootingDirectorQualificationId(
-		Long shootingDirectorQualificationId) {
+		long shootingDirectorQualificationId) {
 		_shootingDirectorQualificationId = shootingDirectorQualificationId;
 	}
 
-	public Long getSportTypeId() {
+	public long getSportTypeId() {
 		return _sportTypeId;
 	}
 
-	public void setSportTypeId(Long sportTypeId) {
+	public void setSportTypeId(long sportTypeId) {
 		_sportTypeId = sportTypeId;
 	}
 
@@ -198,10 +198,10 @@ public class ESFShootingDirectorSoap implements Serializable {
 	private String _esfCodeData;
 	private Date _esfStartData;
 	private Date _esfEndData;
-	private Long _esfUserId;
-	private Long _codeUser;
-	private Long _shootingDirectorQualificationId;
-	private Long _sportTypeId;
+	private long _esfUserId;
+	private long _codeUser;
+	private long _shootingDirectorQualificationId;
+	private long _sportTypeId;
 	private String _regionId;
 	private String _provinceId;
 	private String _flagCrea;

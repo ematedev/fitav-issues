@@ -20,6 +20,7 @@ import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.impl.BaseModelImpl;
+import com.liferay.portal.util.PortalUtil;
 
 import it.ethica.esf.service.ClpSerializer;
 import it.ethica.esf.service.ESFSuspensiveShootingDirectorLocalServiceUtil;
@@ -366,19 +367,19 @@ public class ESFSuspensiveShootingDirectorClp extends BaseModelImpl<ESFSuspensiv
 	}
 
 	@Override
-	public Long getEsfUserId() {
+	public long getEsfUserId() {
 		return _esfUserId;
 	}
 
 	@Override
-	public void setEsfUserId(Long esfUserId) {
+	public void setEsfUserId(long esfUserId) {
 		_esfUserId = esfUserId;
 
 		if (_esfSuspensiveShootingDirectorRemoteModel != null) {
 			try {
 				Class<?> clazz = _esfSuspensiveShootingDirectorRemoteModel.getClass();
 
-				Method method = clazz.getMethod("setEsfUserId", Long.class);
+				Method method = clazz.getMethod("setEsfUserId", long.class);
 
 				method.invoke(_esfSuspensiveShootingDirectorRemoteModel,
 					esfUserId);
@@ -390,19 +391,29 @@ public class ESFSuspensiveShootingDirectorClp extends BaseModelImpl<ESFSuspensiv
 	}
 
 	@Override
-	public Long getCodeUser() {
+	public String getEsfUserUuid() throws SystemException {
+		return PortalUtil.getUserValue(getEsfUserId(), "uuid", _esfUserUuid);
+	}
+
+	@Override
+	public void setEsfUserUuid(String esfUserUuid) {
+		_esfUserUuid = esfUserUuid;
+	}
+
+	@Override
+	public long getCodeUser() {
 		return _codeUser;
 	}
 
 	@Override
-	public void setCodeUser(Long codeUser) {
+	public void setCodeUser(long codeUser) {
 		_codeUser = codeUser;
 
 		if (_esfSuspensiveShootingDirectorRemoteModel != null) {
 			try {
 				Class<?> clazz = _esfSuspensiveShootingDirectorRemoteModel.getClass();
 
-				Method method = clazz.getMethod("setCodeUser", Long.class);
+				Method method = clazz.getMethod("setCodeUser", long.class);
 
 				method.invoke(_esfSuspensiveShootingDirectorRemoteModel,
 					codeUser);
@@ -1120,8 +1131,9 @@ public class ESFSuspensiveShootingDirectorClp extends BaseModelImpl<ESFSuspensiv
 	private String _esfCodeData;
 	private Date _esfStartData;
 	private Date _esfEndData;
-	private Long _esfUserId;
-	private Long _codeUser;
+	private long _esfUserId;
+	private String _esfUserUuid;
+	private long _codeUser;
 	private long _Codice_Sosp;
 	private String _note;
 	private long _Qualif1_Utiliz;

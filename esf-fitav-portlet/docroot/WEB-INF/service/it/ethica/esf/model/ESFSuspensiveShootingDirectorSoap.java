@@ -150,19 +150,19 @@ public class ESFSuspensiveShootingDirectorSoap implements Serializable {
 		_esfEndData = esfEndData;
 	}
 
-	public Long getEsfUserId() {
+	public long getEsfUserId() {
 		return _esfUserId;
 	}
 
-	public void setEsfUserId(Long esfUserId) {
+	public void setEsfUserId(long esfUserId) {
 		_esfUserId = esfUserId;
 	}
 
-	public Long getCodeUser() {
+	public long getCodeUser() {
 		return _codeUser;
 	}
 
-	public void setCodeUser(Long codeUser) {
+	public void setCodeUser(long codeUser) {
 		_codeUser = codeUser;
 	}
 
@@ -299,8 +299,8 @@ public class ESFSuspensiveShootingDirectorSoap implements Serializable {
 	private String _esfCodeData;
 	private Date _esfStartData;
 	private Date _esfEndData;
-	private Long _esfUserId;
-	private Long _codeUser;
+	private long _esfUserId;
+	private long _codeUser;
 	private long _Codice_Sosp;
 	private String _note;
 	private long _Qualif1_Utiliz;

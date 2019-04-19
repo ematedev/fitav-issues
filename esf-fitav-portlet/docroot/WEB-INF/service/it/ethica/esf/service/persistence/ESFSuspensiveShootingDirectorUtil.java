@@ -122,7 +122,7 @@ public class ESFSuspensiveShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static java.util.List<it.ethica.esf.model.ESFSuspensiveShootingDirector> findBybyUserId(
-		java.lang.Long esfUserId)
+		long esfUserId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence().findBybyUserId(esfUserId);
 	}
@@ -141,7 +141,7 @@ public class ESFSuspensiveShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static java.util.List<it.ethica.esf.model.ESFSuspensiveShootingDirector> findBybyUserId(
-		java.lang.Long esfUserId, int start, int end)
+		long esfUserId, int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence().findBybyUserId(esfUserId, start, end);
 	}
@@ -161,7 +161,7 @@ public class ESFSuspensiveShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static java.util.List<it.ethica.esf.model.ESFSuspensiveShootingDirector> findBybyUserId(
-		java.lang.Long esfUserId, int start, int end,
+		long esfUserId, int start, int end,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence()
@@ -178,7 +178,7 @@ public class ESFSuspensiveShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFSuspensiveShootingDirector findBybyUserId_First(
-		java.lang.Long esfUserId,
+		long esfUserId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchSuspensiveShootingDirectorException {
@@ -195,7 +195,7 @@ public class ESFSuspensiveShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFSuspensiveShootingDirector fetchBybyUserId_First(
-		java.lang.Long esfUserId,
+		long esfUserId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence()
@@ -212,7 +212,7 @@ public class ESFSuspensiveShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFSuspensiveShootingDirector findBybyUserId_Last(
-		java.lang.Long esfUserId,
+		long esfUserId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchSuspensiveShootingDirectorException {
@@ -228,7 +228,7 @@ public class ESFSuspensiveShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFSuspensiveShootingDirector fetchBybyUserId_Last(
-		java.lang.Long esfUserId,
+		long esfUserId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence()
@@ -246,7 +246,7 @@ public class ESFSuspensiveShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFSuspensiveShootingDirector[] findBybyUserId_PrevAndNext(
-		long esfSuspensiveShooingDirectorId, java.lang.Long esfUserId,
+		long esfSuspensiveShooingDirectorId, long esfUserId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchSuspensiveShootingDirectorException {
@@ -261,7 +261,7 @@ public class ESFSuspensiveShootingDirectorUtil {
 	* @param esfUserId the esf user ID
 	* @throws SystemException if a system exception occurred
 	*/
-	public static void removeBybyUserId(java.lang.Long esfUserId)
+	public static void removeBybyUserId(long esfUserId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		getPersistence().removeBybyUserId(esfUserId);
 	}
@@ -273,7 +273,7 @@ public class ESFSuspensiveShootingDirectorUtil {
 	* @return the number of matching e s f suspensive shooting directors
 	* @throws SystemException if a system exception occurred
 	*/
-	public static int countBybyUserId(java.lang.Long esfUserId)
+	public static int countBybyUserId(long esfUserId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence().countBybyUserId(esfUserId);
 	}
@@ -287,7 +287,7 @@ public class ESFSuspensiveShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static java.util.List<it.ethica.esf.model.ESFSuspensiveShootingDirector> findByDate(
-		java.util.Date esfEndData, java.lang.Long esfUserId)
+		java.util.Date esfEndData, long esfUserId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence().findByDate(esfEndData, esfUserId);
 	}
@@ -307,7 +307,7 @@ public class ESFSuspensiveShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static java.util.List<it.ethica.esf.model.ESFSuspensiveShootingDirector> findByDate(
-		java.util.Date esfEndData, java.lang.Long esfUserId, int start, int end)
+		java.util.Date esfEndData, long esfUserId, int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence().findByDate(esfEndData, esfUserId, start, end);
 	}
@@ -328,8 +328,7 @@ public class ESFSuspensiveShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static java.util.List<it.ethica.esf.model.ESFSuspensiveShootingDirector> findByDate(
-		java.util.Date esfEndData, java.lang.Long esfUserId, int start,
-		int end,
+		java.util.Date esfEndData, long esfUserId, int start, int end,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence()
@@ -348,7 +347,7 @@ public class ESFSuspensiveShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFSuspensiveShootingDirector findByDate_First(
-		java.util.Date esfEndData, java.lang.Long esfUserId,
+		java.util.Date esfEndData, long esfUserId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchSuspensiveShootingDirectorException {
@@ -366,7 +365,7 @@ public class ESFSuspensiveShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFSuspensiveShootingDirector fetchByDate_First(
-		java.util.Date esfEndData, java.lang.Long esfUserId,
+		java.util.Date esfEndData, long esfUserId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence()
@@ -384,7 +383,7 @@ public class ESFSuspensiveShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFSuspensiveShootingDirector findByDate_Last(
-		java.util.Date esfEndData, java.lang.Long esfUserId,
+		java.util.Date esfEndData, long esfUserId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchSuspensiveShootingDirectorException {
@@ -402,7 +401,7 @@ public class ESFSuspensiveShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFSuspensiveShootingDirector fetchByDate_Last(
-		java.util.Date esfEndData, java.lang.Long esfUserId,
+		java.util.Date esfEndData, long esfUserId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence()
@@ -422,7 +421,7 @@ public class ESFSuspensiveShootingDirectorUtil {
 	*/
 	public static it.ethica.esf.model.ESFSuspensiveShootingDirector[] findByDate_PrevAndNext(
 		long esfSuspensiveShooingDirectorId, java.util.Date esfEndData,
-		java.lang.Long esfUserId,
+		long esfUserId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchSuspensiveShootingDirectorException {
@@ -438,8 +437,7 @@ public class ESFSuspensiveShootingDirectorUtil {
 	* @param esfUserId the esf user ID
 	* @throws SystemException if a system exception occurred
 	*/
-	public static void removeByDate(java.util.Date esfEndData,
-		java.lang.Long esfUserId)
+	public static void removeByDate(java.util.Date esfEndData, long esfUserId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		getPersistence().removeByDate(esfEndData, esfUserId);
 	}
@@ -452,8 +450,7 @@ public class ESFSuspensiveShootingDirectorUtil {
 	* @return the number of matching e s f suspensive shooting directors
 	* @throws SystemException if a system exception occurred
 	*/
-	public static int countByDate(java.util.Date esfEndData,
-		java.lang.Long esfUserId)
+	public static int countByDate(java.util.Date esfEndData, long esfUserId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence().countByDate(esfEndData, esfUserId);
 	}

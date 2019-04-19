@@ -238,8 +238,8 @@ public class ESFSuspensiveShootingDirectorCacheModel implements CacheModel<ESFSu
 	public String esfCodeData;
 	public long esfStartData;
 	public long esfEndData;
-	public Long esfUserId;
-	public Long codeUser;
+	public long esfUserId;
+	public long codeUser;
 	public long Codice_Sosp;
 	public String note;
 	public long Qualif1_Utiliz;

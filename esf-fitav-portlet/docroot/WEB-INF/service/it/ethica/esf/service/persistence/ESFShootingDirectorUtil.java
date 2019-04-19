@@ -119,7 +119,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static java.util.List<it.ethica.esf.model.ESFShootingDirector> findBybyUserId(
-		java.lang.Long esfUserId)
+		long esfUserId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence().findBybyUserId(esfUserId);
 	}
@@ -138,7 +138,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static java.util.List<it.ethica.esf.model.ESFShootingDirector> findBybyUserId(
-		java.lang.Long esfUserId, int start, int end)
+		long esfUserId, int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence().findBybyUserId(esfUserId, start, end);
 	}
@@ -158,7 +158,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static java.util.List<it.ethica.esf.model.ESFShootingDirector> findBybyUserId(
-		java.lang.Long esfUserId, int start, int end,
+		long esfUserId, int start, int end,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence()
@@ -175,7 +175,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShootingDirector findBybyUserId_First(
-		java.lang.Long esfUserId,
+		long esfUserId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchShootingDirectorException {
@@ -192,7 +192,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShootingDirector fetchBybyUserId_First(
-		java.lang.Long esfUserId,
+		long esfUserId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence()
@@ -209,7 +209,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShootingDirector findBybyUserId_Last(
-		java.lang.Long esfUserId,
+		long esfUserId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchShootingDirectorException {
@@ -225,7 +225,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShootingDirector fetchBybyUserId_Last(
-		java.lang.Long esfUserId,
+		long esfUserId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence()
@@ -243,7 +243,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShootingDirector[] findBybyUserId_PrevAndNext(
-		long esfShootingDirectorId, java.lang.Long esfUserId,
+		long esfShootingDirectorId, long esfUserId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchShootingDirectorException {
@@ -258,7 +258,7 @@ public class ESFShootingDirectorUtil {
 	* @param esfUserId the esf user ID
 	* @throws SystemException if a system exception occurred
 	*/
-	public static void removeBybyUserId(java.lang.Long esfUserId)
+	public static void removeBybyUserId(long esfUserId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		getPersistence().removeBybyUserId(esfUserId);
 	}
@@ -270,7 +270,7 @@ public class ESFShootingDirectorUtil {
 	* @return the number of matching e s f shooting directors
 	* @throws SystemException if a system exception occurred
 	*/
-	public static int countBybyUserId(java.lang.Long esfUserId)
+	public static int countBybyUserId(long esfUserId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence().countBybyUserId(esfUserId);
 	}
@@ -283,7 +283,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static java.util.List<it.ethica.esf.model.ESFShootingDirector> findBybyShootingDirectorQualificationId(
-		java.lang.Long shootingDirectorQualificationId)
+		long shootingDirectorQualificationId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence()
 				   .findBybyShootingDirectorQualificationId(shootingDirectorQualificationId);
@@ -303,7 +303,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static java.util.List<it.ethica.esf.model.ESFShootingDirector> findBybyShootingDirectorQualificationId(
-		java.lang.Long shootingDirectorQualificationId, int start, int end)
+		long shootingDirectorQualificationId, int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence()
 				   .findBybyShootingDirectorQualificationId(shootingDirectorQualificationId,
@@ -325,7 +325,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static java.util.List<it.ethica.esf.model.ESFShootingDirector> findBybyShootingDirectorQualificationId(
-		java.lang.Long shootingDirectorQualificationId, int start, int end,
+		long shootingDirectorQualificationId, int start, int end,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence()
@@ -343,7 +343,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShootingDirector findBybyShootingDirectorQualificationId_First(
-		java.lang.Long shootingDirectorQualificationId,
+		long shootingDirectorQualificationId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchShootingDirectorException {
@@ -361,7 +361,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShootingDirector fetchBybyShootingDirectorQualificationId_First(
-		java.lang.Long shootingDirectorQualificationId,
+		long shootingDirectorQualificationId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence()
@@ -379,7 +379,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShootingDirector findBybyShootingDirectorQualificationId_Last(
-		java.lang.Long shootingDirectorQualificationId,
+		long shootingDirectorQualificationId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchShootingDirectorException {
@@ -397,7 +397,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShootingDirector fetchBybyShootingDirectorQualificationId_Last(
-		java.lang.Long shootingDirectorQualificationId,
+		long shootingDirectorQualificationId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence()
@@ -416,8 +416,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShootingDirector[] findBybyShootingDirectorQualificationId_PrevAndNext(
-		long esfShootingDirectorId,
-		java.lang.Long shootingDirectorQualificationId,
+		long esfShootingDirectorId, long shootingDirectorQualificationId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchShootingDirectorException {
@@ -433,7 +432,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static void removeBybyShootingDirectorQualificationId(
-		java.lang.Long shootingDirectorQualificationId)
+		long shootingDirectorQualificationId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		getPersistence()
 			.removeBybyShootingDirectorQualificationId(shootingDirectorQualificationId);
@@ -447,7 +446,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static int countBybyShootingDirectorQualificationId(
-		java.lang.Long shootingDirectorQualificationId)
+		long shootingDirectorQualificationId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence()
 				   .countBybyShootingDirectorQualificationId(shootingDirectorQualificationId);
@@ -461,7 +460,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static java.util.List<it.ethica.esf.model.ESFShootingDirector> findBybySportTypeId(
-		java.lang.Long sportTypeId)
+		long sportTypeId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence().findBybySportTypeId(sportTypeId);
 	}
@@ -480,7 +479,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static java.util.List<it.ethica.esf.model.ESFShootingDirector> findBybySportTypeId(
-		java.lang.Long sportTypeId, int start, int end)
+		long sportTypeId, int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence().findBybySportTypeId(sportTypeId, start, end);
 	}
@@ -500,7 +499,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static java.util.List<it.ethica.esf.model.ESFShootingDirector> findBybySportTypeId(
-		java.lang.Long sportTypeId, int start, int end,
+		long sportTypeId, int start, int end,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence()
@@ -518,7 +517,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShootingDirector findBybySportTypeId_First(
-		java.lang.Long sportTypeId,
+		long sportTypeId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchShootingDirectorException {
@@ -535,7 +534,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShootingDirector fetchBybySportTypeId_First(
-		java.lang.Long sportTypeId,
+		long sportTypeId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence()
@@ -552,7 +551,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShootingDirector findBybySportTypeId_Last(
-		java.lang.Long sportTypeId,
+		long sportTypeId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchShootingDirectorException {
@@ -569,7 +568,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShootingDirector fetchBybySportTypeId_Last(
-		java.lang.Long sportTypeId,
+		long sportTypeId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence()
@@ -587,7 +586,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShootingDirector[] findBybySportTypeId_PrevAndNext(
-		long esfShootingDirectorId, java.lang.Long sportTypeId,
+		long esfShootingDirectorId, long sportTypeId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchShootingDirectorException {
@@ -602,7 +601,7 @@ public class ESFShootingDirectorUtil {
 	* @param sportTypeId the sport type ID
 	* @throws SystemException if a system exception occurred
 	*/
-	public static void removeBybySportTypeId(java.lang.Long sportTypeId)
+	public static void removeBybySportTypeId(long sportTypeId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		getPersistence().removeBybySportTypeId(sportTypeId);
 	}
@@ -614,7 +613,7 @@ public class ESFShootingDirectorUtil {
 	* @return the number of matching e s f shooting directors
 	* @throws SystemException if a system exception occurred
 	*/
-	public static int countBybySportTypeId(java.lang.Long sportTypeId)
+	public static int countBybySportTypeId(long sportTypeId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence().countBybySportTypeId(sportTypeId);
 	}
@@ -960,9 +959,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShootingDirector findBybyUserId_SDQId_STId(
-		java.lang.Long esfUserId,
-		java.lang.Long shootingDirectorQualificationId,
-		java.lang.Long sportTypeId)
+		long esfUserId, long shootingDirectorQualificationId, long sportTypeId)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchShootingDirectorException {
 		return getPersistence()
@@ -980,9 +977,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShootingDirector fetchBybyUserId_SDQId_STId(
-		java.lang.Long esfUserId,
-		java.lang.Long shootingDirectorQualificationId,
-		java.lang.Long sportTypeId)
+		long esfUserId, long shootingDirectorQualificationId, long sportTypeId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence()
 				   .fetchBybyUserId_SDQId_STId(esfUserId,
@@ -1000,9 +995,8 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShootingDirector fetchBybyUserId_SDQId_STId(
-		java.lang.Long esfUserId,
-		java.lang.Long shootingDirectorQualificationId,
-		java.lang.Long sportTypeId, boolean retrieveFromCache)
+		long esfUserId, long shootingDirectorQualificationId, long sportTypeId,
+		boolean retrieveFromCache)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence()
 				   .fetchBybyUserId_SDQId_STId(esfUserId,
@@ -1019,9 +1013,7 @@ public class ESFShootingDirectorUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShootingDirector removeBybyUserId_SDQId_STId(
-		java.lang.Long esfUserId,
-		java.lang.Long shootingDirectorQualificationId,
-		java.lang.Long sportTypeId)
+		long esfUserId, long shootingDirectorQualificationId, long sportTypeId)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchShootingDirectorException {
 		return getPersistence()
@@ -1038,9 +1030,8 @@ public class ESFShootingDirectorUtil {
 	* @return the number of matching e s f shooting directors
 	* @throws SystemException if a system exception occurred
 	*/
-	public static int countBybyUserId_SDQId_STId(java.lang.Long esfUserId,
-		java.lang.Long shootingDirectorQualificationId,
-		java.lang.Long sportTypeId)
+	public static int countBybyUserId_SDQId_STId(long esfUserId,
+		long shootingDirectorQualificationId, long sportTypeId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence()
 				   .countBybyUserId_SDQId_STId(esfUserId,
