@@ -34,7 +34,6 @@ import com.liferay.portal.service.ServiceContext;
 import com.liferay.portal.service.UserLocalServiceUtil;
 
 import it.ethica.esf.NoSuchConfigurationException;
-import it.ethica.esf.model.ESFCard;
 import it.ethica.esf.model.ESFConfiguration;
 import it.ethica.esf.service.ESFCardLocalServiceUtil;
 import it.ethica.esf.service.ESFConfigurationLocalServiceUtil;
@@ -201,7 +200,7 @@ public class ESFConfigurationLocalServiceImpl
 				Integer.parseInt(ec.getValue());
 				
 			}catch(NumberFormatException nfe){
-				_log.info("errore sulle key");
+				_log.error("errore sulle key");
 				validate = false;
 			}
 			
@@ -229,7 +228,7 @@ public class ESFConfigurationLocalServiceImpl
 
 		youthConfiguration = ESFCardLocalServiceUtil.dynamicQuery(configurationQuery);
 		
-		_log.info("****ageByName="+ageByName);
+		_log.debug("****ageByName="+ageByName);
 		
 		for(ESFConfiguration ec: youthConfiguration){
 			String name= ec.getKey();
@@ -237,7 +236,7 @@ public class ESFConfigurationLocalServiceImpl
 			ageByName.put(name, age);
 		}
 		
-		_log.info("****ageByName="+ageByName);
+		_log.debug("****ageByName="+ageByName);
 		
 		return ageByName;
 	}

@@ -1,13 +1,5 @@
 package it.ethica.esf.util;
 
-import it.ethica.esf.model.ESFMatch;
-import it.ethica.esf.portlet.ESFNormalMatchPortlet;
-import it.ethica.esf.portlet.ESFSportAssociationPortlet;
-import it.ethica.esf.service.ESFDescriptionLocalServiceUtil;
-import it.ethica.esf.service.ESFMatchLocalServiceUtil;
-import it.ethica.esf.service.ESFOrganizationLocalServiceUtil;
-import it.ethica.esf.service.ESFSportTypeLocalServiceUtil;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -15,12 +7,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.liferay.portal.kernel.exception.PortalException;
-import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.log.Log;
-import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.service.OrganizationLocalServiceUtil;
+
+import it.ethica.esf.model.ESFMatch;
+import it.ethica.esf.service.ESFDescriptionLocalServiceUtil;
+import it.ethica.esf.service.ESFMatchLocalServiceUtil;
+import it.ethica.esf.service.ESFSportTypeLocalServiceUtil;
 
 
 public class VerificaIstruzioni {

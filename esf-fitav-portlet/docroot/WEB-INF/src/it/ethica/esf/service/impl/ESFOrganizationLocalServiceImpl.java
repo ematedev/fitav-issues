@@ -86,7 +86,6 @@ import it.ethica.esf.service.ESFUserLocalServiceUtil;
 import it.ethica.esf.service.base.ESFOrganizationLocalServiceBaseImpl;
 import it.ethica.esf.service.persistence.ESFOrganizationFinderUtil;
 import it.ethica.esf.util.ESFKeys;
-
 /**
  * The implementation of the e s f organization local service.
  * <p>
@@ -2447,7 +2446,7 @@ public int getAllEsfOrganizationDisabled(String name, String code ) throws Porta
 				esfOrganizationsNamed.add(o);
 			}
 			} catch (Exception e){
-				_log.info ("errore org -->");
+				_log.error ("errore org -->");
 			}
 		}
 		tot=esfOrganizationsNamed.size();
@@ -2483,7 +2482,7 @@ public int getAllEsfOrganizationDisabled(String name, String code ) throws Porta
 				esfOrganizationsNamed.add(o);
 			}
 			} catch (Exception e){
-				_log.info ("errore org -->");
+				_log.error ("errore org -->");
 			}
 		}
 		if(end > esfOrganizationsNamed.size()){

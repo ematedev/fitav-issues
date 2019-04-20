@@ -293,7 +293,7 @@ public class ManageOperationsField {
 							sequence = tmpSequence;
 					}
 					catch(Exception e){
-						_log.info("Errore nel calcolare il long del codice");
+						_log.error("Errore nel calcolare il long del codice");
 						continue;
 					}
 				}

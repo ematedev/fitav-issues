@@ -116,7 +116,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<ESFShootingDirector> findBybyUserId(Long esfUserId)
+	public List<ESFShootingDirector> findBybyUserId(long esfUserId)
 		throws SystemException {
 		return findBybyUserId(esfUserId, QueryUtil.ALL_POS, QueryUtil.ALL_POS,
 			null);
@@ -136,7 +136,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<ESFShootingDirector> findBybyUserId(Long esfUserId, int start,
+	public List<ESFShootingDirector> findBybyUserId(long esfUserId, int start,
 		int end) throws SystemException {
 		return findBybyUserId(esfUserId, start, end, null);
 	}
@@ -156,7 +156,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<ESFShootingDirector> findBybyUserId(Long esfUserId, int start,
+	public List<ESFShootingDirector> findBybyUserId(long esfUserId, int start,
 		int end, OrderByComparator orderByComparator) throws SystemException {
 		boolean pagination = true;
 		FinderPath finderPath = null;
@@ -178,8 +178,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 
 		if ((list != null) && !list.isEmpty()) {
 			for (ESFShootingDirector esfShootingDirector : list) {
-				if (!Validator.equals(esfUserId,
-							esfShootingDirector.getEsfUserId())) {
+				if ((esfUserId != esfShootingDirector.getEsfUserId())) {
 					list = null;
 
 					break;
@@ -222,7 +221,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 
 				QueryPos qPos = QueryPos.getInstance(q);
 
-				qPos.add(esfUserId.longValue());
+				qPos.add(esfUserId);
 
 				if (!pagination) {
 					list = (List<ESFShootingDirector>)QueryUtil.list(q,
@@ -264,7 +263,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public ESFShootingDirector findBybyUserId_First(Long esfUserId,
+	public ESFShootingDirector findBybyUserId_First(long esfUserId,
 		OrderByComparator orderByComparator)
 		throws NoSuchShootingDirectorException, SystemException {
 		ESFShootingDirector esfShootingDirector = fetchBybyUserId_First(esfUserId,
@@ -295,7 +294,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public ESFShootingDirector fetchBybyUserId_First(Long esfUserId,
+	public ESFShootingDirector fetchBybyUserId_First(long esfUserId,
 		OrderByComparator orderByComparator) throws SystemException {
 		List<ESFShootingDirector> list = findBybyUserId(esfUserId, 0, 1,
 				orderByComparator);
@@ -317,7 +316,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public ESFShootingDirector findBybyUserId_Last(Long esfUserId,
+	public ESFShootingDirector findBybyUserId_Last(long esfUserId,
 		OrderByComparator orderByComparator)
 		throws NoSuchShootingDirectorException, SystemException {
 		ESFShootingDirector esfShootingDirector = fetchBybyUserId_Last(esfUserId,
@@ -348,7 +347,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public ESFShootingDirector fetchBybyUserId_Last(Long esfUserId,
+	public ESFShootingDirector fetchBybyUserId_Last(long esfUserId,
 		OrderByComparator orderByComparator) throws SystemException {
 		int count = countBybyUserId(esfUserId);
 
@@ -378,7 +377,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 */
 	@Override
 	public ESFShootingDirector[] findBybyUserId_PrevAndNext(
-		long esfShootingDirectorId, Long esfUserId,
+		long esfShootingDirectorId, long esfUserId,
 		OrderByComparator orderByComparator)
 		throws NoSuchShootingDirectorException, SystemException {
 		ESFShootingDirector esfShootingDirector = findByPrimaryKey(esfShootingDirectorId);
@@ -409,7 +408,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	}
 
 	protected ESFShootingDirector getBybyUserId_PrevAndNext(Session session,
-		ESFShootingDirector esfShootingDirector, Long esfUserId,
+		ESFShootingDirector esfShootingDirector, long esfUserId,
 		OrderByComparator orderByComparator, boolean previous) {
 		StringBundler query = null;
 
@@ -493,7 +492,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 
 		QueryPos qPos = QueryPos.getInstance(q);
 
-		qPos.add(esfUserId.longValue());
+		qPos.add(esfUserId);
 
 		if (orderByComparator != null) {
 			Object[] values = orderByComparator.getOrderByConditionValues(esfShootingDirector);
@@ -520,7 +519,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public void removeBybyUserId(Long esfUserId) throws SystemException {
+	public void removeBybyUserId(long esfUserId) throws SystemException {
 		for (ESFShootingDirector esfShootingDirector : findBybyUserId(
 				esfUserId, QueryUtil.ALL_POS, QueryUtil.ALL_POS, null)) {
 			remove(esfShootingDirector);
@@ -535,7 +534,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public int countBybyUserId(Long esfUserId) throws SystemException {
+	public int countBybyUserId(long esfUserId) throws SystemException {
 		FinderPath finderPath = FINDER_PATH_COUNT_BY_BYUSERID;
 
 		Object[] finderArgs = new Object[] { esfUserId };
@@ -561,7 +560,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 
 				QueryPos qPos = QueryPos.getInstance(q);
 
-				qPos.add(esfUserId.longValue());
+				qPos.add(esfUserId);
 
 				count = (Long)q.uniqueResult();
 
@@ -617,7 +616,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 */
 	@Override
 	public List<ESFShootingDirector> findBybyShootingDirectorQualificationId(
-		Long shootingDirectorQualificationId) throws SystemException {
+		long shootingDirectorQualificationId) throws SystemException {
 		return findBybyShootingDirectorQualificationId(shootingDirectorQualificationId,
 			QueryUtil.ALL_POS, QueryUtil.ALL_POS, null);
 	}
@@ -637,7 +636,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 */
 	@Override
 	public List<ESFShootingDirector> findBybyShootingDirectorQualificationId(
-		Long shootingDirectorQualificationId, int start, int end)
+		long shootingDirectorQualificationId, int start, int end)
 		throws SystemException {
 		return findBybyShootingDirectorQualificationId(shootingDirectorQualificationId,
 			start, end, null);
@@ -659,7 +658,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 */
 	@Override
 	public List<ESFShootingDirector> findBybyShootingDirectorQualificationId(
-		Long shootingDirectorQualificationId, int start, int end,
+		long shootingDirectorQualificationId, int start, int end,
 		OrderByComparator orderByComparator) throws SystemException {
 		boolean pagination = true;
 		FinderPath finderPath = null;
@@ -685,8 +684,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 
 		if ((list != null) && !list.isEmpty()) {
 			for (ESFShootingDirector esfShootingDirector : list) {
-				if (!Validator.equals(shootingDirectorQualificationId,
-							esfShootingDirector.getShootingDirectorQualificationId())) {
+				if ((shootingDirectorQualificationId != esfShootingDirector.getShootingDirectorQualificationId())) {
 					list = null;
 
 					break;
@@ -729,7 +727,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 
 				QueryPos qPos = QueryPos.getInstance(q);
 
-				qPos.add(shootingDirectorQualificationId.longValue());
+				qPos.add(shootingDirectorQualificationId);
 
 				if (!pagination) {
 					list = (List<ESFShootingDirector>)QueryUtil.list(q,
@@ -772,7 +770,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 */
 	@Override
 	public ESFShootingDirector findBybyShootingDirectorQualificationId_First(
-		Long shootingDirectorQualificationId,
+		long shootingDirectorQualificationId,
 		OrderByComparator orderByComparator)
 		throws NoSuchShootingDirectorException, SystemException {
 		ESFShootingDirector esfShootingDirector = fetchBybyShootingDirectorQualificationId_First(shootingDirectorQualificationId,
@@ -804,7 +802,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 */
 	@Override
 	public ESFShootingDirector fetchBybyShootingDirectorQualificationId_First(
-		Long shootingDirectorQualificationId,
+		long shootingDirectorQualificationId,
 		OrderByComparator orderByComparator) throws SystemException {
 		List<ESFShootingDirector> list = findBybyShootingDirectorQualificationId(shootingDirectorQualificationId,
 				0, 1, orderByComparator);
@@ -827,7 +825,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 */
 	@Override
 	public ESFShootingDirector findBybyShootingDirectorQualificationId_Last(
-		Long shootingDirectorQualificationId,
+		long shootingDirectorQualificationId,
 		OrderByComparator orderByComparator)
 		throws NoSuchShootingDirectorException, SystemException {
 		ESFShootingDirector esfShootingDirector = fetchBybyShootingDirectorQualificationId_Last(shootingDirectorQualificationId,
@@ -859,7 +857,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 */
 	@Override
 	public ESFShootingDirector fetchBybyShootingDirectorQualificationId_Last(
-		Long shootingDirectorQualificationId,
+		long shootingDirectorQualificationId,
 		OrderByComparator orderByComparator) throws SystemException {
 		int count = countBybyShootingDirectorQualificationId(shootingDirectorQualificationId);
 
@@ -889,7 +887,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 */
 	@Override
 	public ESFShootingDirector[] findBybyShootingDirectorQualificationId_PrevAndNext(
-		long esfShootingDirectorId, Long shootingDirectorQualificationId,
+		long esfShootingDirectorId, long shootingDirectorQualificationId,
 		OrderByComparator orderByComparator)
 		throws NoSuchShootingDirectorException, SystemException {
 		ESFShootingDirector esfShootingDirector = findByPrimaryKey(esfShootingDirectorId);
@@ -923,7 +921,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 
 	protected ESFShootingDirector getBybyShootingDirectorQualificationId_PrevAndNext(
 		Session session, ESFShootingDirector esfShootingDirector,
-		Long shootingDirectorQualificationId,
+		long shootingDirectorQualificationId,
 		OrderByComparator orderByComparator, boolean previous) {
 		StringBundler query = null;
 
@@ -1007,7 +1005,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 
 		QueryPos qPos = QueryPos.getInstance(q);
 
-		qPos.add(shootingDirectorQualificationId.longValue());
+		qPos.add(shootingDirectorQualificationId);
 
 		if (orderByComparator != null) {
 			Object[] values = orderByComparator.getOrderByConditionValues(esfShootingDirector);
@@ -1035,7 +1033,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 */
 	@Override
 	public void removeBybyShootingDirectorQualificationId(
-		Long shootingDirectorQualificationId) throws SystemException {
+		long shootingDirectorQualificationId) throws SystemException {
 		for (ESFShootingDirector esfShootingDirector : findBybyShootingDirectorQualificationId(
 				shootingDirectorQualificationId, QueryUtil.ALL_POS,
 				QueryUtil.ALL_POS, null)) {
@@ -1052,7 +1050,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 */
 	@Override
 	public int countBybyShootingDirectorQualificationId(
-		Long shootingDirectorQualificationId) throws SystemException {
+		long shootingDirectorQualificationId) throws SystemException {
 		FinderPath finderPath = FINDER_PATH_COUNT_BY_BYSHOOTINGDIRECTORQUALIFICATIONID;
 
 		Object[] finderArgs = new Object[] { shootingDirectorQualificationId };
@@ -1078,7 +1076,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 
 				QueryPos qPos = QueryPos.getInstance(q);
 
-				qPos.add(shootingDirectorQualificationId.longValue());
+				qPos.add(shootingDirectorQualificationId);
 
 				count = (Long)q.uniqueResult();
 
@@ -1131,7 +1129,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<ESFShootingDirector> findBybySportTypeId(Long sportTypeId)
+	public List<ESFShootingDirector> findBybySportTypeId(long sportTypeId)
 		throws SystemException {
 		return findBybySportTypeId(sportTypeId, QueryUtil.ALL_POS,
 			QueryUtil.ALL_POS, null);
@@ -1151,7 +1149,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<ESFShootingDirector> findBybySportTypeId(Long sportTypeId,
+	public List<ESFShootingDirector> findBybySportTypeId(long sportTypeId,
 		int start, int end) throws SystemException {
 		return findBybySportTypeId(sportTypeId, start, end, null);
 	}
@@ -1171,7 +1169,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<ESFShootingDirector> findBybySportTypeId(Long sportTypeId,
+	public List<ESFShootingDirector> findBybySportTypeId(long sportTypeId,
 		int start, int end, OrderByComparator orderByComparator)
 		throws SystemException {
 		boolean pagination = true;
@@ -1194,8 +1192,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 
 		if ((list != null) && !list.isEmpty()) {
 			for (ESFShootingDirector esfShootingDirector : list) {
-				if (!Validator.equals(sportTypeId,
-							esfShootingDirector.getSportTypeId())) {
+				if ((sportTypeId != esfShootingDirector.getSportTypeId())) {
 					list = null;
 
 					break;
@@ -1238,7 +1235,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 
 				QueryPos qPos = QueryPos.getInstance(q);
 
-				qPos.add(sportTypeId.longValue());
+				qPos.add(sportTypeId);
 
 				if (!pagination) {
 					list = (List<ESFShootingDirector>)QueryUtil.list(q,
@@ -1280,7 +1277,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public ESFShootingDirector findBybySportTypeId_First(Long sportTypeId,
+	public ESFShootingDirector findBybySportTypeId_First(long sportTypeId,
 		OrderByComparator orderByComparator)
 		throws NoSuchShootingDirectorException, SystemException {
 		ESFShootingDirector esfShootingDirector = fetchBybySportTypeId_First(sportTypeId,
@@ -1311,7 +1308,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public ESFShootingDirector fetchBybySportTypeId_First(Long sportTypeId,
+	public ESFShootingDirector fetchBybySportTypeId_First(long sportTypeId,
 		OrderByComparator orderByComparator) throws SystemException {
 		List<ESFShootingDirector> list = findBybySportTypeId(sportTypeId, 0, 1,
 				orderByComparator);
@@ -1333,7 +1330,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public ESFShootingDirector findBybySportTypeId_Last(Long sportTypeId,
+	public ESFShootingDirector findBybySportTypeId_Last(long sportTypeId,
 		OrderByComparator orderByComparator)
 		throws NoSuchShootingDirectorException, SystemException {
 		ESFShootingDirector esfShootingDirector = fetchBybySportTypeId_Last(sportTypeId,
@@ -1364,7 +1361,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public ESFShootingDirector fetchBybySportTypeId_Last(Long sportTypeId,
+	public ESFShootingDirector fetchBybySportTypeId_Last(long sportTypeId,
 		OrderByComparator orderByComparator) throws SystemException {
 		int count = countBybySportTypeId(sportTypeId);
 
@@ -1394,7 +1391,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 */
 	@Override
 	public ESFShootingDirector[] findBybySportTypeId_PrevAndNext(
-		long esfShootingDirectorId, Long sportTypeId,
+		long esfShootingDirectorId, long sportTypeId,
 		OrderByComparator orderByComparator)
 		throws NoSuchShootingDirectorException, SystemException {
 		ESFShootingDirector esfShootingDirector = findByPrimaryKey(esfShootingDirectorId);
@@ -1426,7 +1423,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 
 	protected ESFShootingDirector getBybySportTypeId_PrevAndNext(
 		Session session, ESFShootingDirector esfShootingDirector,
-		Long sportTypeId, OrderByComparator orderByComparator, boolean previous) {
+		long sportTypeId, OrderByComparator orderByComparator, boolean previous) {
 		StringBundler query = null;
 
 		if (orderByComparator != null) {
@@ -1509,7 +1506,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 
 		QueryPos qPos = QueryPos.getInstance(q);
 
-		qPos.add(sportTypeId.longValue());
+		qPos.add(sportTypeId);
 
 		if (orderByComparator != null) {
 			Object[] values = orderByComparator.getOrderByConditionValues(esfShootingDirector);
@@ -1536,7 +1533,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public void removeBybySportTypeId(Long sportTypeId)
+	public void removeBybySportTypeId(long sportTypeId)
 		throws SystemException {
 		for (ESFShootingDirector esfShootingDirector : findBybySportTypeId(
 				sportTypeId, QueryUtil.ALL_POS, QueryUtil.ALL_POS, null)) {
@@ -1552,7 +1549,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public int countBybySportTypeId(Long sportTypeId) throws SystemException {
+	public int countBybySportTypeId(long sportTypeId) throws SystemException {
 		FinderPath finderPath = FINDER_PATH_COUNT_BY_BYSPORTTYPEID;
 
 		Object[] finderArgs = new Object[] { sportTypeId };
@@ -1578,7 +1575,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 
 				QueryPos qPos = QueryPos.getInstance(q);
 
-				qPos.add(sportTypeId.longValue());
+				qPos.add(sportTypeId);
 
 				count = (Long)q.uniqueResult();
 
@@ -2712,8 +2709,8 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public ESFShootingDirector findBybyUserId_SDQId_STId(Long esfUserId,
-		Long shootingDirectorQualificationId, Long sportTypeId)
+	public ESFShootingDirector findBybyUserId_SDQId_STId(long esfUserId,
+		long shootingDirectorQualificationId, long sportTypeId)
 		throws NoSuchShootingDirectorException, SystemException {
 		ESFShootingDirector esfShootingDirector = fetchBybyUserId_SDQId_STId(esfUserId,
 				shootingDirectorQualificationId, sportTypeId);
@@ -2754,8 +2751,8 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public ESFShootingDirector fetchBybyUserId_SDQId_STId(Long esfUserId,
-		Long shootingDirectorQualificationId, Long sportTypeId)
+	public ESFShootingDirector fetchBybyUserId_SDQId_STId(long esfUserId,
+		long shootingDirectorQualificationId, long sportTypeId)
 		throws SystemException {
 		return fetchBybyUserId_SDQId_STId(esfUserId,
 			shootingDirectorQualificationId, sportTypeId, true);
@@ -2772,8 +2769,8 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public ESFShootingDirector fetchBybyUserId_SDQId_STId(Long esfUserId,
-		Long shootingDirectorQualificationId, Long sportTypeId,
+	public ESFShootingDirector fetchBybyUserId_SDQId_STId(long esfUserId,
+		long shootingDirectorQualificationId, long sportTypeId,
 		boolean retrieveFromCache) throws SystemException {
 		Object[] finderArgs = new Object[] {
 				esfUserId, shootingDirectorQualificationId, sportTypeId
@@ -2789,11 +2786,9 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 		if (result instanceof ESFShootingDirector) {
 			ESFShootingDirector esfShootingDirector = (ESFShootingDirector)result;
 
-			if (!Validator.equals(esfUserId, esfShootingDirector.getEsfUserId()) ||
-					!Validator.equals(shootingDirectorQualificationId,
-						esfShootingDirector.getShootingDirectorQualificationId()) ||
-					!Validator.equals(sportTypeId,
-						esfShootingDirector.getSportTypeId())) {
+			if ((esfUserId != esfShootingDirector.getEsfUserId()) ||
+					(shootingDirectorQualificationId != esfShootingDirector.getShootingDirectorQualificationId()) ||
+					(sportTypeId != esfShootingDirector.getSportTypeId())) {
 				result = null;
 			}
 		}
@@ -2820,11 +2815,11 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 
 				QueryPos qPos = QueryPos.getInstance(q);
 
-				qPos.add(esfUserId.longValue());
+				qPos.add(esfUserId);
 
-				qPos.add(shootingDirectorQualificationId.longValue());
+				qPos.add(shootingDirectorQualificationId);
 
-				qPos.add(sportTypeId.longValue());
+				qPos.add(sportTypeId);
 
 				List<ESFShootingDirector> list = q.list();
 
@@ -2835,7 +2830,7 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 				else {
 					if ((list.size() > 1) && _log.isWarnEnabled()) {
 						_log.warn(
-							"ESFShootingDirectorPersistenceImpl.fetchBybyUserId_SDQId_STId(Long, Long, Long, boolean) with parameters (" +
+							"ESFShootingDirectorPersistenceImpl.fetchBybyUserId_SDQId_STId(long, long, long, boolean) with parameters (" +
 							StringUtil.merge(finderArgs) +
 							") yields a result set with more than 1 result. This violates the logical unique restriction. There is no order guarantee on which result is returned by this finder.");
 					}
@@ -2883,8 +2878,8 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public ESFShootingDirector removeBybyUserId_SDQId_STId(Long esfUserId,
-		Long shootingDirectorQualificationId, Long sportTypeId)
+	public ESFShootingDirector removeBybyUserId_SDQId_STId(long esfUserId,
+		long shootingDirectorQualificationId, long sportTypeId)
 		throws NoSuchShootingDirectorException, SystemException {
 		ESFShootingDirector esfShootingDirector = findBybyUserId_SDQId_STId(esfUserId,
 				shootingDirectorQualificationId, sportTypeId);
@@ -2902,8 +2897,8 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public int countBybyUserId_SDQId_STId(Long esfUserId,
-		Long shootingDirectorQualificationId, Long sportTypeId)
+	public int countBybyUserId_SDQId_STId(long esfUserId,
+		long shootingDirectorQualificationId, long sportTypeId)
 		throws SystemException {
 		FinderPath finderPath = FINDER_PATH_COUNT_BY_BYUSERID_SDQID_STID;
 
@@ -2936,11 +2931,11 @@ public class ESFShootingDirectorPersistenceImpl extends BasePersistenceImpl<ESFS
 
 				QueryPos qPos = QueryPos.getInstance(q);
 
-				qPos.add(esfUserId.longValue());
+				qPos.add(esfUserId);
 
-				qPos.add(shootingDirectorQualificationId.longValue());
+				qPos.add(shootingDirectorQualificationId);
 
-				qPos.add(sportTypeId.longValue());
+				qPos.add(sportTypeId);
 
 				count = (Long)q.uniqueResult();
 

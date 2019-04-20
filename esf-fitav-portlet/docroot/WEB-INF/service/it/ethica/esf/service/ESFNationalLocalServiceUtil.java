@@ -188,6 +188,34 @@ public class ESFNationalLocalServiceUtil {
 	}
 
 	/**
+	* Returns the e s f national with the matching UUID and company.
+	*
+	* @param uuid the e s f national's UUID
+	* @param companyId the primary key of the company
+	* @return the matching e s f national, or <code>null</code> if a matching e s f national could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static it.ethica.esf.model.ESFNational fetchESFNationalByUuidAndCompanyId(
+		java.lang.String uuid, long companyId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().fetchESFNationalByUuidAndCompanyId(uuid, companyId);
+	}
+
+	/**
+	* Returns the e s f national matching the UUID and group.
+	*
+	* @param uuid the e s f national's UUID
+	* @param groupId the primary key of the group
+	* @return the matching e s f national, or <code>null</code> if a matching e s f national could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static it.ethica.esf.model.ESFNational fetchESFNationalByUuidAndGroupId(
+		java.lang.String uuid, long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().fetchESFNationalByUuidAndGroupId(uuid, groupId);
+	}
+
+	/**
 	* Returns the e s f national with the primary key.
 	*
 	* @param esfNationalId the primary key of the e s f national
@@ -207,6 +235,38 @@ public class ESFNationalLocalServiceUtil {
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		return getService().getPersistedModel(primaryKeyObj);
+	}
+
+	/**
+	* Returns the e s f national with the matching UUID and company.
+	*
+	* @param uuid the e s f national's UUID
+	* @param companyId the primary key of the company
+	* @return the matching e s f national
+	* @throws PortalException if a matching e s f national could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static it.ethica.esf.model.ESFNational getESFNationalByUuidAndCompanyId(
+		java.lang.String uuid, long companyId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().getESFNationalByUuidAndCompanyId(uuid, companyId);
+	}
+
+	/**
+	* Returns the e s f national matching the UUID and group.
+	*
+	* @param uuid the e s f national's UUID
+	* @param groupId the primary key of the group
+	* @return the matching e s f national
+	* @throws PortalException if a matching e s f national could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static it.ethica.esf.model.ESFNational getESFNationalByUuidAndGroupId(
+		java.lang.String uuid, long groupId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().getESFNationalByUuidAndGroupId(uuid, groupId);
 	}
 
 	/**

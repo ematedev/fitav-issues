@@ -1,26 +1,7 @@
  package it.ethica.esf.util;
 
-import it.ethica.esf.model.ESFCard;
-import it.ethica.esf.model.ESFEntityState;
-import it.ethica.esf.model.ESFOrganization;
-import it.ethica.esf.model.ESFShooterAffiliationChrono;
-import it.ethica.esf.model.ESFUser;
-import it.ethica.esf.model.impl.ESFCardImpl;
-import it.ethica.esf.model.impl.ESFEntityStateImpl;
-import it.ethica.esf.model.impl.ESFOrganizationImpl;
-import it.ethica.esf.model.impl.ESFShooterAffiliationChronoImpl;
-import it.ethica.esf.model.impl.ESFUserImpl;
-import it.ethica.esf.service.ESFCardLocalService;
-import it.ethica.esf.service.ESFCardLocalServiceUtil;
-import it.ethica.esf.service.ESFEntityStateLocalServiceUtil;
-import it.ethica.esf.service.ESFOrganizationLocalServiceUtil;
-import it.ethica.esf.service.ESFShooterAffiliationChronoLocalServiceUtil;
-import it.ethica.esf.service.ESFUserLocalServiceUtil;
-import it.ethica.esf.service.persistence.ESFCardPersistence;
-
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -32,11 +13,26 @@ import javax.portlet.ActionResponse;
 import com.liferay.counter.service.CounterLocalServiceUtil;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
-import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portal.theme.ThemeDisplay;
+
+import it.ethica.esf.model.ESFCard;
+import it.ethica.esf.model.ESFEntityState;
+import it.ethica.esf.model.ESFOrganization;
+import it.ethica.esf.model.ESFShooterAffiliationChrono;
+import it.ethica.esf.model.ESFUser;
+import it.ethica.esf.model.impl.ESFCardImpl;
+import it.ethica.esf.model.impl.ESFEntityStateImpl;
+import it.ethica.esf.model.impl.ESFOrganizationImpl;
+import it.ethica.esf.model.impl.ESFShooterAffiliationChronoImpl;
+import it.ethica.esf.model.impl.ESFUserImpl;
+import it.ethica.esf.service.ESFCardLocalServiceUtil;
+import it.ethica.esf.service.ESFEntityStateLocalServiceUtil;
+import it.ethica.esf.service.ESFOrganizationLocalServiceUtil;
+import it.ethica.esf.service.ESFShooterAffiliationChronoLocalServiceUtil;
+import it.ethica.esf.service.ESFUserLocalServiceUtil;
 
 
 public class RenewalAffiliationShooter {
@@ -73,18 +69,16 @@ public class RenewalAffiliationShooter {
 		BufferedReader bufferedReader = buffer;
 
 		ThemeDisplay themeDysplay = (ThemeDisplay)request.getAttribute(WebKeys.THEME_DISPLAY);
-		DateFormat df = new SimpleDateFormat("dd/mm/yy");		
+//		DateFormat df = new SimpleDateFormat("dd/mm/yy");		
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+//		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		SimpleDateFormat dt = new SimpleDateFormat("yyMMdd"); 
 		
 		long groupId = 0;
 		long companyId = 0;
 		long userId = 0;
 		String userName = "";
-		//Date createDate = new Date();
 		Date createDate = creditDate;
-		Date modifiedDate = new Date();
 		Date paymentDate = new Date();
 		String reg = "";
 		String cardNumber = "";
@@ -92,7 +86,6 @@ public class RenewalAffiliationShooter {
 		String paymentType= "";
 		String paymentDateS = "";
 		String payment = "";
-		String note = "";
 		String Vcampo = "";
 		String shooterAssociationError = "";
 		
@@ -114,12 +107,8 @@ public class RenewalAffiliationShooter {
 		try {
 
 			while((newLine = bufferedReader.readLine())!= null ){
-
-				_log.info("**newLine="+newLine);
 				
 				if( 82 == newLine.trim().length()){
-
-					_log.info("**dimensione riga esatta**");
 					
 					errorAffiliationNumber = errorAffiliationNumber +1;
 					String shooterCode = "";
@@ -194,24 +183,24 @@ public class RenewalAffiliationShooter {
 					if("674".equals(paymentType)){
 						shooterCode = newLine.substring(70, 76);
 						
-						_log.info("**shooterCode="+shooterCode);
+						_log.debug("**shooterCode="+shooterCode);
 						
 						try {
 							user = ESFUserLocalServiceUtil.getESFUserByUserCode(Long.valueOf(shooterCode));
 						}
 						catch (Exception e) {
 							// TODO: handle exception
-							_log.info("tiratore non trovato");
+							_log.error("tiratore [" + shooterCode + "] non trovato");
 							user = null;
 						}
 						
 						if(Validator.isNotNull(user)){
 						
-							_log.info("**user="+user);
+							_log.debug("**user="+user);
 							
 							affiliate = ESFShooterAffiliationChronoLocalServiceUtil.affiliated(user.getEsfUserId(), year);
 							
-							_log.info("**affiliate="+affiliate);
+							_log.debug("**affiliate="+affiliate);
 							if(!affiliate){
 								
 								List<ESFEntityState> oldCards = ESFEntityStateLocalServiceUtil.findESShooterLastCardActive(user.getEsfUserId());
@@ -221,28 +210,21 @@ public class RenewalAffiliationShooter {
 									long cardId = CounterLocalServiceUtil.increment(ESFCard.class.getName());
 									long entityStateId = CounterLocalServiceUtil.increment(ESFEntityState.class.getName());
 									
-									_log.info("**cardId="+cardId);
-									_log.info("**entityStateId="+entityStateId);
-									_log.info("**oldCards.get(0)="+oldCards.get(0));
-									_log.info("*********OldCard="+OldCard);
+									_log.debug("**cardId="+cardId);
+									_log.debug("**entityStateId="+entityStateId);
+									_log.debug("**oldCards.get(0)="+oldCards.get(0));
+									_log.debug("*********OldCard="+OldCard);
 									
 									
 									if(0 < OldCard.getEsfOrganizationId()){
 										
 										cardesfOrganizationId = OldCard.getEsfOrganizationId();
-										_log.info("**cardesfOrganizationId="+cardesfOrganizationId);
 										org = ESFOrganizationLocalServiceUtil.fetchESFOrganization(cardesfOrganizationId);
-										_log.info("**org="+org);
 										orgCode = org.getCode();
-										_log.info("**orgCode="+orgCode);
 										codeAlfa = OldCard.getCodeAlfa();
-										_log.info("**codeAlfa="+codeAlfa);
 										codeNum = OldCard.getCodeNum();
-										_log.info("**codeNum="+codeNum);
 										code_ = OldCard.getCode();
-										_log.info("**code_="+code_);
 										shooterId = OldCard.getEsfUserId();
-										_log.info("**shooterId="+shooterId);
 										
 										card.setUuid(serviceContext.getUuid());
 										card.setEsfCardId(cardId);
@@ -258,7 +240,6 @@ public class RenewalAffiliationShooter {
 										card.setCode(code_);
 										card.setEsfUserId(shooterId);
 										ESFCardLocalServiceUtil.addESFCard(card);
-										_log.info("**creato card");
 										
 										entityState.setEsfEntityStateId(entityStateId);
 										entityState.setCreateDate(createDate);
@@ -273,13 +254,13 @@ public class RenewalAffiliationShooter {
 										entityState.setEndDate(null);
 										entityState.setEsfStateId(ESFKeys.ESFStateType.ENABLE);
 										ESFEntityStateLocalServiceUtil.addESFEntityState(entityState);
-										_log.info("**creato entitystate");
+										_log.debug("**creato entitystate");
 										
 										/*ESFCardLocalServiceUtil.addESFCard(userId, code_, 
 											codeAlfa, codeNum, entityState, shooterId, cardesfOrganizationId, serviceContext);*/
 										
 										long chronoId = CounterLocalServiceUtil.increment(ESFShooterAffiliationChrono.class.getName());
-										_log.info("**chronoId="+chronoId);
+										_log.debug("**chronoId="+chronoId);
 										
 										chrono.setEsfShooterAffiliationChronoId(chronoId);
 										chrono.setEsfuserId(shooterId);
@@ -293,7 +274,7 @@ public class RenewalAffiliationShooter {
 										chrono.setEsfOrganization(orgCode);
 										ESFShooterAffiliationChronoLocalServiceUtil.addESFShooterAffiliationChrono(chrono);
 										
-										_log.info("**fine affiliazione utente");
+										_log.debug("**fine affiliazione utente");
 									}else {
 										long chronoId = CounterLocalServiceUtil.increment(ESFShooterAffiliationChrono.class.getName());
 										String shooterName = user.getFirstName() + " " + user.getLastName();
@@ -302,50 +283,37 @@ public class RenewalAffiliationShooter {
 										
 										shooterId = OldCard.getEsfUserId();
 										
-										_log.info("///////chronoId="+chronoId);
-										_log.info("////shooterId="+shooterId);
-										_log.info("////createDate"+createDate);
-										_log.info("////year="+year);
-										_log.info("////paymentDate="+paymentDate);
-										_log.info("////payment="+payment);
-										_log.info("////Vcampo="+Vcampo);
-										_log.info("////cardNumber="+cardNumber);
-										_log.info("////orgCode="+orgCode);
-										_log.info("////note="+shooterAssociationError);
+										_log.debug("///////chronoId="+chronoId);
+										_log.debug("////shooterId="+shooterId);
+										_log.debug("////createDate"+createDate);
+										_log.debug("////year="+year);
+										_log.debug("////paymentDate="+paymentDate);
+										_log.debug("////payment="+payment);
+										_log.debug("////Vcampo="+Vcampo);
+										_log.debug("////cardNumber="+cardNumber);
+										_log.debug("////orgCode="+orgCode);
+										_log.debug("////note="+shooterAssociationError);
 										
 										chrono.setEsfShooterAffiliationChronoId(chronoId);
-										_log.info("---1----");
+										_log.debug("---1----");
 										chrono.setEsfuserId(shooterId);
-										_log.info("---2----");
+										_log.debug("---2----");
 										chrono.setAffiliationDate(createDate);
-										_log.info("---3----");
 										chrono.setYear(year);
-										_log.info("---4----");
 										chrono.setPaymentDate(paymentDate);
-										_log.info("---5----");
 										chrono.setPayment(payment);
-										_log.info("---6----");
 										chrono.setVcampo(Vcampo);
-										_log.info("---7----");
 										chrono.setCard(cardNumber);
-										_log.info("---8----");
 										chrono.setEsfOrganization(orgCode);
-										_log.info("---9----");
 										chrono.setNote(shooterAssociationError);
-										_log.info("---10----");
 										ESFShooterAffiliationChronoLocalServiceUtil.addESFShooterAffiliationChrono(chrono);
-										_log.info("---11----");
 									}
-									_log.info("---12----");
 								}
-								_log.info("---13----");
 							}
-							_log.info("---14----");
 						}
-						_log.info("---15----");
 					}else{
 						long chronoId = CounterLocalServiceUtil.increment(ESFShooterAffiliationChrono.class.getName());
-						_log.info("**bollettino errato chronoId="+chronoId);
+						_log.debug("**bollettino errato chronoId="+chronoId);
 						chrono.setEsfShooterAffiliationChronoId(chronoId);
 						chrono.setPaymentDate(paymentDate);
 						chrono.setPayment(payment);
@@ -356,12 +324,11 @@ public class RenewalAffiliationShooter {
 				}
 			}
 			
-			_log.info("**fine affiliazione");
+			_log.debug("**fine affiliazione");
 		}
 		catch (Exception e) {
 			// TODO: handle exception
-			_log.info("errore affiliazione");
-			errorAffiliationNumber = errorAffiliationNumber;
+			_log.error("errore affiliazione");
 			return errorAffiliationNumber;
 		}
 		return 0;

@@ -172,6 +172,32 @@ public interface ESFNationalDelegationLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**
+	* Returns the e s f national delegation with the matching UUID and company.
+	*
+	* @param uuid the e s f national delegation's UUID
+	* @param companyId the primary key of the company
+	* @return the matching e s f national delegation, or <code>null</code> if a matching e s f national delegation could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public it.ethica.esf.model.ESFNationalDelegation fetchESFNationalDelegationByUuidAndCompanyId(
+		java.lang.String uuid, long companyId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Returns the e s f national delegation matching the UUID and group.
+	*
+	* @param uuid the e s f national delegation's UUID
+	* @param groupId the primary key of the group
+	* @return the matching e s f national delegation, or <code>null</code> if a matching e s f national delegation could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public it.ethica.esf.model.ESFNationalDelegation fetchESFNationalDelegationByUuidAndGroupId(
+		java.lang.String uuid, long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
 	* Returns the e s f national delegation with the primary key.
 	*
 	* @param esfNationalDelgationId the primary key of the e s f national delegation
@@ -189,6 +215,36 @@ public interface ESFNationalDelegationLocalService extends BaseLocalService,
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.PersistedModel getPersistedModel(
 		java.io.Serializable primaryKeyObj)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Returns the e s f national delegation with the matching UUID and company.
+	*
+	* @param uuid the e s f national delegation's UUID
+	* @param companyId the primary key of the company
+	* @return the matching e s f national delegation
+	* @throws PortalException if a matching e s f national delegation could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public it.ethica.esf.model.ESFNationalDelegation getESFNationalDelegationByUuidAndCompanyId(
+		java.lang.String uuid, long companyId)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Returns the e s f national delegation matching the UUID and group.
+	*
+	* @param uuid the e s f national delegation's UUID
+	* @param groupId the primary key of the group
+	* @return the matching e s f national delegation
+	* @throws PortalException if a matching e s f national delegation could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public it.ethica.esf.model.ESFNationalDelegation getESFNationalDelegationByUuidAndGroupId(
+		java.lang.String uuid, long groupId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
 

@@ -28,7 +28,7 @@ public class ResultComparator implements Comparator<ESFResult>{
 		}
 		catch (Exception e) {
 			// TODO: handle exception
-			_log.info("errore comparator date");
+			_log.error("errore comparator date");
 			return 0;
 		}
 			

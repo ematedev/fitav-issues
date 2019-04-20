@@ -20,7 +20,6 @@ import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.util.Validator;
 
 import it.ethica.esf.model.ESFAnnualConiReport;
-import it.ethica.esf.model.impl.ESFAnnualConiReportImpl;
 import it.ethica.esf.service.base.ESFAnnualConiReportLocalServiceBaseImpl;
 
 /**
@@ -49,7 +48,7 @@ public class ESFAnnualConiReportLocalServiceImpl
 		boolean find = false;
 		ESFAnnualConiReport annualConiAffiliation = null;
 		annualConiAffiliation = esfAnnualConiReportPersistence.fetchByAssYear(assId, year);
-		_log.info("annualConiAffiliation="+annualConiAffiliation);
+		_log.debug("annualConiAffiliation="+annualConiAffiliation);
 		
 		if(Validator.isNotNull(annualConiAffiliation)){
 			find = true;

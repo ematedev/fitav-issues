@@ -49,7 +49,6 @@ import it.ethica.esf.model.ESFCard;
 import it.ethica.esf.model.ESFConfiguration;
 import it.ethica.esf.model.ESFEntityState;
 import it.ethica.esf.model.ESFOrganization;
-import it.ethica.esf.model.ESFRenewal;
 import it.ethica.esf.model.impl.ESFCardImpl;
 import it.ethica.esf.model.impl.ESFConfigurationImpl;
 import it.ethica.esf.model.impl.ESFEntityStateImpl;
@@ -57,7 +56,6 @@ import it.ethica.esf.service.ESFCardLocalServiceUtil;
 import it.ethica.esf.service.ESFConfigurationLocalServiceUtil;
 import it.ethica.esf.service.ESFEntityStateLocalServiceUtil;
 import it.ethica.esf.service.ESFOrganizationLocalServiceUtil;
-import it.ethica.esf.service.ESFUserLocalServiceUtil;
 import it.ethica.esf.service.base.ESFCardLocalServiceBaseImpl;
 import it.ethica.esf.service.persistence.ESFCardFinderUtil;
 import it.ethica.esf.util.ESFKeys;
@@ -103,11 +101,11 @@ public class ESFCardLocalServiceImpl extends ESFCardLocalServiceBaseImpl {
 
 		validateESFCardCode(code);
 		
-		_log.info("entro in add card");
+		_log.debug("entro in add card");
 
 		long esfCardId = counterLocalService.increment();
 		
-		_log.info("entro in add card  esfCardId = "+esfCardId);
+		_log.debug("entro in add card  esfCardId = "+esfCardId);
 
 		ESFCard esfCard = esfCardPersistence.create(esfCardId);
 
@@ -127,13 +125,13 @@ public class ESFCardLocalServiceImpl extends ESFCardLocalServiceBaseImpl {
 		esfCard.setEsfOrganizationId(esfOrganizationId);
 		esfCardPersistence.update(esfCard);
 		
-		_log.info("entro in add card fine creazione card");
+		_log.debug("entro in add card fine creazione card");
 
 		ESFEntityStateLocalServiceUtil.addEntityState(
 				serviceContext.getUserId(), ESFCard.class.getName(), esfCardId,
 				esfEntityState.getEsfStateId(), serviceContext);
 		
-		_log.info("entro in add card creato entity state");
+		_log.debug("entro in add card creato entity state");
 
 		try {
 			resourceLocalService.addResources(esfCard.getCompanyId(), groupId,
@@ -161,7 +159,7 @@ public class ESFCardLocalServiceImpl extends ESFCardLocalServiceBaseImpl {
 			ex.printStackTrace();
 		}
 		
-		_log.info("esco da addCard");
+		_log.debug("esco da addCard");
 		return esfCard;
 	}
 	
@@ -1482,7 +1480,7 @@ public class ESFCardLocalServiceImpl extends ESFCardLocalServiceBaseImpl {
 				}
 				catch (Exception e2) {
 					// TODO: handle exception
-					_log.info("not found entityState");
+					_log.debug("not found entityState");
 				}
 				if (eSFEntityState != null
 						&& (eSFEntityState.getEndDate() != null || (eSFEntityState

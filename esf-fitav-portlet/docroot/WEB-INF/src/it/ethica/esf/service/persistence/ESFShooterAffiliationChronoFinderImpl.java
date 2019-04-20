@@ -160,7 +160,7 @@ public class ESFShooterAffiliationChronoFinderImpl extends BasePersistenceImpl<E
 		
 		}
 		catch (Exception e) {
-			_log.info("e="+e);
+			_log.error("e="+e);
 		}
 		finally {
 			closeSession(session);
@@ -195,7 +195,7 @@ public class ESFShooterAffiliationChronoFinderImpl extends BasePersistenceImpl<E
 		
 		}
 		catch (Exception e) {
-			_log.info("e="+e);
+			_log.error("e="+e);
 		}
 		finally {
 			closeSession(session);

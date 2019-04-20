@@ -114,13 +114,13 @@ public class ESFStateAssEntityLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFStateAssEntity"
 			};
 
-		_methodName364 = "getBeanIdentifier";
+		_methodName368 = "getBeanIdentifier";
 
-		_methodParameterTypes364 = new String[] {  };
+		_methodParameterTypes368 = new String[] {  };
 
-		_methodName365 = "setBeanIdentifier";
+		_methodName369 = "setBeanIdentifier";
 
-		_methodParameterTypes365 = new String[] { "java.lang.String" };
+		_methodParameterTypes369 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -212,13 +212,13 @@ public class ESFStateAssEntityLocalServiceClpInvoker {
 			return ESFStateAssEntityLocalServiceUtil.updateESFStateAssEntity((it.ethica.esf.model.ESFStateAssEntity)arguments[0]);
 		}
 
-		if (_methodName364.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes364, parameterTypes)) {
+		if (_methodName368.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes368, parameterTypes)) {
 			return ESFStateAssEntityLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName365.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes365, parameterTypes)) {
+		if (_methodName369.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes369, parameterTypes)) {
 			ESFStateAssEntityLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
@@ -259,8 +259,8 @@ public class ESFStateAssEntityLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName364;
-	private String[] _methodParameterTypes364;
-	private String _methodName365;
-	private String[] _methodParameterTypes365;
+	private String _methodName368;
+	private String[] _methodParameterTypes368;
+	private String _methodName369;
+	private String[] _methodParameterTypes369;
 }

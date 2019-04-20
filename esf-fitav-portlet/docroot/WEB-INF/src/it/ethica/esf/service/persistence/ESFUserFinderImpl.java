@@ -17,14 +17,10 @@ import com.liferay.portal.kernel.util.StringUtil;
 import com.liferay.portal.service.persistence.impl.BasePersistenceImpl;
 import com.liferay.util.dao.orm.CustomSQLUtil;
 
-import it.ethica.esf.model.ESFShooterAffiliationChrono;
 import it.ethica.esf.model.ESFShootingDirectorQualification;
 import it.ethica.esf.model.ESFUser;
-import it.ethica.esf.model.ESFUserCategory;
-import it.ethica.esf.model.impl.ESFUserCategoryImpl;
 import it.ethica.esf.model.impl.ESFUserImpl;
 import it.ethica.esf.service.ESFShootingDirectorQualificationLocalServiceUtil;
-import it.ethica.esf.service.impl.ESFUserLocalServiceImpl;
 import it.ethica.esf.util.ESFKeys;
 
 public class ESFUserFinderImpl extends BasePersistenceImpl<ESFUser>
@@ -559,7 +555,7 @@ public class ESFUserFinderImpl extends BasePersistenceImpl<ESFUser>
 		
 		}
 		catch (Exception e) {
-			_log.info("e="+e);
+			_log.error("e="+e);
 		}
 		finally {
 			closeSession(session);
@@ -601,7 +597,7 @@ public class ESFUserFinderImpl extends BasePersistenceImpl<ESFUser>
 		
 		}
 		catch (Exception e) {
-			_log.info("e="+e);
+			_log.error("e="+e);
 		}
 		finally {
 			closeSession(session);
@@ -643,7 +639,7 @@ public class ESFUserFinderImpl extends BasePersistenceImpl<ESFUser>
 		
 		}
 		catch (Exception e) {
-			_log.info("findShooterByAss e="+e);
+			_log.error("findShooterByAss e="+e);
 		}
 		finally {
 			closeSession(session);
@@ -689,7 +685,7 @@ public class ESFUserFinderImpl extends BasePersistenceImpl<ESFUser>
 			
 		}
 		catch (Exception e) {
-			_log.info("findShooterByAss e="+e);
+			_log.error("findShooterByAss e="+e);
 		}
 		finally {
 			closeSession(session);
@@ -732,7 +728,7 @@ public class ESFUserFinderImpl extends BasePersistenceImpl<ESFUser>
 			
 		}
 		catch (Exception e) {
-			_log.info("findShooterByAss e="+e);
+			_log.error("findShooterByAss e="+e);
 		}
 		finally {
 			closeSession(session);
@@ -775,7 +771,7 @@ public class ESFUserFinderImpl extends BasePersistenceImpl<ESFUser>
 			
 		}
 		catch (Exception e) {
-			_log.info("findShooterByAss e="+e);
+			_log.error("findShooterByAss e="+e);
 		}
 		finally {
 			closeSession(session);
@@ -818,7 +814,7 @@ public class ESFUserFinderImpl extends BasePersistenceImpl<ESFUser>
 			
 		}
 		catch (Exception e) {
-			_log.info("findShooterByAss e="+e);
+			_log.error("findShooterByAss e="+e);
 		}
 		finally {
 			closeSession(session);
@@ -861,7 +857,7 @@ public class ESFUserFinderImpl extends BasePersistenceImpl<ESFUser>
 			
 		}
 		catch (Exception e) {
-			_log.info("findShooterByAss e="+e);
+			_log.error("findShooterByAss e="+e);
 		}
 		finally {
 			closeSession(session);
@@ -916,7 +912,7 @@ public class ESFUserFinderImpl extends BasePersistenceImpl<ESFUser>
 			
 		}
 		catch (Exception e) {
-			_log.info("findShooterByAss e="+e);
+			_log.error("findShooterByAss e="+e);
 		}
 		finally {
 			closeSession(session);
@@ -974,7 +970,7 @@ public class ESFUserFinderImpl extends BasePersistenceImpl<ESFUser>
 			
 		}
 		catch (Exception e) {
-			_log.info("findShooterByAss e="+e);
+			_log.error("findShooterByAss e="+e);
 		}
 		finally {
 			closeSession(session);
@@ -1078,7 +1074,7 @@ public class ESFUserFinderImpl extends BasePersistenceImpl<ESFUser>
 			
 		}
 		catch (Exception e) {
-			_log.info("findYouthByCategory e="+e);
+			_log.error("findYouthByCategory e="+e);
 		}
 		finally {
 			closeSession(session);
@@ -1115,7 +1111,7 @@ public class ESFUserFinderImpl extends BasePersistenceImpl<ESFUser>
 			
 		}
 		catch (Exception e) {
-			_log.info("findYouthByCategory e="+e);
+			_log.error("findYouthByCategory e="+e);
 		}
 		finally {
 			closeSession(session);
@@ -1162,7 +1158,7 @@ public class ESFUserFinderImpl extends BasePersistenceImpl<ESFUser>
 			
 		}
 		catch (Exception e) {
-			_log.info("findBDO e="+e);
+			_log.error("findBDO e="+e);
 		}
 		finally {
 			closeSession(session);
@@ -1204,7 +1200,7 @@ public class ESFUserFinderImpl extends BasePersistenceImpl<ESFUser>
 			
 		}
 		catch (Exception e) {
-			_log.info("findYouthByCategory e="+e);
+			_log.error("findYouthByCategory e="+e);
 		}
 		finally {
 			closeSession(session);
@@ -1254,7 +1250,7 @@ public class ESFUserFinderImpl extends BasePersistenceImpl<ESFUser>
 			
 		}
 		catch (Exception e) {
-			_log.info("findAssociatedShooterOrganization e="+e);
+			_log.error("findAssociatedShooterOrganization e="+e);
 		}
 		finally {
 			closeSession(session);
@@ -1295,7 +1291,7 @@ public class ESFUserFinderImpl extends BasePersistenceImpl<ESFUser>
 			
 		}
 		catch (Exception e) {
-			_log.info("countAssociatedShooterOrganization e="+e);
+			_log.error("countAssociatedShooterOrganization e="+e);
 		}
 		finally {
 			closeSession(session);
