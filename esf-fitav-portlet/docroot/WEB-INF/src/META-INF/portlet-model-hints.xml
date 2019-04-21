@@ -102,6 +102,7 @@
 		<field name="website" type="String" />
 	</model>
 	<model name="it.ethica.esf.model.ESFCodeOrg">
+		<field name="uuid" type="String" />
 		<field name="esfCodeOrgId" type="long" />
 		<field name="className" type="String" />
 		<field name="code" type="String" />
@@ -146,6 +147,7 @@
 		<field name="stopoverId" type="String" />
 	</model>
 	<model name="it.ethica.esf.model.ESFDescription">
+		<field name="uuid" type="String" />
 		<field name="esfDescriptionId" type="long" />
 		<field name="isNational" type="boolean" />
 		<field name="name" type="String" />
@@ -480,6 +482,7 @@
 		<field name="code" type="String" />
 	</model>
 	<model name="it.ethica.esf.model.ESFNational">
+		<field name="uuid" type="String" />
 		<field name="esfNationalId" type="long" />
 		<field name="groupId" type="long" />
 		<field name="companyId" type="long" />
@@ -499,6 +502,7 @@
 		<field name="deliberateDate" type="Date" />
 	</model>
 	<model name="it.ethica.esf.model.ESFNationalDelegation">
+		<field name="uuid" type="String" />
 		<field name="esfUserId" type="long" />
 		<field name="groupId" type="long" />
 		<field name="companyId" type="long" />
@@ -576,6 +580,38 @@
 		<field name="webSite" type="String" />
 		<field name="includeConiReport" type="boolean" />
 		<field name="organizzationCategory" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.ESFOrganization_Reengineered">
+		<field name="esfOrganizationId" type="long" />
+		<field name="code" type="String" />
+		<field name="vat" type="String" />
+		<field name="fiscalCode" type="String" />
+		<field name="ibanCode" type="String" />
+		<field name="isMultiSport" type="boolean" />
+		<field name="legalForm" type="String" />
+		<field name="category" type="String" />
+		<field name="establishmentDate" type="Date" />
+		<field name="closureDate" type="Date" />
+		<field name="type" type="int" />
+		<field name="insertDate" type="Date" />
+		<field name="coniDate" type="Date" />
+		<field name="coniCode" type="String" />
+		<field name="description" type="String" />
+		<field name="isYouthActive" type="boolean" />
+		<field name="firstAffiliationDate" type="Date" />
+		<field name="variations" type="long" />
+		<field name="regionCode" type="long" />
+		<field name="idFatherAssociation" type="long" />
+		<field name="constitutiveAct" type="boolean" />
+		<field name="registeredStatus" type="boolean" />
+		<field name="planimetrySportsStand" type="boolean" />
+		<field name="certificateFITAV" type="boolean" />
+		<field name="note" type="String" />
+		<field name="isSimplyOrganizzation" type="boolean" />
+		<field name="webSite" type="String" />
+		<field name="includeConiReport" type="boolean" />
+		<field name="organizzationCategory" type="String" />
+		<field name="type_" type="int" />
 	</model>
 	<model name="it.ethica.esf.model.ESFOrganizationUnitservice">
 		<field name="uuid" type="String" />
@@ -660,6 +696,7 @@
 		<field name="esfGunKindIdTwo" type="long" />
 	</model>
 	<model name="it.ethica.esf.model.ESFPartecipantType">
+		<field name="uuid" type="String" />
 		<field name="esfPartecipantTypeId" type="long" />
 		<field name="name" type="String" />
 	</model>
@@ -846,10 +883,10 @@
 		<field name="esfCodeData" type="String" />
 		<field name="esfStartData" type="Date" />
 		<field name="esfEndData" type="Date" />
-		<field name="esfUserId" type="Long" />
-		<field name="codeUser" type="Long" />
-		<field name="shootingDirectorQualificationId" type="Long" />
-		<field name="sportTypeId" type="Long" />
+		<field name="esfUserId" type="long" />
+		<field name="codeUser" type="long" />
+		<field name="shootingDirectorQualificationId" type="long" />
+		<field name="sportTypeId" type="long" />
 		<field name="regionId" type="String" />
 		<field name="provinceId" type="String" />
 		<field name="flagCrea" type="String" />
@@ -893,6 +930,7 @@
 		<field name="description" type="String" />
 	</model>
 	<model name="it.ethica.esf.model.ESFStateAssEntity">
+		<field name="uuid" type="String" />
 		<field name="esfStateId" type="long" />
 		<field name="className" type="String" />
 	</model>
@@ -907,8 +945,8 @@
 		<field name="esfCodeData" type="String" />
 		<field name="esfStartData" type="Date" />
 		<field name="esfEndData" type="Date" />
-		<field name="esfUserId" type="Long" />
-		<field name="codeUser" type="Long" />
+		<field name="esfUserId" type="long" />
+		<field name="codeUser" type="long" />
 		<field name="Codice_Sosp" type="long" />
 		<field name="note" type="String" />
 		<field name="Qualif1_Utiliz" type="long" />

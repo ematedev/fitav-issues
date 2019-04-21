@@ -189,6 +189,9 @@
 	<mapped-superclass class="it.ethica.esf.model.impl.ESFCodeOrgModelImpl">
 		<attributes>
 			<id name="esfCodeOrgId" />
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
 			<basic name="className" />
 			<basic name="code">
 				<column name="CODE_" />
@@ -274,6 +277,9 @@
 	<mapped-superclass class="it.ethica.esf.model.impl.ESFDescriptionModelImpl">
 		<attributes>
 			<id name="esfDescriptionId" />
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
 			<basic name="isNational" />
 			<basic name="name" />
 			<transient name="modelAttributes" />
@@ -885,6 +891,9 @@
 	<mapped-superclass class="it.ethica.esf.model.impl.ESFNationalModelImpl">
 		<attributes>
 			<id name="esfNationalId" />
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
 			<basic name="groupId" />
 			<basic name="companyId" />
 			<basic name="userId" />
@@ -923,6 +932,9 @@
 	<mapped-superclass class="it.ethica.esf.model.impl.ESFNationalDelegationModelImpl">
 		<attributes>
 			<id name="esfNationalDelgationId" />
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
 			<basic name="esfUserId" />
 			<basic name="groupId" />
 			<basic name="companyId" />
@@ -1043,6 +1055,57 @@
 			<basic name="webSite" />
 			<basic name="includeConiReport" />
 			<basic name="organizzationCategory" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="it.ethica.esf.model.impl.ESFOrganization_ReengineeredModelImpl">
+		<attributes>
+			<id name="esfOrganizationId" />
+			<basic name="code">
+				<column name="CODE_" />
+			</basic>
+			<basic name="vat" />
+			<basic name="fiscalCode" />
+			<basic name="ibanCode" />
+			<basic name="isMultiSport" />
+			<basic name="legalForm" />
+			<basic name="category" />
+			<basic name="establishmentDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="closureDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="type">
+				<column name="TYPE_" />
+			</basic>
+			<basic name="insertDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="coniDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="coniCode" />
+			<basic name="description" />
+			<basic name="isYouthActive" />
+			<basic name="firstAffiliationDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="variations" />
+			<basic name="regionCode" />
+			<basic name="idFatherAssociation" />
+			<basic name="constitutiveAct" />
+			<basic name="registeredStatus" />
+			<basic name="planimetrySportsStand" />
+			<basic name="certificateFITAV" />
+			<basic name="note" />
+			<basic name="isSimplyOrganizzation" />
+			<basic name="webSite" />
+			<basic name="includeConiReport" />
+			<basic name="organizzationCategory" />
+			<basic name="type_" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />
@@ -1183,6 +1246,9 @@
 	<mapped-superclass class="it.ethica.esf.model.impl.ESFPartecipantTypeModelImpl">
 		<attributes>
 			<id name="esfPartecipantTypeId" />
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
 			<basic name="name" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
@@ -1512,6 +1578,7 @@
 			<basic name="DateVar">
 				<temporal>TIMESTAMP</temporal>
 			</basic>
+			<transient name="esfUserUuid" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />
@@ -1597,6 +1664,9 @@
 		<attributes>
 			<id name="esfStateId" />
 			<id name="className" />
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />
@@ -1647,6 +1717,7 @@
 			<basic name="esfVariationData">
 				<temporal>TIMESTAMP</temporal>
 			</basic>
+			<transient name="esfUserUuid" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />
@@ -2083,6 +2154,10 @@
 			<transient name="userId" />
 			<transient name="userName" />
 		</attributes>
+	</entity>
+	<entity class="it.ethica.esf.model.impl.ESFOrganization_ReengineeredImpl" name="ESFOrganization_Reengineered">
+		<table name="esforganization" />
+		<attributes />
 	</entity>
 	<entity class="it.ethica.esf.model.impl.ESFOrganizationUnitserviceImpl" name="ESFOrganizationUnitservice">
 		<table name="ESFOrganizationUnitservice" />

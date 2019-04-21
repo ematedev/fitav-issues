@@ -46,6 +46,7 @@
 	<import class="it.ethica.esf.model.ESFNationalDelegation" />
 	<import class="it.ethica.esf.model.ESFNationalMatchResult" />
 	<import class="it.ethica.esf.model.ESFOrganization" />
+	<import class="it.ethica.esf.model.ESFOrganization_Reengineered" />
 	<import class="it.ethica.esf.model.ESFOrganizationUnitservice" />
 	<import class="it.ethica.esf.model.ESFPartecipant" />
 	<import class="it.ethica.esf.model.ESFPartecipantInfo" />
@@ -138,6 +139,7 @@
 		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFCaneImpl" table="ESFCane">
+		<cache usage="read-write" />
 		<id name="esfCaneId" type="long">
 			<generator class="assigned" />
 		</id>
@@ -180,6 +182,7 @@
 		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFCatridgeImpl" table="ESFCatridge">
+		<cache usage="read-write" />
 		<id name="esfCatridgeId" type="long">
 			<generator class="assigned" />
 		</id>
@@ -206,9 +209,11 @@
 		<property name="website" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFCodeOrgImpl" table="ESFCodeOrg">
+		<cache usage="read-write" />
 		<id name="esfCodeOrgId" type="long">
 			<generator class="assigned" />
 		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
 		<property name="className" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
 		<property name="sequence" type="com.liferay.portal.dao.orm.hibernate.LongType" />
@@ -265,6 +270,7 @@
 		<id name="esfDescriptionId" type="long">
 			<generator class="assigned" />
 		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
 		<property name="isNational" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
 		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
@@ -564,6 +570,7 @@
 		<property name="endDate" type="org.hibernate.type.TimestampType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFLentFieldImpl" table="ESFLentField">
+		<cache usage="read-write" />
 		<id name="lentFieldId" type="long">
 			<generator class="assigned" />
 		</id>
@@ -573,6 +580,7 @@
 		<property name="actualOwnerId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFMatchImpl" table="ESFMatch">
+		<cache usage="read-write" />
 		<id name="esfMatchId" type="long">
 			<generator class="assigned" />
 		</id>
@@ -661,9 +669,11 @@
 		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFNationalImpl" table="ESFNational">
+		<cache usage="read-write" />
 		<id name="esfNationalId" type="long">
 			<generator class="assigned" />
 		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
 		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
@@ -686,6 +696,7 @@
 		<id name="esfNationalDelgationId" type="long">
 			<generator class="assigned" />
 		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
 		<property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
@@ -767,6 +778,41 @@
 		<property name="includeConiReport" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
 		<property name="organizzationCategory" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
+	<class name="it.ethica.esf.model.impl.ESFOrganization_ReengineeredImpl" table="esforganization">
+		<cache usage="read-write" />
+		<id name="esfOrganizationId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+		<property name="vat" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="fiscalCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ibanCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="isMultiSport" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="legalForm" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="category" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="establishmentDate" type="org.hibernate.type.TimestampType" />
+		<property name="closureDate" type="org.hibernate.type.TimestampType" />
+		<property name="type" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="type_" />
+		<property name="insertDate" type="org.hibernate.type.TimestampType" />
+		<property name="coniDate" type="org.hibernate.type.TimestampType" />
+		<property name="coniCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="isYouthActive" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="firstAffiliationDate" type="org.hibernate.type.TimestampType" />
+		<property name="variations" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="regionCode" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="idFatherAssociation" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="constitutiveAct" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="registeredStatus" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="planimetrySportsStand" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="certificateFITAV" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="note" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="isSimplyOrganizzation" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="webSite" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="includeConiReport" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="organizzationCategory" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="type_" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
 	<class name="it.ethica.esf.model.impl.ESFOrganizationUnitserviceImpl" table="ESFOrganizationUnitservice">
 		<cache usage="read-write" />
 		<id name="esfOrganizationUnitserviceId" type="long">
@@ -785,6 +831,7 @@
 		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFPartecipantImpl" table="ESFPartecipant">
+		<cache usage="read-write" />
 		<id name="esfPartecipantId" type="long">
 			<generator class="assigned" />
 		</id>
@@ -858,9 +905,11 @@
 		<property name="esfGunKindIdTwo" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFPartecipantTypeImpl" table="ESFPartecipantType">
+		<cache usage="read-write" />
 		<id name="esfPartecipantTypeId" type="long">
 			<generator class="assigned" />
 		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
 		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFPhoneImpl" table="ESFPhone">
@@ -1053,6 +1102,7 @@
 		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFShooterQualificationESFMatchImpl" table="ESFShooterQualificationESFMatch">
+		<cache usage="read-write" />
 		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.ESFShooterQualificationESFMatchPK">
 			<key-property name="esfShooterQualificationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 			<key-property name="esfMatchId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
@@ -1145,6 +1195,7 @@
 			<key-property name="esfStateId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 			<key-property name="className" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		</composite-id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFSuspensiveCodeImpl" table="ESFSuspensiveCode">
 		<cache usage="read-write" />
@@ -1183,6 +1234,7 @@
 		<property name="esfVariationData" type="org.hibernate.type.TimestampType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFTeamImpl" table="ESFTeam">
+		<cache usage="read-write" />
 		<id name="esfTeamId" type="long">
 			<generator class="assigned" />
 		</id>

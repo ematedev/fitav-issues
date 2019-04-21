@@ -109,6 +109,7 @@ create table ESFCity (
 );
 
 create table ESFCodeOrg (
+	uuid_ VARCHAR(75) null,
 	esfCodeOrgId LONG not null primary key,
 	className VARCHAR(75) null,
 	code_ VARCHAR(75) null,
@@ -157,6 +158,7 @@ create table ESFDeparture (
 );
 
 create table ESFDescription (
+	uuid_ VARCHAR(75) null,
 	esfDescriptionId LONG not null primary key,
 	isNational BOOLEAN,
 	name VARCHAR(75) null
@@ -517,6 +519,7 @@ create table ESFMatchType (
 );
 
 create table ESFNational (
+	uuid_ VARCHAR(75) null,
 	esfNationalId LONG not null primary key,
 	groupId LONG,
 	companyId LONG,
@@ -537,6 +540,7 @@ create table ESFNational (
 );
 
 create table ESFNationalDelegation (
+	uuid_ VARCHAR(75) null,
 	esfUserId LONG,
 	groupId LONG,
 	companyId LONG,
@@ -702,6 +706,7 @@ create table ESFPartecipantInfo (
 );
 
 create table ESFPartecipantType (
+	uuid_ VARCHAR(75) null,
 	esfPartecipantTypeId LONG not null primary key,
 	name VARCHAR(75) null
 );
@@ -959,6 +964,7 @@ create table ESFState (
 );
 
 create table ESFStateAssEntity (
+	uuid_ VARCHAR(75) null,
 	esfStateId LONG not null,
 	className VARCHAR(75) not null,
 	primary key (esfStateId, className)
@@ -1146,4 +1152,37 @@ create table ESFgunUser (
 	typeId LONG,
 	esfMeasures VARCHAR(75) null,
 	esfCaliber VARCHAR(75) null
+);
+
+create table esforganization (
+	esfOrganizationId LONG not null primary key,
+	code_ VARCHAR(75) null,
+	vat VARCHAR(75) null,
+	fiscalCode VARCHAR(75) null,
+	ibanCode VARCHAR(75) null,
+	isMultiSport BOOLEAN,
+	legalForm VARCHAR(75) null,
+	category VARCHAR(75) null,
+	establishmentDate DATE null,
+	closureDate DATE null,
+	type_ INTEGER,
+	insertDate DATE null,
+	coniDate DATE null,
+	coniCode VARCHAR(75) null,
+	description VARCHAR(75) null,
+	isYouthActive BOOLEAN,
+	firstAffiliationDate DATE null,
+	variations LONG,
+	regionCode LONG,
+	idFatherAssociation LONG,
+	constitutiveAct BOOLEAN,
+	registeredStatus BOOLEAN,
+	planimetrySportsStand BOOLEAN,
+	certificateFITAV BOOLEAN,
+	note VARCHAR(75) null,
+	isSimplyOrganizzation BOOLEAN,
+	webSite VARCHAR(75) null,
+	includeConiReport BOOLEAN,
+	organizzationCategory VARCHAR(75) null,
+	type_ INTEGER
 );
