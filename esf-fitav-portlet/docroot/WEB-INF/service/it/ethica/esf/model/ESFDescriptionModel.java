@@ -58,6 +58,21 @@ public interface ESFDescriptionModel extends BaseModel<ESFDescription> {
 	public void setPrimaryKey(long primaryKey);
 
 	/**
+	 * Returns the uuid of this e s f description.
+	 *
+	 * @return the uuid of this e s f description
+	 */
+	@AutoEscape
+	public String getUuid();
+
+	/**
+	 * Sets the uuid of this e s f description.
+	 *
+	 * @param uuid the uuid of this e s f description
+	 */
+	public void setUuid(String uuid);
+
+	/**
 	 * Returns the esf description ID of this e s f description.
 	 *
 	 * @return the esf description ID of this e s f description

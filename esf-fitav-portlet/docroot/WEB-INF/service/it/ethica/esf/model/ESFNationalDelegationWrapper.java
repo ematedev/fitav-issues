@@ -14,6 +14,7 @@
 
 package it.ethica.esf.model;
 
+import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.ModelWrapper;
 
@@ -51,6 +52,7 @@ public class ESFNationalDelegationWrapper implements ESFNationalDelegation,
 	public Map<String, Object> getModelAttributes() {
 		Map<String, Object> attributes = new HashMap<String, Object>();
 
+		attributes.put("uuid", getUuid());
 		attributes.put("esfUserId", getEsfUserId());
 		attributes.put("groupId", getGroupId());
 		attributes.put("companyId", getCompanyId());
@@ -78,6 +80,12 @@ public class ESFNationalDelegationWrapper implements ESFNationalDelegation,
 
 	@Override
 	public void setModelAttributes(Map<String, Object> attributes) {
+		String uuid = (String)attributes.get("uuid");
+
+		if (uuid != null) {
+			setUuid(uuid);
+		}
+
 		Long esfUserId = (Long)attributes.get("esfUserId");
 
 		if (esfUserId != null) {
@@ -219,6 +227,26 @@ public class ESFNationalDelegationWrapper implements ESFNationalDelegation,
 	@Override
 	public void setPrimaryKey(long primaryKey) {
 		_esfNationalDelegation.setPrimaryKey(primaryKey);
+	}
+
+	/**
+	* Returns the uuid of this e s f national delegation.
+	*
+	* @return the uuid of this e s f national delegation
+	*/
+	@Override
+	public java.lang.String getUuid() {
+		return _esfNationalDelegation.getUuid();
+	}
+
+	/**
+	* Sets the uuid of this e s f national delegation.
+	*
+	* @param uuid the uuid of this e s f national delegation
+	*/
+	@Override
+	public void setUuid(java.lang.String uuid) {
+		_esfNationalDelegation.setUuid(uuid);
 	}
 
 	/**
@@ -788,6 +816,11 @@ public class ESFNationalDelegationWrapper implements ESFNationalDelegation,
 		}
 
 		return false;
+	}
+
+	@Override
+	public StagedModelType getStagedModelType() {
+		return _esfNationalDelegation.getStagedModelType();
 	}
 
 	/**

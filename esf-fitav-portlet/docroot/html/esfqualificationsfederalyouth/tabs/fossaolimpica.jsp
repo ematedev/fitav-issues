@@ -1,12 +1,5 @@
 <%@page import="it.ethica.esf.service.ESFUserLocalServiceUtil"%>
 
-<%
-
-//SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); 
-
-
-
-%>
 
 <p class="lead category-label"><liferay-ui:message key="junioresFOM" /></p>
 

@@ -29,6 +29,7 @@ public class ESFPartecipantTypeSoap implements Serializable {
 	public static ESFPartecipantTypeSoap toSoapModel(ESFPartecipantType model) {
 		ESFPartecipantTypeSoap soapModel = new ESFPartecipantTypeSoap();
 
+		soapModel.setUuid(model.getUuid());
 		soapModel.setEsfPartecipantTypeId(model.getEsfPartecipantTypeId());
 		soapModel.setName(model.getName());
 
@@ -86,6 +87,14 @@ public class ESFPartecipantTypeSoap implements Serializable {
 		setEsfPartecipantTypeId(pk);
 	}
 
+	public String getUuid() {
+		return _uuid;
+	}
+
+	public void setUuid(String uuid) {
+		_uuid = uuid;
+	}
+
 	public long getEsfPartecipantTypeId() {
 		return _esfPartecipantTypeId;
 	}
@@ -102,6 +111,7 @@ public class ESFPartecipantTypeSoap implements Serializable {
 		_name = name;
 	}
 
+	private String _uuid;
 	private long _esfPartecipantTypeId;
 	private String _name;
 }

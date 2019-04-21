@@ -15,6 +15,7 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -22,6 +23,7 @@ import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.model.impl.BaseModelImpl;
 import com.liferay.portal.service.ServiceContext;
+import com.liferay.portal.util.PortalUtil;
 
 import com.liferay.portlet.expando.model.ExpandoBridge;
 import com.liferay.portlet.expando.util.ExpandoBridgeFactoryUtil;
@@ -273,12 +275,12 @@ public class ESFShootingDirectorModelImpl extends BaseModelImpl<ESFShootingDirec
 	}
 
 	@Override
-	public Long getEsfUserId() {
+	public long getEsfUserId() {
 		return _esfUserId;
 	}
 
 	@Override
-	public void setEsfUserId(Long esfUserId) {
+	public void setEsfUserId(long esfUserId) {
 		_columnBitmask |= ESFUSERID_COLUMN_BITMASK;
 
 		if (!_setOriginalEsfUserId) {
@@ -290,28 +292,38 @@ public class ESFShootingDirectorModelImpl extends BaseModelImpl<ESFShootingDirec
 		_esfUserId = esfUserId;
 	}
 
-	public Long getOriginalEsfUserId() {
+	@Override
+	public String getEsfUserUuid() throws SystemException {
+		return PortalUtil.getUserValue(getEsfUserId(), "uuid", _esfUserUuid);
+	}
+
+	@Override
+	public void setEsfUserUuid(String esfUserUuid) {
+		_esfUserUuid = esfUserUuid;
+	}
+
+	public long getOriginalEsfUserId() {
 		return _originalEsfUserId;
 	}
 
 	@Override
-	public Long getCodeUser() {
+	public long getCodeUser() {
 		return _codeUser;
 	}
 
 	@Override
-	public void setCodeUser(Long codeUser) {
+	public void setCodeUser(long codeUser) {
 		_codeUser = codeUser;
 	}
 
 	@Override
-	public Long getShootingDirectorQualificationId() {
+	public long getShootingDirectorQualificationId() {
 		return _shootingDirectorQualificationId;
 	}
 
 	@Override
 	public void setShootingDirectorQualificationId(
-		Long shootingDirectorQualificationId) {
+		long shootingDirectorQualificationId) {
 		_columnBitmask = -1L;
 
 		if (!_setOriginalShootingDirectorQualificationId) {
@@ -323,17 +335,17 @@ public class ESFShootingDirectorModelImpl extends BaseModelImpl<ESFShootingDirec
 		_shootingDirectorQualificationId = shootingDirectorQualificationId;
 	}
 
-	public Long getOriginalShootingDirectorQualificationId() {
+	public long getOriginalShootingDirectorQualificationId() {
 		return _originalShootingDirectorQualificationId;
 	}
 
 	@Override
-	public Long getSportTypeId() {
+	public long getSportTypeId() {
 		return _sportTypeId;
 	}
 
 	@Override
-	public void setSportTypeId(Long sportTypeId) {
+	public void setSportTypeId(long sportTypeId) {
 		_columnBitmask |= SPORTTYPEID_COLUMN_BITMASK;
 
 		if (!_setOriginalSportTypeId) {
@@ -345,7 +357,7 @@ public class ESFShootingDirectorModelImpl extends BaseModelImpl<ESFShootingDirec
 		_sportTypeId = sportTypeId;
 	}
 
-	public Long getOriginalSportTypeId() {
+	public long getOriginalSportTypeId() {
 		return _originalSportTypeId;
 	}
 
@@ -723,15 +735,16 @@ public class ESFShootingDirectorModelImpl extends BaseModelImpl<ESFShootingDirec
 	private String _esfCodeData;
 	private Date _esfStartData;
 	private Date _esfEndData;
-	private Long _esfUserId;
-	private Long _originalEsfUserId;
+	private long _esfUserId;
+	private String _esfUserUuid;
+	private long _originalEsfUserId;
 	private boolean _setOriginalEsfUserId;
-	private Long _codeUser;
-	private Long _shootingDirectorQualificationId;
-	private Long _originalShootingDirectorQualificationId;
+	private long _codeUser;
+	private long _shootingDirectorQualificationId;
+	private long _originalShootingDirectorQualificationId;
 	private boolean _setOriginalShootingDirectorQualificationId;
-	private Long _sportTypeId;
-	private Long _originalSportTypeId;
+	private long _sportTypeId;
+	private long _originalSportTypeId;
 	private boolean _setOriginalSportTypeId;
 	private String _regionId;
 	private String _originalRegionId;

@@ -49,6 +49,7 @@ public class ESFStateAssEntityWrapper implements ESFStateAssEntity,
 	public Map<String, Object> getModelAttributes() {
 		Map<String, Object> attributes = new HashMap<String, Object>();
 
+		attributes.put("uuid", getUuid());
 		attributes.put("esfStateId", getEsfStateId());
 		attributes.put("className", getClassName());
 
@@ -57,6 +58,12 @@ public class ESFStateAssEntityWrapper implements ESFStateAssEntity,
 
 	@Override
 	public void setModelAttributes(Map<String, Object> attributes) {
+		String uuid = (String)attributes.get("uuid");
+
+		if (uuid != null) {
+			setUuid(uuid);
+		}
+
 		Long esfStateId = (Long)attributes.get("esfStateId");
 
 		if (esfStateId != null) {
@@ -89,6 +96,26 @@ public class ESFStateAssEntityWrapper implements ESFStateAssEntity,
 	public void setPrimaryKey(
 		it.ethica.esf.service.persistence.ESFStateAssEntityPK primaryKey) {
 		_esfStateAssEntity.setPrimaryKey(primaryKey);
+	}
+
+	/**
+	* Returns the uuid of this e s f state ass entity.
+	*
+	* @return the uuid of this e s f state ass entity
+	*/
+	@Override
+	public java.lang.String getUuid() {
+		return _esfStateAssEntity.getUuid();
+	}
+
+	/**
+	* Sets the uuid of this e s f state ass entity.
+	*
+	* @param uuid the uuid of this e s f state ass entity
+	*/
+	@Override
+	public void setUuid(java.lang.String uuid) {
+		_esfStateAssEntity.setUuid(uuid);
 	}
 
 	/**
@@ -228,6 +255,12 @@ public class ESFStateAssEntityWrapper implements ESFStateAssEntity,
 	@Override
 	public java.lang.String toXmlString() {
 		return _esfStateAssEntity.toXmlString();
+	}
+
+	@Override
+	public void persist()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		_esfStateAssEntity.persist();
 	}
 
 	@Override

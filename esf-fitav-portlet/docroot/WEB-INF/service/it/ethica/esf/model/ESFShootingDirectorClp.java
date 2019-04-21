@@ -20,6 +20,7 @@ import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.impl.BaseModelImpl;
+import com.liferay.portal.util.PortalUtil;
 
 import it.ethica.esf.service.ClpSerializer;
 import it.ethica.esf.service.ESFShootingDirectorLocalServiceUtil;
@@ -263,19 +264,19 @@ public class ESFShootingDirectorClp extends BaseModelImpl<ESFShootingDirector>
 	}
 
 	@Override
-	public Long getEsfUserId() {
+	public long getEsfUserId() {
 		return _esfUserId;
 	}
 
 	@Override
-	public void setEsfUserId(Long esfUserId) {
+	public void setEsfUserId(long esfUserId) {
 		_esfUserId = esfUserId;
 
 		if (_esfShootingDirectorRemoteModel != null) {
 			try {
 				Class<?> clazz = _esfShootingDirectorRemoteModel.getClass();
 
-				Method method = clazz.getMethod("setEsfUserId", Long.class);
+				Method method = clazz.getMethod("setEsfUserId", long.class);
 
 				method.invoke(_esfShootingDirectorRemoteModel, esfUserId);
 			}
@@ -286,19 +287,29 @@ public class ESFShootingDirectorClp extends BaseModelImpl<ESFShootingDirector>
 	}
 
 	@Override
-	public Long getCodeUser() {
+	public String getEsfUserUuid() throws SystemException {
+		return PortalUtil.getUserValue(getEsfUserId(), "uuid", _esfUserUuid);
+	}
+
+	@Override
+	public void setEsfUserUuid(String esfUserUuid) {
+		_esfUserUuid = esfUserUuid;
+	}
+
+	@Override
+	public long getCodeUser() {
 		return _codeUser;
 	}
 
 	@Override
-	public void setCodeUser(Long codeUser) {
+	public void setCodeUser(long codeUser) {
 		_codeUser = codeUser;
 
 		if (_esfShootingDirectorRemoteModel != null) {
 			try {
 				Class<?> clazz = _esfShootingDirectorRemoteModel.getClass();
 
-				Method method = clazz.getMethod("setCodeUser", Long.class);
+				Method method = clazz.getMethod("setCodeUser", long.class);
 
 				method.invoke(_esfShootingDirectorRemoteModel, codeUser);
 			}
@@ -309,13 +320,13 @@ public class ESFShootingDirectorClp extends BaseModelImpl<ESFShootingDirector>
 	}
 
 	@Override
-	public Long getShootingDirectorQualificationId() {
+	public long getShootingDirectorQualificationId() {
 		return _shootingDirectorQualificationId;
 	}
 
 	@Override
 	public void setShootingDirectorQualificationId(
-		Long shootingDirectorQualificationId) {
+		long shootingDirectorQualificationId) {
 		_shootingDirectorQualificationId = shootingDirectorQualificationId;
 
 		if (_esfShootingDirectorRemoteModel != null) {
@@ -323,7 +334,7 @@ public class ESFShootingDirectorClp extends BaseModelImpl<ESFShootingDirector>
 				Class<?> clazz = _esfShootingDirectorRemoteModel.getClass();
 
 				Method method = clazz.getMethod("setShootingDirectorQualificationId",
-						Long.class);
+						long.class);
 
 				method.invoke(_esfShootingDirectorRemoteModel,
 					shootingDirectorQualificationId);
@@ -335,19 +346,19 @@ public class ESFShootingDirectorClp extends BaseModelImpl<ESFShootingDirector>
 	}
 
 	@Override
-	public Long getSportTypeId() {
+	public long getSportTypeId() {
 		return _sportTypeId;
 	}
 
 	@Override
-	public void setSportTypeId(Long sportTypeId) {
+	public void setSportTypeId(long sportTypeId) {
 		_sportTypeId = sportTypeId;
 
 		if (_esfShootingDirectorRemoteModel != null) {
 			try {
 				Class<?> clazz = _esfShootingDirectorRemoteModel.getClass();
 
-				Method method = clazz.getMethod("setSportTypeId", Long.class);
+				Method method = clazz.getMethod("setSportTypeId", long.class);
 
 				method.invoke(_esfShootingDirectorRemoteModel, sportTypeId);
 			}
@@ -683,10 +694,11 @@ public class ESFShootingDirectorClp extends BaseModelImpl<ESFShootingDirector>
 	private String _esfCodeData;
 	private Date _esfStartData;
 	private Date _esfEndData;
-	private Long _esfUserId;
-	private Long _codeUser;
-	private Long _shootingDirectorQualificationId;
-	private Long _sportTypeId;
+	private long _esfUserId;
+	private String _esfUserUuid;
+	private long _codeUser;
+	private long _shootingDirectorQualificationId;
+	private long _sportTypeId;
 	private String _regionId;
 	private String _provinceId;
 	private String _flagCrea;

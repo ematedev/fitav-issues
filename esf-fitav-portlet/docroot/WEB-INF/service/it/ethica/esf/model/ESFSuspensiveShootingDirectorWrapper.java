@@ -349,7 +349,7 @@ public class ESFSuspensiveShootingDirectorWrapper
 	* @return the esf user ID of this e s f suspensive shooting director
 	*/
 	@Override
-	public java.lang.Long getEsfUserId() {
+	public long getEsfUserId() {
 		return _esfSuspensiveShootingDirector.getEsfUserId();
 	}
 
@@ -359,8 +359,30 @@ public class ESFSuspensiveShootingDirectorWrapper
 	* @param esfUserId the esf user ID of this e s f suspensive shooting director
 	*/
 	@Override
-	public void setEsfUserId(java.lang.Long esfUserId) {
+	public void setEsfUserId(long esfUserId) {
 		_esfSuspensiveShootingDirector.setEsfUserId(esfUserId);
+	}
+
+	/**
+	* Returns the esf user uuid of this e s f suspensive shooting director.
+	*
+	* @return the esf user uuid of this e s f suspensive shooting director
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public java.lang.String getEsfUserUuid()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _esfSuspensiveShootingDirector.getEsfUserUuid();
+	}
+
+	/**
+	* Sets the esf user uuid of this e s f suspensive shooting director.
+	*
+	* @param esfUserUuid the esf user uuid of this e s f suspensive shooting director
+	*/
+	@Override
+	public void setEsfUserUuid(java.lang.String esfUserUuid) {
+		_esfSuspensiveShootingDirector.setEsfUserUuid(esfUserUuid);
 	}
 
 	/**
@@ -369,7 +391,7 @@ public class ESFSuspensiveShootingDirectorWrapper
 	* @return the code user of this e s f suspensive shooting director
 	*/
 	@Override
-	public java.lang.Long getCodeUser() {
+	public long getCodeUser() {
 		return _esfSuspensiveShootingDirector.getCodeUser();
 	}
 
@@ -379,7 +401,7 @@ public class ESFSuspensiveShootingDirectorWrapper
 	* @param codeUser the code user of this e s f suspensive shooting director
 	*/
 	@Override
-	public void setCodeUser(java.lang.Long codeUser) {
+	public void setCodeUser(long codeUser) {
 		_esfSuspensiveShootingDirector.setCodeUser(codeUser);
 	}
 

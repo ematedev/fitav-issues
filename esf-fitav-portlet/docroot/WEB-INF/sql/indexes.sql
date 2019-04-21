@@ -30,6 +30,7 @@ create index IX_799F0FA4 on ESFCity (idCountry, idRegion, idProvince);
 create index IX_872902E8 on ESFCity (name);
 
 create index IX_A3F45DD4 on ESFCodeOrg (className, code_);
+create index IX_421974CF on ESFCodeOrg (uuid_);
 
 create index IX_A389EE66 on ESFConfiguration (groupId);
 create index IX_38B1C198 on ESFConfiguration (key_);
@@ -41,6 +42,7 @@ create index IX_45D9F570 on ESFDeparture (esfMatchId, esfUserId);
 
 create index IX_3591F322 on ESFDescription (description);
 create index IX_BC099BBA on ESFDescription (isNational);
+create index IX_D87ED82A on ESFDescription (uuid_);
 
 create index IX_50A20689 on ESFDocument (code_);
 create index IX_BCA7F2D5 on ESFDocument (esfUserId);
@@ -155,6 +157,9 @@ create index IX_943E6DA9 on ESFNational (endDate);
 create index IX_26C7E6CE on ESFNational (endDate, esfSportTypeId);
 create index IX_2EEDF0C5 on ESFNational (endDate, esfUserId);
 create index IX_8B9F8ACE on ESFNational (startDate, endDate, esfSportTypeId);
+create index IX_3586AB44 on ESFNational (uuid_);
+create index IX_CCDA6664 on ESFNational (uuid_, companyId);
+create unique index IX_35D135E6 on ESFNational (uuid_, groupId);
 
 create index IX_1ED69CD4 on ESFNationalDelegation (esfMatchId);
 create index IX_D856F934 on ESFNationalDelegation (esfMatchId, esfPartecipantTypeId);
@@ -169,6 +174,9 @@ create index IX_5D43E872 on ESFNationalDelegation (esfUserId, esfMatchId);
 create index IX_29869A52 on ESFNationalDelegation (esfUserId, esfMatchId, esfPartecipantTypeId);
 create index IX_185C2B6 on ESFNationalDelegation (esfUserId, esfPartecipantTypeId);
 create index IX_3AA363DF on ESFNationalDelegation (esfUserId, leaveDate);
+create index IX_C23D6F7C on ESFNationalDelegation (uuid_);
+create index IX_3DD4F2C on ESFNationalDelegation (uuid_, companyId);
+create unique index IX_4087B0AE on ESFNationalDelegation (uuid_, groupId);
 
 create index IX_BA1CFF1A on ESFNationalMatchResult (esfMatchId);
 create index IX_A25F763F on ESFNationalMatchResult (esfMatchId, esfSportTypeId);
@@ -208,6 +216,8 @@ create index IX_4FA6B471 on ESFPartecipant (uuid_, companyId);
 create unique index IX_5B83A333 on ESFPartecipant (uuid_, groupId);
 
 create index IX_87429A21 on ESFPartecipantInfo (firstName, lastName, protocol);
+
+create index IX_182988BD on ESFPartecipantType (uuid_);
 
 create index IX_1021F1BC on ESFProvince (idCountry, name);
 create index IX_CD7C5E8D on ESFProvince (idProvince);
@@ -288,6 +298,7 @@ create index IX_1E601C1E on ESFState (name);
 
 create index IX_81AAA5C2 on ESFStateAssEntity (className);
 create index IX_8716A199 on ESFStateAssEntity (esfStateId);
+create index IX_CD5037E3 on ESFStateAssEntity (uuid_);
 
 create index IX_9F16B53 on ESFSuspensiveShootingDirector (esfEndData, esfUserId);
 create index IX_FC5768B4 on ESFSuspensiveShootingDirector (esfUserId);
@@ -349,3 +360,5 @@ create index IX_8C0C93A0 on ESFgunUser (esfUserId, type_);
 create index IX_10328453 on ESFgunUser (idUser);
 create index IX_7CE3728F on ESFgunUser (idUser, code_);
 create index IX_D710E7DC on ESFgunUser (type_);
+
+create index IX_19A88904 on esforganization (type_);

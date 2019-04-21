@@ -73,6 +73,7 @@ public class ESFCodeOrgClp extends BaseModelImpl<ESFCodeOrg>
 	public Map<String, Object> getModelAttributes() {
 		Map<String, Object> attributes = new HashMap<String, Object>();
 
+		attributes.put("uuid", getUuid());
 		attributes.put("esfCodeOrgId", getEsfCodeOrgId());
 		attributes.put("className", getClassName());
 		attributes.put("code", getCode());
@@ -83,6 +84,12 @@ public class ESFCodeOrgClp extends BaseModelImpl<ESFCodeOrg>
 
 	@Override
 	public void setModelAttributes(Map<String, Object> attributes) {
+		String uuid = (String)attributes.get("uuid");
+
+		if (uuid != null) {
+			setUuid(uuid);
+		}
+
 		Long esfCodeOrgId = (Long)attributes.get("esfCodeOrgId");
 
 		if (esfCodeOrgId != null) {
@@ -105,6 +112,29 @@ public class ESFCodeOrgClp extends BaseModelImpl<ESFCodeOrg>
 
 		if (sequence != null) {
 			setSequence(sequence);
+		}
+	}
+
+	@Override
+	public String getUuid() {
+		return _uuid;
+	}
+
+	@Override
+	public void setUuid(String uuid) {
+		_uuid = uuid;
+
+		if (_esfCodeOrgRemoteModel != null) {
+			try {
+				Class<?> clazz = _esfCodeOrgRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setUuid", String.class);
+
+				method.invoke(_esfCodeOrgRemoteModel, uuid);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
 		}
 	}
 
@@ -269,6 +299,7 @@ public class ESFCodeOrgClp extends BaseModelImpl<ESFCodeOrg>
 	public Object clone() {
 		ESFCodeOrgClp clone = new ESFCodeOrgClp();
 
+		clone.setUuid(getUuid());
 		clone.setEsfCodeOrgId(getEsfCodeOrgId());
 		clone.setClassName(getClassName());
 		clone.setCode(getCode());
@@ -327,9 +358,11 @@ public class ESFCodeOrgClp extends BaseModelImpl<ESFCodeOrg>
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(9);
+		StringBundler sb = new StringBundler(11);
 
-		sb.append("{esfCodeOrgId=");
+		sb.append("{uuid=");
+		sb.append(getUuid());
+		sb.append(", esfCodeOrgId=");
 		sb.append(getEsfCodeOrgId());
 		sb.append(", className=");
 		sb.append(getClassName());
@@ -344,12 +377,16 @@ public class ESFCodeOrgClp extends BaseModelImpl<ESFCodeOrg>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(16);
+		StringBundler sb = new StringBundler(19);
 
 		sb.append("<model><model-name>");
 		sb.append("it.ethica.esf.model.ESFCodeOrg");
 		sb.append("</model-name>");
 
+		sb.append(
+			"<column><column-name>uuid</column-name><column-value><![CDATA[");
+		sb.append(getUuid());
+		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>esfCodeOrgId</column-name><column-value><![CDATA[");
 		sb.append(getEsfCodeOrgId());
@@ -372,6 +409,7 @@ public class ESFCodeOrgClp extends BaseModelImpl<ESFCodeOrg>
 		return sb.toString();
 	}
 
+	private String _uuid;
 	private long _esfCodeOrgId;
 	private String _className;
 	private String _code;

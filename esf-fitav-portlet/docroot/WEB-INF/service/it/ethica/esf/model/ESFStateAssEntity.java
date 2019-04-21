@@ -14,6 +14,8 @@
 
 package it.ethica.esf.model;
 
+import com.liferay.portal.model.PersistedModel;
+
 /**
  * The extended model interface for the ESFStateAssEntity service. Represents a row in the &quot;ESFStateAssEntity&quot; database table, with each column mapped to a property of this class.
  *
@@ -23,7 +25,7 @@ package it.ethica.esf.model;
  * @see it.ethica.esf.model.impl.ESFStateAssEntityModelImpl
  * @generated
  */
-public interface ESFStateAssEntity extends ESFStateAssEntityModel {
+public interface ESFStateAssEntity extends ESFStateAssEntityModel, PersistedModel {
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *

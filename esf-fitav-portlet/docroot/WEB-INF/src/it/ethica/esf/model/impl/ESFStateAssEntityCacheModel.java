@@ -36,9 +36,11 @@ public class ESFStateAssEntityCacheModel implements CacheModel<ESFStateAssEntity
 	Externalizable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(5);
+		StringBundler sb = new StringBundler(7);
 
-		sb.append("{esfStateId=");
+		sb.append("{uuid=");
+		sb.append(uuid);
+		sb.append(", esfStateId=");
 		sb.append(esfStateId);
 		sb.append(", className=");
 		sb.append(className);
@@ -50,6 +52,13 @@ public class ESFStateAssEntityCacheModel implements CacheModel<ESFStateAssEntity
 	@Override
 	public ESFStateAssEntity toEntityModel() {
 		ESFStateAssEntityImpl esfStateAssEntityImpl = new ESFStateAssEntityImpl();
+
+		if (uuid == null) {
+			esfStateAssEntityImpl.setUuid(StringPool.BLANK);
+		}
+		else {
+			esfStateAssEntityImpl.setUuid(uuid);
+		}
 
 		esfStateAssEntityImpl.setEsfStateId(esfStateId);
 
@@ -67,6 +76,7 @@ public class ESFStateAssEntityCacheModel implements CacheModel<ESFStateAssEntity
 
 	@Override
 	public void readExternal(ObjectInput objectInput) throws IOException {
+		uuid = objectInput.readUTF();
 		esfStateId = objectInput.readLong();
 		className = objectInput.readUTF();
 	}
@@ -74,6 +84,13 @@ public class ESFStateAssEntityCacheModel implements CacheModel<ESFStateAssEntity
 	@Override
 	public void writeExternal(ObjectOutput objectOutput)
 		throws IOException {
+		if (uuid == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(uuid);
+		}
+
 		objectOutput.writeLong(esfStateId);
 
 		if (className == null) {
@@ -84,6 +101,7 @@ public class ESFStateAssEntityCacheModel implements CacheModel<ESFStateAssEntity
 		}
 	}
 
+	public String uuid;
 	public long esfStateId;
 	public String className;
 }

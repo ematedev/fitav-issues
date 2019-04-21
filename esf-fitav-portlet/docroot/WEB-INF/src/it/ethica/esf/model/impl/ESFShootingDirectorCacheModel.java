@@ -197,10 +197,10 @@ public class ESFShootingDirectorCacheModel implements CacheModel<ESFShootingDire
 	public String esfCodeData;
 	public long esfStartData;
 	public long esfEndData;
-	public Long esfUserId;
-	public Long codeUser;
-	public Long shootingDirectorQualificationId;
-	public Long sportTypeId;
+	public long esfUserId;
+	public long codeUser;
+	public long shootingDirectorQualificationId;
+	public long sportTypeId;
 	public String regionId;
 	public String provinceId;
 	public String flagCrea;

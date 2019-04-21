@@ -15,12 +15,14 @@
 package it.ethica.esf.model;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.impl.BaseModelImpl;
 
 import it.ethica.esf.service.ClpSerializer;
+import it.ethica.esf.service.ESFStateAssEntityLocalServiceUtil;
 import it.ethica.esf.service.persistence.ESFStateAssEntityPK;
 
 import java.io.Serializable;
@@ -73,6 +75,7 @@ public class ESFStateAssEntityClp extends BaseModelImpl<ESFStateAssEntity>
 	public Map<String, Object> getModelAttributes() {
 		Map<String, Object> attributes = new HashMap<String, Object>();
 
+		attributes.put("uuid", getUuid());
 		attributes.put("esfStateId", getEsfStateId());
 		attributes.put("className", getClassName());
 
@@ -81,6 +84,12 @@ public class ESFStateAssEntityClp extends BaseModelImpl<ESFStateAssEntity>
 
 	@Override
 	public void setModelAttributes(Map<String, Object> attributes) {
+		String uuid = (String)attributes.get("uuid");
+
+		if (uuid != null) {
+			setUuid(uuid);
+		}
+
 		Long esfStateId = (Long)attributes.get("esfStateId");
 
 		if (esfStateId != null) {
@@ -91,6 +100,29 @@ public class ESFStateAssEntityClp extends BaseModelImpl<ESFStateAssEntity>
 
 		if (className != null) {
 			setClassName(className);
+		}
+	}
+
+	@Override
+	public String getUuid() {
+		return _uuid;
+	}
+
+	@Override
+	public void setUuid(String uuid) {
+		_uuid = uuid;
+
+		if (_esfStateAssEntityRemoteModel != null) {
+			try {
+				Class<?> clazz = _esfStateAssEntityRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setUuid", String.class);
+
+				method.invoke(_esfStateAssEntityRemoteModel, uuid);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
 		}
 	}
 
@@ -191,6 +223,16 @@ public class ESFStateAssEntityClp extends BaseModelImpl<ESFStateAssEntity>
 	}
 
 	@Override
+	public void persist() throws SystemException {
+		if (this.isNew()) {
+			ESFStateAssEntityLocalServiceUtil.addESFStateAssEntity(this);
+		}
+		else {
+			ESFStateAssEntityLocalServiceUtil.updateESFStateAssEntity(this);
+		}
+	}
+
+	@Override
 	public ESFStateAssEntity toEscapedModel() {
 		return (ESFStateAssEntity)ProxyUtil.newProxyInstance(ESFStateAssEntity.class.getClassLoader(),
 			new Class[] { ESFStateAssEntity.class },
@@ -201,6 +243,7 @@ public class ESFStateAssEntityClp extends BaseModelImpl<ESFStateAssEntity>
 	public Object clone() {
 		ESFStateAssEntityClp clone = new ESFStateAssEntityClp();
 
+		clone.setUuid(getUuid());
 		clone.setEsfStateId(getEsfStateId());
 		clone.setClassName(getClassName());
 
@@ -243,9 +286,11 @@ public class ESFStateAssEntityClp extends BaseModelImpl<ESFStateAssEntity>
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(5);
+		StringBundler sb = new StringBundler(7);
 
-		sb.append("{esfStateId=");
+		sb.append("{uuid=");
+		sb.append(getUuid());
+		sb.append(", esfStateId=");
 		sb.append(getEsfStateId());
 		sb.append(", className=");
 		sb.append(getClassName());
@@ -256,12 +301,16 @@ public class ESFStateAssEntityClp extends BaseModelImpl<ESFStateAssEntity>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(10);
+		StringBundler sb = new StringBundler(13);
 
 		sb.append("<model><model-name>");
 		sb.append("it.ethica.esf.model.ESFStateAssEntity");
 		sb.append("</model-name>");
 
+		sb.append(
+			"<column><column-name>uuid</column-name><column-value><![CDATA[");
+		sb.append(getUuid());
+		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>esfStateId</column-name><column-value><![CDATA[");
 		sb.append(getEsfStateId());
@@ -276,6 +325,7 @@ public class ESFStateAssEntityClp extends BaseModelImpl<ESFStateAssEntity>
 		return sb.toString();
 	}
 
+	private String _uuid;
 	private long _esfStateId;
 	private String _className;
 	private BaseModel<?> _esfStateAssEntityRemoteModel;

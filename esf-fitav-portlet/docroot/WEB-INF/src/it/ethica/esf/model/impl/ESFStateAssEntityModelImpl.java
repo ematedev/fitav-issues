@@ -55,10 +55,11 @@ public class ESFStateAssEntityModelImpl extends BaseModelImpl<ESFStateAssEntity>
 	 */
 	public static final String TABLE_NAME = "ESFStateAssEntity";
 	public static final Object[][] TABLE_COLUMNS = {
+			{ "uuid_", Types.VARCHAR },
 			{ "esfStateId", Types.BIGINT },
 			{ "className", Types.VARCHAR }
 		};
-	public static final String TABLE_SQL_CREATE = "create table ESFStateAssEntity (esfStateId LONG not null,className VARCHAR(75) not null,primary key (esfStateId, className))";
+	public static final String TABLE_SQL_CREATE = "create table ESFStateAssEntity (uuid_ VARCHAR(75) null,esfStateId LONG not null,className VARCHAR(75) not null,primary key (esfStateId, className))";
 	public static final String TABLE_SQL_DROP = "drop table ESFStateAssEntity";
 	public static final String ORDER_BY_JPQL = " ORDER BY esfStateAssEntity.id.esfStateId ASC, esfStateAssEntity.id.className ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY ESFStateAssEntity.esfStateId ASC, ESFStateAssEntity.className ASC";
@@ -76,6 +77,7 @@ public class ESFStateAssEntityModelImpl extends BaseModelImpl<ESFStateAssEntity>
 			true);
 	public static long CLASSNAME_COLUMN_BITMASK = 1L;
 	public static long ESFSTATEID_COLUMN_BITMASK = 2L;
+	public static long UUID_COLUMN_BITMASK = 4L;
 	public static final long LOCK_EXPIRATION_TIME = GetterUtil.getLong(com.liferay.util.service.ServiceProps.get(
 				"lock.expiration.time.it.ethica.esf.model.ESFStateAssEntity"));
 
@@ -117,6 +119,7 @@ public class ESFStateAssEntityModelImpl extends BaseModelImpl<ESFStateAssEntity>
 	public Map<String, Object> getModelAttributes() {
 		Map<String, Object> attributes = new HashMap<String, Object>();
 
+		attributes.put("uuid", getUuid());
 		attributes.put("esfStateId", getEsfStateId());
 		attributes.put("className", getClassName());
 
@@ -125,6 +128,12 @@ public class ESFStateAssEntityModelImpl extends BaseModelImpl<ESFStateAssEntity>
 
 	@Override
 	public void setModelAttributes(Map<String, Object> attributes) {
+		String uuid = (String)attributes.get("uuid");
+
+		if (uuid != null) {
+			setUuid(uuid);
+		}
+
 		Long esfStateId = (Long)attributes.get("esfStateId");
 
 		if (esfStateId != null) {
@@ -136,6 +145,29 @@ public class ESFStateAssEntityModelImpl extends BaseModelImpl<ESFStateAssEntity>
 		if (className != null) {
 			setClassName(className);
 		}
+	}
+
+	@Override
+	public String getUuid() {
+		if (_uuid == null) {
+			return StringPool.BLANK;
+		}
+		else {
+			return _uuid;
+		}
+	}
+
+	@Override
+	public void setUuid(String uuid) {
+		if (_originalUuid == null) {
+			_originalUuid = _uuid;
+		}
+
+		_uuid = uuid;
+	}
+
+	public String getOriginalUuid() {
+		return GetterUtil.getString(_originalUuid);
 	}
 
 	@Override
@@ -203,6 +235,7 @@ public class ESFStateAssEntityModelImpl extends BaseModelImpl<ESFStateAssEntity>
 	public Object clone() {
 		ESFStateAssEntityImpl esfStateAssEntityImpl = new ESFStateAssEntityImpl();
 
+		esfStateAssEntityImpl.setUuid(getUuid());
 		esfStateAssEntityImpl.setEsfStateId(getEsfStateId());
 		esfStateAssEntityImpl.setClassName(getClassName());
 
@@ -249,6 +282,8 @@ public class ESFStateAssEntityModelImpl extends BaseModelImpl<ESFStateAssEntity>
 	public void resetOriginalValues() {
 		ESFStateAssEntityModelImpl esfStateAssEntityModelImpl = this;
 
+		esfStateAssEntityModelImpl._originalUuid = esfStateAssEntityModelImpl._uuid;
+
 		esfStateAssEntityModelImpl._originalEsfStateId = esfStateAssEntityModelImpl._esfStateId;
 
 		esfStateAssEntityModelImpl._setOriginalEsfStateId = false;
@@ -261,6 +296,14 @@ public class ESFStateAssEntityModelImpl extends BaseModelImpl<ESFStateAssEntity>
 	@Override
 	public CacheModel<ESFStateAssEntity> toCacheModel() {
 		ESFStateAssEntityCacheModel esfStateAssEntityCacheModel = new ESFStateAssEntityCacheModel();
+
+		esfStateAssEntityCacheModel.uuid = getUuid();
+
+		String uuid = esfStateAssEntityCacheModel.uuid;
+
+		if ((uuid != null) && (uuid.length() == 0)) {
+			esfStateAssEntityCacheModel.uuid = null;
+		}
 
 		esfStateAssEntityCacheModel.esfStateId = getEsfStateId();
 
@@ -277,9 +320,11 @@ public class ESFStateAssEntityModelImpl extends BaseModelImpl<ESFStateAssEntity>
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(5);
+		StringBundler sb = new StringBundler(7);
 
-		sb.append("{esfStateId=");
+		sb.append("{uuid=");
+		sb.append(getUuid());
+		sb.append(", esfStateId=");
 		sb.append(getEsfStateId());
 		sb.append(", className=");
 		sb.append(getClassName());
@@ -290,12 +335,16 @@ public class ESFStateAssEntityModelImpl extends BaseModelImpl<ESFStateAssEntity>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(10);
+		StringBundler sb = new StringBundler(13);
 
 		sb.append("<model><model-name>");
 		sb.append("it.ethica.esf.model.ESFStateAssEntity");
 		sb.append("</model-name>");
 
+		sb.append(
+			"<column><column-name>uuid</column-name><column-value><![CDATA[");
+		sb.append(getUuid());
+		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>esfStateId</column-name><column-value><![CDATA[");
 		sb.append(getEsfStateId());
@@ -314,6 +363,8 @@ public class ESFStateAssEntityModelImpl extends BaseModelImpl<ESFStateAssEntity>
 	private static Class<?>[] _escapedModelInterfaces = new Class[] {
 			ESFStateAssEntity.class
 		};
+	private String _uuid;
+	private String _originalUuid;
 	private long _esfStateId;
 	private long _originalEsfStateId;
 	private boolean _setOriginalEsfStateId;

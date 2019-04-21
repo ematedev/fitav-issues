@@ -60,6 +60,21 @@ public interface ESFStateAssEntityModel extends BaseModel<ESFStateAssEntity> {
 	public void setPrimaryKey(ESFStateAssEntityPK primaryKey);
 
 	/**
+	 * Returns the uuid of this e s f state ass entity.
+	 *
+	 * @return the uuid of this e s f state ass entity
+	 */
+	@AutoEscape
+	public String getUuid();
+
+	/**
+	 * Sets the uuid of this e s f state ass entity.
+	 *
+	 * @param uuid the uuid of this e s f state ass entity
+	 */
+	public void setUuid(String uuid);
+
+	/**
 	 * Returns the esf state ID of this e s f state ass entity.
 	 *
 	 * @return the esf state ID of this e s f state ass entity
