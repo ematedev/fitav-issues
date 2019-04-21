@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <custom-sql>
-	
-	
-	
-	<sql id="it.ethica.esf.service.persistence.ESFUserFinder.findShooter">
-		Select eu.* from user_ u, esfuser eu where u.lastName like
-		? and u.firstName
-		like ? and u.userId in
-		(Select esfUserId from esfcard
-		c, esfentitystate e where esforganizationId in
-		(select organizationId
-		from organization_ o where o.treePath LIKE ?)
-		and
-		e.esfStateId = ? and
-		c.esfcardId = e.classPK and e.endDate is null and e.className
-		=
-		'it.ethica.esf.model.ESFCard' and c.code_ LIKE ?) and u.userId =
-		eu.esfUserId order by u.lastName, u.firstName
+	<sql id="it.ethica.esf.service.persistence.ESFUserFinder.findShooter">	
+	Select eu.* 
+		from esfuser eu 
+		join user_ u
+		on u.userId= eu.esfUserId
+		join esfcard c
+		on c.esfUserId=u.userId
+		join esfentitystate e
+		on c.esfcardId = e.classPK
+		join organization_ o
+		on o.organizationId=c.esfOrganizationId
+		where 
+		u.lastName like ? 
+		and u.firstName like ?
+		and o.treePath LIKE ?
+		and e.esfStateId = ? 
+		and c.esfcardId = e.classPK 
+		and e.endDate is null 
+		and e.className = 'it.ethica.esf.model.ESFCard' 
+		and c.code_ LIKE ?
+		order by u.lastName, u.firstName
 	</sql>
+
 	
 	<sql id="it.ethica.esf.service.persistence.ESFUserFinder.findAllShooter">
 		select distinct test.* 
