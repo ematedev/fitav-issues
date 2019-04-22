@@ -148,6 +148,17 @@
 	<portlet>
 		<portlet-name>11</portlet-name>
 		<icon>/icon.png</icon>
+		<scheduler-entry>
+			<scheduler-event-listener-class>it.ethica.esf.jobservice.SendEmail</scheduler-event-listener-class>
+			<trigger>
+				<simple>
+					<simple-trigger-value>
+						1
+					</simple-trigger-value>
+					<time-unit>day</time-unit>
+				</simple>
+			</trigger>
+		</scheduler-entry>
 		<header-portlet-css>/css/main.css</header-portlet-css>
 		<header-portlet-css>/css/jquery-ui.css</header-portlet-css>
 		<header-portlet-css>/css/ptTimeSelect.css</header-portlet-css>
@@ -796,6 +807,15 @@
 		<css-class-wrapper>
 			esf-single-affiliation-portlet
 		</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>esf-document-type</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>esf-document-type-portlet</css-class-wrapper>
 	</portlet>
 	<role-mapper>
 		<role-name>administrator</role-name>

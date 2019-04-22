@@ -18,6 +18,7 @@
 	<import class="it.ethica.esf.model.ESFDeparture" />
 	<import class="it.ethica.esf.model.ESFDescription" />
 	<import class="it.ethica.esf.model.ESFDocument" />
+	<import class="it.ethica.esf.model.ESFDocumentType" />
 	<import class="it.ethica.esf.model.ESFElectronic" />
 	<import class="it.ethica.esf.model.ESFEntityState" />
 	<import class="it.ethica.esf.model.ESFEventType" />
@@ -53,6 +54,7 @@
 	<import class="it.ethica.esf.model.ESFPartecipantType" />
 	<import class="it.ethica.esf.model.ESFPhone" />
 	<import class="it.ethica.esf.model.ESFProvince" />
+	<import class="it.ethica.esf.model.ESFPublicAuthority" />
 	<import class="it.ethica.esf.model.ESFRegion" />
 	<import class="it.ethica.esf.model.ESFRenewal" />
 	<import class="it.ethica.esf.model.ESFResult" />
@@ -291,7 +293,19 @@
 		<property name="expirationDate" type="org.hibernate.type.TimestampType" />
 		<property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="type" type="com.liferay.portal.dao.orm.hibernate.StringType" column="type_" />
+		<property name="esfDocumentTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="esfPublicAuthorityId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="path" type="com.liferay.portal.dao.orm.hibernate.StringType" column="path_" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFDocumentTypeImpl" table="ESFDocumentType">
+		<cache usage="read-write" />
+		<id name="esfDocumentTypeId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="expirationMonthsNotice" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFElectronicImpl" table="ESFElectronic">
 		<cache usage="read-write" />
@@ -927,6 +941,15 @@
 			<key-property name="idCountry" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		</composite-id>
 		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFPublicAuthorityImpl" table="ESFPublicAuthority">
+		<cache usage="read-write" />
+		<id name="esfPublicAuthorityId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFRegionImpl" table="ESFRegion">
 		<cache usage="read-write" />

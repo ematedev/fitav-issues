@@ -314,6 +314,8 @@
 			<basic name="type">
 				<column name="TYPE_" />
 			</basic>
+			<basic name="esfDocumentTypeId" />
+			<basic name="esfPublicAuthorityId" />
 			<basic name="path">
 				<column name="PATH_" />
 			</basic>
@@ -322,6 +324,22 @@
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />
 			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="it.ethica.esf.model.impl.ESFDocumentTypeModelImpl">
+		<attributes>
+			<id name="esfDocumentTypeId" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="description" />
+			<basic name="expirationMonthsNotice" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
 		</attributes>
 	</mapped-superclass>
 	<mapped-superclass class="it.ethica.esf.model.impl.ESFElectronicModelImpl">
@@ -1276,6 +1294,21 @@
 			<transient name="primaryKeyObj" />
 		</attributes>
 	</mapped-superclass>
+	<mapped-superclass class="it.ethica.esf.model.impl.ESFPublicAuthorityModelImpl">
+		<attributes>
+			<id name="esfPublicAuthorityId" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="description" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
 	<mapped-superclass class="it.ethica.esf.model.impl.ESFRegionModelImpl">
 		<id-class class="it.ethica.esf.service.persistence.ESFRegionPK" />
 		<attributes>
@@ -2030,6 +2063,10 @@
 		<table name="ESFDocument" />
 		<attributes />
 	</entity>
+	<entity class="it.ethica.esf.model.impl.ESFDocumentTypeImpl" name="ESFDocumentType">
+		<table name="ESFDocumentType" />
+		<attributes />
+	</entity>
 	<entity class="it.ethica.esf.model.impl.ESFElectronicImpl" name="ESFElectronic">
 		<table name="ESFElectronic" />
 		<attributes />
@@ -2193,6 +2230,10 @@
 	</entity>
 	<entity class="it.ethica.esf.model.impl.ESFProvinceImpl" name="ESFProvince">
 		<table name="ESFProvince" />
+		<attributes />
+	</entity>
+	<entity class="it.ethica.esf.model.impl.ESFPublicAuthorityImpl" name="ESFPublicAuthority">
+		<table name="ESFPublicAuthority" />
 		<attributes />
 	</entity>
 	<entity class="it.ethica.esf.model.impl.ESFRegionImpl" name="ESFRegion">

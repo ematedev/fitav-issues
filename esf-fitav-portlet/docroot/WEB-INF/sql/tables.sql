@@ -178,7 +178,17 @@ create table ESFDocument (
 	expirationDate DATE null,
 	esfUserId LONG,
 	type_ VARCHAR(75) null,
+	esfDocumentTypeId LONG,
+	esfPublicAuthorityId LONG,
 	path_ VARCHAR(255) null
+);
+
+create table ESFDocumentType (
+	esfDocumentTypeId LONG not null primary key,
+	createDate DATE null,
+	modifiedDate DATE null,
+	description VARCHAR(75) null,
+	expirationMonthsNotice INTEGER
 );
 
 create table ESFElectronic (
@@ -722,6 +732,13 @@ create table ESFProvince (
 	idCountry VARCHAR(75) not null,
 	name VARCHAR(75) null,
 	primary key (idProvince, idRegion, idCountry)
+);
+
+create table ESFPublicAuthority (
+	esfPublicAuthorityId LONG not null primary key,
+	createDate DATE null,
+	modifiedDate DATE null,
+	description VARCHAR(75) null
 );
 
 create table ESFRegion (

@@ -63,5 +63,6 @@
 	</category>
 	<category name="ESF">
 		<portlet id="esf-federal-role"></portlet>
+		<portlet id="esf-document-type"></portlet>
 	</category>
 </display>

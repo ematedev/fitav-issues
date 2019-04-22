@@ -1,40 +1,17 @@
 package it.ethica.esf.jobservice;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import javax.mail.internet.InternetAddress;
 
-import it.ethica.esf.migration.util.ESFKeys;
-import it.ethica.esf.model.ESFConfiguration;
-import it.ethica.esf.model.ESFOrganization;
-import it.ethica.esf.model.ESFUser;
-import it.ethica.esf.model.ESFUserESFUserRole;
-import it.ethica.esf.service.ESFConfigurationLocalServiceUtil;
-import it.ethica.esf.service.ESFOrganizationLocalServiceUtil;
-import it.ethica.esf.service.ESFUserESFUserRoleLocalServiceUtil;
-import it.ethica.esf.service.ESFUserLocalServiceUtil;
-
-import com.liferay.portal.kernel.exception.PortalException;
-import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.mail.service.MailServiceUtil;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
+import com.liferay.portal.kernel.mail.MailMessage;
 import com.liferay.portal.kernel.messaging.Message;
 import com.liferay.portal.kernel.messaging.MessageListener;
 import com.liferay.portal.kernel.messaging.MessageListenerException;
-import com.liferay.portal.kernel.scheduler.SchedulerEngine;
-import com.liferay.portal.kernel.scheduler.SchedulerEngineHelperUtil;
-import com.liferay.portal.kernel.scheduler.StorageType;
-import com.liferay.portal.kernel.scheduler.Trigger;
-import com.liferay.portal.kernel.scheduler.TriggerFactoryUtil;
-import com.liferay.portal.kernel.scheduler.TriggerType;
-import com.liferay.portal.kernel.util.DateFormatFactoryUtil;
-import com.liferay.portal.kernel.util.Validator;
-import com.liferay.portal.model.Portlet;
-import com.liferay.util.mail.MailEngine;
-import com.liferay.util.mail.MailEngineException;
+import com.liferay.util.mail.InternetAddressUtil;
+
+import it.ethica.esf.model.ESFConfiguration;
 
 
 public class SendEmail implements MessageListener  {
@@ -42,6 +19,20 @@ public class SendEmail implements MessageListener  {
 	public void receive(Message arg0) throws MessageListenerException {
 		log.debug("Inizio batch invia email");
 		ESFConfiguration configurationMonthsMail = null;
+		//Esempio quando di invio, prima di poterlo usare bisogna configurare il mailserver
+		//anomalia-id16
+//		InternetAddress toAddress= new InternetAddress();
+//		toAddress.setAddress("toAddress@liferay.com");
+//		InternetAddress fromAddress = new InternetAddress();
+//		fromAddress.setAddress("fromAddress@liferay.com");
+//		MailMessage mailMessage = new MailMessage();
+//		mailMessage.setTo(toAddress);
+//		mailMessage.setFrom(fromAddress);
+//		mailMessage.setSubject("Oggetto mail");
+//		mailMessage.setBody("Body della mail");
+//		MailServiceUtil.sendEmail(mailMessage);
+		
+		//Vecchio codice commentato
 	/*	try{
 			configurationMonthsMail = ESFConfigurationLocalServiceUtil.getESFConfigurationByESFKey(
 					"SEND_EMAIL");

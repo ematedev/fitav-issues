@@ -1,0 +1,4 @@
+**/.settings/
+**/.sass-cache/
+*.class
+**/WEB-INF/classes/

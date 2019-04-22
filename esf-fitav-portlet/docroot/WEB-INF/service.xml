@@ -514,7 +514,7 @@
 		<reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
 		<reference package-path="com.liferay.portal" entity="Organization" />
 	</entity>
-	
+
 	
 	<entity name="ESFOrganization_Reengineered" remote-service="false"
 		local-service="true" json-enabled="false" table="esforganization">		
@@ -2150,6 +2150,10 @@
 		<column name="expirationDate" type="Date"></column>
 		<column name="esfUserId" type="long"></column>
 		<column name="type" type="String"></column>
+		<!-- ADDED for anomalia-id16 -->
+		<column name="esfDocumentTypeId" type="long"></column>
+		<!-- ADDED for anomalia-id16 -->
+		<column name="esfPublicAuthorityId" type="long"></column>
 		<column name="path" type="String"></column>
 		<finder name="Code" return-type="Collection">
 			<finder-column name="code"></finder-column>
@@ -2581,7 +2585,27 @@
 			<finder-column name="year"></finder-column>
 		</finder>
 	</entity>
-	
+	<!-- ADDED for anomalia-id16 -->
+	<entity name="ESFDocumentType" local-service="true" remote-service="false">
+		<!-- PK fields -->
+		<column name="esfDocumentTypeId" type="long" primary="true"></column>
+		<!-- Audit fields -->
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Entity Fields -->
+		<column name="description" type="String"></column>
+		<column name="expirationMonthsNotice" type="int"></column>
+	</entity>
+	<!-- ADDED for anomalia-id16 -->
+	<entity name="ESFPublicAuthority" local-service="true" remote-service="false">
+		<!-- PK fields -->
+		<column name="esfPublicAuthorityId" type="long" primary="true"></column>
+		<!-- Audit fields -->
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Entity Fields -->
+		<column name="description" type="String"></column>
+	</entity>
 
 	<exceptions>
 		<exception>ESFAddressLatitude</exception>

@@ -166,9 +166,18 @@
 		<field name="expirationDate" type="Date" />
 		<field name="esfUserId" type="long" />
 		<field name="type" type="String" />
+		<field name="esfDocumentTypeId" type="long" />
+		<field name="esfPublicAuthorityId" type="long" />
 		<field name="path" type="String">
 			<hint name="max-length">255</hint>
 		</field>
+	</model>
+	<model name="it.ethica.esf.model.ESFDocumentType">
+		<field name="esfDocumentTypeId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="description" type="String" />
+		<field name="expirationMonthsNotice" type="int" />
 	</model>
 	<model name="it.ethica.esf.model.ESFElectronic">
 		<field name="electronicId" type="long" />
@@ -709,6 +718,12 @@
 		<field name="idRegion" type="String" />
 		<field name="idCountry" type="String" />
 		<field name="name" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.ESFPublicAuthority">
+		<field name="esfPublicAuthorityId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="description" type="String" />
 	</model>
 	<model name="it.ethica.esf.model.ESFRegion">
 		<field name="idRegion" type="String" />
