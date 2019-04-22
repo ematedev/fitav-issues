@@ -108,27 +108,27 @@ public class ESFProvinceLocalServiceClpInvoker {
 
 		_methodParameterTypes15 = new String[] { "it.ethica.esf.model.ESFProvince" };
 
-		_methodName368 = "getBeanIdentifier";
+		_methodName376 = "getBeanIdentifier";
 
-		_methodParameterTypes368 = new String[] {  };
+		_methodParameterTypes376 = new String[] {  };
 
-		_methodName369 = "setBeanIdentifier";
+		_methodName377 = "setBeanIdentifier";
 
-		_methodParameterTypes369 = new String[] { "java.lang.String" };
+		_methodParameterTypes377 = new String[] { "java.lang.String" };
 
-		_methodName374 = "findByCountry_Name";
+		_methodName382 = "findByCountry_Name";
 
-		_methodParameterTypes374 = new String[] {
+		_methodParameterTypes382 = new String[] {
 				"java.lang.String", "java.lang.String"
 			};
 
-		_methodName375 = "getByRegionCode";
+		_methodName383 = "getByRegionCode";
 
-		_methodParameterTypes375 = new String[] { "java.lang.String" };
+		_methodParameterTypes383 = new String[] { "java.lang.String" };
 
-		_methodName376 = "findByProvinceId";
+		_methodName384 = "findByProvinceId";
 
-		_methodParameterTypes376 = new String[] { "java.lang.String" };
+		_methodParameterTypes384 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -220,31 +220,31 @@ public class ESFProvinceLocalServiceClpInvoker {
 			return ESFProvinceLocalServiceUtil.updateESFProvince((it.ethica.esf.model.ESFProvince)arguments[0]);
 		}
 
-		if (_methodName368.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes368, parameterTypes)) {
+		if (_methodName376.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes376, parameterTypes)) {
 			return ESFProvinceLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName369.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes369, parameterTypes)) {
+		if (_methodName377.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes377, parameterTypes)) {
 			ESFProvinceLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName374.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes374, parameterTypes)) {
+		if (_methodName382.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
 			return ESFProvinceLocalServiceUtil.findByCountry_Name((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1]);
 		}
 
-		if (_methodName375.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes375, parameterTypes)) {
+		if (_methodName383.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes383, parameterTypes)) {
 			return ESFProvinceLocalServiceUtil.getByRegionCode((java.lang.String)arguments[0]);
 		}
 
-		if (_methodName376.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes376, parameterTypes)) {
+		if (_methodName384.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
 			return ESFProvinceLocalServiceUtil.findByProvinceId((java.lang.String)arguments[0]);
 		}
 
@@ -283,14 +283,14 @@ public class ESFProvinceLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName368;
-	private String[] _methodParameterTypes368;
-	private String _methodName369;
-	private String[] _methodParameterTypes369;
-	private String _methodName374;
-	private String[] _methodParameterTypes374;
-	private String _methodName375;
-	private String[] _methodParameterTypes375;
 	private String _methodName376;
 	private String[] _methodParameterTypes376;
+	private String _methodName377;
+	private String[] _methodParameterTypes377;
+	private String _methodName382;
+	private String[] _methodParameterTypes382;
+	private String _methodName383;
+	private String[] _methodParameterTypes383;
+	private String _methodName384;
+	private String[] _methodParameterTypes384;
 }

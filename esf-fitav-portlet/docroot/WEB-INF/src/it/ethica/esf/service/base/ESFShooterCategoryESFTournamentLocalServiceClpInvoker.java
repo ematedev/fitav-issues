@@ -122,13 +122,13 @@ public class ESFShooterCategoryESFTournamentLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFShooterCategoryESFTournament"
 			};
 
-		_methodName370 = "getBeanIdentifier";
+		_methodName378 = "getBeanIdentifier";
 
-		_methodParameterTypes370 = new String[] {  };
+		_methodParameterTypes378 = new String[] {  };
 
-		_methodName371 = "setBeanIdentifier";
+		_methodName379 = "setBeanIdentifier";
 
-		_methodParameterTypes371 = new String[] { "java.lang.String" };
+		_methodParameterTypes379 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -232,13 +232,13 @@ public class ESFShooterCategoryESFTournamentLocalServiceClpInvoker {
 			return ESFShooterCategoryESFTournamentLocalServiceUtil.updateESFShooterCategoryESFTournament((it.ethica.esf.model.ESFShooterCategoryESFTournament)arguments[0]);
 		}
 
-		if (_methodName370.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes370, parameterTypes)) {
+		if (_methodName378.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes378, parameterTypes)) {
 			return ESFShooterCategoryESFTournamentLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName371.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes371, parameterTypes)) {
+		if (_methodName379.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes379, parameterTypes)) {
 			ESFShooterCategoryESFTournamentLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
@@ -283,8 +283,8 @@ public class ESFShooterCategoryESFTournamentLocalServiceClpInvoker {
 	private String[] _methodParameterTypes16;
 	private String _methodName17;
 	private String[] _methodParameterTypes17;
-	private String _methodName370;
-	private String[] _methodParameterTypes370;
-	private String _methodName371;
-	private String[] _methodParameterTypes371;
+	private String _methodName378;
+	private String[] _methodParameterTypes378;
+	private String _methodName379;
+	private String[] _methodParameterTypes379;
 }

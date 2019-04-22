@@ -1037,7 +1037,7 @@ public class ESFOrganization_ReengineeredWrapper
 
 	@Override
 	public int compareTo(
-		ESFOrganization_Reengineered esfOrganization_Reengineered) {
+		it.ethica.esf.model.ESFOrganization_Reengineered esfOrganization_Reengineered) {
 		return _esfOrganization_Reengineered.compareTo(esfOrganization_Reengineered);
 	}
 
@@ -1047,17 +1047,17 @@ public class ESFOrganization_ReengineeredWrapper
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<ESFOrganization_Reengineered> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<it.ethica.esf.model.ESFOrganization_Reengineered> toCacheModel() {
 		return _esfOrganization_Reengineered.toCacheModel();
 	}
 
 	@Override
-	public ESFOrganization_Reengineered toEscapedModel() {
+	public it.ethica.esf.model.ESFOrganization_Reengineered toEscapedModel() {
 		return new ESFOrganization_ReengineeredWrapper(_esfOrganization_Reengineered.toEscapedModel());
 	}
 
 	@Override
-	public ESFOrganization_Reengineered toUnescapedModel() {
+	public it.ethica.esf.model.ESFOrganization_Reengineered toUnescapedModel() {
 		return new ESFOrganization_ReengineeredWrapper(_esfOrganization_Reengineered.toUnescapedModel());
 	}
 

@@ -100,25 +100,25 @@ public class ESFPhoneLocalServiceClpInvoker {
 
 		_methodParameterTypes15 = new String[] { "it.ethica.esf.model.ESFPhone" };
 
-		_methodName368 = "getBeanIdentifier";
+		_methodName376 = "getBeanIdentifier";
 
-		_methodParameterTypes368 = new String[] {  };
+		_methodParameterTypes376 = new String[] {  };
 
-		_methodName369 = "setBeanIdentifier";
+		_methodName377 = "setBeanIdentifier";
 
-		_methodParameterTypes369 = new String[] { "java.lang.String" };
+		_methodParameterTypes377 = new String[] { "java.lang.String" };
 
-		_methodName374 = "addESFPhone";
+		_methodName382 = "addESFPhone";
 
-		_methodParameterTypes374 = new String[] {
+		_methodParameterTypes382 = new String[] {
 				"long", "java.lang.String", "long", "java.lang.String",
 				"java.lang.String", "int", "int", "boolean",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName375 = "deleteESFPhone";
+		_methodName383 = "deleteESFPhone";
 
-		_methodParameterTypes375 = new String[] {
+		_methodParameterTypes383 = new String[] {
 				"long", "com.liferay.portal.service.ServiceContext"
 			};
 	}
@@ -212,20 +212,20 @@ public class ESFPhoneLocalServiceClpInvoker {
 			return ESFPhoneLocalServiceUtil.updateESFPhone((it.ethica.esf.model.ESFPhone)arguments[0]);
 		}
 
-		if (_methodName368.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes368, parameterTypes)) {
+		if (_methodName376.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes376, parameterTypes)) {
 			return ESFPhoneLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName369.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes369, parameterTypes)) {
+		if (_methodName377.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes377, parameterTypes)) {
 			ESFPhoneLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName374.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes374, parameterTypes)) {
+		if (_methodName382.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
 			return ESFPhoneLocalServiceUtil.addESFPhone(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(),
@@ -236,8 +236,8 @@ public class ESFPhoneLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[8]);
 		}
 
-		if (_methodName375.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes375, parameterTypes)) {
+		if (_methodName383.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes383, parameterTypes)) {
 			return ESFPhoneLocalServiceUtil.deleteESFPhone(((Long)arguments[0]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
@@ -277,12 +277,12 @@ public class ESFPhoneLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName368;
-	private String[] _methodParameterTypes368;
-	private String _methodName369;
-	private String[] _methodParameterTypes369;
-	private String _methodName374;
-	private String[] _methodParameterTypes374;
-	private String _methodName375;
-	private String[] _methodParameterTypes375;
+	private String _methodName376;
+	private String[] _methodParameterTypes376;
+	private String _methodName377;
+	private String[] _methodParameterTypes377;
+	private String _methodName382;
+	private String[] _methodParameterTypes382;
+	private String _methodName383;
+	private String[] _methodParameterTypes383;
 }

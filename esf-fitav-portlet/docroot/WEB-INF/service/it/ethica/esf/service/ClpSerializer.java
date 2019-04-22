@@ -41,6 +41,7 @@ import it.ethica.esf.model.ESFCountryClp;
 import it.ethica.esf.model.ESFDepartureClp;
 import it.ethica.esf.model.ESFDescriptionClp;
 import it.ethica.esf.model.ESFDocumentClp;
+import it.ethica.esf.model.ESFDocumentTypeClp;
 import it.ethica.esf.model.ESFElectronicClp;
 import it.ethica.esf.model.ESFEntityStateClp;
 import it.ethica.esf.model.ESFEventTypeClp;
@@ -75,6 +76,7 @@ import it.ethica.esf.model.ESFPartecipantInfoClp;
 import it.ethica.esf.model.ESFPartecipantTypeClp;
 import it.ethica.esf.model.ESFPhoneClp;
 import it.ethica.esf.model.ESFProvinceClp;
+import it.ethica.esf.model.ESFPublicAuthorityClp;
 import it.ethica.esf.model.ESFRegionClp;
 import it.ethica.esf.model.ESFRenewalClp;
 import it.ethica.esf.model.ESFResultClp;
@@ -243,6 +245,10 @@ public class ClpSerializer {
 			return translateInputESFDocument(oldModel);
 		}
 
+		if (oldModelClassName.equals(ESFDocumentTypeClp.class.getName())) {
+			return translateInputESFDocumentType(oldModel);
+		}
+
 		if (oldModelClassName.equals(ESFElectronicClp.class.getName())) {
 			return translateInputESFElectronic(oldModel);
 		}
@@ -386,6 +392,10 @@ public class ClpSerializer {
 
 		if (oldModelClassName.equals(ESFProvinceClp.class.getName())) {
 			return translateInputESFProvince(oldModel);
+		}
+
+		if (oldModelClassName.equals(ESFPublicAuthorityClp.class.getName())) {
+			return translateInputESFPublicAuthority(oldModel);
 		}
 
 		if (oldModelClassName.equals(ESFRegionClp.class.getName())) {
@@ -673,6 +683,16 @@ public class ClpSerializer {
 		ESFDocumentClp oldClpModel = (ESFDocumentClp)oldModel;
 
 		BaseModel<?> newModel = oldClpModel.getESFDocumentRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputESFDocumentType(BaseModel<?> oldModel) {
+		ESFDocumentTypeClp oldClpModel = (ESFDocumentTypeClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getESFDocumentTypeRemoteModel();
 
 		newModel.setModelAttributes(oldClpModel.getModelAttributes());
 
@@ -1032,6 +1052,16 @@ public class ClpSerializer {
 		ESFProvinceClp oldClpModel = (ESFProvinceClp)oldModel;
 
 		BaseModel<?> newModel = oldClpModel.getESFProvinceRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputESFPublicAuthority(BaseModel<?> oldModel) {
+		ESFPublicAuthorityClp oldClpModel = (ESFPublicAuthorityClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getESFPublicAuthorityRemoteModel();
 
 		newModel.setModelAttributes(oldClpModel.getModelAttributes());
 
@@ -1405,6 +1435,11 @@ public class ClpSerializer {
 		}
 
 		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFDocumentTypeImpl")) {
+			return translateOutputESFDocumentType(oldModel);
+		}
+
+		if (oldModelClassName.equals(
 					"it.ethica.esf.model.impl.ESFElectronicImpl")) {
 			return translateOutputESFElectronic(oldModel);
 		}
@@ -1566,6 +1601,11 @@ public class ClpSerializer {
 
 		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFProvinceImpl")) {
 			return translateOutputESFProvince(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFPublicAuthorityImpl")) {
+			return translateOutputESFPublicAuthority(oldModel);
 		}
 
 		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFRegionImpl")) {
@@ -1899,6 +1939,10 @@ public class ClpSerializer {
 			return new it.ethica.esf.NoSuchDocumentException();
 		}
 
+		if (className.equals("it.ethica.esf.NoSuchDocumentTypeException")) {
+			return new it.ethica.esf.NoSuchDocumentTypeException();
+		}
+
 		if (className.equals("it.ethica.esf.NoSuchElectronicException")) {
 			return new it.ethica.esf.NoSuchElectronicException();
 		}
@@ -2042,6 +2086,10 @@ public class ClpSerializer {
 
 		if (className.equals("it.ethica.esf.NoSuchProvinceException")) {
 			return new it.ethica.esf.NoSuchProvinceException();
+		}
+
+		if (className.equals("it.ethica.esf.NoSuchPublicAuthorityException")) {
+			return new it.ethica.esf.NoSuchPublicAuthorityException();
 		}
 
 		if (className.equals("it.ethica.esf.NoSuchRegionException")) {
@@ -2320,6 +2368,16 @@ public class ClpSerializer {
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
 		newModel.setESFDocumentRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputESFDocumentType(BaseModel<?> oldModel) {
+		ESFDocumentTypeClp newModel = new ESFDocumentTypeClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setESFDocumentTypeRemoteModel(oldModel);
 
 		return newModel;
 	}
@@ -2681,6 +2739,17 @@ public class ClpSerializer {
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
 		newModel.setESFProvinceRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputESFPublicAuthority(
+		BaseModel<?> oldModel) {
+		ESFPublicAuthorityClp newModel = new ESFPublicAuthorityClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setESFPublicAuthorityRemoteModel(oldModel);
 
 		return newModel;
 	}

@@ -292,6 +292,34 @@ public interface ESFDocumentModel extends BaseModel<ESFDocument>, GroupedModel {
 	public void setType(String type);
 
 	/**
+	 * Returns the esf document type ID of this e s f document.
+	 *
+	 * @return the esf document type ID of this e s f document
+	 */
+	public long getEsfDocumentTypeId();
+
+	/**
+	 * Sets the esf document type ID of this e s f document.
+	 *
+	 * @param esfDocumentTypeId the esf document type ID of this e s f document
+	 */
+	public void setEsfDocumentTypeId(long esfDocumentTypeId);
+
+	/**
+	 * Returns the esf public authority ID of this e s f document.
+	 *
+	 * @return the esf public authority ID of this e s f document
+	 */
+	public long getEsfPublicAuthorityId();
+
+	/**
+	 * Sets the esf public authority ID of this e s f document.
+	 *
+	 * @param esfPublicAuthorityId the esf public authority ID of this e s f document
+	 */
+	public void setEsfPublicAuthorityId(long esfPublicAuthorityId);
+
+	/**
 	 * Returns the path of this e s f document.
 	 *
 	 * @return the path of this e s f document

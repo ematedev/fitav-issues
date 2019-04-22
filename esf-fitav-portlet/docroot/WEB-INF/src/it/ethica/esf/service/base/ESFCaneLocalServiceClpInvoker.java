@@ -100,136 +100,136 @@ public class ESFCaneLocalServiceClpInvoker {
 
 		_methodParameterTypes15 = new String[] { "it.ethica.esf.model.ESFCane" };
 
-		_methodName368 = "getBeanIdentifier";
+		_methodName376 = "getBeanIdentifier";
 
-		_methodParameterTypes368 = new String[] {  };
+		_methodParameterTypes376 = new String[] {  };
 
-		_methodName369 = "setBeanIdentifier";
+		_methodName377 = "setBeanIdentifier";
 
-		_methodParameterTypes369 = new String[] { "java.lang.String" };
+		_methodParameterTypes377 = new String[] { "java.lang.String" };
 
-		_methodName374 = "addESFCane";
+		_methodName382 = "addESFCane";
 
-		_methodParameterTypes374 = new String[] {
+		_methodParameterTypes382 = new String[] {
 				"long", "long", "long", "long", "long", "java.lang.String",
 				"long", "int", "java.lang.String", "boolean", "long",
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName375 = "updateESFCane";
+		_methodName383 = "updateESFCane";
 
-		_methodParameterTypes375 = new String[] {
+		_methodParameterTypes383 = new String[] {
 				"long", "long", "long", "long", "long", "java.lang.String",
 				"long", "int", "java.lang.String", "boolean", "long",
 				"java.lang.String", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName376 = "deleteESFCane";
+		_methodName384 = "deleteESFCane";
 
-		_methodParameterTypes376 = new String[] {
+		_methodParameterTypes384 = new String[] {
 				"long", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName377 = "getESFCanesByUserId";
+		_methodName385 = "getESFCanesByUserId";
 
-		_methodParameterTypes377 = new String[] { "long" };
+		_methodParameterTypes385 = new String[] { "long" };
 
-		_methodName378 = "getESFCanesByUserId";
+		_methodName386 = "getESFCanesByUserId";
 
-		_methodParameterTypes378 = new String[] { "long", "int", "int" };
+		_methodParameterTypes386 = new String[] { "long", "int", "int" };
 
-		_methodName379 = "getESFCanes";
+		_methodName387 = "getESFCanes";
 
-		_methodParameterTypes379 = new String[] {  };
+		_methodParameterTypes387 = new String[] {  };
 
-		_methodName380 = "getESFCanes";
+		_methodName388 = "getESFCanes";
 
-		_methodParameterTypes380 = new String[] { "int", "int" };
+		_methodParameterTypes388 = new String[] { "int", "int" };
 
-		_methodName381 = "getESFCaneByLikeC_K";
+		_methodName389 = "getESFCaneByLikeC_K";
 
-		_methodParameterTypes381 = new String[] { "java.lang.String", "long" };
+		_methodParameterTypes389 = new String[] { "java.lang.String", "long" };
 
-		_methodName382 = "getESFCaneByLikeC_K";
+		_methodName390 = "getESFCaneByLikeC_K";
 
-		_methodParameterTypes382 = new String[] {
+		_methodParameterTypes390 = new String[] {
 				"java.lang.String", "long", "int", "int"
 			};
 
-		_methodName383 = "getESFGunByLikeC_K_U";
+		_methodName391 = "getESFGunByLikeC_K_U";
 
-		_methodParameterTypes383 = new String[] {
+		_methodParameterTypes391 = new String[] {
 				"java.lang.String", "long", "long"
 			};
 
-		_methodName384 = "getESFGunByLikeC_K_U";
+		_methodName392 = "getESFGunByLikeC_K_U";
 
-		_methodParameterTypes384 = new String[] {
+		_methodParameterTypes392 = new String[] {
 				"java.lang.String", "long", "long", "int", "int"
 			};
 
-		_methodName385 = "getESFGunByLikeT_C_K_U";
+		_methodName393 = "getESFGunByLikeT_C_K_U";
 
-		_methodParameterTypes385 = new String[] {
+		_methodParameterTypes393 = new String[] {
 				"long", "java.lang.String", "long", "long", "int", "int"
 			};
 
-		_methodName386 = "countESFGunByLikeT_C_K_U";
+		_methodName394 = "countESFGunByLikeT_C_K_U";
 
-		_methodParameterTypes386 = new String[] {
+		_methodParameterTypes394 = new String[] {
 				"long", "java.lang.String", "long", "long"
 			};
 
-		_methodName387 = "getESFGunByLikeT_K";
+		_methodName395 = "getESFGunByLikeT_K";
 
-		_methodParameterTypes387 = new String[] { "long", "long", "int", "int" };
+		_methodParameterTypes395 = new String[] { "long", "long", "int", "int" };
 
-		_methodName388 = "countESFGunByLikeT_K";
+		_methodName396 = "countESFGunByLikeT_K";
 
-		_methodParameterTypes388 = new String[] { "long", "long" };
+		_methodParameterTypes396 = new String[] { "long", "long" };
 
-		_methodName389 = "getESFGunByLikeT";
+		_methodName397 = "getESFGunByLikeT";
 
-		_methodParameterTypes389 = new String[] { "long", "int", "int" };
+		_methodParameterTypes397 = new String[] { "long", "int", "int" };
 
-		_methodName390 = "countESFGunByLikeT";
+		_methodName398 = "countESFGunByLikeT";
 
-		_methodParameterTypes390 = new String[] { "long" };
+		_methodParameterTypes398 = new String[] { "long" };
 
-		_methodName391 = "getFullName";
+		_methodName399 = "getFullName";
 
-		_methodParameterTypes391 = new String[] { "it.ethica.esf.model.ESFCane" };
+		_methodParameterTypes399 = new String[] { "it.ethica.esf.model.ESFCane" };
 
-		_methodName393 = "getNameMod";
+		_methodName401 = "getNameMod";
 
-		_methodParameterTypes393 = new String[] { "it.ethica.esf.model.ESFCane" };
+		_methodParameterTypes401 = new String[] { "it.ethica.esf.model.ESFCane" };
 
-		_methodName394 = "getNameM";
+		_methodName402 = "getNameM";
 
-		_methodParameterTypes394 = new String[] { "it.ethica.esf.model.ESFCane" };
+		_methodParameterTypes402 = new String[] { "it.ethica.esf.model.ESFCane" };
 
-		_methodName395 = "getNameT";
+		_methodName403 = "getNameT";
 
-		_methodParameterTypes395 = new String[] { "it.ethica.esf.model.ESFCane" };
+		_methodParameterTypes403 = new String[] { "it.ethica.esf.model.ESFCane" };
 
-		_methodName396 = "checkCode";
+		_methodName404 = "checkCode";
 
-		_methodParameterTypes396 = new String[] {
+		_methodParameterTypes404 = new String[] {
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName397 = "getCanebyK";
+		_methodName405 = "getCanebyK";
 
-		_methodParameterTypes397 = new String[] { "long" };
+		_methodParameterTypes405 = new String[] { "long" };
 
-		_methodName398 = "getCanebyKindId";
+		_methodName406 = "getCanebyKindId";
 
-		_methodParameterTypes398 = new String[] { "long", "int", "int" };
+		_methodParameterTypes406 = new String[] { "long", "int", "int" };
 
-		_methodName399 = "countCanebyKindId";
+		_methodName407 = "countCanebyKindId";
 
-		_methodParameterTypes399 = new String[] { "long" };
+		_methodParameterTypes407 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -321,20 +321,20 @@ public class ESFCaneLocalServiceClpInvoker {
 			return ESFCaneLocalServiceUtil.updateESFCane((it.ethica.esf.model.ESFCane)arguments[0]);
 		}
 
-		if (_methodName368.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes368, parameterTypes)) {
+		if (_methodName376.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes376, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName369.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes369, parameterTypes)) {
+		if (_methodName377.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes377, parameterTypes)) {
 			ESFCaneLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName374.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes374, parameterTypes)) {
+		if (_methodName382.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.addESFCane(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -350,8 +350,8 @@ public class ESFCaneLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[12]);
 		}
 
-		if (_methodName375.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes375, parameterTypes)) {
+		if (_methodName383.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes383, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.updateESFCane(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -368,58 +368,58 @@ public class ESFCaneLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[13]);
 		}
 
-		if (_methodName376.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes376, parameterTypes)) {
+		if (_methodName384.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.deleteESFCane(((Long)arguments[0]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
 
-		if (_methodName377.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes377, parameterTypes)) {
+		if (_methodName385.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.getESFCanesByUserId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName378.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes378, parameterTypes)) {
+		if (_methodName386.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.getESFCanesByUserId(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName379.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes379, parameterTypes)) {
+		if (_methodName387.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.getESFCanes();
 		}
 
-		if (_methodName380.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
+		if (_methodName388.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.getESFCanes(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
-		if (_methodName381.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes381, parameterTypes)) {
+		if (_methodName389.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes389, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.getESFCaneByLikeC_K((java.lang.String)arguments[0],
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName382.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
+		if (_methodName390.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.getESFCaneByLikeC_K((java.lang.String)arguments[0],
 				((Long)arguments[1]).longValue(),
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
-		if (_methodName383.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes383, parameterTypes)) {
+		if (_methodName391.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.getESFGunByLikeC_K_U((java.lang.String)arguments[0],
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue());
 		}
 
-		if (_methodName384.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
+		if (_methodName392.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.getESFGunByLikeC_K_U((java.lang.String)arguments[0],
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -427,8 +427,8 @@ public class ESFCaneLocalServiceClpInvoker {
 				((Integer)arguments[4]).intValue());
 		}
 
-		if (_methodName385.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
+		if (_methodName393.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.getESFGunByLikeT_C_K_U(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(),
@@ -437,80 +437,80 @@ public class ESFCaneLocalServiceClpInvoker {
 				((Integer)arguments[5]).intValue());
 		}
 
-		if (_methodName386.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
+		if (_methodName394.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.countESFGunByLikeT_C_K_U(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(),
 				((Long)arguments[3]).longValue());
 		}
 
-		if (_methodName387.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
+		if (_methodName395.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.getESFGunByLikeT_K(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
-		if (_methodName388.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
+		if (_methodName396.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.countESFGunByLikeT_K(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName389.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes389, parameterTypes)) {
+		if (_methodName397.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.getESFGunByLikeT(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName390.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
+		if (_methodName398.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.countESFGunByLikeT(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName391.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
+		if (_methodName399.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes399, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.getFullName((it.ethica.esf.model.ESFCane)arguments[0]);
 		}
 
-		if (_methodName393.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
+		if (_methodName401.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes401, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.getNameMod((it.ethica.esf.model.ESFCane)arguments[0]);
 		}
 
-		if (_methodName394.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
+		if (_methodName402.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes402, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.getNameM((it.ethica.esf.model.ESFCane)arguments[0]);
 		}
 
-		if (_methodName395.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
+		if (_methodName403.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes403, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.getNameT((it.ethica.esf.model.ESFCane)arguments[0]);
 		}
 
-		if (_methodName396.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
+		if (_methodName404.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes404, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.checkCode((java.lang.String)arguments[0],
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
 
-		if (_methodName397.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
+		if (_methodName405.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes405, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.getCanebyK(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName398.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
+		if (_methodName406.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes406, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.getCanebyKindId(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName399.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes399, parameterTypes)) {
+		if (_methodName407.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes407, parameterTypes)) {
 			return ESFCaneLocalServiceUtil.countCanebyKindId(((Long)arguments[0]).longValue());
 		}
 
@@ -549,26 +549,10 @@ public class ESFCaneLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName368;
-	private String[] _methodParameterTypes368;
-	private String _methodName369;
-	private String[] _methodParameterTypes369;
-	private String _methodName374;
-	private String[] _methodParameterTypes374;
-	private String _methodName375;
-	private String[] _methodParameterTypes375;
 	private String _methodName376;
 	private String[] _methodParameterTypes376;
 	private String _methodName377;
 	private String[] _methodParameterTypes377;
-	private String _methodName378;
-	private String[] _methodParameterTypes378;
-	private String _methodName379;
-	private String[] _methodParameterTypes379;
-	private String _methodName380;
-	private String[] _methodParameterTypes380;
-	private String _methodName381;
-	private String[] _methodParameterTypes381;
 	private String _methodName382;
 	private String[] _methodParameterTypes382;
 	private String _methodName383;
@@ -589,6 +573,8 @@ public class ESFCaneLocalServiceClpInvoker {
 	private String[] _methodParameterTypes390;
 	private String _methodName391;
 	private String[] _methodParameterTypes391;
+	private String _methodName392;
+	private String[] _methodParameterTypes392;
 	private String _methodName393;
 	private String[] _methodParameterTypes393;
 	private String _methodName394;
@@ -603,4 +589,18 @@ public class ESFCaneLocalServiceClpInvoker {
 	private String[] _methodParameterTypes398;
 	private String _methodName399;
 	private String[] _methodParameterTypes399;
+	private String _methodName401;
+	private String[] _methodParameterTypes401;
+	private String _methodName402;
+	private String[] _methodParameterTypes402;
+	private String _methodName403;
+	private String[] _methodParameterTypes403;
+	private String _methodName404;
+	private String[] _methodParameterTypes404;
+	private String _methodName405;
+	private String[] _methodParameterTypes405;
+	private String _methodName406;
+	private String[] _methodParameterTypes406;
+	private String _methodName407;
+	private String[] _methodParameterTypes407;
 }
