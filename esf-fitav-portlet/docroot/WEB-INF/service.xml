@@ -514,51 +514,6 @@
 		<reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
 		<reference package-path="com.liferay.portal" entity="Organization" />
 	</entity>
-
-	
-	<entity name="ESFOrganization_Reengineered" remote-service="false"
-		local-service="true" json-enabled="false" table="esforganization">		
-		
-		<!-- PK fields -->
-
-		<column name="esfOrganizationId" primary="true" type="long" />
-		
-		
-		<column name="code" type="String" />
-		<column name="vat" type="String" />
-		<column name="fiscalCode" type="String" />
-		<column name="ibanCode" type="String" />
-		<column name="isMultiSport" type="boolean" />
-		<column name="legalForm" type="String" />
-		<column name="category" type="String" />
-		<column name="establishmentDate" type="Date" />
-		<column name="closureDate" type="Date" />
-		<column name="type" type="int" />
-		<column name="insertDate" type="Date"></column>
-		<column name="coniDate" type="Date"></column>
-		<column name="coniCode" type="String"></column>
-		<column name="description" type="String" />
-		<column name="isYouthActive" type="boolean" />
-		<column name="firstAffiliationDate" type="Date" />
-		<column name="variations" type="long"></column>
-        <column name="regionCode" type="long"></column>
-        <column name="idFatherAssociation" type="long"></column>
-        <column name="constitutiveAct" type="boolean"></column>
-        <column name="registeredStatus" type="boolean"></column>
-        <column name="planimetrySportsStand" type="boolean"></column>
-        <column name="certificateFITAV" type="boolean"></column>
-        <column name="note" type="String"></column>
-        <column name="isSimplyOrganizzation" type="boolean"></column>
-        <column name="webSite" type="String" />
-        <column name="includeConiReport" type="boolean"></column>
-        <column name="organizzationCategory" type="String"></column>
-        <column name="type_" type="int"></column>
-		
-        <finder name="FindOrganizationByType" return-type="Collection" where="type_=3">
-            <finder-column name="type_"></finder-column>
-        </finder>
-
-	</entity>
 	
 	
 	
@@ -781,7 +736,7 @@
 		<reference entity="AssetLink" package-path="com.liferay.portlet.asset"></reference>
 	</entity>
 	<entity name="ESFUser" uuid="true" local-service="true"
-		remote-service="false" cache-enabled="false" json-enabled="false">
+		remote-service="false" cache-enabled="true" json-enabled="false">
 
 		<!-- PK fields -->
 
@@ -839,7 +794,7 @@
 		<reference package-path="com.liferay.portal" entity="Contact" />
 	</entity>
 	<entity name="ESFUserESFUserRole" local-service="true"
-		remote-service="false" cache-enabled="false" json-enabled="false">
+		remote-service="false" cache-enabled="true" json-enabled="false">
 
 		<!-- PK fields -->
 
@@ -888,6 +843,11 @@
 		<finder name="ESFUserId_ED" return-type="Collection" where="endDate is null">
 			<finder-column name="esfUserId"></finder-column>
 		</finder>
+        <finder name="ESFO_R_YEAR" return-type="Collection" where="endDate is null">
+            <finder-column name="esfOrganizationId"></finder-column>
+            <finder-column name="esfUserRoleId"></finder-column>
+            <finder-column name="year" comparator="="></finder-column>
+        </finder>
 	</entity>
 	<entity name="ESFUserRole" local-service="true" remote-service="false"
 		uuid="true" json-enabled="false">

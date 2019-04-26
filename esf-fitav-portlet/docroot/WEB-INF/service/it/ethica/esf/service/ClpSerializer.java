@@ -70,7 +70,6 @@ import it.ethica.esf.model.ESFNationalDelegationClp;
 import it.ethica.esf.model.ESFNationalMatchResultClp;
 import it.ethica.esf.model.ESFOrganizationClp;
 import it.ethica.esf.model.ESFOrganizationUnitserviceClp;
-import it.ethica.esf.model.ESFOrganization_ReengineeredClp;
 import it.ethica.esf.model.ESFPartecipantClp;
 import it.ethica.esf.model.ESFPartecipantInfoClp;
 import it.ethica.esf.model.ESFPartecipantTypeClp;
@@ -362,11 +361,6 @@ public class ClpSerializer {
 
 		if (oldModelClassName.equals(ESFOrganizationClp.class.getName())) {
 			return translateInputESFOrganization(oldModel);
-		}
-
-		if (oldModelClassName.equals(
-					ESFOrganization_ReengineeredClp.class.getName())) {
-			return translateInputESFOrganization_Reengineered(oldModel);
 		}
 
 		if (oldModelClassName.equals(
@@ -986,17 +980,6 @@ public class ClpSerializer {
 		return newModel;
 	}
 
-	public static Object translateInputESFOrganization_Reengineered(
-		BaseModel<?> oldModel) {
-		ESFOrganization_ReengineeredClp oldClpModel = (ESFOrganization_ReengineeredClp)oldModel;
-
-		BaseModel<?> newModel = oldClpModel.getESFOrganization_ReengineeredRemoteModel();
-
-		newModel.setModelAttributes(oldClpModel.getModelAttributes());
-
-		return newModel;
-	}
-
 	public static Object translateInputESFOrganizationUnitservice(
 		BaseModel<?> oldModel) {
 		ESFOrganizationUnitserviceClp oldClpModel = (ESFOrganizationUnitserviceClp)oldModel;
@@ -1571,11 +1554,6 @@ public class ClpSerializer {
 		}
 
 		if (oldModelClassName.equals(
-					"it.ethica.esf.model.impl.ESFOrganization_ReengineeredImpl")) {
-			return translateOutputESFOrganization_Reengineered(oldModel);
-		}
-
-		if (oldModelClassName.equals(
 					"it.ethica.esf.model.impl.ESFOrganizationUnitserviceImpl")) {
 			return translateOutputESFOrganizationUnitservice(oldModel);
 		}
@@ -2056,11 +2034,6 @@ public class ClpSerializer {
 
 		if (className.equals("it.ethica.esf.NoSuchOrganizationException")) {
 			return new it.ethica.esf.NoSuchOrganizationException();
-		}
-
-		if (className.equals(
-					"it.ethica.esf.NoSuchOrganization_ReengineeredException")) {
-			return new it.ethica.esf.NoSuchOrganization_ReengineeredException();
 		}
 
 		if (className.equals(
@@ -2665,17 +2638,6 @@ public class ClpSerializer {
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
 		newModel.setESFOrganizationRemoteModel(oldModel);
-
-		return newModel;
-	}
-
-	public static Object translateOutputESFOrganization_Reengineered(
-		BaseModel<?> oldModel) {
-		ESFOrganization_ReengineeredClp newModel = new ESFOrganization_ReengineeredClp();
-
-		newModel.setModelAttributes(oldModel.getModelAttributes());
-
-		newModel.setESFOrganization_ReengineeredRemoteModel(oldModel);
 
 		return newModel;
 	}

@@ -99,8 +99,6 @@
 	<bean id="it.ethica.esf.service.ESFOrganizationLocalService" class="it.ethica.esf.service.impl.ESFOrganizationLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFOrganizationPersistence" class="it.ethica.esf.service.persistence.ESFOrganizationPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.persistence.ESFOrganizationFinder" class="it.ethica.esf.service.persistence.ESFOrganizationFinderImpl" parent="basePersistence" />
-	<bean id="it.ethica.esf.service.ESFOrganization_ReengineeredLocalService" class="it.ethica.esf.service.impl.ESFOrganization_ReengineeredLocalServiceImpl" />
-	<bean id="it.ethica.esf.service.persistence.ESFOrganization_ReengineeredPersistence" class="it.ethica.esf.service.persistence.ESFOrganization_ReengineeredPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFOrganizationUnitserviceLocalService" class="it.ethica.esf.service.impl.ESFOrganizationUnitserviceLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFOrganizationUnitservicePersistence" class="it.ethica.esf.service.persistence.ESFOrganizationUnitservicePersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFPartecipantLocalService" class="it.ethica.esf.service.impl.ESFPartecipantLocalServiceImpl" />

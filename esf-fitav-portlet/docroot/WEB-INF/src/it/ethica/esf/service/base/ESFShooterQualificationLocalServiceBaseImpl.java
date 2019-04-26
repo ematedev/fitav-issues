@@ -85,7 +85,6 @@ import it.ethica.esf.service.persistence.ESFNationalPersistence;
 import it.ethica.esf.service.persistence.ESFOrganizationFinder;
 import it.ethica.esf.service.persistence.ESFOrganizationPersistence;
 import it.ethica.esf.service.persistence.ESFOrganizationUnitservicePersistence;
-import it.ethica.esf.service.persistence.ESFOrganization_ReengineeredPersistence;
 import it.ethica.esf.service.persistence.ESFPartecipantInfoPersistence;
 import it.ethica.esf.service.persistence.ESFPartecipantPersistence;
 import it.ethica.esf.service.persistence.ESFPartecipantTypePersistence;
@@ -2287,44 +2286,6 @@ public abstract class ESFShooterQualificationLocalServiceBaseImpl
 	}
 
 	/**
-	 * Returns the e s f organization_ reengineered local service.
-	 *
-	 * @return the e s f organization_ reengineered local service
-	 */
-	public it.ethica.esf.service.ESFOrganization_ReengineeredLocalService getESFOrganization_ReengineeredLocalService() {
-		return esfOrganization_ReengineeredLocalService;
-	}
-
-	/**
-	 * Sets the e s f organization_ reengineered local service.
-	 *
-	 * @param esfOrganization_ReengineeredLocalService the e s f organization_ reengineered local service
-	 */
-	public void setESFOrganization_ReengineeredLocalService(
-		it.ethica.esf.service.ESFOrganization_ReengineeredLocalService esfOrganization_ReengineeredLocalService) {
-		this.esfOrganization_ReengineeredLocalService = esfOrganization_ReengineeredLocalService;
-	}
-
-	/**
-	 * Returns the e s f organization_ reengineered persistence.
-	 *
-	 * @return the e s f organization_ reengineered persistence
-	 */
-	public ESFOrganization_ReengineeredPersistence getESFOrganization_ReengineeredPersistence() {
-		return esfOrganization_ReengineeredPersistence;
-	}
-
-	/**
-	 * Sets the e s f organization_ reengineered persistence.
-	 *
-	 * @param esfOrganization_ReengineeredPersistence the e s f organization_ reengineered persistence
-	 */
-	public void setESFOrganization_ReengineeredPersistence(
-		ESFOrganization_ReengineeredPersistence esfOrganization_ReengineeredPersistence) {
-		this.esfOrganization_ReengineeredPersistence = esfOrganization_ReengineeredPersistence;
-	}
-
-	/**
 	 * Returns the e s f organization unitservice local service.
 	 *
 	 * @return the e s f organization unitservice local service
@@ -4096,10 +4057,6 @@ public abstract class ESFShooterQualificationLocalServiceBaseImpl
 	protected ESFOrganizationPersistence esfOrganizationPersistence;
 	@BeanReference(type = ESFOrganizationFinder.class)
 	protected ESFOrganizationFinder esfOrganizationFinder;
-	@BeanReference(type = it.ethica.esf.service.ESFOrganization_ReengineeredLocalService.class)
-	protected it.ethica.esf.service.ESFOrganization_ReengineeredLocalService esfOrganization_ReengineeredLocalService;
-	@BeanReference(type = ESFOrganization_ReengineeredPersistence.class)
-	protected ESFOrganization_ReengineeredPersistence esfOrganization_ReengineeredPersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFOrganizationUnitserviceLocalService.class)
 	protected it.ethica.esf.service.ESFOrganizationUnitserviceLocalService esfOrganizationUnitserviceLocalService;
 	@BeanReference(type = ESFOrganizationUnitservicePersistence.class)

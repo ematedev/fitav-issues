@@ -47,7 +47,6 @@
 	<import class="it.ethica.esf.model.ESFNationalDelegation" />
 	<import class="it.ethica.esf.model.ESFNationalMatchResult" />
 	<import class="it.ethica.esf.model.ESFOrganization" />
-	<import class="it.ethica.esf.model.ESFOrganization_Reengineered" />
 	<import class="it.ethica.esf.model.ESFOrganizationUnitservice" />
 	<import class="it.ethica.esf.model.ESFPartecipant" />
 	<import class="it.ethica.esf.model.ESFPartecipantInfo" />
@@ -791,41 +790,6 @@
 		<property name="webSite" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="includeConiReport" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
 		<property name="organizzationCategory" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-	</class>
-	<class name="it.ethica.esf.model.impl.ESFOrganization_ReengineeredImpl" table="esforganization">
-		<cache usage="read-write" />
-		<id name="esfOrganizationId" type="long">
-			<generator class="assigned" />
-		</id>
-		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
-		<property name="vat" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-		<property name="fiscalCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-		<property name="ibanCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-		<property name="isMultiSport" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
-		<property name="legalForm" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-		<property name="category" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-		<property name="establishmentDate" type="org.hibernate.type.TimestampType" />
-		<property name="closureDate" type="org.hibernate.type.TimestampType" />
-		<property name="type" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="type_" />
-		<property name="insertDate" type="org.hibernate.type.TimestampType" />
-		<property name="coniDate" type="org.hibernate.type.TimestampType" />
-		<property name="coniCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-		<property name="isYouthActive" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
-		<property name="firstAffiliationDate" type="org.hibernate.type.TimestampType" />
-		<property name="variations" type="com.liferay.portal.dao.orm.hibernate.LongType" />
-		<property name="regionCode" type="com.liferay.portal.dao.orm.hibernate.LongType" />
-		<property name="idFatherAssociation" type="com.liferay.portal.dao.orm.hibernate.LongType" />
-		<property name="constitutiveAct" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
-		<property name="registeredStatus" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
-		<property name="planimetrySportsStand" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
-		<property name="certificateFITAV" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
-		<property name="note" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-		<property name="isSimplyOrganizzation" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
-		<property name="webSite" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-		<property name="includeConiReport" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
-		<property name="organizzationCategory" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-		<property name="type_" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFOrganizationUnitserviceImpl" table="ESFOrganizationUnitservice">
 		<cache usage="read-write" />

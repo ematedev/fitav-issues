@@ -63,7 +63,6 @@ import it.ethica.esf.service.ESFNationalLocalServiceUtil;
 import it.ethica.esf.service.ESFNationalMatchResultLocalServiceUtil;
 import it.ethica.esf.service.ESFOrganizationLocalServiceUtil;
 import it.ethica.esf.service.ESFOrganizationUnitserviceLocalServiceUtil;
-import it.ethica.esf.service.ESFOrganization_ReengineeredLocalServiceUtil;
 import it.ethica.esf.service.ESFPartecipantInfoLocalServiceUtil;
 import it.ethica.esf.service.ESFPartecipantLocalServiceUtil;
 import it.ethica.esf.service.ESFPartecipantTypeLocalServiceUtil;
@@ -203,8 +202,6 @@ public class ClpMessageListener extends BaseMessageListener {
 			ESFNationalMatchResultLocalServiceUtil.clearService();
 
 			ESFOrganizationLocalServiceUtil.clearService();
-
-			ESFOrganization_ReengineeredLocalServiceUtil.clearService();
 
 			ESFOrganizationUnitserviceLocalServiceUtil.clearService();
 

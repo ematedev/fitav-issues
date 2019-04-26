@@ -590,38 +590,6 @@
 		<field name="includeConiReport" type="boolean" />
 		<field name="organizzationCategory" type="String" />
 	</model>
-	<model name="it.ethica.esf.model.ESFOrganization_Reengineered">
-		<field name="esfOrganizationId" type="long" />
-		<field name="code" type="String" />
-		<field name="vat" type="String" />
-		<field name="fiscalCode" type="String" />
-		<field name="ibanCode" type="String" />
-		<field name="isMultiSport" type="boolean" />
-		<field name="legalForm" type="String" />
-		<field name="category" type="String" />
-		<field name="establishmentDate" type="Date" />
-		<field name="closureDate" type="Date" />
-		<field name="type" type="int" />
-		<field name="insertDate" type="Date" />
-		<field name="coniDate" type="Date" />
-		<field name="coniCode" type="String" />
-		<field name="description" type="String" />
-		<field name="isYouthActive" type="boolean" />
-		<field name="firstAffiliationDate" type="Date" />
-		<field name="variations" type="long" />
-		<field name="regionCode" type="long" />
-		<field name="idFatherAssociation" type="long" />
-		<field name="constitutiveAct" type="boolean" />
-		<field name="registeredStatus" type="boolean" />
-		<field name="planimetrySportsStand" type="boolean" />
-		<field name="certificateFITAV" type="boolean" />
-		<field name="note" type="String" />
-		<field name="isSimplyOrganizzation" type="boolean" />
-		<field name="webSite" type="String" />
-		<field name="includeConiReport" type="boolean" />
-		<field name="organizzationCategory" type="String" />
-		<field name="type_" type="int" />
-	</model>
 	<model name="it.ethica.esf.model.ESFOrganizationUnitservice">
 		<field name="uuid" type="String" />
 		<field name="esfOrganizationUnitserviceId" type="long" />
