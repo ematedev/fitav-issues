@@ -928,4 +928,10 @@
 		order by lastName,firstName
 	</sql>
 	
+	
+	<sql id="it.ethica.esf.service.persistence.ESFUserESFUserRoleFinder.listaConsiglieriAssociazionePerAnno" >
+		select * from vw_esflistaincarichi
+		where esfOrganizationId= ?
+	</sql>
+	
 </custom-sql>

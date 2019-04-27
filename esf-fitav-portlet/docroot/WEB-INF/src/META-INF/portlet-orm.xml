@@ -1932,6 +1932,30 @@
 			<transient name="userUuid" />
 		</attributes>
 	</mapped-superclass>
+	<mapped-superclass class="it.ethica.esf.model.impl.VW_ESFListaIncarichiModelImpl">
+		<id-class class="it.ethica.esf.service.persistence.VW_ESFListaIncarichiPK" />
+		<attributes>
+			<id name="AnniPrecedenti" />
+			<id name="AnnoFineIncarico" />
+			<id name="AnnoInizioIncarico" />
+			<id name="AnnoCorrente" />
+			<id name="NomeRuolo" />
+			<id name="startDate">
+				<temporal>TIMESTAMP</temporal>
+			</id>
+			<id name="esfUserId" />
+			<id name="esfOrganizationId" />
+			<id name="lastName" />
+			<id name="firstName" />
+			<basic name="endDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="esfUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
 	<entity class="it.ethica.esf.model.impl.ESFAddressImpl" name="ESFAddress">
 		<table name="ESFAddress" />
 		<attributes>
@@ -2292,5 +2316,9 @@
 			<transient name="name" />
 			<transient name="title" />
 		</attributes>
+	</entity>
+	<entity class="it.ethica.esf.model.impl.VW_ESFListaIncarichiImpl" name="VW_ESFListaIncarichi">
+		<table name="VW_ESFListaIncarichi" />
+		<attributes />
 	</entity>
 </entity-mappings>

@@ -126,6 +126,7 @@ import it.ethica.esf.service.persistence.ESFUserPersistence;
 import it.ethica.esf.service.persistence.ESFUserRolePersistence;
 import it.ethica.esf.service.persistence.ESFgunUserFinder;
 import it.ethica.esf.service.persistence.ESFgunUserPersistence;
+import it.ethica.esf.service.persistence.VW_ESFListaIncarichiPersistence;
 
 import java.io.Serializable;
 
@@ -3623,6 +3624,44 @@ public abstract class ESFShootingDirectorLocalServiceBaseImpl
 	}
 
 	/**
+	 * Returns the v w_ e s f lista incarichi local service.
+	 *
+	 * @return the v w_ e s f lista incarichi local service
+	 */
+	public it.ethica.esf.service.VW_ESFListaIncarichiLocalService getVW_ESFListaIncarichiLocalService() {
+		return vw_esfListaIncarichiLocalService;
+	}
+
+	/**
+	 * Sets the v w_ e s f lista incarichi local service.
+	 *
+	 * @param vw_esfListaIncarichiLocalService the v w_ e s f lista incarichi local service
+	 */
+	public void setVW_ESFListaIncarichiLocalService(
+		it.ethica.esf.service.VW_ESFListaIncarichiLocalService vw_esfListaIncarichiLocalService) {
+		this.vw_esfListaIncarichiLocalService = vw_esfListaIncarichiLocalService;
+	}
+
+	/**
+	 * Returns the v w_ e s f lista incarichi persistence.
+	 *
+	 * @return the v w_ e s f lista incarichi persistence
+	 */
+	public VW_ESFListaIncarichiPersistence getVW_ESFListaIncarichiPersistence() {
+		return vw_esfListaIncarichiPersistence;
+	}
+
+	/**
+	 * Sets the v w_ e s f lista incarichi persistence.
+	 *
+	 * @param vw_esfListaIncarichiPersistence the v w_ e s f lista incarichi persistence
+	 */
+	public void setVW_ESFListaIncarichiPersistence(
+		VW_ESFListaIncarichiPersistence vw_esfListaIncarichiPersistence) {
+		this.vw_esfListaIncarichiPersistence = vw_esfListaIncarichiPersistence;
+	}
+
+	/**
 	 * Returns the counter local service.
 	 *
 	 * @return the counter local service
@@ -4142,6 +4181,10 @@ public abstract class ESFShootingDirectorLocalServiceBaseImpl
 	protected it.ethica.esf.service.ESFUserRoleLocalService esfUserRoleLocalService;
 	@BeanReference(type = ESFUserRolePersistence.class)
 	protected ESFUserRolePersistence esfUserRolePersistence;
+	@BeanReference(type = it.ethica.esf.service.VW_ESFListaIncarichiLocalService.class)
+	protected it.ethica.esf.service.VW_ESFListaIncarichiLocalService vw_esfListaIncarichiLocalService;
+	@BeanReference(type = VW_ESFListaIncarichiPersistence.class)
+	protected VW_ESFListaIncarichiPersistence vw_esfListaIncarichiPersistence;
 	@BeanReference(type = com.liferay.counter.service.CounterLocalService.class)
 	protected com.liferay.counter.service.CounterLocalService counterLocalService;
 	@BeanReference(type = com.liferay.portal.service.ResourceLocalService.class)

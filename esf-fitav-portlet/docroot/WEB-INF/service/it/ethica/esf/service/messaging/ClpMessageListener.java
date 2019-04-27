@@ -97,6 +97,7 @@ import it.ethica.esf.service.ESFUserESFUserRoleLocalServiceUtil;
 import it.ethica.esf.service.ESFUserLocalServiceUtil;
 import it.ethica.esf.service.ESFUserRoleLocalServiceUtil;
 import it.ethica.esf.service.ESFgunUserLocalServiceUtil;
+import it.ethica.esf.service.VW_ESFListaIncarichiLocalServiceUtil;
 
 /**
  * @author Ethica
@@ -270,6 +271,8 @@ public class ClpMessageListener extends BaseMessageListener {
 			ESFUserESFUserRoleLocalServiceUtil.clearService();
 
 			ESFUserRoleLocalServiceUtil.clearService();
+
+			VW_ESFListaIncarichiLocalServiceUtil.clearService();
 		}
 	}
 }

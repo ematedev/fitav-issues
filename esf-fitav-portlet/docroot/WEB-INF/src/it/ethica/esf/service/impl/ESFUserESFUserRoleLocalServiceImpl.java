@@ -51,6 +51,7 @@ import it.ethica.esf.service.base.ESFUserESFUserRoleLocalServiceBaseImpl;
 import it.ethica.esf.service.persistence.ESFUserESFUserRoleFinderUtil;
 import it.ethica.esf.service.persistence.ESFUserESFUserRolePK;
 import it.ethica.esf.util.ESFKeys;
+import it.ethica.esf.util.ESFKeys.ESFUserRoleType;
 
 /**
  * 
@@ -885,6 +886,12 @@ public class ESFUserESFUserRoleLocalServiceImpl
 		return userRole;
 	}
 	
+	
+	/** 
+	 * Carica TUTTE le informazioni relative ai Consiglieri
+	 * di una Associazione
+	 * 
+	 */
 	public List<ESFUserESFUserRole> findbyBDORole(long organizationId)
 			throws SystemException, NoSuchUserESFUserRoleException {
 		
@@ -900,24 +907,29 @@ public class ESFUserESFUserRoleLocalServiceImpl
 					ESFUserRole.class, "roleQuery",
 					PortletClassLoaderUtil.getClassLoader());
 		
-		roleQuery.add(PropertyFactoryUtil.forName("type").eq(3));
+		// Seleziona Tutti i Ruoli di Tipo 3 = Incarico in una Organizzazione
+		roleQuery.add(PropertyFactoryUtil.forName("type").eq(ESFUserRoleType.ORGANIZATION));
 		
+		// Esegui la query
 		role = ESFUserRoleLocalServiceUtil.dynamicQuery(roleQuery);
 		
-		
+		// aggiungi alla lista dei Ruoli il Ruolo di ogni Consigliere
 		for(ESFUserRole u : role){
 			roleId.add(u.getEsfUserRoleId());
-			
 		}
 		
+		// Trova tutti gli Incarichi esistenti di Tutte le organizzazioni... da Sempre
 		userRoleTot = ESFUserESFUserRoleLocalServiceUtil.findESFUserESFRolesAll();
 		
+		// Aggiunge alla lista solo quelli dell'organizzazione selezionata
 		for(ESFUserESFUserRole org : userRoleTot){
 			if(org.getEsfOrganizationId() == organizationId){
 				userRoleOrg.add(org);
 			}
 		}
 		
+		
+		// 
 		for(ESFUserESFUserRole userroleid : userRoleTot){
 			if(roleId.contains(userroleid.getEsfUserRoleId()) && userroleid.getEsfOrganizationId() == organizationId
 					&& Validator.isNotNull(userroleid.getEndDate())){

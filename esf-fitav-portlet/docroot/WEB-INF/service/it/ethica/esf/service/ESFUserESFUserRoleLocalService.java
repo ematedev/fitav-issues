@@ -365,6 +365,10 @@ public interface ESFUserESFUserRoleLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchUserESFUserRoleException;
 
+	/**
+	* Carica TUTTE le informazioni relative ai Consiglieri
+	* di una Associazione
+	*/
 	public java.util.List<it.ethica.esf.model.ESFUserESFUserRole> findbyBDORole(
 		long organizationId)
 		throws com.liferay.portal.kernel.exception.SystemException,

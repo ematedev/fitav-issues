@@ -1171,6 +1171,36 @@ create table ESFgunUser (
 	esfCaliber VARCHAR(75) null
 );
 
+create table VW_ESFListaIncarichi (
+	AnniPrecedenti INTEGER not null,
+	AnnoFineIncarico INTEGER not null,
+	AnnoInizioIncarico INTEGER not null,
+	AnnoCorrente INTEGER not null,
+	NomeRuolo VARCHAR(75) not null,
+	endDate DATE null,
+	startDate DATE not null,
+	esfUserId LONG not null,
+	esfOrganizationId LONG not null,
+	lastName VARCHAR(75) not null,
+	firstName VARCHAR(75) not null,
+	primary key (AnniPrecedenti, AnnoFineIncarico, AnnoInizioIncarico, AnnoCorrente, NomeRuolo, startDate, esfUserId, esfOrganizationId, lastName, firstName)
+);
+
+create table VW_ESFlistaincarichi (
+	AnniPrecedenti INTEGER not null,
+	AnnoFineIncarico INTEGER not null,
+	AnnoInizioIncarico INTEGER not null,
+	AnnoCorrente INTEGER not null,
+	NomeRuolo VARCHAR(75) not null,
+	endDate DATE not null,
+	startDate DATE not null,
+	esfUserId LONG not null,
+	esfOrganizationId LONG not null,
+	lastName VARCHAR(75) not null,
+	firstName VARCHAR(75) not null,
+	primary key (AnniPrecedenti, AnnoFineIncarico, AnnoInizioIncarico, AnnoCorrente, NomeRuolo, endDate, startDate, esfUserId, esfOrganizationId, lastName, firstName)
+);
+
 create table esforganization (
 	esfOrganizationId LONG not null primary key,
 	code_ VARCHAR(75) null,
@@ -1202,4 +1232,18 @@ create table esforganization (
 	includeConiReport BOOLEAN,
 	organizzationCategory VARCHAR(75) null,
 	type_ INTEGER
+);
+
+create table vw_esflistaincarichi (
+	AnniPrecedenti INTEGER not null,
+	AnnoInizioIncarico INTEGER not null,
+	AnnoCorrente INTEGER not null,
+	NomeRuolo VARCHAR(75) not null,
+	endDate DATE not null,
+	startDate DATE not null,
+	esfUserId LONG not null,
+	esfOrganizationId LONG not null,
+	lastName VARCHAR(75) not null,
+	firstName VARCHAR(75) not null,
+	primary key (AnniPrecedenti, AnnoInizioIncarico, AnnoCorrente, NomeRuolo, endDate, startDate, esfUserId, esfOrganizationId, lastName, firstName)
 );

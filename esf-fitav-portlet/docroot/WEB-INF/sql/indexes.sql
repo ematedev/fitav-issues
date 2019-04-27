@@ -361,4 +361,6 @@ create index IX_10328453 on ESFgunUser (idUser);
 create index IX_7CE3728F on ESFgunUser (idUser, code_);
 create index IX_D710E7DC on ESFgunUser (type_);
 
+create index IX_ED8BB4AF on VW_ESFListaIncarichi (esfOrganizationId);
+
 create index IX_19A88904 on esforganization (type_);

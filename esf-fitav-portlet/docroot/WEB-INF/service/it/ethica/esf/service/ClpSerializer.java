@@ -104,6 +104,7 @@ import it.ethica.esf.model.ESFUserESFFederalRoleClp;
 import it.ethica.esf.model.ESFUserESFUserRoleClp;
 import it.ethica.esf.model.ESFUserRoleClp;
 import it.ethica.esf.model.ESFgunUserClp;
+import it.ethica.esf.model.VW_ESFListaIncarichiClp;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -505,6 +506,10 @@ public class ClpSerializer {
 
 		if (oldModelClassName.equals(ESFUserRoleClp.class.getName())) {
 			return translateInputESFUserRole(oldModel);
+		}
+
+		if (oldModelClassName.equals(VW_ESFListaIncarichiClp.class.getName())) {
+			return translateInputVW_ESFListaIncarichi(oldModel);
 		}
 
 		return oldModel;
@@ -1331,6 +1336,17 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+	public static Object translateInputVW_ESFListaIncarichi(
+		BaseModel<?> oldModel) {
+		VW_ESFListaIncarichiClp oldClpModel = (VW_ESFListaIncarichiClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getVW_ESFListaIncarichiRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
 	public static Object translateInput(Object obj) {
 		if (obj instanceof BaseModel<?>) {
 			return translateInput((BaseModel<?>)obj);
@@ -1713,6 +1729,11 @@ public class ClpSerializer {
 			return translateOutputESFUserRole(oldModel);
 		}
 
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.VW_ESFListaIncarichiImpl")) {
+			return translateOutputVW_ESFListaIncarichi(oldModel);
+		}
+
 		return oldModel;
 	}
 
@@ -1851,6 +1872,10 @@ public class ClpSerializer {
 
 		if (className.equals("it.ethica.esf.ESFUserRoleTypeException")) {
 			return new it.ethica.esf.ESFUserRoleTypeException();
+		}
+
+		if (className.equals("it.ethica.esf.VW_ESFListaIncarichiException")) {
+			return new it.ethica.esf.VW_ESFListaIncarichiException();
 		}
 
 		if (className.equals("it.ethica.esf.NoSuchAddressException")) {
@@ -2179,6 +2204,11 @@ public class ClpSerializer {
 
 		if (className.equals("it.ethica.esf.NoSuchUserRoleException")) {
 			return new it.ethica.esf.NoSuchUserRoleException();
+		}
+
+		if (className.equals(
+					"it.ethica.esf.NoSuchVW_ESFListaIncarichiException")) {
+			return new it.ethica.esf.NoSuchVW_ESFListaIncarichiException();
 		}
 
 		return throwable;
@@ -2994,6 +3024,17 @@ public class ClpSerializer {
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
 		newModel.setESFUserRoleRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputVW_ESFListaIncarichi(
+		BaseModel<?> oldModel) {
+		VW_ESFListaIncarichiClp newModel = new VW_ESFListaIncarichiClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setVW_ESFListaIncarichiRemoteModel(oldModel);
 
 		return newModel;
 	}

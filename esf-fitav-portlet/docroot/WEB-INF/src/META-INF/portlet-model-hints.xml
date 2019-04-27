@@ -1068,4 +1068,17 @@
 		<field name="isOrgAdmin" type="boolean" />
 		<field name="isEditable" type="boolean" />
 	</model>
+	<model name="it.ethica.esf.model.VW_ESFListaIncarichi">
+		<field name="AnniPrecedenti" type="int" />
+		<field name="AnnoFineIncarico" type="int" />
+		<field name="AnnoInizioIncarico" type="int" />
+		<field name="AnnoCorrente" type="int" />
+		<field name="NomeRuolo" type="String" />
+		<field name="endDate" type="Date" />
+		<field name="startDate" type="Date" />
+		<field name="esfUserId" type="long" />
+		<field name="esfOrganizationId" type="long" />
+		<field name="lastName" type="String" />
+		<field name="firstName" type="String" />
+	</model>
 </model-hints>

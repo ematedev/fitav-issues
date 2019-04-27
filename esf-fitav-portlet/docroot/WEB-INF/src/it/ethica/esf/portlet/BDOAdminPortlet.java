@@ -1,13 +1,18 @@
 
 package it.ethica.esf.portlet;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
+import java.io.IOException;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
+import javax.portlet.PortletException;
+import javax.portlet.RenderRequest;
+import javax.portlet.RenderResponse;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
@@ -25,15 +30,32 @@ import com.liferay.util.bridges.mvc.MVCPortlet;
 import it.ethica.esf.model.ESFUser;
 import it.ethica.esf.model.ESFUserESFUserRole;
 import it.ethica.esf.model.ESFUserRole;
+import it.ethica.esf.model.VW_ESFListaIncarichi;
 import it.ethica.esf.model.impl.ESFUserImpl;
 import it.ethica.esf.service.ESFUserESFUserRoleLocalServiceUtil;
 import it.ethica.esf.service.ESFUserLocalServiceUtil;
 import it.ethica.esf.service.ESFUserRoleLocalServiceUtil;
+import it.ethica.esf.service.VW_ESFListaIncarichiLocalServiceUtil;
 
 /**
  * Portlet implementation class BDOAdminPortlet
  */
 public class BDOAdminPortlet extends MVCPortlet {
+	
+
+	Log logger =  LogFactoryUtil.getLog(BDOAdminPortlet.class);
+	
+	@Override
+	public void render(RenderRequest request, RenderResponse response)
+		throws IOException, PortletException {
+		
+		logger.debug("Effettuato Render della BDOAdminPortlet");
+		System.out.println("Effettuato Render della BDOAdminPortlet");
+
+
+		super.render(request, response);
+	}
+	
 
 	public void updateAddESFUserESFRole(
 		ActionRequest actionRequest, ActionResponse actionResponse)
@@ -86,38 +108,89 @@ public class BDOAdminPortlet extends MVCPortlet {
 						serviceContext);
 				}
 			}
-		}else {
+		} else {
 			SessionErrors.add(actionRequest, "userrole-maxuser-error");
 		}
 	}
 	
+	
+	/**
+	 * Visualizza la lista dei consiglieri per l'anno selezionato
+	 * 
+	 * @param actionRequest
+	 * @param actionResponse
+	 * @throws SystemException
+	 * @throws PortalException
+	 */
 	public void yearsEarlier(
 			ActionRequest actionRequest, ActionResponse actionResponse)
 			throws SystemException, PortalException {
 		
+		
 		String lastBdo = "lastBdo";
 		String yearString = ParamUtil.getString(actionRequest, "year");
-		Long organization = ParamUtil.getLong(actionRequest, "currentOrganizationId");
-		int year = Integer.valueOf(yearString);
-		SimpleDateFormat sdf = 	new SimpleDateFormat("dd/MM/yyyy");
+		long esfOrganizationId = ParamUtil.getLong(actionRequest, "currentOrganizationId");
+		int annoSelezionato = Integer.valueOf(yearString);
 
-		List<ESFUserESFUserRole> userBDOAdmins = new ArrayList<ESFUserESFUserRole>();
-		List<ESFUserESFUserRole> userBDOAdminsAll =  ESFUserESFUserRoleLocalServiceUtil.findbyBDORole(organization);
-		
-		for(ESFUserESFUserRole u : userBDOAdminsAll){
-			String endDate = sdf.format(u.getEndDate());
-			String[] splitEnddate =  endDate.split("/");
+		try {
+
+			Map<Long, VW_ESFListaIncarichi> listaConsiglieriInCarica = new HashMap<Long, VW_ESFListaIncarichi>();
+			List<VW_ESFListaIncarichi> listaStoricaIncarichiConsiglieri = 
+					VW_ESFListaIncarichiLocalServiceUtil.findByorganizzazione(esfOrganizationId);
 			
-			if(Integer.valueOf(splitEnddate[2])== year){
-				userBDOAdmins.add(u);
+			///// TODO REENGINEERING 2019 - ID 40 GRINALDI
+			/*
+			 * E' in carica ANCHE se la Data fine e' null e (contemporaneamente) la data inizio e' uguale o precedente all'anno selezionato
+			 */
+	
+			System.out.println("Lista Consiglieri per l'anno[" + annoSelezionato + "] dimensione[" + listaStoricaIncarichiConsiglieri.size() + "]");
+
+
+			Calendar inizioAnnoSelezionato = Calendar.getInstance();
+			inizioAnnoSelezionato.set(annoSelezionato, Calendar.JANUARY, 1);
+
+			Calendar fineAnnoSelezionato = Calendar.getInstance();
+			fineAnnoSelezionato.set(annoSelezionato, Calendar.DECEMBER, 31);
+			
+			
+			
+			// Filtra quelli che sono in carica nell'anno selezionato
+			for (VW_ESFListaIncarichi incaricoCorrente : listaStoricaIncarichiConsiglieri) {
+	
+				boolean inCarica = true;
+				
+	
+				if ( incaricoCorrente.getEndDate() != null ) {
+	
+					Calendar fineMandato = Calendar.getInstance();
+					fineMandato.setTime( incaricoCorrente.getEndDate() );
+					
+					inCarica = fineMandato.after(inizioAnnoSelezionato);
+				}
+								
+				System.out.println("Data Inizio[" + incaricoCorrente.getStartDate() + "] annoSelezionato[" + annoSelezionato + "]");
+				
+				Calendar inizioMandato = Calendar.getInstance();
+				inizioMandato.setTime(incaricoCorrente.getStartDate());
+				
+				inCarica = inCarica && inizioMandato.before(fineAnnoSelezionato);
+	
+					
+				if ( inCarica && ! listaStoricaIncarichiConsiglieri.contains( incaricoCorrente.getEsfUserId() ) ) {
+					listaConsiglieriInCarica.put(incaricoCorrente.getEsfUserId(), incaricoCorrente);
+					System.out.println("Aggiunto incarico per consigliereID[" + incaricoCorrente.getEsfUserId() + "] nell'anno[" + yearString + "]");
+				}			
 			}
+			
+			actionResponse.setRenderParameter("mvcPath", templatePath +"view.jsp");
+			actionResponse.setRenderParameter("lastBdo", lastBdo);
+			actionResponse.setRenderParameter("yearSelected", yearString);
+			actionRequest.setAttribute("userBDOAdminsAll", listaStoricaIncarichiConsiglieri);
+			actionRequest.setAttribute("userBDOAdmins", listaConsiglieriInCarica.values());
+		} catch ( Exception e ) {
+			logger.error("Impossibile valorizzare la lista degli incarichi per l'anno[" + yearString + "]", e );
 		}
 		
-		actionResponse.setRenderParameter("mvcPath", templatePath +"view.jsp");
-		actionResponse.setRenderParameter("lastBdo", lastBdo);
-		actionResponse.setRenderParameter("yearSelected", yearString);
-		actionRequest.setAttribute("userBDOAdminsAll", userBDOAdminsAll);
-		actionRequest.setAttribute("userBDOAdmins", userBDOAdmins);
 		
 	}
 	

@@ -81,6 +81,7 @@
 	<import class="it.ethica.esf.model.ESFUserESFFederalRole" />
 	<import class="it.ethica.esf.model.ESFUserESFUserRole" />
 	<import class="it.ethica.esf.model.ESFUserRole" />
+	<import class="it.ethica.esf.model.VW_ESFListaIncarichi" />
 	<class name="it.ethica.esf.model.impl.ESFAddressImpl" table="ESFAddress">
 		<cache usage="read-write" />
 		<id name="esfAddressId" type="long">
@@ -157,6 +158,7 @@
 		<property name="esfGunTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFCardImpl" table="ESFCard">
+		<cache usage="read-write" />
 		<id name="esfCardId" type="long">
 			<generator class="assigned" />
 		</id>
@@ -371,6 +373,7 @@
 		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFFieldImpl" table="ESFField">
+		<cache usage="read-write" />
 		<id name="esfFieldId" type="long">
 			<generator class="assigned" />
 		</id>
@@ -475,6 +478,7 @@
 		<property name="esfDateAssign" type="org.hibernate.type.TimestampType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFGunImpl" table="ESFGun">
+		<cache usage="read-write" />
 		<id name="esfGunId" type="long">
 			<generator class="assigned" />
 		</id>
@@ -1277,6 +1281,7 @@
 		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFUserImpl" table="ESFUser">
+		<cache usage="read-write" />
 		<id name="esfUserId" type="long">
 			<generator class="assigned" />
 		</id>
@@ -1334,6 +1339,7 @@
 		<property name="notes" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFUserESFUserRoleImpl" table="ESFUserESFUserRole">
+		<cache usage="read-write" />
 		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.ESFUserESFUserRolePK">
 			<key-property name="esfUserRoleId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 			<key-property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
@@ -1360,5 +1366,21 @@
 		<property name="maxUser" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
 		<property name="isOrgAdmin" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
 		<property name="isEditable" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.VW_ESFListaIncarichiImpl" table="VW_ESFListaIncarichi">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.VW_ESFListaIncarichiPK">
+			<key-property name="AnniPrecedenti" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="AnnoFineIncarico" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="AnnoInizioIncarico" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="AnnoCorrente" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="NomeRuolo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="startDate" type="org.hibernate.type.TimestampType" />
+			<key-property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="esfOrganizationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="lastName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="firstName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		</composite-id>
+		<property name="endDate" type="org.hibernate.type.TimestampType" />
 	</class>
 </hibernate-mapping>

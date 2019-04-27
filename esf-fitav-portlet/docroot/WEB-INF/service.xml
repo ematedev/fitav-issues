@@ -6,7 +6,7 @@
 	<namespace>ESF</namespace>
 
 	<entity name="ESFAddress" remote-service="false" local-service="true"
-		uuid="true">
+		uuid="true" json-enabled="false">
 
 		<!-- PK fields -->
 
@@ -43,7 +43,7 @@
 		<reference entity="AssetLink" package-path="com.liferay.portlet.asset"></reference>
 	</entity>
 	<entity name="ESFCard" local-service="true" remote-service="false"
-		uuid="true" cache-enabled="false" json-enabled="false">
+		uuid="true" cache-enabled="true" json-enabled="false">
 
 		<!-- PK fields -->
 
@@ -194,7 +194,7 @@
 		</finder>
 	</entity>
 	<entity name="ESFField" local-service="true" remote-service="false"
-		uuid="true" cache-enabled="false" json-enabled="false">
+		uuid="true" cache-enabled="true" json-enabled="false">
 
 		<!-- PK fields -->
 
@@ -280,7 +280,7 @@
 		</finder>
 	</entity>
 	<entity name="ESFGun" local-service="true" remote-service="false"
-		uuid="true" cache-enabled="false" json-enabled="false">
+		uuid="true" cache-enabled="true" json-enabled="false">
 
 		<!-- PK fields -->
 
@@ -846,7 +846,6 @@
         <finder name="ESFO_R_YEAR" return-type="Collection" where="endDate is null">
             <finder-column name="esfOrganizationId"></finder-column>
             <finder-column name="esfUserRoleId"></finder-column>
-            <finder-column name="year" comparator="="></finder-column>
         </finder>
 	</entity>
 	<entity name="ESFUserRole" local-service="true" remote-service="false"
@@ -2557,7 +2556,7 @@
 		<column name="expirationMonthsNotice" type="int"></column>
 	</entity>
 	<!-- ADDED for anomalia-id16 -->
-	<entity name="ESFPublicAuthority" local-service="true" remote-service="false">
+	<entity name="ESFPublicAuthority" local-service="true" remote-service="false" json-enabled="false">
 		<!-- PK fields -->
 		<column name="esfPublicAuthorityId" type="long" primary="true"></column>
 		<!-- Audit fields -->
@@ -2566,6 +2565,26 @@
 		<!-- Entity Fields -->
 		<column name="description" type="String"></column>
 	</entity>
+    <entity remote-service="false" local-service="true" json-enabled="false" name="VW_ESFListaIncarichi" table="VW_ESFListaIncarichi">
+        <column name="AnniPrecedenti" type="int" primary="true"></column>
+        <column name="AnnoFineIncarico" type="int" primary="true"></column>
+        <column name="AnnoInizioIncarico" type="int" primary="true"></column>
+        <column name="AnnoCorrente" type="int" primary="true"></column>
+        <column name="NomeRuolo" type="String" primary="true"></column>
+        <column name="endDate" type="Date" primary="false"></column>
+        <column name="startDate" type="Date" primary="true"></column>
+        <column name="esfUserId" type="long" primary="true"></column>
+        <column name="esfOrganizationId" type="long" primary="true"></column>
+        <column name="lastName" type="String" primary="true"></column>
+        <column name="firstName" type="String" primary="true"></column>
+        <order by="asc">
+            <order-column name="endDate" order-by="asc"></order-column>
+            <order-column name="esfUserId" order-by="asc"></order-column>
+        </order>
+        <finder name="organizzazione" return-type="Collection" db-index="false">
+            <finder-column name="esfOrganizationId" comparator="="></finder-column>
+        </finder>
+    </entity>
 
 	<exceptions>
 		<exception>ESFAddressLatitude</exception>
@@ -2583,5 +2602,6 @@
 		<exception>ESFUserRoleName</exception>
 		<exception>ESFUserRoleType</exception>
 		<exception>ESFUserName</exception>
+        <exception>VW_ESFListaIncarichi</exception>
 	</exceptions>
 </service-builder>
