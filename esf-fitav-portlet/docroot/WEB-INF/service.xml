@@ -514,7 +514,7 @@
 		<reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
 		<reference package-path="com.liferay.portal" entity="Organization" />
 	</entity>
-	
+
 	
 	
 	
@@ -2585,7 +2585,7 @@
             <finder-column name="esfOrganizationId" comparator="="></finder-column>
         </finder>
     </entity>
-
+	
 	<exceptions>
 		<exception>ESFAddressLatitude</exception>
 		<exception>ESFAddressLongitude</exception>
