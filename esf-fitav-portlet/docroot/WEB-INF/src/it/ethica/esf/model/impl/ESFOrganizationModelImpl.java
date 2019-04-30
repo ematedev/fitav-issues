@@ -15,6 +15,7 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -50,6 +51,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFOrganizationModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 	implements ESFOrganizationModel {
 	/*
@@ -384,6 +386,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		}
 	}
 
+	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -407,6 +410,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		return GetterUtil.getString(_originalUuid);
 	}
 
+	@JSON
 	@Override
 	public long getEsfOrganizationId() {
 		return _esfOrganizationId;
@@ -417,6 +421,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		_esfOrganizationId = esfOrganizationId;
 	}
 
+	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -439,6 +444,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		return _originalGroupId;
 	}
 
+	@JSON
 	@Override
 	public String getCode() {
 		if (_code == null) {
@@ -464,6 +470,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		return GetterUtil.getString(_originalCode);
 	}
 
+	@JSON
 	@Override
 	public String getVat() {
 		if (_vat == null) {
@@ -489,6 +496,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		return GetterUtil.getString(_originalVat);
 	}
 
+	@JSON
 	@Override
 	public String getFiscalCode() {
 		if (_fiscalCode == null) {
@@ -514,6 +522,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		return GetterUtil.getString(_originalFiscalCode);
 	}
 
+	@JSON
 	@Override
 	public String getIbanCode() {
 		if (_ibanCode == null) {
@@ -529,6 +538,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		_ibanCode = ibanCode;
 	}
 
+	@JSON
 	@Override
 	public boolean getIsMultiSport() {
 		return _isMultiSport;
@@ -556,6 +566,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		return _originalIsMultiSport;
 	}
 
+	@JSON
 	@Override
 	public String getLegalForm() {
 		if (_legalForm == null) {
@@ -581,6 +592,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		return GetterUtil.getString(_originalLegalForm);
 	}
 
+	@JSON
 	@Override
 	public String getCategory() {
 		if (_category == null) {
@@ -606,6 +618,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		return GetterUtil.getString(_originalCategory);
 	}
 
+	@JSON
 	@Override
 	public Date getEstablishmentDate() {
 		return _establishmentDate;
@@ -616,6 +629,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		_establishmentDate = establishmentDate;
 	}
 
+	@JSON
 	@Override
 	public Date getClosureDate() {
 		return _closureDate;
@@ -626,6 +640,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		_closureDate = closureDate;
 	}
 
+	@JSON
 	@Override
 	public int getType() {
 		return _type;
@@ -648,6 +663,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		return _originalType;
 	}
 
+	@JSON
 	@Override
 	public Date getInsertDate() {
 		return _insertDate;
@@ -658,6 +674,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		_insertDate = insertDate;
 	}
 
+	@JSON
 	@Override
 	public Date getConiDate() {
 		return _coniDate;
@@ -668,6 +685,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		_coniDate = coniDate;
 	}
 
+	@JSON
 	@Override
 	public String getConiCode() {
 		if (_coniCode == null) {
@@ -683,6 +701,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		_coniCode = coniCode;
 	}
 
+	@JSON
 	@Override
 	public String getDescription() {
 		if (_description == null) {
@@ -698,6 +717,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		_description = description;
 	}
 
+	@JSON
 	@Override
 	public boolean getIsYouthActive() {
 		return _isYouthActive;
@@ -713,6 +733,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		_isYouthActive = isYouthActive;
 	}
 
+	@JSON
 	@Override
 	public Date getFirstAffiliationDate() {
 		return _firstAffiliationDate;
@@ -723,6 +744,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		_firstAffiliationDate = firstAffiliationDate;
 	}
 
+	@JSON
 	@Override
 	public long getVariations() {
 		return _variations;
@@ -733,6 +755,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		_variations = variations;
 	}
 
+	@JSON
 	@Override
 	public long getRegionCode() {
 		return _regionCode;
@@ -743,6 +766,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		_regionCode = regionCode;
 	}
 
+	@JSON
 	@Override
 	public long getIdFatherAssociation() {
 		return _idFatherAssociation;
@@ -753,6 +777,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		_idFatherAssociation = idFatherAssociation;
 	}
 
+	@JSON
 	@Override
 	public boolean getConstitutiveAct() {
 		return _constitutiveAct;
@@ -768,6 +793,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		_constitutiveAct = constitutiveAct;
 	}
 
+	@JSON
 	@Override
 	public boolean getRegisteredStatus() {
 		return _registeredStatus;
@@ -783,6 +809,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		_registeredStatus = registeredStatus;
 	}
 
+	@JSON
 	@Override
 	public boolean getPlanimetrySportsStand() {
 		return _planimetrySportsStand;
@@ -798,6 +825,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		_planimetrySportsStand = planimetrySportsStand;
 	}
 
+	@JSON
 	@Override
 	public boolean getCertificateFITAV() {
 		return _certificateFITAV;
@@ -813,6 +841,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		_certificateFITAV = certificateFITAV;
 	}
 
+	@JSON
 	@Override
 	public String getNote() {
 		if (_note == null) {
@@ -828,6 +857,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		_note = note;
 	}
 
+	@JSON
 	@Override
 	public boolean getIsSimplyOrganizzation() {
 		return _isSimplyOrganizzation;
@@ -843,6 +873,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		_isSimplyOrganizzation = isSimplyOrganizzation;
 	}
 
+	@JSON
 	@Override
 	public String getWebSite() {
 		if (_webSite == null) {
@@ -858,6 +889,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		_webSite = webSite;
 	}
 
+	@JSON
 	@Override
 	public boolean getIncludeConiReport() {
 		return _includeConiReport;
@@ -873,6 +905,7 @@ public class ESFOrganizationModelImpl extends BaseModelImpl<ESFOrganization>
 		_includeConiReport = includeConiReport;
 	}
 
+	@JSON
 	@Override
 	public String getOrganizzationCategory() {
 		if (_organizzationCategory == null) {

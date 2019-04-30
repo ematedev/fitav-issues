@@ -16,6 +16,7 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -52,6 +53,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFMatchTypeModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFMatchTypeModelImpl extends BaseModelImpl<ESFMatchType>
 	implements ESFMatchTypeModel {
 	/*
@@ -217,6 +219,7 @@ public class ESFMatchTypeModelImpl extends BaseModelImpl<ESFMatchType>
 		}
 	}
 
+	@JSON
 	@Override
 	public long getEsfMatchTypeId() {
 		return _esfMatchTypeId;
@@ -227,6 +230,7 @@ public class ESFMatchTypeModelImpl extends BaseModelImpl<ESFMatchType>
 		_esfMatchTypeId = esfMatchTypeId;
 	}
 
+	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -237,6 +241,7 @@ public class ESFMatchTypeModelImpl extends BaseModelImpl<ESFMatchType>
 		_groupId = groupId;
 	}
 
+	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -247,6 +252,7 @@ public class ESFMatchTypeModelImpl extends BaseModelImpl<ESFMatchType>
 		_companyId = companyId;
 	}
 
+	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -267,6 +273,7 @@ public class ESFMatchTypeModelImpl extends BaseModelImpl<ESFMatchType>
 		_userUuid = userUuid;
 	}
 
+	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -282,6 +289,7 @@ public class ESFMatchTypeModelImpl extends BaseModelImpl<ESFMatchType>
 		_userName = userName;
 	}
 
+	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -292,6 +300,7 @@ public class ESFMatchTypeModelImpl extends BaseModelImpl<ESFMatchType>
 		_createDate = createDate;
 	}
 
+	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -302,6 +311,7 @@ public class ESFMatchTypeModelImpl extends BaseModelImpl<ESFMatchType>
 		_modifiedDate = modifiedDate;
 	}
 
+	@JSON
 	@Override
 	public String getName() {
 		if (_name == null) {
@@ -327,6 +337,7 @@ public class ESFMatchTypeModelImpl extends BaseModelImpl<ESFMatchType>
 		return GetterUtil.getString(_originalName);
 	}
 
+	@JSON
 	@Override
 	public boolean getIsCategoryQualification() {
 		return _isCategoryQualification;
@@ -342,6 +353,7 @@ public class ESFMatchTypeModelImpl extends BaseModelImpl<ESFMatchType>
 		_isCategoryQualification = isCategoryQualification;
 	}
 
+	@JSON
 	@Override
 	public boolean getIsNational() {
 		return _isNational;
@@ -369,6 +381,7 @@ public class ESFMatchTypeModelImpl extends BaseModelImpl<ESFMatchType>
 		return _originalIsNational;
 	}
 
+	@JSON
 	@Override
 	public String getCode() {
 		if (_code == null) {

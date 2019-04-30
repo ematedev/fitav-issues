@@ -16,6 +16,7 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
@@ -53,6 +54,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFUserRoleModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFUserRoleModelImpl extends BaseModelImpl<ESFUserRole>
 	implements ESFUserRoleModel {
 	/*
@@ -245,6 +247,7 @@ public class ESFUserRoleModelImpl extends BaseModelImpl<ESFUserRole>
 		}
 	}
 
+	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -268,6 +271,7 @@ public class ESFUserRoleModelImpl extends BaseModelImpl<ESFUserRole>
 		return GetterUtil.getString(_originalUuid);
 	}
 
+	@JSON
 	@Override
 	public long getEsfUserRoleId() {
 		return _esfUserRoleId;
@@ -278,6 +282,7 @@ public class ESFUserRoleModelImpl extends BaseModelImpl<ESFUserRole>
 		_esfUserRoleId = esfUserRoleId;
 	}
 
+	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -300,6 +305,7 @@ public class ESFUserRoleModelImpl extends BaseModelImpl<ESFUserRole>
 		return _originalGroupId;
 	}
 
+	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -322,6 +328,7 @@ public class ESFUserRoleModelImpl extends BaseModelImpl<ESFUserRole>
 		return _originalCompanyId;
 	}
 
+	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -342,6 +349,7 @@ public class ESFUserRoleModelImpl extends BaseModelImpl<ESFUserRole>
 		_userUuid = userUuid;
 	}
 
+	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -357,6 +365,7 @@ public class ESFUserRoleModelImpl extends BaseModelImpl<ESFUserRole>
 		_userName = userName;
 	}
 
+	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -367,6 +376,7 @@ public class ESFUserRoleModelImpl extends BaseModelImpl<ESFUserRole>
 		_createDate = createDate;
 	}
 
+	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -377,6 +387,7 @@ public class ESFUserRoleModelImpl extends BaseModelImpl<ESFUserRole>
 		_modifiedDate = modifiedDate;
 	}
 
+	@JSON
 	@Override
 	public boolean getIsBDO() {
 		return _isBDO;
@@ -404,6 +415,7 @@ public class ESFUserRoleModelImpl extends BaseModelImpl<ESFUserRole>
 		return _originalIsBDO;
 	}
 
+	@JSON
 	@Override
 	public boolean getIsLEA() {
 		return _isLEA;
@@ -431,6 +443,7 @@ public class ESFUserRoleModelImpl extends BaseModelImpl<ESFUserRole>
 		return _originalIsLEA;
 	}
 
+	@JSON
 	@Override
 	public int getType() {
 		return _type;
@@ -453,6 +466,7 @@ public class ESFUserRoleModelImpl extends BaseModelImpl<ESFUserRole>
 		return _originalType;
 	}
 
+	@JSON
 	@Override
 	public int getMaxUser() {
 		return _maxUser;
@@ -463,6 +477,7 @@ public class ESFUserRoleModelImpl extends BaseModelImpl<ESFUserRole>
 		_maxUser = maxUser;
 	}
 
+	@JSON
 	@Override
 	public boolean getIsOrgAdmin() {
 		return _isOrgAdmin;
@@ -478,6 +493,7 @@ public class ESFUserRoleModelImpl extends BaseModelImpl<ESFUserRole>
 		_isOrgAdmin = isOrgAdmin;
 	}
 
+	@JSON
 	@Override
 	public boolean getIsEditable() {
 		return _isEditable;

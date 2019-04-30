@@ -16,6 +16,7 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -51,6 +52,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFJunioresModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFJunioresModelImpl extends BaseModelImpl<ESFJuniores>
 	implements ESFJunioresModel {
 	/*
@@ -146,6 +148,7 @@ public class ESFJunioresModelImpl extends BaseModelImpl<ESFJuniores>
 		}
 	}
 
+	@JSON
 	@Override
 	public long getESFUserId() {
 		return _ESFUserId;
@@ -166,6 +169,7 @@ public class ESFJunioresModelImpl extends BaseModelImpl<ESFJuniores>
 		_ESFUserUuid = ESFUserUuid;
 	}
 
+	@JSON
 	@Override
 	public Date getStartDate() {
 		return _startDate;
@@ -176,6 +180,7 @@ public class ESFJunioresModelImpl extends BaseModelImpl<ESFJuniores>
 		_startDate = startDate;
 	}
 
+	@JSON
 	@Override
 	public Date getEndDate() {
 		return _endDate;

@@ -15,6 +15,7 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -48,6 +49,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFLentFieldModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFLentFieldModelImpl extends BaseModelImpl<ESFLentField>
 	implements ESFLentFieldModel {
 	/*
@@ -164,6 +166,7 @@ public class ESFLentFieldModelImpl extends BaseModelImpl<ESFLentField>
 		}
 	}
 
+	@JSON
 	@Override
 	public long getLentFieldId() {
 		return _lentFieldId;
@@ -174,6 +177,7 @@ public class ESFLentFieldModelImpl extends BaseModelImpl<ESFLentField>
 		_lentFieldId = lentFieldId;
 	}
 
+	@JSON
 	@Override
 	public long getEsfEntityStateId() {
 		return _esfEntityStateId;
@@ -196,6 +200,7 @@ public class ESFLentFieldModelImpl extends BaseModelImpl<ESFLentField>
 		return _originalEsfEntityStateId;
 	}
 
+	@JSON
 	@Override
 	public long getEsfFieldId() {
 		return _esfFieldId;
@@ -218,6 +223,7 @@ public class ESFLentFieldModelImpl extends BaseModelImpl<ESFLentField>
 		return _originalEsfFieldId;
 	}
 
+	@JSON
 	@Override
 	public long getRealOwnerId() {
 		return _realOwnerId;
@@ -228,6 +234,7 @@ public class ESFLentFieldModelImpl extends BaseModelImpl<ESFLentField>
 		_realOwnerId = realOwnerId;
 	}
 
+	@JSON
 	@Override
 	public long getActualOwnerId() {
 		return _actualOwnerId;

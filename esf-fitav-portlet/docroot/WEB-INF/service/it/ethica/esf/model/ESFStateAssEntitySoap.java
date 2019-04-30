@@ -31,7 +31,6 @@ public class ESFStateAssEntitySoap implements Serializable {
 	public static ESFStateAssEntitySoap toSoapModel(ESFStateAssEntity model) {
 		ESFStateAssEntitySoap soapModel = new ESFStateAssEntitySoap();
 
-		soapModel.setUuid(model.getUuid());
 		soapModel.setEsfStateId(model.getEsfStateId());
 		soapModel.setClassName(model.getClassName());
 
@@ -90,14 +89,6 @@ public class ESFStateAssEntitySoap implements Serializable {
 		setClassName(pk.className);
 	}
 
-	public String getUuid() {
-		return _uuid;
-	}
-
-	public void setUuid(String uuid) {
-		_uuid = uuid;
-	}
-
 	public long getEsfStateId() {
 		return _esfStateId;
 	}
@@ -114,7 +105,6 @@ public class ESFStateAssEntitySoap implements Serializable {
 		_className = className;
 	}
 
-	private String _uuid;
 	private long _esfStateId;
 	private String _className;
 }

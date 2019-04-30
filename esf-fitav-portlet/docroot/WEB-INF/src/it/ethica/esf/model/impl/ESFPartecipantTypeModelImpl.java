@@ -15,6 +15,7 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -49,6 +50,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFPartecipantTypeModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFPartecipantTypeModelImpl extends BaseModelImpl<ESFPartecipantType>
 	implements ESFPartecipantTypeModel {
 	/*
@@ -148,6 +150,7 @@ public class ESFPartecipantTypeModelImpl extends BaseModelImpl<ESFPartecipantTyp
 		}
 	}
 
+	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -171,6 +174,7 @@ public class ESFPartecipantTypeModelImpl extends BaseModelImpl<ESFPartecipantTyp
 		return GetterUtil.getString(_originalUuid);
 	}
 
+	@JSON
 	@Override
 	public long getEsfPartecipantTypeId() {
 		return _esfPartecipantTypeId;
@@ -181,6 +185,7 @@ public class ESFPartecipantTypeModelImpl extends BaseModelImpl<ESFPartecipantTyp
 		_esfPartecipantTypeId = esfPartecipantTypeId;
 	}
 
+	@JSON
 	@Override
 	public String getName() {
 		if (_name == null) {

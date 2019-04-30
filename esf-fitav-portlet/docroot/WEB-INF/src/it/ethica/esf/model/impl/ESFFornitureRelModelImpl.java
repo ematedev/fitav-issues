@@ -16,6 +16,7 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -49,6 +50,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFFornitureRelModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFFornitureRelModelImpl extends BaseModelImpl<ESFFornitureRel>
 	implements ESFFornitureRelModel {
 	/*
@@ -208,6 +210,7 @@ public class ESFFornitureRelModelImpl extends BaseModelImpl<ESFFornitureRel>
 		}
 	}
 
+	@JSON
 	@Override
 	public long getEsfToolId() {
 		return _esfToolId;
@@ -230,6 +233,7 @@ public class ESFFornitureRelModelImpl extends BaseModelImpl<ESFFornitureRel>
 		return _originalEsfToolId;
 	}
 
+	@JSON
 	@Override
 	public String getClassName() {
 		if (_className == null) {
@@ -255,6 +259,7 @@ public class ESFFornitureRelModelImpl extends BaseModelImpl<ESFFornitureRel>
 		return GetterUtil.getString(_originalClassName);
 	}
 
+	@JSON
 	@Override
 	public long getClassPK() {
 		return _classPK;
@@ -277,6 +282,7 @@ public class ESFFornitureRelModelImpl extends BaseModelImpl<ESFFornitureRel>
 		return _originalClassPK;
 	}
 
+	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -287,6 +293,7 @@ public class ESFFornitureRelModelImpl extends BaseModelImpl<ESFFornitureRel>
 		_groupId = groupId;
 	}
 
+	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -297,6 +304,7 @@ public class ESFFornitureRelModelImpl extends BaseModelImpl<ESFFornitureRel>
 		_companyId = companyId;
 	}
 
+	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -317,6 +325,7 @@ public class ESFFornitureRelModelImpl extends BaseModelImpl<ESFFornitureRel>
 		_userUuid = userUuid;
 	}
 
+	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -332,6 +341,7 @@ public class ESFFornitureRelModelImpl extends BaseModelImpl<ESFFornitureRel>
 		_userName = userName;
 	}
 
+	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -342,6 +352,7 @@ public class ESFFornitureRelModelImpl extends BaseModelImpl<ESFFornitureRel>
 		_createDate = createDate;
 	}
 
+	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -352,6 +363,7 @@ public class ESFFornitureRelModelImpl extends BaseModelImpl<ESFFornitureRel>
 		_modifiedDate = modifiedDate;
 	}
 
+	@JSON
 	@Override
 	public Date getAssignmentDate() {
 		return _assignmentDate;

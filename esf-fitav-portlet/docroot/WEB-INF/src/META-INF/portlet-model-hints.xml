@@ -913,7 +913,6 @@
 		<field name="description" type="String" />
 	</model>
 	<model name="it.ethica.esf.model.ESFStateAssEntity">
-		<field name="uuid" type="String" />
 		<field name="esfStateId" type="long" />
 		<field name="className" type="String" />
 	</model>
@@ -1067,6 +1066,12 @@
 		<field name="maxUser" type="int" />
 		<field name="isOrgAdmin" type="boolean" />
 		<field name="isEditable" type="boolean" />
+	</model>
+	<model name="it.ethica.esf.model.VW_DatiDrettoreTiro">
+		<field name="esfShootingDirectorId" type="long" />
+		<field name="Nome" type="String" />
+		<field name="Cognome" type="String" />
+		<field name="CodiceRegione" type="String" />
 	</model>
 	<model name="it.ethica.esf.model.VW_ESFListaIncarichi">
 		<field name="AnniPrecedenti" type="int" />

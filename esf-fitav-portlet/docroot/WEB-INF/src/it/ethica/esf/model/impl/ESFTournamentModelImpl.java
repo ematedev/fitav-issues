@@ -16,6 +16,7 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
@@ -53,6 +54,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFTournamentModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFTournamentModelImpl extends BaseModelImpl<ESFTournament>
 	implements ESFTournamentModel {
 	/*
@@ -93,10 +95,10 @@ public class ESFTournamentModelImpl extends BaseModelImpl<ESFTournament>
 	public static final String TX_MANAGER = "liferayTransactionManager";
 	public static final boolean ENTITY_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.entity.cache.enabled.it.ethica.esf.model.ESFTournament"),
-			false);
+			true);
 	public static final boolean FINDER_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.finder.cache.enabled.it.ethica.esf.model.ESFTournament"),
-			false);
+			true);
 	public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.column.bitmask.enabled.it.ethica.esf.model.ESFTournament"),
 			true);
@@ -298,6 +300,7 @@ public class ESFTournamentModelImpl extends BaseModelImpl<ESFTournament>
 		}
 	}
 
+	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -321,6 +324,7 @@ public class ESFTournamentModelImpl extends BaseModelImpl<ESFTournament>
 		return GetterUtil.getString(_originalUuid);
 	}
 
+	@JSON
 	@Override
 	public long getEsfTournamentId() {
 		return _esfTournamentId;
@@ -331,6 +335,7 @@ public class ESFTournamentModelImpl extends BaseModelImpl<ESFTournament>
 		_esfTournamentId = esfTournamentId;
 	}
 
+	@JSON
 	@Override
 	public long getEsfOrganizationId() {
 		return _esfOrganizationId;
@@ -341,6 +346,7 @@ public class ESFTournamentModelImpl extends BaseModelImpl<ESFTournament>
 		_esfOrganizationId = esfOrganizationId;
 	}
 
+	@JSON
 	@Override
 	public String getTitle() {
 		if (_title == null) {
@@ -356,6 +362,7 @@ public class ESFTournamentModelImpl extends BaseModelImpl<ESFTournament>
 		_title = title;
 	}
 
+	@JSON
 	@Override
 	public String getDescription() {
 		if (_description == null) {
@@ -371,6 +378,7 @@ public class ESFTournamentModelImpl extends BaseModelImpl<ESFTournament>
 		_description = description;
 	}
 
+	@JSON
 	@Override
 	public long getMaxnum() {
 		return _maxnum;
@@ -381,6 +389,7 @@ public class ESFTournamentModelImpl extends BaseModelImpl<ESFTournament>
 		_maxnum = maxnum;
 	}
 
+	@JSON
 	@Override
 	public long getMinnum() {
 		return _minnum;
@@ -391,6 +400,7 @@ public class ESFTournamentModelImpl extends BaseModelImpl<ESFTournament>
 		_minnum = minnum;
 	}
 
+	@JSON
 	@Override
 	public boolean getIsSingleMatch() {
 		return _isSingleMatch;
@@ -406,6 +416,7 @@ public class ESFTournamentModelImpl extends BaseModelImpl<ESFTournament>
 		_isSingleMatch = isSingleMatch;
 	}
 
+	@JSON
 	@Override
 	public boolean getIsTeamMatch() {
 		return _isTeamMatch;
@@ -421,6 +432,7 @@ public class ESFTournamentModelImpl extends BaseModelImpl<ESFTournament>
 		_isTeamMatch = isTeamMatch;
 	}
 
+	@JSON
 	@Override
 	public boolean getIsIndividualMatch() {
 		return _isIndividualMatch;
@@ -436,6 +448,7 @@ public class ESFTournamentModelImpl extends BaseModelImpl<ESFTournament>
 		_isIndividualMatch = isIndividualMatch;
 	}
 
+	@JSON
 	@Override
 	public boolean getIsJuniorMatch() {
 		return _isJuniorMatch;
@@ -451,6 +464,7 @@ public class ESFTournamentModelImpl extends BaseModelImpl<ESFTournament>
 		_isJuniorMatch = isJuniorMatch;
 	}
 
+	@JSON
 	@Override
 	public boolean getIsNationalMatch() {
 		return _isNationalMatch;
@@ -466,6 +480,7 @@ public class ESFTournamentModelImpl extends BaseModelImpl<ESFTournament>
 		_isNationalMatch = isNationalMatch;
 	}
 
+	@JSON
 	@Override
 	public boolean getIsFinal() {
 		return _isFinal;
@@ -481,6 +496,7 @@ public class ESFTournamentModelImpl extends BaseModelImpl<ESFTournament>
 		_isFinal = isFinal;
 	}
 
+	@JSON
 	@Override
 	public Date getStartDate() {
 		return _startDate;
@@ -491,6 +507,7 @@ public class ESFTournamentModelImpl extends BaseModelImpl<ESFTournament>
 		_startDate = startDate;
 	}
 
+	@JSON
 	@Override
 	public Date getEndDate() {
 		return _endDate;
@@ -501,6 +518,7 @@ public class ESFTournamentModelImpl extends BaseModelImpl<ESFTournament>
 		_endDate = endDate;
 	}
 
+	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -523,6 +541,7 @@ public class ESFTournamentModelImpl extends BaseModelImpl<ESFTournament>
 		return _originalGroupId;
 	}
 
+	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -545,6 +564,7 @@ public class ESFTournamentModelImpl extends BaseModelImpl<ESFTournament>
 		return _originalCompanyId;
 	}
 
+	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -565,6 +585,7 @@ public class ESFTournamentModelImpl extends BaseModelImpl<ESFTournament>
 		_userUuid = userUuid;
 	}
 
+	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -580,6 +601,7 @@ public class ESFTournamentModelImpl extends BaseModelImpl<ESFTournament>
 		_userName = userName;
 	}
 
+	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -590,6 +612,7 @@ public class ESFTournamentModelImpl extends BaseModelImpl<ESFTournament>
 		_createDate = createDate;
 	}
 
+	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;

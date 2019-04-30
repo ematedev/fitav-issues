@@ -50,7 +50,7 @@ public class BDOAdminPortlet extends MVCPortlet {
 		throws IOException, PortletException {
 		
 		logger.debug("Effettuato Render della BDOAdminPortlet");
-		System.out.println("Effettuato Render della BDOAdminPortlet");
+		logger.debug("Effettuato Render della BDOAdminPortlet");
 
 
 		super.render(request, response);
@@ -143,7 +143,7 @@ public class BDOAdminPortlet extends MVCPortlet {
 			 * E' in carica ANCHE se la Data fine e' null e (contemporaneamente) la data inizio e' uguale o precedente all'anno selezionato
 			 */
 	
-			System.out.println("Lista Consiglieri per l'anno[" + annoSelezionato + "] dimensione[" + listaStoricaIncarichiConsiglieri.size() + "]");
+			logger.debug("Lista Consiglieri per l'anno[" + annoSelezionato + "] dimensione[" + listaStoricaIncarichiConsiglieri.size() + "]");
 
 
 			Calendar inizioAnnoSelezionato = Calendar.getInstance();
@@ -168,7 +168,7 @@ public class BDOAdminPortlet extends MVCPortlet {
 					inCarica = fineMandato.after(inizioAnnoSelezionato);
 				}
 								
-				System.out.println("Data Inizio[" + incaricoCorrente.getStartDate() + "] annoSelezionato[" + annoSelezionato + "]");
+				logger.debug("Data Inizio[" + incaricoCorrente.getStartDate() + "] annoSelezionato[" + annoSelezionato + "]");
 				
 				Calendar inizioMandato = Calendar.getInstance();
 				inizioMandato.setTime(incaricoCorrente.getStartDate());
@@ -176,9 +176,9 @@ public class BDOAdminPortlet extends MVCPortlet {
 				inCarica = inCarica && inizioMandato.before(fineAnnoSelezionato);
 	
 					
-				if ( inCarica && ! listaStoricaIncarichiConsiglieri.contains( incaricoCorrente.getEsfUserId() ) ) {
+				if ( inCarica && ! listaConsiglieriInCarica.containsKey( incaricoCorrente.getEsfUserId() ) ) {
 					listaConsiglieriInCarica.put(incaricoCorrente.getEsfUserId(), incaricoCorrente);
-					System.out.println("Aggiunto incarico per consigliereID[" + incaricoCorrente.getEsfUserId() + "] nell'anno[" + yearString + "]");
+					logger.debug("Aggiunto incarico per consigliereID[" + incaricoCorrente.getEsfUserId() + "] nell'anno[" + yearString + "]");
 				}			
 			}
 			

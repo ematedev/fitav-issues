@@ -19,6 +19,7 @@ import com.liferay.portal.kernel.messaging.Message;
 
 import it.ethica.esf.renewal.service.ClpSerializer;
 import it.ethica.esf.renewal.service.ESFRenewalCompanyLocalServiceUtil;
+import it.ethica.esf.renewal.service.VW_ESFListaIncarichiTesseraLocalServiceUtil;
 
 /**
  * @author Ethica
@@ -36,6 +37,8 @@ public class ClpMessageListener extends BaseMessageListener {
 		if (command.equals("undeploy") &&
 				servletContextName.equals(getServletContextName())) {
 			ESFRenewalCompanyLocalServiceUtil.clearService();
+
+			VW_ESFListaIncarichiTesseraLocalServiceUtil.clearService();
 		}
 	}
 }

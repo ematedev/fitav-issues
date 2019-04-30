@@ -309,7 +309,7 @@ catch (Exception e) {
 	/>
 
 
-<p> In nome e per conto dell'Associazione, il sottoscritto dichiara :</p>
+<p> In nome e per conto dell'Associazione, il sottoscritto dichiaraffff :</p>
 
 
 	<div>- di aver effettuato il versamento di Euro  <aui:input style="width:30px; height:14px;" 

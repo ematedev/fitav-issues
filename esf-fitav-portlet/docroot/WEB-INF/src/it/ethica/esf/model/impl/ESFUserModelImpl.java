@@ -16,6 +16,7 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -52,6 +53,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFUserModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 	implements ESFUserModel {
 	/*
@@ -298,6 +300,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		}
 	}
 
+	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -321,6 +324,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		return GetterUtil.getString(_originalUuid);
 	}
 
+	@JSON
 	@Override
 	public long getEsfUserId() {
 		return _esfUserId;
@@ -353,6 +357,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		return _originalEsfUserId;
 	}
 
+	@JSON
 	@Override
 	public String getCode() {
 		if (_code == null) {
@@ -378,6 +383,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		return GetterUtil.getString(_originalCode);
 	}
 
+	@JSON
 	@Override
 	public long getTypearmy() {
 		return _typearmy;
@@ -388,6 +394,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_typearmy = typearmy;
 	}
 
+	@JSON
 	@Override
 	public String getFiscalCode() {
 		if (_fiscalCode == null) {
@@ -413,6 +420,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		return GetterUtil.getString(_originalFiscalCode);
 	}
 
+	@JSON
 	@Override
 	public String getBirthcity() {
 		if (_birthcity == null) {
@@ -428,6 +436,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_birthcity = birthcity;
 	}
 
+	@JSON
 	@Override
 	public String getNationality() {
 		if (_nationality == null) {
@@ -443,6 +452,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_nationality = nationality;
 	}
 
+	@JSON
 	@Override
 	public boolean getIsSportsGroups() {
 		return _isSportsGroups;
@@ -458,6 +468,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_isSportsGroups = isSportsGroups;
 	}
 
+	@JSON
 	@Override
 	public String getJob() {
 		if (_job == null) {
@@ -473,6 +484,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_job = job;
 	}
 
+	@JSON
 	@Override
 	public String getIssfIdNumber() {
 		if (_issfIdNumber == null) {
@@ -488,6 +500,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_issfIdNumber = issfIdNumber;
 	}
 
+	@JSON
 	@Override
 	public long getCategoryId() {
 		return _categoryId;
@@ -498,6 +511,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_categoryId = categoryId;
 	}
 
+	@JSON
 	@Override
 	public long getPin() {
 		return _pin;
@@ -508,6 +522,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_pin = pin;
 	}
 
+	@JSON
 	@Override
 	public long getCodeUser() {
 		return _codeUser;
@@ -530,6 +545,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		return _originalCodeUser;
 	}
 
+	@JSON
 	@Override
 	public Date getDateOfDeath() {
 		return _DateOfDeath;
@@ -540,6 +556,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_DateOfDeath = DateOfDeath;
 	}
 
+	@JSON
 	@Override
 	public boolean getPrivacy1() {
 		return _privacy1;
@@ -555,6 +572,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_privacy1 = privacy1;
 	}
 
+	@JSON
 	@Override
 	public boolean getPrivacy2() {
 		return _privacy2;
@@ -570,6 +588,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_privacy2 = privacy2;
 	}
 
+	@JSON
 	@Override
 	public boolean getPrivacy3() {
 		return _privacy3;
@@ -585,6 +604,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_privacy3 = privacy3;
 	}
 
+	@JSON
 	@Override
 	public Date getDatePrivacy1() {
 		return _datePrivacy1;
@@ -595,6 +615,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_datePrivacy1 = datePrivacy1;
 	}
 
+	@JSON
 	@Override
 	public Date getDatePrivacy2() {
 		return _datePrivacy2;
@@ -605,6 +626,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_datePrivacy2 = datePrivacy2;
 	}
 
+	@JSON
 	@Override
 	public Date getDatePrivacy3() {
 		return _datePrivacy3;
@@ -615,6 +637,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_datePrivacy3 = datePrivacy3;
 	}
 
+	@JSON
 	@Override
 	public boolean getValidateCF() {
 		return _validateCF;

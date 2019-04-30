@@ -15,6 +15,7 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -50,6 +51,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFPublicAuthorityModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFPublicAuthorityModelImpl extends BaseModelImpl<ESFPublicAuthority>
 	implements ESFPublicAuthorityModel {
 	/*
@@ -153,6 +155,7 @@ public class ESFPublicAuthorityModelImpl extends BaseModelImpl<ESFPublicAuthorit
 		}
 	}
 
+	@JSON
 	@Override
 	public long getEsfPublicAuthorityId() {
 		return _esfPublicAuthorityId;
@@ -163,6 +166,7 @@ public class ESFPublicAuthorityModelImpl extends BaseModelImpl<ESFPublicAuthorit
 		_esfPublicAuthorityId = esfPublicAuthorityId;
 	}
 
+	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -173,6 +177,7 @@ public class ESFPublicAuthorityModelImpl extends BaseModelImpl<ESFPublicAuthorit
 		_createDate = createDate;
 	}
 
+	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -183,6 +188,7 @@ public class ESFPublicAuthorityModelImpl extends BaseModelImpl<ESFPublicAuthorit
 		_modifiedDate = modifiedDate;
 	}
 
+	@JSON
 	@Override
 	public String getDescription() {
 		if (_description == null) {

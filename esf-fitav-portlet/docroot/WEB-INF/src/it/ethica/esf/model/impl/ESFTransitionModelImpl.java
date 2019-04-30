@@ -16,6 +16,7 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -51,6 +52,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFTransitionModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFTransitionModelImpl extends BaseModelImpl<ESFTransition>
 	implements ESFTransitionModel {
 	/*
@@ -154,6 +156,7 @@ public class ESFTransitionModelImpl extends BaseModelImpl<ESFTransition>
 		}
 	}
 
+	@JSON
 	@Override
 	public long getEsfTransitionId() {
 		return _esfTransitionId;
@@ -164,6 +167,7 @@ public class ESFTransitionModelImpl extends BaseModelImpl<ESFTransition>
 		_esfTransitionId = esfTransitionId;
 	}
 
+	@JSON
 	@Override
 	public long getEsfUserId() {
 		return _esfUserId;
@@ -184,6 +188,7 @@ public class ESFTransitionModelImpl extends BaseModelImpl<ESFTransition>
 		_esfUserUuid = esfUserUuid;
 	}
 
+	@JSON
 	@Override
 	public long getEsfCategoryId() {
 		return _esfCategoryId;
@@ -194,6 +199,7 @@ public class ESFTransitionModelImpl extends BaseModelImpl<ESFTransition>
 		_esfCategoryId = esfCategoryId;
 	}
 
+	@JSON
 	@Override
 	public String getSeason() {
 		if (_season == null) {

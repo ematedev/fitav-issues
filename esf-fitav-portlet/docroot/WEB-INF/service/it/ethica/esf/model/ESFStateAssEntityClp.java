@@ -75,7 +75,6 @@ public class ESFStateAssEntityClp extends BaseModelImpl<ESFStateAssEntity>
 	public Map<String, Object> getModelAttributes() {
 		Map<String, Object> attributes = new HashMap<String, Object>();
 
-		attributes.put("uuid", getUuid());
 		attributes.put("esfStateId", getEsfStateId());
 		attributes.put("className", getClassName());
 
@@ -84,12 +83,6 @@ public class ESFStateAssEntityClp extends BaseModelImpl<ESFStateAssEntity>
 
 	@Override
 	public void setModelAttributes(Map<String, Object> attributes) {
-		String uuid = (String)attributes.get("uuid");
-
-		if (uuid != null) {
-			setUuid(uuid);
-		}
-
 		Long esfStateId = (Long)attributes.get("esfStateId");
 
 		if (esfStateId != null) {
@@ -100,29 +93,6 @@ public class ESFStateAssEntityClp extends BaseModelImpl<ESFStateAssEntity>
 
 		if (className != null) {
 			setClassName(className);
-		}
-	}
-
-	@Override
-	public String getUuid() {
-		return _uuid;
-	}
-
-	@Override
-	public void setUuid(String uuid) {
-		_uuid = uuid;
-
-		if (_esfStateAssEntityRemoteModel != null) {
-			try {
-				Class<?> clazz = _esfStateAssEntityRemoteModel.getClass();
-
-				Method method = clazz.getMethod("setUuid", String.class);
-
-				method.invoke(_esfStateAssEntityRemoteModel, uuid);
-			}
-			catch (Exception e) {
-				throw new UnsupportedOperationException(e);
-			}
 		}
 	}
 
@@ -243,7 +213,6 @@ public class ESFStateAssEntityClp extends BaseModelImpl<ESFStateAssEntity>
 	public Object clone() {
 		ESFStateAssEntityClp clone = new ESFStateAssEntityClp();
 
-		clone.setUuid(getUuid());
 		clone.setEsfStateId(getEsfStateId());
 		clone.setClassName(getClassName());
 
@@ -286,11 +255,9 @@ public class ESFStateAssEntityClp extends BaseModelImpl<ESFStateAssEntity>
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(7);
+		StringBundler sb = new StringBundler(5);
 
-		sb.append("{uuid=");
-		sb.append(getUuid());
-		sb.append(", esfStateId=");
+		sb.append("{esfStateId=");
 		sb.append(getEsfStateId());
 		sb.append(", className=");
 		sb.append(getClassName());
@@ -301,16 +268,12 @@ public class ESFStateAssEntityClp extends BaseModelImpl<ESFStateAssEntity>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(13);
+		StringBundler sb = new StringBundler(10);
 
 		sb.append("<model><model-name>");
 		sb.append("it.ethica.esf.model.ESFStateAssEntity");
 		sb.append("</model-name>");
 
-		sb.append(
-			"<column><column-name>uuid</column-name><column-value><![CDATA[");
-		sb.append(getUuid());
-		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>esfStateId</column-name><column-value><![CDATA[");
 		sb.append(getEsfStateId());
@@ -325,7 +288,6 @@ public class ESFStateAssEntityClp extends BaseModelImpl<ESFStateAssEntity>
 		return sb.toString();
 	}
 
-	private String _uuid;
 	private long _esfStateId;
 	private String _className;
 	private BaseModel<?> _esfStateAssEntityRemoteModel;

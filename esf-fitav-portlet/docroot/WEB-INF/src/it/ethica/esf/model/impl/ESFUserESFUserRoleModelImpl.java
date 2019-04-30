@@ -16,6 +16,7 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -48,6 +49,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFUserESFUserRoleModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFUserESFUserRoleModelImpl extends BaseModelImpl<ESFUserESFUserRole>
 	implements ESFUserESFUserRoleModel {
 	/*
@@ -171,6 +173,7 @@ public class ESFUserESFUserRoleModelImpl extends BaseModelImpl<ESFUserESFUserRol
 		}
 	}
 
+	@JSON
 	@Override
 	public long getEsfUserRoleId() {
 		return _esfUserRoleId;
@@ -193,6 +196,7 @@ public class ESFUserESFUserRoleModelImpl extends BaseModelImpl<ESFUserESFUserRol
 		return _originalEsfUserRoleId;
 	}
 
+	@JSON
 	@Override
 	public long getEsfUserId() {
 		return _esfUserId;
@@ -225,6 +229,7 @@ public class ESFUserESFUserRoleModelImpl extends BaseModelImpl<ESFUserESFUserRol
 		return _originalEsfUserId;
 	}
 
+	@JSON(include = false)
 	@Override
 	public long getEsfOrganizationId() {
 		return _esfOrganizationId;
@@ -247,6 +252,7 @@ public class ESFUserESFUserRoleModelImpl extends BaseModelImpl<ESFUserESFUserRol
 		return _originalEsfOrganizationId;
 	}
 
+	@JSON
 	@Override
 	public Date getStartDate() {
 		return _startDate;
@@ -257,6 +263,7 @@ public class ESFUserESFUserRoleModelImpl extends BaseModelImpl<ESFUserESFUserRol
 		_startDate = startDate;
 	}
 
+	@JSON
 	@Override
 	public Date getEndDate() {
 		return _endDate;

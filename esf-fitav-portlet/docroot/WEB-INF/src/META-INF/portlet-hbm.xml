@@ -81,6 +81,7 @@
 	<import class="it.ethica.esf.model.ESFUserESFFederalRole" />
 	<import class="it.ethica.esf.model.ESFUserESFUserRole" />
 	<import class="it.ethica.esf.model.ESFUserRole" />
+	<import class="it.ethica.esf.model.VW_DatiDrettoreTiro" />
 	<import class="it.ethica.esf.model.VW_ESFListaIncarichi" />
 	<class name="it.ethica.esf.model.impl.ESFAddressImpl" table="ESFAddress">
 		<cache usage="read-write" />
@@ -1055,6 +1056,7 @@
 		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFShooterCategoryESFMatchImpl" table="ESFShooterCategoryESFMatch">
+		<cache usage="read-write" />
 		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.ESFShooterCategoryESFMatchPK">
 			<key-property name="esfShooterCategoryId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 			<key-property name="esfMatchId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
@@ -1068,6 +1070,7 @@
 		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFShooterCategoryESFTournamentImpl" table="ESFShooterCategoryESFTournament">
+		<cache usage="read-write" />
 		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.ESFShooterCategoryESFTournamentPK">
 			<key-property name="esfShooterCategoryId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 			<key-property name="esfTournamentId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
@@ -1107,6 +1110,7 @@
 		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFShooterQualificationESFTournamentImpl" table="ESFShooterQualificationESFTournament">
+		<cache usage="read-write" />
 		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.ESFShooterQualificationESFTournamentPK">
 			<key-property name="esfShooterQualificationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 			<key-property name="esfTournamentId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
@@ -1186,7 +1190,6 @@
 			<key-property name="esfStateId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 			<key-property name="className" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		</composite-id>
-		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFSuspensiveCodeImpl" table="ESFSuspensiveCode">
 		<cache usage="read-write" />
@@ -1233,6 +1236,7 @@
 		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFTournamentImpl" table="ESFTournament">
+		<cache usage="read-write" />
 		<id name="esfTournamentId" type="long">
 			<generator class="assigned" />
 		</id>
@@ -1366,6 +1370,15 @@
 		<property name="maxUser" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
 		<property name="isOrgAdmin" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
 		<property name="isEditable" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.VW_DatiDrettoreTiroImpl" table="vw_datidirettoretiro">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPK">
+			<key-property name="esfShootingDirectorId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="Nome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="Cognome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="CodiceRegione" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		</composite-id>
 	</class>
 	<class name="it.ethica.esf.model.impl.VW_ESFListaIncarichiImpl" table="VW_ESFListaIncarichi">
 		<cache usage="read-write" />

@@ -104,6 +104,7 @@ import it.ethica.esf.model.ESFUserESFFederalRoleClp;
 import it.ethica.esf.model.ESFUserESFUserRoleClp;
 import it.ethica.esf.model.ESFUserRoleClp;
 import it.ethica.esf.model.ESFgunUserClp;
+import it.ethica.esf.model.VW_DatiDrettoreTiroClp;
 import it.ethica.esf.model.VW_ESFListaIncarichiClp;
 
 import java.io.ObjectInputStream;
@@ -506,6 +507,10 @@ public class ClpSerializer {
 
 		if (oldModelClassName.equals(ESFUserRoleClp.class.getName())) {
 			return translateInputESFUserRole(oldModel);
+		}
+
+		if (oldModelClassName.equals(VW_DatiDrettoreTiroClp.class.getName())) {
+			return translateInputVW_DatiDrettoreTiro(oldModel);
 		}
 
 		if (oldModelClassName.equals(VW_ESFListaIncarichiClp.class.getName())) {
@@ -1336,6 +1341,17 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+	public static Object translateInputVW_DatiDrettoreTiro(
+		BaseModel<?> oldModel) {
+		VW_DatiDrettoreTiroClp oldClpModel = (VW_DatiDrettoreTiroClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getVW_DatiDrettoreTiroRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
 	public static Object translateInputVW_ESFListaIncarichi(
 		BaseModel<?> oldModel) {
 		VW_ESFListaIncarichiClp oldClpModel = (VW_ESFListaIncarichiClp)oldModel;
@@ -1727,6 +1743,11 @@ public class ClpSerializer {
 
 		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFUserRoleImpl")) {
 			return translateOutputESFUserRole(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.VW_DatiDrettoreTiroImpl")) {
+			return translateOutputVW_DatiDrettoreTiro(oldModel);
 		}
 
 		if (oldModelClassName.equals(
@@ -2204,6 +2225,10 @@ public class ClpSerializer {
 
 		if (className.equals("it.ethica.esf.NoSuchUserRoleException")) {
 			return new it.ethica.esf.NoSuchUserRoleException();
+		}
+
+		if (className.equals("it.ethica.esf.NoSuchVW_DatiDrettoreTiroException")) {
+			return new it.ethica.esf.NoSuchVW_DatiDrettoreTiroException();
 		}
 
 		if (className.equals(
@@ -3024,6 +3049,17 @@ public class ClpSerializer {
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
 		newModel.setESFUserRoleRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputVW_DatiDrettoreTiro(
+		BaseModel<?> oldModel) {
+		VW_DatiDrettoreTiroClp newModel = new VW_DatiDrettoreTiroClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setVW_DatiDrettoreTiroRemoteModel(oldModel);
 
 		return newModel;
 	}

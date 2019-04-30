@@ -126,6 +126,7 @@ import it.ethica.esf.service.persistence.ESFUserPersistence;
 import it.ethica.esf.service.persistence.ESFUserRolePersistence;
 import it.ethica.esf.service.persistence.ESFgunUserFinder;
 import it.ethica.esf.service.persistence.ESFgunUserPersistence;
+import it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPersistence;
 import it.ethica.esf.service.persistence.VW_ESFListaIncarichiPersistence;
 
 import java.io.Serializable;
@@ -3629,6 +3630,44 @@ public abstract class ESFShooterAffiliationChronoLocalServiceBaseImpl
 	}
 
 	/**
+	 * Returns the v w_ dati drettore tiro local service.
+	 *
+	 * @return the v w_ dati drettore tiro local service
+	 */
+	public it.ethica.esf.service.VW_DatiDrettoreTiroLocalService getVW_DatiDrettoreTiroLocalService() {
+		return vw_DatiDrettoreTiroLocalService;
+	}
+
+	/**
+	 * Sets the v w_ dati drettore tiro local service.
+	 *
+	 * @param vw_DatiDrettoreTiroLocalService the v w_ dati drettore tiro local service
+	 */
+	public void setVW_DatiDrettoreTiroLocalService(
+		it.ethica.esf.service.VW_DatiDrettoreTiroLocalService vw_DatiDrettoreTiroLocalService) {
+		this.vw_DatiDrettoreTiroLocalService = vw_DatiDrettoreTiroLocalService;
+	}
+
+	/**
+	 * Returns the v w_ dati drettore tiro persistence.
+	 *
+	 * @return the v w_ dati drettore tiro persistence
+	 */
+	public VW_DatiDrettoreTiroPersistence getVW_DatiDrettoreTiroPersistence() {
+		return vw_DatiDrettoreTiroPersistence;
+	}
+
+	/**
+	 * Sets the v w_ dati drettore tiro persistence.
+	 *
+	 * @param vw_DatiDrettoreTiroPersistence the v w_ dati drettore tiro persistence
+	 */
+	public void setVW_DatiDrettoreTiroPersistence(
+		VW_DatiDrettoreTiroPersistence vw_DatiDrettoreTiroPersistence) {
+		this.vw_DatiDrettoreTiroPersistence = vw_DatiDrettoreTiroPersistence;
+	}
+
+	/**
 	 * Returns the v w_ e s f lista incarichi local service.
 	 *
 	 * @return the v w_ e s f lista incarichi local service
@@ -4186,6 +4225,10 @@ public abstract class ESFShooterAffiliationChronoLocalServiceBaseImpl
 	protected it.ethica.esf.service.ESFUserRoleLocalService esfUserRoleLocalService;
 	@BeanReference(type = ESFUserRolePersistence.class)
 	protected ESFUserRolePersistence esfUserRolePersistence;
+	@BeanReference(type = it.ethica.esf.service.VW_DatiDrettoreTiroLocalService.class)
+	protected it.ethica.esf.service.VW_DatiDrettoreTiroLocalService vw_DatiDrettoreTiroLocalService;
+	@BeanReference(type = VW_DatiDrettoreTiroPersistence.class)
+	protected VW_DatiDrettoreTiroPersistence vw_DatiDrettoreTiroPersistence;
 	@BeanReference(type = it.ethica.esf.service.VW_ESFListaIncarichiLocalService.class)
 	protected it.ethica.esf.service.VW_ESFListaIncarichiLocalService vw_esfListaIncarichiLocalService;
 	@BeanReference(type = VW_ESFListaIncarichiPersistence.class)

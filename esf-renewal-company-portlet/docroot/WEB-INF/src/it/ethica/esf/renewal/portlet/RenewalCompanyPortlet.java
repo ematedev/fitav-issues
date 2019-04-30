@@ -1,24 +1,20 @@
 package it.ethica.esf.renewal.portlet;
 
-import it.ethica.esf.model.ESFOrganization;
-import it.ethica.esf.model.ESFUser;
-import it.ethica.esf.renewal.model.ESFRenewalCompany;
-import it.ethica.esf.renewal.service.ESFRenewalCompanyLocalServiceUtil;
-import it.ethica.esf.service.ESFOrganizationLocalServiceUtil;
-import it.ethica.esf.service.ESFUserLocalServiceUtil;
-import it.ethica.esf.util.ESFRenewalConstants;
-import it.ethica.esf.util.ManageDate;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 import javax.portlet.PortletException;
-import javax.portlet.PortletSession;
+import javax.portlet.RenderRequest;
+import javax.portlet.RenderResponse;
 import javax.portlet.ResourceRequest;
 import javax.portlet.ResourceResponse;
 
@@ -53,10 +49,125 @@ import com.liferay.portal.theme.ThemeDisplay;
 import com.liferay.portal.util.PortalUtil;
 import com.liferay.util.bridges.mvc.MVCPortlet;
 
+import it.ethica.esf.model.ESFOrganization;
+import it.ethica.esf.model.ESFUser;
+import it.ethica.esf.model.VW_ESFListaIncarichi;
+import it.ethica.esf.renewal.model.ESFRenewalCompany;
+import it.ethica.esf.renewal.model.VW_ESFListaIncarichiTessera;
+import it.ethica.esf.renewal.service.ESFRenewalCompanyLocalServiceUtil;
+import it.ethica.esf.renewal.service.VW_ESFListaIncarichiTesseraLocalServiceUtil;
+import it.ethica.esf.service.ESFOrganizationLocalServiceUtil;
+import it.ethica.esf.service.ESFUserLocalServiceUtil;
+import it.ethica.esf.util.ESFRenewalConstants;
+import it.ethica.esf.util.ManageDate;
+
 /**
  * Portlet implementation class RegistrationRenewal
  */
 public class RenewalCompanyPortlet extends MVCPortlet {
+
+	Log logger =  LogFactoryUtil.getLog(RenewalCompanyPortlet.class);
+	
+	
+	@Override
+	public void doView(RenderRequest renderRequest, RenderResponse renderResponse)
+			throws IOException, PortletException {
+		
+		renderRequest.setAttribute("doView", "Questo l'ha impostato doView");
+		
+		System.out.println("Chiamato View RenewalCompanyPortlet");
+		super.doView(renderRequest, renderResponse);
+	}
+
+
+	@Override
+	public void render(RenderRequest request, RenderResponse response) throws PortletException, IOException {
+		
+		
+		// OTTIENI l'ID ESFOrganizationId a partire dal contesto dove sta girando la Portlet
+		try {
+			ThemeDisplay themeDisplay= (ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);
+			long scopeGroupId = themeDisplay.getScopeGroupId();
+			Group group = GroupLocalServiceUtil.getGroup(scopeGroupId);
+			long currentOrganizationId = group.getOrganizationId();
+	
+			ESFOrganization currentESFOrganization = ESFOrganizationLocalServiceUtil.fetchESFOrganization(currentOrganizationId);
+			long esfOrganizationId = currentESFOrganization.getEsfOrganizationId();
+			
+			
+			
+			// Lista dei Consiglieri per l'anno in corso per cui si richiede la Riaffiliazione
+			
+			Map<Long, VW_ESFListaIncarichiTessera> listaConsiglieriInCarica = new HashMap<Long, VW_ESFListaIncarichiTessera>();
+			List<VW_ESFListaIncarichiTessera> listaStoricaIncarichiConsiglieri = 
+					VW_ESFListaIncarichiTesseraLocalServiceUtil.findByorganizzazione(esfOrganizationId);
+	
+			int annoCorrente = Calendar.getInstance().get(Calendar.YEAR);
+			
+			
+			logger.debug("Lista Consiglieri per l'anno[" + annoCorrente + "] dimensione[" + listaStoricaIncarichiConsiglieri.size() + "]");
+	
+	
+			Calendar inizioAnnoSelezionato = Calendar.getInstance();
+			inizioAnnoSelezionato.set(annoCorrente, Calendar.JANUARY, 1);
+	
+			Calendar fineAnnoSelezionato = Calendar.getInstance();
+			fineAnnoSelezionato.set(annoCorrente, Calendar.DECEMBER, 31);
+			
+			
+			
+			// Filtra quelli che sono in carica nell'anno selezionato
+			for (VW_ESFListaIncarichiTessera incaricoCorrente : listaStoricaIncarichiConsiglieri) {
+	
+				boolean inCarica = true;
+				
+	
+				if ( incaricoCorrente.getEndDate() != null ) {
+	
+					Calendar fineMandato = Calendar.getInstance();
+					fineMandato.setTime( incaricoCorrente.getEndDate() );
+					
+					inCarica = fineMandato.after(inizioAnnoSelezionato);
+				}
+								
+				logger.debug("Data Inizio[" + incaricoCorrente.getStartDate() + "] annoSelezionato[" + annoCorrente + "]");
+				
+				Calendar inizioMandato = Calendar.getInstance();
+				inizioMandato.setTime(incaricoCorrente.getStartDate());
+				
+				inCarica = inCarica && inizioMandato.before(fineAnnoSelezionato);
+	
+					
+				if ( inCarica && ! listaConsiglieriInCarica.containsKey( incaricoCorrente.getEsfUserId() ) ) {
+					listaConsiglieriInCarica.put(incaricoCorrente.getEsfUserId(), incaricoCorrente);
+					logger.debug("Aggiunto incarico per consigliereID[" + incaricoCorrente.getEsfUserId() + "] nell'anno[" + annoCorrente + "]");
+				}			
+			}
+			
+			
+			
+			
+			request.setAttribute("render", "Questo l'ha impostato Render");
+	
+			System.out.println("Chiamato Render RenewalCompanyPortlet");
+			// Necessario (non so fare altrimenti) per inviarlo al searchcontainer			
+			List<VW_ESFListaIncarichiTessera> list = new ArrayList<VW_ESFListaIncarichiTessera>();
+			list.addAll(listaConsiglieriInCarica.values());
+			request.setAttribute("listaIncarichiConsiglioDirettivo", list);
+
+			request.setAttribute("dimensioneLista", listaConsiglieriInCarica.size());
+		} catch ( SystemException | PortalException exception ) {
+			logger.error("Impossibile ottenere la lista degli incarichi Consiglio Direttivo", exception );
+			exception.printStackTrace();
+			throw new PortletException( exception );
+		}
+		
+		
+		super.render(request, response);
+	}
+	
+	
+	
 
 	public void checkPin(ActionRequest actionRequest,
 			ActionResponse actionResponse) throws IOException,

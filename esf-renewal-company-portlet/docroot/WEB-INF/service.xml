@@ -5,7 +5,7 @@
 	<author>Ethica</author>
 	<namespace>ESFRN</namespace>
 	
-	<entity name="ESFRenewalCompany" local-service="true" remote-service="false">
+	<entity name="ESFRenewalCompany" local-service="true" remote-service="false" json-enabled="false">
 		<column name="esfRenewalCompanyId" type="long" primary="true" />
 		<column name="userId" type="long" />
 		<column name="esfOrganizationId" type="long" />
@@ -50,4 +50,26 @@
 			<finder-column name="year" />
 		</finder>
 	</entity>
+	<entity remote-service="false" local-service="true" json-enabled="false" name="VW_ESFListaIncarichiTessera" table="vw_listaincarichitessera">
+        <column name="AnniPrecedenti" type="int" primary="true" json-enabled="false"></column>
+        <column name="AnnoFineIncarico" type="int" primary="true" json-enabled="false"></column>
+        <column name="AnnoInizioIncarico" type="int" primary="true" json-enabled="false"></column>
+        <column name="AnnoCorrente" type="int" primary="true" json-enabled="false"></column>
+        <column name="NomeRuolo" type="String" primary="true" json-enabled="false"></column>
+        <column name="endDate" type="Date" primary="false"></column>
+        <column name="startDate" type="Date" primary="true" json-enabled="false"></column>
+        <column name="esfUserId" type="long" primary="true" json-enabled="false"></column>
+        <column name="esfOrganizationId" type="long" primary="true" json-enabled="false"></column>
+        <column name="lastName" type="String" primary="true"></column>
+        <column name="firstName" type="String" primary="true"></column>
+        <column name="CodiceTessera" type="String" primary="false"></column>
+        <column name="DataTesseramento" type="Date" primary="false"></column>
+        <order by="asc">
+            <order-column name="endDate" order-by="asc"></order-column>
+            <order-column name="esfUserId" order-by="asc"></order-column>
+        </order>
+        <finder name="organizzazione" return-type="Collection" db-index="false">
+            <finder-column name="esfOrganizationId" comparator="="></finder-column>
+        </finder>
+    </entity>
 </service-builder>

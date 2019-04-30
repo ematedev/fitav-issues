@@ -981,7 +981,6 @@ create table ESFState (
 );
 
 create table ESFStateAssEntity (
-	uuid_ VARCHAR(75) null,
 	esfStateId LONG not null,
 	className VARCHAR(75) not null,
 	primary key (esfStateId, className)
@@ -1232,6 +1231,14 @@ create table esforganization (
 	includeConiReport BOOLEAN,
 	organizzationCategory VARCHAR(75) null,
 	type_ INTEGER
+);
+
+create table vw_datidirettoretiro (
+	esfShootingDirectorId LONG not null,
+	Nome VARCHAR(75) not null,
+	Cognome VARCHAR(75) not null,
+	CodiceRegione VARCHAR(75) not null,
+	primary key (esfShootingDirectorId, Nome, Cognome, CodiceRegione)
 );
 
 create table vw_esflistaincarichi (

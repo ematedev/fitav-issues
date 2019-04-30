@@ -15,6 +15,7 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -48,6 +49,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFAnnualConiReportModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFAnnualConiReportModelImpl extends BaseModelImpl<ESFAnnualConiReport>
 	implements ESFAnnualConiReportModel {
 	/*
@@ -148,6 +150,7 @@ public class ESFAnnualConiReportModelImpl extends BaseModelImpl<ESFAnnualConiRep
 		}
 	}
 
+	@JSON
 	@Override
 	public long getAnnualConiReportId() {
 		return _annualConiReportId;
@@ -158,6 +161,7 @@ public class ESFAnnualConiReportModelImpl extends BaseModelImpl<ESFAnnualConiRep
 		_annualConiReportId = annualConiReportId;
 	}
 
+	@JSON
 	@Override
 	public long getAssId() {
 		return _assId;
@@ -180,6 +184,7 @@ public class ESFAnnualConiReportModelImpl extends BaseModelImpl<ESFAnnualConiRep
 		return _originalAssId;
 	}
 
+	@JSON
 	@Override
 	public int getYear() {
 		return _year;

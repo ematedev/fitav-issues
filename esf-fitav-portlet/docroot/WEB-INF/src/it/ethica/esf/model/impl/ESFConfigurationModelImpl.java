@@ -16,6 +16,7 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -52,6 +53,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFConfigurationModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFConfigurationModelImpl extends BaseModelImpl<ESFConfiguration>
 	implements ESFConfigurationModel {
 	/*
@@ -200,6 +202,7 @@ public class ESFConfigurationModelImpl extends BaseModelImpl<ESFConfiguration>
 		}
 	}
 
+	@JSON
 	@Override
 	public long getEsfConfigurationId() {
 		return _esfConfigurationId;
@@ -210,6 +213,7 @@ public class ESFConfigurationModelImpl extends BaseModelImpl<ESFConfiguration>
 		_esfConfigurationId = esfConfigurationId;
 	}
 
+	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -232,6 +236,7 @@ public class ESFConfigurationModelImpl extends BaseModelImpl<ESFConfiguration>
 		return _originalGroupId;
 	}
 
+	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -242,6 +247,7 @@ public class ESFConfigurationModelImpl extends BaseModelImpl<ESFConfiguration>
 		_companyId = companyId;
 	}
 
+	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -262,6 +268,7 @@ public class ESFConfigurationModelImpl extends BaseModelImpl<ESFConfiguration>
 		_userUuid = userUuid;
 	}
 
+	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -277,6 +284,7 @@ public class ESFConfigurationModelImpl extends BaseModelImpl<ESFConfiguration>
 		_userName = userName;
 	}
 
+	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -287,6 +295,7 @@ public class ESFConfigurationModelImpl extends BaseModelImpl<ESFConfiguration>
 		_createDate = createDate;
 	}
 
+	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -297,6 +306,7 @@ public class ESFConfigurationModelImpl extends BaseModelImpl<ESFConfiguration>
 		_modifiedDate = modifiedDate;
 	}
 
+	@JSON
 	@Override
 	public String getKey() {
 		if (_key == null) {
@@ -322,6 +332,7 @@ public class ESFConfigurationModelImpl extends BaseModelImpl<ESFConfiguration>
 		return GetterUtil.getString(_originalKey);
 	}
 
+	@JSON
 	@Override
 	public String getValue() {
 		if (_value == null) {

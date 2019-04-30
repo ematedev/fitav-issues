@@ -16,6 +16,7 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
@@ -53,6 +54,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFSpecificModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFSpecificModelImpl extends BaseModelImpl<ESFSpecific>
 	implements ESFSpecificModel {
 	/*
@@ -211,6 +213,7 @@ public class ESFSpecificModelImpl extends BaseModelImpl<ESFSpecific>
 		}
 	}
 
+	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -234,6 +237,7 @@ public class ESFSpecificModelImpl extends BaseModelImpl<ESFSpecific>
 		return GetterUtil.getString(_originalUuid);
 	}
 
+	@JSON
 	@Override
 	public long getEsfSpecificId() {
 		return _esfSpecificId;
@@ -244,6 +248,7 @@ public class ESFSpecificModelImpl extends BaseModelImpl<ESFSpecific>
 		_esfSpecificId = esfSpecificId;
 	}
 
+	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -266,6 +271,7 @@ public class ESFSpecificModelImpl extends BaseModelImpl<ESFSpecific>
 		return _originalGroupId;
 	}
 
+	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -288,6 +294,7 @@ public class ESFSpecificModelImpl extends BaseModelImpl<ESFSpecific>
 		return _originalCompanyId;
 	}
 
+	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -308,6 +315,7 @@ public class ESFSpecificModelImpl extends BaseModelImpl<ESFSpecific>
 		_userUuid = userUuid;
 	}
 
+	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -323,6 +331,7 @@ public class ESFSpecificModelImpl extends BaseModelImpl<ESFSpecific>
 		_userName = userName;
 	}
 
+	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -333,6 +342,7 @@ public class ESFSpecificModelImpl extends BaseModelImpl<ESFSpecific>
 		_createDate = createDate;
 	}
 
+	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -343,6 +353,7 @@ public class ESFSpecificModelImpl extends BaseModelImpl<ESFSpecific>
 		_modifiedDate = modifiedDate;
 	}
 
+	@JSON
 	@Override
 	public String getCode() {
 		if (_code == null) {
@@ -368,6 +379,7 @@ public class ESFSpecificModelImpl extends BaseModelImpl<ESFSpecific>
 		return GetterUtil.getString(_originalCode);
 	}
 
+	@JSON
 	@Override
 	public String getDescription() {
 		if (_description == null) {

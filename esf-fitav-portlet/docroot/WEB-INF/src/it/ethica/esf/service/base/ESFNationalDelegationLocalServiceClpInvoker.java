@@ -122,67 +122,67 @@ public class ESFNationalDelegationLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFNationalDelegation"
 			};
 
-		_methodName380 = "getBeanIdentifier";
+		_methodName384 = "getBeanIdentifier";
 
-		_methodParameterTypes380 = new String[] {  };
+		_methodParameterTypes384 = new String[] {  };
 
-		_methodName381 = "setBeanIdentifier";
+		_methodName385 = "setBeanIdentifier";
 
-		_methodParameterTypes381 = new String[] { "java.lang.String" };
+		_methodParameterTypes385 = new String[] { "java.lang.String" };
 
-		_methodName386 = "getESFNationalDelegationByMatchId_PartecipantTypeId";
-
-		_methodParameterTypes386 = new String[] { "long", "long" };
-
-		_methodName387 = "getESFNationalDelegationByMatchId_PartecipantTypeId_sportTypeId";
-
-		_methodParameterTypes387 = new String[] { "long", "long", "long" };
-
-		_methodName388 = "getMatchId_SportTypeId_QualificationId";
-
-		_methodParameterTypes388 = new String[] { "long", "long", "long" };
-
-		_methodName389 = "getMatchId_UserId_SportTypeId_QualificationId";
-
-		_methodParameterTypes389 = new String[] { "long", "long", "long", "long" };
-
-		_methodName390 = "getESFNationalDelegationByESFUserId_ESFMatchId";
+		_methodName390 = "getESFNationalDelegationByMatchId_PartecipantTypeId";
 
 		_methodParameterTypes390 = new String[] { "long", "long" };
 
-		_methodName391 = "getESFNationalDelegationByESFMatchId";
+		_methodName391 = "getESFNationalDelegationByMatchId_PartecipantTypeId_sportTypeId";
 
-		_methodParameterTypes391 = new String[] { "long" };
+		_methodParameterTypes391 = new String[] { "long", "long", "long" };
 
-		_methodName392 = "getPartecipantType_EsfUserId";
+		_methodName392 = "getMatchId_SportTypeId_QualificationId";
 
-		_methodParameterTypes392 = new String[] { "long" };
+		_methodParameterTypes392 = new String[] { "long", "long", "long" };
 
-		_methodName393 = "findByPartecipantType_EsfUserId";
+		_methodName393 = "getMatchId_UserId_SportTypeId_QualificationId";
 
-		_methodParameterTypes393 = new String[] { "long", "long", "int", "int" };
+		_methodParameterTypes393 = new String[] { "long", "long", "long", "long" };
 
-		_methodName394 = "countPartecipantType_EsfUserId";
+		_methodName394 = "getESFNationalDelegationByESFUserId_ESFMatchId";
 
 		_methodParameterTypes394 = new String[] { "long", "long" };
 
-		_methodName395 = "getESFNationalDelegationByESFMatchIdNotShooter";
+		_methodName395 = "getESFNationalDelegationByESFMatchId";
 
 		_methodParameterTypes395 = new String[] { "long" };
 
-		_methodName396 = "deleteESFNationalDelegation";
+		_methodName396 = "getPartecipantType_EsfUserId";
 
-		_methodParameterTypes396 = new String[] { "long", "long" };
+		_methodParameterTypes396 = new String[] { "long" };
 
-		_methodName397 = "changeCard";
+		_methodName397 = "findByPartecipantType_EsfUserId";
 
-		_methodParameterTypes397 = new String[] {
+		_methodParameterTypes397 = new String[] { "long", "long", "int", "int" };
+
+		_methodName398 = "countPartecipantType_EsfUserId";
+
+		_methodParameterTypes398 = new String[] { "long", "long" };
+
+		_methodName399 = "getESFNationalDelegationByESFMatchIdNotShooter";
+
+		_methodParameterTypes399 = new String[] { "long" };
+
+		_methodName400 = "deleteESFNationalDelegation";
+
+		_methodParameterTypes400 = new String[] { "long", "long" };
+
+		_methodName401 = "changeCard";
+
+		_methodParameterTypes401 = new String[] {
 				"javax.portlet.ActionRequest", "javax.portlet.ActionResponse"
 			};
 
-		_methodName398 = "findConvocation";
+		_methodName402 = "findConvocation";
 
-		_methodParameterTypes398 = new String[] { "long", "long", "int" };
+		_methodParameterTypes402 = new String[] { "long", "long", "int" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -298,97 +298,97 @@ public class ESFNationalDelegationLocalServiceClpInvoker {
 			return ESFNationalDelegationLocalServiceUtil.updateESFNationalDelegation((it.ethica.esf.model.ESFNationalDelegation)arguments[0]);
 		}
 
-		if (_methodName380.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
+		if (_methodName384.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
 			return ESFNationalDelegationLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName381.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes381, parameterTypes)) {
+		if (_methodName385.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
 			ESFNationalDelegationLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName386.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
+		if (_methodName390.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
 			return ESFNationalDelegationLocalServiceUtil.getESFNationalDelegationByMatchId_PartecipantTypeId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName387.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
+		if (_methodName391.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
 			return ESFNationalDelegationLocalServiceUtil.getESFNationalDelegationByMatchId_PartecipantTypeId_sportTypeId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue());
 		}
 
-		if (_methodName388.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
+		if (_methodName392.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFNationalDelegationLocalServiceUtil.getMatchId_SportTypeId_QualificationId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue());
 		}
 
-		if (_methodName389.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes389, parameterTypes)) {
+		if (_methodName393.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
 			return ESFNationalDelegationLocalServiceUtil.getMatchId_UserId_SportTypeId_QualificationId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
 				((Long)arguments[3]).longValue());
 		}
 
-		if (_methodName390.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
+		if (_methodName394.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
 			return ESFNationalDelegationLocalServiceUtil.getESFNationalDelegationByESFUserId_ESFMatchId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName391.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
+		if (_methodName395.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
 			return ESFNationalDelegationLocalServiceUtil.getESFNationalDelegationByESFMatchId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName392.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
+		if (_methodName396.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
 			return ESFNationalDelegationLocalServiceUtil.getPartecipantType_EsfUserId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName393.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
+		if (_methodName397.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
 			return ESFNationalDelegationLocalServiceUtil.findByPartecipantType_EsfUserId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
-		if (_methodName394.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
+		if (_methodName398.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
 			return ESFNationalDelegationLocalServiceUtil.countPartecipantType_EsfUserId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName395.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
+		if (_methodName399.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes399, parameterTypes)) {
 			return ESFNationalDelegationLocalServiceUtil.getESFNationalDelegationByESFMatchIdNotShooter(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName396.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
+		if (_methodName400.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes400, parameterTypes)) {
 			return ESFNationalDelegationLocalServiceUtil.deleteESFNationalDelegation(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName397.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
+		if (_methodName401.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes401, parameterTypes)) {
 			ESFNationalDelegationLocalServiceUtil.changeCard((javax.portlet.ActionRequest)arguments[0],
 				(javax.portlet.ActionResponse)arguments[1]);
 
 			return null;
 		}
 
-		if (_methodName398.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
+		if (_methodName402.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes402, parameterTypes)) {
 			return ESFNationalDelegationLocalServiceUtil.findConvocation(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Integer)arguments[2]).intValue());
@@ -437,18 +437,10 @@ public class ESFNationalDelegationLocalServiceClpInvoker {
 	private String[] _methodParameterTypes18;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
-	private String _methodName380;
-	private String[] _methodParameterTypes380;
-	private String _methodName381;
-	private String[] _methodParameterTypes381;
-	private String _methodName386;
-	private String[] _methodParameterTypes386;
-	private String _methodName387;
-	private String[] _methodParameterTypes387;
-	private String _methodName388;
-	private String[] _methodParameterTypes388;
-	private String _methodName389;
-	private String[] _methodParameterTypes389;
+	private String _methodName384;
+	private String[] _methodParameterTypes384;
+	private String _methodName385;
+	private String[] _methodParameterTypes385;
 	private String _methodName390;
 	private String[] _methodParameterTypes390;
 	private String _methodName391;
@@ -467,4 +459,12 @@ public class ESFNationalDelegationLocalServiceClpInvoker {
 	private String[] _methodParameterTypes397;
 	private String _methodName398;
 	private String[] _methodParameterTypes398;
+	private String _methodName399;
+	private String[] _methodParameterTypes399;
+	private String _methodName400;
+	private String[] _methodParameterTypes400;
+	private String _methodName401;
+	private String[] _methodParameterTypes401;
+	private String _methodName402;
+	private String[] _methodParameterTypes402;
 }

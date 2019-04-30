@@ -106,47 +106,47 @@ public class ESFShooterAffiliationChronoLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFShooterAffiliationChrono"
 			};
 
-		_methodName376 = "getBeanIdentifier";
+		_methodName380 = "getBeanIdentifier";
 
-		_methodParameterTypes376 = new String[] {  };
+		_methodParameterTypes380 = new String[] {  };
 
-		_methodName377 = "setBeanIdentifier";
+		_methodName381 = "setBeanIdentifier";
 
-		_methodParameterTypes377 = new String[] { "java.lang.String" };
+		_methodParameterTypes381 = new String[] { "java.lang.String" };
 
-		_methodName382 = "affiliated";
+		_methodName386 = "affiliated";
 
-		_methodParameterTypes382 = new String[] { "long", "int" };
+		_methodParameterTypes386 = new String[] { "long", "int" };
 
-		_methodName383 = "findbyDate";
+		_methodName387 = "findbyDate";
 
-		_methodParameterTypes383 = new String[] { "java.util.Date", "int", "int" };
+		_methodParameterTypes387 = new String[] { "java.util.Date", "int", "int" };
 
-		_methodName384 = "countByDate";
+		_methodName388 = "countByDate";
 
-		_methodParameterTypes384 = new String[] { "java.util.Date" };
+		_methodParameterTypes388 = new String[] { "java.util.Date" };
 
-		_methodName385 = "findChronobyDate";
+		_methodName389 = "findChronobyDate";
 
-		_methodParameterTypes385 = new String[] { "java.lang.String", "int", "int" };
+		_methodParameterTypes389 = new String[] { "java.lang.String", "int", "int" };
 
-		_methodName386 = "findChronobyCardAndYear";
+		_methodName390 = "findChronobyCardAndYear";
 
-		_methodParameterTypes386 = new String[] { "java.lang.String", "int" };
+		_methodParameterTypes390 = new String[] { "java.lang.String", "int" };
 
-		_methodName387 = "countChronoByDate";
+		_methodName391 = "countChronoByDate";
 
-		_methodParameterTypes387 = new String[] { "java.lang.String" };
+		_methodParameterTypes391 = new String[] { "java.lang.String" };
 
-		_methodName388 = "countShooterByYear";
+		_methodName392 = "countShooterByYear";
 
-		_methodParameterTypes388 = new String[] {
+		_methodParameterTypes392 = new String[] {
 				"java.lang.String", "java.lang.String"
 			};
 
-		_methodName389 = "countShooterThisYear";
+		_methodName393 = "countShooterThisYear";
 
-		_methodParameterTypes389 = new String[] {
+		_methodParameterTypes393 = new String[] {
 				"java.lang.String", "java.lang.String"
 			};
 	}
@@ -240,62 +240,62 @@ public class ESFShooterAffiliationChronoLocalServiceClpInvoker {
 			return ESFShooterAffiliationChronoLocalServiceUtil.updateESFShooterAffiliationChrono((it.ethica.esf.model.ESFShooterAffiliationChrono)arguments[0]);
 		}
 
-		if (_methodName376.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes376, parameterTypes)) {
+		if (_methodName380.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
 			return ESFShooterAffiliationChronoLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName377.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes377, parameterTypes)) {
+		if (_methodName381.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes381, parameterTypes)) {
 			ESFShooterAffiliationChronoLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName382.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
-			return ESFShooterAffiliationChronoLocalServiceUtil.affiliated(((Long)arguments[0]).longValue(),
-				((Integer)arguments[1]).intValue());
-		}
-
-		if (_methodName383.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes383, parameterTypes)) {
-			return ESFShooterAffiliationChronoLocalServiceUtil.findbyDate((java.util.Date)arguments[0],
-				((Integer)arguments[1]).intValue(),
-				((Integer)arguments[2]).intValue());
-		}
-
-		if (_methodName384.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
-			return ESFShooterAffiliationChronoLocalServiceUtil.countByDate((java.util.Date)arguments[0]);
-		}
-
-		if (_methodName385.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
-			return ESFShooterAffiliationChronoLocalServiceUtil.findChronobyDate((java.lang.String)arguments[0],
-				((Integer)arguments[1]).intValue(),
-				((Integer)arguments[2]).intValue());
-		}
-
 		if (_methodName386.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
-			return ESFShooterAffiliationChronoLocalServiceUtil.findChronobyCardAndYear((java.lang.String)arguments[0],
+			return ESFShooterAffiliationChronoLocalServiceUtil.affiliated(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
 		if (_methodName387.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
-			return ESFShooterAffiliationChronoLocalServiceUtil.countChronoByDate((java.lang.String)arguments[0]);
+			return ESFShooterAffiliationChronoLocalServiceUtil.findbyDate((java.util.Date)arguments[0],
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue());
 		}
 
 		if (_methodName388.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
-			return ESFShooterAffiliationChronoLocalServiceUtil.countShooterByYear((java.lang.String)arguments[0],
-				(java.lang.String)arguments[1]);
+			return ESFShooterAffiliationChronoLocalServiceUtil.countByDate((java.util.Date)arguments[0]);
 		}
 
 		if (_methodName389.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes389, parameterTypes)) {
+			return ESFShooterAffiliationChronoLocalServiceUtil.findChronobyDate((java.lang.String)arguments[0],
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue());
+		}
+
+		if (_methodName390.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
+			return ESFShooterAffiliationChronoLocalServiceUtil.findChronobyCardAndYear((java.lang.String)arguments[0],
+				((Integer)arguments[1]).intValue());
+		}
+
+		if (_methodName391.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
+			return ESFShooterAffiliationChronoLocalServiceUtil.countChronoByDate((java.lang.String)arguments[0]);
+		}
+
+		if (_methodName392.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
+			return ESFShooterAffiliationChronoLocalServiceUtil.countShooterByYear((java.lang.String)arguments[0],
+				(java.lang.String)arguments[1]);
+		}
+
+		if (_methodName393.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
 			return ESFShooterAffiliationChronoLocalServiceUtil.countShooterThisYear((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1]);
 		}
@@ -335,18 +335,10 @@ public class ESFShooterAffiliationChronoLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName376;
-	private String[] _methodParameterTypes376;
-	private String _methodName377;
-	private String[] _methodParameterTypes377;
-	private String _methodName382;
-	private String[] _methodParameterTypes382;
-	private String _methodName383;
-	private String[] _methodParameterTypes383;
-	private String _methodName384;
-	private String[] _methodParameterTypes384;
-	private String _methodName385;
-	private String[] _methodParameterTypes385;
+	private String _methodName380;
+	private String[] _methodParameterTypes380;
+	private String _methodName381;
+	private String[] _methodParameterTypes381;
 	private String _methodName386;
 	private String[] _methodParameterTypes386;
 	private String _methodName387;
@@ -355,4 +347,12 @@ public class ESFShooterAffiliationChronoLocalServiceClpInvoker {
 	private String[] _methodParameterTypes388;
 	private String _methodName389;
 	private String[] _methodParameterTypes389;
+	private String _methodName390;
+	private String[] _methodParameterTypes390;
+	private String _methodName391;
+	private String[] _methodParameterTypes391;
+	private String _methodName392;
+	private String[] _methodParameterTypes392;
+	private String _methodName393;
+	private String[] _methodParameterTypes393;
 }

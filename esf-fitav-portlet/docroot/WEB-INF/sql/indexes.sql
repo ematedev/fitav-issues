@@ -364,3 +364,5 @@ create index IX_D710E7DC on ESFgunUser (type_);
 create index IX_ED8BB4AF on VW_ESFListaIncarichi (esfOrganizationId);
 
 create index IX_19A88904 on esforganization (type_);
+
+create index IX_7ED85A60 on vw_datidirettoretiro (esfShootingDirectorId);

@@ -15,6 +15,7 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -46,6 +47,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFShooterCategoryESFTournamentModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFShooterCategoryESFTournamentModelImpl extends BaseModelImpl<ESFShooterCategoryESFTournament>
 	implements ESFShooterCategoryESFTournamentModel {
 	/*
@@ -69,10 +71,10 @@ public class ESFShooterCategoryESFTournamentModelImpl extends BaseModelImpl<ESFS
 	public static final String TX_MANAGER = "liferayTransactionManager";
 	public static final boolean ENTITY_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.entity.cache.enabled.it.ethica.esf.model.ESFShooterCategoryESFTournament"),
-			false);
+			true);
 	public static final boolean FINDER_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.finder.cache.enabled.it.ethica.esf.model.ESFShooterCategoryESFTournament"),
-			false);
+			true);
 	public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.column.bitmask.enabled.it.ethica.esf.model.ESFShooterCategoryESFTournament"),
 			true);
@@ -158,6 +160,7 @@ public class ESFShooterCategoryESFTournamentModelImpl extends BaseModelImpl<ESFS
 		}
 	}
 
+	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -181,6 +184,7 @@ public class ESFShooterCategoryESFTournamentModelImpl extends BaseModelImpl<ESFS
 		return GetterUtil.getString(_originalUuid);
 	}
 
+	@JSON
 	@Override
 	public long getEsfShooterCategoryId() {
 		return _esfShooterCategoryId;
@@ -191,6 +195,7 @@ public class ESFShooterCategoryESFTournamentModelImpl extends BaseModelImpl<ESFS
 		_esfShooterCategoryId = esfShooterCategoryId;
 	}
 
+	@JSON
 	@Override
 	public long getEsfTournamentId() {
 		return _esfTournamentId;
@@ -213,6 +218,7 @@ public class ESFShooterCategoryESFTournamentModelImpl extends BaseModelImpl<ESFS
 		return _originalEsfTournamentId;
 	}
 
+	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;

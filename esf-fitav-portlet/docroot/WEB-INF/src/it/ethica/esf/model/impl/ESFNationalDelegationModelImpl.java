@@ -16,6 +16,7 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
@@ -53,6 +54,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFNationalDelegationModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDelegation>
 	implements ESFNationalDelegationModel {
 	/*
@@ -307,6 +309,7 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		}
 	}
 
+	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -330,6 +333,7 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		return GetterUtil.getString(_originalUuid);
 	}
 
+	@JSON
 	@Override
 	public long getEsfUserId() {
 		return _esfUserId;
@@ -362,6 +366,7 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		return _originalEsfUserId;
 	}
 
+	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -384,6 +389,7 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		return _originalGroupId;
 	}
 
+	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -406,6 +412,7 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		return _originalCompanyId;
 	}
 
+	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -426,6 +433,7 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		_userUuid = userUuid;
 	}
 
+	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -441,6 +449,7 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		_userName = userName;
 	}
 
+	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -451,6 +460,7 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		_createDate = createDate;
 	}
 
+	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -461,6 +471,7 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		_modifiedDate = modifiedDate;
 	}
 
+	@JSON
 	@Override
 	public Date getLeaveDate() {
 		return _leaveDate;
@@ -481,6 +492,7 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		return _originalLeaveDate;
 	}
 
+	@JSON
 	@Override
 	public Date getReturnDate() {
 		return _returnDate;
@@ -491,6 +503,7 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		_returnDate = returnDate;
 	}
 
+	@JSON
 	@Override
 	public long getEsfMatchId() {
 		return _esfMatchId;
@@ -513,6 +526,7 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		return _originalEsfMatchId;
 	}
 
+	@JSON
 	@Override
 	public long getEsfSportTypeId() {
 		return _esfSportTypeId;
@@ -535,6 +549,7 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		return _originalEsfSportTypeId;
 	}
 
+	@JSON
 	@Override
 	public long getEsfShooterQualificationId() {
 		return _esfShooterQualificationId;
@@ -557,6 +572,7 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		return _originalEsfShooterQualificationId;
 	}
 
+	@JSON
 	@Override
 	public long getEsfGunId1() {
 		return _esfGunId1;
@@ -567,6 +583,7 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		_esfGunId1 = esfGunId1;
 	}
 
+	@JSON
 	@Override
 	public long getEsfGunId2() {
 		return _esfGunId2;
@@ -577,6 +594,7 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		_esfGunId2 = esfGunId2;
 	}
 
+	@JSON
 	@Override
 	public long getEsfNationalDelgationId() {
 		return _esfNationalDelgationId;
@@ -587,6 +605,7 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		_esfNationalDelgationId = esfNationalDelgationId;
 	}
 
+	@JSON
 	@Override
 	public long getEsfPartecipantTypeId() {
 		return _esfPartecipantTypeId;
@@ -609,6 +628,7 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		return _originalEsfPartecipantTypeId;
 	}
 
+	@JSON
 	@Override
 	public Date getNominationDate() {
 		return _nominationDate;
@@ -619,6 +639,7 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		_nominationDate = nominationDate;
 	}
 
+	@JSON
 	@Override
 	public Date getRefusalDate() {
 		return _refusalDate;
@@ -629,6 +650,7 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		_refusalDate = refusalDate;
 	}
 
+	@JSON
 	@Override
 	public long getTaskId() {
 		return _taskId;
@@ -639,6 +661,7 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		_taskId = taskId;
 	}
 
+	@JSON
 	@Override
 	public String getRefusal() {
 		if (_refusal == null) {

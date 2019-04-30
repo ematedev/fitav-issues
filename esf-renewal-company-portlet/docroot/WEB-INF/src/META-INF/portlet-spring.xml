@@ -4,4 +4,6 @@
 	<bean id="it.ethica.esf.renewal.service.ESFRenewalCompanyLocalService" class="it.ethica.esf.renewal.service.impl.ESFRenewalCompanyLocalServiceImpl" />
 	<bean id="it.ethica.esf.renewal.service.persistence.ESFRenewalCompanyPersistence" class="it.ethica.esf.renewal.service.persistence.ESFRenewalCompanyPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.renewal.service.persistence.ESFRenewalCompanyFinder" class="it.ethica.esf.renewal.service.persistence.ESFRenewalCompanyFinderImpl" parent="basePersistence" />
+	<bean id="it.ethica.esf.renewal.service.VW_ESFListaIncarichiTesseraLocalService" class="it.ethica.esf.renewal.service.impl.VW_ESFListaIncarichiTesseraLocalServiceImpl" />
+	<bean id="it.ethica.esf.renewal.service.persistence.VW_ESFListaIncarichiTesseraPersistence" class="it.ethica.esf.renewal.service.persistence.VW_ESFListaIncarichiTesseraPersistenceImpl" parent="basePersistence" />
 </beans>

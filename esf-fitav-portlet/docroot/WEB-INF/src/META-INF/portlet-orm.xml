@@ -1646,9 +1646,6 @@
 		<attributes>
 			<id name="esfStateId" />
 			<id name="className" />
-			<basic name="uuid">
-				<column name="UUID_" />
-			</basic>
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />
@@ -1930,6 +1927,18 @@
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />
 			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="it.ethica.esf.model.impl.VW_DatiDrettoreTiroModelImpl">
+		<id-class class="it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPK" />
+		<attributes>
+			<id name="esfShootingDirectorId" />
+			<id name="Nome" />
+			<id name="Cognome" />
+			<id name="CodiceRegione" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
 		</attributes>
 	</mapped-superclass>
 	<mapped-superclass class="it.ethica.esf.model.impl.VW_ESFListaIncarichiModelImpl">
@@ -2316,6 +2325,10 @@
 			<transient name="name" />
 			<transient name="title" />
 		</attributes>
+	</entity>
+	<entity class="it.ethica.esf.model.impl.VW_DatiDrettoreTiroImpl" name="VW_DatiDrettoreTiro">
+		<table name="vw_datidirettoretiro" />
+		<attributes />
 	</entity>
 	<entity class="it.ethica.esf.model.impl.VW_ESFListaIncarichiImpl" name="VW_ESFListaIncarichi">
 		<table name="VW_ESFListaIncarichi" />

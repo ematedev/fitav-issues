@@ -15,6 +15,7 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -49,6 +50,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFCodeOrgModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFCodeOrgModelImpl extends BaseModelImpl<ESFCodeOrg>
 	implements ESFCodeOrgModel {
 	/*
@@ -166,6 +168,7 @@ public class ESFCodeOrgModelImpl extends BaseModelImpl<ESFCodeOrg>
 		}
 	}
 
+	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -189,6 +192,7 @@ public class ESFCodeOrgModelImpl extends BaseModelImpl<ESFCodeOrg>
 		return GetterUtil.getString(_originalUuid);
 	}
 
+	@JSON
 	@Override
 	public long getEsfCodeOrgId() {
 		return _esfCodeOrgId;
@@ -199,6 +203,7 @@ public class ESFCodeOrgModelImpl extends BaseModelImpl<ESFCodeOrg>
 		_esfCodeOrgId = esfCodeOrgId;
 	}
 
+	@JSON
 	@Override
 	public String getClassName() {
 		if (_className == null) {
@@ -224,6 +229,7 @@ public class ESFCodeOrgModelImpl extends BaseModelImpl<ESFCodeOrg>
 		return GetterUtil.getString(_originalClassName);
 	}
 
+	@JSON
 	@Override
 	public String getCode() {
 		if (_code == null) {
@@ -249,6 +255,7 @@ public class ESFCodeOrgModelImpl extends BaseModelImpl<ESFCodeOrg>
 		return GetterUtil.getString(_originalCode);
 	}
 
+	@JSON
 	@Override
 	public long getSequence() {
 		return _sequence;

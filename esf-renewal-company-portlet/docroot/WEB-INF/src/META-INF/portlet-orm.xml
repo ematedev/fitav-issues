@@ -41,8 +41,40 @@
 			<transient name="userUuid" />
 		</attributes>
 	</mapped-superclass>
+	<mapped-superclass class="it.ethica.esf.renewal.model.impl.VW_ESFListaIncarichiTesseraModelImpl">
+		<id-class class="it.ethica.esf.renewal.service.persistence.VW_ESFListaIncarichiTesseraPK" />
+		<attributes>
+			<id name="AnniPrecedenti" />
+			<id name="AnnoFineIncarico" />
+			<id name="AnnoInizioIncarico" />
+			<id name="AnnoCorrente" />
+			<id name="NomeRuolo" />
+			<id name="startDate">
+				<temporal>TIMESTAMP</temporal>
+			</id>
+			<id name="esfUserId" />
+			<id name="esfOrganizationId" />
+			<id name="lastName" />
+			<id name="firstName" />
+			<basic name="endDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="CodiceTessera" />
+			<basic name="DataTesseramento">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="esfUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
 	<entity class="it.ethica.esf.renewal.model.impl.ESFRenewalCompanyImpl" name="ESFRenewalCompany">
 		<table name="ESFRenewalCompany" />
+		<attributes />
+	</entity>
+	<entity class="it.ethica.esf.renewal.model.impl.VW_ESFListaIncarichiTesseraImpl" name="VW_ESFListaIncarichiTessera">
+		<table name="vw_listaincarichitessera" />
 		<attributes />
 	</entity>
 </entity-mappings>

@@ -16,6 +16,7 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
@@ -53,6 +54,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFNationalModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 	implements ESFNationalModel {
 	/*
@@ -278,6 +280,7 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		}
 	}
 
+	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -301,6 +304,7 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		return GetterUtil.getString(_originalUuid);
 	}
 
+	@JSON
 	@Override
 	public long getEsfNationalId() {
 		return _esfNationalId;
@@ -311,6 +315,7 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		_esfNationalId = esfNationalId;
 	}
 
+	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -333,6 +338,7 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		return _originalGroupId;
 	}
 
+	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -355,6 +361,7 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		return _originalCompanyId;
 	}
 
+	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -375,6 +382,7 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		_userUuid = userUuid;
 	}
 
+	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -390,6 +398,7 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		_userName = userName;
 	}
 
+	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -400,6 +409,7 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		_createDate = createDate;
 	}
 
+	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -410,6 +420,7 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		_modifiedDate = modifiedDate;
 	}
 
+	@JSON
 	@Override
 	public long getEsfUserId() {
 		return _esfUserId;
@@ -442,6 +453,7 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		return _originalEsfUserId;
 	}
 
+	@JSON
 	@Override
 	public long getEsfSportTypeId() {
 		return _esfSportTypeId;
@@ -464,6 +476,7 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		return _originalEsfSportTypeId;
 	}
 
+	@JSON
 	@Override
 	public Date getStartDate() {
 		return _startDate;
@@ -484,6 +497,7 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		return _originalStartDate;
 	}
 
+	@JSON
 	@Override
 	public Date getEndDate() {
 		return _endDate;
@@ -504,6 +518,7 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		return _originalEndDate;
 	}
 
+	@JSON
 	@Override
 	public Date getBDODate() {
 		return _BDODate;
@@ -514,6 +529,7 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		_BDODate = BDODate;
 	}
 
+	@JSON
 	@Override
 	public String getIdInternational() {
 		if (_idInternational == null) {
@@ -529,6 +545,7 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		_idInternational = idInternational;
 	}
 
+	@JSON
 	@Override
 	public boolean getIsUniversity() {
 		return _isUniversity;
@@ -544,6 +561,7 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		_isUniversity = isUniversity;
 	}
 
+	@JSON
 	@Override
 	public boolean getIsNational() {
 		return _isNational;
@@ -559,6 +577,7 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		_isNational = isNational;
 	}
 
+	@JSON
 	@Override
 	public String getDeliberate() {
 		if (_deliberate == null) {
@@ -574,6 +593,7 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		_deliberate = deliberate;
 	}
 
+	@JSON
 	@Override
 	public Date getDeliberateDate() {
 		return _deliberateDate;

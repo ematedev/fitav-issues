@@ -15,6 +15,7 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -46,6 +47,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFFederalRoleESFSpecificModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFFederalRoleESFSpecificModelImpl extends BaseModelImpl<ESFFederalRoleESFSpecific>
 	implements ESFFederalRoleESFSpecificModel {
 	/*
@@ -147,6 +149,7 @@ public class ESFFederalRoleESFSpecificModelImpl extends BaseModelImpl<ESFFederal
 		}
 	}
 
+	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -170,6 +173,7 @@ public class ESFFederalRoleESFSpecificModelImpl extends BaseModelImpl<ESFFederal
 		return GetterUtil.getString(_originalUuid);
 	}
 
+	@JSON
 	@Override
 	public long getEsfSpecificId() {
 		return _esfSpecificId;
@@ -192,6 +196,7 @@ public class ESFFederalRoleESFSpecificModelImpl extends BaseModelImpl<ESFFederal
 		return _originalEsfSpecificId;
 	}
 
+	@JSON
 	@Override
 	public long getEsfFederalRoleId() {
 		return _esfFederalRoleId;
