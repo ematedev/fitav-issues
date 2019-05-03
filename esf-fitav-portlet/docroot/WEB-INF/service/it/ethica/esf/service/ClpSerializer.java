@@ -102,6 +102,7 @@ import it.ethica.esf.model.ESFUserESFFederalRoleClp;
 import it.ethica.esf.model.ESFUserESFUserRoleClp;
 import it.ethica.esf.model.ESFUserRoleClp;
 import it.ethica.esf.model.ESFgunUserClp;
+import it.ethica.esf.model.vw_datidirettoretiroClp;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -495,6 +496,10 @@ public class ClpSerializer {
 
 		if (oldModelClassName.equals(ESFUserRoleClp.class.getName())) {
 			return translateInputESFUserRole(oldModel);
+		}
+
+		if (oldModelClassName.equals(vw_datidirettoretiroClp.class.getName())) {
+			return translateInputvw_datidirettoretiro(oldModel);
 		}
 
 		return oldModel;
@@ -1301,6 +1306,17 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+	public static Object translateInputvw_datidirettoretiro(
+		BaseModel<?> oldModel) {
+		vw_datidirettoretiroClp oldClpModel = (vw_datidirettoretiroClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getvw_datidirettoretiroRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
 	public static Object translateInput(Object obj) {
 		if (obj instanceof BaseModel<?>) {
 			return translateInput((BaseModel<?>)obj);
@@ -1671,6 +1687,11 @@ public class ClpSerializer {
 
 		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFUserRoleImpl")) {
 			return translateOutputESFUserRole(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.vw_datidirettoretiroImpl")) {
+			return translateOutputvw_datidirettoretiro(oldModel);
 		}
 
 		return oldModel;
@@ -2131,6 +2152,11 @@ public class ClpSerializer {
 
 		if (className.equals("it.ethica.esf.NoSuchUserRoleException")) {
 			return new it.ethica.esf.NoSuchUserRoleException();
+		}
+
+		if (className.equals(
+					"it.ethica.esf.NoSuchvw_datidirettoretiroException")) {
+			return new it.ethica.esf.NoSuchvw_datidirettoretiroException();
 		}
 
 		return throwable;
@@ -2925,6 +2951,17 @@ public class ClpSerializer {
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
 		newModel.setESFUserRoleRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputvw_datidirettoretiro(
+		BaseModel<?> oldModel) {
+		vw_datidirettoretiroClp newModel = new vw_datidirettoretiroClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setvw_datidirettoretiroRemoteModel(oldModel);
 
 		return newModel;
 	}

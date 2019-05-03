@@ -33,7 +33,7 @@ if(Validator.isNotNull(shDr)){
 
 
 long esfShootingDirectorId = ParamUtil.getLong(request, "esfShootingDirectorId");
-//ESFShootingDirector direttoreDiTiro = ESFShootingDirectorLocalServiceUtil.fetchESFShootingDirector(esfShootingDirectorId);
+ESFShootingDirector direttoreDiTiro = ESFShootingDirectorLocalServiceUtil.fetchESFShootingDirector(esfShootingDirectorId);
 
 // shDts = ESFShootingDirectorQualificationLocalServiceUtil.getESFShootingDirectorQualifications(QueryUtil.ALL_POS, QueryUtil.ALL_POS);
 // sportTypes = ESFSportTypeLocalServiceUtil.getAllESFSportTypes();
@@ -43,9 +43,11 @@ long esfShootingDirectorId = ParamUtil.getLong(request, "esfShootingDirectorId")
 	<portlet:param name="mvcPath" value='<%=templatePath + "view.jsp"%>' />
 </portlet:renderURL>
 
-<portlet:actionURL name="editESFShootingDirector" var="editESFShootingDirectorURL">
+<portlet:actionURL name="updateShooterDirector" var="updateShooterDirectorURL">
 	<portlet:param name="esfStartData"
 		value="<%=String.valueOf(esfShootingDirectorId)%>" />
+	<portlet:param name="mvcPath"
+		value='<%=templatePath + "shootingDirectorInfo.jsp"%>'/>
 </portlet:actionURL>
 
 <liferay-ui:search-container emptyResultsMessage="no-result" curParam="ShootingDirector">
@@ -110,7 +112,7 @@ long esfShootingDirectorId = ParamUtil.getLong(request, "esfShootingDirectorId")
 	<liferay-ui:search-iterator />
 </liferay-ui:search-container>
 
-<aui:button onClick='<%=editESFShootingDirectorURL.toString() %>' value="Edit" inlineField="true"/>
+<aui:button onClick='<%=updateShooterDirectorURL.toString() %>' value="Edit" inlineField="true"/>
 
 <aui:button onClick='<%=backURL.toString() %>' value="back" inlineField="true"/>
 

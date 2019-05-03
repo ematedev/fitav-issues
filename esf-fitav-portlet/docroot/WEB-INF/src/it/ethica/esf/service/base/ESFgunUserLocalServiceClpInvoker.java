@@ -100,79 +100,79 @@ public class ESFgunUserLocalServiceClpInvoker {
 
 		_methodParameterTypes15 = new String[] { "it.ethica.esf.model.ESFgunUser" };
 
-		_methodName368 = "getBeanIdentifier";
+		_methodName372 = "getBeanIdentifier";
 
-		_methodParameterTypes368 = new String[] {  };
+		_methodParameterTypes372 = new String[] {  };
 
-		_methodName369 = "setBeanIdentifier";
+		_methodName373 = "setBeanIdentifier";
 
-		_methodParameterTypes369 = new String[] { "java.lang.String" };
+		_methodParameterTypes373 = new String[] { "java.lang.String" };
 
-		_methodName374 = "addESFGunUser";
+		_methodName378 = "addESFGunUser";
 
-		_methodParameterTypes374 = new String[] {
+		_methodParameterTypes378 = new String[] {
 				"long", "long", "java.lang.String", "boolean", "int",
 				"java.lang.String", "long", "long", "int", "java.lang.String",
 				"long", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName375 = "getESFGunByLikeC_K_T";
+		_methodName379 = "getESFGunByLikeC_K_T";
 
-		_methodParameterTypes375 = new String[] {
+		_methodParameterTypes379 = new String[] {
 				"java.lang.String", "long", "int", "int", "int"
 			};
 
-		_methodName376 = "countESFGunByLikeC_K_T";
+		_methodName380 = "countESFGunByLikeC_K_T";
 
-		_methodParameterTypes376 = new String[] {
+		_methodParameterTypes380 = new String[] {
 				"java.lang.String", "long", "int"
 			};
 
-		_methodName377 = "getESFGunByLikeS_T";
+		_methodName381 = "getESFGunByLikeS_T";
 
-		_methodParameterTypes377 = new String[] { "long", "int", "int", "int" };
+		_methodParameterTypes381 = new String[] { "long", "int", "int", "int" };
 
-		_methodName378 = "countESFGunByLikeS_T";
-
-		_methodParameterTypes378 = new String[] { "long", "int" };
-
-		_methodName379 = "getESFGunByT";
-
-		_methodParameterTypes379 = new String[] { "int", "int", "int" };
-
-		_methodName380 = "countESFGunByT";
-
-		_methodParameterTypes380 = new String[] { "int" };
-
-		_methodName381 = "findbyESFGunId";
-
-		_methodParameterTypes381 = new String[] { "long" };
-
-		_methodName382 = "findbyESFGunId_Type";
+		_methodName382 = "countESFGunByLikeS_T";
 
 		_methodParameterTypes382 = new String[] { "long", "int" };
 
-		_methodName383 = "findbyCode";
+		_methodName383 = "getESFGunByT";
 
-		_methodParameterTypes383 = new String[] { "java.lang.String" };
+		_methodParameterTypes383 = new String[] { "int", "int", "int" };
 
-		_methodName384 = "findbyGunId_Type";
+		_methodName384 = "countESFGunByT";
 
-		_methodParameterTypes384 = new String[] { "long", "int", "int", "int" };
+		_methodParameterTypes384 = new String[] { "int" };
 
-		_methodName385 = "countbyGunId_Type";
+		_methodName385 = "findbyESFGunId";
 
-		_methodParameterTypes385 = new String[] { "long", "int" };
+		_methodParameterTypes385 = new String[] { "long" };
 
-		_methodName386 = "findbyKind_Shooter";
+		_methodName386 = "findbyESFGunId_Type";
 
-		_methodParameterTypes386 = new String[] {
+		_methodParameterTypes386 = new String[] { "long", "int" };
+
+		_methodName387 = "findbyCode";
+
+		_methodParameterTypes387 = new String[] { "java.lang.String" };
+
+		_methodName388 = "findbyGunId_Type";
+
+		_methodParameterTypes388 = new String[] { "long", "int", "int", "int" };
+
+		_methodName389 = "countbyGunId_Type";
+
+		_methodParameterTypes389 = new String[] { "long", "int" };
+
+		_methodName390 = "findbyKind_Shooter";
+
+		_methodParameterTypes390 = new String[] {
 				"java.lang.String", "java.lang.String", "long", "int", "int"
 			};
 
-		_methodName387 = "findCanebyKind_Shooter";
+		_methodName391 = "findCanebyKind_Shooter";
 
-		_methodParameterTypes387 = new String[] {
+		_methodParameterTypes391 = new String[] {
 				"java.lang.String", "java.lang.String", "long", "int", "int"
 			};
 	}
@@ -266,20 +266,20 @@ public class ESFgunUserLocalServiceClpInvoker {
 			return ESFgunUserLocalServiceUtil.updateESFgunUser((it.ethica.esf.model.ESFgunUser)arguments[0]);
 		}
 
-		if (_methodName368.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes368, parameterTypes)) {
+		if (_methodName372.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes372, parameterTypes)) {
 			return ESFgunUserLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName369.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes369, parameterTypes)) {
+		if (_methodName373.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes373, parameterTypes)) {
 			ESFgunUserLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName374.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes374, parameterTypes)) {
+		if (_methodName378.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes378, parameterTypes)) {
 			return ESFgunUserLocalServiceUtil.addESFGunUser(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2],
@@ -294,8 +294,8 @@ public class ESFgunUserLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[11]);
 		}
 
-		if (_methodName375.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes375, parameterTypes)) {
+		if (_methodName379.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes379, parameterTypes)) {
 			return ESFgunUserLocalServiceUtil.getESFGunByLikeC_K_T((java.lang.String)arguments[0],
 				((Long)arguments[1]).longValue(),
 				((Integer)arguments[2]).intValue(),
@@ -303,71 +303,71 @@ public class ESFgunUserLocalServiceClpInvoker {
 				((Integer)arguments[4]).intValue());
 		}
 
-		if (_methodName376.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes376, parameterTypes)) {
+		if (_methodName380.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
 			return ESFgunUserLocalServiceUtil.countESFGunByLikeC_K_T((java.lang.String)arguments[0],
 				((Long)arguments[1]).longValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName377.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes377, parameterTypes)) {
+		if (_methodName381.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes381, parameterTypes)) {
 			return ESFgunUserLocalServiceUtil.getESFGunByLikeS_T(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
-		if (_methodName378.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes378, parameterTypes)) {
-			return ESFgunUserLocalServiceUtil.countESFGunByLikeS_T(((Long)arguments[0]).longValue(),
-				((Integer)arguments[1]).intValue());
-		}
-
-		if (_methodName379.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes379, parameterTypes)) {
-			return ESFgunUserLocalServiceUtil.getESFGunByT(((Integer)arguments[0]).intValue(),
-				((Integer)arguments[1]).intValue(),
-				((Integer)arguments[2]).intValue());
-		}
-
-		if (_methodName380.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
-			return ESFgunUserLocalServiceUtil.countESFGunByT(((Integer)arguments[0]).intValue());
-		}
-
-		if (_methodName381.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes381, parameterTypes)) {
-			return ESFgunUserLocalServiceUtil.findbyESFGunId(((Long)arguments[0]).longValue());
-		}
-
 		if (_methodName382.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
-			return ESFgunUserLocalServiceUtil.findbyESFGunId_Type(((Long)arguments[0]).longValue(),
+			return ESFgunUserLocalServiceUtil.countESFGunByLikeS_T(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
 		if (_methodName383.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes383, parameterTypes)) {
-			return ESFgunUserLocalServiceUtil.findbyCode((java.lang.String)arguments[0]);
+			return ESFgunUserLocalServiceUtil.getESFGunByT(((Integer)arguments[0]).intValue(),
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue());
 		}
 
 		if (_methodName384.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
+			return ESFgunUserLocalServiceUtil.countESFGunByT(((Integer)arguments[0]).intValue());
+		}
+
+		if (_methodName385.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
+			return ESFgunUserLocalServiceUtil.findbyESFGunId(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName386.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
+			return ESFgunUserLocalServiceUtil.findbyESFGunId_Type(((Long)arguments[0]).longValue(),
+				((Integer)arguments[1]).intValue());
+		}
+
+		if (_methodName387.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
+			return ESFgunUserLocalServiceUtil.findbyCode((java.lang.String)arguments[0]);
+		}
+
+		if (_methodName388.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
 			return ESFgunUserLocalServiceUtil.findbyGunId_Type(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
-		if (_methodName385.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
+		if (_methodName389.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes389, parameterTypes)) {
 			return ESFgunUserLocalServiceUtil.countbyGunId_Type(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
-		if (_methodName386.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
+		if (_methodName390.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
 			return ESFgunUserLocalServiceUtil.findbyKind_Shooter((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(),
@@ -375,8 +375,8 @@ public class ESFgunUserLocalServiceClpInvoker {
 				((Integer)arguments[4]).intValue());
 		}
 
-		if (_methodName387.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
+		if (_methodName391.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
 			return ESFgunUserLocalServiceUtil.findCanebyKind_Shooter((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(),
@@ -419,18 +419,10 @@ public class ESFgunUserLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName368;
-	private String[] _methodParameterTypes368;
-	private String _methodName369;
-	private String[] _methodParameterTypes369;
-	private String _methodName374;
-	private String[] _methodParameterTypes374;
-	private String _methodName375;
-	private String[] _methodParameterTypes375;
-	private String _methodName376;
-	private String[] _methodParameterTypes376;
-	private String _methodName377;
-	private String[] _methodParameterTypes377;
+	private String _methodName372;
+	private String[] _methodParameterTypes372;
+	private String _methodName373;
+	private String[] _methodParameterTypes373;
 	private String _methodName378;
 	private String[] _methodParameterTypes378;
 	private String _methodName379;
@@ -451,4 +443,12 @@ public class ESFgunUserLocalServiceClpInvoker {
 	private String[] _methodParameterTypes386;
 	private String _methodName387;
 	private String[] _methodParameterTypes387;
+	private String _methodName388;
+	private String[] _methodParameterTypes388;
+	private String _methodName389;
+	private String[] _methodParameterTypes389;
+	private String _methodName390;
+	private String[] _methodParameterTypes390;
+	private String _methodName391;
+	private String[] _methodParameterTypes391;
 }

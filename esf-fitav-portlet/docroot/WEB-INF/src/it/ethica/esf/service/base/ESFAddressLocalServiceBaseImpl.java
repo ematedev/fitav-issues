@@ -128,6 +128,7 @@ import it.ethica.esf.service.persistence.ESFUserPersistence;
 import it.ethica.esf.service.persistence.ESFUserRolePersistence;
 import it.ethica.esf.service.persistence.ESFgunUserFinder;
 import it.ethica.esf.service.persistence.ESFgunUserPersistence;
+import it.ethica.esf.service.persistence.vw_datidirettoretiroPersistence;
 
 import java.io.Serializable;
 
@@ -3615,6 +3616,44 @@ public abstract class ESFAddressLocalServiceBaseImpl
 	}
 
 	/**
+	 * Returns the vw_datidirettoretiro local service.
+	 *
+	 * @return the vw_datidirettoretiro local service
+	 */
+	public it.ethica.esf.service.vw_datidirettoretiroLocalService getvw_datidirettoretiroLocalService() {
+		return vw_datidirettoretiroLocalService;
+	}
+
+	/**
+	 * Sets the vw_datidirettoretiro local service.
+	 *
+	 * @param vw_datidirettoretiroLocalService the vw_datidirettoretiro local service
+	 */
+	public void setvw_datidirettoretiroLocalService(
+		it.ethica.esf.service.vw_datidirettoretiroLocalService vw_datidirettoretiroLocalService) {
+		this.vw_datidirettoretiroLocalService = vw_datidirettoretiroLocalService;
+	}
+
+	/**
+	 * Returns the vw_datidirettoretiro persistence.
+	 *
+	 * @return the vw_datidirettoretiro persistence
+	 */
+	public vw_datidirettoretiroPersistence getvw_datidirettoretiroPersistence() {
+		return vw_datidirettoretiroPersistence;
+	}
+
+	/**
+	 * Sets the vw_datidirettoretiro persistence.
+	 *
+	 * @param vw_datidirettoretiroPersistence the vw_datidirettoretiro persistence
+	 */
+	public void setvw_datidirettoretiroPersistence(
+		vw_datidirettoretiroPersistence vw_datidirettoretiroPersistence) {
+		this.vw_datidirettoretiroPersistence = vw_datidirettoretiroPersistence;
+	}
+
+	/**
 	 * Returns the counter local service.
 	 *
 	 * @return the counter local service
@@ -4281,6 +4320,10 @@ public abstract class ESFAddressLocalServiceBaseImpl
 	protected it.ethica.esf.service.ESFUserRoleLocalService esfUserRoleLocalService;
 	@BeanReference(type = ESFUserRolePersistence.class)
 	protected ESFUserRolePersistence esfUserRolePersistence;
+	@BeanReference(type = it.ethica.esf.service.vw_datidirettoretiroLocalService.class)
+	protected it.ethica.esf.service.vw_datidirettoretiroLocalService vw_datidirettoretiroLocalService;
+	@BeanReference(type = vw_datidirettoretiroPersistence.class)
+	protected vw_datidirettoretiroPersistence vw_datidirettoretiroPersistence;
 	@BeanReference(type = com.liferay.counter.service.CounterLocalService.class)
 	protected com.liferay.counter.service.CounterLocalService counterLocalService;
 	@BeanReference(type = com.liferay.portal.service.AddressLocalService.class)

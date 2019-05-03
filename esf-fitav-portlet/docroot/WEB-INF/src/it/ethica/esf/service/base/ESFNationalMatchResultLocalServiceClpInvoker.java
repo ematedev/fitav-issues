@@ -106,53 +106,53 @@ public class ESFNationalMatchResultLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFNationalMatchResult"
 			};
 
-		_methodName368 = "getBeanIdentifier";
+		_methodName372 = "getBeanIdentifier";
 
-		_methodParameterTypes368 = new String[] {  };
+		_methodParameterTypes372 = new String[] {  };
 
-		_methodName369 = "setBeanIdentifier";
+		_methodName373 = "setBeanIdentifier";
 
-		_methodParameterTypes369 = new String[] { "java.lang.String" };
+		_methodParameterTypes373 = new String[] { "java.lang.String" };
 
-		_methodName374 = "getESFNationalMatchResultsByESFMatchId";
+		_methodName378 = "getESFNationalMatchResultsByESFMatchId";
 
-		_methodParameterTypes374 = new String[] { "long" };
+		_methodParameterTypes378 = new String[] { "long" };
 
-		_methodName375 = "getESFNationalMatchResultByESFMatchId_ESFUserId";
-
-		_methodParameterTypes375 = new String[] { "long", "long" };
-
-		_methodName376 = "getESFNationalMatchResultByESFMatchId_ESFUserId_SportTypeId";
-
-		_methodParameterTypes376 = new String[] { "long", "long", "long" };
-
-		_methodName377 = "getESFMatchByEsfMatchResultUserId";
-
-		_methodParameterTypes377 = new String[] { "long" };
-
-		_methodName378 = "getESFMatchByEsfMatchId_ESFQualificationId_ESFSportTypeId";
-
-		_methodParameterTypes378 = new String[] { "long", "long", "long" };
-
-		_methodName379 = "getESFMatchByEsfMatchId_ESFSportTypeId";
+		_methodName379 = "getESFNationalMatchResultByESFMatchId_ESFUserId";
 
 		_methodParameterTypes379 = new String[] { "long", "long" };
 
-		_methodName380 = "getExternalShooter";
+		_methodName380 = "getESFNationalMatchResultByESFMatchId_ESFUserId_SportTypeId";
 
-		_methodParameterTypes380 = new String[] { "long" };
+		_methodParameterTypes380 = new String[] { "long", "long", "long" };
 
-		_methodName381 = "getExternalShooterSportType";
+		_methodName381 = "getESFMatchByEsfMatchResultUserId";
 
-		_methodParameterTypes381 = new String[] { "long", "long" };
+		_methodParameterTypes381 = new String[] { "long" };
 
-		_methodName382 = "getNMRByMatchId_UserId";
+		_methodName382 = "getESFMatchByEsfMatchId_ESFQualificationId_ESFSportTypeId";
 
-		_methodParameterTypes382 = new String[] { "long", "long" };
+		_methodParameterTypes382 = new String[] { "long", "long", "long" };
 
-		_methodName383 = "getESFNationalMatchByEsFMatchId";
+		_methodName383 = "getESFMatchByEsfMatchId_ESFSportTypeId";
 
-		_methodParameterTypes383 = new String[] { "long" };
+		_methodParameterTypes383 = new String[] { "long", "long" };
+
+		_methodName384 = "getExternalShooter";
+
+		_methodParameterTypes384 = new String[] { "long" };
+
+		_methodName385 = "getExternalShooterSportType";
+
+		_methodParameterTypes385 = new String[] { "long", "long" };
+
+		_methodName386 = "getNMRByMatchId_UserId";
+
+		_methodParameterTypes386 = new String[] { "long", "long" };
+
+		_methodName387 = "getESFNationalMatchByEsFMatchId";
+
+		_methodParameterTypes387 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -244,73 +244,73 @@ public class ESFNationalMatchResultLocalServiceClpInvoker {
 			return ESFNationalMatchResultLocalServiceUtil.updateESFNationalMatchResult((it.ethica.esf.model.ESFNationalMatchResult)arguments[0]);
 		}
 
-		if (_methodName368.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes368, parameterTypes)) {
+		if (_methodName372.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes372, parameterTypes)) {
 			return ESFNationalMatchResultLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName369.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes369, parameterTypes)) {
+		if (_methodName373.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes373, parameterTypes)) {
 			ESFNationalMatchResultLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName374.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes374, parameterTypes)) {
-			return ESFNationalMatchResultLocalServiceUtil.getESFNationalMatchResultsByESFMatchId(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName375.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes375, parameterTypes)) {
-			return ESFNationalMatchResultLocalServiceUtil.getESFNationalMatchResultByESFMatchId_ESFUserId(((Long)arguments[0]).longValue(),
-				((Long)arguments[1]).longValue());
-		}
-
-		if (_methodName376.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes376, parameterTypes)) {
-			return ESFNationalMatchResultLocalServiceUtil.getESFNationalMatchResultByESFMatchId_ESFUserId_SportTypeId(((Long)arguments[0]).longValue(),
-				((Long)arguments[1]).longValue(),
-				((Long)arguments[2]).longValue());
-		}
-
-		if (_methodName377.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes377, parameterTypes)) {
-			return ESFNationalMatchResultLocalServiceUtil.getESFMatchByEsfMatchResultUserId(((Long)arguments[0]).longValue());
-		}
-
 		if (_methodName378.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes378, parameterTypes)) {
-			return ESFNationalMatchResultLocalServiceUtil.getESFMatchByEsfMatchId_ESFQualificationId_ESFSportTypeId(((Long)arguments[0]).longValue(),
-				((Long)arguments[1]).longValue(),
-				((Long)arguments[2]).longValue());
+			return ESFNationalMatchResultLocalServiceUtil.getESFNationalMatchResultsByESFMatchId(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName379.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes379, parameterTypes)) {
-			return ESFNationalMatchResultLocalServiceUtil.getESFMatchByEsfMatchId_ESFSportTypeId(((Long)arguments[0]).longValue(),
+			return ESFNationalMatchResultLocalServiceUtil.getESFNationalMatchResultByESFMatchId_ESFUserId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
 
 		if (_methodName380.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
-			return ESFNationalMatchResultLocalServiceUtil.getExternalShooter(((Long)arguments[0]).longValue());
+			return ESFNationalMatchResultLocalServiceUtil.getESFNationalMatchResultByESFMatchId_ESFUserId_SportTypeId(((Long)arguments[0]).longValue(),
+				((Long)arguments[1]).longValue(),
+				((Long)arguments[2]).longValue());
 		}
 
 		if (_methodName381.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes381, parameterTypes)) {
-			return ESFNationalMatchResultLocalServiceUtil.getExternalShooterSportType(((Long)arguments[0]).longValue(),
-				((Long)arguments[1]).longValue());
+			return ESFNationalMatchResultLocalServiceUtil.getESFMatchByEsfMatchResultUserId(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName382.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
-			return ESFNationalMatchResultLocalServiceUtil.getNMRByMatchId_UserId(((Long)arguments[0]).longValue(),
-				((Long)arguments[1]).longValue());
+			return ESFNationalMatchResultLocalServiceUtil.getESFMatchByEsfMatchId_ESFQualificationId_ESFSportTypeId(((Long)arguments[0]).longValue(),
+				((Long)arguments[1]).longValue(),
+				((Long)arguments[2]).longValue());
 		}
 
 		if (_methodName383.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes383, parameterTypes)) {
+			return ESFNationalMatchResultLocalServiceUtil.getESFMatchByEsfMatchId_ESFSportTypeId(((Long)arguments[0]).longValue(),
+				((Long)arguments[1]).longValue());
+		}
+
+		if (_methodName384.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
+			return ESFNationalMatchResultLocalServiceUtil.getExternalShooter(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName385.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
+			return ESFNationalMatchResultLocalServiceUtil.getExternalShooterSportType(((Long)arguments[0]).longValue(),
+				((Long)arguments[1]).longValue());
+		}
+
+		if (_methodName386.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
+			return ESFNationalMatchResultLocalServiceUtil.getNMRByMatchId_UserId(((Long)arguments[0]).longValue(),
+				((Long)arguments[1]).longValue());
+		}
+
+		if (_methodName387.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
 			return ESFNationalMatchResultLocalServiceUtil.getESFNationalMatchByEsFMatchId(((Long)arguments[0]).longValue());
 		}
 
@@ -349,18 +349,10 @@ public class ESFNationalMatchResultLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName368;
-	private String[] _methodParameterTypes368;
-	private String _methodName369;
-	private String[] _methodParameterTypes369;
-	private String _methodName374;
-	private String[] _methodParameterTypes374;
-	private String _methodName375;
-	private String[] _methodParameterTypes375;
-	private String _methodName376;
-	private String[] _methodParameterTypes376;
-	private String _methodName377;
-	private String[] _methodParameterTypes377;
+	private String _methodName372;
+	private String[] _methodParameterTypes372;
+	private String _methodName373;
+	private String[] _methodParameterTypes373;
 	private String _methodName378;
 	private String[] _methodParameterTypes378;
 	private String _methodName379;
@@ -373,4 +365,12 @@ public class ESFNationalMatchResultLocalServiceClpInvoker {
 	private String[] _methodParameterTypes382;
 	private String _methodName383;
 	private String[] _methodParameterTypes383;
+	private String _methodName384;
+	private String[] _methodParameterTypes384;
+	private String _methodName385;
+	private String[] _methodParameterTypes385;
+	private String _methodName386;
+	private String[] _methodParameterTypes386;
+	private String _methodName387;
+	private String[] _methodParameterTypes387;
 }

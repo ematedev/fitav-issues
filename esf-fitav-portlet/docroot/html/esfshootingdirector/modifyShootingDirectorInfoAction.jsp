@@ -10,13 +10,12 @@ ResultRow row =
 ESFShootingDirector shDr = ( ESFShootingDirector) row.getObject();
 long esfShootingDirectorId = shDr.getEsfShootingDirectorId();
 %>
-<liferay-ui:icon-menu>
-																			<%-- MODIFICHE CONSIGLIATE DA GIULIANO (da verificare)--%>
-																			<%-- <portlet:param name="esfShootingDirectorId" --%>
-																			<%-- value="<%= String.valueOf(shDr.getEsfShootingDirectorId()) %>" /> --%>				
+<liferay-ui:icon-menu>				
 	<portlet:renderURL var="editURL">										
  			<portlet:param name="esfUserId"									
-				value="<%= String.valueOf(shDr.getEsfUserId())%>" />		
+				value="<%= String.valueOf(shDr.getEsfUserId())%>" />
+			<portlet:param name="esfShootingDirectorId"
+				value="<%= String.valueOf(shDr.getEsfShootingDirectorId()) %>" />
 			<portlet:param name="mvcPath"
 				value='<%=templatePath + "edit_shootingDirectorInfo.jsp"%>' />
 	</portlet:renderURL>
