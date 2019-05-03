@@ -17,3 +17,22 @@ create table ESFRenewalCompany (
 	integrationAccountholder VARCHAR(75) null,
 	join_ BOOLEAN
 );
+
+
+
+--create table vw_listaincarichitessera (
+	AnniPrecedenti INTEGER not null,
+	AnnoFineIncarico INTEGER not null,
+	AnnoInizioIncarico INTEGER not null,
+	AnnoCorrente INTEGER not null,
+	NomeRuolo VARCHAR(75) not null,
+	endDate DATE null,
+	startDate DATE not null,
+	esfUserId LONG not null,
+	esfOrganizationId LONG not null,
+	lastName VARCHAR(75) not null,
+	firstName VARCHAR(75) not null,
+	CodiceTessera VARCHAR(75) null,
+	DataTesseramento DATE null,
+	primary key (AnniPrecedenti, AnnoFineIncarico, AnnoInizioIncarico, AnnoCorrente, NomeRuolo, startDate, esfUserId, esfOrganizationId, lastName, firstName)
+);

@@ -1,4 +1,7 @@
+<%@page import="java.util.Collection"%>
 <%@ include file="init.jsp" %>
+
+<%@page import="it.ethica.esf.renewal.model.VW_ESFListaIncarichiTessera"%>
 
 <%
 String className = (String) request.getAttribute("phones.className");
@@ -237,60 +240,28 @@ String[] requiredRolesListClone = (String[])requiredRolesList.clone();
 	<p> COMPOSIZIONE DEL CONSIGLIO DIRETTIVO: </p>
 	
 	<liferay-ui:search-container emptyResultsMessage="no-results">
-		<%
-		List<ESFUserRole> allEsfUserRolePerPage = ESFUserRoleLocalServiceUtil.getEsfUserRoleByT_S_BDO(currentType, ESFKeys.ESFStateType.ENABLE, true, searchContainer.getStart(),searchContainer.getEnd());
 	
-		int totalEsfUserRole = ESFUserRoleLocalServiceUtil.getEsfUserRoleByT_S_BDO(currentType, ESFKeys.ESFStateType.ENABLE, true).size();
+	<% List<VW_ESFListaIncarichiTessera> listaIncarichiConsiglioDirettivo = (List<VW_ESFListaIncarichiTessera>) request.getAttribute("listaIncarichiConsiglioDirettivo"); %>
+	<% int size = listaIncarichiConsiglioDirettivo.size(); %>
 	
-		List<ESFUserRole> sortableEsfUserRole = new ArrayList<ESFUserRole>(allEsfUserRolePerPage);
-		%>
 		<liferay-ui:search-container-results
-			results="<%= sortableEsfUserRole %>"
-			total="<%= totalEsfUserRole %>" />
-		<liferay-ui:search-container-row 
-			className="it.ethica.esf.model.ESFUserRole" modelVar="userRole">
-	
-			<%
-			List<ESFUserESFUserRole> esfUserESFUserRoles = ESFUserESFUserRoleLocalServiceUtil.findESFUserESFRoleByO_R(currentOrganizationId, userRole.getEsfUserRoleId());
-			String lastName = StringPool.BLANK;
-			String firstName = StringPool.BLANK;
-			String card = StringPool.BLANK;
-			ESFCard esfCard = null;
-			List<ESFCard> esfCards = new ArrayList<ESFCard> ();
-			//verifica tessere del consiglio direttivo errore per mancanza di tessere, da verificare e gestire errore
-			for (ESFUserESFUserRole esfUserESFUserRole : esfUserESFUserRoles) {
-				ESFUser esfUser = ESFUserLocalServiceUtil.fetchESFUser(esfUserESFUserRole.getEsfUserId());
-				
-				if(Validator.isNotNull(esfUser) && Validator.isNotNull(esfUser.getFirstName()) && Validator.isNotNull(esfUser.getLastName())){
-					
-					lastName=esfUser.getLastName();
-					firstName=esfUser.getFirstName();
-					esfCards = ESFCardLocalServiceUtil.findAllESFCardsByU_S(esfUser.getEsfUserId(), ESFKeys.ESFStateType.ENABLE);
-					if (esfCards.size() > 0){
-						esfCard = esfCards.get(0);
-						card = esfCard.getCode();
-					}
-				}
-			}
-			// Rimuovo dalla lista i campi richiesti che hanno il valore della tessera
-			if (Validator.isNotNull(card) && ArrayUtil.contains(requiredRolesList, Long.toString(userRole.getEsfUserRoleId()))) {
-				requiredRolesListClone = ArrayUtil.remove(requiredRolesListClone, Long.toString(userRole.getEsfUserRoleId()));
-			}
-			%>
-			<liferay-ui:search-container-column-text property="title"
-				 cssClass="firstCss" />
-			<liferay-ui:search-container-column-text name="N.Tessera" cssClass="firstCss">
-				<%= card %>
+			results='<%= listaIncarichiConsiglioDirettivo %>'
+			total='<%= size %>' />
+			
+			
+		<liferay-ui:search-container-row  
+			className="it.ethica.esf.renewal.model.VW_ESFListaIncarichiTessera" modelVar="incarico">
+
+			<liferay-ui:search-container-column-text title="N. Tessera" cssClass="firstCss">
+					<%= incarico.getCodiceTessera()  %>
 			</liferay-ui:search-container-column-text>
-			<liferay-ui:search-container-column-text name="lastName" cssClass="firstCss">
-				<%=lastName%>
-			</liferay-ui:search-container-column-text>
-			<liferay-ui:search-container-column-text name="firstName" cssClass="firstCss" >
-				<%= firstName%>
-			</liferay-ui:search-container-column-text>
+			
+			<liferay-ui:search-container-column-text property="lastName" title="Cognome" cssClass="firstCss"/>
+			
+			<liferay-ui:search-container-column-text property="firstName" title="Nome" cssClass="firstCss" />
 		</liferay-ui:search-container-row>
 	
-		<liferay-ui:search-iterator />
+
 	</liferay-ui:search-container>
 	
 	<aui:field-wrapper label="payment-type">
@@ -313,65 +284,3 @@ String[] requiredRolesListClone = (String[])requiredRolesList.clone();
 <%-- 		<aui:button  value="DownloadPDF"  onclick="ajaxCall()"/>  --%>
 	</aui:button-row>
 </aui:form>
-
-
-<aui:script use="liferay-portlet-url">
-var requiredRolesListLength = <%= requiredRolesListClone.length %>;
-A.all('[name="<portlet:namespace />acknowledge"]').on('change',function(event){
-	Liferay.Util.toggleDisabled(A.one('.submit-button'), parseInt(event.target.val()));
-});
-
-Liferay.provide(window, '<portlet:namespace />renewalFormSubmit',function(){
-	var minCardsNumber = A.one('#<portlet:namespace />cardsNumber').attr('min');
-	var actualCardsNumber = A.one('#<portlet:namespace />cardsNumber').val();
-	if (minCardsNumber > actualCardsNumber) {
-		alert('Inserire un corretto numero di carte');
-		return;
-	}
-	submitForm(document.<portlet:namespace />fm);
-	return;
-	if (requiredRolesListLength == 0) {
-		submitForm(document.<portlet:namespace />fm);
-	}
-	else {
-		var titles = '';
-		<%
-		int i = 1;
-		String titles = StringPool.BLANK;
-		for (String userRoleId : requiredRolesList) {
-			String title = RoleLocalServiceUtil.getRole(Long.parseLong(userRoleId)).getTitle(locale);
-			if (i == requiredRolesList.length) {
-				titles += title;
-			}
-			else {
-				titles += title + StringPool.COMMA;
-			}
-			titles += title + StringPool.SPACE;
-			i++;
-		}
-		%>
-		alert('<liferay-ui:message key="required-roles-are-necessary" arguments="<%=new String[]{titles}%>"/>')
-	}
-});
-
-Liferay.provide(window,'ajaxCall',function(){
-	var resourceURL = Liferay.PortletURL.createResourceURL();
-	resourceURL.setPortletId('<%=PortalUtil.getPortletId(request)%>');
-	resourceURL.setParameter('reportType', "pdf");
-	$('input').each(function() {
-		var input = $(this);
-		resourceURL.setParameter(input.attr('name'), input.val());
-	});
-	var myRows =  [] ;
-	var $th = $('table th');
-	$('table tbody tr').each(function(i, tr){
-		var obj = {}, $tds = $(tr).find('td');
-		$th.each(function(index, th){
-			obj[($(th).text()).trim()] = ($tds.eq(index).text()).trim();
-		});
-		myRows.push(obj);
-	});
-	resourceURL.setParameter('arrTable',(JSON.stringify(myRows)));
-    window.open(resourceURL.toString());
-});
-</aui:script>

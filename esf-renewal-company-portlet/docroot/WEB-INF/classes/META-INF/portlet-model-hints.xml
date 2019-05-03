@@ -26,4 +26,19 @@
 		<field name="integrationAccountholder" type="String" />
 		<field name="join" type="boolean" />
 	</model>
+	<model name="it.ethica.esf.renewal.model.VW_ESFListaIncarichiTessera">
+		<field name="AnniPrecedenti" type="int" />
+		<field name="AnnoFineIncarico" type="int" />
+		<field name="AnnoInizioIncarico" type="int" />
+		<field name="AnnoCorrente" type="int" />
+		<field name="NomeRuolo" type="String" />
+		<field name="endDate" type="Date" />
+		<field name="startDate" type="Date" />
+		<field name="esfUserId" type="long" />
+		<field name="esfOrganizationId" type="long" />
+		<field name="lastName" type="String" />
+		<field name="firstName" type="String" />
+		<field name="CodiceTessera" type="String" />
+		<field name="DataTesseramento" type="Date" />
+	</model>
 </model-hints>

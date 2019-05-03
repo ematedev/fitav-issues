@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -35,6 +35,7 @@ import it.ethica.esf.renewal.model.ESFRenewalCompany;
 import it.ethica.esf.renewal.service.ESFRenewalCompanyLocalService;
 import it.ethica.esf.renewal.service.persistence.ESFRenewalCompanyFinder;
 import it.ethica.esf.renewal.service.persistence.ESFRenewalCompanyPersistence;
+import it.ethica.esf.renewal.service.persistence.VW_ESFListaIncarichiTesseraPersistence;
 
 import java.io.Serializable;
 
@@ -339,6 +340,44 @@ public abstract class ESFRenewalCompanyLocalServiceBaseImpl
 	}
 
 	/**
+	 * Returns the v w_ e s f lista incarichi tessera local service.
+	 *
+	 * @return the v w_ e s f lista incarichi tessera local service
+	 */
+	public it.ethica.esf.renewal.service.VW_ESFListaIncarichiTesseraLocalService getVW_ESFListaIncarichiTesseraLocalService() {
+		return vw_esfListaIncarichiTesseraLocalService;
+	}
+
+	/**
+	 * Sets the v w_ e s f lista incarichi tessera local service.
+	 *
+	 * @param vw_esfListaIncarichiTesseraLocalService the v w_ e s f lista incarichi tessera local service
+	 */
+	public void setVW_ESFListaIncarichiTesseraLocalService(
+		it.ethica.esf.renewal.service.VW_ESFListaIncarichiTesseraLocalService vw_esfListaIncarichiTesseraLocalService) {
+		this.vw_esfListaIncarichiTesseraLocalService = vw_esfListaIncarichiTesseraLocalService;
+	}
+
+	/**
+	 * Returns the v w_ e s f lista incarichi tessera persistence.
+	 *
+	 * @return the v w_ e s f lista incarichi tessera persistence
+	 */
+	public VW_ESFListaIncarichiTesseraPersistence getVW_ESFListaIncarichiTesseraPersistence() {
+		return vw_esfListaIncarichiTesseraPersistence;
+	}
+
+	/**
+	 * Sets the v w_ e s f lista incarichi tessera persistence.
+	 *
+	 * @param vw_esfListaIncarichiTesseraPersistence the v w_ e s f lista incarichi tessera persistence
+	 */
+	public void setVW_ESFListaIncarichiTesseraPersistence(
+		VW_ESFListaIncarichiTesseraPersistence vw_esfListaIncarichiTesseraPersistence) {
+		this.vw_esfListaIncarichiTesseraPersistence = vw_esfListaIncarichiTesseraPersistence;
+	}
+
+	/**
 	 * Returns the counter local service.
 	 *
 	 * @return the counter local service
@@ -520,6 +559,10 @@ public abstract class ESFRenewalCompanyLocalServiceBaseImpl
 	protected ESFRenewalCompanyPersistence esfRenewalCompanyPersistence;
 	@BeanReference(type = ESFRenewalCompanyFinder.class)
 	protected ESFRenewalCompanyFinder esfRenewalCompanyFinder;
+	@BeanReference(type = it.ethica.esf.renewal.service.VW_ESFListaIncarichiTesseraLocalService.class)
+	protected it.ethica.esf.renewal.service.VW_ESFListaIncarichiTesseraLocalService vw_esfListaIncarichiTesseraLocalService;
+	@BeanReference(type = VW_ESFListaIncarichiTesseraPersistence.class)
+	protected VW_ESFListaIncarichiTesseraPersistence vw_esfListaIncarichiTesseraPersistence;
 	@BeanReference(type = com.liferay.counter.service.CounterLocalService.class)
 	protected com.liferay.counter.service.CounterLocalService counterLocalService;
 	@BeanReference(type = com.liferay.portal.service.ResourceLocalService.class)

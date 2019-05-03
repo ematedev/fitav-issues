@@ -12,12 +12,16 @@ import it.ethica.esf.service.ESFUserESFUserRoleLocalServiceUtil;
 import it.ethica.esf.util.ESFKeys;
 import it.ethica.esf.util.ESFRenewalConstants;
 
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
+import javax.portlet.PortletException;
+import javax.portlet.RenderRequest;
+import javax.portlet.RenderResponse;
 
 import com.liferay.portal.kernel.dao.orm.QueryUtil;
 import com.liferay.portal.kernel.exception.PortalException;
@@ -38,6 +42,27 @@ import com.liferay.portal.theme.ThemeDisplay;
 import com.liferay.util.bridges.mvc.MVCPortlet;
 
 public class RenewalCompanyAdminPortlet extends MVCPortlet {
+	
+	
+	
+	
+	
+	@Override
+	public void doView(RenderRequest renderRequest, RenderResponse renderResponse)
+			throws IOException, PortletException {
+		System.out.println("Chiamato View RenewalCompanyAdminPortlet");
+		super.doView(renderRequest, renderResponse);
+	}
+
+	@Override
+	public void render(RenderRequest request, RenderResponse response) throws PortletException, IOException {
+
+		System.out.println("Chiamato Render RenewalCompanyAdminPortlet");
+		super.render(request, response);
+	}
+	
+	
+	
 
 	public void populateESFRenewalCompany(
 		ActionRequest actionRequest, ActionResponse actionResponse)

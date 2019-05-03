@@ -3,6 +3,7 @@
 
 <hibernate-mapping default-lazy="false" auto-import="false">
 	<import class="it.ethica.esf.renewal.model.ESFRenewalCompany" />
+	<import class="it.ethica.esf.renewal.model.VW_ESFListaIncarichiTessera" />
 	<class name="it.ethica.esf.renewal.model.impl.ESFRenewalCompanyImpl" table="ESFRenewalCompany">
 		<cache usage="read-write" />
 		<id name="esfRenewalCompanyId" type="long">
@@ -24,5 +25,23 @@
 		<property name="integrationType" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
 		<property name="integrationAccountholder" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="join" type="com.liferay.portal.dao.orm.hibernate.BooleanType" column="join_" />
+	</class>
+	<class name="it.ethica.esf.renewal.model.impl.VW_ESFListaIncarichiTesseraImpl" table="vw_listaincarichitessera">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.renewal.service.persistence.VW_ESFListaIncarichiTesseraPK">
+			<key-property name="AnniPrecedenti" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="AnnoFineIncarico" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="AnnoInizioIncarico" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="AnnoCorrente" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="NomeRuolo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="startDate" type="org.hibernate.type.TimestampType" />
+			<key-property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="esfOrganizationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="lastName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="firstName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		</composite-id>
+		<property name="endDate" type="org.hibernate.type.TimestampType" />
+		<property name="CodiceTessera" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="DataTesseramento" type="org.hibernate.type.TimestampType" />
 	</class>
 </hibernate-mapping>

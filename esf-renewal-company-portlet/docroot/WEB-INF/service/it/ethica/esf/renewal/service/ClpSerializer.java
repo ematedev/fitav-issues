@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -26,6 +26,7 @@ import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.BaseModel;
 
 import it.ethica.esf.renewal.model.ESFRenewalCompanyClp;
+import it.ethica.esf.renewal.model.VW_ESFListaIncarichiTesseraClp;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -106,6 +107,11 @@ public class ClpSerializer {
 			return translateInputESFRenewalCompany(oldModel);
 		}
 
+		if (oldModelClassName.equals(
+					VW_ESFListaIncarichiTesseraClp.class.getName())) {
+			return translateInputVW_ESFListaIncarichiTessera(oldModel);
+		}
+
 		return oldModel;
 	}
 
@@ -125,6 +131,17 @@ public class ClpSerializer {
 		ESFRenewalCompanyClp oldClpModel = (ESFRenewalCompanyClp)oldModel;
 
 		BaseModel<?> newModel = oldClpModel.getESFRenewalCompanyRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputVW_ESFListaIncarichiTessera(
+		BaseModel<?> oldModel) {
+		VW_ESFListaIncarichiTesseraClp oldClpModel = (VW_ESFListaIncarichiTesseraClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getVW_ESFListaIncarichiTesseraRemoteModel();
 
 		newModel.setModelAttributes(oldClpModel.getModelAttributes());
 
@@ -151,6 +168,11 @@ public class ClpSerializer {
 		if (oldModelClassName.equals(
 					"it.ethica.esf.renewal.model.impl.ESFRenewalCompanyImpl")) {
 			return translateOutputESFRenewalCompany(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.renewal.model.impl.VW_ESFListaIncarichiTesseraImpl")) {
+			return translateOutputVW_ESFListaIncarichiTessera(oldModel);
 		}
 
 		return oldModel;
@@ -238,6 +260,11 @@ public class ClpSerializer {
 			return new it.ethica.esf.renewal.NoSuchESFRenewalCompanyException();
 		}
 
+		if (className.equals(
+					"it.ethica.esf.renewal.NoSuchVW_ESFListaIncarichiTesseraException")) {
+			return new it.ethica.esf.renewal.NoSuchVW_ESFListaIncarichiTesseraException();
+		}
+
 		return throwable;
 	}
 
@@ -247,6 +274,17 @@ public class ClpSerializer {
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
 		newModel.setESFRenewalCompanyRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputVW_ESFListaIncarichiTessera(
+		BaseModel<?> oldModel) {
+		VW_ESFListaIncarichiTesseraClp newModel = new VW_ESFListaIncarichiTesseraClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setVW_ESFListaIncarichiTesseraRemoteModel(oldModel);
 
 		return newModel;
 	}

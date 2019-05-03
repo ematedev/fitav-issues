@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -19,6 +19,7 @@ import com.liferay.portal.kernel.messaging.Message;
 
 import it.ethica.esf.renewal.service.ClpSerializer;
 import it.ethica.esf.renewal.service.ESFRenewalCompanyLocalServiceUtil;
+import it.ethica.esf.renewal.service.VW_ESFListaIncarichiTesseraLocalServiceUtil;
 
 /**
  * @author Ethica
@@ -36,6 +37,8 @@ public class ClpMessageListener extends BaseMessageListener {
 		if (command.equals("undeploy") &&
 				servletContextName.equals(getServletContextName())) {
 			ESFRenewalCompanyLocalServiceUtil.clearService();
+
+			VW_ESFListaIncarichiTesseraLocalServiceUtil.clearService();
 		}
 	}
 }
