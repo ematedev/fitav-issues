@@ -6,8 +6,7 @@
 	<namespace>ESF</namespace>
 
 	<entity name="ESFAddress" remote-service="false" local-service="true"
-		uuid="true">
-
+		uuid="true" json-enabled="true">
 		<!-- PK fields -->
 
 		<column name="esfAddressId" primary="true" type="long" />
@@ -42,8 +41,8 @@
 		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset"></reference>
 		<reference entity="AssetLink" package-path="com.liferay.portlet.asset"></reference>
 	</entity>
-	<entity name="ESFCard" local-service="true" remote-service="true"
-		uuid="true" cache-enabled="false">
+	<entity name="ESFCard" local-service="true" remote-service="false"
+		uuid="true" cache-enabled="true" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -79,7 +78,7 @@
 			<finder-column name="codeAlfa"></finder-column>
 		</finder>
 
-		<!-- References -->
+
 		<finder name="Code" return-type="Collection">
 			<finder-column name="code"></finder-column>
 		</finder>
@@ -95,11 +94,11 @@
         <finder name="EsfUser" return-type="Collection">
             <finder-column name="esfUserId"></finder-column>
         </finder>
-
+		<!-- References -->
 		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
 		<reference entity="AssetLink" package-path="com.liferay.portlet.asset" />
 	</entity>
-	<entity name="ESFCity" local-service="true" remote-service="false">
+	<entity name="ESFCity" local-service="true" remote-service="false" json-enabled="true">
 
 		<!-- Other fields -->
 
@@ -129,7 +128,7 @@
 		</finder>
 	</entity>
 	<entity name="ESFCountry" uuid="false" local-service="true"
-		remote-service="false">
+		remote-service="false" json-enabled="true">
 
 		<!-- Other fields -->
 
@@ -137,7 +136,7 @@
 		<column name="name" type="String" />
 	</entity>
 	<entity name="ESFEntityState" local-service="true"
-		remote-service="false" cache-enabled="true">
+		remote-service="false" cache-enabled="true" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -194,7 +193,7 @@
 		</finder>
 	</entity>
 	<entity name="ESFField" local-service="true" remote-service="false"
-		uuid="true" cache-enabled="false">
+		uuid="true" cache-enabled="true" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -251,7 +250,7 @@
 		<reference entity="AssetLink" package-path="com.liferay.portlet.asset" />
 	</entity>
 	<entity name="ESFFieldESFSportType" local-service="true"
-		remote-service="false" uuid="false">
+		remote-service="false" uuid="false" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -280,7 +279,7 @@
 		</finder>
 	</entity>
 	<entity name="ESFGun" local-service="true" remote-service="false"
-		uuid="true" cache-enabled="false">
+		uuid="true" cache-enabled="true" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -339,7 +338,7 @@
 		<reference entity="AssetLink" package-path="com.liferay.portlet.asset" />
 	</entity>
 	<entity name="ESFGunKind" local-service="true" remote-service="false"
-		uuid="true">
+		uuid="true" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -384,7 +383,7 @@
 		</finder>
 	</entity>
 	<entity name="ESFGunType" local-service="true" remote-service="false"
-		uuid="true">
+		uuid="true" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -421,7 +420,7 @@
         </finder>
 	</entity>
 	<entity name="ESFOrganization" remote-service="false"
-		local-service="true" uuid="true">
+		local-service="true" uuid="true" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -460,9 +459,9 @@
         <column name="isSimplyOrganizzation" type="boolean"></column>
         <column name="webSite" type="String" />
         <column name="includeConiReport" type="boolean"></column>
+        <column name="organizzationCategory" type="String"></column>
 
         <!-- Finder methods -->
-        <column name="organizzationCategory" type="String"></column>
         <finder name="GroupId" return-type="Collection">
 			<finder-column name="groupId" />
 		</finder>
@@ -514,7 +513,18 @@
 		<reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
 		<reference package-path="com.liferay.portal" entity="Organization" />
 	</entity>
-	<entity name="ESFProvince" local-service="true" remote-service="false">
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<entity name="ESFProvince" local-service="true" remote-service="false" json-enabled="true">
 
 		<!-- Other fields -->
 
@@ -540,7 +550,7 @@
 			<finder-column name="idProvince"></finder-column>
 		</finder>
 	</entity>
-	<entity name="ESFRegion" local-service="true" remote-service="false">
+	<entity name="ESFRegion" local-service="true" remote-service="false" json-enabled="true">
 
 		<!-- Other fields -->
 
@@ -558,7 +568,7 @@
 		</finder>
 	</entity>
 	<entity name="ESFSportType" local-service="true" remote-service="false"
-		uuid="true">
+		uuid="true" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -609,7 +619,7 @@
             <finder-column name="code"></finder-column>
         </finder>
 	</entity>
-	<entity name="ESFState" remote-service="false" local-service="true">
+	<entity name="ESFState" remote-service="false" local-service="true" json-enabled="true">
 
 		<!-- Other fields -->
 
@@ -623,7 +633,7 @@
 		<reference entity="ClassName" package-path="com.liferay.portal" />
 	</entity>
 	<entity name="ESFForniture" local-service="true" remote-service="false"
-		uuid="true">
+		uuid="true" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -685,7 +695,7 @@
 		<reference entity="AssetLink" package-path="com.liferay.portlet.asset"></reference>
 	</entity>
 	<entity name="ESFFornitureRel" local-service="true"
-		remote-service="false">
+		remote-service="false" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -725,7 +735,7 @@
 		<reference entity="AssetLink" package-path="com.liferay.portlet.asset"></reference>
 	</entity>
 	<entity name="ESFUser" uuid="true" local-service="true"
-		remote-service="true" cache-enabled="false">
+		remote-service="false" cache-enabled="true" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -783,7 +793,7 @@
 		<reference package-path="com.liferay.portal" entity="Contact" />
 	</entity>
 	<entity name="ESFUserESFUserRole" local-service="true"
-		remote-service="false" cache-enabled="false">
+		remote-service="false" cache-enabled="true" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -792,7 +802,7 @@
 
 		<!-- Other fields -->
 
-		<column name="esfOrganizationId" type="long" primary="true" />
+		<column name="esfOrganizationId" type="long" primary="true" json-enabled="false"/>
 		<column name="startDate" type="Date" primary="true" />
 		<column name="endDate" type="Date" />
 
@@ -832,9 +842,13 @@
 		<finder name="ESFUserId_ED" return-type="Collection" where="endDate is null">
 			<finder-column name="esfUserId"></finder-column>
 		</finder>
+        <finder name="ESFO_R_YEAR" return-type="Collection" where="endDate is null">
+            <finder-column name="esfOrganizationId"></finder-column>
+            <finder-column name="esfUserRoleId"></finder-column>
+        </finder>
 	</entity>
 	<entity name="ESFUserRole" local-service="true" remote-service="false"
-		uuid="true">
+		uuid="true" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -877,8 +891,8 @@
 		</finder>
 	</entity>
 
-	<entity name="ESFFederalRole" local-service="true" remote-service="true"
-		uuid="true">
+	<entity name="ESFFederalRole" local-service="true" remote-service="false"
+		uuid="true" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -909,8 +923,8 @@
 
 	</entity>
 
-	<entity name="ESFSpecific" local-service="true" remote-service="true"
-		uuid="true">
+	<entity name="ESFSpecific" local-service="true" remote-service="false"
+		uuid="true" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -939,8 +953,8 @@
 
 	</entity>
 
-	<entity name="ESFFederalRoleESFSpecific" local-service="true" remote-service="true"
-		uuid="true">
+	<entity name="ESFFederalRoleESFSpecific" local-service="true" remote-service="false"
+		uuid="true" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -957,7 +971,7 @@
 
 	</entity>
 
-	<entity name="ESFUserESFFederalRole" local-service="true" remote-service="false">
+	<entity name="ESFUserESFFederalRole" local-service="true" remote-service="false" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -993,7 +1007,7 @@
 	</entity>
 
 	<entity name="ESFFornitureType" remote-service="false"
-		local-service="true" uuid="true">
+		local-service="true" uuid="true" json-enabled="true">
 		<column name="esfFornitureTypeId" primary="true" type="long"></column>
 		<column name="description" type="String"></column>
 
@@ -1024,7 +1038,7 @@
 		</finder>
 	</entity>
 	<entity name="ESFTeam" remote-service="false" local-service="true"
-		cache-enabled="false">
+		cache-enabled="true" json-enabled="true">
 		<column name="esfTeamId" primary="true" type="long"></column>
 		<column name="esfTournamentId" type="long"></column>
 		<column name="name" type="String"></column>
@@ -1033,7 +1047,7 @@
 		</finder>
 	</entity>
 	<entity name="ESFTournament" local-service="true"
-		remote-service="false" uuid="true" cache-enabled="false">
+		remote-service="false" uuid="true" cache-enabled="true" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -1071,7 +1085,7 @@
 		<reference entity="AssetLink" package-path="com.liferay.portlet.asset" />
 	</entity>
 	<entity name="ESFShooterCategory" local-service="true"
-		remote-service="false" uuid="true">
+		remote-service="false" uuid="true" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -1102,8 +1116,8 @@
         </finder>
 
 	</entity>
-	<entity name="ESFShooterCategoryESFTournament" local-service="false"
-		remote-service="false" uuid="true" cache-enabled="false">
+	<entity name="ESFShooterCategoryESFTournament" local-service="true"
+		remote-service="false" uuid="true" cache-enabled="true" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -1122,7 +1136,7 @@
 
 	</entity>
 	<entity name="ESFShooterCategoryESFMatch" local-service="true"
-		remote-service="false" uuid="true" cache-enabled="false">
+		remote-service="false" uuid="true" cache-enabled="true" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -1149,7 +1163,7 @@
 		</finder>
 	</entity>
 	<entity name="ESFShooterQualification" local-service="true"
-		remote-service="false" uuid="true">
+		remote-service="false" uuid="true" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -1182,8 +1196,8 @@
 
 	</entity>
 	<entity name="ESFShooterQualificationESFTournament"
-		local-service="false" remote-service="false" uuid="true"
-		cache-enabled="false">
+		local-service="true" remote-service="false" uuid="true"
+		cache-enabled="true" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -1202,7 +1216,7 @@
 
 	</entity>
 	<entity name="ESFShooterQualificationESFMatch" local-service="true"
-		remote-service="false" uuid="true" cache-enabled="false">
+		remote-service="false" uuid="true" cache-enabled="true" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -1228,7 +1242,7 @@
 		</finder>
 	</entity>
 	<entity name="ESFMatch" local-service="true" remote-service="false"
-		uuid="true" cache-enabled="false">
+		uuid="true" cache-enabled="true" json-enabled="true">
 		<!-- PK fields -->
 		<column name="esfMatchId" type="long" primary="true"></column>
 		<!-- <column name="esfTorunamentId" type="long"></column> <column name="esfFieldId" 
@@ -1325,7 +1339,7 @@
 	</entity>
 	
 	<entity name="ESFUnitservice" remote-service="false"
-		local-service="true" uuid="true">
+		local-service="true" uuid="true" json-enabled="true">
 		<column name="esfUnitserviceId" type="long" primary="true"></column>
 		<column name="description" type="String"></column>
 
@@ -1354,7 +1368,7 @@
 		</finder>
 	</entity>
 	<entity name="ESFOrganizationUnitservice" remote-service="false"
-		local-service="true" uuid="true">
+		local-service="true" uuid="true" json-enabled="true">
 
 		<!-- PK fields -->
 		<column name="esfOrganizationUnitserviceId" primary="true"
@@ -1393,7 +1407,7 @@
 		</finder>
 	</entity>
 	<entity name="ESFConfiguration" remote-service="false"
-		local-service="true">
+		local-service="true" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -1427,7 +1441,7 @@
         </finder>
 	</entity>
 	<entity name="ESFNational" local-service="true" remote-service="false"
-		cache-enabled="false">
+		cache-enabled="true" json-enabled="true" uuid="true">
 
 		<!-- PK fields -->
 
@@ -1479,7 +1493,7 @@
 	</entity>
 	
 	<entity name="ESFNationalDelegation" local-service="true"
-		remote-service="false" cache-enabled="true">
+		remote-service="false" cache-enabled="true" uuid="true" json-enabled="true">
 
 		<column name="esfUserId" type="long" primary="false" />
 
@@ -1559,7 +1573,7 @@
         
 	</entity>
 	<entity name="ESFPartecipant" local-service="true"
-		remote-service="false" uuid="true" cache-enabled="false">
+		remote-service="false" uuid="true" cache-enabled="true" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -1602,11 +1616,11 @@
 		<reference entity="AssetLink" package-path="com.liferay.portlet.asset" />
 	</entity>
 	<entity name="ESFPartecipantType" remote-service="false"
-		local-service="true" cache-enabled="false">
+		local-service="true" cache-enabled="true" json-enabled="true" uuid="true">
 		<column name="esfPartecipantTypeId" primary="true" type="long"></column>
 		<column name="name" type="String"></column>
 	</entity>
-	<entity name="ESFStateAssEntity" remote-service="false">
+	<entity name="ESFStateAssEntity" remote-service="false" local-service="true" uuid="false" json-enabled="true">
 		<column name="esfStateId" primary="true" type="long"></column>
 		<column name="className" primary="true" type="String"></column>
 		<finder name="ClassName" return-type="Collection">
@@ -1616,8 +1630,8 @@
 			<finder-column name="esfStateId"></finder-column>
 		</finder>
 	</entity>
-	<entity name="ESFCodeOrg" remote-service="false" cache-enabled="false"
-		local-service="true">
+	<entity name="ESFCodeOrg" remote-service="false" cache-enabled="true"
+		local-service="true" json-enabled="true" uuid="true">
 		<column name="esfCodeOrgId" primary="true" type="long"></column>
 		<column name="className" type="String"></column>
 		<column name="code" type="String"></column>
@@ -1631,7 +1645,7 @@
 		</finder>
 	</entity>
 	<entity name="ESFDescription" local-service="true"
-		remote-service="false">
+		remote-service="false" uuid="false" cache-enabled="true" json-enabled="true">
 		<column name="esfDescriptionId" type="long" primary="true"></column>
 		<column name="isNational" type="boolean"></column>
         <column name="name" type="String"></column>
@@ -1642,11 +1656,11 @@
 			<finder-column name="isNational"></finder-column>
 		</finder>
 	</entity>
-	<entity name="ESFPhone" local-service="true" remote-service="false">
+	<entity name="ESFPhone" local-service="true" remote-service="false" json-enabled="true">
 		<column name="esfPhoneId" type="long" primary="true"></column>
 		<column name="listTypeId" type="int"></column>
 	</entity>
-	<entity name="ESFBrand" local-service="true" remote-service="false">
+	<entity name="ESFBrand" local-service="true" remote-service="false" json-enabled="true">
 		<column name="brandId" type="long" primary="true"></column>
 		<column name="name" type="String"></column>
 		<column name="description" type="String"></column>
@@ -1655,7 +1669,7 @@
 		</order>
 	</entity>
 	<entity name="ESFElectronic" local-service="true"
-		remote-service="false">
+		remote-service="false" json-enabled="true">
 		<column name="electronicId" type="long" primary="true"></column>
 		<column name="name" type="String"></column>
 		<column name="description" type="String"></column>
@@ -1664,7 +1678,7 @@
 		</order>
 	</entity>
 	<entity name="ESFFieldESFElectronic" local-service="true"
-		remote-service="false">
+		remote-service="false" json-enabled="true">
 		<column name="id" type="long" primary="true"></column>
 		<column name="brandId" type="long"></column>
 		<column name="electronicId" type="long"></column>
@@ -1686,7 +1700,7 @@
 		</finder>
 	</entity>
 	<entity name="ESFLentField" remote-service="false"
-		local-service="true" cache-enabled="false">
+		local-service="true" cache-enabled="true" json-enabled="true">
 		<column name="lentFieldId" type="long" primary="true"></column>
 		<column name="esfEntityStateId" type="long"></column>
 		<column name="esfFieldId" type="long"></column>
@@ -1698,7 +1712,7 @@
 		</finder>
 	</entity>
 	<entity name="ESFMatchType" local-service="true" remote-service="false"
-		cache-enabled="true">
+		cache-enabled="true" json-enabled="true">
 
 
 		<!-- PK fields -->
@@ -1735,7 +1749,7 @@
             <finder-column name="name"></finder-column>
         </finder>
 	</entity>
-	<entity name="ESFRenewal" local-service="true" remote-service="false">
+	<entity name="ESFRenewal" local-service="true" remote-service="false" json-enabled="true">
 		<!-- PK fields -->
 		<column name="esfRenewalId" type="long" primary="true" />
 		<column name="companyId" type="long" />
@@ -1785,7 +1799,7 @@
 	</entity>
 	
 	<entity name="ESFResult" local-service="true"
-		remote-service="false">
+		remote-service="false" json-enabled="true">
 	
 	<!-- PK fields -->
 
@@ -1912,7 +1926,7 @@
 	
 	
 	<entity name="ESFMatchResult" local-service="true"
-		remote-service="false">
+		remote-service="false" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -1962,7 +1976,7 @@
 		</finder>
 	</entity>
 	<entity name="ESFNationalMatchResult" local-service="true"
-		remote-service="false">
+		remote-service="false" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -2030,13 +2044,13 @@
 		</finder>
 	</entity>
 	
-	<entity name="ESFCategory" local-service="true" remote-service="false">
+	<entity name="ESFCategory" local-service="true" remote-service="false" json-enabled="true">
 		<column name="esfCategoryId" type="long" primary="true"></column>
 		<column name="name" type="String"></column>
 		<column name="description" type="String"></column>
 	</entity>
 	<entity name="ESFUserCategory" local-service="true"
-		remote-service="false">
+		remote-service="false" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -2067,11 +2081,11 @@
 			<finder-column name="esfSportTypeId" ></finder-column>
 		</finder>
 	</entity>
-	<entity name="ESFJob" local-service="true" remote-service="false">
+	<entity name="ESFJob" local-service="true" remote-service="false" json-enabled="true">
 		<column name="esfJobId" type="long" primary="true"></column>
 		<column name="esfName" type="String"></column>
 	</entity>
-	<entity name="ESFDocument" remote-service="false" local-service="true">
+	<entity name="ESFDocument" remote-service="false" local-service="true" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -2094,6 +2108,10 @@
 		<column name="expirationDate" type="Date"></column>
 		<column name="esfUserId" type="long"></column>
 		<column name="type" type="String"></column>
+		<!-- ADDED for anomalia-id16 -->
+		<column name="esfDocumentTypeId" type="long"></column>
+		<!-- ADDED for anomalia-id16 -->
+		<column name="esfPublicAuthorityId" type="long"></column>
 		<column name="path" type="String"></column>
 		<finder name="Code" return-type="Collection">
 			<finder-column name="code"></finder-column>
@@ -2110,7 +2128,7 @@
 			<finder-column name="expirationDate"></finder-column>
 		</finder>
 	</entity>
-	<entity name="ESFEventType" local-service="true" remote-service="false">
+	<entity name="ESFEventType" local-service="true" remote-service="false" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -2130,13 +2148,13 @@
 		<column name="macrocategory" type="String"></column>
 		<column name="eventType" type="String"></column>
 	</entity>
-	<entity name="ESFJuniores" local-service="true" remote-service="false">
+	<entity name="ESFJuniores" local-service="true" remote-service="false" json-enabled="true">
 		<column name="ESFUserId" type="long" primary="true"></column>
 		<column name="startDate" type="Date"></column>
 		<column name="endDate" type="Date"></column>
 	</entity>
 	<entity name="ESFPartecipantInfo" local-service="true"
-		remote-service="false"><!-- PK fields -->
+		remote-service="false" json-enabled="true"><!-- PK fields -->
 		<column name="esfPartecipantInfoId" type="long" primary="true">
 		</column><!-- Group instance -->
 		<column name="groupId" type="long" /><!-- Audit fields -->
@@ -2195,7 +2213,7 @@
         </finder>
 	</entity>
 	
-	<entity name="ESFDeparture" local-service="true" remote-service="false">
+	<entity name="ESFDeparture" local-service="true" remote-service="false" json-enabled="true">
 
 		<!-- PK fields -->
 
@@ -2245,26 +2263,26 @@
 			<finder-column name="esfUserId"></finder-column>
 		</finder>
 	</entity>
-    <entity local-service="true" remote-service="false" name="ESFTransition">
+    <entity local-service="true" remote-service="false" name="ESFTransition" json-enabled="true">
         <column primary="true" name="esfTransitionId" type="long"></column>
         <column name="esfUserId" type="long"></column>
         <column name="esfCategoryId" type="long"></column>
         <column name="season" type="String"></column>
     </entity>
-    <entity name="ESFFornitureUser" local-service="true" remote-service="false">
+    <entity name="ESFFornitureUser" local-service="true" remote-service="false" json-enabled="true">
         <column name="esfIDForniture" type="long"></column>
         <column name="esfIdUser" type="long"></column>
         <column name="esfQuantity" type="long"></column>
         <column name="esfDateAssign" type="Date"></column>
         <column name="esfFornitureUserID" type="long" primary="true"></column>
     </entity>
-    <entity name="ESFAirport" local-service="true" remote-service="false">
+    <entity name="ESFAirport" local-service="true" remote-service="false" json-enabled="true">
         <column name="esfAirportId" type="long" primary="true"></column>
         <column name="name" type="String"></column>
         <column name="city" type="String"></column>
         <column name="country" type="String"></column>
     </entity>
-    <entity cache-enabled="false" local-service="true" name="ESFCatridge" remote-service="false" uuid="true">
+    <entity cache-enabled="true" local-service="true" name="ESFCatridge" remote-service="false" uuid="true" json-enabled="true">
         <column name="esfCatridgeId" primary="true" type="long"></column>
         <column name="esfUserId" type="long"></column>
         <column name="esfGunTypeId" type="long"></column>
@@ -2281,7 +2299,7 @@
             <finder-column name="esfGunTypeId"></finder-column>
         </finder>
     </entity>
-    <entity name="ESFCane" local-service="true" remote-service="false" uuid="true" cache-enabled="false">
+    <entity name="ESFCane" local-service="true" remote-service="false" uuid="true" cache-enabled="true" json-enabled="true">
         <column name="esfCaneId" type="long" primary="true"></column>
         <column name="esfUserId" type="long"></column>
         <column name="code" type="String"></column>
@@ -2309,7 +2327,7 @@
             <finder-column name="code"></finder-column>
         </finder>
     </entity>
-    <entity name="ESFHistoricalAssociation" remote-service="false" local-service="true">
+    <entity name="ESFHistoricalAssociation" remote-service="false" local-service="true" json-enabled="true">
         <column name="idHistoricalAssociation" type="long" primary="true"></column>
         <column name="name" type="String"></column>
         <column name="code" type="String"></column>
@@ -2325,7 +2343,7 @@
             <finder-column name="organizationId"></finder-column>
         </finder>
     </entity>
-    <entity name="ESFgunUser" local-service="true" remote-service="false">
+    <entity name="ESFgunUser" local-service="true" remote-service="false" json-enabled="true">
         <column name="esfGunUserId" type="long" primary="true"></column>
         <column name="esfGunId" type="long"></column>
         <column name="esfUserId" type="long"></column>
@@ -2364,15 +2382,15 @@
         </finder>
     </entity>
 
-	<entity name="ESFShootingDirector" remote-service="false" local-service="true">
+	<entity name="ESFShootingDirector" remote-service="false" local-service="true" json-enabled="true">
 		<column name="esfShootingDirectorId" type="long" primary="true"></column>
 		<column name="esfCodeData" type="String"></column>
 		<column name="esfStartData" type="Date"></column>
 		<column name="esfEndData" type="Date"></column>
-		<column name="esfUserId" type="Long"></column>
-		<column name="codeUser" type="Long"></column>
-		<column name="shootingDirectorQualificationId" type="Long"></column>
-		<column name="sportTypeId" type="Long"></column>
+		<column name="esfUserId" type="long"></column>
+		<column name="codeUser" type="long"></column>
+		<column name="shootingDirectorQualificationId" type="long"></column>
+		<column name="sportTypeId" type="long"></column>
 		<column name="regionId" type="String"></column>
 		<column name="provinceId" type="String"></column>
 		<column name="flagCrea" type="String"></column>
@@ -2408,7 +2426,7 @@
 		</finder>
 	</entity>
 	
-	<entity name="ESFShootingDirectorQualification" remote-service="false" local-service="true">
+	<entity name="ESFShootingDirectorQualification" remote-service="false" local-service="true" json-enabled="true">
 		<column name="esfShootingDirectorQualificationId" type="long" primary="true"></column>
 		<column name="esfShootingDirectorQualificationDesc" type="String"></column>
 		<order by="asc">
@@ -2416,7 +2434,7 @@
 		</order>
 	</entity>
 	
-	<entity name="ESFInstructsShootingDirector" remote-service="false" local-service="true">
+	<entity name="ESFInstructsShootingDirector" remote-service="false" local-service="true" json-enabled="true">
 		<column name="esfInstructsShootingDirectorId" type="long" primary="true"></column>
 		<column name="esfInstructsShootingDirectorCode" type="String"></column>
 		<column name="esfInstructsShootingDirectorDesc" type="String"></column>
@@ -2425,14 +2443,14 @@
 		</order>
 	</entity>
 	
-	<entity name="ESFSuspensiveShootingDirector" remote-service="false" local-service="true">
+	<entity name="ESFSuspensiveShootingDirector" remote-service="false" local-service="true" json-enabled="true">
 		<column name="esfSuspensiveShooingDirectorId" type="long" primary="true"></column>
 		<column name="esfData" type="Date"></column>
 		<column name="esfCodeData" type="String"></column>
 		<column name="esfStartData" type="Date"></column>
 		<column name="esfEndData" type="Date"></column>
-		<column name="esfUserId" type="Long"></column>
-		<column name="codeUser" type="Long"></column>
+		<column name="esfUserId" type="long"></column>
+		<column name="codeUser" type="long"></column>
 		<column name="Codice_Sosp" type="long"></column>
 		<column name="note" type="String"></column>
 		<column name="Qualif1_Utiliz" type="long"></column>
@@ -2463,13 +2481,13 @@
 		</finder>
 	</entity>
 	
-	<entity name="ESFSuspensiveCode" remote-service="false" local-service="true">
+	<entity name="ESFSuspensiveCode" remote-service="false" local-service="true" json-enabled="true">
 		<column name="esfSuspensiveCodeId" type="long" primary="true"></column>
 		<column name="code" type="String"></column>
 		<column name="description" type="String"></column>
 	</entity>
 	
-	<entity name="ESFShooterAffiliationChrono" remote-service="false" local-service="true">
+	<entity name="ESFShooterAffiliationChrono" remote-service="false" local-service="true" json-enabled="true">
 		<column name="esfShooterAffiliationChronoId" type="long" primary="true"></column>
 		<column name="esfuserId" type="long"></column>
 		<column name="affiliationDate" type="Date"></column>
@@ -2495,7 +2513,7 @@
 		
 	</entity>
 	
-	<entity name="ESFAnnualFreeCard" remote-service="false" local-service="true">
+	<entity name="ESFAnnualFreeCard" remote-service="false" local-service="true" json-enabled="true">
 			<column name="annualFreeCardId" type="long" primary="true"></column>
 			<column name="companyId" type="long"></column>
 			<column name="userId" type="long"></column>
@@ -2515,7 +2533,7 @@
 		</finder>
 	</entity>
 	
-	<entity name="ESFAnnualConiReport" remote-service="false" local-service="true">
+	<entity name="ESFAnnualConiReport" remote-service="false" local-service="true" json-enabled="true">
 		<column name="annualConiReportId" type="long" primary="true"></column>
 		<column name="assId" type="long"></column>
 		<column name="year" type="int"></column>
@@ -2525,6 +2543,56 @@
 			<finder-column name="year"></finder-column>
 		</finder>
 	</entity>
+	<!-- ADDED for anomalia-id16 -->
+	<entity name="ESFDocumentType" local-service="true" remote-service="false">
+		<!-- PK fields -->
+		<column name="esfDocumentTypeId" type="long" primary="true"></column>
+		<!-- Audit fields -->
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Entity Fields -->
+		<column name="description" type="String"></column>
+		<column name="expirationMonthsNotice" type="int"></column>
+	</entity>
+	<!-- ADDED for anomalia-id16 -->
+	<entity name="ESFPublicAuthority" local-service="true" remote-service="false" json-enabled="true">
+		<!-- PK fields -->
+		<column name="esfPublicAuthorityId" type="long" primary="true"></column>
+		<!-- Audit fields -->
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Entity Fields -->
+		<column name="description" type="String"></column>
+	</entity>
+    <entity remote-service="false" local-service="true" json-enabled="false" name="VW_ESFListaIncarichi" table="VW_ESFListaIncarichi">
+        <column name="AnniPrecedenti" type="int" primary="true"></column>
+        <column name="AnnoFineIncarico" type="int" primary="true"></column>
+        <column name="AnnoInizioIncarico" type="int" primary="true"></column>
+        <column name="AnnoCorrente" type="int" primary="true"></column>
+        <column name="NomeRuolo" type="String" primary="true"></column>
+        <column name="endDate" type="Date" primary="false"></column>
+        <column name="startDate" type="Date" primary="true"></column>
+        <column name="esfUserId" type="long" primary="true"></column>
+        <column name="esfOrganizationId" type="long" primary="true"></column>
+        <column name="lastName" type="String" primary="true"></column>
+        <column name="firstName" type="String" primary="true"></column>
+        <order by="asc">
+            <order-column name="endDate" order-by="asc"></order-column>
+            <order-column name="esfUserId" order-by="asc"></order-column>
+        </order>
+        <finder name="organizzazione" return-type="Collection" db-index="false">
+            <finder-column name="esfOrganizationId" comparator="="></finder-column>
+        </finder>
+    </entity>
+    <entity name="VW_DatiDrettoreTiro" table="vw_datidirettoretiro" json-enabled="false" local-service="true" remote-service="false">
+        <column name="esfShootingDirectorId" type="long" primary="true"></column>
+        <column name="Nome" type="String" primary="true"></column>
+        <column name="Cognome" type="String" primary="true"></column>
+        <column name="CodiceRegione" type="String" primary="true"></column>
+        <finder name="esfShootingDirectorId" return-type="VW_DatiDrettoreTiro">
+            <finder-column name="esfShootingDirectorId" comparator="="></finder-column>
+        </finder>
+    </entity>
 	
 	<exceptions>
 		<exception>ESFAddressLatitude</exception>
@@ -2542,5 +2610,6 @@
 		<exception>ESFUserRoleName</exception>
 		<exception>ESFUserRoleType</exception>
 		<exception>ESFUserName</exception>
+        <exception>VW_ESFListaIncarichi</exception>
 	</exceptions>
 </service-builder>
