@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -116,19 +116,23 @@ public class ESFAddressLocalServiceClpInvoker {
 
 		_methodParameterTypes67 = new String[] { "java.lang.String" };
 
-		_methodName72 = "findByL_L";
+		_methodName72 = "newESFAddress";
 
-		_methodParameterTypes72 = new String[] { "double", "double" };
+		_methodParameterTypes72 = new String[] {  };
 
-		_methodName73 = "getESFAddresses";
+		_methodName73 = "findByL_L";
 
-		_methodParameterTypes73 = new String[] {
+		_methodParameterTypes73 = new String[] { "double", "double" };
+
+		_methodName74 = "getESFAddresses";
+
+		_methodParameterTypes74 = new String[] {
 				"long", "java.lang.String", "long"
 			};
 
-		_methodName74 = "addESFAddress";
+		_methodName75 = "addESFAddress";
 
-		_methodParameterTypes74 = new String[] {
+		_methodParameterTypes75 = new String[] {
 				"long", "double", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "double",
 				"java.lang.String", "long", "java.lang.String",
@@ -137,9 +141,9 @@ public class ESFAddressLocalServiceClpInvoker {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName75 = "updateESFAddress";
+		_methodName76 = "updateESFAddress";
 
-		_methodParameterTypes75 = new String[] {
+		_methodParameterTypes76 = new String[] {
 				"long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "double", "double",
 				"java.lang.String", "long", "java.lang.String",
@@ -148,9 +152,9 @@ public class ESFAddressLocalServiceClpInvoker {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName76 = "deleteESFAddress";
+		_methodName77 = "deleteESFAddress";
 
-		_methodParameterTypes76 = new String[] {
+		_methodParameterTypes77 = new String[] {
 				"long", "com.liferay.portal.service.ServiceContext"
 			};
 	}
@@ -270,18 +274,23 @@ public class ESFAddressLocalServiceClpInvoker {
 
 		if (_methodName72.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes72, parameterTypes)) {
-			return ESFAddressLocalServiceUtil.findByL_L(((Double)arguments[0]).doubleValue(),
-				((Double)arguments[1]).doubleValue());
+			return ESFAddressLocalServiceUtil.newESFAddress();
 		}
 
 		if (_methodName73.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes73, parameterTypes)) {
-			return ESFAddressLocalServiceUtil.getESFAddresses(((Long)arguments[0]).longValue(),
-				(java.lang.String)arguments[1], ((Long)arguments[2]).longValue());
+			return ESFAddressLocalServiceUtil.findByL_L(((Double)arguments[0]).doubleValue(),
+				((Double)arguments[1]).doubleValue());
 		}
 
 		if (_methodName74.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes74, parameterTypes)) {
+			return ESFAddressLocalServiceUtil.getESFAddresses(((Long)arguments[0]).longValue(),
+				(java.lang.String)arguments[1], ((Long)arguments[2]).longValue());
+		}
+
+		if (_methodName75.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes75, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.addESFAddress(((Long)arguments[0]).longValue(),
 				((Double)arguments[1]).doubleValue(),
 				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
@@ -299,8 +308,8 @@ public class ESFAddressLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[16]);
 		}
 
-		if (_methodName75.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes75, parameterTypes)) {
+		if (_methodName76.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes76, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.updateESFAddress(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
@@ -319,8 +328,8 @@ public class ESFAddressLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[17]);
 		}
 
-		if (_methodName76.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes76, parameterTypes)) {
+		if (_methodName77.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes77, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.deleteESFAddress(((Long)arguments[0]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
@@ -378,4 +387,6 @@ public class ESFAddressLocalServiceClpInvoker {
 	private String[] _methodParameterTypes75;
 	private String _methodName76;
 	private String[] _methodParameterTypes76;
+	private String _methodName77;
+	private String[] _methodParameterTypes77;
 }

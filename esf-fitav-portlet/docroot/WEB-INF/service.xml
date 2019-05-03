@@ -7,9 +7,7 @@
 
 	<entity name="ESFAddress" remote-service="false" local-service="true"
 		uuid="true" json-enabled="true">
-
 		<!-- PK fields -->
-
 		<column name="esfAddressId" primary="true" type="long" />
 
 		<!-- Other fields -->

@@ -479,7 +479,7 @@
 	</portlet>
 	<portlet>
 		<portlet-name>14</portlet-name>
-		<display-name>Esf Unitservice</display-name>
+		<display-name>Gestione Servizi Associazione</display-name>
 		<portlet-class>it.ethica.esf.portlet.ESFUnitservicePortlet</portlet-class>
 		<init-param>
 			<name>template-path</name>
@@ -515,7 +515,7 @@
 	</portlet>
 	<portlet>
 		<portlet-name>15</portlet-name>
-		<display-name>Gestione Servizi Associazione</display-name>
+        <display-name>Gestione Servizi</display-name>
 		<portlet-class>
 			it.ethica.esf.portlet.ESFOrganizationUnitservicePortlet
 		</portlet-class>
