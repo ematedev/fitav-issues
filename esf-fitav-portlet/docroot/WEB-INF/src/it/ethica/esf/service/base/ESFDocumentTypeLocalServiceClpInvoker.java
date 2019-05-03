@@ -113,6 +113,12 @@ public class ESFDocumentTypeLocalServiceClpInvoker {
 		_methodName377 = "setBeanIdentifier";
 
 		_methodParameterTypes377 = new String[] { "java.lang.String" };
+
+		_methodName382 = "saveUpdateESFDocumentType";
+
+		_methodParameterTypes382 = new String[] {
+				"it.ethica.esf.model.ESFDocumentType"
+			};
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -216,6 +222,11 @@ public class ESFDocumentTypeLocalServiceClpInvoker {
 			return null;
 		}
 
+		if (_methodName382.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
+			return ESFDocumentTypeLocalServiceUtil.saveUpdateESFDocumentType((it.ethica.esf.model.ESFDocumentType)arguments[0]);
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -255,4 +266,6 @@ public class ESFDocumentTypeLocalServiceClpInvoker {
 	private String[] _methodParameterTypes376;
 	private String _methodName377;
 	private String[] _methodParameterTypes377;
+	private String _methodName382;
+	private String[] _methodParameterTypes382;
 }

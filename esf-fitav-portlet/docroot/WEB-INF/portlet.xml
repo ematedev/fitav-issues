@@ -2029,8 +2029,12 @@
 		<portlet-name>esf-document-type</portlet-name>
 		<display-name>Esf Document Type</display-name>
 		<portlet-class>
-			it.ethica.esf.portlet.ESFDocumentType
+			it.ethica.esf.portlet.ESFDocumentTypeMVC
 		</portlet-class>
+		<init-param>
+			<name>template-path</name>
+			<value>/html/esfdocumenttype/</value>
+		</init-param>
 		<init-param>
 			<name>view-template</name>
 			<value>/html/esfdocumenttype/view.jsp</value>

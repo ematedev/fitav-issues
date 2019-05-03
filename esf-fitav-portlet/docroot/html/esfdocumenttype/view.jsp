@@ -1,12 +1,14 @@
-
+<%@page import="java.util.List"%>
 <%@ include file="init.jsp"%>
 
 <%
 //Recupero tutti i record, nel caso l'anagrafica possa crescere molto conviene gestire la paginazione
-// List<ESFDocumentType> esfDocumentsType = ESFDocumentTypeLocalServiceUtil.getESFDocumentTypes(QueryUtil.ALL_POS, QueryUtil.ALL_POS);
-// int totalDocuments = (esfDocumentsType!=null) ? esfDocumentsType.size() : 0;
-
+List<ESFDocumentType> esfDocumentsType = ESFDocumentTypeLocalServiceUtil.getESFDocumentTypes(QueryUtil.ALL_POS, QueryUtil.ALL_POS);
+int totalDocuments = (esfDocumentsType!=null) ? esfDocumentsType.size() : 0;
+// boolean hasDocuments = totalDocuments > 0;
 %>
+
+<liferay-ui:success key="success-document-type-persist" message="Salvataggio avvenuto con successo"/>
 
 <!-- URL per pagina di aggiunta/modifica -->
 <portlet:renderURL var="addESFDocumentTypeURL">
@@ -22,24 +24,16 @@
 	<aui:button onClick="${addESFDocumentTypeURL}" value="add-document-type" />
 </aui:button-row>
 
+
 <liferay-ui:search-container emptyResultsMessage="no-results">
-    <liferay-ui:search-container-results>
-		<%
-		total = ESFDocumentTypeLocalServiceUtil.getESFDocumentTypesCount();
-		results = ESFDocumentTypeLocalServiceUtil.getESFDocumentTypes(QueryUtil.ALL_POS, QueryUtil.ALL_POS);
-		
-		searchContainer.setTotal(total);
-		searchContainer.setResults(results);		
-		%>
-	</liferay-ui:search-container-results>
-		
+    <liferay-ui:search-container-results results="<%=esfDocumentsType%>" total="<%=totalDocuments%>" />
     <liferay-ui:search-container-row
         className="it.ethica.esf.model.ESFDocumentType" 
         keyProperty="esfDocumentTypeId" modelVar="documentType">
         <liferay-ui:search-container-column-text property="description" />
         <liferay-ui:search-container-column-text property="expirationMonthsNotice" />
-        <!-- Aggiungere una jsp per gestire le azioni possibili sull'entity -->
-        
+        <liferay-ui:search-container-column-jsp
+			path="/html/esfdocumenttype/esfDocumentType_actions.jsp" align="right" />
     </liferay-ui:search-container-row>
     <liferay-ui:search-iterator />
 </liferay-ui:search-container>

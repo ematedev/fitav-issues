@@ -63,6 +63,8 @@ public class ESFDocumentWrapper implements ESFDocument,
 		attributes.put("expirationDate", getExpirationDate());
 		attributes.put("esfUserId", getEsfUserId());
 		attributes.put("type", getType());
+		attributes.put("esfDocumentTypeId", getEsfDocumentTypeId());
+		attributes.put("esfPublicAuthorityId", getEsfPublicAuthorityId());
 		attributes.put("path", getPath());
 
 		return attributes;
@@ -146,6 +148,18 @@ public class ESFDocumentWrapper implements ESFDocument,
 
 		if (type != null) {
 			setType(type);
+		}
+
+		Long esfDocumentTypeId = (Long)attributes.get("esfDocumentTypeId");
+
+		if (esfDocumentTypeId != null) {
+			setEsfDocumentTypeId(esfDocumentTypeId);
+		}
+
+		Long esfPublicAuthorityId = (Long)attributes.get("esfPublicAuthorityId");
+
+		if (esfPublicAuthorityId != null) {
+			setEsfPublicAuthorityId(esfPublicAuthorityId);
 		}
 
 		String path = (String)attributes.get("path");
@@ -477,6 +491,46 @@ public class ESFDocumentWrapper implements ESFDocument,
 	@Override
 	public void setType(java.lang.String type) {
 		_esfDocument.setType(type);
+	}
+
+	/**
+	* Returns the esf document type ID of this e s f document.
+	*
+	* @return the esf document type ID of this e s f document
+	*/
+	@Override
+	public long getEsfDocumentTypeId() {
+		return _esfDocument.getEsfDocumentTypeId();
+	}
+
+	/**
+	* Sets the esf document type ID of this e s f document.
+	*
+	* @param esfDocumentTypeId the esf document type ID of this e s f document
+	*/
+	@Override
+	public void setEsfDocumentTypeId(long esfDocumentTypeId) {
+		_esfDocument.setEsfDocumentTypeId(esfDocumentTypeId);
+	}
+
+	/**
+	* Returns the esf public authority ID of this e s f document.
+	*
+	* @return the esf public authority ID of this e s f document
+	*/
+	@Override
+	public long getEsfPublicAuthorityId() {
+		return _esfDocument.getEsfPublicAuthorityId();
+	}
+
+	/**
+	* Sets the esf public authority ID of this e s f document.
+	*
+	* @param esfPublicAuthorityId the esf public authority ID of this e s f document
+	*/
+	@Override
+	public void setEsfPublicAuthorityId(long esfPublicAuthorityId) {
+		_esfDocument.setEsfPublicAuthorityId(esfPublicAuthorityId);
 	}
 
 	/**

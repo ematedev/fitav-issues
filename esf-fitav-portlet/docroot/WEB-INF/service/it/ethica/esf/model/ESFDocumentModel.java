@@ -292,6 +292,34 @@ public interface ESFDocumentModel extends BaseModel<ESFDocument>, GroupedModel {
 	public void setType(String type);
 
 	/**
+	 * Returns the esf document type ID of this e s f document.
+	 *
+	 * @return the esf document type ID of this e s f document
+	 */
+	public long getEsfDocumentTypeId();
+
+	/**
+	 * Sets the esf document type ID of this e s f document.
+	 *
+	 * @param esfDocumentTypeId the esf document type ID of this e s f document
+	 */
+	public void setEsfDocumentTypeId(long esfDocumentTypeId);
+
+	/**
+	 * Returns the esf public authority ID of this e s f document.
+	 *
+	 * @return the esf public authority ID of this e s f document
+	 */
+	public long getEsfPublicAuthorityId();
+
+	/**
+	 * Sets the esf public authority ID of this e s f document.
+	 *
+	 * @param esfPublicAuthorityId the esf public authority ID of this e s f document
+	 */
+	public void setEsfPublicAuthorityId(long esfPublicAuthorityId);
+
+	/**
 	 * Returns the path of this e s f document.
 	 *
 	 * @return the path of this e s f document
@@ -343,19 +371,19 @@ public interface ESFDocumentModel extends BaseModel<ESFDocument>, GroupedModel {
 	public Object clone();
 
 	@Override
-	public int compareTo(ESFDocument esfDocument);
+	public int compareTo(it.ethica.esf.model.ESFDocument esfDocument);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ESFDocument> toCacheModel();
+	public CacheModel<it.ethica.esf.model.ESFDocument> toCacheModel();
 
 	@Override
-	public ESFDocument toEscapedModel();
+	public it.ethica.esf.model.ESFDocument toEscapedModel();
 
 	@Override
-	public ESFDocument toUnescapedModel();
+	public it.ethica.esf.model.ESFDocument toUnescapedModel();
 
 	@Override
 	public String toString();

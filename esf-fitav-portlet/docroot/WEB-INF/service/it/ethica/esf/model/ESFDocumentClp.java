@@ -88,6 +88,8 @@ public class ESFDocumentClp extends BaseModelImpl<ESFDocument>
 		attributes.put("expirationDate", getExpirationDate());
 		attributes.put("esfUserId", getEsfUserId());
 		attributes.put("type", getType());
+		attributes.put("esfDocumentTypeId", getEsfDocumentTypeId());
+		attributes.put("esfPublicAuthorityId", getEsfPublicAuthorityId());
 		attributes.put("path", getPath());
 
 		return attributes;
@@ -171,6 +173,18 @@ public class ESFDocumentClp extends BaseModelImpl<ESFDocument>
 
 		if (type != null) {
 			setType(type);
+		}
+
+		Long esfDocumentTypeId = (Long)attributes.get("esfDocumentTypeId");
+
+		if (esfDocumentTypeId != null) {
+			setEsfDocumentTypeId(esfDocumentTypeId);
+		}
+
+		Long esfPublicAuthorityId = (Long)attributes.get("esfPublicAuthorityId");
+
+		if (esfPublicAuthorityId != null) {
+			setEsfPublicAuthorityId(esfPublicAuthorityId);
 		}
 
 		String path = (String)attributes.get("path");
@@ -500,6 +514,54 @@ public class ESFDocumentClp extends BaseModelImpl<ESFDocument>
 	}
 
 	@Override
+	public long getEsfDocumentTypeId() {
+		return _esfDocumentTypeId;
+	}
+
+	@Override
+	public void setEsfDocumentTypeId(long esfDocumentTypeId) {
+		_esfDocumentTypeId = esfDocumentTypeId;
+
+		if (_esfDocumentRemoteModel != null) {
+			try {
+				Class<?> clazz = _esfDocumentRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setEsfDocumentTypeId",
+						long.class);
+
+				method.invoke(_esfDocumentRemoteModel, esfDocumentTypeId);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public long getEsfPublicAuthorityId() {
+		return _esfPublicAuthorityId;
+	}
+
+	@Override
+	public void setEsfPublicAuthorityId(long esfPublicAuthorityId) {
+		_esfPublicAuthorityId = esfPublicAuthorityId;
+
+		if (_esfDocumentRemoteModel != null) {
+			try {
+				Class<?> clazz = _esfDocumentRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setEsfPublicAuthorityId",
+						long.class);
+
+				method.invoke(_esfDocumentRemoteModel, esfPublicAuthorityId);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
 	public String getPath() {
 		return _path;
 	}
@@ -604,6 +666,8 @@ public class ESFDocumentClp extends BaseModelImpl<ESFDocument>
 		clone.setExpirationDate(getExpirationDate());
 		clone.setEsfUserId(getEsfUserId());
 		clone.setType(getType());
+		clone.setEsfDocumentTypeId(getEsfDocumentTypeId());
+		clone.setEsfPublicAuthorityId(getEsfPublicAuthorityId());
 		clone.setPath(getPath());
 
 		return clone;
@@ -646,6 +710,10 @@ public class ESFDocumentClp extends BaseModelImpl<ESFDocument>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -653,7 +721,7 @@ public class ESFDocumentClp extends BaseModelImpl<ESFDocument>
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(29);
+		StringBundler sb = new StringBundler(33);
 
 		sb.append("{esfDocumentId=");
 		sb.append(getEsfDocumentId());
@@ -681,6 +749,10 @@ public class ESFDocumentClp extends BaseModelImpl<ESFDocument>
 		sb.append(getEsfUserId());
 		sb.append(", type=");
 		sb.append(getType());
+		sb.append(", esfDocumentTypeId=");
+		sb.append(getEsfDocumentTypeId());
+		sb.append(", esfPublicAuthorityId=");
+		sb.append(getEsfPublicAuthorityId());
 		sb.append(", path=");
 		sb.append(getPath());
 		sb.append("}");
@@ -690,7 +762,7 @@ public class ESFDocumentClp extends BaseModelImpl<ESFDocument>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(46);
+		StringBundler sb = new StringBundler(52);
 
 		sb.append("<model><model-name>");
 		sb.append("it.ethica.esf.model.ESFDocument");
@@ -749,6 +821,14 @@ public class ESFDocumentClp extends BaseModelImpl<ESFDocument>
 		sb.append(getType());
 		sb.append("]]></column-value></column>");
 		sb.append(
+			"<column><column-name>esfDocumentTypeId</column-name><column-value><![CDATA[");
+		sb.append(getEsfDocumentTypeId());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>esfPublicAuthorityId</column-name><column-value><![CDATA[");
+		sb.append(getEsfPublicAuthorityId());
+		sb.append("]]></column-value></column>");
+		sb.append(
 			"<column><column-name>path</column-name><column-value><![CDATA[");
 		sb.append(getPath());
 		sb.append("]]></column-value></column>");
@@ -773,6 +853,9 @@ public class ESFDocumentClp extends BaseModelImpl<ESFDocument>
 	private long _esfUserId;
 	private String _esfUserUuid;
 	private String _type;
+	private long _esfDocumentTypeId;
+	private long _esfPublicAuthorityId;
 	private String _path;
 	private BaseModel<?> _esfDocumentRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

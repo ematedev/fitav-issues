@@ -5,40 +5,44 @@
 long documentID = ParamUtil.getLong(request, "esfDocumentTypeId");
 boolean isEditRequest = documentID > 0;
 ESFDocumentType documentType = null;
+String esfDocumentTypeId = null;
 String descrizione = null;
 String expirationMonthsNotice = null;
 //Se ho passato un id maggiore di zero allora sto chiedendo la modifica
 if(isEditRequest){
-	//Leggo l'entita da modificare dal DB
-	documentType = ESFDocumentTypeLocalServiceUtil.getESFDocumentType(documentID);	
+	documentType = ESFDocumentTypeLocalServiceUtil.getESFDocumentType(documentID);
 }
 //Se ho un entita da cui leggere prendo i valori di descrizione e mesi di preavviso
+
 if(Validator.isNotNull(documentType)){
+	esfDocumentTypeId = String.valueOf(documentType.getEsfDocumentTypeId());
 	descrizione = documentType.getDescription();
 	expirationMonthsNotice = String.valueOf(documentType.getExpirationMonthsNotice()) ;
 }else{
 	//Altrimenti li setto come vuoti
+	esfDocumentTypeId = String.valueOf(documentID);
 	descrizione = "";
 	expirationMonthsNotice = "";
 }
 %>
 
+<liferay-ui:error key="error-document-type-persist" message="Impossibile salvare il documento" ></liferay-ui:error>
+<liferay-ui:error key="error-document-type-validate" message="Validazione dati fallita" ></liferay-ui:error>
 <aui:button-row>
 	<!-- Bottone per tornare alla vista principale della portlet (view.jsp) -->
 	<aui:button onClick="${viewURL}" value="go-back" />
 </aui:button-row>
-
 <portlet:actionURL var="editESFDocumentTypeURL" name="editESFDocumentType">
-	<portlet:param name="esfDocumentTypeId" value="${documentID}"/>
+	<portlet:param name="esfDocumentTypeId" value="<%=esfDocumentTypeId%>"/>
 </portlet:actionURL>
 
-<aui:form action="${editESFDocumentTypeURL}" enctype="multipart/form-data" name="fm">
+<aui:form action="${editESFDocumentTypeURL}" name="fm">
 	<aui:fieldset>
-		<aui:input type="text" label="" name="description" value="${descrizione}" ></aui:input>
-		<aui:input type="text" labe="" name="expirationMonthsNotice" value="${expirationMonthsNotice}"></aui:input>
+		<aui:input type="text" label="document-type-desc" name="description" value="<%=descrizione%>" required="required" ></aui:input>
+		<aui:input type="text" labe="document-type-expiration" name="expirationMonthsNotice" value="<%=expirationMonthsNotice%>" required="required"></aui:input>
 	</aui:fieldset>
 	<aui:button-row>
-		<aui:button type="submit"></aui:button>
-		<aui:button type="cancel" onClick="${viewURL}"></aui:button>
+		<aui:button type="submit" value="save"></aui:button>
+		<aui:button type="cancel" onClick="${viewURL}" value="back"></aui:button>
 	</aui:button-row>
 </aui:form>

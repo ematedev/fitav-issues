@@ -2532,7 +2532,7 @@
 	<!-- ADDED for anomalia-id16 -->
 	<entity name="ESFDocumentType" local-service="true" remote-service="false">
 		<!-- PK fields -->
-		<column name="esfDocumentTypeId" type="long" primary="true"></column>
+		<column name="esfDocumentTypeId" type="long" primary="true" id-type="identity"></column>
 		<!-- Audit fields -->
 		<column name="createDate" type="Date"></column>
 		<column name="modifiedDate" type="Date"></column>
