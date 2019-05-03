@@ -1,5 +1,7 @@
 <%@ include file="init.jsp"%>
 
+<h1>Gestione Descrizione Gara</h1>
+
 <%
 	ESFDescription esfDescription = null;
 
@@ -40,7 +42,7 @@
 							: StringPool.BLANK%>'></aui:input>
 	</aui:fieldset>
 	<aui:button-row>
-		<c:if test="<%= ESFNormalMatchPermission.contains(permissionChecker,esfMatchId, ActionKeys.ESFNORMALMATCH_DESCRIPTION_ADD) %>">	
+		<c:if test="<%= matchId > 0 && ESFNormalMatchPermission.contains(permissionChecker,esfMatchId, ActionKeys.ESFNORMALMATCH_DESCRIPTION_ADD) %>">	
 			<aui:button type="submit"></aui:button>
 		</c:if>
 		<aui:button type="cancel" value="go-back" onClick="<%= backUrl %>"></aui:button>

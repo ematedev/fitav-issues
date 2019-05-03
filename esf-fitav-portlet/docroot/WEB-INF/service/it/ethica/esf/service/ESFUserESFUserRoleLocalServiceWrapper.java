@@ -471,6 +471,10 @@ public class ESFUserESFUserRoleLocalServiceWrapper
 			organizationId);
 	}
 
+	/**
+	* Carica TUTTE le informazioni relative ai Consiglieri
+	* di una Associazione
+	*/
 	@Override
 	public java.util.List<it.ethica.esf.model.ESFUserESFUserRole> findbyBDORole(
 		long organizationId)

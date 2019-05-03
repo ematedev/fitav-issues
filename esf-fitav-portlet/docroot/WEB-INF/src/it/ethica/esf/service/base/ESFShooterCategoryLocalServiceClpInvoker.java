@@ -122,57 +122,57 @@ public class ESFShooterCategoryLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFShooterCategory"
 			};
 
-		_methodName372 = "getBeanIdentifier";
+		_methodName384 = "getBeanIdentifier";
 
-		_methodParameterTypes372 = new String[] {  };
+		_methodParameterTypes384 = new String[] {  };
 
-		_methodName373 = "setBeanIdentifier";
-
-		_methodParameterTypes373 = new String[] { "java.lang.String" };
-
-		_methodName378 = "getESFShooterCategories";
-
-		_methodParameterTypes378 = new String[] {  };
-
-		_methodName379 = "getESFShooterCategories";
-
-		_methodParameterTypes379 = new String[] { "int", "int" };
-
-		_methodName380 = "getESFShooterCategories";
-
-		_methodParameterTypes380 = new String[] { "long" };
-
-		_methodName381 = "findByMatchId";
-
-		_methodParameterTypes381 = new String[] { "long" };
-
-		_methodName382 = "addESFShooterCategory";
-
-		_methodParameterTypes382 = new String[] {
-				"long", "java.lang.String", "java.lang.String",
-				"java.lang.String", "com.liferay.portal.service.ServiceContext"
-			};
-
-		_methodName383 = "updateESFShooterCategory";
-
-		_methodParameterTypes383 = new String[] {
-				"long", "java.lang.String", "java.lang.String",
-				"java.lang.String", "com.liferay.portal.service.ServiceContext"
-			};
-
-		_methodName384 = "deleteESFShooterCategory";
-
-		_methodParameterTypes384 = new String[] {
-				"long", "com.liferay.portal.service.ServiceContext"
-			};
-
-		_methodName385 = "findIDCategoryByName";
+		_methodName385 = "setBeanIdentifier";
 
 		_methodParameterTypes385 = new String[] { "java.lang.String" };
 
-		_methodName386 = "findIDCategoryByCode";
+		_methodName390 = "getESFShooterCategories";
 
-		_methodParameterTypes386 = new String[] { "java.lang.String" };
+		_methodParameterTypes390 = new String[] {  };
+
+		_methodName391 = "getESFShooterCategories";
+
+		_methodParameterTypes391 = new String[] { "int", "int" };
+
+		_methodName392 = "getESFShooterCategories";
+
+		_methodParameterTypes392 = new String[] { "long" };
+
+		_methodName393 = "findByMatchId";
+
+		_methodParameterTypes393 = new String[] { "long" };
+
+		_methodName394 = "addESFShooterCategory";
+
+		_methodParameterTypes394 = new String[] {
+				"long", "java.lang.String", "java.lang.String",
+				"java.lang.String", "com.liferay.portal.service.ServiceContext"
+			};
+
+		_methodName395 = "updateESFShooterCategory";
+
+		_methodParameterTypes395 = new String[] {
+				"long", "java.lang.String", "java.lang.String",
+				"java.lang.String", "com.liferay.portal.service.ServiceContext"
+			};
+
+		_methodName396 = "deleteESFShooterCategory";
+
+		_methodParameterTypes396 = new String[] {
+				"long", "com.liferay.portal.service.ServiceContext"
+			};
+
+		_methodName397 = "findIDCategoryByName";
+
+		_methodParameterTypes397 = new String[] { "java.lang.String" };
+
+		_methodName398 = "findIDCategoryByCode";
+
+		_methodParameterTypes398 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -288,68 +288,68 @@ public class ESFShooterCategoryLocalServiceClpInvoker {
 			return ESFShooterCategoryLocalServiceUtil.updateESFShooterCategory((it.ethica.esf.model.ESFShooterCategory)arguments[0]);
 		}
 
-		if (_methodName372.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes372, parameterTypes)) {
+		if (_methodName384.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
 			return ESFShooterCategoryLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName373.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes373, parameterTypes)) {
+		if (_methodName385.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
 			ESFShooterCategoryLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName378.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes378, parameterTypes)) {
+		if (_methodName390.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
 			return ESFShooterCategoryLocalServiceUtil.getESFShooterCategories();
 		}
 
-		if (_methodName379.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes379, parameterTypes)) {
+		if (_methodName391.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
 			return ESFShooterCategoryLocalServiceUtil.getESFShooterCategories(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
-		if (_methodName380.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
+		if (_methodName392.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFShooterCategoryLocalServiceUtil.getESFShooterCategories(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName381.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes381, parameterTypes)) {
+		if (_methodName393.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
 			return ESFShooterCategoryLocalServiceUtil.findByMatchId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName382.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
+		if (_methodName394.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
 			return ESFShooterCategoryLocalServiceUtil.addESFShooterCategory(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(java.lang.String)arguments[3],
 				(com.liferay.portal.service.ServiceContext)arguments[4]);
 		}
 
-		if (_methodName383.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes383, parameterTypes)) {
+		if (_methodName395.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
 			return ESFShooterCategoryLocalServiceUtil.updateESFShooterCategory(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(java.lang.String)arguments[3],
 				(com.liferay.portal.service.ServiceContext)arguments[4]);
 		}
 
-		if (_methodName384.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
+		if (_methodName396.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
 			return ESFShooterCategoryLocalServiceUtil.deleteESFShooterCategory(((Long)arguments[0]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
 
-		if (_methodName385.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
+		if (_methodName397.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
 			return ESFShooterCategoryLocalServiceUtil.findIDCategoryByName((java.lang.String)arguments[0]);
 		}
 
-		if (_methodName386.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
+		if (_methodName398.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
 			return ESFShooterCategoryLocalServiceUtil.findIDCategoryByCode((java.lang.String)arguments[0]);
 		}
 
@@ -396,26 +396,26 @@ public class ESFShooterCategoryLocalServiceClpInvoker {
 	private String[] _methodParameterTypes18;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
-	private String _methodName372;
-	private String[] _methodParameterTypes372;
-	private String _methodName373;
-	private String[] _methodParameterTypes373;
-	private String _methodName378;
-	private String[] _methodParameterTypes378;
-	private String _methodName379;
-	private String[] _methodParameterTypes379;
-	private String _methodName380;
-	private String[] _methodParameterTypes380;
-	private String _methodName381;
-	private String[] _methodParameterTypes381;
-	private String _methodName382;
-	private String[] _methodParameterTypes382;
-	private String _methodName383;
-	private String[] _methodParameterTypes383;
 	private String _methodName384;
 	private String[] _methodParameterTypes384;
 	private String _methodName385;
 	private String[] _methodParameterTypes385;
-	private String _methodName386;
-	private String[] _methodParameterTypes386;
+	private String _methodName390;
+	private String[] _methodParameterTypes390;
+	private String _methodName391;
+	private String[] _methodParameterTypes391;
+	private String _methodName392;
+	private String[] _methodParameterTypes392;
+	private String _methodName393;
+	private String[] _methodParameterTypes393;
+	private String _methodName394;
+	private String[] _methodParameterTypes394;
+	private String _methodName395;
+	private String[] _methodParameterTypes395;
+	private String _methodName396;
+	private String[] _methodParameterTypes396;
+	private String _methodName397;
+	private String[] _methodParameterTypes397;
+	private String _methodName398;
+	private String[] _methodParameterTypes398;
 }

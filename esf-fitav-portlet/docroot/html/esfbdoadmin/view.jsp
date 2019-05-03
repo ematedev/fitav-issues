@@ -1,3 +1,7 @@
+<%@page import="it.ethica.esf.util.DateUtilFormatter"%>
+<%@page import="com.liferay.portal.kernel.util.DateUtil"%>
+<%@page import="java.util.Collection"%>
+<%@page import="it.ethica.esf.model.VW_ESFListaIncarichi"%>
 <%@page import="it.ethica.esf.util.ManageDate"%>
 <%@ include file="init.jsp"%>
 
@@ -5,6 +9,7 @@
 	String orderByCol = ParamUtil.getString(request, "orderByCol");
 	String orderByType = ParamUtil.getString(request, "orderByType");
 	String sortingOrder = orderByType;
+
 
 	if (orderByType.equals("desc")) {
 		orderByType = "asc";
@@ -25,6 +30,8 @@
 	String yearSelected = ParamUtil.getString(request, "yearSelected");
 %>
 
+
+
 <portlet:actionURL name="yearsEarlier" var="yearsEarlierURL">
 	<portlet:param name="mvcPath" 
 		value='<%=templatePath + "view.jsp" %>'></portlet:param>
@@ -39,17 +46,12 @@
 
 <liferay-ui:search-container orderByType="<%=orderByType%>" emptyResultsMessage="no-results">
 	<liferay-ui:search-container-results>
-
-		<%
+<%
 			List<ESFUserRole> allEsfUserRolePerPage =
-					ESFUserRoleLocalServiceUtil.getEsfUserRoleByT_S_BDO(
-							currentType, ESFKeys.ESFStateType.ENABLE, true,
-							searchContainer.getStart(),
-							searchContainer.getEnd());
+					ESFUserRoleLocalServiceUtil.getEsfUserRoleByT_S_BDO(currentType, ESFKeys.ESFStateType.ENABLE, true);
 
-			int totalEsfUserRole =
-					ESFUserRoleLocalServiceUtil.getEsfUserRoleByT_S_BDO(
-							currentType, ESFKeys.ESFStateType.ENABLE, true).size();
+			int totalEsfUserRole = allEsfUserRolePerPage.size();
+
 
 			List<ESFUserRole> sortableEsfUserRole =
 					new ArrayList<ESFUserRole>(allEsfUserRolePerPage);
@@ -65,10 +67,10 @@
 							Collections.reverse(sortableEsfUserRole);
 				}
 			}
-
+			
 			pageContext.setAttribute("results", sortableEsfUserRole);
 			pageContext.setAttribute("total", totalEsfUserRole);
-		%>
+			 %>
 	</liferay-ui:search-container-results>
 	<liferay-ui:search-container-row
 		className="it.ethica.esf.model.ESFUserRole" modelVar="userRole">
@@ -140,35 +142,31 @@
 <%if(Validator.isNotNull(lastBdo)) {
 		
 	
-	List<ESFUserESFUserRole> userBDOAdmins = (List<ESFUserESFUserRole>)  request.getAttribute("userBDOAdmins");
-	List<ESFUserESFUserRole> userBDOAdminsAll = (List<ESFUserESFUserRole>)  request.getAttribute("userBDOAdminsAll");
+	Collection<VW_ESFListaIncarichi> listaIncarichiConsiglieri = (Collection<VW_ESFListaIncarichi>)  request.getAttribute("userBDOAdmins");
+	//List<ESFUserESFUserRole> userBDOAdminsAll = (List<ESFUserESFUserRole>)  request.getAttribute("userBDOAdminsAll");
 
 	ESFUser admin = null;
 	ESFUserRole role = null;
 	
-	if(Validator.isNotNull(userBDOAdmins) && userBDOAdmins.size()>0){
-		String message = yearSelected ;
-	%>
-		<h2><liferay-ui:message key="Board_of_year"/> <%=message %> </h2>
+	if(Validator.isNotNull(listaIncarichiConsiglieri) && listaIncarichiConsiglieri.size()>0) { %>
+	
+		<h2><liferay-ui:message key="Board_of_year"/> <%=yearSelected %> </h2>
 	<%
-		for(ESFUserESFUserRole userBDOAdmin : userBDOAdmins){
-			admin = ESFUserLocalServiceUtil.fetchESFUser(userBDOAdmin.getEsfUserId());
-			role =  ESFUserRoleLocalServiceUtil.fetchESFUserRole(userBDOAdmin.getEsfUserRoleId());
-	%>
+		for(VW_ESFListaIncarichi incaricoConsigliereCorrente : listaIncarichiConsiglieri) {	%>
 	
 			
 	<div>
-			<aui:input name="Role" label="role" type="text" value="<%=role.getName() %>" disabled="true" inlineField="true"></aui:input>
-			<aui:input name="firstName" label="firstName" type="text" value="<%=admin.getFirstName() %>" disabled="true" inlineField="true"></aui:input>
-			<aui:input name="Lastname" label="lastName" type="text" value="<%=admin.getLastName() %>" disabled="true" inlineField="true"></aui:input>
+	
+			<aui:input name="Role" label="role" type="text" value="<%= incaricoConsigliereCorrente.getNomeRuolo() %>" disabled="true" inlineField="true"></aui:input>
+			<aui:input name="firstName" label="firstName" type="text" value="<%= incaricoConsigliereCorrente.getFirstName() %>" disabled="true" inlineField="true"></aui:input>
+			<aui:input name="Lastname" label="lastName" type="text" value="<%=incaricoConsigliereCorrente.getLastName() %>" disabled="true" inlineField="true"></aui:input>
+			<aui:input name="Dal" label="startDate" type="text" value="<%= DateUtilFormatter.formatDate( incaricoConsigliereCorrente.getStartDate() ) %>" disabled="true" inlineField="true"></aui:input>
+			<aui:input name="al" label="endDate" type="text" value="<%=  DateUtilFormatter.formatDate(incaricoConsigliereCorrente.getEndDate() ) %>" disabled="true" inlineField="true"></aui:input>
+
 	</div>
-	<%
-		}
-	}else{
-	%>
+	<% } %>
+	<% } else { %>
 		<h3>	<liferay-ui:message	key="no-user" /></h3>
-	<%
-	}
+	<% } 
 
 }%>
-

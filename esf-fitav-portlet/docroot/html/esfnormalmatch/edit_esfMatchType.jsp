@@ -1,5 +1,8 @@
 <%@ include file="init.jsp"%>
 
+
+<h1>Aggiungi Tipo Gara</h1>
+
 <%
 	ESFMatchType esfMatchType = null;
 
@@ -43,7 +46,7 @@
 	</aui:fieldset>
 
 	<aui:button-row>
-		<c:if test="<%= ESFNormalMatchPermission.contains(permissionChecker,esfMatchId, ActionKeys.ESFNORMALMATCH_MATCHTYPE_ADD) %>">	
+		<c:if test="<%= esfMatchTypeId > 0 && ESFNormalMatchPermission.contains(permissionChecker,esfMatchId, ActionKeys.ESFNORMALMATCH_MATCHTYPE_ADD) %>">	
 			<aui:button type="submit"></aui:button>
 		</c:if>
 		<aui:button type="go-back" value="go-back" onClick="<%= backUrl %>"></aui:button>

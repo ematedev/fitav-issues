@@ -43,6 +43,8 @@ public class ESFDocumentSoap implements Serializable {
 		soapModel.setExpirationDate(model.getExpirationDate());
 		soapModel.setEsfUserId(model.getEsfUserId());
 		soapModel.setType(model.getType());
+		soapModel.setEsfDocumentTypeId(model.getEsfDocumentTypeId());
+		soapModel.setEsfPublicAuthorityId(model.getEsfPublicAuthorityId());
 		soapModel.setPath(model.getPath());
 
 		return soapModel;
@@ -200,6 +202,22 @@ public class ESFDocumentSoap implements Serializable {
 		_type = type;
 	}
 
+	public long getEsfDocumentTypeId() {
+		return _esfDocumentTypeId;
+	}
+
+	public void setEsfDocumentTypeId(long esfDocumentTypeId) {
+		_esfDocumentTypeId = esfDocumentTypeId;
+	}
+
+	public long getEsfPublicAuthorityId() {
+		return _esfPublicAuthorityId;
+	}
+
+	public void setEsfPublicAuthorityId(long esfPublicAuthorityId) {
+		_esfPublicAuthorityId = esfPublicAuthorityId;
+	}
+
 	public String getPath() {
 		return _path;
 	}
@@ -221,5 +239,7 @@ public class ESFDocumentSoap implements Serializable {
 	private Date _expirationDate;
 	private long _esfUserId;
 	private String _type;
+	private long _esfDocumentTypeId;
+	private long _esfPublicAuthorityId;
 	private String _path;
 }

@@ -3,20 +3,22 @@ package it.ethica.esf.service.persistence;
 import java.util.ArrayList;
 import java.util.List;
 
-import it.ethica.esf.model.ESFUser;
-import it.ethica.esf.model.ESFUserESFUserRole;
-import it.ethica.esf.model.impl.ESFUserESFUserRoleImpl;
-import it.ethica.esf.model.impl.ESFUserImpl;
-
 import com.liferay.portal.kernel.dao.orm.QueryPos;
 import com.liferay.portal.kernel.dao.orm.SQLQuery;
 import com.liferay.portal.kernel.dao.orm.Session;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.service.persistence.impl.BasePersistenceImpl;
 import com.liferay.util.dao.orm.CustomSQLUtil;
 
+import it.ethica.esf.model.ESFUserESFUserRole;
+import it.ethica.esf.model.impl.ESFUserESFUserRoleImpl;
+
 public class ESFUserESFUserRoleFinderImpl extends BasePersistenceImpl<ESFUserESFUserRole>
 	implements  ESFUserESFUserRoleFinder{
+	
+	private static Log _log = LogFactoryUtil.getLog(ESFUserESFUserRoleFinderImpl.class);
 	
 	public List<ESFUserESFUserRole> findStaffRole(long userId){
 		
@@ -89,4 +91,38 @@ public class ESFUserESFUserRoleFinderImpl extends BasePersistenceImpl<ESFUserESF
 	}
 	public static final String FIND_RoleByO_R_D_NOL=ESFUserESFUserRoleFinder.class.getName() +".findESFUserESFRoleByO_R_D_NOL";
 	public static final String FIND_STAFF_ROLE = ESFUserESFUserRoleFinder.class.getName() +".findStaffRole";
+
+	
+	// ELIMINATO PERCHE' UTILIZZIAMO IL SERVICE BUILDER CON LE VISTE
+	
+	// TODO ID 40 GRINALDI
+	//public static final String LISTA_CONSIGLIERI_ASSOCIAZIONE_ANNO = ESFUserESFUserRoleFinder.class.getName() +".listaConsiglieriAssociazionePerAnno";
+
+//	@Override
+//	public List<VW_ESFIncarico> listaConsiglieriAssociazionePerAnno(long esfOrganizationId) {
+//		Session session = null;
+//		try {
+//			session = openSession();
+//			String sql = CustomSQLUtil.get(LISTA_CONSIGLIERI_ASSOCIAZIONE_ANNO);
+//			SQLQuery q = session.createSQLQuery(sql);
+//			q.setCacheable(true);
+//			q.addEntity("VW_ESFIncarico", ESFUserESFUserRoleImpl.class);
+//
+//			QueryPos qPos = QueryPos.getInstance(q);
+//
+//			qPos.add(esfOrganizationId);
+//			
+//			List<VW_ESFIncarico> listaConsiglieriAssociazione = (List<VW_ESFIncarico>) q.list();
+//			if( listaConsiglieriAssociazione == null ) {
+//				listaConsiglieriAssociazione = new ArrayList<VW_ESFIncarico>();
+//			}
+//			return listaConsiglieriAssociazione;
+//		} catch (Exception e) {
+//			_log.error("Impossibile ottenere la lista dei Consiglieri per l'associazione[" + esfOrganizationId + "]", e);
+//				e.printStackTrace();
+//				throw e;
+//		} finally {
+//			closeSession(session);
+//		}
+//	}
 }

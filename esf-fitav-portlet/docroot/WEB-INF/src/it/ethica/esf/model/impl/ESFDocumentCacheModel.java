@@ -38,7 +38,7 @@ public class ESFDocumentCacheModel implements CacheModel<ESFDocument>,
 	Externalizable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(29);
+		StringBundler sb = new StringBundler(33);
 
 		sb.append("{esfDocumentId=");
 		sb.append(esfDocumentId);
@@ -66,6 +66,10 @@ public class ESFDocumentCacheModel implements CacheModel<ESFDocument>,
 		sb.append(esfUserId);
 		sb.append(", type=");
 		sb.append(type);
+		sb.append(", esfDocumentTypeId=");
+		sb.append(esfDocumentTypeId);
+		sb.append(", esfPublicAuthorityId=");
+		sb.append(esfPublicAuthorityId);
 		sb.append(", path=");
 		sb.append(path);
 		sb.append("}");
@@ -140,6 +144,9 @@ public class ESFDocumentCacheModel implements CacheModel<ESFDocument>,
 			esfDocumentImpl.setType(type);
 		}
 
+		esfDocumentImpl.setEsfDocumentTypeId(esfDocumentTypeId);
+		esfDocumentImpl.setEsfPublicAuthorityId(esfPublicAuthorityId);
+
 		if (path == null) {
 			esfDocumentImpl.setPath(StringPool.BLANK);
 		}
@@ -167,6 +174,8 @@ public class ESFDocumentCacheModel implements CacheModel<ESFDocument>,
 		expirationDate = objectInput.readLong();
 		esfUserId = objectInput.readLong();
 		type = objectInput.readUTF();
+		esfDocumentTypeId = objectInput.readLong();
+		esfPublicAuthorityId = objectInput.readLong();
 		path = objectInput.readUTF();
 	}
 
@@ -213,6 +222,9 @@ public class ESFDocumentCacheModel implements CacheModel<ESFDocument>,
 			objectOutput.writeUTF(type);
 		}
 
+		objectOutput.writeLong(esfDocumentTypeId);
+		objectOutput.writeLong(esfPublicAuthorityId);
+
 		if (path == null) {
 			objectOutput.writeUTF(StringPool.BLANK);
 		}
@@ -234,5 +246,7 @@ public class ESFDocumentCacheModel implements CacheModel<ESFDocument>,
 	public long expirationDate;
 	public long esfUserId;
 	public String type;
+	public long esfDocumentTypeId;
+	public long esfPublicAuthorityId;
 	public String path;
 }
