@@ -15,6 +15,7 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -46,6 +47,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFShooterQualificationESFTournamentModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFShooterQualificationESFTournamentModelImpl extends BaseModelImpl<ESFShooterQualificationESFTournament>
 	implements ESFShooterQualificationESFTournamentModel {
 	/*
@@ -69,10 +71,10 @@ public class ESFShooterQualificationESFTournamentModelImpl extends BaseModelImpl
 	public static final String TX_MANAGER = "liferayTransactionManager";
 	public static final boolean ENTITY_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.entity.cache.enabled.it.ethica.esf.model.ESFShooterQualificationESFTournament"),
-			false);
+			true);
 	public static final boolean FINDER_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.finder.cache.enabled.it.ethica.esf.model.ESFShooterQualificationESFTournament"),
-			false);
+			true);
 	public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.column.bitmask.enabled.it.ethica.esf.model.ESFShooterQualificationESFTournament"),
 			true);
@@ -160,6 +162,7 @@ public class ESFShooterQualificationESFTournamentModelImpl extends BaseModelImpl
 		}
 	}
 
+	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -183,6 +186,7 @@ public class ESFShooterQualificationESFTournamentModelImpl extends BaseModelImpl
 		return GetterUtil.getString(_originalUuid);
 	}
 
+	@JSON
 	@Override
 	public long getEsfShooterQualificationId() {
 		return _esfShooterQualificationId;
@@ -193,6 +197,7 @@ public class ESFShooterQualificationESFTournamentModelImpl extends BaseModelImpl
 		_esfShooterQualificationId = esfShooterQualificationId;
 	}
 
+	@JSON
 	@Override
 	public long getEsfTournamentId() {
 		return _esfTournamentId;
@@ -215,6 +220,7 @@ public class ESFShooterQualificationESFTournamentModelImpl extends BaseModelImpl
 		return _originalEsfTournamentId;
 	}
 
+	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;

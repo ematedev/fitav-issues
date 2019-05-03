@@ -15,6 +15,7 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -49,6 +50,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFCodeOrgModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFCodeOrgModelImpl extends BaseModelImpl<ESFCodeOrg>
 	implements ESFCodeOrgModel {
 	/*
@@ -58,12 +60,13 @@ public class ESFCodeOrgModelImpl extends BaseModelImpl<ESFCodeOrg>
 	 */
 	public static final String TABLE_NAME = "ESFCodeOrg";
 	public static final Object[][] TABLE_COLUMNS = {
+			{ "uuid_", Types.VARCHAR },
 			{ "esfCodeOrgId", Types.BIGINT },
 			{ "className", Types.VARCHAR },
 			{ "code_", Types.VARCHAR },
 			{ "sequence", Types.BIGINT }
 		};
-	public static final String TABLE_SQL_CREATE = "create table ESFCodeOrg (esfCodeOrgId LONG not null primary key,className VARCHAR(75) null,code_ VARCHAR(75) null,sequence LONG)";
+	public static final String TABLE_SQL_CREATE = "create table ESFCodeOrg (uuid_ VARCHAR(75) null,esfCodeOrgId LONG not null primary key,className VARCHAR(75) null,code_ VARCHAR(75) null,sequence LONG)";
 	public static final String TABLE_SQL_DROP = "drop table ESFCodeOrg";
 	public static final String ORDER_BY_JPQL = " ORDER BY esfCodeOrg.sequence ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY ESFCodeOrg.sequence ASC";
@@ -72,16 +75,17 @@ public class ESFCodeOrgModelImpl extends BaseModelImpl<ESFCodeOrg>
 	public static final String TX_MANAGER = "liferayTransactionManager";
 	public static final boolean ENTITY_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.entity.cache.enabled.it.ethica.esf.model.ESFCodeOrg"),
-			false);
+			true);
 	public static final boolean FINDER_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.finder.cache.enabled.it.ethica.esf.model.ESFCodeOrg"),
-			false);
+			true);
 	public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.column.bitmask.enabled.it.ethica.esf.model.ESFCodeOrg"),
 			true);
 	public static long CLASSNAME_COLUMN_BITMASK = 1L;
 	public static long CODE_COLUMN_BITMASK = 2L;
-	public static long SEQUENCE_COLUMN_BITMASK = 4L;
+	public static long UUID_COLUMN_BITMASK = 4L;
+	public static long SEQUENCE_COLUMN_BITMASK = 8L;
 	public static final long LOCK_EXPIRATION_TIME = GetterUtil.getLong(com.liferay.util.service.ServiceProps.get(
 				"lock.expiration.time.it.ethica.esf.model.ESFCodeOrg"));
 
@@ -122,6 +126,7 @@ public class ESFCodeOrgModelImpl extends BaseModelImpl<ESFCodeOrg>
 	public Map<String, Object> getModelAttributes() {
 		Map<String, Object> attributes = new HashMap<String, Object>();
 
+		attributes.put("uuid", getUuid());
 		attributes.put("esfCodeOrgId", getEsfCodeOrgId());
 		attributes.put("className", getClassName());
 		attributes.put("code", getCode());
@@ -132,6 +137,12 @@ public class ESFCodeOrgModelImpl extends BaseModelImpl<ESFCodeOrg>
 
 	@Override
 	public void setModelAttributes(Map<String, Object> attributes) {
+		String uuid = (String)attributes.get("uuid");
+
+		if (uuid != null) {
+			setUuid(uuid);
+		}
+
 		Long esfCodeOrgId = (Long)attributes.get("esfCodeOrgId");
 
 		if (esfCodeOrgId != null) {
@@ -157,6 +168,31 @@ public class ESFCodeOrgModelImpl extends BaseModelImpl<ESFCodeOrg>
 		}
 	}
 
+	@JSON
+	@Override
+	public String getUuid() {
+		if (_uuid == null) {
+			return StringPool.BLANK;
+		}
+		else {
+			return _uuid;
+		}
+	}
+
+	@Override
+	public void setUuid(String uuid) {
+		if (_originalUuid == null) {
+			_originalUuid = _uuid;
+		}
+
+		_uuid = uuid;
+	}
+
+	public String getOriginalUuid() {
+		return GetterUtil.getString(_originalUuid);
+	}
+
+	@JSON
 	@Override
 	public long getEsfCodeOrgId() {
 		return _esfCodeOrgId;
@@ -167,6 +203,7 @@ public class ESFCodeOrgModelImpl extends BaseModelImpl<ESFCodeOrg>
 		_esfCodeOrgId = esfCodeOrgId;
 	}
 
+	@JSON
 	@Override
 	public String getClassName() {
 		if (_className == null) {
@@ -192,6 +229,7 @@ public class ESFCodeOrgModelImpl extends BaseModelImpl<ESFCodeOrg>
 		return GetterUtil.getString(_originalClassName);
 	}
 
+	@JSON
 	@Override
 	public String getCode() {
 		if (_code == null) {
@@ -217,6 +255,7 @@ public class ESFCodeOrgModelImpl extends BaseModelImpl<ESFCodeOrg>
 		return GetterUtil.getString(_originalCode);
 	}
 
+	@JSON
 	@Override
 	public long getSequence() {
 		return _sequence;
@@ -260,6 +299,7 @@ public class ESFCodeOrgModelImpl extends BaseModelImpl<ESFCodeOrg>
 	public Object clone() {
 		ESFCodeOrgImpl esfCodeOrgImpl = new ESFCodeOrgImpl();
 
+		esfCodeOrgImpl.setUuid(getUuid());
 		esfCodeOrgImpl.setEsfCodeOrgId(getEsfCodeOrgId());
 		esfCodeOrgImpl.setClassName(getClassName());
 		esfCodeOrgImpl.setCode(getCode());
@@ -322,6 +362,8 @@ public class ESFCodeOrgModelImpl extends BaseModelImpl<ESFCodeOrg>
 	public void resetOriginalValues() {
 		ESFCodeOrgModelImpl esfCodeOrgModelImpl = this;
 
+		esfCodeOrgModelImpl._originalUuid = esfCodeOrgModelImpl._uuid;
+
 		esfCodeOrgModelImpl._originalClassName = esfCodeOrgModelImpl._className;
 
 		esfCodeOrgModelImpl._originalCode = esfCodeOrgModelImpl._code;
@@ -332,6 +374,14 @@ public class ESFCodeOrgModelImpl extends BaseModelImpl<ESFCodeOrg>
 	@Override
 	public CacheModel<ESFCodeOrg> toCacheModel() {
 		ESFCodeOrgCacheModel esfCodeOrgCacheModel = new ESFCodeOrgCacheModel();
+
+		esfCodeOrgCacheModel.uuid = getUuid();
+
+		String uuid = esfCodeOrgCacheModel.uuid;
+
+		if ((uuid != null) && (uuid.length() == 0)) {
+			esfCodeOrgCacheModel.uuid = null;
+		}
 
 		esfCodeOrgCacheModel.esfCodeOrgId = getEsfCodeOrgId();
 
@@ -358,9 +408,11 @@ public class ESFCodeOrgModelImpl extends BaseModelImpl<ESFCodeOrg>
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(9);
+		StringBundler sb = new StringBundler(11);
 
-		sb.append("{esfCodeOrgId=");
+		sb.append("{uuid=");
+		sb.append(getUuid());
+		sb.append(", esfCodeOrgId=");
 		sb.append(getEsfCodeOrgId());
 		sb.append(", className=");
 		sb.append(getClassName());
@@ -375,12 +427,16 @@ public class ESFCodeOrgModelImpl extends BaseModelImpl<ESFCodeOrg>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(16);
+		StringBundler sb = new StringBundler(19);
 
 		sb.append("<model><model-name>");
 		sb.append("it.ethica.esf.model.ESFCodeOrg");
 		sb.append("</model-name>");
 
+		sb.append(
+			"<column><column-name>uuid</column-name><column-value><![CDATA[");
+		sb.append(getUuid());
+		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>esfCodeOrgId</column-name><column-value><![CDATA[");
 		sb.append(getEsfCodeOrgId());
@@ -407,6 +463,8 @@ public class ESFCodeOrgModelImpl extends BaseModelImpl<ESFCodeOrg>
 	private static Class<?>[] _escapedModelInterfaces = new Class[] {
 			ESFCodeOrg.class
 		};
+	private String _uuid;
+	private String _originalUuid;
 	private long _esfCodeOrgId;
 	private String _className;
 	private String _originalClassName;

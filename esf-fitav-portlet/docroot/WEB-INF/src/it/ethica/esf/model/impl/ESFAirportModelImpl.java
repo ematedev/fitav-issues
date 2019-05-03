@@ -15,6 +15,7 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -49,6 +50,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFAirportModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFAirportModelImpl extends BaseModelImpl<ESFAirport>
 	implements ESFAirportModel {
 	/*
@@ -152,6 +154,7 @@ public class ESFAirportModelImpl extends BaseModelImpl<ESFAirport>
 		}
 	}
 
+	@JSON
 	@Override
 	public long getEsfAirportId() {
 		return _esfAirportId;
@@ -162,6 +165,7 @@ public class ESFAirportModelImpl extends BaseModelImpl<ESFAirport>
 		_esfAirportId = esfAirportId;
 	}
 
+	@JSON
 	@Override
 	public String getName() {
 		if (_name == null) {
@@ -177,6 +181,7 @@ public class ESFAirportModelImpl extends BaseModelImpl<ESFAirport>
 		_name = name;
 	}
 
+	@JSON
 	@Override
 	public String getCity() {
 		if (_city == null) {
@@ -192,6 +197,7 @@ public class ESFAirportModelImpl extends BaseModelImpl<ESFAirport>
 		_city = city;
 	}
 
+	@JSON
 	@Override
 	public String getCountry() {
 		if (_country == null) {

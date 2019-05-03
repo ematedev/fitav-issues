@@ -439,6 +439,10 @@ public class ESFUserESFUserRoleLocalServiceUtil {
 		return getService().findbyBDOUserRolenoEnd(roleId, organizationId);
 	}
 
+	/**
+	* Carica TUTTE le informazioni relative ai Consiglieri
+	* di una Associazione
+	*/
 	public static java.util.List<it.ethica.esf.model.ESFUserESFUserRole> findbyBDORole(
 		long organizationId)
 		throws com.liferay.portal.kernel.exception.SystemException,

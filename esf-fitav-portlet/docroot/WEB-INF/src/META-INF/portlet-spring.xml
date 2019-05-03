@@ -14,7 +14,6 @@
 	<bean id="it.ethica.esf.service.ESFCaneLocalService" class="it.ethica.esf.service.impl.ESFCaneLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFCanePersistence" class="it.ethica.esf.service.persistence.ESFCanePersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFCardLocalService" class="it.ethica.esf.service.impl.ESFCardLocalServiceImpl" />
-	<bean id="it.ethica.esf.service.ESFCardService" class="it.ethica.esf.service.impl.ESFCardServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFCardPersistence" class="it.ethica.esf.service.persistence.ESFCardPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.persistence.ESFCardFinder" class="it.ethica.esf.service.persistence.ESFCardFinderImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFCategoryLocalService" class="it.ethica.esf.service.impl.ESFCategoryLocalServiceImpl" />
@@ -35,6 +34,8 @@
 	<bean id="it.ethica.esf.service.persistence.ESFDescriptionPersistence" class="it.ethica.esf.service.persistence.ESFDescriptionPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFDocumentLocalService" class="it.ethica.esf.service.impl.ESFDocumentLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFDocumentPersistence" class="it.ethica.esf.service.persistence.ESFDocumentPersistenceImpl" parent="basePersistence" />
+	<bean id="it.ethica.esf.service.ESFDocumentTypeLocalService" class="it.ethica.esf.service.impl.ESFDocumentTypeLocalServiceImpl" />
+	<bean id="it.ethica.esf.service.persistence.ESFDocumentTypePersistence" class="it.ethica.esf.service.persistence.ESFDocumentTypePersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFElectronicLocalService" class="it.ethica.esf.service.impl.ESFElectronicLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFElectronicPersistence" class="it.ethica.esf.service.persistence.ESFElectronicPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFEntityStateLocalService" class="it.ethica.esf.service.impl.ESFEntityStateLocalServiceImpl" />
@@ -43,11 +44,9 @@
 	<bean id="it.ethica.esf.service.ESFEventTypeLocalService" class="it.ethica.esf.service.impl.ESFEventTypeLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFEventTypePersistence" class="it.ethica.esf.service.persistence.ESFEventTypePersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFFederalRoleLocalService" class="it.ethica.esf.service.impl.ESFFederalRoleLocalServiceImpl" />
-	<bean id="it.ethica.esf.service.ESFFederalRoleService" class="it.ethica.esf.service.impl.ESFFederalRoleServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFFederalRolePersistence" class="it.ethica.esf.service.persistence.ESFFederalRolePersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.persistence.ESFFederalRoleFinder" class="it.ethica.esf.service.persistence.ESFFederalRoleFinderImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFFederalRoleESFSpecificLocalService" class="it.ethica.esf.service.impl.ESFFederalRoleESFSpecificLocalServiceImpl" />
-	<bean id="it.ethica.esf.service.ESFFederalRoleESFSpecificService" class="it.ethica.esf.service.impl.ESFFederalRoleESFSpecificServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFFederalRoleESFSpecificPersistence" class="it.ethica.esf.service.persistence.ESFFederalRoleESFSpecificPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFFieldLocalService" class="it.ethica.esf.service.impl.ESFFieldLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFFieldPersistence" class="it.ethica.esf.service.persistence.ESFFieldPersistenceImpl" parent="basePersistence" />
@@ -112,6 +111,8 @@
 	<bean id="it.ethica.esf.service.persistence.ESFPhonePersistence" class="it.ethica.esf.service.persistence.ESFPhonePersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFProvinceLocalService" class="it.ethica.esf.service.impl.ESFProvinceLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFProvincePersistence" class="it.ethica.esf.service.persistence.ESFProvincePersistenceImpl" parent="basePersistence" />
+	<bean id="it.ethica.esf.service.ESFPublicAuthorityLocalService" class="it.ethica.esf.service.impl.ESFPublicAuthorityLocalServiceImpl" />
+	<bean id="it.ethica.esf.service.persistence.ESFPublicAuthorityPersistence" class="it.ethica.esf.service.persistence.ESFPublicAuthorityPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFRegionLocalService" class="it.ethica.esf.service.impl.ESFRegionLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFRegionPersistence" class="it.ethica.esf.service.persistence.ESFRegionPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFRenewalLocalService" class="it.ethica.esf.service.impl.ESFRenewalLocalServiceImpl" />
@@ -126,11 +127,13 @@
 	<bean id="it.ethica.esf.service.persistence.ESFShooterCategoryPersistence" class="it.ethica.esf.service.persistence.ESFShooterCategoryPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFShooterCategoryESFMatchLocalService" class="it.ethica.esf.service.impl.ESFShooterCategoryESFMatchLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFShooterCategoryESFMatchPersistence" class="it.ethica.esf.service.persistence.ESFShooterCategoryESFMatchPersistenceImpl" parent="basePersistence" />
+	<bean id="it.ethica.esf.service.ESFShooterCategoryESFTournamentLocalService" class="it.ethica.esf.service.impl.ESFShooterCategoryESFTournamentLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFShooterCategoryESFTournamentPersistence" class="it.ethica.esf.service.persistence.ESFShooterCategoryESFTournamentPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFShooterQualificationLocalService" class="it.ethica.esf.service.impl.ESFShooterQualificationLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFShooterQualificationPersistence" class="it.ethica.esf.service.persistence.ESFShooterQualificationPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFShooterQualificationESFMatchLocalService" class="it.ethica.esf.service.impl.ESFShooterQualificationESFMatchLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFShooterQualificationESFMatchPersistence" class="it.ethica.esf.service.persistence.ESFShooterQualificationESFMatchPersistenceImpl" parent="basePersistence" />
+	<bean id="it.ethica.esf.service.ESFShooterQualificationESFTournamentLocalService" class="it.ethica.esf.service.impl.ESFShooterQualificationESFTournamentLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFShooterQualificationESFTournamentPersistence" class="it.ethica.esf.service.persistence.ESFShooterQualificationESFTournamentPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFShootingDirectorLocalService" class="it.ethica.esf.service.impl.ESFShootingDirectorLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFShootingDirectorPersistence" class="it.ethica.esf.service.persistence.ESFShootingDirectorPersistenceImpl" parent="basePersistence" />
@@ -138,12 +141,12 @@
 	<bean id="it.ethica.esf.service.ESFShootingDirectorQualificationLocalService" class="it.ethica.esf.service.impl.ESFShootingDirectorQualificationLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFShootingDirectorQualificationPersistence" class="it.ethica.esf.service.persistence.ESFShootingDirectorQualificationPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFSpecificLocalService" class="it.ethica.esf.service.impl.ESFSpecificLocalServiceImpl" />
-	<bean id="it.ethica.esf.service.ESFSpecificService" class="it.ethica.esf.service.impl.ESFSpecificServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFSpecificPersistence" class="it.ethica.esf.service.persistence.ESFSpecificPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFSportTypeLocalService" class="it.ethica.esf.service.impl.ESFSportTypeLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFSportTypePersistence" class="it.ethica.esf.service.persistence.ESFSportTypePersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFStateLocalService" class="it.ethica.esf.service.impl.ESFStateLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFStatePersistence" class="it.ethica.esf.service.persistence.ESFStatePersistenceImpl" parent="basePersistence" />
+	<bean id="it.ethica.esf.service.ESFStateAssEntityLocalService" class="it.ethica.esf.service.impl.ESFStateAssEntityLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFStateAssEntityPersistence" class="it.ethica.esf.service.persistence.ESFStateAssEntityPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFSuspensiveCodeLocalService" class="it.ethica.esf.service.impl.ESFSuspensiveCodeLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFSuspensiveCodePersistence" class="it.ethica.esf.service.persistence.ESFSuspensiveCodePersistenceImpl" parent="basePersistence" />
@@ -158,7 +161,6 @@
 	<bean id="it.ethica.esf.service.ESFUnitserviceLocalService" class="it.ethica.esf.service.impl.ESFUnitserviceLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFUnitservicePersistence" class="it.ethica.esf.service.persistence.ESFUnitservicePersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFUserLocalService" class="it.ethica.esf.service.impl.ESFUserLocalServiceImpl" />
-	<bean id="it.ethica.esf.service.ESFUserService" class="it.ethica.esf.service.impl.ESFUserServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFUserPersistence" class="it.ethica.esf.service.persistence.ESFUserPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.persistence.ESFUserFinder" class="it.ethica.esf.service.persistence.ESFUserFinderImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFUserCategoryLocalService" class="it.ethica.esf.service.impl.ESFUserCategoryLocalServiceImpl" />
@@ -171,4 +173,8 @@
 	<bean id="it.ethica.esf.service.persistence.ESFUserESFUserRoleFinder" class="it.ethica.esf.service.persistence.ESFUserESFUserRoleFinderImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFUserRoleLocalService" class="it.ethica.esf.service.impl.ESFUserRoleLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFUserRolePersistence" class="it.ethica.esf.service.persistence.ESFUserRolePersistenceImpl" parent="basePersistence" />
+	<bean id="it.ethica.esf.service.VW_DatiDrettoreTiroLocalService" class="it.ethica.esf.service.impl.VW_DatiDrettoreTiroLocalServiceImpl" />
+	<bean id="it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPersistence" class="it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPersistenceImpl" parent="basePersistence" />
+	<bean id="it.ethica.esf.service.VW_ESFListaIncarichiLocalService" class="it.ethica.esf.service.impl.VW_ESFListaIncarichiLocalServiceImpl" />
+	<bean id="it.ethica.esf.service.persistence.VW_ESFListaIncarichiPersistence" class="it.ethica.esf.service.persistence.VW_ESFListaIncarichiPersistenceImpl" parent="basePersistence" />
 </beans>

@@ -16,6 +16,7 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -51,6 +52,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFgunUserModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFgunUserModelImpl extends BaseModelImpl<ESFgunUser>
 	implements ESFgunUserModel {
 	/*
@@ -225,6 +227,7 @@ public class ESFgunUserModelImpl extends BaseModelImpl<ESFgunUser>
 		}
 	}
 
+	@JSON
 	@Override
 	public long getEsfGunUserId() {
 		return _esfGunUserId;
@@ -246,6 +249,7 @@ public class ESFgunUserModelImpl extends BaseModelImpl<ESFgunUser>
 		_esfGunUserUuid = esfGunUserUuid;
 	}
 
+	@JSON
 	@Override
 	public long getEsfGunId() {
 		return _esfGunId;
@@ -268,6 +272,7 @@ public class ESFgunUserModelImpl extends BaseModelImpl<ESFgunUser>
 		return _originalEsfGunId;
 	}
 
+	@JSON
 	@Override
 	public long getEsfUserId() {
 		return _esfUserId;
@@ -300,6 +305,7 @@ public class ESFgunUserModelImpl extends BaseModelImpl<ESFgunUser>
 		return _originalEsfUserId;
 	}
 
+	@JSON
 	@Override
 	public String getCode() {
 		if (_code == null) {
@@ -325,6 +331,7 @@ public class ESFgunUserModelImpl extends BaseModelImpl<ESFgunUser>
 		return GetterUtil.getString(_originalCode);
 	}
 
+	@JSON
 	@Override
 	public boolean getIsFavorite() {
 		return _isFavorite;
@@ -340,6 +347,7 @@ public class ESFgunUserModelImpl extends BaseModelImpl<ESFgunUser>
 		_isFavorite = isFavorite;
 	}
 
+	@JSON
 	@Override
 	public int getType() {
 		return _type;
@@ -362,6 +370,7 @@ public class ESFgunUserModelImpl extends BaseModelImpl<ESFgunUser>
 		return _originalType;
 	}
 
+	@JSON
 	@Override
 	public String getNote() {
 		if (_note == null) {
@@ -377,6 +386,7 @@ public class ESFgunUserModelImpl extends BaseModelImpl<ESFgunUser>
 		_note = note;
 	}
 
+	@JSON
 	@Override
 	public long getEsfGunnTypeId() {
 		return _esfGunnTypeId;
@@ -387,6 +397,7 @@ public class ESFgunUserModelImpl extends BaseModelImpl<ESFgunUser>
 		_esfGunnTypeId = esfGunnTypeId;
 	}
 
+	@JSON
 	@Override
 	public long getEsfGunKindId() {
 		return _esfGunKindId;
@@ -397,6 +408,7 @@ public class ESFgunUserModelImpl extends BaseModelImpl<ESFgunUser>
 		_esfGunKindId = esfGunKindId;
 	}
 
+	@JSON
 	@Override
 	public long getTypeId() {
 		return _typeId;
@@ -407,6 +419,7 @@ public class ESFgunUserModelImpl extends BaseModelImpl<ESFgunUser>
 		_typeId = typeId;
 	}
 
+	@JSON
 	@Override
 	public String getEsfMeasures() {
 		if (_esfMeasures == null) {
@@ -422,6 +435,7 @@ public class ESFgunUserModelImpl extends BaseModelImpl<ESFgunUser>
 		_esfMeasures = esfMeasures;
 	}
 
+	@JSON
 	@Override
 	public String getEsfCaliber() {
 		if (_esfCaliber == null) {

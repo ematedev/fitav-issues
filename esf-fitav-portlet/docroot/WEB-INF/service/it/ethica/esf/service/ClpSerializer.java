@@ -41,6 +41,7 @@ import it.ethica.esf.model.ESFCountryClp;
 import it.ethica.esf.model.ESFDepartureClp;
 import it.ethica.esf.model.ESFDescriptionClp;
 import it.ethica.esf.model.ESFDocumentClp;
+import it.ethica.esf.model.ESFDocumentTypeClp;
 import it.ethica.esf.model.ESFElectronicClp;
 import it.ethica.esf.model.ESFEntityStateClp;
 import it.ethica.esf.model.ESFEventTypeClp;
@@ -74,6 +75,7 @@ import it.ethica.esf.model.ESFPartecipantInfoClp;
 import it.ethica.esf.model.ESFPartecipantTypeClp;
 import it.ethica.esf.model.ESFPhoneClp;
 import it.ethica.esf.model.ESFProvinceClp;
+import it.ethica.esf.model.ESFPublicAuthorityClp;
 import it.ethica.esf.model.ESFRegionClp;
 import it.ethica.esf.model.ESFRenewalClp;
 import it.ethica.esf.model.ESFResultClp;
@@ -102,6 +104,8 @@ import it.ethica.esf.model.ESFUserESFFederalRoleClp;
 import it.ethica.esf.model.ESFUserESFUserRoleClp;
 import it.ethica.esf.model.ESFUserRoleClp;
 import it.ethica.esf.model.ESFgunUserClp;
+import it.ethica.esf.model.VW_DatiDrettoreTiroClp;
+import it.ethica.esf.model.VW_ESFListaIncarichiClp;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -240,6 +244,10 @@ public class ClpSerializer {
 
 		if (oldModelClassName.equals(ESFDocumentClp.class.getName())) {
 			return translateInputESFDocument(oldModel);
+		}
+
+		if (oldModelClassName.equals(ESFDocumentTypeClp.class.getName())) {
+			return translateInputESFDocumentType(oldModel);
 		}
 
 		if (oldModelClassName.equals(ESFElectronicClp.class.getName())) {
@@ -382,6 +390,10 @@ public class ClpSerializer {
 			return translateInputESFProvince(oldModel);
 		}
 
+		if (oldModelClassName.equals(ESFPublicAuthorityClp.class.getName())) {
+			return translateInputESFPublicAuthority(oldModel);
+		}
+
 		if (oldModelClassName.equals(ESFRegionClp.class.getName())) {
 			return translateInputESFRegion(oldModel);
 		}
@@ -495,6 +507,14 @@ public class ClpSerializer {
 
 		if (oldModelClassName.equals(ESFUserRoleClp.class.getName())) {
 			return translateInputESFUserRole(oldModel);
+		}
+
+		if (oldModelClassName.equals(VW_DatiDrettoreTiroClp.class.getName())) {
+			return translateInputVW_DatiDrettoreTiro(oldModel);
+		}
+
+		if (oldModelClassName.equals(VW_ESFListaIncarichiClp.class.getName())) {
+			return translateInputVW_ESFListaIncarichi(oldModel);
 		}
 
 		return oldModel;
@@ -667,6 +687,16 @@ public class ClpSerializer {
 		ESFDocumentClp oldClpModel = (ESFDocumentClp)oldModel;
 
 		BaseModel<?> newModel = oldClpModel.getESFDocumentRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputESFDocumentType(BaseModel<?> oldModel) {
+		ESFDocumentTypeClp oldClpModel = (ESFDocumentTypeClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getESFDocumentTypeRemoteModel();
 
 		newModel.setModelAttributes(oldClpModel.getModelAttributes());
 
@@ -1021,6 +1051,16 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+	public static Object translateInputESFPublicAuthority(BaseModel<?> oldModel) {
+		ESFPublicAuthorityClp oldClpModel = (ESFPublicAuthorityClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getESFPublicAuthorityRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
 	public static Object translateInputESFRegion(BaseModel<?> oldModel) {
 		ESFRegionClp oldClpModel = (ESFRegionClp)oldModel;
 
@@ -1301,6 +1341,28 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+	public static Object translateInputVW_DatiDrettoreTiro(
+		BaseModel<?> oldModel) {
+		VW_DatiDrettoreTiroClp oldClpModel = (VW_DatiDrettoreTiroClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getVW_DatiDrettoreTiroRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputVW_ESFListaIncarichi(
+		BaseModel<?> oldModel) {
+		VW_ESFListaIncarichiClp oldClpModel = (VW_ESFListaIncarichiClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getVW_ESFListaIncarichiRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
 	public static Object translateInput(Object obj) {
 		if (obj instanceof BaseModel<?>) {
 			return translateInput((BaseModel<?>)obj);
@@ -1385,6 +1447,11 @@ public class ClpSerializer {
 
 		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFDocumentImpl")) {
 			return translateOutputESFDocument(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFDocumentTypeImpl")) {
+			return translateOutputESFDocumentType(oldModel);
 		}
 
 		if (oldModelClassName.equals(
@@ -1546,6 +1613,11 @@ public class ClpSerializer {
 			return translateOutputESFProvince(oldModel);
 		}
 
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFPublicAuthorityImpl")) {
+			return translateOutputESFPublicAuthority(oldModel);
+		}
+
 		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFRegionImpl")) {
 			return translateOutputESFRegion(oldModel);
 		}
@@ -1671,6 +1743,16 @@ public class ClpSerializer {
 
 		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFUserRoleImpl")) {
 			return translateOutputESFUserRole(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.VW_DatiDrettoreTiroImpl")) {
+			return translateOutputVW_DatiDrettoreTiro(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.VW_ESFListaIncarichiImpl")) {
+			return translateOutputVW_ESFListaIncarichi(oldModel);
 		}
 
 		return oldModel;
@@ -1813,6 +1895,10 @@ public class ClpSerializer {
 			return new it.ethica.esf.ESFUserRoleTypeException();
 		}
 
+		if (className.equals("it.ethica.esf.VW_ESFListaIncarichiException")) {
+			return new it.ethica.esf.VW_ESFListaIncarichiException();
+		}
+
 		if (className.equals("it.ethica.esf.NoSuchAddressException")) {
 			return new it.ethica.esf.NoSuchAddressException();
 		}
@@ -1875,6 +1961,10 @@ public class ClpSerializer {
 
 		if (className.equals("it.ethica.esf.NoSuchDocumentException")) {
 			return new it.ethica.esf.NoSuchDocumentException();
+		}
+
+		if (className.equals("it.ethica.esf.NoSuchDocumentTypeException")) {
+			return new it.ethica.esf.NoSuchDocumentTypeException();
 		}
 
 		if (className.equals("it.ethica.esf.NoSuchElectronicException")) {
@@ -2017,6 +2107,10 @@ public class ClpSerializer {
 			return new it.ethica.esf.NoSuchProvinceException();
 		}
 
+		if (className.equals("it.ethica.esf.NoSuchPublicAuthorityException")) {
+			return new it.ethica.esf.NoSuchPublicAuthorityException();
+		}
+
 		if (className.equals("it.ethica.esf.NoSuchRegionException")) {
 			return new it.ethica.esf.NoSuchRegionException();
 		}
@@ -2131,6 +2225,15 @@ public class ClpSerializer {
 
 		if (className.equals("it.ethica.esf.NoSuchUserRoleException")) {
 			return new it.ethica.esf.NoSuchUserRoleException();
+		}
+
+		if (className.equals("it.ethica.esf.NoSuchVW_DatiDrettoreTiroException")) {
+			return new it.ethica.esf.NoSuchVW_DatiDrettoreTiroException();
+		}
+
+		if (className.equals(
+					"it.ethica.esf.NoSuchVW_ESFListaIncarichiException")) {
+			return new it.ethica.esf.NoSuchVW_ESFListaIncarichiException();
 		}
 
 		return throwable;
@@ -2293,6 +2396,16 @@ public class ClpSerializer {
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
 		newModel.setESFDocumentRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputESFDocumentType(BaseModel<?> oldModel) {
+		ESFDocumentTypeClp newModel = new ESFDocumentTypeClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setESFDocumentTypeRemoteModel(oldModel);
 
 		return newModel;
 	}
@@ -2647,6 +2760,17 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+	public static Object translateOutputESFPublicAuthority(
+		BaseModel<?> oldModel) {
+		ESFPublicAuthorityClp newModel = new ESFPublicAuthorityClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setESFPublicAuthorityRemoteModel(oldModel);
+
+		return newModel;
+	}
+
 	public static Object translateOutputESFRegion(BaseModel<?> oldModel) {
 		ESFRegionClp newModel = new ESFRegionClp();
 
@@ -2925,6 +3049,28 @@ public class ClpSerializer {
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
 		newModel.setESFUserRoleRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputVW_DatiDrettoreTiro(
+		BaseModel<?> oldModel) {
+		VW_DatiDrettoreTiroClp newModel = new VW_DatiDrettoreTiroClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setVW_DatiDrettoreTiroRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputVW_ESFListaIncarichi(
+		BaseModel<?> oldModel) {
+		VW_ESFListaIncarichiClp newModel = new VW_ESFListaIncarichiClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setVW_ESFListaIncarichiRemoteModel(oldModel);
 
 		return newModel;
 	}

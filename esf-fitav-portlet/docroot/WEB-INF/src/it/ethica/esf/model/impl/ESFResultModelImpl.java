@@ -16,6 +16,7 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -52,6 +53,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFResultModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 	implements ESFResultModel {
 	/*
@@ -661,6 +663,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		}
 	}
 
+	@JSON
 	@Override
 	public long getEsfResultId() {
 		return _esfResultId;
@@ -671,6 +674,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_esfResultId = esfResultId;
 	}
 
+	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -681,6 +685,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_groupId = groupId;
 	}
 
+	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -691,6 +696,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_companyId = companyId;
 	}
 
+	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -711,6 +717,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_userUuid = userUuid;
 	}
 
+	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -726,6 +733,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_userName = userName;
 	}
 
+	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -736,6 +744,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_createDate = createDate;
 	}
 
+	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -746,6 +755,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_modifiedDate = modifiedDate;
 	}
 
+	@JSON
 	@Override
 	public int getMatchYear() {
 		return _matchYear;
@@ -756,6 +766,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_matchYear = matchYear;
 	}
 
+	@JSON
 	@Override
 	public int getNumberMatch() {
 		return _numberMatch;
@@ -766,6 +777,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_numberMatch = numberMatch;
 	}
 
+	@JSON
 	@Override
 	public long getEsfMatchId() {
 		return _esfMatchId;
@@ -788,6 +800,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		return _originalEsfMatchId;
 	}
 
+	@JSON
 	@Override
 	public String getName() {
 		if (_name == null) {
@@ -803,6 +816,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_name = name;
 	}
 
+	@JSON
 	@Override
 	public String getName2() {
 		if (_name2 == null) {
@@ -818,6 +832,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_name2 = name2;
 	}
 
+	@JSON
 	@Override
 	public long getEsfAssociationId() {
 		return _esfAssociationId;
@@ -828,6 +843,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_esfAssociationId = esfAssociationId;
 	}
 
+	@JSON
 	@Override
 	public String getSportTypeCode() {
 		if (_sportTypeCode == null) {
@@ -843,6 +859,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_sportTypeCode = sportTypeCode;
 	}
 
+	@JSON
 	@Override
 	public Date getStartdDate() {
 		return _startdDate;
@@ -853,6 +870,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_startdDate = startdDate;
 	}
 
+	@JSON
 	@Override
 	public Date getEndDate() {
 		return _endDate;
@@ -863,6 +881,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_endDate = endDate;
 	}
 
+	@JSON
 	@Override
 	public String getGroupRanking() {
 		if (_groupRanking == null) {
@@ -878,6 +897,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_groupRanking = groupRanking;
 	}
 
+	@JSON
 	@Override
 	public String getDescGroupRanking() {
 		if (_descGroupRanking == null) {
@@ -895,6 +915,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_descGroupRanking = descGroupRanking;
 	}
 
+	@JSON
 	@Override
 	public int getPosition() {
 		return _position;
@@ -907,6 +928,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_position = position;
 	}
 
+	@JSON
 	@Override
 	public String getCardNumber() {
 		if (_cardNumber == null) {
@@ -922,6 +944,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_cardNumber = cardNumber;
 	}
 
+	@JSON
 	@Override
 	public String getShooterName() {
 		if (_shooterName == null) {
@@ -939,6 +962,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_shooterName = shooterName;
 	}
 
+	@JSON
 	@Override
 	public String getNationCode() {
 		if (_nationCode == null) {
@@ -954,6 +978,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_nationCode = nationCode;
 	}
 
+	@JSON
 	@Override
 	public String getCategory() {
 		if (_category == null) {
@@ -969,6 +994,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_category = category;
 	}
 
+	@JSON
 	@Override
 	public String getQualificationCode() {
 		if (_qualificationCode == null) {
@@ -984,6 +1010,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_qualificationCode = qualificationCode;
 	}
 
+	@JSON
 	@Override
 	public int getResultS1() {
 		return _resultS1;
@@ -994,6 +1021,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_resultS1 = resultS1;
 	}
 
+	@JSON
 	@Override
 	public int getResultS2() {
 		return _resultS2;
@@ -1004,6 +1032,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_resultS2 = resultS2;
 	}
 
+	@JSON
 	@Override
 	public int getResultS3() {
 		return _resultS3;
@@ -1014,6 +1043,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_resultS3 = resultS3;
 	}
 
+	@JSON
 	@Override
 	public int getResultS4() {
 		return _resultS4;
@@ -1024,6 +1054,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_resultS4 = resultS4;
 	}
 
+	@JSON
 	@Override
 	public int getResultS5() {
 		return _resultS5;
@@ -1034,6 +1065,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_resultS5 = resultS5;
 	}
 
+	@JSON
 	@Override
 	public int getResultS6() {
 		return _resultS6;
@@ -1044,6 +1076,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_resultS6 = resultS6;
 	}
 
+	@JSON
 	@Override
 	public int getResultS7() {
 		return _resultS7;
@@ -1054,6 +1087,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_resultS7 = resultS7;
 	}
 
+	@JSON
 	@Override
 	public int getResultS8() {
 		return _resultS8;
@@ -1064,6 +1098,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_resultS8 = resultS8;
 	}
 
+	@JSON
 	@Override
 	public int getTotalS() {
 		return _totalS;
@@ -1074,6 +1109,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_totalS = totalS;
 	}
 
+	@JSON
 	@Override
 	public int getBarrage() {
 		return _barrage;
@@ -1084,6 +1120,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_barrage = barrage;
 	}
 
+	@JSON
 	@Override
 	public int getFinalS() {
 		return _finalS;
@@ -1094,6 +1131,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_finalS = finalS;
 	}
 
+	@JSON
 	@Override
 	public int getFinalTotal() {
 		return _finalTotal;
@@ -1104,6 +1142,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_finalTotal = finalTotal;
 	}
 
+	@JSON
 	@Override
 	public int getAmerican1() {
 		return _american1;
@@ -1114,6 +1153,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_american1 = american1;
 	}
 
+	@JSON
 	@Override
 	public int getAmerican2() {
 		return _american2;
@@ -1124,6 +1164,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_american2 = american2;
 	}
 
+	@JSON
 	@Override
 	public int getAmerican3() {
 		return _american3;
@@ -1134,6 +1175,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_american3 = american3;
 	}
 
+	@JSON
 	@Override
 	public String getRifle() {
 		if (_rifle == null) {
@@ -1149,6 +1191,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_rifle = rifle;
 	}
 
+	@JSON
 	@Override
 	public String getCaliber() {
 		if (_caliber == null) {
@@ -1164,6 +1207,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_caliber = caliber;
 	}
 
+	@JSON
 	@Override
 	public String getCatridge() {
 		if (_catridge == null) {
@@ -1179,6 +1223,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_catridge = catridge;
 	}
 
+	@JSON
 	@Override
 	public String getFinalType() {
 		if (_finalType == null) {
@@ -1194,6 +1239,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_finalType = finalType;
 	}
 
+	@JSON
 	@Override
 	public int getSemifinalResult() {
 		return _semifinalResult;
@@ -1204,6 +1250,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_semifinalResult = semifinalResult;
 	}
 
+	@JSON
 	@Override
 	public int getShootOff1s() {
 		return _shootOff1s;
@@ -1214,6 +1261,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_shootOff1s = shootOff1s;
 	}
 
+	@JSON
 	@Override
 	public int getShootOff2s() {
 		return _shootOff2s;
@@ -1224,6 +1272,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_shootOff2s = shootOff2s;
 	}
 
+	@JSON
 	@Override
 	public int getShootOff3s() {
 		return _shootOff3s;
@@ -1234,6 +1283,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_shootOff3s = shootOff3s;
 	}
 
+	@JSON
 	@Override
 	public int getBronzeResult() {
 		return _bronzeResult;
@@ -1244,6 +1294,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_bronzeResult = bronzeResult;
 	}
 
+	@JSON
 	@Override
 	public int getShootOffBronze() {
 		return _shootOffBronze;
@@ -1254,6 +1305,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_shootOffBronze = shootOffBronze;
 	}
 
+	@JSON
 	@Override
 	public int getGoldResult() {
 		return _goldResult;
@@ -1264,6 +1316,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_goldResult = goldResult;
 	}
 
+	@JSON
 	@Override
 	public int getShootOffGold() {
 		return _shootOffGold;
@@ -1274,6 +1327,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_shootOffGold = shootOffGold;
 	}
 
+	@JSON
 	@Override
 	public String getTeamCategory() {
 		if (_teamCategory == null) {
@@ -1289,6 +1343,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_teamCategory = teamCategory;
 	}
 
+	@JSON
 	@Override
 	public String getTeamName() {
 		if (_teamName == null) {
@@ -1304,6 +1359,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_teamName = teamName;
 	}
 
+	@JSON
 	@Override
 	public String getNaz_int() {
 		if (_naz_int == null) {
@@ -1319,6 +1375,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_naz_int = naz_int;
 	}
 
+	@JSON
 	@Override
 	public int getShowTypeCode() {
 		return _showTypeCode;
@@ -1329,6 +1386,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_showTypeCode = showTypeCode;
 	}
 
+	@JSON
 	@Override
 	public String getShowType() {
 		if (_showType == null) {
@@ -1344,6 +1402,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_showType = showType;
 	}
 
+	@JSON
 	@Override
 	public long getEsfUserId() {
 		return _esfUserId;
@@ -1376,6 +1435,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		return _originalEsfUserId;
 	}
 
+	@JSON
 	@Override
 	public Date getVariationDate() {
 		return _variationDate;
@@ -1386,6 +1446,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_variationDate = variationDate;
 	}
 
+	@JSON
 	@Override
 	public int getSent() {
 		return _sent;
@@ -1396,6 +1457,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_sent = sent;
 	}
 
+	@JSON
 	@Override
 	public String getYouthQualification() {
 		if (_youthQualification == null) {
@@ -1411,6 +1473,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_youthQualification = youthQualification;
 	}
 
+	@JSON
 	@Override
 	public long getEsfMatchTypeId() {
 		return _esfMatchTypeId;
@@ -1433,6 +1496,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		return _originalEsfMatchTypeId;
 	}
 
+	@JSON
 	@Override
 	public int getResultClassTeam() {
 		return _resultClassTeam;
@@ -1455,6 +1519,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		return _originalResultClassTeam;
 	}
 
+	@JSON
 	@Override
 	public int getSpare1() {
 		return _spare1;
@@ -1465,6 +1530,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_spare1 = spare1;
 	}
 
+	@JSON
 	@Override
 	public int getSpare2() {
 		return _spare2;
@@ -1475,6 +1541,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_spare2 = spare2;
 	}
 
+	@JSON
 	@Override
 	public long getShooterCode() {
 		return _shooterCode;
@@ -1485,6 +1552,7 @@ public class ESFResultModelImpl extends BaseModelImpl<ESFResult>
 		_shooterCode = shooterCode;
 	}
 
+	@JSON
 	@Override
 	public long getShooterQualification() {
 		return _shooterQualification;

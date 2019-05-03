@@ -410,6 +410,10 @@ public class ESFOrganizationLocalServiceClp
 		_methodName70 = "findNewAffilationConiReportAndArmy";
 
 		_methodParameterTypes70 = new String[] { "int" };
+
+		_methodName71 = "findByType";
+
+		_methodParameterTypes71 = new String[] { "int", "int", "int" };
 	}
 
 	@Override
@@ -3121,6 +3125,35 @@ public class ESFOrganizationLocalServiceClp
 		return (java.util.List<it.ethica.esf.model.ESFOrganization>)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
+	public java.util.List<it.ethica.esf.model.ESFOrganization> findByType(
+		int type, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName71,
+					_methodParameterTypes71, new Object[] { type, start, end });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<it.ethica.esf.model.ESFOrganization>)ClpSerializer.translateOutput(returnObj);
+	}
+
 	private InvokableLocalService _invokableLocalService;
 	private String _methodName0;
 	private String[] _methodParameterTypes0;
@@ -3262,4 +3295,6 @@ public class ESFOrganizationLocalServiceClp
 	private String[] _methodParameterTypes69;
 	private String _methodName70;
 	private String[] _methodParameterTypes70;
+	private String _methodName71;
+	private String[] _methodParameterTypes71;
 }

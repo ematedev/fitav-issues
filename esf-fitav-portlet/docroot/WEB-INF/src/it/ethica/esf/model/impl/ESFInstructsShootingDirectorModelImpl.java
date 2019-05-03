@@ -15,6 +15,7 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -49,6 +50,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFInstructsShootingDirectorModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFInstructsShootingDirectorModelImpl extends BaseModelImpl<ESFInstructsShootingDirector>
 	implements ESFInstructsShootingDirectorModel {
 	/*
@@ -150,6 +152,7 @@ public class ESFInstructsShootingDirectorModelImpl extends BaseModelImpl<ESFInst
 		}
 	}
 
+	@JSON
 	@Override
 	public long getEsfInstructsShootingDirectorId() {
 		return _esfInstructsShootingDirectorId;
@@ -161,6 +164,7 @@ public class ESFInstructsShootingDirectorModelImpl extends BaseModelImpl<ESFInst
 		_esfInstructsShootingDirectorId = esfInstructsShootingDirectorId;
 	}
 
+	@JSON
 	@Override
 	public String getEsfInstructsShootingDirectorCode() {
 		if (_esfInstructsShootingDirectorCode == null) {
@@ -177,6 +181,7 @@ public class ESFInstructsShootingDirectorModelImpl extends BaseModelImpl<ESFInst
 		_esfInstructsShootingDirectorCode = esfInstructsShootingDirectorCode;
 	}
 
+	@JSON
 	@Override
 	public String getEsfInstructsShootingDirectorDesc() {
 		if (_esfInstructsShootingDirectorDesc == null) {

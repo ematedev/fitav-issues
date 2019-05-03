@@ -16,6 +16,7 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -51,6 +52,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFCatridgeModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFCatridgeModelImpl extends BaseModelImpl<ESFCatridge>
 	implements ESFCatridgeModel {
 	/*
@@ -77,10 +79,10 @@ public class ESFCatridgeModelImpl extends BaseModelImpl<ESFCatridge>
 	public static final String TX_MANAGER = "liferayTransactionManager";
 	public static final boolean ENTITY_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.entity.cache.enabled.it.ethica.esf.model.ESFCatridge"),
-			false);
+			true);
 	public static final boolean FINDER_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.finder.cache.enabled.it.ethica.esf.model.ESFCatridge"),
-			false);
+			true);
 	public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.column.bitmask.enabled.it.ethica.esf.model.ESFCatridge"),
 			true);
@@ -183,6 +185,7 @@ public class ESFCatridgeModelImpl extends BaseModelImpl<ESFCatridge>
 		}
 	}
 
+	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -206,6 +209,7 @@ public class ESFCatridgeModelImpl extends BaseModelImpl<ESFCatridge>
 		return GetterUtil.getString(_originalUuid);
 	}
 
+	@JSON
 	@Override
 	public long getEsfCatridgeId() {
 		return _esfCatridgeId;
@@ -216,6 +220,7 @@ public class ESFCatridgeModelImpl extends BaseModelImpl<ESFCatridge>
 		_esfCatridgeId = esfCatridgeId;
 	}
 
+	@JSON
 	@Override
 	public long getEsfUserId() {
 		return _esfUserId;
@@ -248,6 +253,7 @@ public class ESFCatridgeModelImpl extends BaseModelImpl<ESFCatridge>
 		return _originalEsfUserId;
 	}
 
+	@JSON
 	@Override
 	public long getEsfGunTypeId() {
 		return _esfGunTypeId;
@@ -270,6 +276,7 @@ public class ESFCatridgeModelImpl extends BaseModelImpl<ESFCatridge>
 		return _originalEsfGunTypeId;
 	}
 
+	@JSON
 	@Override
 	public String getCatridgeModel() {
 		if (_catridgeModel == null) {
@@ -285,6 +292,7 @@ public class ESFCatridgeModelImpl extends BaseModelImpl<ESFCatridge>
 		_catridgeModel = catridgeModel;
 	}
 
+	@JSON
 	@Override
 	public long getCatridgeCaliber() {
 		return _catridgeCaliber;
@@ -295,6 +303,7 @@ public class ESFCatridgeModelImpl extends BaseModelImpl<ESFCatridge>
 		_catridgeCaliber = catridgeCaliber;
 	}
 
+	@JSON
 	@Override
 	public String getNote() {
 		if (_note == null) {

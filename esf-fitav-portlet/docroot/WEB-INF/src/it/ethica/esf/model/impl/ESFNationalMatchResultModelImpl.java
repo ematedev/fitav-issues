@@ -16,6 +16,7 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -52,6 +53,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFNationalMatchResultModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFNationalMatchResultModelImpl extends BaseModelImpl<ESFNationalMatchResult>
 	implements ESFNationalMatchResultModel {
 	/*
@@ -292,6 +294,7 @@ public class ESFNationalMatchResultModelImpl extends BaseModelImpl<ESFNationalMa
 		}
 	}
 
+	@JSON
 	@Override
 	public long getEsfNationalMatchResultId() {
 		return _esfNationalMatchResultId;
@@ -302,6 +305,7 @@ public class ESFNationalMatchResultModelImpl extends BaseModelImpl<ESFNationalMa
 		_esfNationalMatchResultId = esfNationalMatchResultId;
 	}
 
+	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -312,6 +316,7 @@ public class ESFNationalMatchResultModelImpl extends BaseModelImpl<ESFNationalMa
 		_groupId = groupId;
 	}
 
+	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -322,6 +327,7 @@ public class ESFNationalMatchResultModelImpl extends BaseModelImpl<ESFNationalMa
 		_companyId = companyId;
 	}
 
+	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -342,6 +348,7 @@ public class ESFNationalMatchResultModelImpl extends BaseModelImpl<ESFNationalMa
 		_userUuid = userUuid;
 	}
 
+	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -357,6 +364,7 @@ public class ESFNationalMatchResultModelImpl extends BaseModelImpl<ESFNationalMa
 		_userName = userName;
 	}
 
+	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -367,6 +375,7 @@ public class ESFNationalMatchResultModelImpl extends BaseModelImpl<ESFNationalMa
 		_createDate = createDate;
 	}
 
+	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -377,6 +386,7 @@ public class ESFNationalMatchResultModelImpl extends BaseModelImpl<ESFNationalMa
 		_modifiedDate = modifiedDate;
 	}
 
+	@JSON
 	@Override
 	public long getEsfMatchId() {
 		return _esfMatchId;
@@ -399,6 +409,7 @@ public class ESFNationalMatchResultModelImpl extends BaseModelImpl<ESFNationalMa
 		return _originalEsfMatchId;
 	}
 
+	@JSON
 	@Override
 	public long getEsfUserId() {
 		return _esfUserId;
@@ -431,6 +442,7 @@ public class ESFNationalMatchResultModelImpl extends BaseModelImpl<ESFNationalMa
 		return _originalEsfUserId;
 	}
 
+	@JSON
 	@Override
 	public int getPosition() {
 		return _position;
@@ -443,6 +455,7 @@ public class ESFNationalMatchResultModelImpl extends BaseModelImpl<ESFNationalMa
 		_position = position;
 	}
 
+	@JSON
 	@Override
 	public int getQualification() {
 		return _qualification;
@@ -453,6 +466,7 @@ public class ESFNationalMatchResultModelImpl extends BaseModelImpl<ESFNationalMa
 		_qualification = qualification;
 	}
 
+	@JSON
 	@Override
 	public int getShootOff() {
 		return _shootOff;
@@ -463,6 +477,7 @@ public class ESFNationalMatchResultModelImpl extends BaseModelImpl<ESFNationalMa
 		_shootOff = shootOff;
 	}
 
+	@JSON
 	@Override
 	public int getClayPigeonTotal() {
 		return _clayPigeonTotal;
@@ -473,6 +488,7 @@ public class ESFNationalMatchResultModelImpl extends BaseModelImpl<ESFNationalMa
 		_clayPigeonTotal = clayPigeonTotal;
 	}
 
+	@JSON
 	@Override
 	public int getFinalResult() {
 		return _finalResult;
@@ -483,6 +499,7 @@ public class ESFNationalMatchResultModelImpl extends BaseModelImpl<ESFNationalMa
 		_finalResult = finalResult;
 	}
 
+	@JSON
 	@Override
 	public int getShootOffFinal() {
 		return _shootOffFinal;
@@ -493,6 +510,7 @@ public class ESFNationalMatchResultModelImpl extends BaseModelImpl<ESFNationalMa
 		_shootOffFinal = shootOffFinal;
 	}
 
+	@JSON
 	@Override
 	public boolean getExternalShooter() {
 		return _externalShooter;
@@ -520,6 +538,7 @@ public class ESFNationalMatchResultModelImpl extends BaseModelImpl<ESFNationalMa
 		return _originalExternalShooter;
 	}
 
+	@JSON
 	@Override
 	public String getExternalName() {
 		if (_externalName == null) {
@@ -535,6 +554,7 @@ public class ESFNationalMatchResultModelImpl extends BaseModelImpl<ESFNationalMa
 		_externalName = externalName;
 	}
 
+	@JSON
 	@Override
 	public long getEsfSportTypeId() {
 		return _esfSportTypeId;
@@ -557,6 +577,7 @@ public class ESFNationalMatchResultModelImpl extends BaseModelImpl<ESFNationalMa
 		return _originalEsfSportTypeId;
 	}
 
+	@JSON
 	@Override
 	public String getUserNationality() {
 		if (_userNationality == null) {
@@ -572,6 +593,7 @@ public class ESFNationalMatchResultModelImpl extends BaseModelImpl<ESFNationalMa
 		_userNationality = userNationality;
 	}
 
+	@JSON
 	@Override
 	public long getEsfUserQualification() {
 		return _esfUserQualification;

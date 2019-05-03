@@ -102,18 +102,27 @@
 			}
 		}
 	}*/
-	if(currentESFOrganization.getIncludeConiReport()){
+	if(currentESFOrganization.getIncludeConiReport()) {
 		coni_report_info = "added_to_coni_report";
 	}
-	
+
 	ESFRenewalCompany renewalCompany = null;
-	renewalCompany = ESFRenewalCompanyLocalServiceUtil.getESFRenewalCompanyByE_Y(currentOrganizationId, thisYear);
-	if(Validator.isNotNull(renewalCompany) && 2 == renewalCompany.getStatus()){
-		paymentOk = true;
-	}else if (Validator.isNotNull(renewalCompany) && 1 == renewalCompany.getStatus()){
-		partialPayment = true;
-	}
 	
+	try {
+		renewalCompany = ESFRenewalCompanyLocalServiceUtil.getESFRenewalCompanyByE_Y(currentOrganizationId, thisYear);
+
+		if(Validator.isNotNull(renewalCompany) && 2 == renewalCompany.getStatus()) {
+			paymentOk = true;
+		} else if (Validator.isNotNull(renewalCompany) && 1 == renewalCompany.getStatus()) {
+			partialPayment = true;
+		}
+	
+	} catch ( it.ethica.esf.renewal.NoSuchESFRenewalCompanyException nsesfren ) {
+		// non fa niente se non trovi pagamenti
+	}
+		
+	
+
 	
 %>
 

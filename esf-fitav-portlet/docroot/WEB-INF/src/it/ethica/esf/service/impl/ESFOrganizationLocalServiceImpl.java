@@ -32,6 +32,7 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.portlet.PortletClassLoaderUtil;
+import com.liferay.portal.kernel.transaction.Transactional;
 import com.liferay.portal.kernel.util.ListUtil;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.kernel.util.OrderByComparatorFactory;
@@ -72,6 +73,7 @@ import it.ethica.esf.model.ESFOrganization;
 import it.ethica.esf.model.ESFPhone;
 import it.ethica.esf.model.ESFRenewal;
 import it.ethica.esf.model.ESFUser;
+import it.ethica.esf.model.VW_ESFListaIncarichi;
 import it.ethica.esf.model.impl.ESFOrganizationImpl;
 import it.ethica.esf.portlet.ESFUserAdminPortlet;
 import it.ethica.esf.renewal.model.ESFRenewalCompany;
@@ -86,7 +88,6 @@ import it.ethica.esf.service.ESFUserLocalServiceUtil;
 import it.ethica.esf.service.base.ESFOrganizationLocalServiceBaseImpl;
 import it.ethica.esf.service.persistence.ESFOrganizationFinderUtil;
 import it.ethica.esf.util.ESFKeys;
-
 /**
  * The implementation of the e s f organization local service.
  * <p>
@@ -838,6 +839,10 @@ public class ESFOrganizationLocalServiceImpl extends
 		
 		return esfOrganizzationFinal;
 	}
+	
+	
+	
+	
 
 	
 	//trova le organizzazioni in base al tipo e allo stato
@@ -2447,7 +2452,7 @@ public int getAllEsfOrganizationDisabled(String name, String code ) throws Porta
 				esfOrganizationsNamed.add(o);
 			}
 			} catch (Exception e){
-				_log.info ("errore org -->");
+				_log.error ("errore org -->");
 			}
 		}
 		tot=esfOrganizationsNamed.size();
@@ -2483,7 +2488,7 @@ public int getAllEsfOrganizationDisabled(String name, String code ) throws Porta
 				esfOrganizationsNamed.add(o);
 			}
 			} catch (Exception e){
-				_log.info ("errore org -->");
+				_log.error ("errore org -->");
 			}
 		}
 		if(end > esfOrganizationsNamed.size()){
@@ -2747,6 +2752,12 @@ public int getAllEsfOrganizationDisabled(String name, String code ) throws Porta
 		return esfOrganization;
 	}
 	
+	
+
+	public List<ESFOrganization> findByType(int type, int start, int end)
+		throws SystemException {
+		return this.esfOrganizationPersistence.findByType(type, start, end, null);
+	}
 	
 	private static Log _log = LogFactoryUtil.getLog(ESFUserAdminPortlet.class);
 }

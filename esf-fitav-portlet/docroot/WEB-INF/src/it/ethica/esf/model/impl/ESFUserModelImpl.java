@@ -31,16 +31,13 @@ import com.liferay.portlet.expando.util.ExpandoBridgeFactoryUtil;
 
 import it.ethica.esf.model.ESFUser;
 import it.ethica.esf.model.ESFUserModel;
-import it.ethica.esf.model.ESFUserSoap;
 
 import java.io.Serializable;
 
 import java.sql.Types;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -97,10 +94,10 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 	public static final String TX_MANAGER = "liferayTransactionManager";
 	public static final boolean ENTITY_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.entity.cache.enabled.it.ethica.esf.model.ESFUser"),
-			false);
+			true);
 	public static final boolean FINDER_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.finder.cache.enabled.it.ethica.esf.model.ESFUser"),
-			false);
+			true);
 	public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.column.bitmask.enabled.it.ethica.esf.model.ESFUser"),
 			true);
@@ -109,65 +106,6 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 	public static long ESFUSERID_COLUMN_BITMASK = 4L;
 	public static long FISCALCODE_COLUMN_BITMASK = 8L;
 	public static long UUID_COLUMN_BITMASK = 16L;
-
-	/**
-	 * Converts the soap model instance into a normal model instance.
-	 *
-	 * @param soapModel the soap model instance to convert
-	 * @return the normal model instance
-	 */
-	public static ESFUser toModel(ESFUserSoap soapModel) {
-		if (soapModel == null) {
-			return null;
-		}
-
-		ESFUser model = new ESFUserImpl();
-
-		model.setUuid(soapModel.getUuid());
-		model.setEsfUserId(soapModel.getEsfUserId());
-		model.setCode(soapModel.getCode());
-		model.setTypearmy(soapModel.getTypearmy());
-		model.setFiscalCode(soapModel.getFiscalCode());
-		model.setBirthcity(soapModel.getBirthcity());
-		model.setNationality(soapModel.getNationality());
-		model.setIsSportsGroups(soapModel.getIsSportsGroups());
-		model.setJob(soapModel.getJob());
-		model.setIssfIdNumber(soapModel.getIssfIdNumber());
-		model.setCategoryId(soapModel.getCategoryId());
-		model.setPin(soapModel.getPin());
-		model.setCodeUser(soapModel.getCodeUser());
-		model.setDateOfDeath(soapModel.getDateOfDeath());
-		model.setPrivacy1(soapModel.getPrivacy1());
-		model.setPrivacy2(soapModel.getPrivacy2());
-		model.setPrivacy3(soapModel.getPrivacy3());
-		model.setDatePrivacy1(soapModel.getDatePrivacy1());
-		model.setDatePrivacy2(soapModel.getDatePrivacy2());
-		model.setDatePrivacy3(soapModel.getDatePrivacy3());
-		model.setValidateCF(soapModel.getValidateCF());
-
-		return model;
-	}
-
-	/**
-	 * Converts the soap model instances into normal model instances.
-	 *
-	 * @param soapModels the soap model instances to convert
-	 * @return the normal model instances
-	 */
-	public static List<ESFUser> toModels(ESFUserSoap[] soapModels) {
-		if (soapModels == null) {
-			return null;
-		}
-
-		List<ESFUser> models = new ArrayList<ESFUser>(soapModels.length);
-
-		for (ESFUserSoap soapModel : soapModels) {
-			models.add(toModel(soapModel));
-		}
-
-		return models;
-	}
-
 	public static final long LOCK_EXPIRATION_TIME = GetterUtil.getLong(com.liferay.util.service.ServiceProps.get(
 				"lock.expiration.time.it.ethica.esf.model.ESFUser"));
 

@@ -964,6 +964,13 @@ public class ESFOrganizationLocalServiceWrapper
 		return _esfOrganizationLocalService.findNewAffilationConiReportAndArmy(year);
 	}
 
+	@Override
+	public java.util.List<it.ethica.esf.model.ESFOrganization> findByType(
+		int type, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _esfOrganizationLocalService.findByType(type, start, end);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

@@ -15,6 +15,7 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -46,6 +47,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFStateAssEntityModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFStateAssEntityModelImpl extends BaseModelImpl<ESFStateAssEntity>
 	implements ESFStateAssEntityModel {
 	/*
@@ -138,6 +140,7 @@ public class ESFStateAssEntityModelImpl extends BaseModelImpl<ESFStateAssEntity>
 		}
 	}
 
+	@JSON
 	@Override
 	public long getEsfStateId() {
 		return _esfStateId;
@@ -160,6 +163,7 @@ public class ESFStateAssEntityModelImpl extends BaseModelImpl<ESFStateAssEntity>
 		return _originalEsfStateId;
 	}
 
+	@JSON
 	@Override
 	public String getClassName() {
 		if (_className == null) {

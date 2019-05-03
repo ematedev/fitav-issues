@@ -73,7 +73,7 @@ public class ESFPartecipantUtil {
 
 	
 	public static void generatePasses(long esfPartecipantInfoId){
-				
+		
 		Connection conn = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");

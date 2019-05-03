@@ -106,33 +106,33 @@ public class ESFSuspensiveShootingDirectorLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFSuspensiveShootingDirector"
 			};
 
-		_methodName368 = "getBeanIdentifier";
+		_methodName380 = "getBeanIdentifier";
 
-		_methodParameterTypes368 = new String[] {  };
+		_methodParameterTypes380 = new String[] {  };
 
-		_methodName369 = "setBeanIdentifier";
+		_methodName381 = "setBeanIdentifier";
 
-		_methodParameterTypes369 = new String[] { "java.lang.String" };
+		_methodParameterTypes381 = new String[] { "java.lang.String" };
 
-		_methodName374 = "findByUserId";
+		_methodName386 = "findByUserId";
 
-		_methodParameterTypes374 = new String[] { "long", "int", "int" };
+		_methodParameterTypes386 = new String[] { "long", "int", "int" };
 
-		_methodName375 = "countByUserId";
+		_methodName387 = "countByUserId";
 
-		_methodParameterTypes375 = new String[] { "long" };
+		_methodParameterTypes387 = new String[] { "long" };
 
-		_methodName376 = "findAll";
+		_methodName388 = "findAll";
 
-		_methodParameterTypes376 = new String[] { "int", "int" };
+		_methodParameterTypes388 = new String[] { "int", "int" };
 
-		_methodName377 = "countTotal";
+		_methodName389 = "countTotal";
 
-		_methodParameterTypes377 = new String[] {  };
+		_methodParameterTypes389 = new String[] {  };
 
-		_methodName378 = "findSuspensive";
+		_methodName390 = "findSuspensive";
 
-		_methodParameterTypes378 = new String[] { "java.util.Date", "long" };
+		_methodParameterTypes390 = new String[] { "java.util.Date", "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -224,43 +224,43 @@ public class ESFSuspensiveShootingDirectorLocalServiceClpInvoker {
 			return ESFSuspensiveShootingDirectorLocalServiceUtil.updateESFSuspensiveShootingDirector((it.ethica.esf.model.ESFSuspensiveShootingDirector)arguments[0]);
 		}
 
-		if (_methodName368.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes368, parameterTypes)) {
+		if (_methodName380.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
 			return ESFSuspensiveShootingDirectorLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName369.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes369, parameterTypes)) {
+		if (_methodName381.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes381, parameterTypes)) {
 			ESFSuspensiveShootingDirectorLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName374.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes374, parameterTypes)) {
+		if (_methodName386.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
 			return ESFSuspensiveShootingDirectorLocalServiceUtil.findByUserId(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName375.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes375, parameterTypes)) {
+		if (_methodName387.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
 			return ESFSuspensiveShootingDirectorLocalServiceUtil.countByUserId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName376.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes376, parameterTypes)) {
+		if (_methodName388.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
 			return ESFSuspensiveShootingDirectorLocalServiceUtil.findAll(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
-		if (_methodName377.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes377, parameterTypes)) {
+		if (_methodName389.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes389, parameterTypes)) {
 			return ESFSuspensiveShootingDirectorLocalServiceUtil.countTotal();
 		}
 
-		if (_methodName378.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes378, parameterTypes)) {
+		if (_methodName390.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
 			return ESFSuspensiveShootingDirectorLocalServiceUtil.findSuspensive((java.util.Date)arguments[0],
 				((Long)arguments[1]).longValue());
 		}
@@ -300,18 +300,18 @@ public class ESFSuspensiveShootingDirectorLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName368;
-	private String[] _methodParameterTypes368;
-	private String _methodName369;
-	private String[] _methodParameterTypes369;
-	private String _methodName374;
-	private String[] _methodParameterTypes374;
-	private String _methodName375;
-	private String[] _methodParameterTypes375;
-	private String _methodName376;
-	private String[] _methodParameterTypes376;
-	private String _methodName377;
-	private String[] _methodParameterTypes377;
-	private String _methodName378;
-	private String[] _methodParameterTypes378;
+	private String _methodName380;
+	private String[] _methodParameterTypes380;
+	private String _methodName381;
+	private String[] _methodParameterTypes381;
+	private String _methodName386;
+	private String[] _methodParameterTypes386;
+	private String _methodName387;
+	private String[] _methodParameterTypes387;
+	private String _methodName388;
+	private String[] _methodParameterTypes388;
+	private String _methodName389;
+	private String[] _methodParameterTypes389;
+	private String _methodName390;
+	private String[] _methodParameterTypes390;
 }

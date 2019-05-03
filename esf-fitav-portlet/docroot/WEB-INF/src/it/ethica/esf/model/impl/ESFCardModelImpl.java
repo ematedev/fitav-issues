@@ -32,16 +32,13 @@ import com.liferay.portlet.expando.util.ExpandoBridgeFactoryUtil;
 
 import it.ethica.esf.model.ESFCard;
 import it.ethica.esf.model.ESFCardModel;
-import it.ethica.esf.model.ESFCardSoap;
 
 import java.io.Serializable;
 
 import java.sql.Types;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -91,10 +88,10 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 	public static final String TX_MANAGER = "liferayTransactionManager";
 	public static final boolean ENTITY_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.entity.cache.enabled.it.ethica.esf.model.ESFCard"),
-			false);
+			true);
 	public static final boolean FINDER_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.finder.cache.enabled.it.ethica.esf.model.ESFCard"),
-			false);
+			true);
 	public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.column.bitmask.enabled.it.ethica.esf.model.ESFCard"),
 			true);
@@ -107,58 +104,6 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 	public static long OLDCODE_COLUMN_BITMASK = 64L;
 	public static long UUID_COLUMN_BITMASK = 128L;
 	public static long CODENUM_COLUMN_BITMASK = 256L;
-
-	/**
-	 * Converts the soap model instance into a normal model instance.
-	 *
-	 * @param soapModel the soap model instance to convert
-	 * @return the normal model instance
-	 */
-	public static ESFCard toModel(ESFCardSoap soapModel) {
-		if (soapModel == null) {
-			return null;
-		}
-
-		ESFCard model = new ESFCardImpl();
-
-		model.setUuid(soapModel.getUuid());
-		model.setEsfCardId(soapModel.getEsfCardId());
-		model.setGroupId(soapModel.getGroupId());
-		model.setCompanyId(soapModel.getCompanyId());
-		model.setUserId(soapModel.getUserId());
-		model.setUserName(soapModel.getUserName());
-		model.setCreateDate(soapModel.getCreateDate());
-		model.setModifiedDate(soapModel.getModifiedDate());
-		model.setCodeAlfa(soapModel.getCodeAlfa());
-		model.setCodeNum(soapModel.getCodeNum());
-		model.setEsfUserId(soapModel.getEsfUserId());
-		model.setEsfOrganizationId(soapModel.getEsfOrganizationId());
-		model.setCode(soapModel.getCode());
-		model.setOldCode(soapModel.getOldCode());
-
-		return model;
-	}
-
-	/**
-	 * Converts the soap model instances into normal model instances.
-	 *
-	 * @param soapModels the soap model instances to convert
-	 * @return the normal model instances
-	 */
-	public static List<ESFCard> toModels(ESFCardSoap[] soapModels) {
-		if (soapModels == null) {
-			return null;
-		}
-
-		List<ESFCard> models = new ArrayList<ESFCard>(soapModels.length);
-
-		for (ESFCardSoap soapModel : soapModels) {
-			models.add(toModel(soapModel));
-		}
-
-		return models;
-	}
-
 	public static final long LOCK_EXPIRATION_TIME = GetterUtil.getLong(com.liferay.util.service.ServiceProps.get(
 				"lock.expiration.time.it.ethica.esf.model.ESFCard"));
 

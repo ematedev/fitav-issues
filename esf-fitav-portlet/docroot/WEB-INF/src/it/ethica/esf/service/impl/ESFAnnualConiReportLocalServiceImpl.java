@@ -20,7 +20,6 @@ import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.util.Validator;
 
 import it.ethica.esf.model.ESFAnnualConiReport;
-import it.ethica.esf.model.impl.ESFAnnualConiReportImpl;
 import it.ethica.esf.service.base.ESFAnnualConiReportLocalServiceBaseImpl;
 
 /**

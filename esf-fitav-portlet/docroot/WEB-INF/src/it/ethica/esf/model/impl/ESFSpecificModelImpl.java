@@ -32,16 +32,13 @@ import com.liferay.portlet.expando.util.ExpandoBridgeFactoryUtil;
 
 import it.ethica.esf.model.ESFSpecific;
 import it.ethica.esf.model.ESFSpecificModel;
-import it.ethica.esf.model.ESFSpecificSoap;
 
 import java.io.Serializable;
 
 import java.sql.Types;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -99,54 +96,6 @@ public class ESFSpecificModelImpl extends BaseModelImpl<ESFSpecific>
 	public static long GROUPID_COLUMN_BITMASK = 4L;
 	public static long UUID_COLUMN_BITMASK = 8L;
 	public static long ESFSPECIFICID_COLUMN_BITMASK = 16L;
-
-	/**
-	 * Converts the soap model instance into a normal model instance.
-	 *
-	 * @param soapModel the soap model instance to convert
-	 * @return the normal model instance
-	 */
-	public static ESFSpecific toModel(ESFSpecificSoap soapModel) {
-		if (soapModel == null) {
-			return null;
-		}
-
-		ESFSpecific model = new ESFSpecificImpl();
-
-		model.setUuid(soapModel.getUuid());
-		model.setEsfSpecificId(soapModel.getEsfSpecificId());
-		model.setGroupId(soapModel.getGroupId());
-		model.setCompanyId(soapModel.getCompanyId());
-		model.setUserId(soapModel.getUserId());
-		model.setUserName(soapModel.getUserName());
-		model.setCreateDate(soapModel.getCreateDate());
-		model.setModifiedDate(soapModel.getModifiedDate());
-		model.setCode(soapModel.getCode());
-		model.setDescription(soapModel.getDescription());
-
-		return model;
-	}
-
-	/**
-	 * Converts the soap model instances into normal model instances.
-	 *
-	 * @param soapModels the soap model instances to convert
-	 * @return the normal model instances
-	 */
-	public static List<ESFSpecific> toModels(ESFSpecificSoap[] soapModels) {
-		if (soapModels == null) {
-			return null;
-		}
-
-		List<ESFSpecific> models = new ArrayList<ESFSpecific>(soapModels.length);
-
-		for (ESFSpecificSoap soapModel : soapModels) {
-			models.add(toModel(soapModel));
-		}
-
-		return models;
-	}
-
 	public static final long LOCK_EXPIRATION_TIME = GetterUtil.getLong(com.liferay.util.service.ServiceProps.get(
 				"lock.expiration.time.it.ethica.esf.model.ESFSpecific"));
 

@@ -25,16 +25,13 @@ import com.liferay.portal.model.impl.BaseModelImpl;
 
 import it.ethica.esf.model.ESFFederalRoleESFSpecific;
 import it.ethica.esf.model.ESFFederalRoleESFSpecificModel;
-import it.ethica.esf.model.ESFFederalRoleESFSpecificSoap;
 import it.ethica.esf.service.persistence.ESFFederalRoleESFSpecificPK;
 
 import java.io.Serializable;
 
 import java.sql.Types;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -83,49 +80,6 @@ public class ESFFederalRoleESFSpecificModelImpl extends BaseModelImpl<ESFFederal
 	public static long ESFFEDERALROLEID_COLUMN_BITMASK = 1L;
 	public static long ESFSPECIFICID_COLUMN_BITMASK = 2L;
 	public static long UUID_COLUMN_BITMASK = 4L;
-
-	/**
-	 * Converts the soap model instance into a normal model instance.
-	 *
-	 * @param soapModel the soap model instance to convert
-	 * @return the normal model instance
-	 */
-	public static ESFFederalRoleESFSpecific toModel(
-		ESFFederalRoleESFSpecificSoap soapModel) {
-		if (soapModel == null) {
-			return null;
-		}
-
-		ESFFederalRoleESFSpecific model = new ESFFederalRoleESFSpecificImpl();
-
-		model.setUuid(soapModel.getUuid());
-		model.setEsfSpecificId(soapModel.getEsfSpecificId());
-		model.setEsfFederalRoleId(soapModel.getEsfFederalRoleId());
-
-		return model;
-	}
-
-	/**
-	 * Converts the soap model instances into normal model instances.
-	 *
-	 * @param soapModels the soap model instances to convert
-	 * @return the normal model instances
-	 */
-	public static List<ESFFederalRoleESFSpecific> toModels(
-		ESFFederalRoleESFSpecificSoap[] soapModels) {
-		if (soapModels == null) {
-			return null;
-		}
-
-		List<ESFFederalRoleESFSpecific> models = new ArrayList<ESFFederalRoleESFSpecific>(soapModels.length);
-
-		for (ESFFederalRoleESFSpecificSoap soapModel : soapModels) {
-			models.add(toModel(soapModel));
-		}
-
-		return models;
-	}
-
 	public static final long LOCK_EXPIRATION_TIME = GetterUtil.getLong(com.liferay.util.service.ServiceProps.get(
 				"lock.expiration.time.it.ethica.esf.model.ESFFederalRoleESFSpecific"));
 

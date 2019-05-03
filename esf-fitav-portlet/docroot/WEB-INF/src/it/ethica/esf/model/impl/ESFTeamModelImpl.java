@@ -15,6 +15,7 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -49,6 +50,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFTeamModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFTeamModelImpl extends BaseModelImpl<ESFTeam>
 	implements ESFTeamModel {
 	/*
@@ -71,10 +73,10 @@ public class ESFTeamModelImpl extends BaseModelImpl<ESFTeam>
 	public static final String TX_MANAGER = "liferayTransactionManager";
 	public static final boolean ENTITY_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.entity.cache.enabled.it.ethica.esf.model.ESFTeam"),
-			false);
+			true);
 	public static final boolean FINDER_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.finder.cache.enabled.it.ethica.esf.model.ESFTeam"),
-			false);
+			true);
 	public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.column.bitmask.enabled.it.ethica.esf.model.ESFTeam"),
 			true);
@@ -148,6 +150,7 @@ public class ESFTeamModelImpl extends BaseModelImpl<ESFTeam>
 		}
 	}
 
+	@JSON
 	@Override
 	public long getEsfTeamId() {
 		return _esfTeamId;
@@ -158,6 +161,7 @@ public class ESFTeamModelImpl extends BaseModelImpl<ESFTeam>
 		_esfTeamId = esfTeamId;
 	}
 
+	@JSON
 	@Override
 	public long getEsfTournamentId() {
 		return _esfTournamentId;
@@ -180,6 +184,7 @@ public class ESFTeamModelImpl extends BaseModelImpl<ESFTeam>
 		return _originalEsfTournamentId;
 	}
 
+	@JSON
 	@Override
 	public String getName() {
 		if (_name == null) {

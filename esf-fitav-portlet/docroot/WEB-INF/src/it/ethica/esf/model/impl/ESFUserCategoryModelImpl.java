@@ -16,6 +16,7 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -52,6 +53,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFUserCategoryModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFUserCategoryModelImpl extends BaseModelImpl<ESFUserCategory>
 	implements ESFUserCategoryModel {
 	/*
@@ -225,6 +227,7 @@ public class ESFUserCategoryModelImpl extends BaseModelImpl<ESFUserCategory>
 		}
 	}
 
+	@JSON
 	@Override
 	public long getEsfUserCategoryId() {
 		return _esfUserCategoryId;
@@ -235,6 +238,7 @@ public class ESFUserCategoryModelImpl extends BaseModelImpl<ESFUserCategory>
 		_esfUserCategoryId = esfUserCategoryId;
 	}
 
+	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -245,6 +249,7 @@ public class ESFUserCategoryModelImpl extends BaseModelImpl<ESFUserCategory>
 		_groupId = groupId;
 	}
 
+	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -255,6 +260,7 @@ public class ESFUserCategoryModelImpl extends BaseModelImpl<ESFUserCategory>
 		_companyId = companyId;
 	}
 
+	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -275,6 +281,7 @@ public class ESFUserCategoryModelImpl extends BaseModelImpl<ESFUserCategory>
 		_userUuid = userUuid;
 	}
 
+	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -290,6 +297,7 @@ public class ESFUserCategoryModelImpl extends BaseModelImpl<ESFUserCategory>
 		_userName = userName;
 	}
 
+	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -300,6 +308,7 @@ public class ESFUserCategoryModelImpl extends BaseModelImpl<ESFUserCategory>
 		_createDate = createDate;
 	}
 
+	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -310,6 +319,7 @@ public class ESFUserCategoryModelImpl extends BaseModelImpl<ESFUserCategory>
 		_modifiedDate = modifiedDate;
 	}
 
+	@JSON
 	@Override
 	public long getEsfUserId() {
 		return _esfUserId;
@@ -342,6 +352,7 @@ public class ESFUserCategoryModelImpl extends BaseModelImpl<ESFUserCategory>
 		return _originalEsfUserId;
 	}
 
+	@JSON
 	@Override
 	public Date getStartDate() {
 		return _startDate;
@@ -352,6 +363,7 @@ public class ESFUserCategoryModelImpl extends BaseModelImpl<ESFUserCategory>
 		_startDate = startDate;
 	}
 
+	@JSON
 	@Override
 	public Date getEndDate() {
 		return _endDate;
@@ -362,6 +374,7 @@ public class ESFUserCategoryModelImpl extends BaseModelImpl<ESFUserCategory>
 		_endDate = endDate;
 	}
 
+	@JSON
 	@Override
 	public long getEsfCategoryId() {
 		return _esfCategoryId;
@@ -384,6 +397,7 @@ public class ESFUserCategoryModelImpl extends BaseModelImpl<ESFUserCategory>
 		return _originalEsfCategoryId;
 	}
 
+	@JSON
 	@Override
 	public long getEsfSportTypeId() {
 		return _esfSportTypeId;

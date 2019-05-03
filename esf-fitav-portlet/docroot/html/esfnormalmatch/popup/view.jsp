@@ -1,4 +1,3 @@
-
 <%@page import="javax.portlet.PortletURL"%>
 <%@include file="init.jsp"%>
 

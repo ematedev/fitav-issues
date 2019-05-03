@@ -34,7 +34,6 @@ import com.liferay.portal.service.ServiceContext;
 import com.liferay.portal.service.UserLocalServiceUtil;
 
 import it.ethica.esf.NoSuchConfigurationException;
-import it.ethica.esf.model.ESFCard;
 import it.ethica.esf.model.ESFConfiguration;
 import it.ethica.esf.service.ESFCardLocalServiceUtil;
 import it.ethica.esf.service.ESFConfigurationLocalServiceUtil;

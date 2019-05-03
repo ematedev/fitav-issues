@@ -38,9 +38,11 @@ public class ESFNationalCacheModel implements CacheModel<ESFNational>,
 	Externalizable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(35);
+		StringBundler sb = new StringBundler(37);
 
-		sb.append("{esfNationalId=");
+		sb.append("{uuid=");
+		sb.append(uuid);
+		sb.append(", esfNationalId=");
 		sb.append(esfNationalId);
 		sb.append(", groupId=");
 		sb.append(groupId);
@@ -82,6 +84,13 @@ public class ESFNationalCacheModel implements CacheModel<ESFNational>,
 	@Override
 	public ESFNational toEntityModel() {
 		ESFNationalImpl esfNationalImpl = new ESFNationalImpl();
+
+		if (uuid == null) {
+			esfNationalImpl.setUuid(StringPool.BLANK);
+		}
+		else {
+			esfNationalImpl.setUuid(uuid);
+		}
 
 		esfNationalImpl.setEsfNationalId(esfNationalId);
 		esfNationalImpl.setGroupId(groupId);
@@ -164,6 +173,7 @@ public class ESFNationalCacheModel implements CacheModel<ESFNational>,
 
 	@Override
 	public void readExternal(ObjectInput objectInput) throws IOException {
+		uuid = objectInput.readUTF();
 		esfNationalId = objectInput.readLong();
 		groupId = objectInput.readLong();
 		companyId = objectInput.readLong();
@@ -186,6 +196,13 @@ public class ESFNationalCacheModel implements CacheModel<ESFNational>,
 	@Override
 	public void writeExternal(ObjectOutput objectOutput)
 		throws IOException {
+		if (uuid == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(uuid);
+		}
+
 		objectOutput.writeLong(esfNationalId);
 		objectOutput.writeLong(groupId);
 		objectOutput.writeLong(companyId);
@@ -226,6 +243,7 @@ public class ESFNationalCacheModel implements CacheModel<ESFNational>,
 		objectOutput.writeLong(deliberateDate);
 	}
 
+	public String uuid;
 	public long esfNationalId;
 	public long groupId;
 	public long companyId;

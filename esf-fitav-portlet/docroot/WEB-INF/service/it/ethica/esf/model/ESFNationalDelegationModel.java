@@ -18,7 +18,7 @@ import com.liferay.portal.kernel.bean.AutoEscape;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
-import com.liferay.portal.model.GroupedModel;
+import com.liferay.portal.model.StagedGroupedModel;
 import com.liferay.portal.service.ServiceContext;
 
 import com.liferay.portlet.expando.model.ExpandoBridge;
@@ -41,7 +41,7 @@ import java.util.Date;
  * @generated
  */
 public interface ESFNationalDelegationModel extends BaseModel<ESFNationalDelegation>,
-	GroupedModel {
+	StagedGroupedModel {
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
@@ -61,6 +61,23 @@ public interface ESFNationalDelegationModel extends BaseModel<ESFNationalDelegat
 	 * @param primaryKey the primary key of this e s f national delegation
 	 */
 	public void setPrimaryKey(long primaryKey);
+
+	/**
+	 * Returns the uuid of this e s f national delegation.
+	 *
+	 * @return the uuid of this e s f national delegation
+	 */
+	@AutoEscape
+	@Override
+	public String getUuid();
+
+	/**
+	 * Sets the uuid of this e s f national delegation.
+	 *
+	 * @param uuid the uuid of this e s f national delegation
+	 */
+	@Override
+	public void setUuid(String uuid);
 
 	/**
 	 * Returns the esf user ID of this e s f national delegation.

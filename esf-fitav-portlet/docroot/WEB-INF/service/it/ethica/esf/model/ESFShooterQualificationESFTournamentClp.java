@@ -15,12 +15,14 @@
 package it.ethica.esf.model;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.impl.BaseModelImpl;
 
 import it.ethica.esf.service.ClpSerializer;
+import it.ethica.esf.service.ESFShooterQualificationESFTournamentLocalServiceUtil;
 import it.ethica.esf.service.persistence.ESFShooterQualificationESFTournamentPK;
 
 import java.io.Serializable;
@@ -257,6 +259,16 @@ public class ESFShooterQualificationESFTournamentClp extends BaseModelImpl<ESFSh
 		}
 
 		return returnValue;
+	}
+
+	@Override
+	public void persist() throws SystemException {
+		if (this.isNew()) {
+			ESFShooterQualificationESFTournamentLocalServiceUtil.addESFShooterQualificationESFTournament(this);
+		}
+		else {
+			ESFShooterQualificationESFTournamentLocalServiceUtil.updateESFShooterQualificationESFTournament(this);
+		}
 	}
 
 	@Override

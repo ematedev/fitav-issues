@@ -15,6 +15,7 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -49,6 +50,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFJobModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFJobModelImpl extends BaseModelImpl<ESFJob>
 	implements ESFJobModel {
 	/*
@@ -136,6 +138,7 @@ public class ESFJobModelImpl extends BaseModelImpl<ESFJob>
 		}
 	}
 
+	@JSON
 	@Override
 	public long getEsfJobId() {
 		return _esfJobId;
@@ -146,6 +149,7 @@ public class ESFJobModelImpl extends BaseModelImpl<ESFJob>
 		_esfJobId = esfJobId;
 	}
 
+	@JSON
 	@Override
 	public String getEsfName() {
 		if (_esfName == null) {

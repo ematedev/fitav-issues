@@ -15,6 +15,7 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.DateUtil;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
@@ -51,6 +52,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFHistoricalAssociationModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFHistoricalAssociationModelImpl extends BaseModelImpl<ESFHistoricalAssociation>
 	implements ESFHistoricalAssociationModel {
 	/*
@@ -191,6 +193,7 @@ public class ESFHistoricalAssociationModelImpl extends BaseModelImpl<ESFHistoric
 		}
 	}
 
+	@JSON
 	@Override
 	public long getIdHistoricalAssociation() {
 		return _idHistoricalAssociation;
@@ -201,6 +204,7 @@ public class ESFHistoricalAssociationModelImpl extends BaseModelImpl<ESFHistoric
 		_idHistoricalAssociation = idHistoricalAssociation;
 	}
 
+	@JSON
 	@Override
 	public String getName() {
 		if (_name == null) {
@@ -216,6 +220,7 @@ public class ESFHistoricalAssociationModelImpl extends BaseModelImpl<ESFHistoric
 		_name = name;
 	}
 
+	@JSON
 	@Override
 	public String getCode() {
 		if (_code == null) {
@@ -231,6 +236,7 @@ public class ESFHistoricalAssociationModelImpl extends BaseModelImpl<ESFHistoric
 		_code = code;
 	}
 
+	@JSON
 	@Override
 	public Date getDateChange() {
 		return _dateChange;
@@ -243,6 +249,7 @@ public class ESFHistoricalAssociationModelImpl extends BaseModelImpl<ESFHistoric
 		_dateChange = dateChange;
 	}
 
+	@JSON
 	@Override
 	public Date getEndDate() {
 		return _endDate;
@@ -253,6 +260,7 @@ public class ESFHistoricalAssociationModelImpl extends BaseModelImpl<ESFHistoric
 		_endDate = endDate;
 	}
 
+	@JSON
 	@Override
 	public long getOrganizationId() {
 		return _organizationId;
@@ -275,6 +283,7 @@ public class ESFHistoricalAssociationModelImpl extends BaseModelImpl<ESFHistoric
 		return _originalOrganizationId;
 	}
 
+	@JSON
 	@Override
 	public long getStateId() {
 		return _stateId;
@@ -285,6 +294,7 @@ public class ESFHistoricalAssociationModelImpl extends BaseModelImpl<ESFHistoric
 		_stateId = stateId;
 	}
 
+	@JSON
 	@Override
 	public long getVariationId() {
 		return _variationId;

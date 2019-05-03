@@ -713,4 +713,8 @@ public interface ESFOrganizationLocalService extends BaseLocalService,
 
 	public java.util.List<it.ethica.esf.model.ESFOrganization> findNewAffilationConiReportAndArmy(
 		int year);
+
+	public java.util.List<it.ethica.esf.model.ESFOrganization> findByType(
+		int type, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException;
 }

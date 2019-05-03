@@ -16,6 +16,7 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -49,6 +50,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFFieldESFSportTypeModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFFieldESFSportTypeModelImpl extends BaseModelImpl<ESFFieldESFSportType>
 	implements ESFFieldESFSportTypeModel {
 	/*
@@ -189,6 +191,7 @@ public class ESFFieldESFSportTypeModelImpl extends BaseModelImpl<ESFFieldESFSpor
 		}
 	}
 
+	@JSON
 	@Override
 	public long getEsfFieldId() {
 		return _esfFieldId;
@@ -211,6 +214,7 @@ public class ESFFieldESFSportTypeModelImpl extends BaseModelImpl<ESFFieldESFSpor
 		return _originalEsfFieldId;
 	}
 
+	@JSON
 	@Override
 	public long getEsfSportTypeId() {
 		return _esfSportTypeId;
@@ -233,6 +237,7 @@ public class ESFFieldESFSportTypeModelImpl extends BaseModelImpl<ESFFieldESFSpor
 		return _originalEsfSportTypeId;
 	}
 
+	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -243,6 +248,7 @@ public class ESFFieldESFSportTypeModelImpl extends BaseModelImpl<ESFFieldESFSpor
 		_groupId = groupId;
 	}
 
+	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -253,6 +259,7 @@ public class ESFFieldESFSportTypeModelImpl extends BaseModelImpl<ESFFieldESFSpor
 		_companyId = companyId;
 	}
 
+	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -273,6 +280,7 @@ public class ESFFieldESFSportTypeModelImpl extends BaseModelImpl<ESFFieldESFSpor
 		_userUuid = userUuid;
 	}
 
+	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -288,6 +296,7 @@ public class ESFFieldESFSportTypeModelImpl extends BaseModelImpl<ESFFieldESFSpor
 		_userName = userName;
 	}
 
+	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -298,6 +307,7 @@ public class ESFFieldESFSportTypeModelImpl extends BaseModelImpl<ESFFieldESFSpor
 		_createDate = createDate;
 	}
 
+	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;

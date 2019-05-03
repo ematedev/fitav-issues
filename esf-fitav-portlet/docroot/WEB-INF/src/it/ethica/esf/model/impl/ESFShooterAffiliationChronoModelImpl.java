@@ -15,6 +15,7 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -50,6 +51,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFShooterAffiliationChronoModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFShooterAffiliationChronoModelImpl extends BaseModelImpl<ESFShooterAffiliationChrono>
 	implements ESFShooterAffiliationChronoModel {
 	/*
@@ -210,6 +212,7 @@ public class ESFShooterAffiliationChronoModelImpl extends BaseModelImpl<ESFShoot
 		}
 	}
 
+	@JSON
 	@Override
 	public long getEsfShooterAffiliationChronoId() {
 		return _esfShooterAffiliationChronoId;
@@ -221,6 +224,7 @@ public class ESFShooterAffiliationChronoModelImpl extends BaseModelImpl<ESFShoot
 		_esfShooterAffiliationChronoId = esfShooterAffiliationChronoId;
 	}
 
+	@JSON
 	@Override
 	public long getEsfuserId() {
 		return _esfuserId;
@@ -243,6 +247,7 @@ public class ESFShooterAffiliationChronoModelImpl extends BaseModelImpl<ESFShoot
 		return _originalEsfuserId;
 	}
 
+	@JSON
 	@Override
 	public Date getAffiliationDate() {
 		return _affiliationDate;
@@ -263,6 +268,7 @@ public class ESFShooterAffiliationChronoModelImpl extends BaseModelImpl<ESFShoot
 		return _originalAffiliationDate;
 	}
 
+	@JSON
 	@Override
 	public int getYear() {
 		return _year;
@@ -285,6 +291,7 @@ public class ESFShooterAffiliationChronoModelImpl extends BaseModelImpl<ESFShoot
 		return _originalYear;
 	}
 
+	@JSON
 	@Override
 	public String getVcampo() {
 		if (_Vcampo == null) {
@@ -300,6 +307,7 @@ public class ESFShooterAffiliationChronoModelImpl extends BaseModelImpl<ESFShoot
 		_Vcampo = Vcampo;
 	}
 
+	@JSON
 	@Override
 	public Date getPaymentDate() {
 		return _paymentDate;
@@ -310,6 +318,7 @@ public class ESFShooterAffiliationChronoModelImpl extends BaseModelImpl<ESFShoot
 		_paymentDate = paymentDate;
 	}
 
+	@JSON
 	@Override
 	public String getPayment() {
 		if (_payment == null) {
@@ -325,6 +334,7 @@ public class ESFShooterAffiliationChronoModelImpl extends BaseModelImpl<ESFShoot
 		_payment = payment;
 	}
 
+	@JSON
 	@Override
 	public String getCard() {
 		if (_card == null) {
@@ -350,6 +360,7 @@ public class ESFShooterAffiliationChronoModelImpl extends BaseModelImpl<ESFShoot
 		return GetterUtil.getString(_originalCard);
 	}
 
+	@JSON
 	@Override
 	public String getEsfOrganization() {
 		if (_esfOrganization == null) {
@@ -365,6 +376,7 @@ public class ESFShooterAffiliationChronoModelImpl extends BaseModelImpl<ESFShoot
 		_esfOrganization = esfOrganization;
 	}
 
+	@JSON
 	@Override
 	public String getNote() {
 		if (_note == null) {

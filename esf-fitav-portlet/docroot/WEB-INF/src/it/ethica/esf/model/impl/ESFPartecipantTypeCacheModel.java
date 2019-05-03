@@ -36,9 +36,11 @@ public class ESFPartecipantTypeCacheModel implements CacheModel<ESFPartecipantTy
 	Externalizable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(5);
+		StringBundler sb = new StringBundler(7);
 
-		sb.append("{esfPartecipantTypeId=");
+		sb.append("{uuid=");
+		sb.append(uuid);
+		sb.append(", esfPartecipantTypeId=");
 		sb.append(esfPartecipantTypeId);
 		sb.append(", name=");
 		sb.append(name);
@@ -50,6 +52,13 @@ public class ESFPartecipantTypeCacheModel implements CacheModel<ESFPartecipantTy
 	@Override
 	public ESFPartecipantType toEntityModel() {
 		ESFPartecipantTypeImpl esfPartecipantTypeImpl = new ESFPartecipantTypeImpl();
+
+		if (uuid == null) {
+			esfPartecipantTypeImpl.setUuid(StringPool.BLANK);
+		}
+		else {
+			esfPartecipantTypeImpl.setUuid(uuid);
+		}
 
 		esfPartecipantTypeImpl.setEsfPartecipantTypeId(esfPartecipantTypeId);
 
@@ -67,6 +76,7 @@ public class ESFPartecipantTypeCacheModel implements CacheModel<ESFPartecipantTy
 
 	@Override
 	public void readExternal(ObjectInput objectInput) throws IOException {
+		uuid = objectInput.readUTF();
 		esfPartecipantTypeId = objectInput.readLong();
 		name = objectInput.readUTF();
 	}
@@ -74,6 +84,13 @@ public class ESFPartecipantTypeCacheModel implements CacheModel<ESFPartecipantTy
 	@Override
 	public void writeExternal(ObjectOutput objectOutput)
 		throws IOException {
+		if (uuid == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(uuid);
+		}
+
 		objectOutput.writeLong(esfPartecipantTypeId);
 
 		if (name == null) {
@@ -84,6 +101,7 @@ public class ESFPartecipantTypeCacheModel implements CacheModel<ESFPartecipantTy
 		}
 	}
 
+	public String uuid;
 	public long esfPartecipantTypeId;
 	public String name;
 }

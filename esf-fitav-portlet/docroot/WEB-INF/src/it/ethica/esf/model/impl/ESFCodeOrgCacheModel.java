@@ -36,9 +36,11 @@ public class ESFCodeOrgCacheModel implements CacheModel<ESFCodeOrg>,
 	Externalizable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(9);
+		StringBundler sb = new StringBundler(11);
 
-		sb.append("{esfCodeOrgId=");
+		sb.append("{uuid=");
+		sb.append(uuid);
+		sb.append(", esfCodeOrgId=");
 		sb.append(esfCodeOrgId);
 		sb.append(", className=");
 		sb.append(className);
@@ -54,6 +56,13 @@ public class ESFCodeOrgCacheModel implements CacheModel<ESFCodeOrg>,
 	@Override
 	public ESFCodeOrg toEntityModel() {
 		ESFCodeOrgImpl esfCodeOrgImpl = new ESFCodeOrgImpl();
+
+		if (uuid == null) {
+			esfCodeOrgImpl.setUuid(StringPool.BLANK);
+		}
+		else {
+			esfCodeOrgImpl.setUuid(uuid);
+		}
 
 		esfCodeOrgImpl.setEsfCodeOrgId(esfCodeOrgId);
 
@@ -80,6 +89,7 @@ public class ESFCodeOrgCacheModel implements CacheModel<ESFCodeOrg>,
 
 	@Override
 	public void readExternal(ObjectInput objectInput) throws IOException {
+		uuid = objectInput.readUTF();
 		esfCodeOrgId = objectInput.readLong();
 		className = objectInput.readUTF();
 		code = objectInput.readUTF();
@@ -89,6 +99,13 @@ public class ESFCodeOrgCacheModel implements CacheModel<ESFCodeOrg>,
 	@Override
 	public void writeExternal(ObjectOutput objectOutput)
 		throws IOException {
+		if (uuid == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(uuid);
+		}
+
 		objectOutput.writeLong(esfCodeOrgId);
 
 		if (className == null) {
@@ -108,6 +125,7 @@ public class ESFCodeOrgCacheModel implements CacheModel<ESFCodeOrg>,
 		objectOutput.writeLong(sequence);
 	}
 
+	public String uuid;
 	public long esfCodeOrgId;
 	public String className;
 	public String code;

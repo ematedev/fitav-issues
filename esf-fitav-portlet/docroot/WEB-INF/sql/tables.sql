@@ -109,6 +109,7 @@ create table ESFCity (
 );
 
 create table ESFCodeOrg (
+	uuid_ VARCHAR(75) null,
 	esfCodeOrgId LONG not null primary key,
 	className VARCHAR(75) null,
 	code_ VARCHAR(75) null,
@@ -176,7 +177,17 @@ create table ESFDocument (
 	expirationDate DATE null,
 	esfUserId LONG,
 	type_ VARCHAR(75) null,
+	esfDocumentTypeId LONG,
+	esfPublicAuthorityId LONG,
 	path_ VARCHAR(255) null
+);
+
+create table ESFDocumentType (
+	esfDocumentTypeId LONG not null primary key,
+	createDate DATE null,
+	modifiedDate DATE null,
+	description VARCHAR(75) null,
+	expirationMonthsNotice INTEGER
 );
 
 create table ESFElectronic (
@@ -517,6 +528,7 @@ create table ESFMatchType (
 );
 
 create table ESFNational (
+	uuid_ VARCHAR(75) null,
 	esfNationalId LONG not null primary key,
 	groupId LONG,
 	companyId LONG,
@@ -537,6 +549,7 @@ create table ESFNational (
 );
 
 create table ESFNationalDelegation (
+	uuid_ VARCHAR(75) null,
 	esfUserId LONG,
 	groupId LONG,
 	companyId LONG,
@@ -702,6 +715,7 @@ create table ESFPartecipantInfo (
 );
 
 create table ESFPartecipantType (
+	uuid_ VARCHAR(75) null,
 	esfPartecipantTypeId LONG not null primary key,
 	name VARCHAR(75) null
 );
@@ -717,6 +731,13 @@ create table ESFProvince (
 	idCountry VARCHAR(75) not null,
 	name VARCHAR(75) null,
 	primary key (idProvince, idRegion, idCountry)
+);
+
+create table ESFPublicAuthority (
+	esfPublicAuthorityId LONG not null primary key,
+	createDate DATE null,
+	modifiedDate DATE null,
+	description VARCHAR(75) null
 );
 
 create table ESFRegion (
@@ -1146,4 +1167,89 @@ create table ESFgunUser (
 	typeId LONG,
 	esfMeasures VARCHAR(75) null,
 	esfCaliber VARCHAR(75) null
+);
+
+create table VW_ESFListaIncarichi (
+	AnniPrecedenti INTEGER not null,
+	AnnoFineIncarico INTEGER not null,
+	AnnoInizioIncarico INTEGER not null,
+	AnnoCorrente INTEGER not null,
+	NomeRuolo VARCHAR(75) not null,
+	endDate DATE null,
+	startDate DATE not null,
+	esfUserId LONG not null,
+	esfOrganizationId LONG not null,
+	lastName VARCHAR(75) not null,
+	firstName VARCHAR(75) not null,
+	primary key (AnniPrecedenti, AnnoFineIncarico, AnnoInizioIncarico, AnnoCorrente, NomeRuolo, startDate, esfUserId, esfOrganizationId, lastName, firstName)
+);
+
+create table VW_ESFlistaincarichi (
+	AnniPrecedenti INTEGER not null,
+	AnnoFineIncarico INTEGER not null,
+	AnnoInizioIncarico INTEGER not null,
+	AnnoCorrente INTEGER not null,
+	NomeRuolo VARCHAR(75) not null,
+	endDate DATE not null,
+	startDate DATE not null,
+	esfUserId LONG not null,
+	esfOrganizationId LONG not null,
+	lastName VARCHAR(75) not null,
+	firstName VARCHAR(75) not null,
+	primary key (AnniPrecedenti, AnnoFineIncarico, AnnoInizioIncarico, AnnoCorrente, NomeRuolo, endDate, startDate, esfUserId, esfOrganizationId, lastName, firstName)
+);
+
+create table esforganization (
+	esfOrganizationId LONG not null primary key,
+	code_ VARCHAR(75) null,
+	vat VARCHAR(75) null,
+	fiscalCode VARCHAR(75) null,
+	ibanCode VARCHAR(75) null,
+	isMultiSport BOOLEAN,
+	legalForm VARCHAR(75) null,
+	category VARCHAR(75) null,
+	establishmentDate DATE null,
+	closureDate DATE null,
+	type_ INTEGER,
+	insertDate DATE null,
+	coniDate DATE null,
+	coniCode VARCHAR(75) null,
+	description VARCHAR(75) null,
+	isYouthActive BOOLEAN,
+	firstAffiliationDate DATE null,
+	variations LONG,
+	regionCode LONG,
+	idFatherAssociation LONG,
+	constitutiveAct BOOLEAN,
+	registeredStatus BOOLEAN,
+	planimetrySportsStand BOOLEAN,
+	certificateFITAV BOOLEAN,
+	note VARCHAR(75) null,
+	isSimplyOrganizzation BOOLEAN,
+	webSite VARCHAR(75) null,
+	includeConiReport BOOLEAN,
+	organizzationCategory VARCHAR(75) null,
+	type_ INTEGER
+);
+
+create table vw_datidirettoretiro (
+	esfShootingDirectorId LONG not null,
+	Nome VARCHAR(75) not null,
+	Cognome VARCHAR(75) not null,
+	CodiceRegione VARCHAR(75) not null,
+	primary key (esfShootingDirectorId, Nome, Cognome, CodiceRegione)
+);
+
+create table vw_esflistaincarichi (
+	AnniPrecedenti INTEGER not null,
+	AnnoInizioIncarico INTEGER not null,
+	AnnoCorrente INTEGER not null,
+	NomeRuolo VARCHAR(75) not null,
+	endDate DATE not null,
+	startDate DATE not null,
+	esfUserId LONG not null,
+	esfOrganizationId LONG not null,
+	lastName VARCHAR(75) not null,
+	firstName VARCHAR(75) not null,
+	primary key (AnniPrecedenti, AnnoInizioIncarico, AnnoCorrente, NomeRuolo, endDate, startDate, esfUserId, esfOrganizationId, lastName, firstName)
 );

@@ -1,46 +1,12 @@
 package it.ethica.esf.portlet.utility;
 
-import it.ethica.esf.model.ESFAddress;
-import it.ethica.esf.model.ESFCard;
-import it.ethica.esf.model.ESFMatch;
-import it.ethica.esf.model.ESFMatchResult;
-import it.ethica.esf.model.ESFNationalMatchResult;
-import it.ethica.esf.model.ESFOrganization;
-import it.ethica.esf.model.ESFResult;
-import it.ethica.esf.model.ESFShooterQualification;
-import it.ethica.esf.model.ESFUser;
-import it.ethica.esf.model.impl.ESFCardImpl;
-import it.ethica.esf.model.impl.ESFMatchImpl;
-import it.ethica.esf.model.impl.ESFOrganizationImpl;
-import it.ethica.esf.model.impl.ESFUserImpl;
-import it.ethica.esf.portlet.ESFQualificationsFederalYouthPortlet;
-import it.ethica.esf.service.ESFAddressLocalServiceUtil;
-import it.ethica.esf.service.ESFCardLocalServiceUtil;
-import it.ethica.esf.service.ESFCityLocalServiceUtil;
-import it.ethica.esf.service.ESFDescriptionLocalServiceUtil;
-import it.ethica.esf.service.ESFMatchLocalServiceUtil;
-import it.ethica.esf.service.ESFMatchResultLocalServiceUtil;
-import it.ethica.esf.service.ESFNationalMatchResultLocalServiceUtil;
-import it.ethica.esf.service.ESFOrganizationLocalServiceUtil;
-import it.ethica.esf.service.ESFResultLocalServiceUtil;
-import it.ethica.esf.service.ESFShooterQualificationLocalServiceUtil;
-import it.ethica.esf.service.ESFSportTypeLocalServiceUtil;
-import it.ethica.esf.service.ESFUserLocalServiceUtil;
-import it.ethica.esf.service.persistence.ESFCityPK;
-import it.ethica.esf.service.persistence.ESFMatchResultUtil;
-import it.ethica.esf.service.persistence.ESFNationalMatchResultUtil;
-import it.ethica.esf.util.ESFKeys;
-import it.ethica.esf.util.ESFKeys.ESFAddressListType;
-
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
-import java.util.regex.MatchResult;
 
 import javax.portlet.PortletException;
 import javax.portlet.ResourceRequest;
@@ -64,10 +30,31 @@ import com.liferay.portal.kernel.servlet.HttpHeaders;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.kernel.util.WebKeys;
-import com.liferay.portal.model.Address;
-import com.liferay.portal.service.persistence.AddressUtil;
 import com.liferay.portal.theme.ThemeDisplay;
 import com.liferay.util.bridges.mvc.MVCPortlet;
+
+import it.ethica.esf.model.ESFAddress;
+import it.ethica.esf.model.ESFCard;
+import it.ethica.esf.model.ESFMatch;
+import it.ethica.esf.model.ESFOrganization;
+import it.ethica.esf.model.ESFResult;
+import it.ethica.esf.model.ESFUser;
+import it.ethica.esf.model.impl.ESFCardImpl;
+import it.ethica.esf.model.impl.ESFMatchImpl;
+import it.ethica.esf.model.impl.ESFOrganizationImpl;
+import it.ethica.esf.model.impl.ESFUserImpl;
+import it.ethica.esf.service.ESFAddressLocalServiceUtil;
+import it.ethica.esf.service.ESFCardLocalServiceUtil;
+import it.ethica.esf.service.ESFCityLocalServiceUtil;
+import it.ethica.esf.service.ESFDescriptionLocalServiceUtil;
+import it.ethica.esf.service.ESFMatchLocalServiceUtil;
+import it.ethica.esf.service.ESFOrganizationLocalServiceUtil;
+import it.ethica.esf.service.ESFResultLocalServiceUtil;
+import it.ethica.esf.service.ESFSportTypeLocalServiceUtil;
+import it.ethica.esf.service.ESFUserLocalServiceUtil;
+import it.ethica.esf.service.persistence.ESFCityPK;
+import it.ethica.esf.util.ESFKeys;
+import it.ethica.esf.util.ESFKeys.ESFAddressListType;
 
 
 public class GenerateShooterCV extends MVCPortlet{

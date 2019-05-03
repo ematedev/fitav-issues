@@ -16,6 +16,7 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -52,6 +53,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFAnnualFreeCardModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFAnnualFreeCardModelImpl extends BaseModelImpl<ESFAnnualFreeCard>
 	implements ESFAnnualFreeCardModel {
 	/*
@@ -215,6 +217,7 @@ public class ESFAnnualFreeCardModelImpl extends BaseModelImpl<ESFAnnualFreeCard>
 		}
 	}
 
+	@JSON
 	@Override
 	public long getAnnualFreeCardId() {
 		return _annualFreeCardId;
@@ -227,6 +230,7 @@ public class ESFAnnualFreeCardModelImpl extends BaseModelImpl<ESFAnnualFreeCard>
 		_annualFreeCardId = annualFreeCardId;
 	}
 
+	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -237,6 +241,7 @@ public class ESFAnnualFreeCardModelImpl extends BaseModelImpl<ESFAnnualFreeCard>
 		_companyId = companyId;
 	}
 
+	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -257,6 +262,7 @@ public class ESFAnnualFreeCardModelImpl extends BaseModelImpl<ESFAnnualFreeCard>
 		_userUuid = userUuid;
 	}
 
+	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -272,6 +278,7 @@ public class ESFAnnualFreeCardModelImpl extends BaseModelImpl<ESFAnnualFreeCard>
 		_userName = userName;
 	}
 
+	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -282,6 +289,7 @@ public class ESFAnnualFreeCardModelImpl extends BaseModelImpl<ESFAnnualFreeCard>
 		_createDate = createDate;
 	}
 
+	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -292,6 +300,7 @@ public class ESFAnnualFreeCardModelImpl extends BaseModelImpl<ESFAnnualFreeCard>
 		_modifiedDate = modifiedDate;
 	}
 
+	@JSON
 	@Override
 	public long getAssId() {
 		return _assId;
@@ -302,6 +311,7 @@ public class ESFAnnualFreeCardModelImpl extends BaseModelImpl<ESFAnnualFreeCard>
 		_assId = assId;
 	}
 
+	@JSON
 	@Override
 	public String getCode() {
 		if (_code == null) {
@@ -327,6 +337,7 @@ public class ESFAnnualFreeCardModelImpl extends BaseModelImpl<ESFAnnualFreeCard>
 		return GetterUtil.getString(_originalCode);
 	}
 
+	@JSON
 	@Override
 	public String getCardCode() {
 		if (_cardCode == null) {
@@ -342,6 +353,7 @@ public class ESFAnnualFreeCardModelImpl extends BaseModelImpl<ESFAnnualFreeCard>
 		_cardCode = cardCode;
 	}
 
+	@JSON
 	@Override
 	public String getAssCode() {
 		if (_assCode == null) {
@@ -357,6 +369,7 @@ public class ESFAnnualFreeCardModelImpl extends BaseModelImpl<ESFAnnualFreeCard>
 		_assCode = assCode;
 	}
 
+	@JSON
 	@Override
 	public String getAssName() {
 		if (_assName == null) {

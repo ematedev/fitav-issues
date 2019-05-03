@@ -2575,6 +2575,8 @@ public class ESFDocumentPersistenceImpl extends BasePersistenceImpl<ESFDocument>
 		esfDocumentImpl.setExpirationDate(esfDocument.getExpirationDate());
 		esfDocumentImpl.setEsfUserId(esfDocument.getEsfUserId());
 		esfDocumentImpl.setType(esfDocument.getType());
+		esfDocumentImpl.setEsfDocumentTypeId(esfDocument.getEsfDocumentTypeId());
+		esfDocumentImpl.setEsfPublicAuthorityId(esfDocument.getEsfPublicAuthorityId());
 		esfDocumentImpl.setPath(esfDocument.getPath());
 
 		return esfDocumentImpl;

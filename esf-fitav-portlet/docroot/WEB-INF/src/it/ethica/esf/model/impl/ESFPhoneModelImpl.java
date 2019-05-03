@@ -15,6 +15,7 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -48,6 +49,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFPhoneModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFPhoneModelImpl extends BaseModelImpl<ESFPhone>
 	implements ESFPhoneModel {
 	/*
@@ -135,6 +137,7 @@ public class ESFPhoneModelImpl extends BaseModelImpl<ESFPhone>
 		}
 	}
 
+	@JSON
 	@Override
 	public long getEsfPhoneId() {
 		return _esfPhoneId;
@@ -145,6 +148,7 @@ public class ESFPhoneModelImpl extends BaseModelImpl<ESFPhone>
 		_esfPhoneId = esfPhoneId;
 	}
 
+	@JSON
 	@Override
 	public int getListTypeId() {
 		return _listTypeId;

@@ -102,6 +102,7 @@
 		<field name="website" type="String" />
 	</model>
 	<model name="it.ethica.esf.model.ESFCodeOrg">
+		<field name="uuid" type="String" />
 		<field name="esfCodeOrgId" type="long" />
 		<field name="className" type="String" />
 		<field name="code" type="String" />
@@ -164,9 +165,18 @@
 		<field name="expirationDate" type="Date" />
 		<field name="esfUserId" type="long" />
 		<field name="type" type="String" />
+		<field name="esfDocumentTypeId" type="long" />
+		<field name="esfPublicAuthorityId" type="long" />
 		<field name="path" type="String">
 			<hint name="max-length">255</hint>
 		</field>
+	</model>
+	<model name="it.ethica.esf.model.ESFDocumentType">
+		<field name="esfDocumentTypeId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="description" type="String" />
+		<field name="expirationMonthsNotice" type="int" />
 	</model>
 	<model name="it.ethica.esf.model.ESFElectronic">
 		<field name="electronicId" type="long" />
@@ -480,6 +490,7 @@
 		<field name="code" type="String" />
 	</model>
 	<model name="it.ethica.esf.model.ESFNational">
+		<field name="uuid" type="String" />
 		<field name="esfNationalId" type="long" />
 		<field name="groupId" type="long" />
 		<field name="companyId" type="long" />
@@ -499,6 +510,7 @@
 		<field name="deliberateDate" type="Date" />
 	</model>
 	<model name="it.ethica.esf.model.ESFNationalDelegation">
+		<field name="uuid" type="String" />
 		<field name="esfUserId" type="long" />
 		<field name="groupId" type="long" />
 		<field name="companyId" type="long" />
@@ -660,6 +672,7 @@
 		<field name="esfGunKindIdTwo" type="long" />
 	</model>
 	<model name="it.ethica.esf.model.ESFPartecipantType">
+		<field name="uuid" type="String" />
 		<field name="esfPartecipantTypeId" type="long" />
 		<field name="name" type="String" />
 	</model>
@@ -672,6 +685,12 @@
 		<field name="idRegion" type="String" />
 		<field name="idCountry" type="String" />
 		<field name="name" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.ESFPublicAuthority">
+		<field name="esfPublicAuthorityId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="description" type="String" />
 	</model>
 	<model name="it.ethica.esf.model.ESFRegion">
 		<field name="idRegion" type="String" />
@@ -846,10 +865,10 @@
 		<field name="esfCodeData" type="String" />
 		<field name="esfStartData" type="Date" />
 		<field name="esfEndData" type="Date" />
-		<field name="esfUserId" type="Long" />
-		<field name="codeUser" type="Long" />
-		<field name="shootingDirectorQualificationId" type="Long" />
-		<field name="sportTypeId" type="Long" />
+		<field name="esfUserId" type="long" />
+		<field name="codeUser" type="long" />
+		<field name="shootingDirectorQualificationId" type="long" />
+		<field name="sportTypeId" type="long" />
 		<field name="regionId" type="String" />
 		<field name="provinceId" type="String" />
 		<field name="flagCrea" type="String" />
@@ -907,8 +926,8 @@
 		<field name="esfCodeData" type="String" />
 		<field name="esfStartData" type="Date" />
 		<field name="esfEndData" type="Date" />
-		<field name="esfUserId" type="Long" />
-		<field name="codeUser" type="Long" />
+		<field name="esfUserId" type="long" />
+		<field name="codeUser" type="long" />
 		<field name="Codice_Sosp" type="long" />
 		<field name="note" type="String" />
 		<field name="Qualif1_Utiliz" type="long" />
@@ -1046,5 +1065,24 @@
 		<field name="maxUser" type="int" />
 		<field name="isOrgAdmin" type="boolean" />
 		<field name="isEditable" type="boolean" />
+	</model>
+	<model name="it.ethica.esf.model.VW_DatiDrettoreTiro">
+		<field name="esfShootingDirectorId" type="long" />
+		<field name="Nome" type="String" />
+		<field name="Cognome" type="String" />
+		<field name="CodiceRegione" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.VW_ESFListaIncarichi">
+		<field name="AnniPrecedenti" type="int" />
+		<field name="AnnoFineIncarico" type="int" />
+		<field name="AnnoInizioIncarico" type="int" />
+		<field name="AnnoCorrente" type="int" />
+		<field name="NomeRuolo" type="String" />
+		<field name="endDate" type="Date" />
+		<field name="startDate" type="Date" />
+		<field name="esfUserId" type="long" />
+		<field name="esfOrganizationId" type="long" />
+		<field name="lastName" type="String" />
+		<field name="firstName" type="String" />
 	</model>
 </model-hints>

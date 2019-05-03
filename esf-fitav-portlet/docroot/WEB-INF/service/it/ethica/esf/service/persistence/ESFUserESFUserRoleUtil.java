@@ -1489,6 +1489,193 @@ public class ESFUserESFUserRoleUtil {
 	}
 
 	/**
+	* Returns all the e s f user e s f user roles where esfOrganizationId = &#63; and esfUserRoleId = &#63;.
+	*
+	* @param esfOrganizationId the esf organization ID
+	* @param esfUserRoleId the esf user role ID
+	* @return the matching e s f user e s f user roles
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<it.ethica.esf.model.ESFUserESFUserRole> findByESFO_R_YEAR(
+		long esfOrganizationId, long esfUserRoleId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByESFO_R_YEAR(esfOrganizationId, esfUserRoleId);
+	}
+
+	/**
+	* Returns a range of all the e s f user e s f user roles where esfOrganizationId = &#63; and esfUserRoleId = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link it.ethica.esf.model.impl.ESFUserESFUserRoleModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param esfOrganizationId the esf organization ID
+	* @param esfUserRoleId the esf user role ID
+	* @param start the lower bound of the range of e s f user e s f user roles
+	* @param end the upper bound of the range of e s f user e s f user roles (not inclusive)
+	* @return the range of matching e s f user e s f user roles
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<it.ethica.esf.model.ESFUserESFUserRole> findByESFO_R_YEAR(
+		long esfOrganizationId, long esfUserRoleId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByESFO_R_YEAR(esfOrganizationId, esfUserRoleId, start,
+			end);
+	}
+
+	/**
+	* Returns an ordered range of all the e s f user e s f user roles where esfOrganizationId = &#63; and esfUserRoleId = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link it.ethica.esf.model.impl.ESFUserESFUserRoleModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param esfOrganizationId the esf organization ID
+	* @param esfUserRoleId the esf user role ID
+	* @param start the lower bound of the range of e s f user e s f user roles
+	* @param end the upper bound of the range of e s f user e s f user roles (not inclusive)
+	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	* @return the ordered range of matching e s f user e s f user roles
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<it.ethica.esf.model.ESFUserESFUserRole> findByESFO_R_YEAR(
+		long esfOrganizationId, long esfUserRoleId, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByESFO_R_YEAR(esfOrganizationId, esfUserRoleId, start,
+			end, orderByComparator);
+	}
+
+	/**
+	* Returns the first e s f user e s f user role in the ordered set where esfOrganizationId = &#63; and esfUserRoleId = &#63;.
+	*
+	* @param esfOrganizationId the esf organization ID
+	* @param esfUserRoleId the esf user role ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching e s f user e s f user role
+	* @throws it.ethica.esf.NoSuchUserESFUserRoleException if a matching e s f user e s f user role could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static it.ethica.esf.model.ESFUserESFUserRole findByESFO_R_YEAR_First(
+		long esfOrganizationId, long esfUserRoleId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			it.ethica.esf.NoSuchUserESFUserRoleException {
+		return getPersistence()
+				   .findByESFO_R_YEAR_First(esfOrganizationId, esfUserRoleId,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the first e s f user e s f user role in the ordered set where esfOrganizationId = &#63; and esfUserRoleId = &#63;.
+	*
+	* @param esfOrganizationId the esf organization ID
+	* @param esfUserRoleId the esf user role ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching e s f user e s f user role, or <code>null</code> if a matching e s f user e s f user role could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static it.ethica.esf.model.ESFUserESFUserRole fetchByESFO_R_YEAR_First(
+		long esfOrganizationId, long esfUserRoleId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchByESFO_R_YEAR_First(esfOrganizationId, esfUserRoleId,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the last e s f user e s f user role in the ordered set where esfOrganizationId = &#63; and esfUserRoleId = &#63;.
+	*
+	* @param esfOrganizationId the esf organization ID
+	* @param esfUserRoleId the esf user role ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching e s f user e s f user role
+	* @throws it.ethica.esf.NoSuchUserESFUserRoleException if a matching e s f user e s f user role could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static it.ethica.esf.model.ESFUserESFUserRole findByESFO_R_YEAR_Last(
+		long esfOrganizationId, long esfUserRoleId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			it.ethica.esf.NoSuchUserESFUserRoleException {
+		return getPersistence()
+				   .findByESFO_R_YEAR_Last(esfOrganizationId, esfUserRoleId,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the last e s f user e s f user role in the ordered set where esfOrganizationId = &#63; and esfUserRoleId = &#63;.
+	*
+	* @param esfOrganizationId the esf organization ID
+	* @param esfUserRoleId the esf user role ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching e s f user e s f user role, or <code>null</code> if a matching e s f user e s f user role could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static it.ethica.esf.model.ESFUserESFUserRole fetchByESFO_R_YEAR_Last(
+		long esfOrganizationId, long esfUserRoleId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchByESFO_R_YEAR_Last(esfOrganizationId, esfUserRoleId,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the e s f user e s f user roles before and after the current e s f user e s f user role in the ordered set where esfOrganizationId = &#63; and esfUserRoleId = &#63;.
+	*
+	* @param esfUserESFUserRolePK the primary key of the current e s f user e s f user role
+	* @param esfOrganizationId the esf organization ID
+	* @param esfUserRoleId the esf user role ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the previous, current, and next e s f user e s f user role
+	* @throws it.ethica.esf.NoSuchUserESFUserRoleException if a e s f user e s f user role with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static it.ethica.esf.model.ESFUserESFUserRole[] findByESFO_R_YEAR_PrevAndNext(
+		it.ethica.esf.service.persistence.ESFUserESFUserRolePK esfUserESFUserRolePK,
+		long esfOrganizationId, long esfUserRoleId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			it.ethica.esf.NoSuchUserESFUserRoleException {
+		return getPersistence()
+				   .findByESFO_R_YEAR_PrevAndNext(esfUserESFUserRolePK,
+			esfOrganizationId, esfUserRoleId, orderByComparator);
+	}
+
+	/**
+	* Removes all the e s f user e s f user roles where esfOrganizationId = &#63; and esfUserRoleId = &#63; from the database.
+	*
+	* @param esfOrganizationId the esf organization ID
+	* @param esfUserRoleId the esf user role ID
+	* @throws SystemException if a system exception occurred
+	*/
+	public static void removeByESFO_R_YEAR(long esfOrganizationId,
+		long esfUserRoleId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		getPersistence().removeByESFO_R_YEAR(esfOrganizationId, esfUserRoleId);
+	}
+
+	/**
+	* Returns the number of e s f user e s f user roles where esfOrganizationId = &#63; and esfUserRoleId = &#63;.
+	*
+	* @param esfOrganizationId the esf organization ID
+	* @param esfUserRoleId the esf user role ID
+	* @return the number of matching e s f user e s f user roles
+	* @throws SystemException if a system exception occurred
+	*/
+	public static int countByESFO_R_YEAR(long esfOrganizationId,
+		long esfUserRoleId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .countByESFO_R_YEAR(esfOrganizationId, esfUserRoleId);
+	}
+
+	/**
 	* Caches the e s f user e s f user role in the entity cache if it is enabled.
 	*
 	* @param esfUserESFUserRole the e s f user e s f user role

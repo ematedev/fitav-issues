@@ -189,6 +189,9 @@
 	<mapped-superclass class="it.ethica.esf.model.impl.ESFCodeOrgModelImpl">
 		<attributes>
 			<id name="esfCodeOrgId" />
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
 			<basic name="className" />
 			<basic name="code">
 				<column name="CODE_" />
@@ -308,6 +311,8 @@
 			<basic name="type">
 				<column name="TYPE_" />
 			</basic>
+			<basic name="esfDocumentTypeId" />
+			<basic name="esfPublicAuthorityId" />
 			<basic name="path">
 				<column name="PATH_" />
 			</basic>
@@ -316,6 +321,22 @@
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />
 			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="it.ethica.esf.model.impl.ESFDocumentTypeModelImpl">
+		<attributes>
+			<id name="esfDocumentTypeId" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="description" />
+			<basic name="expirationMonthsNotice" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
 		</attributes>
 	</mapped-superclass>
 	<mapped-superclass class="it.ethica.esf.model.impl.ESFElectronicModelImpl">
@@ -885,6 +906,9 @@
 	<mapped-superclass class="it.ethica.esf.model.impl.ESFNationalModelImpl">
 		<attributes>
 			<id name="esfNationalId" />
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
 			<basic name="groupId" />
 			<basic name="companyId" />
 			<basic name="userId" />
@@ -923,6 +947,9 @@
 	<mapped-superclass class="it.ethica.esf.model.impl.ESFNationalDelegationModelImpl">
 		<attributes>
 			<id name="esfNationalDelgationId" />
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
 			<basic name="esfUserId" />
 			<basic name="groupId" />
 			<basic name="companyId" />
@@ -1183,6 +1210,9 @@
 	<mapped-superclass class="it.ethica.esf.model.impl.ESFPartecipantTypeModelImpl">
 		<attributes>
 			<id name="esfPartecipantTypeId" />
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
 			<basic name="name" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
@@ -1205,6 +1235,21 @@
 			<id name="idRegion" />
 			<id name="idCountry" />
 			<basic name="name" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="it.ethica.esf.model.impl.ESFPublicAuthorityModelImpl">
+		<attributes>
+			<id name="esfPublicAuthorityId" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="description" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />
@@ -1512,6 +1557,7 @@
 			<basic name="DateVar">
 				<temporal>TIMESTAMP</temporal>
 			</basic>
+			<transient name="esfUserUuid" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />
@@ -1647,6 +1693,7 @@
 			<basic name="esfVariationData">
 				<temporal>TIMESTAMP</temporal>
 			</basic>
+			<transient name="esfUserUuid" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />
@@ -1879,6 +1926,42 @@
 			<transient name="userUuid" />
 		</attributes>
 	</mapped-superclass>
+	<mapped-superclass class="it.ethica.esf.model.impl.VW_DatiDrettoreTiroModelImpl">
+		<id-class class="it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPK" />
+		<attributes>
+			<id name="esfShootingDirectorId" />
+			<id name="Nome" />
+			<id name="Cognome" />
+			<id name="CodiceRegione" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="it.ethica.esf.model.impl.VW_ESFListaIncarichiModelImpl">
+		<id-class class="it.ethica.esf.service.persistence.VW_ESFListaIncarichiPK" />
+		<attributes>
+			<id name="AnniPrecedenti" />
+			<id name="AnnoFineIncarico" />
+			<id name="AnnoInizioIncarico" />
+			<id name="AnnoCorrente" />
+			<id name="NomeRuolo" />
+			<id name="startDate">
+				<temporal>TIMESTAMP</temporal>
+			</id>
+			<id name="esfUserId" />
+			<id name="esfOrganizationId" />
+			<id name="lastName" />
+			<id name="firstName" />
+			<basic name="endDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="esfUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
 	<entity class="it.ethica.esf.model.impl.ESFAddressImpl" name="ESFAddress">
 		<table name="ESFAddress" />
 		<attributes>
@@ -1957,6 +2040,10 @@
 	</entity>
 	<entity class="it.ethica.esf.model.impl.ESFDocumentImpl" name="ESFDocument">
 		<table name="ESFDocument" />
+		<attributes />
+	</entity>
+	<entity class="it.ethica.esf.model.impl.ESFDocumentTypeImpl" name="ESFDocumentType">
+		<table name="ESFDocumentType" />
 		<attributes />
 	</entity>
 	<entity class="it.ethica.esf.model.impl.ESFElectronicImpl" name="ESFElectronic">
@@ -2120,6 +2207,10 @@
 		<table name="ESFProvince" />
 		<attributes />
 	</entity>
+	<entity class="it.ethica.esf.model.impl.ESFPublicAuthorityImpl" name="ESFPublicAuthority">
+		<table name="ESFPublicAuthority" />
+		<attributes />
+	</entity>
 	<entity class="it.ethica.esf.model.impl.ESFRegionImpl" name="ESFRegion">
 		<table name="ESFRegion" />
 		<attributes />
@@ -2231,5 +2322,13 @@
 			<transient name="name" />
 			<transient name="title" />
 		</attributes>
+	</entity>
+	<entity class="it.ethica.esf.model.impl.VW_DatiDrettoreTiroImpl" name="VW_DatiDrettoreTiro">
+		<table name="vw_datidirettoretiro" />
+		<attributes />
+	</entity>
+	<entity class="it.ethica.esf.model.impl.VW_ESFListaIncarichiImpl" name="VW_ESFListaIncarichi">
+		<table name="VW_ESFListaIncarichi" />
+		<attributes />
 	</entity>
 </entity-mappings>

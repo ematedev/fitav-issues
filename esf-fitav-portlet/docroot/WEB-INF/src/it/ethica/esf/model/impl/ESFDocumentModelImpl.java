@@ -16,6 +16,7 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -52,6 +53,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFDocumentModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 	implements ESFDocumentModel {
 	/*
@@ -74,9 +76,11 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 			{ "expirationDate", Types.TIMESTAMP },
 			{ "esfUserId", Types.BIGINT },
 			{ "type_", Types.VARCHAR },
+			{ "esfDocumentTypeId", Types.BIGINT },
+			{ "esfPublicAuthorityId", Types.BIGINT },
 			{ "path_", Types.VARCHAR }
 		};
-	public static final String TABLE_SQL_CREATE = "create table ESFDocument (esfDocumentId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,code_ VARCHAR(75) null,releasedBy VARCHAR(75) null,releaseDate DATE null,expirationDate DATE null,esfUserId LONG,type_ VARCHAR(75) null,path_ VARCHAR(255) null)";
+	public static final String TABLE_SQL_CREATE = "create table ESFDocument (esfDocumentId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,code_ VARCHAR(75) null,releasedBy VARCHAR(75) null,releaseDate DATE null,expirationDate DATE null,esfUserId LONG,type_ VARCHAR(75) null,esfDocumentTypeId LONG,esfPublicAuthorityId LONG,path_ VARCHAR(255) null)";
 	public static final String TABLE_SQL_DROP = "drop table ESFDocument";
 	public static final String ORDER_BY_JPQL = " ORDER BY esfDocument.esfDocumentId ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY ESFDocument.esfDocumentId ASC";
@@ -150,6 +154,8 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		attributes.put("expirationDate", getExpirationDate());
 		attributes.put("esfUserId", getEsfUserId());
 		attributes.put("type", getType());
+		attributes.put("esfDocumentTypeId", getEsfDocumentTypeId());
+		attributes.put("esfPublicAuthorityId", getEsfPublicAuthorityId());
 		attributes.put("path", getPath());
 
 		return attributes;
@@ -235,6 +241,18 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 			setType(type);
 		}
 
+		Long esfDocumentTypeId = (Long)attributes.get("esfDocumentTypeId");
+
+		if (esfDocumentTypeId != null) {
+			setEsfDocumentTypeId(esfDocumentTypeId);
+		}
+
+		Long esfPublicAuthorityId = (Long)attributes.get("esfPublicAuthorityId");
+
+		if (esfPublicAuthorityId != null) {
+			setEsfPublicAuthorityId(esfPublicAuthorityId);
+		}
+
 		String path = (String)attributes.get("path");
 
 		if (path != null) {
@@ -242,6 +260,7 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		}
 	}
 
+	@JSON
 	@Override
 	public long getEsfDocumentId() {
 		return _esfDocumentId;
@@ -252,6 +271,7 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		_esfDocumentId = esfDocumentId;
 	}
 
+	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -262,6 +282,7 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		_groupId = groupId;
 	}
 
+	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -272,6 +293,7 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		_companyId = companyId;
 	}
 
+	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -292,6 +314,7 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		_userUuid = userUuid;
 	}
 
+	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -307,6 +330,7 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		_userName = userName;
 	}
 
+	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -317,6 +341,7 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		_createDate = createDate;
 	}
 
+	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -327,6 +352,7 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		_modifiedDate = modifiedDate;
 	}
 
+	@JSON
 	@Override
 	public String getCode() {
 		if (_code == null) {
@@ -352,6 +378,7 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		return GetterUtil.getString(_originalCode);
 	}
 
+	@JSON
 	@Override
 	public String getReleasedBy() {
 		if (_releasedBy == null) {
@@ -367,6 +394,7 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		_releasedBy = releasedBy;
 	}
 
+	@JSON
 	@Override
 	public Date getReleaseDate() {
 		return _releaseDate;
@@ -377,6 +405,7 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		_releaseDate = releaseDate;
 	}
 
+	@JSON
 	@Override
 	public Date getExpirationDate() {
 		return _expirationDate;
@@ -397,6 +426,7 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		return _originalExpirationDate;
 	}
 
+	@JSON
 	@Override
 	public long getEsfUserId() {
 		return _esfUserId;
@@ -429,6 +459,7 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		return _originalEsfUserId;
 	}
 
+	@JSON
 	@Override
 	public String getType() {
 		if (_type == null) {
@@ -454,6 +485,29 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		return GetterUtil.getString(_originalType);
 	}
 
+	@JSON
+	@Override
+	public long getEsfDocumentTypeId() {
+		return _esfDocumentTypeId;
+	}
+
+	@Override
+	public void setEsfDocumentTypeId(long esfDocumentTypeId) {
+		_esfDocumentTypeId = esfDocumentTypeId;
+	}
+
+	@JSON
+	@Override
+	public long getEsfPublicAuthorityId() {
+		return _esfPublicAuthorityId;
+	}
+
+	@Override
+	public void setEsfPublicAuthorityId(long esfPublicAuthorityId) {
+		_esfPublicAuthorityId = esfPublicAuthorityId;
+	}
+
+	@JSON
 	@Override
 	public String getPath() {
 		if (_path == null) {
@@ -513,6 +567,8 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		esfDocumentImpl.setExpirationDate(getExpirationDate());
 		esfDocumentImpl.setEsfUserId(getEsfUserId());
 		esfDocumentImpl.setType(getType());
+		esfDocumentImpl.setEsfDocumentTypeId(getEsfDocumentTypeId());
+		esfDocumentImpl.setEsfPublicAuthorityId(getEsfPublicAuthorityId());
 		esfDocumentImpl.setPath(getPath());
 
 		esfDocumentImpl.resetOriginalValues();
@@ -661,6 +717,10 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 			esfDocumentCacheModel.type = null;
 		}
 
+		esfDocumentCacheModel.esfDocumentTypeId = getEsfDocumentTypeId();
+
+		esfDocumentCacheModel.esfPublicAuthorityId = getEsfPublicAuthorityId();
+
 		esfDocumentCacheModel.path = getPath();
 
 		String path = esfDocumentCacheModel.path;
@@ -674,7 +734,7 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(29);
+		StringBundler sb = new StringBundler(33);
 
 		sb.append("{esfDocumentId=");
 		sb.append(getEsfDocumentId());
@@ -702,6 +762,10 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		sb.append(getEsfUserId());
 		sb.append(", type=");
 		sb.append(getType());
+		sb.append(", esfDocumentTypeId=");
+		sb.append(getEsfDocumentTypeId());
+		sb.append(", esfPublicAuthorityId=");
+		sb.append(getEsfPublicAuthorityId());
 		sb.append(", path=");
 		sb.append(getPath());
 		sb.append("}");
@@ -711,7 +775,7 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(46);
+		StringBundler sb = new StringBundler(52);
 
 		sb.append("<model><model-name>");
 		sb.append("it.ethica.esf.model.ESFDocument");
@@ -770,6 +834,14 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		sb.append(getType());
 		sb.append("]]></column-value></column>");
 		sb.append(
+			"<column><column-name>esfDocumentTypeId</column-name><column-value><![CDATA[");
+		sb.append(getEsfDocumentTypeId());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>esfPublicAuthorityId</column-name><column-value><![CDATA[");
+		sb.append(getEsfPublicAuthorityId());
+		sb.append("]]></column-value></column>");
+		sb.append(
 			"<column><column-name>path</column-name><column-value><![CDATA[");
 		sb.append(getPath());
 		sb.append("]]></column-value></column>");
@@ -803,6 +875,8 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 	private boolean _setOriginalEsfUserId;
 	private String _type;
 	private String _originalType;
+	private long _esfDocumentTypeId;
+	private long _esfPublicAuthorityId;
 	private String _path;
 	private long _columnBitmask;
 	private ESFDocument _escapedModel;

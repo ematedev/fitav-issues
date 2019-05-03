@@ -48,6 +48,7 @@ public class ESFCodeOrgWrapper implements ESFCodeOrg, ModelWrapper<ESFCodeOrg> {
 	public Map<String, Object> getModelAttributes() {
 		Map<String, Object> attributes = new HashMap<String, Object>();
 
+		attributes.put("uuid", getUuid());
 		attributes.put("esfCodeOrgId", getEsfCodeOrgId());
 		attributes.put("className", getClassName());
 		attributes.put("code", getCode());
@@ -58,6 +59,12 @@ public class ESFCodeOrgWrapper implements ESFCodeOrg, ModelWrapper<ESFCodeOrg> {
 
 	@Override
 	public void setModelAttributes(Map<String, Object> attributes) {
+		String uuid = (String)attributes.get("uuid");
+
+		if (uuid != null) {
+			setUuid(uuid);
+		}
+
 		Long esfCodeOrgId = (Long)attributes.get("esfCodeOrgId");
 
 		if (esfCodeOrgId != null) {
@@ -101,6 +108,26 @@ public class ESFCodeOrgWrapper implements ESFCodeOrg, ModelWrapper<ESFCodeOrg> {
 	@Override
 	public void setPrimaryKey(long primaryKey) {
 		_esfCodeOrg.setPrimaryKey(primaryKey);
+	}
+
+	/**
+	* Returns the uuid of this e s f code org.
+	*
+	* @return the uuid of this e s f code org
+	*/
+	@Override
+	public java.lang.String getUuid() {
+		return _esfCodeOrg.getUuid();
+	}
+
+	/**
+	* Sets the uuid of this e s f code org.
+	*
+	* @param uuid the uuid of this e s f code org
+	*/
+	@Override
+	public void setUuid(java.lang.String uuid) {
+		_esfCodeOrg.setUuid(uuid);
 	}
 
 	/**
