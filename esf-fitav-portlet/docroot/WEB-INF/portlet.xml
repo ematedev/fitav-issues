@@ -515,7 +515,7 @@
 	</portlet>
 	<portlet>
 		<portlet-name>15</portlet-name>
-		<display-name>Esf Organization Unitservice</display-name>
+		<display-name>Gestione Servizi Associazione</display-name>
 		<portlet-class>
 			it.ethica.esf.portlet.ESFOrganizationUnitservicePortlet
 		</portlet-class>
