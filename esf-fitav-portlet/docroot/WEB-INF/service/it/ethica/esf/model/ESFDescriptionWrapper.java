@@ -49,7 +49,6 @@ public class ESFDescriptionWrapper implements ESFDescription,
 	public Map<String, Object> getModelAttributes() {
 		Map<String, Object> attributes = new HashMap<String, Object>();
 
-		attributes.put("uuid", getUuid());
 		attributes.put("esfDescriptionId", getEsfDescriptionId());
 		attributes.put("isNational", getIsNational());
 		attributes.put("name", getName());
@@ -59,12 +58,6 @@ public class ESFDescriptionWrapper implements ESFDescription,
 
 	@Override
 	public void setModelAttributes(Map<String, Object> attributes) {
-		String uuid = (String)attributes.get("uuid");
-
-		if (uuid != null) {
-			setUuid(uuid);
-		}
-
 		Long esfDescriptionId = (Long)attributes.get("esfDescriptionId");
 
 		if (esfDescriptionId != null) {
@@ -102,26 +95,6 @@ public class ESFDescriptionWrapper implements ESFDescription,
 	@Override
 	public void setPrimaryKey(long primaryKey) {
 		_esfDescription.setPrimaryKey(primaryKey);
-	}
-
-	/**
-	* Returns the uuid of this e s f description.
-	*
-	* @return the uuid of this e s f description
-	*/
-	@Override
-	public java.lang.String getUuid() {
-		return _esfDescription.getUuid();
-	}
-
-	/**
-	* Sets the uuid of this e s f description.
-	*
-	* @param uuid the uuid of this e s f description
-	*/
-	@Override
-	public void setUuid(java.lang.String uuid) {
-		_esfDescription.setUuid(uuid);
 	}
 
 	/**

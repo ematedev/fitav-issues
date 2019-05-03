@@ -1,5 +1,3 @@
-
-
 <%@page import="java.util.GregorianCalendar"%>
 <%@page import="com.liferay.portal.service.OrganizationLocalServiceUtil"%>
 <%@page import="it.ethica.esf.service.ESFResultLocalServiceUtil"%>
@@ -22,16 +20,26 @@
 	boolean returned = ParamUtil.getBoolean(request, "returned");
 	List<ESFMatchType> esfMatchType = 
 					ESFMatchTypeLocalServiceUtil.findAllByNational(isNational);
-	
+
+	/* // TODO GRINALDI ID 34 2019
 	List <ESFOrganization> temp = 
 	ESFOrganizationLocalServiceUtil.getESFOrganizations(
 		com.liferay.portal.kernel.dao.orm.QueryUtil.ALL_POS,
 		com.liferay.portal.kernel.dao.orm.QueryUtil.ALL_POS);
+	*/
+
+	List <ESFOrganization> esfOrganizations = 
+			ESFOrganizationLocalServiceUtil.findByType((int)ESFKeys.ESFOrganizationTypeId.ASSOCIATION,
+					com.liferay.portal.kernel.dao.orm.QueryUtil.ALL_POS,
+					com.liferay.portal.kernel.dao.orm.QueryUtil.ALL_POS);
+
 	
+	/* // TODO GRINALDI ID 34 2019
 	List<ESFOrganization>esfOrganizations=new ArrayList<ESFOrganization>();
 	for(ESFOrganization org: temp)
 		if(org.getType()==ESFKeys.ESFOrganizationTypeId.ASSOCIATION)
 			esfOrganizations.add(org);
+	*/
 %>
 
 <aui:script use="aui-base,node,aui-io-request">

@@ -891,6 +891,12 @@ public class ESFOrganizationLocalServiceUtil {
 		return getService().findNewAffilationConiReportAndArmy(year);
 	}
 
+	public static java.util.List<it.ethica.esf.model.ESFOrganization> findByType(
+		int type, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().findByType(type, start, end);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

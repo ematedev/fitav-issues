@@ -158,7 +158,6 @@ create table ESFDeparture (
 );
 
 create table ESFDescription (
-	uuid_ VARCHAR(75) null,
 	esfDescriptionId LONG not null primary key,
 	isNational BOOLEAN,
 	name VARCHAR(75) null

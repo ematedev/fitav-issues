@@ -73,7 +73,6 @@ public class ESFDescriptionClp extends BaseModelImpl<ESFDescription>
 	public Map<String, Object> getModelAttributes() {
 		Map<String, Object> attributes = new HashMap<String, Object>();
 
-		attributes.put("uuid", getUuid());
 		attributes.put("esfDescriptionId", getEsfDescriptionId());
 		attributes.put("isNational", getIsNational());
 		attributes.put("name", getName());
@@ -83,12 +82,6 @@ public class ESFDescriptionClp extends BaseModelImpl<ESFDescription>
 
 	@Override
 	public void setModelAttributes(Map<String, Object> attributes) {
-		String uuid = (String)attributes.get("uuid");
-
-		if (uuid != null) {
-			setUuid(uuid);
-		}
-
 		Long esfDescriptionId = (Long)attributes.get("esfDescriptionId");
 
 		if (esfDescriptionId != null) {
@@ -105,29 +98,6 @@ public class ESFDescriptionClp extends BaseModelImpl<ESFDescription>
 
 		if (name != null) {
 			setName(name);
-		}
-	}
-
-	@Override
-	public String getUuid() {
-		return _uuid;
-	}
-
-	@Override
-	public void setUuid(String uuid) {
-		_uuid = uuid;
-
-		if (_esfDescriptionRemoteModel != null) {
-			try {
-				Class<?> clazz = _esfDescriptionRemoteModel.getClass();
-
-				Method method = clazz.getMethod("setUuid", String.class);
-
-				method.invoke(_esfDescriptionRemoteModel, uuid);
-			}
-			catch (Exception e) {
-				throw new UnsupportedOperationException(e);
-			}
 		}
 	}
 
@@ -277,7 +247,6 @@ public class ESFDescriptionClp extends BaseModelImpl<ESFDescription>
 	public Object clone() {
 		ESFDescriptionClp clone = new ESFDescriptionClp();
 
-		clone.setUuid(getUuid());
 		clone.setEsfDescriptionId(getEsfDescriptionId());
 		clone.setIsNational(getIsNational());
 		clone.setName(getName());
@@ -327,11 +296,9 @@ public class ESFDescriptionClp extends BaseModelImpl<ESFDescription>
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(9);
+		StringBundler sb = new StringBundler(7);
 
-		sb.append("{uuid=");
-		sb.append(getUuid());
-		sb.append(", esfDescriptionId=");
+		sb.append("{esfDescriptionId=");
 		sb.append(getEsfDescriptionId());
 		sb.append(", isNational=");
 		sb.append(getIsNational());
@@ -344,16 +311,12 @@ public class ESFDescriptionClp extends BaseModelImpl<ESFDescription>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(16);
+		StringBundler sb = new StringBundler(13);
 
 		sb.append("<model><model-name>");
 		sb.append("it.ethica.esf.model.ESFDescription");
 		sb.append("</model-name>");
 
-		sb.append(
-			"<column><column-name>uuid</column-name><column-value><![CDATA[");
-		sb.append(getUuid());
-		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>esfDescriptionId</column-name><column-value><![CDATA[");
 		sb.append(getEsfDescriptionId());
@@ -372,7 +335,6 @@ public class ESFDescriptionClp extends BaseModelImpl<ESFDescription>
 		return sb.toString();
 	}
 
-	private String _uuid;
 	private long _esfDescriptionId;
 	private boolean _isNational;
 	private String _name;

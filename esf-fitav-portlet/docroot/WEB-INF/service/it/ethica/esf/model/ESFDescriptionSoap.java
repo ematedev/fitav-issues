@@ -29,7 +29,6 @@ public class ESFDescriptionSoap implements Serializable {
 	public static ESFDescriptionSoap toSoapModel(ESFDescription model) {
 		ESFDescriptionSoap soapModel = new ESFDescriptionSoap();
 
-		soapModel.setUuid(model.getUuid());
 		soapModel.setEsfDescriptionId(model.getEsfDescriptionId());
 		soapModel.setIsNational(model.getIsNational());
 		soapModel.setName(model.getName());
@@ -85,14 +84,6 @@ public class ESFDescriptionSoap implements Serializable {
 		setEsfDescriptionId(pk);
 	}
 
-	public String getUuid() {
-		return _uuid;
-	}
-
-	public void setUuid(String uuid) {
-		_uuid = uuid;
-	}
-
 	public long getEsfDescriptionId() {
 		return _esfDescriptionId;
 	}
@@ -121,7 +112,6 @@ public class ESFDescriptionSoap implements Serializable {
 		_name = name;
 	}
 
-	private String _uuid;
 	private long _esfDescriptionId;
 	private boolean _isNational;
 	private String _name;

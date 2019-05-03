@@ -277,9 +277,6 @@
 	<mapped-superclass class="it.ethica.esf.model.impl.ESFDescriptionModelImpl">
 		<attributes>
 			<id name="esfDescriptionId" />
-			<basic name="uuid">
-				<column name="UUID_" />
-			</basic>
 			<basic name="isNational" />
 			<basic name="name" />
 			<transient name="modelAttributes" />

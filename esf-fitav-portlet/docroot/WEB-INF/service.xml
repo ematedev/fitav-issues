@@ -1646,7 +1646,7 @@
 		</finder>
 	</entity>
 	<entity name="ESFDescription" local-service="true"
-		remote-service="false" uuid="true" cache-enabled="true" json-enabled="true">
+		remote-service="false" uuid="false" cache-enabled="true" json-enabled="true">
 		<column name="esfDescriptionId" type="long" primary="true"></column>
 		<column name="isNational" type="boolean"></column>
         <column name="name" type="String"></column>

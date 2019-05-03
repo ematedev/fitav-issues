@@ -15,7 +15,6 @@
 package it.ethica.esf.service.impl;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -44,9 +43,7 @@ import it.ethica.esf.model.ESFNationalMatchResult;
 import it.ethica.esf.model.ESFOrganization;
 import it.ethica.esf.model.ESFShooterCategoryESFMatch;
 import it.ethica.esf.model.ESFShooterQualificationESFMatch;
-import it.ethica.esf.model.ESFSuspensiveShootingDirector;
 import it.ethica.esf.model.impl.ESFMatchImpl;
-import it.ethica.esf.portlet.utility.MatchComparator;
 import it.ethica.esf.service.ESFEntityStateLocalServiceUtil;
 import it.ethica.esf.service.ESFMatchLocalServiceUtil;
 import it.ethica.esf.service.ESFNationalDelegationLocalServiceUtil;
@@ -271,7 +268,7 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 			esfMatchs = ESFMatchLocalServiceUtil.dynamicQuery(matchQuery);
 			
 		} catch (Exception e) {
-				e.getMessage();
+				e.printStackTrace();
 		}
 		
 		return esfMatchs;
@@ -327,7 +324,7 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 			esfMatchs = ESFMatchLocalServiceUtil.dynamicQuery(matchQuery, start, end);
 
 		} catch (Exception e) {
-				e.getMessage();
+				e.printStackTrace();
 		}
 		return esfMatchs;	
 	}

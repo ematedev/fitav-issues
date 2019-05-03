@@ -412,6 +412,10 @@ public class ESFOrganizationLocalServiceClpInvoker {
 		_methodName458 = "findNewAffilationConiReportAndArmy";
 
 		_methodParameterTypes458 = new String[] { "int" };
+
+		_methodName459 = "findByType";
+
+		_methodParameterTypes459 = new String[] { "int", "int", "int" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -967,6 +971,13 @@ public class ESFOrganizationLocalServiceClpInvoker {
 			return ESFOrganizationLocalServiceUtil.findNewAffilationConiReportAndArmy(((Integer)arguments[0]).intValue());
 		}
 
+		if (_methodName459.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes459, parameterTypes)) {
+			return ESFOrganizationLocalServiceUtil.findByType(((Integer)arguments[0]).intValue(),
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue());
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -1110,4 +1121,6 @@ public class ESFOrganizationLocalServiceClpInvoker {
 	private String[] _methodParameterTypes457;
 	private String _methodName458;
 	private String[] _methodParameterTypes458;
+	private String _methodName459;
+	private String[] _methodParameterTypes459;
 }

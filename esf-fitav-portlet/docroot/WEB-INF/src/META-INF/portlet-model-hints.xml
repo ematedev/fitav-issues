@@ -147,7 +147,6 @@
 		<field name="stopoverId" type="String" />
 	</model>
 	<model name="it.ethica.esf.model.ESFDescription">
-		<field name="uuid" type="String" />
 		<field name="esfDescriptionId" type="long" />
 		<field name="isNational" type="boolean" />
 		<field name="name" type="String" />

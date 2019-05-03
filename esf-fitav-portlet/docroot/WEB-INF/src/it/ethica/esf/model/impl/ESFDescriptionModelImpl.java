@@ -60,12 +60,11 @@ public class ESFDescriptionModelImpl extends BaseModelImpl<ESFDescription>
 	 */
 	public static final String TABLE_NAME = "ESFDescription";
 	public static final Object[][] TABLE_COLUMNS = {
-			{ "uuid_", Types.VARCHAR },
 			{ "esfDescriptionId", Types.BIGINT },
 			{ "isNational", Types.BOOLEAN },
 			{ "name", Types.VARCHAR }
 		};
-	public static final String TABLE_SQL_CREATE = "create table ESFDescription (uuid_ VARCHAR(75) null,esfDescriptionId LONG not null primary key,isNational BOOLEAN,name VARCHAR(75) null)";
+	public static final String TABLE_SQL_CREATE = "create table ESFDescription (esfDescriptionId LONG not null primary key,isNational BOOLEAN,name VARCHAR(75) null)";
 	public static final String TABLE_SQL_DROP = "drop table ESFDescription";
 	public static final String ORDER_BY_JPQL = " ORDER BY esfDescription.name ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY ESFDescription.name ASC";
@@ -82,8 +81,7 @@ public class ESFDescriptionModelImpl extends BaseModelImpl<ESFDescription>
 				"value.object.column.bitmask.enabled.it.ethica.esf.model.ESFDescription"),
 			true);
 	public static long ISNATIONAL_COLUMN_BITMASK = 1L;
-	public static long UUID_COLUMN_BITMASK = 2L;
-	public static long NAME_COLUMN_BITMASK = 4L;
+	public static long NAME_COLUMN_BITMASK = 2L;
 	public static final long LOCK_EXPIRATION_TIME = GetterUtil.getLong(com.liferay.util.service.ServiceProps.get(
 				"lock.expiration.time.it.ethica.esf.model.ESFDescription"));
 
@@ -124,7 +122,6 @@ public class ESFDescriptionModelImpl extends BaseModelImpl<ESFDescription>
 	public Map<String, Object> getModelAttributes() {
 		Map<String, Object> attributes = new HashMap<String, Object>();
 
-		attributes.put("uuid", getUuid());
 		attributes.put("esfDescriptionId", getEsfDescriptionId());
 		attributes.put("isNational", getIsNational());
 		attributes.put("name", getName());
@@ -134,12 +131,6 @@ public class ESFDescriptionModelImpl extends BaseModelImpl<ESFDescription>
 
 	@Override
 	public void setModelAttributes(Map<String, Object> attributes) {
-		String uuid = (String)attributes.get("uuid");
-
-		if (uuid != null) {
-			setUuid(uuid);
-		}
-
 		Long esfDescriptionId = (Long)attributes.get("esfDescriptionId");
 
 		if (esfDescriptionId != null) {
@@ -157,30 +148,6 @@ public class ESFDescriptionModelImpl extends BaseModelImpl<ESFDescription>
 		if (name != null) {
 			setName(name);
 		}
-	}
-
-	@JSON
-	@Override
-	public String getUuid() {
-		if (_uuid == null) {
-			return StringPool.BLANK;
-		}
-		else {
-			return _uuid;
-		}
-	}
-
-	@Override
-	public void setUuid(String uuid) {
-		if (_originalUuid == null) {
-			_originalUuid = _uuid;
-		}
-
-		_uuid = uuid;
-	}
-
-	public String getOriginalUuid() {
-		return GetterUtil.getString(_originalUuid);
 	}
 
 	@JSON
@@ -271,7 +238,6 @@ public class ESFDescriptionModelImpl extends BaseModelImpl<ESFDescription>
 	public Object clone() {
 		ESFDescriptionImpl esfDescriptionImpl = new ESFDescriptionImpl();
 
-		esfDescriptionImpl.setUuid(getUuid());
 		esfDescriptionImpl.setEsfDescriptionId(getEsfDescriptionId());
 		esfDescriptionImpl.setIsNational(getIsNational());
 		esfDescriptionImpl.setName(getName());
@@ -325,8 +291,6 @@ public class ESFDescriptionModelImpl extends BaseModelImpl<ESFDescription>
 	public void resetOriginalValues() {
 		ESFDescriptionModelImpl esfDescriptionModelImpl = this;
 
-		esfDescriptionModelImpl._originalUuid = esfDescriptionModelImpl._uuid;
-
 		esfDescriptionModelImpl._originalIsNational = esfDescriptionModelImpl._isNational;
 
 		esfDescriptionModelImpl._setOriginalIsNational = false;
@@ -337,14 +301,6 @@ public class ESFDescriptionModelImpl extends BaseModelImpl<ESFDescription>
 	@Override
 	public CacheModel<ESFDescription> toCacheModel() {
 		ESFDescriptionCacheModel esfDescriptionCacheModel = new ESFDescriptionCacheModel();
-
-		esfDescriptionCacheModel.uuid = getUuid();
-
-		String uuid = esfDescriptionCacheModel.uuid;
-
-		if ((uuid != null) && (uuid.length() == 0)) {
-			esfDescriptionCacheModel.uuid = null;
-		}
 
 		esfDescriptionCacheModel.esfDescriptionId = getEsfDescriptionId();
 
@@ -363,11 +319,9 @@ public class ESFDescriptionModelImpl extends BaseModelImpl<ESFDescription>
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(9);
+		StringBundler sb = new StringBundler(7);
 
-		sb.append("{uuid=");
-		sb.append(getUuid());
-		sb.append(", esfDescriptionId=");
+		sb.append("{esfDescriptionId=");
 		sb.append(getEsfDescriptionId());
 		sb.append(", isNational=");
 		sb.append(getIsNational());
@@ -380,16 +334,12 @@ public class ESFDescriptionModelImpl extends BaseModelImpl<ESFDescription>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(16);
+		StringBundler sb = new StringBundler(13);
 
 		sb.append("<model><model-name>");
 		sb.append("it.ethica.esf.model.ESFDescription");
 		sb.append("</model-name>");
 
-		sb.append(
-			"<column><column-name>uuid</column-name><column-value><![CDATA[");
-		sb.append(getUuid());
-		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>esfDescriptionId</column-name><column-value><![CDATA[");
 		sb.append(getEsfDescriptionId());
@@ -412,8 +362,6 @@ public class ESFDescriptionModelImpl extends BaseModelImpl<ESFDescription>
 	private static Class<?>[] _escapedModelInterfaces = new Class[] {
 			ESFDescription.class
 		};
-	private String _uuid;
-	private String _originalUuid;
 	private long _esfDescriptionId;
 	private boolean _isNational;
 	private boolean _originalIsNational;

@@ -36,11 +36,9 @@ public class ESFDescriptionCacheModel implements CacheModel<ESFDescription>,
 	Externalizable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(9);
+		StringBundler sb = new StringBundler(7);
 
-		sb.append("{uuid=");
-		sb.append(uuid);
-		sb.append(", esfDescriptionId=");
+		sb.append("{esfDescriptionId=");
 		sb.append(esfDescriptionId);
 		sb.append(", isNational=");
 		sb.append(isNational);
@@ -54,13 +52,6 @@ public class ESFDescriptionCacheModel implements CacheModel<ESFDescription>,
 	@Override
 	public ESFDescription toEntityModel() {
 		ESFDescriptionImpl esfDescriptionImpl = new ESFDescriptionImpl();
-
-		if (uuid == null) {
-			esfDescriptionImpl.setUuid(StringPool.BLANK);
-		}
-		else {
-			esfDescriptionImpl.setUuid(uuid);
-		}
 
 		esfDescriptionImpl.setEsfDescriptionId(esfDescriptionId);
 		esfDescriptionImpl.setIsNational(isNational);
@@ -79,7 +70,6 @@ public class ESFDescriptionCacheModel implements CacheModel<ESFDescription>,
 
 	@Override
 	public void readExternal(ObjectInput objectInput) throws IOException {
-		uuid = objectInput.readUTF();
 		esfDescriptionId = objectInput.readLong();
 		isNational = objectInput.readBoolean();
 		name = objectInput.readUTF();
@@ -88,13 +78,6 @@ public class ESFDescriptionCacheModel implements CacheModel<ESFDescription>,
 	@Override
 	public void writeExternal(ObjectOutput objectOutput)
 		throws IOException {
-		if (uuid == null) {
-			objectOutput.writeUTF(StringPool.BLANK);
-		}
-		else {
-			objectOutput.writeUTF(uuid);
-		}
-
 		objectOutput.writeLong(esfDescriptionId);
 		objectOutput.writeBoolean(isNational);
 
@@ -106,7 +89,6 @@ public class ESFDescriptionCacheModel implements CacheModel<ESFDescription>,
 		}
 	}
 
-	public String uuid;
 	public long esfDescriptionId;
 	public boolean isNational;
 	public String name;
