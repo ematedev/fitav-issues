@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -117,19 +117,23 @@ public class ESFAddressLocalServiceClp implements ESFAddressLocalService {
 
 		_methodParameterTypes19 = new String[] { "java.lang.String" };
 
-		_methodName21 = "findByL_L";
+		_methodName21 = "newESFAddress";
 
-		_methodParameterTypes21 = new String[] { "double", "double" };
+		_methodParameterTypes21 = new String[] {  };
 
-		_methodName22 = "getESFAddresses";
+		_methodName22 = "findByL_L";
 
-		_methodParameterTypes22 = new String[] {
+		_methodParameterTypes22 = new String[] { "double", "double" };
+
+		_methodName23 = "getESFAddresses";
+
+		_methodParameterTypes23 = new String[] {
 				"long", "java.lang.String", "long"
 			};
 
-		_methodName23 = "addESFAddress";
+		_methodName24 = "addESFAddress";
 
-		_methodParameterTypes23 = new String[] {
+		_methodParameterTypes24 = new String[] {
 				"long", "double", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "double",
 				"java.lang.String", "long", "java.lang.String",
@@ -138,9 +142,9 @@ public class ESFAddressLocalServiceClp implements ESFAddressLocalService {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName24 = "updateESFAddress";
+		_methodName25 = "updateESFAddress";
 
-		_methodParameterTypes24 = new String[] {
+		_methodParameterTypes25 = new String[] {
 				"long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "double", "double",
 				"java.lang.String", "long", "java.lang.String",
@@ -149,9 +153,9 @@ public class ESFAddressLocalServiceClp implements ESFAddressLocalService {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName25 = "deleteESFAddress";
+		_methodName26 = "deleteESFAddress";
 
-		_methodParameterTypes25 = new String[] {
+		_methodParameterTypes26 = new String[] {
 				"long", "com.liferay.portal.service.ServiceContext"
 			};
 	}
@@ -768,6 +772,29 @@ public class ESFAddressLocalServiceClp implements ESFAddressLocalService {
 	}
 
 	@Override
+	public it.ethica.esf.model.ESFAddress newESFAddress() {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName21,
+					_methodParameterTypes21, new Object[] {  });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (it.ethica.esf.model.ESFAddress)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
 	public it.ethica.esf.model.ESFAddress findByL_L(double longitude,
 		double latitude)
 		throws com.liferay.portal.kernel.exception.SystemException,
@@ -775,8 +802,8 @@ public class ESFAddressLocalServiceClp implements ESFAddressLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName21,
-					_methodParameterTypes21,
+			returnObj = _invokableLocalService.invokeMethod(_methodName22,
+					_methodParameterTypes22,
 					new Object[] { longitude, latitude });
 		}
 		catch (Throwable t) {
@@ -809,8 +836,8 @@ public class ESFAddressLocalServiceClp implements ESFAddressLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName22,
-					_methodParameterTypes22,
+			returnObj = _invokableLocalService.invokeMethod(_methodName23,
+					_methodParameterTypes23,
 					new Object[] {
 						companyId,
 						
@@ -852,8 +879,8 @@ public class ESFAddressLocalServiceClp implements ESFAddressLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName23,
-					_methodParameterTypes23,
+			returnObj = _invokableLocalService.invokeMethod(_methodName24,
+					_methodParameterTypes24,
 					new Object[] {
 						userId,
 						
@@ -927,8 +954,8 @@ public class ESFAddressLocalServiceClp implements ESFAddressLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName24,
-					_methodParameterTypes24,
+			returnObj = _invokableLocalService.invokeMethod(_methodName25,
+					_methodParameterTypes25,
 					new Object[] {
 						userId,
 						
@@ -998,8 +1025,8 @@ public class ESFAddressLocalServiceClp implements ESFAddressLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName25,
-					_methodParameterTypes25,
+			returnObj = _invokableLocalService.invokeMethod(_methodName26,
+					_methodParameterTypes26,
 					new Object[] {
 						esfAddressId,
 						
@@ -1080,4 +1107,6 @@ public class ESFAddressLocalServiceClp implements ESFAddressLocalService {
 	private String[] _methodParameterTypes24;
 	private String _methodName25;
 	private String[] _methodParameterTypes25;
+	private String _methodName26;
+	private String[] _methodParameterTypes26;
 }
