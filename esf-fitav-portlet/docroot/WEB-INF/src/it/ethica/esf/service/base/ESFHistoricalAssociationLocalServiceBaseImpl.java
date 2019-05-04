@@ -126,8 +126,12 @@ import it.ethica.esf.service.persistence.ESFUserPersistence;
 import it.ethica.esf.service.persistence.ESFUserRolePersistence;
 import it.ethica.esf.service.persistence.ESFgunUserFinder;
 import it.ethica.esf.service.persistence.ESFgunUserPersistence;
+<<<<<<< HEAD
 import it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPersistence;
 import it.ethica.esf.service.persistence.VW_ESFListaIncarichiPersistence;
+=======
+import it.ethica.esf.service.persistence.vw_datidirettoretiroPersistence;
+>>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 
 import java.io.Serializable;
 
@@ -3628,6 +3632,7 @@ public abstract class ESFHistoricalAssociationLocalServiceBaseImpl
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Returns the v w_ dati drettore tiro local service.
 	 *
 	 * @return the v w_ dati drettore tiro local service
@@ -3701,6 +3706,43 @@ public abstract class ESFHistoricalAssociationLocalServiceBaseImpl
 	public void setVW_ESFListaIncarichiPersistence(
 		VW_ESFListaIncarichiPersistence vw_esfListaIncarichiPersistence) {
 		this.vw_esfListaIncarichiPersistence = vw_esfListaIncarichiPersistence;
+=======
+	 * Returns the vw_datidirettoretiro local service.
+	 *
+	 * @return the vw_datidirettoretiro local service
+	 */
+	public it.ethica.esf.service.vw_datidirettoretiroLocalService getvw_datidirettoretiroLocalService() {
+		return vw_datidirettoretiroLocalService;
+	}
+
+	/**
+	 * Sets the vw_datidirettoretiro local service.
+	 *
+	 * @param vw_datidirettoretiroLocalService the vw_datidirettoretiro local service
+	 */
+	public void setvw_datidirettoretiroLocalService(
+		it.ethica.esf.service.vw_datidirettoretiroLocalService vw_datidirettoretiroLocalService) {
+		this.vw_datidirettoretiroLocalService = vw_datidirettoretiroLocalService;
+	}
+
+	/**
+	 * Returns the vw_datidirettoretiro persistence.
+	 *
+	 * @return the vw_datidirettoretiro persistence
+	 */
+	public vw_datidirettoretiroPersistence getvw_datidirettoretiroPersistence() {
+		return vw_datidirettoretiroPersistence;
+	}
+
+	/**
+	 * Sets the vw_datidirettoretiro persistence.
+	 *
+	 * @param vw_datidirettoretiroPersistence the vw_datidirettoretiro persistence
+	 */
+	public void setvw_datidirettoretiroPersistence(
+		vw_datidirettoretiroPersistence vw_datidirettoretiroPersistence) {
+		this.vw_datidirettoretiroPersistence = vw_datidirettoretiroPersistence;
+>>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 	}
 
 	/**
@@ -4223,6 +4265,7 @@ public abstract class ESFHistoricalAssociationLocalServiceBaseImpl
 	protected it.ethica.esf.service.ESFUserRoleLocalService esfUserRoleLocalService;
 	@BeanReference(type = ESFUserRolePersistence.class)
 	protected ESFUserRolePersistence esfUserRolePersistence;
+<<<<<<< HEAD
 	@BeanReference(type = it.ethica.esf.service.VW_DatiDrettoreTiroLocalService.class)
 	protected it.ethica.esf.service.VW_DatiDrettoreTiroLocalService vw_DatiDrettoreTiroLocalService;
 	@BeanReference(type = VW_DatiDrettoreTiroPersistence.class)
@@ -4231,6 +4274,12 @@ public abstract class ESFHistoricalAssociationLocalServiceBaseImpl
 	protected it.ethica.esf.service.VW_ESFListaIncarichiLocalService vw_esfListaIncarichiLocalService;
 	@BeanReference(type = VW_ESFListaIncarichiPersistence.class)
 	protected VW_ESFListaIncarichiPersistence vw_esfListaIncarichiPersistence;
+=======
+	@BeanReference(type = it.ethica.esf.service.vw_datidirettoretiroLocalService.class)
+	protected it.ethica.esf.service.vw_datidirettoretiroLocalService vw_datidirettoretiroLocalService;
+	@BeanReference(type = vw_datidirettoretiroPersistence.class)
+	protected vw_datidirettoretiroPersistence vw_datidirettoretiroPersistence;
+>>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 	@BeanReference(type = com.liferay.counter.service.CounterLocalService.class)
 	protected com.liferay.counter.service.CounterLocalService counterLocalService;
 	@BeanReference(type = com.liferay.portal.service.ResourceLocalService.class)

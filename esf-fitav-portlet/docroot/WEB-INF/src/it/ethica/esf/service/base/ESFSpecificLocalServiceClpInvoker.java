@@ -116,6 +116,7 @@ public class ESFSpecificLocalServiceClpInvoker {
 
 		_methodParameterTypes19 = new String[] { "it.ethica.esf.model.ESFSpecific" };
 
+<<<<<<< HEAD
 		_methodName384 = "getBeanIdentifier";
 
 		_methodParameterTypes384 = new String[] {  };
@@ -123,6 +124,15 @@ public class ESFSpecificLocalServiceClpInvoker {
 		_methodName385 = "setBeanIdentifier";
 
 		_methodParameterTypes385 = new String[] { "java.lang.String" };
+=======
+		_methodName376 = "getBeanIdentifier";
+
+		_methodParameterTypes376 = new String[] {  };
+
+		_methodName377 = "setBeanIdentifier";
+
+		_methodParameterTypes377 = new String[] { "java.lang.String" };
+>>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -238,6 +248,7 @@ public class ESFSpecificLocalServiceClpInvoker {
 			return ESFSpecificLocalServiceUtil.updateESFSpecific((it.ethica.esf.model.ESFSpecific)arguments[0]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName384.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
 			return ESFSpecificLocalServiceUtil.getBeanIdentifier();
@@ -245,6 +256,15 @@ public class ESFSpecificLocalServiceClpInvoker {
 
 		if (_methodName385.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
+=======
+		if (_methodName376.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes376, parameterTypes)) {
+			return ESFSpecificLocalServiceUtil.getBeanIdentifier();
+		}
+
+		if (_methodName377.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes377, parameterTypes)) {
+>>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			ESFSpecificLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
@@ -293,8 +313,15 @@ public class ESFSpecificLocalServiceClpInvoker {
 	private String[] _methodParameterTypes18;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
+<<<<<<< HEAD
 	private String _methodName384;
 	private String[] _methodParameterTypes384;
 	private String _methodName385;
 	private String[] _methodParameterTypes385;
+=======
+	private String _methodName376;
+	private String[] _methodParameterTypes376;
+	private String _methodName377;
+	private String[] _methodParameterTypes377;
+>>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 }

@@ -104,8 +104,12 @@ import it.ethica.esf.model.ESFUserESFFederalRoleClp;
 import it.ethica.esf.model.ESFUserESFUserRoleClp;
 import it.ethica.esf.model.ESFUserRoleClp;
 import it.ethica.esf.model.ESFgunUserClp;
+<<<<<<< HEAD
 import it.ethica.esf.model.VW_DatiDrettoreTiroClp;
 import it.ethica.esf.model.VW_ESFListaIncarichiClp;
+=======
+import it.ethica.esf.model.vw_datidirettoretiroClp;
+>>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -509,12 +513,17 @@ public class ClpSerializer {
 			return translateInputESFUserRole(oldModel);
 		}
 
+<<<<<<< HEAD
 		if (oldModelClassName.equals(VW_DatiDrettoreTiroClp.class.getName())) {
 			return translateInputVW_DatiDrettoreTiro(oldModel);
 		}
 
 		if (oldModelClassName.equals(VW_ESFListaIncarichiClp.class.getName())) {
 			return translateInputVW_ESFListaIncarichi(oldModel);
+=======
+		if (oldModelClassName.equals(vw_datidirettoretiroClp.class.getName())) {
+			return translateInputvw_datidirettoretiro(oldModel);
+>>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 		}
 
 		return oldModel;
@@ -1341,6 +1350,7 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+<<<<<<< HEAD
 	public static Object translateInputVW_DatiDrettoreTiro(
 		BaseModel<?> oldModel) {
 		VW_DatiDrettoreTiroClp oldClpModel = (VW_DatiDrettoreTiroClp)oldModel;
@@ -1357,6 +1367,13 @@ public class ClpSerializer {
 		VW_ESFListaIncarichiClp oldClpModel = (VW_ESFListaIncarichiClp)oldModel;
 
 		BaseModel<?> newModel = oldClpModel.getVW_ESFListaIncarichiRemoteModel();
+=======
+	public static Object translateInputvw_datidirettoretiro(
+		BaseModel<?> oldModel) {
+		vw_datidirettoretiroClp oldClpModel = (vw_datidirettoretiroClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getvw_datidirettoretiroRemoteModel();
+>>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 
 		newModel.setModelAttributes(oldClpModel.getModelAttributes());
 
@@ -1746,6 +1763,7 @@ public class ClpSerializer {
 		}
 
 		if (oldModelClassName.equals(
+<<<<<<< HEAD
 					"it.ethica.esf.model.impl.VW_DatiDrettoreTiroImpl")) {
 			return translateOutputVW_DatiDrettoreTiro(oldModel);
 		}
@@ -1753,6 +1771,10 @@ public class ClpSerializer {
 		if (oldModelClassName.equals(
 					"it.ethica.esf.model.impl.VW_ESFListaIncarichiImpl")) {
 			return translateOutputVW_ESFListaIncarichi(oldModel);
+=======
+					"it.ethica.esf.model.impl.vw_datidirettoretiroImpl")) {
+			return translateOutputvw_datidirettoretiro(oldModel);
+>>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 		}
 
 		return oldModel;
@@ -2227,6 +2249,7 @@ public class ClpSerializer {
 			return new it.ethica.esf.NoSuchUserRoleException();
 		}
 
+<<<<<<< HEAD
 		if (className.equals("it.ethica.esf.NoSuchVW_DatiDrettoreTiroException")) {
 			return new it.ethica.esf.NoSuchVW_DatiDrettoreTiroException();
 		}
@@ -2234,6 +2257,11 @@ public class ClpSerializer {
 		if (className.equals(
 					"it.ethica.esf.NoSuchVW_ESFListaIncarichiException")) {
 			return new it.ethica.esf.NoSuchVW_ESFListaIncarichiException();
+=======
+		if (className.equals(
+					"it.ethica.esf.NoSuchvw_datidirettoretiroException")) {
+			return new it.ethica.esf.NoSuchvw_datidirettoretiroException();
+>>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 		}
 
 		return throwable;
@@ -3053,6 +3081,7 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+<<<<<<< HEAD
 	public static Object translateOutputVW_DatiDrettoreTiro(
 		BaseModel<?> oldModel) {
 		VW_DatiDrettoreTiroClp newModel = new VW_DatiDrettoreTiroClp();
@@ -3071,6 +3100,15 @@ public class ClpSerializer {
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
 		newModel.setVW_ESFListaIncarichiRemoteModel(oldModel);
+=======
+	public static Object translateOutputvw_datidirettoretiro(
+		BaseModel<?> oldModel) {
+		vw_datidirettoretiroClp newModel = new vw_datidirettoretiroClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setvw_datidirettoretiroRemoteModel(oldModel);
+>>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 
 		return newModel;
 	}

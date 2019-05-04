@@ -106,6 +106,7 @@ public class ESFMatchResultLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFMatchResult"
 			};
 
+<<<<<<< HEAD
 		_methodName380 = "getBeanIdentifier";
 
 		_methodParameterTypes380 = new String[] {  };
@@ -125,6 +126,27 @@ public class ESFMatchResultLocalServiceClpInvoker {
 		_methodName388 = "findByResultUserId";
 
 		_methodParameterTypes388 = new String[] { "long", "long" };
+=======
+		_methodName372 = "getBeanIdentifier";
+
+		_methodParameterTypes372 = new String[] {  };
+
+		_methodName373 = "setBeanIdentifier";
+
+		_methodParameterTypes373 = new String[] { "java.lang.String" };
+
+		_methodName378 = "findbyEsfMatchId";
+
+		_methodParameterTypes378 = new String[] { "long" };
+
+		_methodName379 = "findByResultUserId";
+
+		_methodParameterTypes379 = new String[] { "long" };
+
+		_methodName380 = "findByResultUserId";
+
+		_methodParameterTypes380 = new String[] { "long", "long" };
+>>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -216,6 +238,7 @@ public class ESFMatchResultLocalServiceClpInvoker {
 			return ESFMatchResultLocalServiceUtil.updateESFMatchResult((it.ethica.esf.model.ESFMatchResult)arguments[0]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName380.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
 			return ESFMatchResultLocalServiceUtil.getBeanIdentifier();
@@ -223,11 +246,21 @@ public class ESFMatchResultLocalServiceClpInvoker {
 
 		if (_methodName381.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes381, parameterTypes)) {
+=======
+		if (_methodName372.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes372, parameterTypes)) {
+			return ESFMatchResultLocalServiceUtil.getBeanIdentifier();
+		}
+
+		if (_methodName373.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes373, parameterTypes)) {
+>>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			ESFMatchResultLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
+<<<<<<< HEAD
 		if (_methodName386.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
 			return ESFMatchResultLocalServiceUtil.findbyEsfMatchId(((Long)arguments[0]).longValue());
@@ -240,6 +273,20 @@ public class ESFMatchResultLocalServiceClpInvoker {
 
 		if (_methodName388.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
+=======
+		if (_methodName378.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes378, parameterTypes)) {
+			return ESFMatchResultLocalServiceUtil.findbyEsfMatchId(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName379.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes379, parameterTypes)) {
+			return ESFMatchResultLocalServiceUtil.findByResultUserId(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName380.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
+>>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFMatchResultLocalServiceUtil.findByResultUserId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
@@ -279,6 +326,7 @@ public class ESFMatchResultLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
+<<<<<<< HEAD
 	private String _methodName380;
 	private String[] _methodParameterTypes380;
 	private String _methodName381;
@@ -289,4 +337,16 @@ public class ESFMatchResultLocalServiceClpInvoker {
 	private String[] _methodParameterTypes387;
 	private String _methodName388;
 	private String[] _methodParameterTypes388;
+=======
+	private String _methodName372;
+	private String[] _methodParameterTypes372;
+	private String _methodName373;
+	private String[] _methodParameterTypes373;
+	private String _methodName378;
+	private String[] _methodParameterTypes378;
+	private String _methodName379;
+	private String[] _methodParameterTypes379;
+	private String _methodName380;
+	private String[] _methodParameterTypes380;
+>>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 }
