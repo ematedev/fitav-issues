@@ -18,12 +18,12 @@
 
 
 <portlet:actionURL name="editESFMatchType" var="editESFMatchTypeURL">
-	<portlet:param name="esfMatchId" value="<%=String.valueOf(matchId)%>" />
+	<portlet:param name="esfMatchId" value="<%= String.valueOf(esfMatchId) %>" />
 </portlet:actionURL>
 
 <portlet:renderURL var="backUrl">
 		<portlet:param name="mvcPath" value='<%= templatePath + "new_edit_esfMatch.jsp" %>' />
-		<portlet:param name="esfMatchId" value="<%=String.valueOf(matchId)%>" />
+		<portlet:param name="esfMatchId" value="<%= String.valueOf(esfMatchId) %>" />
 </portlet:renderURL>
 
 <aui:form action="<%=editESFMatchTypeURL%>" name="fm">

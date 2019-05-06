@@ -62,13 +62,7 @@ public class ESFMatchTypeLocalServiceImpl
 	
 	public List<ESFMatchType> findByDescription(String description)
 			throws SystemException {
-		List<ESFMatchType> matcTypes = null;
-		try {
-			 matcTypes = (List<ESFMatchType>) esfMatchTypePersistence.findByfindByDescription(description);
-		} catch (NoSuchMatchTypeException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		List<ESFMatchType> matcTypes = (List<ESFMatchType>) esfMatchTypePersistence.findByfindByDescription(description);
 		return matcTypes;
 	}
 
