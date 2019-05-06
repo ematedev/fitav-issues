@@ -42,9 +42,9 @@
 							: StringPool.BLANK%>'></aui:input>
 	</aui:fieldset>
 	<aui:button-row>
-		<c:if test="<%= matchId > 0 && ESFNormalMatchPermission.contains(permissionChecker,esfMatchId, ActionKeys.ESFNORMALMATCH_DESCRIPTION_ADD) %>">	
+		<c:if test="<%= ESFNormalMatchPermission.contains(permissionChecker,esfMatchId, ActionKeys.ESFNORMALMATCH_DESCRIPTION_ADD) %>">	
 			<aui:button type="submit"></aui:button>
 		</c:if>
-		<aui:button type="cancel" value="go-back" onClick="<%= backUrl %>"></aui:button>
+		<aui:button type="cancel" onClick="<%= backUrl %>" value="cancel"></aui:button>
 	</aui:button-row>
 </aui:form>

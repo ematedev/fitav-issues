@@ -1744,8 +1744,8 @@
 		<finder name="IsNational" return-type="Collection">
 			<finder-column name="isNational"></finder-column>
 		</finder>
-        <finder name="findByDescription" return-type="Colection">
-            <finder-column name="name"></finder-column>
+        <finder name="findByDescription" return-type="Collection">
+            <finder-column name="name" case-sensitive="false"></finder-column>
         </finder>
 	</entity>
 	<entity name="ESFRenewal" local-service="true" remote-service="false" json-enabled="true">

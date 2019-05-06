@@ -1,12 +1,10 @@
 <%@ include file="init.jsp"%>
 
 
-<h1>Aggiungi Tipo Gara</h1>
+<h1>Nuovo Tipo Gara</h1>
 
 <%
 	ESFMatchType esfMatchType = null;
-
-	long matchId = ParamUtil.getLong(request, "esfMatchId");
 	
 	long esfMatchTypeId =
 		ParamUtil.getLong(request, "esfMatchTypeId");
@@ -46,9 +44,9 @@
 	</aui:fieldset>
 
 	<aui:button-row>
-		<c:if test="<%= esfMatchTypeId > 0 && ESFNormalMatchPermission.contains(permissionChecker,esfMatchId, ActionKeys.ESFNORMALMATCH_MATCHTYPE_ADD) %>">	
+		<c:if test="<%= ESFNormalMatchPermission.contains(permissionChecker,esfMatchId, ActionKeys.ESFNORMALMATCH_MATCHTYPE_ADD) %>">	
 			<aui:button type="submit"></aui:button>
 		</c:if>
-		<aui:button type="go-back" value="go-back" onClick="<%= backUrl %>"></aui:button>
+		<aui:button type="cancel" onClick="<%= backUrl %>" value="cancel"></aui:button>
 	</aui:button-row>
 </aui:form>

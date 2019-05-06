@@ -1,12 +1,6 @@
 
 package it.ethica.esf.portlet;
 
-import it.ethica.esf.model.ESFDescription;
-import it.ethica.esf.model.ESFMatch;
-import it.ethica.esf.service.ESFDescriptionLocalServiceUtil;
-import it.ethica.esf.service.ESFMatchLocalServiceUtil;
-import it.ethica.esf.service.ESFMatchTypeLocalServiceUtil;
-
 import java.io.IOException;
 import java.util.List;
 
@@ -18,20 +12,31 @@ import javax.portlet.RenderResponse;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.servlet.SessionErrors;
+import com.liferay.portal.kernel.servlet.SessionMessages;
 import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portal.service.ServiceContextFactory;
 import com.liferay.util.bridges.mvc.MVCPortlet;
 
+import it.ethica.esf.model.ESFMatch;
+import it.ethica.esf.service.ESFMatchLocalServiceUtil;
+import it.ethica.esf.service.ESFMatchTypeLocalServiceUtil;
+
 /**
  * Portlet implementation class ESFMatchType
  */
 public class ESFMatchTypePortlet extends MVCPortlet {
-
+	
+	Log logger = LogFactoryUtil.getLog(ESFMatchTypePortlet.class);
+	
 	public void editESFMatchType(ActionRequest request, ActionResponse response)
 		throws PortalException, SystemException {
 
+		String messageCode = "MSG-gara-GestioneTipi-Gestione-ERROR";
+		
 		ServiceContext serviceContext =
 			ServiceContextFactory.getInstance(
 				ESFMatchTypePortlet.class.getName(), request);
@@ -43,20 +48,28 @@ public class ESFMatchTypePortlet extends MVCPortlet {
 			ParamUtil.getBoolean(request, "isCategoryQualification");
 		boolean isNational = ParamUtil.getBoolean(request, "isNational");
 		
-		if (esfMatchTypeId > 0) {
-
-			ESFMatchTypeLocalServiceUtil.updateEsfMatchType(
-				esfMatchTypeId, name, isCategoryQualification, isNational,
-				 serviceContext);
-
-		}
-		else {
-
-			ESFMatchTypeLocalServiceUtil.addEsfMatchType(
-				name, isCategoryQualification, isNational,
-				serviceContext);
-		}
-
+		try {
+		
+			if (esfMatchTypeId > 0) {
+	
+				ESFMatchTypeLocalServiceUtil.updateEsfMatchType(
+					esfMatchTypeId, name, isCategoryQualification, isNational,
+					 serviceContext);
+				
+				messageCode = "MSG-gara-GestioneTipi-Modificato-OK";
+	
+			} else {
+	
+				ESFMatchTypeLocalServiceUtil.addEsfMatchType(
+					name, isCategoryQualification, isNational,
+					serviceContext);
+				messageCode = "MSG-gara-GestioneTipi-Aggiunto-OK";
+			}
+		} catch ( Exception e ) {
+			logger.error("Impossibile gestire il Tipo Gara[" + name + "] di Tipo ID[" + esfMatchTypeId + "]");
+			messageCode = "MSG-gara-GestioneTipi-Gestione-ERROR";
+		} 
+		SessionMessages.add(request, messageCode);
 	}
 
 	public void deleteESFMatchType(
