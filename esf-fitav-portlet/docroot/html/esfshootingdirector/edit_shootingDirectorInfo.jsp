@@ -86,6 +86,21 @@
 <aui:form action="<%=updateShooterDirectorURL%>"
 	name="<portlet:namespace />fm">
 
+		<aui:fieldset>
+		<%
+				Calendar calendar = CalendarFactoryUtil.getCalendar();
+				String	startDate = DateUtilFormatter.getDefaultFormatter().format(assegnazioneDirettoreDiTiro.getEsfStartData());
+		%>
+		<aui:script>
+		$(function() {
+			$("#<portlet:namespace/>startDate").datepicker();
+			
+			$("#<portlet:namespace/>startDate").datepicker("setDate", '<%= startDate %>');
+			$("#<portlet:namespace/>startDate").datepicker("option", "dateFormat", 'dd/mm/yy');
+			
+		});
+		</aui:script>
+
 	<aui:input name="name" value="<%=shDr.getFirstName()%>" readonly="true"/>
 	<aui:input name="Cognome" value="<%=shDr.getLastName()%>" readonly="true"/>
 	<aui:input name="card" value="<%=cardCode%>" readonly="true"/>
@@ -93,8 +108,7 @@
 		value="<%=assegnazioneDirettoreDiTiro.getRegionId()%>" readonly="true"/>
 	<aui:input name="qualification" value="<%=qualifica%>" readonly="true"/>
 	<aui:input name="sport-type" value="<%=sportTypeName%>" readonly="true"/>
-	<aui:input name="esf-date-assign"
-		value="<%=DateUtilFormatter.formatDate(assegnazioneDirettoreDiTiro.getEsfStartData())%>">
+	<aui:input type="text" name="startDate">
 		<aui:validator name="required" />
 	</aui:input>
 
@@ -106,5 +120,5 @@
 	<aui:button onClick='<%=backURL.toString() %>' value="back"
 		inlineField="true" />
 
-
+</aui:fieldset>
 </aui:form>
