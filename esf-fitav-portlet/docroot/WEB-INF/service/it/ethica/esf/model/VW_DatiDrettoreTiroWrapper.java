@@ -250,8 +250,7 @@ public class VW_DatiDrettoreTiroWrapper implements VW_DatiDrettoreTiro,
 	}
 
 	@Override
-	public int compareTo(
-		it.ethica.esf.model.VW_DatiDrettoreTiro vw_DatiDrettoreTiro) {
+	public int compareTo(VW_DatiDrettoreTiro vw_DatiDrettoreTiro) {
 		return _vw_DatiDrettoreTiro.compareTo(vw_DatiDrettoreTiro);
 	}
 
@@ -261,17 +260,17 @@ public class VW_DatiDrettoreTiroWrapper implements VW_DatiDrettoreTiro,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<it.ethica.esf.model.VW_DatiDrettoreTiro> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<VW_DatiDrettoreTiro> toCacheModel() {
 		return _vw_DatiDrettoreTiro.toCacheModel();
 	}
 
 	@Override
-	public it.ethica.esf.model.VW_DatiDrettoreTiro toEscapedModel() {
+	public VW_DatiDrettoreTiro toEscapedModel() {
 		return new VW_DatiDrettoreTiroWrapper(_vw_DatiDrettoreTiro.toEscapedModel());
 	}
 
 	@Override
-	public it.ethica.esf.model.VW_DatiDrettoreTiro toUnescapedModel() {
+	public VW_DatiDrettoreTiro toUnescapedModel() {
 		return new VW_DatiDrettoreTiroWrapper(_vw_DatiDrettoreTiro.toUnescapedModel());
 	}
 

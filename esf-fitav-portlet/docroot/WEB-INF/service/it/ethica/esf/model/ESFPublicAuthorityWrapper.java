@@ -249,8 +249,7 @@ public class ESFPublicAuthorityWrapper implements ESFPublicAuthority,
 	}
 
 	@Override
-	public int compareTo(
-		it.ethica.esf.model.ESFPublicAuthority esfPublicAuthority) {
+	public int compareTo(ESFPublicAuthority esfPublicAuthority) {
 		return _esfPublicAuthority.compareTo(esfPublicAuthority);
 	}
 
@@ -260,17 +259,17 @@ public class ESFPublicAuthorityWrapper implements ESFPublicAuthority,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<it.ethica.esf.model.ESFPublicAuthority> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<ESFPublicAuthority> toCacheModel() {
 		return _esfPublicAuthority.toCacheModel();
 	}
 
 	@Override
-	public it.ethica.esf.model.ESFPublicAuthority toEscapedModel() {
+	public ESFPublicAuthority toEscapedModel() {
 		return new ESFPublicAuthorityWrapper(_esfPublicAuthority.toEscapedModel());
 	}
 
 	@Override
-	public it.ethica.esf.model.ESFPublicAuthority toUnescapedModel() {
+	public ESFPublicAuthority toUnescapedModel() {
 		return new ESFPublicAuthorityWrapper(_esfPublicAuthority.toUnescapedModel());
 	}
 

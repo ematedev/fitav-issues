@@ -102,7 +102,6 @@ public class ESFLentFieldLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFLentField"
 			};
 
-<<<<<<< HEAD
 		_methodName380 = "getBeanIdentifier";
 
 		_methodParameterTypes380 = new String[] {  };
@@ -122,27 +121,6 @@ public class ESFLentFieldLocalServiceClpInvoker {
 		_methodName388 = "addESFLentField";
 
 		_methodParameterTypes388 = new String[] { "long", "long", "long", "long" };
-=======
-		_methodName372 = "getBeanIdentifier";
-
-		_methodParameterTypes372 = new String[] {  };
-
-		_methodName373 = "setBeanIdentifier";
-
-		_methodParameterTypes373 = new String[] { "java.lang.String" };
-
-		_methodName378 = "findESFLentFieldbyF_S";
-
-		_methodParameterTypes378 = new String[] { "long", "long" };
-
-		_methodName379 = "findESFLentFieldsbyF_S";
-
-		_methodParameterTypes379 = new String[] { "long", "long" };
-
-		_methodName380 = "addESFLentField";
-
-		_methodParameterTypes380 = new String[] { "long", "long", "long", "long" };
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -234,7 +212,6 @@ public class ESFLentFieldLocalServiceClpInvoker {
 			return ESFLentFieldLocalServiceUtil.updateESFLentField((it.ethica.esf.model.ESFLentField)arguments[0]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName380.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
 			return ESFLentFieldLocalServiceUtil.getBeanIdentifier();
@@ -242,49 +219,25 @@ public class ESFLentFieldLocalServiceClpInvoker {
 
 		if (_methodName381.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes381, parameterTypes)) {
-=======
-		if (_methodName372.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes372, parameterTypes)) {
-			return ESFLentFieldLocalServiceUtil.getBeanIdentifier();
-		}
-
-		if (_methodName373.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes373, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			ESFLentFieldLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-<<<<<<< HEAD
 		if (_methodName386.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
-=======
-		if (_methodName378.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes378, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFLentFieldLocalServiceUtil.findESFLentFieldbyF_S(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
 
-<<<<<<< HEAD
 		if (_methodName387.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
-=======
-		if (_methodName379.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes379, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFLentFieldLocalServiceUtil.findESFLentFieldsbyF_S(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
 
-<<<<<<< HEAD
 		if (_methodName388.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
-=======
-		if (_methodName380.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFLentFieldLocalServiceUtil.addESFLentField(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -326,7 +279,6 @@ public class ESFLentFieldLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-<<<<<<< HEAD
 	private String _methodName380;
 	private String[] _methodParameterTypes380;
 	private String _methodName381;
@@ -337,16 +289,4 @@ public class ESFLentFieldLocalServiceClpInvoker {
 	private String[] _methodParameterTypes387;
 	private String _methodName388;
 	private String[] _methodParameterTypes388;
-=======
-	private String _methodName372;
-	private String[] _methodParameterTypes372;
-	private String _methodName373;
-	private String[] _methodParameterTypes373;
-	private String _methodName378;
-	private String[] _methodParameterTypes378;
-	private String _methodName379;
-	private String[] _methodParameterTypes379;
-	private String _methodName380;
-	private String[] _methodParameterTypes380;
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 }

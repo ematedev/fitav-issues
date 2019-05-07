@@ -106,7 +106,6 @@ public class ESFPartecipantInfoLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFPartecipantInfo"
 			};
 
-<<<<<<< HEAD
 		_methodName380 = "getBeanIdentifier";
 
 		_methodParameterTypes380 = new String[] {  };
@@ -130,31 +129,6 @@ public class ESFPartecipantInfoLocalServiceClpInvoker {
 		_methodName388 = "updateESFPartecipantInfo";
 
 		_methodParameterTypes388 = new String[] {
-=======
-		_methodName372 = "getBeanIdentifier";
-
-		_methodParameterTypes372 = new String[] {  };
-
-		_methodName373 = "setBeanIdentifier";
-
-		_methodParameterTypes373 = new String[] { "java.lang.String" };
-
-		_methodName378 = "getESFPartecipantInfosByFirstName_L_P";
-
-		_methodParameterTypes378 = new String[] {
-				"java.lang.String", "java.lang.String", "long"
-			};
-
-		_methodName379 = "getESFPartecipantInfosByFirstName_L_P";
-
-		_methodParameterTypes379 = new String[] {
-				"java.lang.String", "java.lang.String", "long", "int", "int"
-			};
-
-		_methodName380 = "updateESFPartecipantInfo";
-
-		_methodParameterTypes380 = new String[] {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 				"long", "long", "long", "long", "java.lang.String", "boolean",
 				"long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.util.Date", "java.lang.String",
@@ -171,15 +145,9 @@ public class ESFPartecipantInfoLocalServiceClpInvoker {
 				"long", "long", "long", "long", "long"
 			};
 
-<<<<<<< HEAD
 		_methodName389 = "addESFPartecipantInfo";
 
 		_methodParameterTypes389 = new String[] {
-=======
-		_methodName381 = "addESFPartecipantInfo";
-
-		_methodParameterTypes381 = new String[] {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 				"long", "long", "long", "java.lang.String", "java.util.Date",
 				"boolean", "long", "long", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.util.Date",
@@ -196,15 +164,9 @@ public class ESFPartecipantInfoLocalServiceClpInvoker {
 				"java.lang.String", "long", "long", "long", "long", "long"
 			};
 
-<<<<<<< HEAD
 		_methodName390 = "addESFPartecipantInfoAndReturnId";
 
 		_methodParameterTypes390 = new String[] {
-=======
-		_methodName382 = "addESFPartecipantInfoAndReturnId";
-
-		_methodParameterTypes382 = new String[] {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 				"long", "long", "long", "java.lang.String", "java.util.Date",
 				"boolean", "long", "long", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.util.Date",
@@ -311,7 +273,6 @@ public class ESFPartecipantInfoLocalServiceClpInvoker {
 			return ESFPartecipantInfoLocalServiceUtil.updateESFPartecipantInfo((it.ethica.esf.model.ESFPartecipantInfo)arguments[0]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName380.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
 			return ESFPartecipantInfoLocalServiceUtil.getBeanIdentifier();
@@ -319,38 +280,19 @@ public class ESFPartecipantInfoLocalServiceClpInvoker {
 
 		if (_methodName381.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes381, parameterTypes)) {
-=======
-		if (_methodName372.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes372, parameterTypes)) {
-			return ESFPartecipantInfoLocalServiceUtil.getBeanIdentifier();
-		}
-
-		if (_methodName373.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes373, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			ESFPartecipantInfoLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-<<<<<<< HEAD
 		if (_methodName386.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
-=======
-		if (_methodName378.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes378, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFPartecipantInfoLocalServiceUtil.getESFPartecipantInfosByFirstName_L_P((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], ((Long)arguments[2]).longValue());
 		}
 
-<<<<<<< HEAD
 		if (_methodName387.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
-=======
-		if (_methodName379.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes379, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFPartecipantInfoLocalServiceUtil.getESFPartecipantInfosByFirstName_L_P((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(),
@@ -358,13 +300,8 @@ public class ESFPartecipantInfoLocalServiceClpInvoker {
 				((Integer)arguments[4]).intValue());
 		}
 
-<<<<<<< HEAD
 		if (_methodName388.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
-=======
-		if (_methodName380.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			ESFPartecipantInfoLocalServiceUtil.updateESFPartecipantInfo(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -410,13 +347,8 @@ public class ESFPartecipantInfoLocalServiceClpInvoker {
 			return null;
 		}
 
-<<<<<<< HEAD
 		if (_methodName389.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes389, parameterTypes)) {
-=======
-		if (_methodName381.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes381, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			ESFPartecipantInfoLocalServiceUtil.addESFPartecipantInfo(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -461,13 +393,8 @@ public class ESFPartecipantInfoLocalServiceClpInvoker {
 			return null;
 		}
 
-<<<<<<< HEAD
 		if (_methodName390.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
-=======
-		if (_methodName382.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFPartecipantInfoLocalServiceUtil.addESFPartecipantInfoAndReturnId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -545,22 +472,10 @@ public class ESFPartecipantInfoLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-<<<<<<< HEAD
-=======
-	private String _methodName372;
-	private String[] _methodParameterTypes372;
-	private String _methodName373;
-	private String[] _methodParameterTypes373;
-	private String _methodName378;
-	private String[] _methodParameterTypes378;
-	private String _methodName379;
-	private String[] _methodParameterTypes379;
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 	private String _methodName380;
 	private String[] _methodParameterTypes380;
 	private String _methodName381;
 	private String[] _methodParameterTypes381;
-<<<<<<< HEAD
 	private String _methodName386;
 	private String[] _methodParameterTypes386;
 	private String _methodName387;
@@ -571,8 +486,4 @@ public class ESFPartecipantInfoLocalServiceClpInvoker {
 	private String[] _methodParameterTypes389;
 	private String _methodName390;
 	private String[] _methodParameterTypes390;
-=======
-	private String _methodName382;
-	private String[] _methodParameterTypes382;
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 }

@@ -100,7 +100,6 @@ public class ESFTeamLocalServiceClpInvoker {
 
 		_methodParameterTypes15 = new String[] { "it.ethica.esf.model.ESFTeam" };
 
-<<<<<<< HEAD
 		_methodName380 = "getBeanIdentifier";
 
 		_methodParameterTypes380 = new String[] {  };
@@ -120,53 +119,20 @@ public class ESFTeamLocalServiceClpInvoker {
 		_methodName388 = "addESFTeam";
 
 		_methodParameterTypes388 = new String[] {
-=======
-		_methodName372 = "getBeanIdentifier";
-
-		_methodParameterTypes372 = new String[] {  };
-
-		_methodName373 = "setBeanIdentifier";
-
-		_methodParameterTypes373 = new String[] { "java.lang.String" };
-
-		_methodName378 = "getAllEsfTeam";
-
-		_methodParameterTypes378 = new String[] {  };
-
-		_methodName379 = "findByTournament";
-
-		_methodParameterTypes379 = new String[] { "long" };
-
-		_methodName380 = "addESFTeam";
-
-		_methodParameterTypes380 = new String[] {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 				"long", "java.lang.String", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-<<<<<<< HEAD
 		_methodName389 = "updateESFTeam";
 
 		_methodParameterTypes389 = new String[] {
-=======
-		_methodName381 = "updateESFTeam";
-
-		_methodParameterTypes381 = new String[] {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 				"long", "long", "java.lang.String", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-<<<<<<< HEAD
 		_methodName390 = "deleteESFTeam";
 
 		_methodParameterTypes390 = new String[] { "long" };
-=======
-		_methodName382 = "deleteESFTeam";
-
-		_methodParameterTypes382 = new String[] { "long" };
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -258,7 +224,6 @@ public class ESFTeamLocalServiceClpInvoker {
 			return ESFTeamLocalServiceUtil.updateESFTeam((it.ethica.esf.model.ESFTeam)arguments[0]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName380.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
 			return ESFTeamLocalServiceUtil.getBeanIdentifier();
@@ -266,21 +231,11 @@ public class ESFTeamLocalServiceClpInvoker {
 
 		if (_methodName381.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes381, parameterTypes)) {
-=======
-		if (_methodName372.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes372, parameterTypes)) {
-			return ESFTeamLocalServiceUtil.getBeanIdentifier();
-		}
-
-		if (_methodName373.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes373, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			ESFTeamLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-<<<<<<< HEAD
 		if (_methodName386.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
 			return ESFTeamLocalServiceUtil.getAllEsfTeam();
@@ -293,33 +248,14 @@ public class ESFTeamLocalServiceClpInvoker {
 
 		if (_methodName388.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
-=======
-		if (_methodName378.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes378, parameterTypes)) {
-			return ESFTeamLocalServiceUtil.getAllEsfTeam();
-		}
-
-		if (_methodName379.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes379, parameterTypes)) {
-			return ESFTeamLocalServiceUtil.findByTournament(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName380.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFTeamLocalServiceUtil.addESFTeam(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[3]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName389.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes389, parameterTypes)) {
-=======
-		if (_methodName381.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes381, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFTeamLocalServiceUtil.updateESFTeam(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2],
@@ -327,13 +263,8 @@ public class ESFTeamLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[4]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName390.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
-=======
-		if (_methodName382.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFTeamLocalServiceUtil.deleteESFTeam(((Long)arguments[0]).longValue());
 		}
 
@@ -372,22 +303,10 @@ public class ESFTeamLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-<<<<<<< HEAD
-=======
-	private String _methodName372;
-	private String[] _methodParameterTypes372;
-	private String _methodName373;
-	private String[] _methodParameterTypes373;
-	private String _methodName378;
-	private String[] _methodParameterTypes378;
-	private String _methodName379;
-	private String[] _methodParameterTypes379;
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 	private String _methodName380;
 	private String[] _methodParameterTypes380;
 	private String _methodName381;
 	private String[] _methodParameterTypes381;
-<<<<<<< HEAD
 	private String _methodName386;
 	private String[] _methodParameterTypes386;
 	private String _methodName387;
@@ -398,8 +317,4 @@ public class ESFTeamLocalServiceClpInvoker {
 	private String[] _methodParameterTypes389;
 	private String _methodName390;
 	private String[] _methodParameterTypes390;
-=======
-	private String _methodName382;
-	private String[] _methodParameterTypes382;
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 }

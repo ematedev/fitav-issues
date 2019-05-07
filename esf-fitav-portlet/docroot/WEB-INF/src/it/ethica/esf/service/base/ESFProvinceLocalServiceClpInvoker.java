@@ -108,7 +108,6 @@ public class ESFProvinceLocalServiceClpInvoker {
 
 		_methodParameterTypes15 = new String[] { "it.ethica.esf.model.ESFProvince" };
 
-<<<<<<< HEAD
 		_methodName380 = "getBeanIdentifier";
 
 		_methodParameterTypes380 = new String[] {  };
@@ -130,29 +129,6 @@ public class ESFProvinceLocalServiceClpInvoker {
 		_methodName388 = "findByProvinceId";
 
 		_methodParameterTypes388 = new String[] { "java.lang.String" };
-=======
-		_methodName372 = "getBeanIdentifier";
-
-		_methodParameterTypes372 = new String[] {  };
-
-		_methodName373 = "setBeanIdentifier";
-
-		_methodParameterTypes373 = new String[] { "java.lang.String" };
-
-		_methodName378 = "findByCountry_Name";
-
-		_methodParameterTypes378 = new String[] {
-				"java.lang.String", "java.lang.String"
-			};
-
-		_methodName379 = "getByRegionCode";
-
-		_methodParameterTypes379 = new String[] { "java.lang.String" };
-
-		_methodName380 = "findByProvinceId";
-
-		_methodParameterTypes380 = new String[] { "java.lang.String" };
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -244,7 +220,6 @@ public class ESFProvinceLocalServiceClpInvoker {
 			return ESFProvinceLocalServiceUtil.updateESFProvince((it.ethica.esf.model.ESFProvince)arguments[0]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName380.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
 			return ESFProvinceLocalServiceUtil.getBeanIdentifier();
@@ -252,32 +227,17 @@ public class ESFProvinceLocalServiceClpInvoker {
 
 		if (_methodName381.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes381, parameterTypes)) {
-=======
-		if (_methodName372.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes372, parameterTypes)) {
-			return ESFProvinceLocalServiceUtil.getBeanIdentifier();
-		}
-
-		if (_methodName373.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes373, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			ESFProvinceLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-<<<<<<< HEAD
 		if (_methodName386.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
-=======
-		if (_methodName378.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes378, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFProvinceLocalServiceUtil.findByCountry_Name((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName387.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
 			return ESFProvinceLocalServiceUtil.getByRegionCode((java.lang.String)arguments[0]);
@@ -285,15 +245,6 @@ public class ESFProvinceLocalServiceClpInvoker {
 
 		if (_methodName388.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
-=======
-		if (_methodName379.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes379, parameterTypes)) {
-			return ESFProvinceLocalServiceUtil.getByRegionCode((java.lang.String)arguments[0]);
-		}
-
-		if (_methodName380.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFProvinceLocalServiceUtil.findByProvinceId((java.lang.String)arguments[0]);
 		}
 
@@ -332,7 +283,6 @@ public class ESFProvinceLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-<<<<<<< HEAD
 	private String _methodName380;
 	private String[] _methodParameterTypes380;
 	private String _methodName381;
@@ -343,16 +293,4 @@ public class ESFProvinceLocalServiceClpInvoker {
 	private String[] _methodParameterTypes387;
 	private String _methodName388;
 	private String[] _methodParameterTypes388;
-=======
-	private String _methodName372;
-	private String[] _methodParameterTypes372;
-	private String _methodName373;
-	private String[] _methodParameterTypes373;
-	private String _methodName378;
-	private String[] _methodParameterTypes378;
-	private String _methodName379;
-	private String[] _methodParameterTypes379;
-	private String _methodName380;
-	private String[] _methodParameterTypes380;
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 }

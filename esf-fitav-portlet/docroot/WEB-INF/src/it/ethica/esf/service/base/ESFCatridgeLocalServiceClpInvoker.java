@@ -100,7 +100,6 @@ public class ESFCatridgeLocalServiceClpInvoker {
 
 		_methodParameterTypes15 = new String[] { "it.ethica.esf.model.ESFCatridge" };
 
-<<<<<<< HEAD
 		_methodName380 = "getBeanIdentifier";
 
 		_methodParameterTypes380 = new String[] {  };
@@ -136,61 +135,17 @@ public class ESFCatridgeLocalServiceClpInvoker {
 		_methodName392 = "addESFCatridge";
 
 		_methodParameterTypes392 = new String[] {
-=======
-		_methodName372 = "getBeanIdentifier";
-
-		_methodParameterTypes372 = new String[] {  };
-
-		_methodName373 = "setBeanIdentifier";
-
-		_methodParameterTypes373 = new String[] { "java.lang.String" };
-
-		_methodName378 = "getESFCatridgesByUserId";
-
-		_methodParameterTypes378 = new String[] { "long" };
-
-		_methodName379 = "getESFCatridgesByUserId";
-
-		_methodParameterTypes379 = new String[] { "long", "int", "int" };
-
-		_methodName380 = "getESFCatridgesByType";
-
-		_methodParameterTypes380 = new String[] { "long", "int", "int" };
-
-		_methodName381 = "countESFCatridgesByType";
-
-		_methodParameterTypes381 = new String[] { "long" };
-
-		_methodName382 = "getESFCatridges";
-
-		_methodParameterTypes382 = new String[] {  };
-
-		_methodName383 = "getESFCatridges";
-
-		_methodParameterTypes383 = new String[] { "int", "int" };
-
-		_methodName384 = "addESFCatridge";
-
-		_methodParameterTypes384 = new String[] {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 				"long", "long", "long", "java.lang.String", "long",
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 
-<<<<<<< HEAD
 		_methodName393 = "updateESFCatridge";
 
 		_methodParameterTypes393 = new String[] {
-=======
-		_methodName385 = "updateESFCatridge";
-
-		_methodParameterTypes385 = new String[] {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 				"long", "long", "long", "long", "java.lang.String", "long",
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 
-<<<<<<< HEAD
 		_methodName394 = "deleteESFCatridge";
 
 		_methodParameterTypes394 = new String[] {
@@ -200,17 +155,6 @@ public class ESFCatridgeLocalServiceClpInvoker {
 		_methodName395 = "getNameM";
 
 		_methodParameterTypes395 = new String[] {
-=======
-		_methodName386 = "deleteESFCatridge";
-
-		_methodParameterTypes386 = new String[] {
-				"long", "com.liferay.portal.service.ServiceContext"
-			};
-
-		_methodName387 = "getNameM";
-
-		_methodParameterTypes387 = new String[] {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 				"it.ethica.esf.model.ESFCatridge"
 			};
 	}
@@ -304,7 +248,6 @@ public class ESFCatridgeLocalServiceClpInvoker {
 			return ESFCatridgeLocalServiceUtil.updateESFCatridge((it.ethica.esf.model.ESFCatridge)arguments[0]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName380.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
 			return ESFCatridgeLocalServiceUtil.getBeanIdentifier();
@@ -312,21 +255,11 @@ public class ESFCatridgeLocalServiceClpInvoker {
 
 		if (_methodName381.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes381, parameterTypes)) {
-=======
-		if (_methodName372.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes372, parameterTypes)) {
-			return ESFCatridgeLocalServiceUtil.getBeanIdentifier();
-		}
-
-		if (_methodName373.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes373, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			ESFCatridgeLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-<<<<<<< HEAD
 		if (_methodName386.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
 			return ESFCatridgeLocalServiceUtil.getESFCatridgesByUserId(((Long)arguments[0]).longValue());
@@ -334,33 +267,18 @@ public class ESFCatridgeLocalServiceClpInvoker {
 
 		if (_methodName387.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
-=======
-		if (_methodName378.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes378, parameterTypes)) {
-			return ESFCatridgeLocalServiceUtil.getESFCatridgesByUserId(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName379.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes379, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFCatridgeLocalServiceUtil.getESFCatridgesByUserId(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-<<<<<<< HEAD
 		if (_methodName388.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
-=======
-		if (_methodName380.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFCatridgeLocalServiceUtil.getESFCatridgesByType(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-<<<<<<< HEAD
 		if (_methodName389.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes389, parameterTypes)) {
 			return ESFCatridgeLocalServiceUtil.countESFCatridgesByType(((Long)arguments[0]).longValue());
@@ -373,31 +291,12 @@ public class ESFCatridgeLocalServiceClpInvoker {
 
 		if (_methodName391.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
-=======
-		if (_methodName381.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes381, parameterTypes)) {
-			return ESFCatridgeLocalServiceUtil.countESFCatridgesByType(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName382.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
-			return ESFCatridgeLocalServiceUtil.getESFCatridges();
-		}
-
-		if (_methodName383.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes383, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFCatridgeLocalServiceUtil.getESFCatridges(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
-<<<<<<< HEAD
 		if (_methodName392.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
-=======
-		if (_methodName384.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFCatridgeLocalServiceUtil.addESFCatridge(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -407,13 +306,8 @@ public class ESFCatridgeLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[6]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName393.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
-=======
-		if (_methodName385.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFCatridgeLocalServiceUtil.updateESFCatridge(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -424,24 +318,14 @@ public class ESFCatridgeLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[7]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName394.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
-=======
-		if (_methodName386.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFCatridgeLocalServiceUtil.deleteESFCatridge(((Long)arguments[0]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName395.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
-=======
-		if (_methodName387.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFCatridgeLocalServiceUtil.getNameM((it.ethica.esf.model.ESFCatridge)arguments[0]);
 		}
 
@@ -480,37 +364,14 @@ public class ESFCatridgeLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-<<<<<<< HEAD
-=======
-	private String _methodName372;
-	private String[] _methodParameterTypes372;
-	private String _methodName373;
-	private String[] _methodParameterTypes373;
-	private String _methodName378;
-	private String[] _methodParameterTypes378;
-	private String _methodName379;
-	private String[] _methodParameterTypes379;
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 	private String _methodName380;
 	private String[] _methodParameterTypes380;
 	private String _methodName381;
 	private String[] _methodParameterTypes381;
-<<<<<<< HEAD
-=======
-	private String _methodName382;
-	private String[] _methodParameterTypes382;
-	private String _methodName383;
-	private String[] _methodParameterTypes383;
-	private String _methodName384;
-	private String[] _methodParameterTypes384;
-	private String _methodName385;
-	private String[] _methodParameterTypes385;
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 	private String _methodName386;
 	private String[] _methodParameterTypes386;
 	private String _methodName387;
 	private String[] _methodParameterTypes387;
-<<<<<<< HEAD
 	private String _methodName388;
 	private String[] _methodParameterTypes388;
 	private String _methodName389;
@@ -527,6 +388,4 @@ public class ESFCatridgeLocalServiceClpInvoker {
 	private String[] _methodParameterTypes394;
 	private String _methodName395;
 	private String[] _methodParameterTypes395;
-=======
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 }

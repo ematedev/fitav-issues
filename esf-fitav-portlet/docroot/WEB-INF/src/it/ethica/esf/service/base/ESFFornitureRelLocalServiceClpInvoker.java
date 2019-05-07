@@ -114,7 +114,6 @@ public class ESFFornitureRelLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFFornitureRel"
 			};
 
-<<<<<<< HEAD
 		_methodName390 = "getBeanIdentifier";
 
 		_methodParameterTypes390 = new String[] {  };
@@ -122,15 +121,6 @@ public class ESFFornitureRelLocalServiceClpInvoker {
 		_methodName391 = "setBeanIdentifier";
 
 		_methodParameterTypes391 = new String[] { "java.lang.String" };
-=======
-		_methodName382 = "getBeanIdentifier";
-
-		_methodParameterTypes382 = new String[] {  };
-
-		_methodName383 = "setBeanIdentifier";
-
-		_methodParameterTypes383 = new String[] { "java.lang.String" };
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -222,7 +212,6 @@ public class ESFFornitureRelLocalServiceClpInvoker {
 			return ESFFornitureRelLocalServiceUtil.updateESFFornitureRel((it.ethica.esf.model.ESFFornitureRel)arguments[0]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName390.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
 			return ESFFornitureRelLocalServiceUtil.getBeanIdentifier();
@@ -230,15 +219,6 @@ public class ESFFornitureRelLocalServiceClpInvoker {
 
 		if (_methodName391.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
-=======
-		if (_methodName382.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
-			return ESFFornitureRelLocalServiceUtil.getBeanIdentifier();
-		}
-
-		if (_methodName383.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes383, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			ESFFornitureRelLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
@@ -279,15 +259,8 @@ public class ESFFornitureRelLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-<<<<<<< HEAD
 	private String _methodName390;
 	private String[] _methodParameterTypes390;
 	private String _methodName391;
 	private String[] _methodParameterTypes391;
-=======
-	private String _methodName382;
-	private String[] _methodParameterTypes382;
-	private String _methodName383;
-	private String[] _methodParameterTypes383;
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 }

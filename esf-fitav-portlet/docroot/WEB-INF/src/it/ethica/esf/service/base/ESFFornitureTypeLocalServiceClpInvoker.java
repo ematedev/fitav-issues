@@ -122,7 +122,6 @@ public class ESFFornitureTypeLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFFornitureType"
 			};
 
-<<<<<<< HEAD
 		_methodName384 = "getBeanIdentifier";
 
 		_methodParameterTypes384 = new String[] {  };
@@ -158,69 +157,20 @@ public class ESFFornitureTypeLocalServiceClpInvoker {
 		_methodName396 = "addESFForntureType";
 
 		_methodParameterTypes396 = new String[] {
-=======
-		_methodName376 = "getBeanIdentifier";
-
-		_methodParameterTypes376 = new String[] {  };
-
-		_methodName377 = "setBeanIdentifier";
-
-		_methodParameterTypes377 = new String[] { "java.lang.String" };
-
-		_methodName382 = "getAllESFFornitureTypes";
-
-		_methodParameterTypes382 = new String[] {  };
-
-		_methodName383 = "getAllESFFornitureTypes";
-
-		_methodParameterTypes383 = new String[] { "int", "int" };
-
-		_methodName384 = "getAllESFFornitureTypes";
-
-		_methodParameterTypes384 = new String[] { "long" };
-
-		_methodName385 = "getAllESFFornitureTypes";
-
-		_methodParameterTypes385 = new String[] { "long", "int", "int" };
-
-		_methodName386 = "countByGroupId";
-
-		_methodParameterTypes386 = new String[] { "long" };
-
-		_methodName387 = "findESFFornitureTypeByDescription";
-
-		_methodParameterTypes387 = new String[] { "java.lang.String" };
-
-		_methodName388 = "addESFForntureType";
-
-		_methodParameterTypes388 = new String[] {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 				"long", "java.lang.String",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-<<<<<<< HEAD
 		_methodName397 = "updateESFFornitureType";
 
 		_methodParameterTypes397 = new String[] {
-=======
-		_methodName389 = "updateESFFornitureType";
-
-		_methodParameterTypes389 = new String[] {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 				"long", "long", "java.lang.String",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-<<<<<<< HEAD
 		_methodName398 = "deleteESFFornitureType";
 
 		_methodParameterTypes398 = new String[] {
-=======
-		_methodName390 = "deleteESFFornitureType";
-
-		_methodParameterTypes390 = new String[] {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 				"long", "com.liferay.portal.service.ServiceContext"
 			};
 	}
@@ -338,7 +288,6 @@ public class ESFFornitureTypeLocalServiceClpInvoker {
 			return ESFFornitureTypeLocalServiceUtil.updateESFFornitureType((it.ethica.esf.model.ESFFornitureType)arguments[0]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName384.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
 			return ESFFornitureTypeLocalServiceUtil.getBeanIdentifier();
@@ -346,21 +295,11 @@ public class ESFFornitureTypeLocalServiceClpInvoker {
 
 		if (_methodName385.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
-=======
-		if (_methodName376.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes376, parameterTypes)) {
-			return ESFFornitureTypeLocalServiceUtil.getBeanIdentifier();
-		}
-
-		if (_methodName377.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes377, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			ESFFornitureTypeLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-<<<<<<< HEAD
 		if (_methodName390.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
 			return ESFFornitureTypeLocalServiceUtil.getAllESFFornitureTypes();
@@ -368,20 +307,10 @@ public class ESFFornitureTypeLocalServiceClpInvoker {
 
 		if (_methodName391.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
-=======
-		if (_methodName382.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
-			return ESFFornitureTypeLocalServiceUtil.getAllESFFornitureTypes();
-		}
-
-		if (_methodName383.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes383, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFFornitureTypeLocalServiceUtil.getAllESFFornitureTypes(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
-<<<<<<< HEAD
 		if (_methodName392.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFFornitureTypeLocalServiceUtil.getAllESFFornitureTypes(((Long)arguments[0]).longValue());
@@ -389,21 +318,11 @@ public class ESFFornitureTypeLocalServiceClpInvoker {
 
 		if (_methodName393.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
-=======
-		if (_methodName384.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
-			return ESFFornitureTypeLocalServiceUtil.getAllESFFornitureTypes(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName385.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFFornitureTypeLocalServiceUtil.getAllESFFornitureTypes(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-<<<<<<< HEAD
 		if (_methodName394.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
 			return ESFFornitureTypeLocalServiceUtil.countByGroupId(((Long)arguments[0]).longValue());
@@ -416,45 +335,21 @@ public class ESFFornitureTypeLocalServiceClpInvoker {
 
 		if (_methodName396.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
-=======
-		if (_methodName386.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
-			return ESFFornitureTypeLocalServiceUtil.countByGroupId(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName387.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
-			return ESFFornitureTypeLocalServiceUtil.findESFFornitureTypeByDescription((java.lang.String)arguments[0]);
-		}
-
-		if (_methodName388.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFFornitureTypeLocalServiceUtil.addESFForntureType(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1],
 				(com.liferay.portal.service.ServiceContext)arguments[2]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName397.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
-=======
-		if (_methodName389.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes389, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFFornitureTypeLocalServiceUtil.updateESFFornitureType(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2],
 				(com.liferay.portal.service.ServiceContext)arguments[3]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName398.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
-=======
-		if (_methodName390.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFFornitureTypeLocalServiceUtil.deleteESFFornitureType(((Long)arguments[0]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
@@ -502,22 +397,10 @@ public class ESFFornitureTypeLocalServiceClpInvoker {
 	private String[] _methodParameterTypes18;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
-<<<<<<< HEAD
-=======
-	private String _methodName376;
-	private String[] _methodParameterTypes376;
-	private String _methodName377;
-	private String[] _methodParameterTypes377;
-	private String _methodName382;
-	private String[] _methodParameterTypes382;
-	private String _methodName383;
-	private String[] _methodParameterTypes383;
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 	private String _methodName384;
 	private String[] _methodParameterTypes384;
 	private String _methodName385;
 	private String[] _methodParameterTypes385;
-<<<<<<< HEAD
 	private String _methodName390;
 	private String[] _methodParameterTypes390;
 	private String _methodName391;
@@ -536,16 +419,4 @@ public class ESFFornitureTypeLocalServiceClpInvoker {
 	private String[] _methodParameterTypes397;
 	private String _methodName398;
 	private String[] _methodParameterTypes398;
-=======
-	private String _methodName386;
-	private String[] _methodParameterTypes386;
-	private String _methodName387;
-	private String[] _methodParameterTypes387;
-	private String _methodName388;
-	private String[] _methodParameterTypes388;
-	private String _methodName389;
-	private String[] _methodParameterTypes389;
-	private String _methodName390;
-	private String[] _methodParameterTypes390;
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 }

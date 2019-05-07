@@ -106,7 +106,6 @@ public class ESFDescriptionLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFDescription"
 			};
 
-<<<<<<< HEAD
 		_methodName380 = "getBeanIdentifier";
 
 		_methodParameterTypes380 = new String[] {  };
@@ -126,45 +125,17 @@ public class ESFDescriptionLocalServiceClpInvoker {
 		_methodName388 = "addEsfDescription";
 
 		_methodParameterTypes388 = new String[] {
-=======
-		_methodName372 = "getBeanIdentifier";
-
-		_methodParameterTypes372 = new String[] {  };
-
-		_methodName373 = "setBeanIdentifier";
-
-		_methodParameterTypes373 = new String[] { "java.lang.String" };
-
-		_methodName378 = "findAll";
-
-		_methodParameterTypes378 = new String[] {  };
-
-		_methodName379 = "findAllByNational";
-
-		_methodParameterTypes379 = new String[] { "boolean" };
-
-		_methodName380 = "addEsfDescription";
-
-		_methodParameterTypes380 = new String[] {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 				"java.lang.String", "boolean",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-<<<<<<< HEAD
 		_methodName389 = "updateEsfDescription";
 
 		_methodParameterTypes389 = new String[] {
-=======
-		_methodName381 = "updateEsfDescription";
-
-		_methodParameterTypes381 = new String[] {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 				"long", "java.lang.String", "boolean",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-<<<<<<< HEAD
 		_methodName390 = "deleteEsfDescription";
 
 		_methodParameterTypes390 = new String[] {
@@ -174,17 +145,6 @@ public class ESFDescriptionLocalServiceClpInvoker {
 		_methodName391 = "getESFDescriptionsByMatchUser";
 
 		_methodParameterTypes391 = new String[] { "java.util.List" };
-=======
-		_methodName382 = "deleteEsfDescription";
-
-		_methodParameterTypes382 = new String[] {
-				"long", "javax.portlet.ActionRequest"
-			};
-
-		_methodName383 = "getESFDescriptionsByMatchUser";
-
-		_methodParameterTypes383 = new String[] { "java.util.List" };
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -276,7 +236,6 @@ public class ESFDescriptionLocalServiceClpInvoker {
 			return ESFDescriptionLocalServiceUtil.updateESFDescription((it.ethica.esf.model.ESFDescription)arguments[0]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName380.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
 			return ESFDescriptionLocalServiceUtil.getBeanIdentifier();
@@ -284,21 +243,11 @@ public class ESFDescriptionLocalServiceClpInvoker {
 
 		if (_methodName381.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes381, parameterTypes)) {
-=======
-		if (_methodName372.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes372, parameterTypes)) {
-			return ESFDescriptionLocalServiceUtil.getBeanIdentifier();
-		}
-
-		if (_methodName373.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes373, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			ESFDescriptionLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-<<<<<<< HEAD
 		if (_methodName386.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
 			return ESFDescriptionLocalServiceUtil.findAll();
@@ -311,56 +260,27 @@ public class ESFDescriptionLocalServiceClpInvoker {
 
 		if (_methodName388.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
-=======
-		if (_methodName378.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes378, parameterTypes)) {
-			return ESFDescriptionLocalServiceUtil.findAll();
-		}
-
-		if (_methodName379.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes379, parameterTypes)) {
-			return ESFDescriptionLocalServiceUtil.findAllByNational(((Boolean)arguments[0]).booleanValue());
-		}
-
-		if (_methodName380.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFDescriptionLocalServiceUtil.addEsfDescription((java.lang.String)arguments[0],
 				((Boolean)arguments[1]).booleanValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[2]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName389.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes389, parameterTypes)) {
-=======
-		if (_methodName381.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes381, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFDescriptionLocalServiceUtil.updateEsfDescription(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1],
 				((Boolean)arguments[2]).booleanValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[3]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName390.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
-=======
-		if (_methodName382.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFDescriptionLocalServiceUtil.deleteEsfDescription(((Long)arguments[0]).longValue(),
 				(javax.portlet.ActionRequest)arguments[1]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName391.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
-=======
-		if (_methodName383.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes383, parameterTypes)) {
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 			return ESFDescriptionLocalServiceUtil.getESFDescriptionsByMatchUser((java.util.List<it.ethica.esf.model.ESFNationalMatchResult>)arguments[0]);
 		}
 
@@ -399,22 +319,10 @@ public class ESFDescriptionLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-<<<<<<< HEAD
-=======
-	private String _methodName372;
-	private String[] _methodParameterTypes372;
-	private String _methodName373;
-	private String[] _methodParameterTypes373;
-	private String _methodName378;
-	private String[] _methodParameterTypes378;
-	private String _methodName379;
-	private String[] _methodParameterTypes379;
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 	private String _methodName380;
 	private String[] _methodParameterTypes380;
 	private String _methodName381;
 	private String[] _methodParameterTypes381;
-<<<<<<< HEAD
 	private String _methodName386;
 	private String[] _methodParameterTypes386;
 	private String _methodName387;
@@ -427,10 +335,4 @@ public class ESFDescriptionLocalServiceClpInvoker {
 	private String[] _methodParameterTypes390;
 	private String _methodName391;
 	private String[] _methodParameterTypes391;
-=======
-	private String _methodName382;
-	private String[] _methodParameterTypes382;
-	private String _methodName383;
-	private String[] _methodParameterTypes383;
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
 }
