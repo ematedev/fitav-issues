@@ -109,7 +109,7 @@
 	<liferay-ui:search-container-results>
 		<%
 			List<ESFOrganization> associations =  ESFOrganizationLocalServiceUtil.findAllLeafOrganizations(currentOrganizationId,searchContainer.getStart(), searchContainer.getEnd());
-			int tot = ESFOrganizationLocalServiceUtil.findAllLeafOrganizations(currentOrganizationId).size();
+			int tot = associations.size();
 			List<ESFOrganization> sortableESFOrganization = new ArrayList<ESFOrganization>(associations);
 
 			if (Validator.isNotNull(orderByCol)) {

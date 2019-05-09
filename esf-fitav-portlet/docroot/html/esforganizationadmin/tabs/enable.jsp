@@ -1,10 +1,13 @@
 
+<%@page import="it.ethica.esf.service.ESFOrganizationLocalServiceUtil"%>
 <liferay-ui:search-container emptyResultsMessage="no-result">
+
+<% List<ESFOrganization> listaOrganizzazioniFiglie = ESFOrganizationLocalServiceUtil.findAllChildOrganizations(currentOrganizationId,
+		ESFKeys.ESFStateType.ENABLE, searchContainer.getStart(), searchContainer.getEnd()); %>
+
 	<liferay-ui:search-container-results
-		results="<%=ESFOrganizationLocalServiceUtil.findAllChildOrganizations(currentOrganizationId,
-							ESFKeys.ESFStateType.ENABLE, searchContainer.getStart(), searchContainer.getEnd())%>"
-		total="<%=ESFOrganizationLocalServiceUtil
-							.findAllChildOrganizations(currentOrganizationId, ESFKeys.ESFStateType.ENABLE).size()%>">
+		results="<%= listaOrganizzazioniFiglie %>"
+		total="<%= listaOrganizzazioniFiglie.size() %>">
 	</liferay-ui:search-container-results>
 
 	<liferay-ui:search-container-row className="it.ethica.esf.model.ESFOrganization" modelVar="esfOrganizationEnable">

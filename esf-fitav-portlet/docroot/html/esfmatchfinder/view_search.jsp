@@ -19,7 +19,8 @@
 	String currDate = ManageDate.CalendarToString(cal);
 	
 	List<ESFOrganization> esfOrganizations = 
-					ESFOrganizationLocalServiceUtil.findAllESFOrganizations(3, ESFKeys.ESFStateType.ENABLE);		//   DA SISTEMARE -----------------------------------------
+					ESFOrganizationLocalServiceUtil.findAllESFOrganizations(3, ESFKeys.ESFStateType.ENABLE);		
+	//   DA SISTEMARE -----------------------------------------
 						
 
 	List<ESFDescription> esfDescription = 
