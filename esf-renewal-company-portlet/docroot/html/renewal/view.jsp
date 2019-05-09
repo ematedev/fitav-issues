@@ -237,33 +237,47 @@ String[] requiredRolesListClone = (String[])requiredRolesList.clone();
 	 value='<%=categoryAssosiation %>' readonly="true" 
 	 />Categoria di affiliazione</div>
 	
-	<p> COMPOSIZIONE DEL CONSIGLIO DIRETTIVO: </p>
-	
-	<liferay-ui:search-container emptyResultsMessage="no-results">
-	
+	<p><strong>COMPOSIZIONE DEL CONSIGLIO DIRETTIVO: </strong></p>
 	<% List<VW_ESFListaIncarichiTessera> listaIncarichiConsiglioDirettivo = (List<VW_ESFListaIncarichiTessera>) request.getAttribute("listaIncarichiConsiglioDirettivo"); %>
 	<% int size = listaIncarichiConsiglioDirettivo.size(); %>
 	
+	
+	<liferay-ui:search-container emptyResultsMessage="no-results">
+
 		<liferay-ui:search-container-results
-			results='<%= listaIncarichiConsiglioDirettivo %>'
-			total='<%= size %>' />
+			results="<%= listaIncarichiConsiglioDirettivo %>"
+			total="<%= size %>" />
 			
-			
-		<liferay-ui:search-container-row  
+		<liferay-ui:search-container-row 
 			className="it.ethica.esf.renewal.model.VW_ESFListaIncarichiTessera" modelVar="incarico">
 
-			<liferay-ui:search-container-column-text title="N. Tessera" cssClass="firstCss">
-					<%= incarico.getCodiceTessera()  %>
-			</liferay-ui:search-container-column-text>
+
+			<%/*  PROGRAMMATORE DEL FUTURO ATTENZIONE
+				Nel caso in cui i campi NON sono parte della Chiave primaria
+				usa value
+				
+				Nel caso in cui i campi SI SONO parte della Chiave Primaria
+				allora usa PROPERTY
+				
+				Adesso figliolo non so come altro aiutarti
+				se un giorno lo scopirai Tu
+				modifica questo commento
 			
-			<liferay-ui:search-container-column-text property="lastName" title="Cognome" cssClass="firstCss"/>
 			
-			<liferay-ui:search-container-column-text property="firstName" title="Nome" cssClass="firstCss" />
+			*/%>
+
+
+			<liferay-ui:search-container-column-text name="Nome Ruolo" title="Nome Ruolo" value='<%= incarico.getNomeRuolo() != null ? incarico.getNomeRuolo() : "" %>' cssClass="firstCss" orderable="true"/>
+			<liferay-ui:search-container-column-text property="lastName" title="Cognome" cssClass="firstCss" orderable="true"/>
+			<liferay-ui:search-container-column-text property="firstName" title="Nome" cssClass="firstCss"/>
+			<liferay-ui:search-container-column-text name="Codice Fiscale" title="Codice Fiscale" value='<%= incarico.getCodiceFiscale() != null ? incarico.getCodiceFiscale() : "" %>' cssClass="firstCss"/>
+						<liferay-ui:search-container-column-text name="Codice Tessera" title="Codice Tessera" value='<%= incarico.getCodiceTessera() != null ? incarico.getCodiceTessera() : "" %>' cssClass="firstCss"/>
+							
 		</liferay-ui:search-container-row>
-	
+		<liferay-ui:search-iterator paginate="false" type=""/>
 
 	</liferay-ui:search-container>
-	
+	<hr>
 	<aui:field-wrapper label="payment-type">
 		<aui:input name="paymentType" value="<%= ESFRenewalConstants.RENEWAL_PAYMENT_TYPE_ELECTRONIC %>" type="radio" label="electronic-payment" checked="<%= true %>"/>
 		<aui:input name="paymentType" value="<%= ESFRenewalConstants.RENEWAL_PAYMENT_TYPE_POSTAL %>" type="radio" label="postal" />
@@ -272,6 +286,7 @@ String[] requiredRolesListClone = (String[])requiredRolesList.clone();
 
 	<strong><u><liferay-ui:message key="acknowledgment-title" /></u></strong>
 	<p><liferay-ui:message key="acknowledgment" /></p>
+	
 	
 	<aui:field-wrapper>
 		<aui:input name="acknowledge" label="accept" type="radio" value="0" />

@@ -71,9 +71,10 @@ public class VW_ESFListaIncarichiTesseraModelImpl extends BaseModelImpl<VW_ESFLi
 			{ "lastName", Types.VARCHAR },
 			{ "firstName", Types.VARCHAR },
 			{ "CodiceTessera", Types.VARCHAR },
-			{ "DataTesseramento", Types.TIMESTAMP }
+			{ "DataTesseramento", Types.TIMESTAMP },
+			{ "CodiceFiscale", Types.VARCHAR }
 		};
-	public static final String TABLE_SQL_CREATE = "create table vw_listaincarichitessera (AnniPrecedenti INTEGER not null,AnnoFineIncarico INTEGER not null,AnnoInizioIncarico INTEGER not null,AnnoCorrente INTEGER not null,NomeRuolo VARCHAR(75) not null,endDate DATE null,startDate DATE not null,esfUserId LONG not null,esfOrganizationId LONG not null,lastName VARCHAR(75) not null,firstName VARCHAR(75) not null,CodiceTessera VARCHAR(75) null,DataTesseramento DATE null,primary key (AnniPrecedenti, AnnoFineIncarico, AnnoInizioIncarico, AnnoCorrente, NomeRuolo, startDate, esfUserId, esfOrganizationId, lastName, firstName))";
+	public static final String TABLE_SQL_CREATE = "create table vw_listaincarichitessera (AnniPrecedenti INTEGER not null,AnnoFineIncarico INTEGER not null,AnnoInizioIncarico INTEGER not null,AnnoCorrente INTEGER not null,NomeRuolo VARCHAR(75) not null,endDate DATE null,startDate DATE not null,esfUserId LONG not null,esfOrganizationId LONG not null,lastName VARCHAR(75) not null,firstName VARCHAR(75) not null,CodiceTessera VARCHAR(75) null,DataTesseramento DATE null,CodiceFiscale VARCHAR(75) null,primary key (AnniPrecedenti, AnnoFineIncarico, AnnoInizioIncarico, AnnoCorrente, NomeRuolo, startDate, esfUserId, esfOrganizationId, lastName, firstName))";
 	public static final String TABLE_SQL_DROP = "drop table vw_listaincarichitessera";
 	public static final String ORDER_BY_JPQL = " ORDER BY vw_esfListaIncarichiTessera.endDate ASC, vw_esfListaIncarichiTessera.id.esfUserId ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY vw_listaincarichitessera.endDate ASC, vw_listaincarichitessera.esfUserId ASC";
@@ -158,6 +159,7 @@ public class VW_ESFListaIncarichiTesseraModelImpl extends BaseModelImpl<VW_ESFLi
 		attributes.put("firstName", getFirstName());
 		attributes.put("CodiceTessera", getCodiceTessera());
 		attributes.put("DataTesseramento", getDataTesseramento());
+		attributes.put("CodiceFiscale", getCodiceFiscale());
 
 		return attributes;
 	}
@@ -241,6 +243,12 @@ public class VW_ESFListaIncarichiTesseraModelImpl extends BaseModelImpl<VW_ESFLi
 
 		if (DataTesseramento != null) {
 			setDataTesseramento(DataTesseramento);
+		}
+
+		String CodiceFiscale = (String)attributes.get("CodiceFiscale");
+
+		if (CodiceFiscale != null) {
+			setCodiceFiscale(CodiceFiscale);
 		}
 	}
 
@@ -420,6 +428,21 @@ public class VW_ESFListaIncarichiTesseraModelImpl extends BaseModelImpl<VW_ESFLi
 		_DataTesseramento = DataTesseramento;
 	}
 
+	@Override
+	public String getCodiceFiscale() {
+		if (_CodiceFiscale == null) {
+			return StringPool.BLANK;
+		}
+		else {
+			return _CodiceFiscale;
+		}
+	}
+
+	@Override
+	public void setCodiceFiscale(String CodiceFiscale) {
+		_CodiceFiscale = CodiceFiscale;
+	}
+
 	public long getColumnBitmask() {
 		return _columnBitmask;
 	}
@@ -451,6 +474,7 @@ public class VW_ESFListaIncarichiTesseraModelImpl extends BaseModelImpl<VW_ESFLi
 		vw_esfListaIncarichiTesseraImpl.setFirstName(getFirstName());
 		vw_esfListaIncarichiTesseraImpl.setCodiceTessera(getCodiceTessera());
 		vw_esfListaIncarichiTesseraImpl.setDataTesseramento(getDataTesseramento());
+		vw_esfListaIncarichiTesseraImpl.setCodiceFiscale(getCodiceFiscale());
 
 		vw_esfListaIncarichiTesseraImpl.resetOriginalValues();
 
@@ -601,12 +625,20 @@ public class VW_ESFListaIncarichiTesseraModelImpl extends BaseModelImpl<VW_ESFLi
 			vw_esfListaIncarichiTesseraCacheModel.DataTesseramento = Long.MIN_VALUE;
 		}
 
+		vw_esfListaIncarichiTesseraCacheModel.CodiceFiscale = getCodiceFiscale();
+
+		String CodiceFiscale = vw_esfListaIncarichiTesseraCacheModel.CodiceFiscale;
+
+		if ((CodiceFiscale != null) && (CodiceFiscale.length() == 0)) {
+			vw_esfListaIncarichiTesseraCacheModel.CodiceFiscale = null;
+		}
+
 		return vw_esfListaIncarichiTesseraCacheModel;
 	}
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(27);
+		StringBundler sb = new StringBundler(29);
 
 		sb.append("{AnniPrecedenti=");
 		sb.append(getAnniPrecedenti());
@@ -634,6 +666,8 @@ public class VW_ESFListaIncarichiTesseraModelImpl extends BaseModelImpl<VW_ESFLi
 		sb.append(getCodiceTessera());
 		sb.append(", DataTesseramento=");
 		sb.append(getDataTesseramento());
+		sb.append(", CodiceFiscale=");
+		sb.append(getCodiceFiscale());
 		sb.append("}");
 
 		return sb.toString();
@@ -641,7 +675,7 @@ public class VW_ESFListaIncarichiTesseraModelImpl extends BaseModelImpl<VW_ESFLi
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(43);
+		StringBundler sb = new StringBundler(46);
 
 		sb.append("<model><model-name>");
 		sb.append("it.ethica.esf.renewal.model.VW_ESFListaIncarichiTessera");
@@ -699,6 +733,10 @@ public class VW_ESFListaIncarichiTesseraModelImpl extends BaseModelImpl<VW_ESFLi
 			"<column><column-name>DataTesseramento</column-name><column-value><![CDATA[");
 		sb.append(getDataTesseramento());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>CodiceFiscale</column-name><column-value><![CDATA[");
+		sb.append(getCodiceFiscale());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -725,6 +763,7 @@ public class VW_ESFListaIncarichiTesseraModelImpl extends BaseModelImpl<VW_ESFLi
 	private String _firstName;
 	private String _CodiceTessera;
 	private Date _DataTesseramento;
+	private String _CodiceFiscale;
 	private long _columnBitmask;
 	private VW_ESFListaIncarichiTessera _escapedModel;
 }

@@ -40,5 +40,6 @@
 		<field name="firstName" type="String" />
 		<field name="CodiceTessera" type="String" />
 		<field name="DataTesseramento" type="Date" />
+		<field name="CodiceFiscale" type="String" />
 	</model>
 </model-hints>

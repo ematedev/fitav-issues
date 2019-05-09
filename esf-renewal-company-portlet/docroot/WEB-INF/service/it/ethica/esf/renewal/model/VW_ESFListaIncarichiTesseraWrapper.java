@@ -65,6 +65,7 @@ public class VW_ESFListaIncarichiTesseraWrapper
 		attributes.put("firstName", getFirstName());
 		attributes.put("CodiceTessera", getCodiceTessera());
 		attributes.put("DataTesseramento", getDataTesseramento());
+		attributes.put("CodiceFiscale", getCodiceFiscale());
 
 		return attributes;
 	}
@@ -148,6 +149,12 @@ public class VW_ESFListaIncarichiTesseraWrapper
 
 		if (DataTesseramento != null) {
 			setDataTesseramento(DataTesseramento);
+		}
+
+		String CodiceFiscale = (String)attributes.get("CodiceFiscale");
+
+		if (CodiceFiscale != null) {
+			setCodiceFiscale(CodiceFiscale);
 		}
 	}
 
@@ -452,6 +459,26 @@ public class VW_ESFListaIncarichiTesseraWrapper
 	@Override
 	public void setDataTesseramento(java.util.Date DataTesseramento) {
 		_vw_esfListaIncarichiTessera.setDataTesseramento(DataTesseramento);
+	}
+
+	/**
+	* Returns the codice fiscale of this v w_ e s f lista incarichi tessera.
+	*
+	* @return the codice fiscale of this v w_ e s f lista incarichi tessera
+	*/
+	@Override
+	public java.lang.String getCodiceFiscale() {
+		return _vw_esfListaIncarichiTessera.getCodiceFiscale();
+	}
+
+	/**
+	* Sets the codice fiscale of this v w_ e s f lista incarichi tessera.
+	*
+	* @param CodiceFiscale the codice fiscale of this v w_ e s f lista incarichi tessera
+	*/
+	@Override
+	public void setCodiceFiscale(java.lang.String CodiceFiscale) {
+		_vw_esfListaIncarichiTessera.setCodiceFiscale(CodiceFiscale);
 	}
 
 	@Override
