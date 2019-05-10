@@ -30,5 +30,8 @@ public class DateUtilFormatter {
 	public static SimpleDateFormat getDefaultFormatter() {
 		return getFormatter(DEFAULT_DATE_FORMAT_ITA);
 	}
+	public static SimpleDateFormat getEngFormatter() {
+		return getFormatter(DEFAULT_DATE_FORMAT_ENG);
+	}
 
 }

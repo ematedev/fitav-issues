@@ -88,8 +88,7 @@
 
 		<aui:fieldset>
 		<%
-				Calendar calendar = CalendarFactoryUtil.getCalendar();
-				String	startDate = DateUtilFormatter.getDefaultFormatter().format(assegnazioneDirettoreDiTiro.getEsfStartData());
+				String	startDate = DateUtilFormatter.getEngFormatter().format(assegnazioneDirettoreDiTiro.getEsfStartData());
 		%>
 		<aui:script>
 		$(function() {
