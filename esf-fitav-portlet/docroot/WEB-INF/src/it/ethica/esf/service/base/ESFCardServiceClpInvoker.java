@@ -24,67 +24,67 @@ import java.util.Arrays;
  */
 public class ESFCardServiceClpInvoker {
 	public ESFCardServiceClpInvoker() {
-		_methodName362 = "getBeanIdentifier";
+		_methodName366 = "getBeanIdentifier";
 
-		_methodParameterTypes362 = new String[] {  };
+		_methodParameterTypes366 = new String[] {  };
 
-		_methodName363 = "setBeanIdentifier";
+		_methodName367 = "setBeanIdentifier";
 
-		_methodParameterTypes363 = new String[] { "java.lang.String" };
+		_methodParameterTypes367 = new String[] { "java.lang.String" };
 
-		_methodName368 = "findByUserId";
+		_methodName372 = "findByUserId";
 
-		_methodParameterTypes368 = new String[] { "long" };
+		_methodParameterTypes372 = new String[] { "long" };
 
-		_methodName369 = "findCurrentByUserId";
+		_methodName373 = "findCurrentByUserId";
 
-		_methodParameterTypes369 = new String[] { "long" };
+		_methodParameterTypes373 = new String[] { "long" };
 
-		_methodName370 = "findHistoryByUserId";
+		_methodName374 = "findHistoryByUserId";
 
-		_methodParameterTypes370 = new String[] { "long" };
+		_methodParameterTypes374 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
 		Object[] arguments) throws Throwable {
-		if (_methodName362.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes362, parameterTypes)) {
+		if (_methodName366.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes366, parameterTypes)) {
 			return ESFCardServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName363.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes363, parameterTypes)) {
+		if (_methodName367.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes367, parameterTypes)) {
 			ESFCardServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName368.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes368, parameterTypes)) {
+		if (_methodName372.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes372, parameterTypes)) {
 			return ESFCardServiceUtil.findByUserId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName369.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes369, parameterTypes)) {
+		if (_methodName373.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes373, parameterTypes)) {
 			return ESFCardServiceUtil.findCurrentByUserId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName370.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes370, parameterTypes)) {
+		if (_methodName374.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes374, parameterTypes)) {
 			return ESFCardServiceUtil.findHistoryByUserId(((Long)arguments[0]).longValue());
 		}
 
 		throw new UnsupportedOperationException();
 	}
 
-	private String _methodName362;
-	private String[] _methodParameterTypes362;
-	private String _methodName363;
-	private String[] _methodParameterTypes363;
-	private String _methodName368;
-	private String[] _methodParameterTypes368;
-	private String _methodName369;
-	private String[] _methodParameterTypes369;
-	private String _methodName370;
-	private String[] _methodParameterTypes370;
+	private String _methodName366;
+	private String[] _methodParameterTypes366;
+	private String _methodName367;
+	private String[] _methodParameterTypes367;
+	private String _methodName372;
+	private String[] _methodParameterTypes372;
+	private String _methodName373;
+	private String[] _methodParameterTypes373;
+	private String _methodName374;
+	private String[] _methodParameterTypes374;
 }

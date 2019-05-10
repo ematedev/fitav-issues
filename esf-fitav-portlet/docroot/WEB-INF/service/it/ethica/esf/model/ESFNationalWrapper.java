@@ -692,7 +692,7 @@ public class ESFNationalWrapper implements ESFNational,
 	}
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFNational esfNational) {
+	public int compareTo(ESFNational esfNational) {
 		return _esfNational.compareTo(esfNational);
 	}
 
@@ -702,17 +702,17 @@ public class ESFNationalWrapper implements ESFNational,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<it.ethica.esf.model.ESFNational> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<ESFNational> toCacheModel() {
 		return _esfNational.toCacheModel();
 	}
 
 	@Override
-	public it.ethica.esf.model.ESFNational toEscapedModel() {
+	public ESFNational toEscapedModel() {
 		return new ESFNationalWrapper(_esfNational.toEscapedModel());
 	}
 
 	@Override
-	public it.ethica.esf.model.ESFNational toUnescapedModel() {
+	public ESFNational toUnescapedModel() {
 		return new ESFNationalWrapper(_esfNational.toUnescapedModel());
 	}
 

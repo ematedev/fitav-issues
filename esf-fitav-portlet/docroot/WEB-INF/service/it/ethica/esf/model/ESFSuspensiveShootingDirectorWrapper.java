@@ -790,7 +790,7 @@ public class ESFSuspensiveShootingDirectorWrapper
 
 	@Override
 	public int compareTo(
-		it.ethica.esf.model.ESFSuspensiveShootingDirector esfSuspensiveShootingDirector) {
+		ESFSuspensiveShootingDirector esfSuspensiveShootingDirector) {
 		return _esfSuspensiveShootingDirector.compareTo(esfSuspensiveShootingDirector);
 	}
 
@@ -800,17 +800,17 @@ public class ESFSuspensiveShootingDirectorWrapper
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<it.ethica.esf.model.ESFSuspensiveShootingDirector> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<ESFSuspensiveShootingDirector> toCacheModel() {
 		return _esfSuspensiveShootingDirector.toCacheModel();
 	}
 
 	@Override
-	public it.ethica.esf.model.ESFSuspensiveShootingDirector toEscapedModel() {
+	public ESFSuspensiveShootingDirector toEscapedModel() {
 		return new ESFSuspensiveShootingDirectorWrapper(_esfSuspensiveShootingDirector.toEscapedModel());
 	}
 
 	@Override
-	public it.ethica.esf.model.ESFSuspensiveShootingDirector toUnescapedModel() {
+	public ESFSuspensiveShootingDirector toUnescapedModel() {
 		return new ESFSuspensiveShootingDirectorWrapper(_esfSuspensiveShootingDirector.toUnescapedModel());
 	}
 

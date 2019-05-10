@@ -512,21 +512,9 @@
 		<reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
 		<reference package-path="com.liferay.portal" entity="Organization" />
 	</entity>
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	<entity name="ESFProvince" local-service="true" remote-service="false" json-enabled="true">
 
 		<!-- Other fields -->
-
 		<column name="idProvince" type="String" primary="true" />
 		<column name="idRegion" type="String" primary="true" />
 		<column name="idCountry" type="String" primary="true" />
@@ -2386,6 +2374,7 @@
 		<column name="esfCodeData" type="String"></column>
 		<column name="esfStartData" type="Date"></column>
 		<column name="esfEndData" type="Date"></column>
+
 		<column name="esfUserId" type="long"></column>
 		<column name="codeUser" type="long"></column>
 		<column name="shootingDirectorQualificationId" type="long"></column>

@@ -43,6 +43,9 @@
 		<property name="endDate" type="org.hibernate.type.TimestampType" />
 		<property name="CodiceTessera" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="DataTesseramento" type="org.hibernate.type.TimestampType" />
+<<<<<<< HEAD
 		<property name="CodiceFiscale" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+=======
+>>>>>>> origin/master
 	</class>
 </hibernate-mapping>

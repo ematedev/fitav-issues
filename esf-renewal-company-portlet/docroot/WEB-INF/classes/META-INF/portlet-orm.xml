@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="it.ethica.esf.renewal.model.impl.ESFRenewalCompanyModelImpl">
+		<attributes>
+			<id name="esfRenewalCompanyId" />
+			<basic name="userId" />
+			<basic name="esfOrganizationId" />
+			<basic name="cardsNumber" />
+			<basic name="year" />
+			<basic name="date">
+				<column name="DATE_" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="paymentType" />
+			<basic name="status" />
+			<basic name="amount" />
+			<basic name="info" />
+			<basic name="accountholder" />
+			<basic name="paymentDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="integrationAmount" />
+			<basic name="integrationDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="integrationType" />
+			<basic name="integrationAccountholder" />
+			<basic name="join">
+				<column name="JOIN_" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="it.ethica.esf.renewal.model.impl.VW_ESFListaIncarichiTesseraModelImpl">
+		<id-class class="it.ethica.esf.renewal.service.persistence.VW_ESFListaIncarichiTesseraPK" />
+		<attributes>
+			<id name="AnniPrecedenti" />
+			<id name="AnnoFineIncarico" />
+			<id name="AnnoInizioIncarico" />
+			<id name="AnnoCorrente" />
+			<id name="NomeRuolo" />
+			<id name="startDate">
+				<temporal>TIMESTAMP</temporal>
+			</id>
+			<id name="esfUserId" />
+			<id name="esfOrganizationId" />
+			<id name="lastName" />
+			<id name="firstName" />
+			<basic name="endDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="CodiceTessera" />
+			<basic name="DataTesseramento">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+<<<<<<< HEAD
+			<basic name="CodiceFiscale" />
+=======
+>>>>>>> origin/master
+			<transient name="esfUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="it.ethica.esf.renewal.model.impl.ESFRenewalCompanyImpl" name="ESFRenewalCompany">
+		<table name="ESFRenewalCompany" />
+		<attributes />
+	</entity>
+	<entity class="it.ethica.esf.renewal.model.impl.VW_ESFListaIncarichiTesseraImpl" name="VW_ESFListaIncarichiTessera">
+		<table name="vw_listaincarichitessera" />
+		<attributes />
+	</entity>
+</entity-mappings>

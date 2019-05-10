@@ -890,7 +890,10 @@ public class VW_ESFListaIncarichiTesseraPersistenceImpl
 		vw_esfListaIncarichiTesseraImpl.setFirstName(vw_esfListaIncarichiTessera.getFirstName());
 		vw_esfListaIncarichiTesseraImpl.setCodiceTessera(vw_esfListaIncarichiTessera.getCodiceTessera());
 		vw_esfListaIncarichiTesseraImpl.setDataTesseramento(vw_esfListaIncarichiTessera.getDataTesseramento());
+<<<<<<< HEAD
 		vw_esfListaIncarichiTesseraImpl.setCodiceFiscale(vw_esfListaIncarichiTessera.getCodiceFiscale());
+=======
+>>>>>>> origin/master
 
 		return vw_esfListaIncarichiTesseraImpl;
 	}

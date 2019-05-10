@@ -38,7 +38,11 @@ public class VW_ESFListaIncarichiTesseraCacheModel implements CacheModel<VW_ESFL
 	Externalizable {
 	@Override
 	public String toString() {
+<<<<<<< HEAD
 		StringBundler sb = new StringBundler(29);
+=======
+		StringBundler sb = new StringBundler(27);
+>>>>>>> origin/master
 
 		sb.append("{AnniPrecedenti=");
 		sb.append(AnniPrecedenti);
@@ -66,8 +70,11 @@ public class VW_ESFListaIncarichiTesseraCacheModel implements CacheModel<VW_ESFL
 		sb.append(CodiceTessera);
 		sb.append(", DataTesseramento=");
 		sb.append(DataTesseramento);
+<<<<<<< HEAD
 		sb.append(", CodiceFiscale=");
 		sb.append(CodiceFiscale);
+=======
+>>>>>>> origin/master
 		sb.append("}");
 
 		return sb.toString();
@@ -135,6 +142,7 @@ public class VW_ESFListaIncarichiTesseraCacheModel implements CacheModel<VW_ESFL
 					DataTesseramento));
 		}
 
+<<<<<<< HEAD
 		if (CodiceFiscale == null) {
 			vw_esfListaIncarichiTesseraImpl.setCodiceFiscale(StringPool.BLANK);
 		}
@@ -142,6 +150,8 @@ public class VW_ESFListaIncarichiTesseraCacheModel implements CacheModel<VW_ESFL
 			vw_esfListaIncarichiTesseraImpl.setCodiceFiscale(CodiceFiscale);
 		}
 
+=======
+>>>>>>> origin/master
 		vw_esfListaIncarichiTesseraImpl.resetOriginalValues();
 
 		return vw_esfListaIncarichiTesseraImpl;
@@ -162,7 +172,10 @@ public class VW_ESFListaIncarichiTesseraCacheModel implements CacheModel<VW_ESFL
 		firstName = objectInput.readUTF();
 		CodiceTessera = objectInput.readUTF();
 		DataTesseramento = objectInput.readLong();
+<<<<<<< HEAD
 		CodiceFiscale = objectInput.readUTF();
+=======
+>>>>>>> origin/master
 	}
 
 	@Override
@@ -207,6 +220,7 @@ public class VW_ESFListaIncarichiTesseraCacheModel implements CacheModel<VW_ESFL
 		}
 
 		objectOutput.writeLong(DataTesseramento);
+<<<<<<< HEAD
 
 		if (CodiceFiscale == null) {
 			objectOutput.writeUTF(StringPool.BLANK);
@@ -214,6 +228,8 @@ public class VW_ESFListaIncarichiTesseraCacheModel implements CacheModel<VW_ESFL
 		else {
 			objectOutput.writeUTF(CodiceFiscale);
 		}
+=======
+>>>>>>> origin/master
 	}
 
 	public int AnniPrecedenti;
@@ -229,5 +245,8 @@ public class VW_ESFListaIncarichiTesseraCacheModel implements CacheModel<VW_ESFL
 	public String firstName;
 	public String CodiceTessera;
 	public long DataTesseramento;
+<<<<<<< HEAD
 	public String CodiceFiscale;
+=======
+>>>>>>> origin/master
 }

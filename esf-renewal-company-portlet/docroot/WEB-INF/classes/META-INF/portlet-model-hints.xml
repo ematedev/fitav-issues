@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="it.ethica.esf.renewal.model.ESFRenewalCompany">
+		<field name="esfRenewalCompanyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="esfOrganizationId" type="long" />
+		<field name="cardsNumber" type="int" />
+		<field name="year" type="int" />
+		<field name="date" type="Date" />
+		<field name="paymentType" type="int" />
+		<field name="status" type="int" />
+		<field name="amount" type="double" />
+		<field name="info" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="accountholder" type="String" />
+		<field name="paymentDate" type="Date">
+			<hint name="show-time">false</hint>
+		</field>
+		<field name="integrationAmount" type="double" />
+		<field name="integrationDate" type="Date">
+			<hint name="show-time">false</hint>
+		</field>
+		<field name="integrationType" type="int" />
+		<field name="integrationAccountholder" type="String" />
+		<field name="join" type="boolean" />
+	</model>
+	<model name="it.ethica.esf.renewal.model.VW_ESFListaIncarichiTessera">
+		<field name="AnniPrecedenti" type="int" />
+		<field name="AnnoFineIncarico" type="int" />
+		<field name="AnnoInizioIncarico" type="int" />
+		<field name="AnnoCorrente" type="int" />
+		<field name="NomeRuolo" type="String" />
+		<field name="endDate" type="Date" />
+		<field name="startDate" type="Date" />
+		<field name="esfUserId" type="long" />
+		<field name="esfOrganizationId" type="long" />
+		<field name="lastName" type="String" />
+		<field name="firstName" type="String" />
+		<field name="CodiceTessera" type="String" />
+		<field name="DataTesseramento" type="Date" />
+<<<<<<< HEAD
+		<field name="CodiceFiscale" type="String" />
+=======
+>>>>>>> origin/master
+	</model>
+</model-hints>

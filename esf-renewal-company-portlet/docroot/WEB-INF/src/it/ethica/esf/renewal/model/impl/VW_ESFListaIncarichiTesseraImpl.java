@@ -30,6 +30,7 @@ public class VW_ESFListaIncarichiTesseraImpl
 	 *
 	 * Never reference this class directly. All methods that expect a v w_ e s f lista incarichi tessera model instance should use the {@link it.ethica.esf.renewal.model.VW_ESFListaIncarichiTessera} interface instead.
 	 */
+<<<<<<< HEAD
 	public VW_ESFListaIncarichiTesseraImpl() {}
 	/*
 	private int AnniPrecedenti;
@@ -142,4 +143,8 @@ public class VW_ESFListaIncarichiTesseraImpl
 	
 	
 */	
+=======
+	public VW_ESFListaIncarichiTesseraImpl() {
+	}
+>>>>>>> origin/master
 }

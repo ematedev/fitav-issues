@@ -6,6 +6,7 @@ import java.util.Date;
 public class DateUtilFormatter {
 	
 	public final static String DEFAULT_DATE_FORMAT_ITA = "dd/MM/yyyy";
+	public final static String DEFAULT_DATE_FORMAT_ENG = "MM/dd/yyyy";
 	
 	
 	/**
@@ -48,7 +49,7 @@ public class DateUtilFormatter {
 	public static SimpleDateFormat getFormatter(String pattern) {
 		return new SimpleDateFormat(pattern);
 	} 
-	
+
 	
 	/**
 	 * get a SimpleDateFormat
