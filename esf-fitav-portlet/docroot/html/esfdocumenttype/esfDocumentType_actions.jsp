@@ -14,6 +14,11 @@ String documentID = String.valueOf(esfDocumentType.getEsfDocumentTypeId());
 	<portlet:param name="esfDocumentTypeId" value="<%=documentID%>"/>	
 </portlet:renderURL>
 
+<portlet:actionURL name="deleteESFDocumentType" var="deleteESFDocumentTypeURL">
+	<portlet:param name="esfDocumentTypeId" value="<%=documentID%>" />         
+</portlet:actionURL>
+
 <liferay-ui:icon-menu>
 	<liferay-ui:icon image="edit" message="edit" url="${editESFDocumentTypeURL}" />
+	<liferay-ui:icon-delete image="delete" message="delete" url="${deleteESFDocumentTypeURL}" />
 </liferay-ui:icon-menu>

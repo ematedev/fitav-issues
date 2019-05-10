@@ -49,6 +49,8 @@ public class ESFDocumentPortlet extends MVCPortlet {
 		UploadPortletRequest uploadRequest =
 			PortalUtil.getUploadPortletRequest(request);
 
+		//TODO aggiungere la lettura dell'anagrafica dei Tipi documento per salvare anche la descrizione ?
+		
 		long esfDocumentId = ParamUtil.getLong(uploadRequest, "esfDocumentId");
 
 		String code = ParamUtil.getString(uploadRequest, "code");
@@ -63,6 +65,8 @@ public class ESFDocumentPortlet extends MVCPortlet {
 
 		Date expirationDate = ManageDate.StringToDate(eDate);
 
+		long esfDocumentTypeId = ParamUtil.getLong(uploadRequest, "esfDocumentTypeId");
+		
 		String type = ParamUtil.getString(uploadRequest, "type");
 
 		ThemeDisplay themeDisplay =
@@ -83,7 +87,7 @@ public class ESFDocumentPortlet extends MVCPortlet {
 			Date modifiedDate = new Date();
 			ESFDocumentLocalServiceUtil.updateEsfDocument(
 				esfDocumentId, groupId, companyId, userName, user.getUserId(),
-				code, releasedBy, modifiedDate, releaseDate, expirationDate,
+				code, releasedBy, modifiedDate, releaseDate, expirationDate, esfDocumentTypeId,
 				type, path, serviceContext);
 
 			SessionMessages.add(request, "esfDocumentUpdated");
@@ -102,7 +106,7 @@ public class ESFDocumentPortlet extends MVCPortlet {
 				path = uploadFile(uploadRequest, user, type);
 				ESFDocumentLocalServiceUtil.addEsfDocument(
 					groupId, companyId, userName, user.getUserId(), code,
-					releasedBy, createDate, releaseDate, expirationDate, type,
+					releasedBy, createDate, releaseDate, expirationDate, esfDocumentTypeId, type,
 					path, serviceContext);
 
 				SessionMessages.add(request, "esfDocumentUpdated");

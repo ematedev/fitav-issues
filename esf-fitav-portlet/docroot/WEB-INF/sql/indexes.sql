@@ -43,6 +43,7 @@ create index IX_3591F322 on ESFDescription (description);
 create index IX_BC099BBA on ESFDescription (isNational);
 
 create index IX_50A20689 on ESFDocument (code_);
+create index IX_39A403FF on ESFDocument (esfDocumentTypeId);
 create index IX_BCA7F2D5 on ESFDocument (esfUserId);
 create index IX_6613DE06 on ESFDocument (esfUserId, expirationDate);
 create index IX_E3752272 on ESFDocument (type_, esfUserId);

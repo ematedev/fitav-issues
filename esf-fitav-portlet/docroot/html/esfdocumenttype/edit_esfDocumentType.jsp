@@ -26,8 +26,8 @@ if(Validator.isNotNull(documentType)){
 }
 %>
 
-<liferay-ui:error key="error-document-type-persist" message="Impossibile salvare il documento" ></liferay-ui:error>
-<liferay-ui:error key="error-document-type-validate" message="Validazione dati fallita" ></liferay-ui:error>
+<liferay-ui:error key="error-document-type-persist" message="error-document-type-persist" />
+
 <aui:button-row>
 	<!-- Bottone per tornare alla vista principale della portlet (view.jsp) -->
 	<aui:button onClick="${viewURL}" value="go-back" />
@@ -39,7 +39,7 @@ if(Validator.isNotNull(documentType)){
 <aui:form action="${editESFDocumentTypeURL}" name="fm">
 	<aui:fieldset>
 		<aui:input type="text" label="document-type-desc" name="description" value="<%=descrizione%>" required="required" ></aui:input>
-		<aui:input type="text" labe="document-type-expiration" name="expirationMonthsNotice" value="<%=expirationMonthsNotice%>" required="required"></aui:input>
+		<aui:input type="text" label="expirationMonthsNotice" name="expirationMonthsNotice" value="<%=expirationMonthsNotice%>" required="required"></aui:input>
 	</aui:fieldset>
 	<aui:button-row>
 		<aui:button type="submit" value="save"></aui:button>

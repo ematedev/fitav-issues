@@ -2113,6 +2113,9 @@
 			<finder-column name="esfUserId"></finder-column>
 			<finder-column name="expirationDate"></finder-column>
 		</finder>
+		<finder name="EsfDocumentTypeId" return-type="Collection" >
+			<finder-column name="esfDocumentTypeId"></finder-column>
+		</finder>
 	</entity>
 	<entity name="ESFEventType" local-service="true" remote-service="false">
 

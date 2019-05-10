@@ -14,6 +14,10 @@
 
 package it.ethica.esf.service.impl;
 
+import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.DateUtil;
+
+import it.ethica.esf.model.ESFDocumentType;
 import it.ethica.esf.service.base.ESFDocumentTypeLocalServiceBaseImpl;
 
 /**
@@ -37,4 +41,29 @@ public class ESFDocumentTypeLocalServiceImpl
 	 *
 	 * Never reference this interface directly. Always use {@link it.ethica.esf.service.ESFDocumentTypeLocalServiceUtil} to access the e s f document type local service.
 	 */
+	
+	public ESFDocumentType saveUpdateESFDocumentType(ESFDocumentType document) throws SystemException{
+		ESFDocumentType result = null;
+		boolean isUpdate = document.getEsfDocumentTypeId()>0;
+		if(isUpdate){
+			System.out.println("Aggiornamento del documento con ID: "+document.getEsfDocumentTypeId());
+			result = this.fetchESFDocumentType(document.getEsfDocumentTypeId());
+			result.setModifiedDate(DateUtil.newDate());
+		}else{			
+			result = this.createESFDocumentType(document.getEsfDocumentTypeId());
+//			result.setPrimaryKey(null);
+			result.setCreateDate(DateUtil.newDate());
+			result.setNew(true);
+			System.out.println("Creazione del nuovo documento con ID: "+document.getEsfDocumentTypeId());
+		}
+		result.setDescription(document.getDescription());
+		result.setExpirationMonthsNotice(document.getExpirationMonthsNotice());
+//		esfDocumentTypePersistence.update(result);
+		if(isUpdate){
+			result = this.updateESFDocumentType(result);
+		}else{
+			result = this.addESFDocumentType(result);
+		}		
+		return result;
+	}
 }
