@@ -1428,7 +1428,7 @@
         </finder>
 	</entity>
 	<entity name="ESFNational" local-service="true" remote-service="false"
-		cache-enabled="true" json-enabled="true" uuid="true">
+		cache-enabled="true" json-enabled="true">
 
 		<!-- PK fields -->
 
