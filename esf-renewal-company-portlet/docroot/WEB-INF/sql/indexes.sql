@@ -1,4 +1,4 @@
-create unique index IX_3D837164 on ESFRenewalCompany (esfOrganizationId, year);
+create index IX_3D837164 on ESFRenewalCompany (esfOrganizationId, year);
 create index IX_66A37D8D on ESFRenewalCompany (paymentType);
 create index IX_AFC5DF73 on ESFRenewalCompany (paymentType, status);
 create index IX_A5B318BE on ESFRenewalCompany (paymentType, year);

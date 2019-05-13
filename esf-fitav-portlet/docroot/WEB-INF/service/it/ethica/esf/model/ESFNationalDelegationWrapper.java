@@ -757,7 +757,8 @@ public class ESFNationalDelegationWrapper implements ESFNationalDelegation,
 	}
 
 	@Override
-	public int compareTo(ESFNationalDelegation esfNationalDelegation) {
+	public int compareTo(
+		it.ethica.esf.model.ESFNationalDelegation esfNationalDelegation) {
 		return _esfNationalDelegation.compareTo(esfNationalDelegation);
 	}
 
@@ -767,17 +768,17 @@ public class ESFNationalDelegationWrapper implements ESFNationalDelegation,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<ESFNationalDelegation> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<it.ethica.esf.model.ESFNationalDelegation> toCacheModel() {
 		return _esfNationalDelegation.toCacheModel();
 	}
 
 	@Override
-	public ESFNationalDelegation toEscapedModel() {
+	public it.ethica.esf.model.ESFNationalDelegation toEscapedModel() {
 		return new ESFNationalDelegationWrapper(_esfNationalDelegation.toEscapedModel());
 	}
 
 	@Override
-	public ESFNationalDelegation toUnescapedModel() {
+	public it.ethica.esf.model.ESFNationalDelegation toUnescapedModel() {
 		return new ESFNationalDelegationWrapper(_esfNationalDelegation.toUnescapedModel());
 	}
 

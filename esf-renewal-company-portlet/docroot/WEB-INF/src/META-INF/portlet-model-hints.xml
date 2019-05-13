@@ -40,9 +40,6 @@
 		<field name="firstName" type="String" />
 		<field name="CodiceTessera" type="String" />
 		<field name="DataTesseramento" type="Date" />
-<<<<<<< HEAD
 		<field name="CodiceFiscale" type="String" />
-=======
->>>>>>> origin/master
 	</model>
 </model-hints>

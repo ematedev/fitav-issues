@@ -63,10 +63,7 @@
 			<basic name="DataTesseramento">
 				<temporal>TIMESTAMP</temporal>
 			</basic>
-<<<<<<< HEAD
 			<basic name="CodiceFiscale" />
-=======
->>>>>>> origin/master
 			<transient name="esfUserUuid" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />

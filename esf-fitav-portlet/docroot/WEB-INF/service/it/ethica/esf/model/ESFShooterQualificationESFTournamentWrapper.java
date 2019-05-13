@@ -254,7 +254,7 @@ public class ESFShooterQualificationESFTournamentWrapper
 
 	@Override
 	public int compareTo(
-		ESFShooterQualificationESFTournament esfShooterQualificationESFTournament) {
+		it.ethica.esf.model.ESFShooterQualificationESFTournament esfShooterQualificationESFTournament) {
 		return _esfShooterQualificationESFTournament.compareTo(esfShooterQualificationESFTournament);
 	}
 
@@ -264,17 +264,17 @@ public class ESFShooterQualificationESFTournamentWrapper
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<ESFShooterQualificationESFTournament> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<it.ethica.esf.model.ESFShooterQualificationESFTournament> toCacheModel() {
 		return _esfShooterQualificationESFTournament.toCacheModel();
 	}
 
 	@Override
-	public ESFShooterQualificationESFTournament toEscapedModel() {
+	public it.ethica.esf.model.ESFShooterQualificationESFTournament toEscapedModel() {
 		return new ESFShooterQualificationESFTournamentWrapper(_esfShooterQualificationESFTournament.toEscapedModel());
 	}
 
 	@Override
-	public ESFShooterQualificationESFTournament toUnescapedModel() {
+	public it.ethica.esf.model.ESFShooterQualificationESFTournament toUnescapedModel() {
 		return new ESFShooterQualificationESFTournamentWrapper(_esfShooterQualificationESFTournament.toUnescapedModel());
 	}
 

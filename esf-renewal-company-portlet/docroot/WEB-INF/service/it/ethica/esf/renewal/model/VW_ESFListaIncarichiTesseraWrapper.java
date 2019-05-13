@@ -65,10 +65,7 @@ public class VW_ESFListaIncarichiTesseraWrapper
 		attributes.put("firstName", getFirstName());
 		attributes.put("CodiceTessera", getCodiceTessera());
 		attributes.put("DataTesseramento", getDataTesseramento());
-<<<<<<< HEAD
 		attributes.put("CodiceFiscale", getCodiceFiscale());
-=======
->>>>>>> origin/master
 
 		return attributes;
 	}
@@ -153,15 +150,12 @@ public class VW_ESFListaIncarichiTesseraWrapper
 		if (DataTesseramento != null) {
 			setDataTesseramento(DataTesseramento);
 		}
-<<<<<<< HEAD
 
 		String CodiceFiscale = (String)attributes.get("CodiceFiscale");
 
 		if (CodiceFiscale != null) {
 			setCodiceFiscale(CodiceFiscale);
 		}
-=======
->>>>>>> origin/master
 	}
 
 	/**
@@ -467,7 +461,6 @@ public class VW_ESFListaIncarichiTesseraWrapper
 		_vw_esfListaIncarichiTessera.setDataTesseramento(DataTesseramento);
 	}
 
-<<<<<<< HEAD
 	/**
 	* Returns the codice fiscale of this v w_ e s f lista incarichi tessera.
 	*
@@ -488,8 +481,6 @@ public class VW_ESFListaIncarichiTesseraWrapper
 		_vw_esfListaIncarichiTessera.setCodiceFiscale(CodiceFiscale);
 	}
 
-=======
->>>>>>> origin/master
 	@Override
 	public boolean isNew() {
 		return _vw_esfListaIncarichiTessera.isNew();

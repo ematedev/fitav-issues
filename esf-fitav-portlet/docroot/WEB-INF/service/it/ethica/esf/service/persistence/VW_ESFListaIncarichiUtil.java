@@ -250,12 +250,8 @@ public class VW_ESFListaIncarichiUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.VW_ESFListaIncarichi[] findByorganizzazione_PrevAndNext(
-<<<<<<< HEAD
 		it.ethica.esf.service.persistence.VW_ESFListaIncarichiPK vw_esfListaIncarichiPK,
 		long esfOrganizationId,
-=======
-		VW_ESFListaIncarichiPK vw_esfListaIncarichiPK, long esfOrganizationId,
->>>>>>> origin/master
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchVW_ESFListaIncarichiException {
@@ -314,11 +310,7 @@ public class VW_ESFListaIncarichiUtil {
 	* @return the new v w_ e s f lista incarichi
 	*/
 	public static it.ethica.esf.model.VW_ESFListaIncarichi create(
-<<<<<<< HEAD
 		it.ethica.esf.service.persistence.VW_ESFListaIncarichiPK vw_esfListaIncarichiPK) {
-=======
-		VW_ESFListaIncarichiPK vw_esfListaIncarichiPK) {
->>>>>>> origin/master
 		return getPersistence().create(vw_esfListaIncarichiPK);
 	}
 
@@ -331,11 +323,7 @@ public class VW_ESFListaIncarichiUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.VW_ESFListaIncarichi remove(
-<<<<<<< HEAD
 		it.ethica.esf.service.persistence.VW_ESFListaIncarichiPK vw_esfListaIncarichiPK)
-=======
-		VW_ESFListaIncarichiPK vw_esfListaIncarichiPK)
->>>>>>> origin/master
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchVW_ESFListaIncarichiException {
 		return getPersistence().remove(vw_esfListaIncarichiPK);
@@ -356,11 +344,7 @@ public class VW_ESFListaIncarichiUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.VW_ESFListaIncarichi findByPrimaryKey(
-<<<<<<< HEAD
 		it.ethica.esf.service.persistence.VW_ESFListaIncarichiPK vw_esfListaIncarichiPK)
-=======
-		VW_ESFListaIncarichiPK vw_esfListaIncarichiPK)
->>>>>>> origin/master
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchVW_ESFListaIncarichiException {
 		return getPersistence().findByPrimaryKey(vw_esfListaIncarichiPK);
@@ -374,11 +358,7 @@ public class VW_ESFListaIncarichiUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.VW_ESFListaIncarichi fetchByPrimaryKey(
-<<<<<<< HEAD
 		it.ethica.esf.service.persistence.VW_ESFListaIncarichiPK vw_esfListaIncarichiPK)
-=======
-		VW_ESFListaIncarichiPK vw_esfListaIncarichiPK)
->>>>>>> origin/master
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence().fetchByPrimaryKey(vw_esfListaIncarichiPK);
 	}

@@ -118,11 +118,7 @@ public interface VW_DatiDrettoreTiroPersistence extends BasePersistence<VW_DatiD
 	* @return the new v w_ dati drettore tiro
 	*/
 	public it.ethica.esf.model.VW_DatiDrettoreTiro create(
-<<<<<<< HEAD
 		it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPK vw_DatiDrettoreTiroPK);
-=======
-		VW_DatiDrettoreTiroPK vw_DatiDrettoreTiroPK);
->>>>>>> origin/master
 
 	/**
 	* Removes the v w_ dati drettore tiro with the primary key from the database. Also notifies the appropriate model listeners.
@@ -133,11 +129,7 @@ public interface VW_DatiDrettoreTiroPersistence extends BasePersistence<VW_DatiD
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.VW_DatiDrettoreTiro remove(
-<<<<<<< HEAD
 		it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPK vw_DatiDrettoreTiroPK)
-=======
-		VW_DatiDrettoreTiroPK vw_DatiDrettoreTiroPK)
->>>>>>> origin/master
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchVW_DatiDrettoreTiroException;
 
@@ -154,11 +146,7 @@ public interface VW_DatiDrettoreTiroPersistence extends BasePersistence<VW_DatiD
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.VW_DatiDrettoreTiro findByPrimaryKey(
-<<<<<<< HEAD
 		it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPK vw_DatiDrettoreTiroPK)
-=======
-		VW_DatiDrettoreTiroPK vw_DatiDrettoreTiroPK)
->>>>>>> origin/master
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchVW_DatiDrettoreTiroException;
 
@@ -170,11 +158,7 @@ public interface VW_DatiDrettoreTiroPersistence extends BasePersistence<VW_DatiD
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.VW_DatiDrettoreTiro fetchByPrimaryKey(
-<<<<<<< HEAD
 		it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPK vw_DatiDrettoreTiroPK)
-=======
-		VW_DatiDrettoreTiroPK vw_DatiDrettoreTiroPK)
->>>>>>> origin/master
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**

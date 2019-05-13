@@ -212,11 +212,7 @@ public class VW_DatiDrettoreTiroUtil {
 	* @return the new v w_ dati drettore tiro
 	*/
 	public static it.ethica.esf.model.VW_DatiDrettoreTiro create(
-<<<<<<< HEAD
 		it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPK vw_DatiDrettoreTiroPK) {
-=======
-		VW_DatiDrettoreTiroPK vw_DatiDrettoreTiroPK) {
->>>>>>> origin/master
 		return getPersistence().create(vw_DatiDrettoreTiroPK);
 	}
 
@@ -229,11 +225,7 @@ public class VW_DatiDrettoreTiroUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.VW_DatiDrettoreTiro remove(
-<<<<<<< HEAD
 		it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPK vw_DatiDrettoreTiroPK)
-=======
-		VW_DatiDrettoreTiroPK vw_DatiDrettoreTiroPK)
->>>>>>> origin/master
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchVW_DatiDrettoreTiroException {
 		return getPersistence().remove(vw_DatiDrettoreTiroPK);
@@ -254,11 +246,7 @@ public class VW_DatiDrettoreTiroUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.VW_DatiDrettoreTiro findByPrimaryKey(
-<<<<<<< HEAD
 		it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPK vw_DatiDrettoreTiroPK)
-=======
-		VW_DatiDrettoreTiroPK vw_DatiDrettoreTiroPK)
->>>>>>> origin/master
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchVW_DatiDrettoreTiroException {
 		return getPersistence().findByPrimaryKey(vw_DatiDrettoreTiroPK);
@@ -272,11 +260,7 @@ public class VW_DatiDrettoreTiroUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.VW_DatiDrettoreTiro fetchByPrimaryKey(
-<<<<<<< HEAD
 		it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPK vw_DatiDrettoreTiroPK)
-=======
-		VW_DatiDrettoreTiroPK vw_DatiDrettoreTiroPK)
->>>>>>> origin/master
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence().fetchByPrimaryKey(vw_DatiDrettoreTiroPK);
 	}
