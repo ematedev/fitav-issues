@@ -162,7 +162,6 @@
 			<aui:input name="Lastname" label="lastName" type="text" value="<%=incaricoConsigliereCorrente.getLastName() %>" disabled="true" inlineField="true"></aui:input>
 			<aui:input name="Dal" label="startDate" type="text" value="<%= DateUtilFormatter.formatDate( incaricoConsigliereCorrente.getStartDate() ) %>" disabled="true" inlineField="true"></aui:input>
 			<aui:input name="al" label="endDate" type="text" value='<%= incaricoConsigliereCorrente.getEndDate() != null ? DateUtilFormatter.formatDate(incaricoConsigliereCorrente.getEndDate() ) : "" %>' disabled="true" inlineField="true"></aui:input>
-			<aui:input name="al" label="endDate" type="text" value="<%=  DateUtilFormatter.formatDate(incaricoConsigliereCorrente.getEndDate() ) %>" disabled="true" inlineField="true"></aui:input>
 
 	</div>
 	<% } %>
