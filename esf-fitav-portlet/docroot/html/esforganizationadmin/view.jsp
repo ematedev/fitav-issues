@@ -54,7 +54,7 @@
 		</c:if>
 
 
-		<liferay-ui:tabs names="<%=tabNames%>" url="<%=portletURL.toString()%>" >
+		<liferay-ui:tabs names="<%=tabNames%>" url="<%=portletURL.toString()%>">
 			<c:if test='<%=tabs.equals("Abilitati")%>'>
 				<%@include file="/html/esforganizationadmin/tabs/enable.jsp"%>
 			</c:if>
