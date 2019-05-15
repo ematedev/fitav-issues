@@ -1,133 +1,123 @@
+<%@page import="it.ethica.esf.util.DateUtilFormatter"%>
 <%@page import="it.ethica.esf.service.ESFMatchTypeLocalServiceUtil"%>
 <%@page import="it.ethica.esf.model.impl.ESFMatchTypeImpl"%>
 <%@page import="it.ethica.esf.model.ESFMatchType"%>
-<%@page import="it.ethica.esf.service.ESFInstructsShootingDirectorLocalServiceUtil"%>
-<%@page import="it.ethica.esf.model.impl.ESFInstructsShootingDirectorImpl"%>
+<%@page
+	import="it.ethica.esf.service.ESFInstructsShootingDirectorLocalServiceUtil"%>
+<%@page
+	import="it.ethica.esf.model.impl.ESFInstructsShootingDirectorImpl"%>
 <%@page import="it.ethica.esf.model.ESFInstructsShootingDirector"%>
 <%@page import="it.ethica.esf.model.ESFSuspensiveCode"%>
 <%@page import="it.ethica.esf.model.impl.ESFSuspensiveCodeImpl"%>
-<%@page import="it.ethica.esf.service.ESFSuspensiveShootingDirectorLocalServiceUtil"%>
+<%@page
+	import="it.ethica.esf.service.ESFSuspensiveShootingDirectorLocalServiceUtil"%>
 <%@page import="it.ethica.esf.model.ESFSuspensiveShootingDirector"%>
 <%@page import="it.ethica.esf.service.ESFSuspensiveCodeLocalServiceUtil"%>
 <%@page import="it.ethica.esf.util.ManageDate"%>
 <%@page import="com.liferay.portal.kernel.util.CalendarFactoryUtil"%>
 <%@page import="java.util.Calendar"%>
 <%@page import="com.liferay.portal.kernel.dao.search.SearchContainer"%>
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@include file="init.jsp"%>
 
 <%
-long esfUserId = ParamUtil.getLong(request, "esfUserId");
-Calendar calendar = CalendarFactoryUtil.getCalendar();
-String currDate = "";
-String shDrName = "";
-currDate = ManageDate.CalendarToString(calendar);
-// List<ESFShootingDirectorQualification> shDts = new ArrayList<ESFShootingDirectorQualification>();
-// List<ESFSportType> sportTypes = new ArrayList<ESFSportType>();
-ESFUser shDr = new ESFUserImpl();
-shDr = ESFUserLocalServiceUtil.fetchESFUser(esfUserId);
-if(Validator.isNotNull(shDr)){
-	shDrName = shDr.getFirstName() + " " + shDr.getLastName();
-	
-}
+	long esfUserId = ParamUtil.getLong(request, "esfUserId");
+	String currDate = "";
+	String shDrName = "";
+	ESFUser shDr = ESFUserLocalServiceUtil.fetchESFUser(esfUserId);
 
+	// Ottieni Id assegnazione dal parametro ricevuto
+	long idAssegnazioneDirettoreDiTiro = ParamUtil.getLong(request, "esfShootingDirectorId");
 
+	//Ottieni le informazioni relative all'assegnazione con id uguale esfShootingDirectorId del direttore di tiro
+	ESFShootingDirector assegnazioneDirettoreDiTiro = ESFShootingDirectorLocalServiceUtil
+			.fetchESFShootingDirector(idAssegnazioneDirettoreDiTiro);
 
-long esfShootingDirectorId = ParamUtil.getLong(request, "esfShootingDirectorId");
-<<<<<<< HEAD
-//ESFShootingDirector direttoreDiTiro = ESFShootingDirectorLocalServiceUtil.fetchESFShootingDirector(esfShootingDirectorId);
-=======
-ESFShootingDirector direttoreDiTiro = ESFShootingDirectorLocalServiceUtil.fetchESFShootingDirector(esfShootingDirectorId);
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
+	String qualifica = ESFShootingDirectorQualificationLocalServiceUtil
+			.fetchESFShootingDirectorQualification(
+					assegnazioneDirettoreDiTiro.getShootingDirectorQualificationId())
+			.getEsfShootingDirectorQualificationDesc();
+	String sportTypeName = ESFSportTypeLocalServiceUtil
+			.fetchESFSportType(assegnazioneDirettoreDiTiro.getSportTypeId()).getName();
+	List<ESFCard> cardstest = new ArrayList<ESFCard>();
+	String cardCode = "";
+	try {
+		cardstest = ESFCardLocalServiceUtil.findActualUserCards(assegnazioneDirettoreDiTiro.getEsfUserId());
 
-// shDts = ESFShootingDirectorQualificationLocalServiceUtil.getESFShootingDirectorQualifications(QueryUtil.ALL_POS, QueryUtil.ALL_POS);
-// sportTypes = ESFSportTypeLocalServiceUtil.getAllESFSportTypes();
+		if (Validator.isNotNull(cardstest) && 0 < cardstest.size()) {
+			cardCode = cardstest.get(0).getCode();
+		}
+
+	} catch (Exception e) {
+
+	}
+	if (Validator
+			.isNotNull(ESFShootingDirectorQualificationLocalServiceUtil.fetchESFShootingDirectorQualification(
+					assegnazioneDirettoreDiTiro.getShootingDirectorQualificationId()))) {
+		qualifica = ESFShootingDirectorQualificationLocalServiceUtil
+				.fetchESFShootingDirectorQualification(
+						assegnazioneDirettoreDiTiro.getShootingDirectorQualificationId())
+				.getEsfShootingDirectorQualificationDesc();
+	}
+	if (Validator.isNotNull(
+			ESFSportTypeLocalServiceUtil.fetchESFSportType(assegnazioneDirettoreDiTiro.getSportTypeId()))) {
+		sportTypeName = ESFSportTypeLocalServiceUtil
+				.fetchESFSportType(assegnazioneDirettoreDiTiro.getSportTypeId()).getName();
+	}
 %>
 
 <portlet:renderURL var="backURL">
 	<portlet:param name="mvcPath" value='<%=templatePath + "view.jsp"%>' />
 </portlet:renderURL>
 
-<<<<<<< HEAD
-<portlet:actionURL name="editESFShootingDirector" var="editESFShootingDirectorURL">
+
+<portlet:actionURL name="updateShooterDirector"
+	var="updateShooterDirectorURL">
 	<portlet:param name="esfStartData"
-		value="<%=String.valueOf(esfShootingDirectorId)%>" />
-=======
-<portlet:actionURL name="updateShooterDirector" var="updateShooterDirectorURL">
-	<portlet:param name="esfStartData"
-		value="<%=String.valueOf(esfShootingDirectorId)%>" />
+		value="<%=sdf.format(assegnazioneDirettoreDiTiro.getEsfStartData())%>" />
+	<portlet:param name="esfShootingDirectorId"
+		value="<%=String.valueOf(idAssegnazioneDirettoreDiTiro)%>" />
 	<portlet:param name="mvcPath"
-		value='<%=templatePath + "shootingDirectorInfo.jsp"%>'/>
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
+		value='<%=templatePath + "view.jsp"%>' />
+
 </portlet:actionURL>
 
-<liferay-ui:search-container emptyResultsMessage="no-result" curParam="ShootingDirector">
+<aui:form action="<%=updateShooterDirectorURL%>"
+	name="<portlet:namespace />fm">
 
-	<liferay-ui:search-container-results
-	
-		results="<%=ESFShootingDirectorLocalServiceUtil.findByUserId(esfUserId, searchContainer.getStart(), searchContainer.getEnd())%>"
-		total="<%=ESFShootingDirectorLocalServiceUtil.countByUserId(esfUserId)%>"/>
-	
-	
-	
-		<liferay-ui:search-container-row
-				className="it.ethica.esf.model.ESFShootingDirector" modelVar="shDt">
-		
+		<aui:fieldset>
 		<%
-			ESFUser shDtInfo = new ESFUserImpl();
-			ESFCard userCard= null;
-			List<ESFCard> cardstest = new ArrayList<ESFCard>();
-			String name = "";
-			String cardCode = "";
-			String qualification ="";
-			String stName= "";
-			
-			if(Validator.isNotNull(ESFUserLocalServiceUtil.fetchESFUser(shDt.getEsfUserId()))){
-				name = ESFUserLocalServiceUtil.fetchESFUser(shDt.getEsfUserId()).getFirstName();
-				
-				name = name + " " + ESFUserLocalServiceUtil.fetchESFUser(shDt.getEsfUserId()).getLastName();
-				
-				try{
-					cardstest = ESFCardLocalServiceUtil.findActualUserCards(shDt.getEsfUserId());
-					
-					if(Validator.isNotNull(cardstest) && 0 < cardstest.size()){
-						cardCode = cardstest.get(0).getCode();
-					}
-					
-				}
-				catch(Exception e){
-					
-				}
-			}
-			
-			if(Validator.isNotNull(ESFShootingDirectorQualificationLocalServiceUtil.fetchESFShootingDirectorQualification(shDt.getShootingDirectorQualificationId()))){
-				qualification = ESFShootingDirectorQualificationLocalServiceUtil.
-						fetchESFShootingDirectorQualification(shDt.getShootingDirectorQualificationId()).getEsfShootingDirectorQualificationDesc();
-			}
-			
-			if(Validator.isNotNull(ESFSportTypeLocalServiceUtil.fetchESFSportType(shDt.getSportTypeId()))){
-				stName = ESFSportTypeLocalServiceUtil.fetchESFSportType(shDt.getSportTypeId()).getName();
-			}
-			
+				String	startDate = DateUtilFormatter.getEngFormatter().format(assegnazioneDirettoreDiTiro.getEsfStartData());
 		%>
-		
-		<liferay-ui:search-container-column-text name="name" value="<%=name %>" />
-		<liferay-ui:search-container-column-text name="card" value="<%=cardCode %>"/>
-		<liferay-ui:search-container-column-text name="region-code" value="<%=shDt.getRegionId() %>" />
-		<liferay-ui:search-container-column-text name="qualification" value="<%=qualification %>" />
-		<liferay-ui:search-container-column-text name="sport-type" value="<%=stName %>" />
-		<aui:input name="esf-date-assign" value="<%=sdf.format(shDt.getEsfStartData()) %>">
-			<aui:validator name="required"/> 
-		</aui:input>
-		</liferay-ui:search-container-row>
-	<liferay-ui:search-iterator />
-</liferay-ui:search-container>
+		<aui:script>
+		$(function() {
+			$("#<portlet:namespace/>startDate").datepicker();
+			
+			$("#<portlet:namespace/>startDate").datepicker("setDate", '<%= startDate %>');
+			$("#<portlet:namespace/>startDate").datepicker("option", "dateFormat", 'dd/mm/yy');
+			
+		});
+		</aui:script>
 
-<<<<<<< HEAD
-<aui:button onClick='<%=editESFShootingDirectorURL.toString() %>' value="Edit" inlineField="true"/>
-=======
-<aui:button onClick='<%=updateShooterDirectorURL.toString() %>' value="Edit" inlineField="true"/>
->>>>>>> 26da9bbffb059331ed6f543a72e339a809eb5ce6
+	<aui:input name="name" value="<%=shDr.getFirstName()%>" readonly="true"/>
+	<aui:input name="Cognome" value="<%=shDr.getLastName()%>" readonly="true"/>
+	<aui:input name="card" value="<%=cardCode%>" readonly="true"/>
+	<aui:input name="region-code"
+		value="<%=assegnazioneDirettoreDiTiro.getRegionId()%>" readonly="true"/>
+	<aui:input name="qualification" value="<%=qualifica%>" readonly="true"/>
+	<aui:input name="sport-type" value="<%=sportTypeName%>" readonly="true"/>
+	<aui:input type="text" name="startDate">
+		<aui:validator name="required" />
+	</aui:input>
 
-<aui:button onClick='<%=backURL.toString() %>' value="back" inlineField="true"/>
+
+	<aui:button type="submit" onClick='<%=updateShooterDirectorURL.toString() %>'
+		value="Edit" inlineField="true" />
 
 
+	<aui:button onClick='<%=backURL.toString() %>' value="back"
+		inlineField="true" />
+
+</aui:fieldset>
+</aui:form>
