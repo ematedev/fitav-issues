@@ -23,19 +23,10 @@ public class ESFNormalMatchPermission {
 	public static boolean contains(PermissionChecker permissionChecker, long esfMatchId, String actionId)
 			throws PortalException, SystemException {
 
-		/** ID 34 2019
-		 * // TODO GRINALDI - Se non hai creato la Gara il matchID = 0
-		 * 	altrimenti non e' possibile aggiungere tipo e descrizione
-		 * durante la creazione della GARA
-		 */
-		boolean hasPermission = ( esfMatchId == 0 );
-		
-		if ( ! hasPermission ) {
-			ESFMatch esfMatch = ESFMatchLocalServiceUtil.fetchESFMatch(esfMatchId);
-	
-			hasPermission = permissionChecker.hasPermission(esfMatch.getGroupId(), RESOURCE_NAME,
-					esfMatch.getEsfMatchId(), actionId);
-			}
-		return hasPermission;
+		ESFMatch esfMatch = ESFMatchLocalServiceUtil.fetchESFMatch(esfMatchId);
+
+		return permissionChecker.hasPermission(esfMatch.getGroupId(), RESOURCE_NAME,
+				esfMatch.getEsfMatchId(), actionId);
+
 	}
 }
