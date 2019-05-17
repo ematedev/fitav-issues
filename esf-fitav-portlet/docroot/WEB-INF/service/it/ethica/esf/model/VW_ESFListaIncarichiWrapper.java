@@ -463,8 +463,7 @@ public class VW_ESFListaIncarichiWrapper implements VW_ESFListaIncarichi,
 	}
 
 	@Override
-	public int compareTo(
-		it.ethica.esf.model.VW_ESFListaIncarichi vw_esfListaIncarichi) {
+	public int compareTo(VW_ESFListaIncarichi vw_esfListaIncarichi) {
 		return _vw_esfListaIncarichi.compareTo(vw_esfListaIncarichi);
 	}
 
@@ -474,17 +473,17 @@ public class VW_ESFListaIncarichiWrapper implements VW_ESFListaIncarichi,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<it.ethica.esf.model.VW_ESFListaIncarichi> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<VW_ESFListaIncarichi> toCacheModel() {
 		return _vw_esfListaIncarichi.toCacheModel();
 	}
 
 	@Override
-	public it.ethica.esf.model.VW_ESFListaIncarichi toEscapedModel() {
+	public VW_ESFListaIncarichi toEscapedModel() {
 		return new VW_ESFListaIncarichiWrapper(_vw_esfListaIncarichi.toEscapedModel());
 	}
 
 	@Override
-	public it.ethica.esf.model.VW_ESFListaIncarichi toUnescapedModel() {
+	public VW_ESFListaIncarichi toUnescapedModel() {
 		return new VW_ESFListaIncarichiWrapper(_vw_esfListaIncarichi.toUnescapedModel());
 	}
 

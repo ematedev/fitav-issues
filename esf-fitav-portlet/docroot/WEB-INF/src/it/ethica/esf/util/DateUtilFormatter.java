@@ -4,21 +4,34 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DateUtilFormatter {
-	
-	private final static String DEFAULT_DATE_FORMAT_ITA = "dd/MM/yyyy";
-	
-	public static String formatDate( String format, Date date ) {
-		
+
+	public final static String DEFAULT_DATE_FORMAT_ITA = "dd/MM/yyyy";
+	public final static String DEFAULT_DATE_FORMAT_ENG = "MM/dd/yyyy";
+
+	public static String formatDate(String format, Date date) {
+
 		String formattedDate = "";
-		
-		if ( date != null ) {
+
+		if (date != null) {
 			formattedDate = new SimpleDateFormat(format).format(date);
 		}
 		return formattedDate;
 	}
-	
-	public static String formatDate ( Date date ) {
+
+	public static String formatDate(Date date) {
 		return formatDate(DEFAULT_DATE_FORMAT_ITA, date);
+	}
+
+	public static SimpleDateFormat getFormatter(String pattern) {
+
+		return new SimpleDateFormat(pattern);
+	}
+
+	public static SimpleDateFormat getDefaultFormatter() {
+		return getFormatter(DEFAULT_DATE_FORMAT_ITA);
+	}
+	public static SimpleDateFormat getEngFormatter() {
+		return getFormatter(DEFAULT_DATE_FORMAT_ENG);
 	}
 
 }

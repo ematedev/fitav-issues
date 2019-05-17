@@ -274,7 +274,7 @@ public class ESFCodeOrgWrapper implements ESFCodeOrg, ModelWrapper<ESFCodeOrg> {
 	}
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFCodeOrg esfCodeOrg) {
+	public int compareTo(ESFCodeOrg esfCodeOrg) {
 		return _esfCodeOrg.compareTo(esfCodeOrg);
 	}
 
@@ -284,17 +284,17 @@ public class ESFCodeOrgWrapper implements ESFCodeOrg, ModelWrapper<ESFCodeOrg> {
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<it.ethica.esf.model.ESFCodeOrg> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<ESFCodeOrg> toCacheModel() {
 		return _esfCodeOrg.toCacheModel();
 	}
 
 	@Override
-	public it.ethica.esf.model.ESFCodeOrg toEscapedModel() {
+	public ESFCodeOrg toEscapedModel() {
 		return new ESFCodeOrgWrapper(_esfCodeOrg.toEscapedModel());
 	}
 
 	@Override
-	public it.ethica.esf.model.ESFCodeOrg toUnescapedModel() {
+	public ESFCodeOrg toUnescapedModel() {
 		return new ESFCodeOrgWrapper(_esfCodeOrg.toUnescapedModel());
 	}
 
