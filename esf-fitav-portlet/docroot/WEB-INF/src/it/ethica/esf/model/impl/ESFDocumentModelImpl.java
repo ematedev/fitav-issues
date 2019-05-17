@@ -97,10 +97,6 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 				"value.object.column.bitmask.enabled.it.ethica.esf.model.ESFDocument"),
 			true);
 	public static long CODE_COLUMN_BITMASK = 1L;
-	public static long ESFUSERID_COLUMN_BITMASK = 2L;
-	public static long EXPIRATIONDATE_COLUMN_BITMASK = 4L;
-	public static long TYPE_COLUMN_BITMASK = 8L;
-	public static long ESFDOCUMENTID_COLUMN_BITMASK = 16L;
 	public static long ESFDOCUMENTTYPEID_COLUMN_BITMASK = 2L;
 	public static long ESFUSERID_COLUMN_BITMASK = 4L;
 	public static long EXPIRATIONDATE_COLUMN_BITMASK = 8L;
@@ -496,11 +492,6 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		return _esfDocumentTypeId;
 	}
 
-	@Override
-	public void setEsfDocumentTypeId(long esfDocumentTypeId) {
-		_esfDocumentTypeId = esfDocumentTypeId;
-	}
-
 	@JSON
 	@Override
 	public long getEsfPublicAuthorityId() {
@@ -510,12 +501,6 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 	@Override
 	public void setEsfPublicAuthorityId(long esfPublicAuthorityId) {
 		_esfPublicAuthorityId = esfPublicAuthorityId;
-	}
-
-	@JSON
-	@Override
-	public long getEsfDocumentTypeId() {
-		return _esfDocumentTypeId;
 	}
 
 	@Override
@@ -533,16 +518,6 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 
 	public long getOriginalEsfDocumentTypeId() {
 		return _originalEsfDocumentTypeId;
-	}
-
-	@Override
-	public long getEsfPublicAuthorityId() {
-		return _esfPublicAuthorityId;
-	}
-
-	@Override
-	public void setEsfPublicAuthorityId(long esfPublicAuthorityId) {
-		_esfPublicAuthorityId = esfPublicAuthorityId;
 	}
 
 	@Override
