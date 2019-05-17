@@ -38,7 +38,7 @@ public class VW_ESFListaIncarichiTesseraCacheModel implements CacheModel<VW_ESFL
 	Externalizable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(27);
+		StringBundler sb = new StringBundler(29);
 
 		sb.append("{AnniPrecedenti=");
 		sb.append(AnniPrecedenti);
@@ -66,6 +66,8 @@ public class VW_ESFListaIncarichiTesseraCacheModel implements CacheModel<VW_ESFL
 		sb.append(CodiceTessera);
 		sb.append(", DataTesseramento=");
 		sb.append(DataTesseramento);
+		sb.append(", CodiceFiscale=");
+		sb.append(CodiceFiscale);
 		sb.append("}");
 
 		return sb.toString();
@@ -133,6 +135,13 @@ public class VW_ESFListaIncarichiTesseraCacheModel implements CacheModel<VW_ESFL
 					DataTesseramento));
 		}
 
+		if (CodiceFiscale == null) {
+			vw_esfListaIncarichiTesseraImpl.setCodiceFiscale(StringPool.BLANK);
+		}
+		else {
+			vw_esfListaIncarichiTesseraImpl.setCodiceFiscale(CodiceFiscale);
+		}
+
 		vw_esfListaIncarichiTesseraImpl.resetOriginalValues();
 
 		return vw_esfListaIncarichiTesseraImpl;
@@ -153,6 +162,7 @@ public class VW_ESFListaIncarichiTesseraCacheModel implements CacheModel<VW_ESFL
 		firstName = objectInput.readUTF();
 		CodiceTessera = objectInput.readUTF();
 		DataTesseramento = objectInput.readLong();
+		CodiceFiscale = objectInput.readUTF();
 	}
 
 	@Override
@@ -197,6 +207,13 @@ public class VW_ESFListaIncarichiTesseraCacheModel implements CacheModel<VW_ESFL
 		}
 
 		objectOutput.writeLong(DataTesseramento);
+
+		if (CodiceFiscale == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(CodiceFiscale);
+		}
 	}
 
 	public int AnniPrecedenti;
@@ -212,4 +229,5 @@ public class VW_ESFListaIncarichiTesseraCacheModel implements CacheModel<VW_ESFL
 	public String firstName;
 	public String CodiceTessera;
 	public long DataTesseramento;
+	public String CodiceFiscale;
 }

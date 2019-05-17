@@ -46,6 +46,7 @@ public class VW_ESFListaIncarichiTesseraSoap implements Serializable {
 		soapModel.setFirstName(model.getFirstName());
 		soapModel.setCodiceTessera(model.getCodiceTessera());
 		soapModel.setDataTesseramento(model.getDataTesseramento());
+		soapModel.setCodiceFiscale(model.getCodiceFiscale());
 
 		return soapModel;
 	}
@@ -216,6 +217,14 @@ public class VW_ESFListaIncarichiTesseraSoap implements Serializable {
 		_DataTesseramento = DataTesseramento;
 	}
 
+	public String getCodiceFiscale() {
+		return _CodiceFiscale;
+	}
+
+	public void setCodiceFiscale(String CodiceFiscale) {
+		_CodiceFiscale = CodiceFiscale;
+	}
+
 	private int _AnniPrecedenti;
 	private int _AnnoFineIncarico;
 	private int _AnnoInizioIncarico;
@@ -229,4 +238,5 @@ public class VW_ESFListaIncarichiTesseraSoap implements Serializable {
 	private String _firstName;
 	private String _CodiceTessera;
 	private Date _DataTesseramento;
+	private String _CodiceFiscale;
 }

@@ -248,4 +248,13 @@ public interface ESFDocumentTypeLocalService extends BaseLocalService,
 	public java.lang.Object invokeMethod(java.lang.String name,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
+
+	public it.ethica.esf.model.ESFDocumentType saveUpdateESFDocumentType(
+		it.ethica.esf.model.ESFDocumentType document)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<it.ethica.esf.model.ESFDocumentType> getUserFilteredList(
+		long esfUserId)
+		throws com.liferay.portal.kernel.exception.SystemException;
 }

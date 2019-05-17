@@ -97,10 +97,11 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 				"value.object.column.bitmask.enabled.it.ethica.esf.model.ESFDocument"),
 			true);
 	public static long CODE_COLUMN_BITMASK = 1L;
-	public static long ESFUSERID_COLUMN_BITMASK = 2L;
-	public static long EXPIRATIONDATE_COLUMN_BITMASK = 4L;
-	public static long TYPE_COLUMN_BITMASK = 8L;
-	public static long ESFDOCUMENTID_COLUMN_BITMASK = 16L;
+	public static long ESFDOCUMENTTYPEID_COLUMN_BITMASK = 2L;
+	public static long ESFUSERID_COLUMN_BITMASK = 4L;
+	public static long EXPIRATIONDATE_COLUMN_BITMASK = 8L;
+	public static long TYPE_COLUMN_BITMASK = 16L;
+	public static long ESFDOCUMENTID_COLUMN_BITMASK = 32L;
 	public static final long LOCK_EXPIRATION_TIME = GetterUtil.getLong(com.liferay.util.service.ServiceProps.get(
 				"lock.expiration.time.it.ethica.esf.model.ESFDocument"));
 
@@ -491,11 +492,6 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		return _esfDocumentTypeId;
 	}
 
-	@Override
-	public void setEsfDocumentTypeId(long esfDocumentTypeId) {
-		_esfDocumentTypeId = esfDocumentTypeId;
-	}
-
 	@JSON
 	@Override
 	public long getEsfPublicAuthorityId() {
@@ -507,7 +503,23 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		_esfPublicAuthorityId = esfPublicAuthorityId;
 	}
 
-	@JSON
+	@Override
+	public void setEsfDocumentTypeId(long esfDocumentTypeId) {
+		_columnBitmask |= ESFDOCUMENTTYPEID_COLUMN_BITMASK;
+
+		if (!_setOriginalEsfDocumentTypeId) {
+			_setOriginalEsfDocumentTypeId = true;
+
+			_originalEsfDocumentTypeId = _esfDocumentTypeId;
+		}
+
+		_esfDocumentTypeId = esfDocumentTypeId;
+	}
+
+	public long getOriginalEsfDocumentTypeId() {
+		return _originalEsfDocumentTypeId;
+	}
+
 	@Override
 	public String getPath() {
 		if (_path == null) {
@@ -631,6 +643,10 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		esfDocumentModelImpl._setOriginalEsfUserId = false;
 
 		esfDocumentModelImpl._originalType = esfDocumentModelImpl._type;
+
+		esfDocumentModelImpl._originalEsfDocumentTypeId = esfDocumentModelImpl._esfDocumentTypeId;
+
+		esfDocumentModelImpl._setOriginalEsfDocumentTypeId = false;
 
 		esfDocumentModelImpl._columnBitmask = 0;
 	}
@@ -876,6 +892,8 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 	private String _type;
 	private String _originalType;
 	private long _esfDocumentTypeId;
+	private long _originalEsfDocumentTypeId;
+	private boolean _setOriginalEsfDocumentTypeId;
 	private long _esfPublicAuthorityId;
 	private String _path;
 	private long _columnBitmask;

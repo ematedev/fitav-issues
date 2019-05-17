@@ -15,7 +15,7 @@
 package it.ethica.esf.renewal.model.impl;
 
 /**
- * The extended model implementation for the VW_ESFListaIncarichiTessera service. Represents a row in the &quot;VW_ESFListaIncarichiTessera&quot; database table, with each column mapped to a property of this class.
+ * The extended model implementation for the VW_ESFListaIncarichiTessera service. Represents a row in the &quot;vw_listaincarichitessera&quot; database table, with each column mapped to a property of this class.
  *
  * <p>
  * Helper methods and all application logic should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link it.ethica.esf.renewal.model.VW_ESFListaIncarichiTessera} interface.

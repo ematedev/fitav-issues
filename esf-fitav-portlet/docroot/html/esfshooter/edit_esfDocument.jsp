@@ -1,21 +1,17 @@
 <%@ include file="init.jsp"%>
-
+<%@page import="it.ethica.esf.service.ESFDocumentTypeLocalServiceUtil"%>
+<%@page import="it.ethica.esf.model.ESFDocumentType"%>
 <%
-
 	ESFDocument esfDocument = null;
-
 	String backToEditUrl = (String)portletSession.getAttribute("backUrlEdit");
 	portletDisplay.setURLBack(backToEditUrl);
-	
+	List<ESFDocumentType> documentTypes = null;
 	long esfDocumentId = ParamUtil.getLong(request, "esfDocumentId");
-
+	long esfUserId = ParamUtil.getLong(request, "esfUserId");
 	if (esfDocumentId > 0) {
-
 		esfDocument = ESFDocumentLocalServiceUtil.getESFDocument(esfDocumentId);
 	}
-	
-	long esfUserId = ParamUtil.getLong(request, "esfUserId");
-
+	documentTypes = ESFDocumentTypeLocalServiceUtil.getUserFilteredList(esfUserId);
 	String releaseDate = "";
 	String expirationDate = "";
 	String type = "";
@@ -23,6 +19,7 @@
 	String releasedby = "";
 	String path = "";
 	String dir = PortletProps.get("auto.deploy.tomcat.dest.dir");
+	long esfDocumentTypeId = 0;
 	if (Validator.isNotNull(esfDocument)) {
 		type = String.valueOf(esfDocument.getType());
 		code = String.valueOf(esfDocument.getCode());
@@ -30,28 +27,30 @@
 		releaseDate = ManageDate.DateToString(esfDocument.getReleaseDate());
 		expirationDate = ManageDate.DateToString(esfDocument.getExpirationDate());
 		path = String.valueOf(esfDocument.getPath());
+		esfDocumentTypeId = esfDocument.getEsfDocumentTypeId();
 	}else{
 		Calendar calendar = CalendarFactoryUtil.getCalendar();
 		releaseDate=ManageDate.CalendarToString(calendar);	
 		expirationDate=ManageDate.CalendarToString(calendar);	
 	}
-ESFUser esfUser = null;
-String userName = "";
-
-if (esfUserId > 0) {
-	esfUser = ESFUserLocalServiceUtil.getESFUser(esfUserId);
-}
-
-if( Validator.isNotNull(esfUser) ){
-	
-	userName = esfUser.getFirstName()+" "+esfUser.getLastName();
-	String[] shooterName = {userName};
-%>	
-<h4><b><liferay-ui:message key="update-shooter-x" arguments="<%= shooterName%>"/></b>
-				<div class="separator"></div>
-<%
-}
-%>
+	ESFUser esfUser = null;
+	String userName = "";	
+	if (esfUserId > 0) {
+		esfUser = ESFUserLocalServiceUtil.getESFUser(esfUserId);
+	}
+	if( Validator.isNotNull(esfUser) ){
+		
+		userName = esfUser.getFirstName()+" "+esfUser.getLastName();
+		String[] shooterName = {userName};
+	%>	
+	<h4>
+		<b>
+		<liferay-ui:message key="update-shooter-x" arguments="<%= shooterName%>"/></b>
+	</h4>
+	<div class="separator"></div>
+	<%
+	}
+	%>
 
 <aui:script use="aui-base,node,aui-io-request">
 	$(function() {
@@ -72,68 +71,29 @@ if( Validator.isNotNull(esfUser) ){
 </aui:script>
 
 <portlet:actionURL name="editESFdocument" var="editESFDocumentURL">
-	<portlet:param name="esfDocumentId"
-		value="<%=String.valueOf(esfDocumentId)%>" />
-	<portlet:param name="esfUserId"
-		value="<%=String.valueOf(esfUserId)%>" />
+	<portlet:param name="esfDocumentId" value="<%=String.valueOf(esfDocumentId)%>" />
+	<portlet:param name="esfUserId" value="<%=String.valueOf(esfUserId)%>" />
 </portlet:actionURL>
 
 <aui:form action="<%=editESFDocumentURL%>" enctype="multipart/form-data" name="fm" onSubmit="event.preventDefault();checkInputsOnSubmit(event);">
-	<aui:model-context bean="<%=esfDocument%>"
-		model="<%=ESFDocument.class%>" />
+	<aui:model-context bean="<%=esfDocument%>" model="<%=ESFDocument.class%>" />
 
 	<aui:fieldset>
-		<aui:input type="hidden" name="esfDocumentId"
-			value='<%=esfDocumentId%>' />
+		<aui:input type="hidden" name="esfDocumentId" value='<%=esfDocumentId%>' />
 
 		<%  if(esfDocumentId==0){ %>
-				<aui:select id="type" name="type" showEmptyOption="false"
-					required="true" label="type" onchange="validateInputs();">
-				<%
-					
-					List<ListType> documentAll =
-						ListTypeServiceUtil.getListTypes(ESFDocument.class.getName() +ESFListType.DOCUMENT);
-
-					List<ESFDocument> documentAssigned = 
-						ESFDocumentLocalServiceUtil.findByesfUserId(esfUserId);
-
-					List<String> typeAssigned = new ArrayList <String>();
-					
-					for(ESFDocument d : documentAssigned){
-						typeAssigned.add(d.getType());
-					}
-
-					List<ListType> document = new ArrayList <ListType>();
-
-					for(ListType u : documentAll){
-						if(!typeAssigned.contains(u.getName())){
-							document.add(u);
-							}
-					}
-					
-					for (ListType documents : document) {
-				%>
-						<aui:option label="<%=documents.getName()%>" value="<%=documents.getName()%>" />
-				<%
-					}
-				%>
+			<!-- Documento in creazione -->
+				<aui:select id="esfDocumentTypeId" name="esfDocumentTypeId" showEmptyOption="false" required="true" label="type" onchange="validateInputs();">
+			<% for (ESFDocumentType documents : documentTypes) { %>
+					<aui:option label="<%=documents.getDescription()%>" value="<%=documents.getPrimaryKey()%>" />
+			<% } %>
 				</aui:select>
-			<%
-			}else{
-				List<ListType> documents =
-					ListTypeServiceUtil.getListTypes(ESFDocument.class.getName() +ESFListType.DOCUMENT);
-				for (ListType document : documents) {
-					if(document.getName().equalsIgnoreCase(type)){
-			%>	
-						<aui:input type="text" name="typet" label="type" value='<%= document.getName()%>' disabled="true" />
-						<aui:input type="hidden" name="type"	value='<%=document.getName()%>' />
-			<%
-					}
-				}
-			}
-			%>
-	
-
+			<% }else{%>
+			<!-- Documento in modifica -->
+				<aui:input type="text" name="typet" label="type" value='<%=type%>' disabled="true" />
+				<aui:input type="hidden" name="type" value='<%=type%>' />
+				<aui:input type="hidden" name="esfDocumentTypeId" value='<%=esfDocumentTypeId%>' />
+			<% } %>
 		<aui:input name="code" type="text" label="document-number" value='<%=code%>' >
 			<%--aui:validator name="required" /--%>
 		</aui:input>

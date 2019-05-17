@@ -195,7 +195,8 @@ public class ESFStateAssEntityWrapper implements ESFStateAssEntity,
 	}
 
 	@Override
-	public int compareTo(ESFStateAssEntity esfStateAssEntity) {
+	public int compareTo(
+		it.ethica.esf.model.ESFStateAssEntity esfStateAssEntity) {
 		return _esfStateAssEntity.compareTo(esfStateAssEntity);
 	}
 
@@ -205,17 +206,17 @@ public class ESFStateAssEntityWrapper implements ESFStateAssEntity,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<ESFStateAssEntity> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<it.ethica.esf.model.ESFStateAssEntity> toCacheModel() {
 		return _esfStateAssEntity.toCacheModel();
 	}
 
 	@Override
-	public ESFStateAssEntity toEscapedModel() {
+	public it.ethica.esf.model.ESFStateAssEntity toEscapedModel() {
 		return new ESFStateAssEntityWrapper(_esfStateAssEntity.toEscapedModel());
 	}
 
 	@Override
-	public ESFStateAssEntity toUnescapedModel() {
+	public it.ethica.esf.model.ESFStateAssEntity toUnescapedModel() {
 		return new ESFStateAssEntityWrapper(_esfStateAssEntity.toUnescapedModel());
 	}
 

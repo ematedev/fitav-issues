@@ -491,7 +491,8 @@ public class ESFShootingDirectorWrapper implements ESFShootingDirector,
 	}
 
 	@Override
-	public int compareTo(ESFShootingDirector esfShootingDirector) {
+	public int compareTo(
+		it.ethica.esf.model.ESFShootingDirector esfShootingDirector) {
 		return _esfShootingDirector.compareTo(esfShootingDirector);
 	}
 
@@ -501,17 +502,17 @@ public class ESFShootingDirectorWrapper implements ESFShootingDirector,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<ESFShootingDirector> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<it.ethica.esf.model.ESFShootingDirector> toCacheModel() {
 		return _esfShootingDirector.toCacheModel();
 	}
 
 	@Override
-	public ESFShootingDirector toEscapedModel() {
+	public it.ethica.esf.model.ESFShootingDirector toEscapedModel() {
 		return new ESFShootingDirectorWrapper(_esfShootingDirector.toEscapedModel());
 	}
 
 	@Override
-	public ESFShootingDirector toUnescapedModel() {
+	public it.ethica.esf.model.ESFShootingDirector toUnescapedModel() {
 		return new ESFShootingDirectorWrapper(_esfShootingDirector.toUnescapedModel());
 	}
 

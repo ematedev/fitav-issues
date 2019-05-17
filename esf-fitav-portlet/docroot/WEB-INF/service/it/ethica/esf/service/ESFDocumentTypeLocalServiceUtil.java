@@ -275,6 +275,18 @@ public class ESFDocumentTypeLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static it.ethica.esf.model.ESFDocumentType saveUpdateESFDocumentType(
+		it.ethica.esf.model.ESFDocumentType document)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().saveUpdateESFDocumentType(document);
+	}
+
+	public static java.util.List<it.ethica.esf.model.ESFDocumentType> getUserFilteredList(
+		long esfUserId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getUserFilteredList(esfUserId);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

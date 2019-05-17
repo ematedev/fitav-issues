@@ -183,7 +183,7 @@ create table ESFDocument (
 );
 
 create table ESFDocumentType (
-	esfDocumentTypeId LONG not null primary key,
+	esfDocumentTypeId LONG not null primary key IDENTITY,
 	createDate DATE null,
 	modifiedDate DATE null,
 	description VARCHAR(75) null,

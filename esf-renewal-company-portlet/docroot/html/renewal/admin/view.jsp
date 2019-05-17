@@ -68,12 +68,16 @@ String orderByType = ParamUtil.getString(request, "orderByType", "desc");
 	</div>
 </aui:form>
 
+
+
 <liferay-ui:search-container emptyResultsMessage="no-results" iteratorURL="<%= viewassURL %>">
+
+<% List<ESFRenewalCompany> listaRinnoviAssociazione = ESFRenewalCompanyLocalServiceUtil.getESFRenewalCompanyByN_C_R_Y(
+		name, code, searchOrgId, year, searchContainer.getStart(), searchContainer.getEnd()); %>
+
 	<liferay-ui:search-container-results
-		results="<%= ESFRenewalCompanyLocalServiceUtil.getESFRenewalCompanyByN_C_R_Y(
-			name, code, searchOrgId, year, searchContainer.getStart(), searchContainer.getEnd()) %>"
-		total="<%= ESFRenewalCompanyLocalServiceUtil.getESFRenewalCompanyByN_C_R_Y(
-			name, code, searchOrgId, year, QueryUtil.ALL_POS, QueryUtil.ALL_POS).size() %>" />
+		results="<%= listaRinnoviAssociazione %>"
+		total="<%= listaRinnoviAssociazione.size() %>" />
 
 	<liferay-ui:search-container-row
 		className="it.ethica.esf.renewal.model.ESFRenewalCompany" modelVar="esfRenewalCompany">

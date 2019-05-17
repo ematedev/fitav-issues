@@ -289,6 +289,20 @@ public class ESFDocumentTypeLocalServiceWrapper
 			arguments);
 	}
 
+	@Override
+	public it.ethica.esf.model.ESFDocumentType saveUpdateESFDocumentType(
+		it.ethica.esf.model.ESFDocumentType document)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _esfDocumentTypeLocalService.saveUpdateESFDocumentType(document);
+	}
+
+	@Override
+	public java.util.List<it.ethica.esf.model.ESFDocumentType> getUserFilteredList(
+		long esfUserId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _esfDocumentTypeLocalService.getUserFilteredList(esfUserId);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

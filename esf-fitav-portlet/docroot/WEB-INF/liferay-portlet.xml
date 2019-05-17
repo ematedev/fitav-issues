@@ -812,6 +812,11 @@
 		<portlet-name>esf-document-type</portlet-name>
 		<icon>/icon.png</icon>
 		<header-portlet-css>/css/main.css</header-portlet-css>
+		<header-portlet-css>/css/DataTables/datatables.min.css</header-portlet-css>
+		<header-portlet-css>/css/jquery-ui.css</header-portlet-css>
+		<header-portlet-javascript>/js/jquery-1.10.2.js</header-portlet-javascript>
+		<header-portlet-javascript>/js/jquery-ui.js</header-portlet-javascript>
+		<footer-portlet-javascript>/js/DataTables/datatables.min.js</footer-portlet-javascript>
 		<footer-portlet-javascript>
 			/js/main.js
 		</footer-portlet-javascript>

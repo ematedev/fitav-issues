@@ -62,8 +62,9 @@
         <column name="esfOrganizationId" type="long" primary="true" json-enabled="false"></column>
         <column name="lastName" type="String" primary="true"></column>
         <column name="firstName" type="String" primary="true"></column>
-        <column name="CodiceTessera" type="String" primary="false"></column>
+        <column name="CodiceTessera" type="String" primary="false" convert-null="true"></column>
         <column name="DataTesseramento" type="Date" primary="false"></column>
+        <column name="CodiceFiscale" type="String"></column>
         <order by="asc">
             <order-column name="endDate" order-by="asc"></order-column>
             <order-column name="esfUserId" order-by="asc"></order-column>

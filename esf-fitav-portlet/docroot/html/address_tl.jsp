@@ -52,7 +52,7 @@
 	try{
 		ckvalN = esfAddresses.get(iesima).getIsNotNational();
 	}catch (Exception e){
-		_log.debug("errore indirizzi");
+		_log.error("errore indirizzi", e);
 	}
 	
 %>

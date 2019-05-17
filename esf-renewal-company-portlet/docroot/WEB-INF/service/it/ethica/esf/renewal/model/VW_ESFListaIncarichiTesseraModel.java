@@ -263,6 +263,21 @@ public interface VW_ESFListaIncarichiTesseraModel extends BaseModel<VW_ESFListaI
 	 */
 	public void setDataTesseramento(Date DataTesseramento);
 
+	/**
+	 * Returns the codice fiscale of this v w_ e s f lista incarichi tessera.
+	 *
+	 * @return the codice fiscale of this v w_ e s f lista incarichi tessera
+	 */
+	@AutoEscape
+	public String getCodiceFiscale();
+
+	/**
+	 * Sets the codice fiscale of this v w_ e s f lista incarichi tessera.
+	 *
+	 * @param CodiceFiscale the codice fiscale of this v w_ e s f lista incarichi tessera
+	 */
+	public void setCodiceFiscale(String CodiceFiscale);
+
 	@Override
 	public boolean isNew();
 

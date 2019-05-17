@@ -3275,6 +3275,13 @@ public class ESFRenewalCompanyPersistenceImpl extends BasePersistenceImpl<ESFRen
 						finderArgs, list);
 				}
 				else {
+					if ((list.size() > 1) && _log.isWarnEnabled()) {
+						_log.warn(
+							"ESFRenewalCompanyPersistenceImpl.fetchByE_Y(long, int, boolean) with parameters (" +
+							StringUtil.merge(finderArgs) +
+							") yields a result set with more than 1 result. This violates the logical unique restriction. There is no order guarantee on which result is returned by this finder.");
+					}
+
 					ESFRenewalCompany esfRenewalCompany = list.get(0);
 
 					result = esfRenewalCompany;

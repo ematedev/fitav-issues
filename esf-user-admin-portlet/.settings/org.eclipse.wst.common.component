@@ -5,12 +5,6 @@
         <dependent-module archiveName="esf-service-portlet-service.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/esf-service-portlet/docroot/WEB-INF/lib/esf-service-portlet-service.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="esf-service-portlet-service.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/esf-service-portlet/docroot/WEB-INF/lib/esf-service-portlet-service.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="esf-service-portlet-service.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/esf-service-portlet/docroot/WEB-INF/lib/esf-service-portlet-service.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <property name="context-root" value="esf-user-admin-portlet"/>
         <property name="java-output-path" value="/esf-user-admin-portlet/docroot/WEB-INF/classes"/>
     </wb-module>

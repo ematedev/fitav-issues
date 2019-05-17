@@ -277,7 +277,7 @@ public class ESFDocumentTypeWrapper implements ESFDocumentType,
 	}
 
 	@Override
-	public int compareTo(ESFDocumentType esfDocumentType) {
+	public int compareTo(it.ethica.esf.model.ESFDocumentType esfDocumentType) {
 		return _esfDocumentType.compareTo(esfDocumentType);
 	}
 
@@ -287,17 +287,17 @@ public class ESFDocumentTypeWrapper implements ESFDocumentType,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<ESFDocumentType> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<it.ethica.esf.model.ESFDocumentType> toCacheModel() {
 		return _esfDocumentType.toCacheModel();
 	}
 
 	@Override
-	public ESFDocumentType toEscapedModel() {
+	public it.ethica.esf.model.ESFDocumentType toEscapedModel() {
 		return new ESFDocumentTypeWrapper(_esfDocumentType.toEscapedModel());
 	}
 
 	@Override
-	public ESFDocumentType toUnescapedModel() {
+	public it.ethica.esf.model.ESFDocumentType toUnescapedModel() {
 		return new ESFDocumentTypeWrapper(_esfDocumentType.toUnescapedModel());
 	}
 

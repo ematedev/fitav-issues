@@ -221,7 +221,8 @@ public class ESFPartecipantTypeWrapper implements ESFPartecipantType,
 	}
 
 	@Override
-	public int compareTo(ESFPartecipantType esfPartecipantType) {
+	public int compareTo(
+		it.ethica.esf.model.ESFPartecipantType esfPartecipantType) {
 		return _esfPartecipantType.compareTo(esfPartecipantType);
 	}
 
@@ -231,17 +232,17 @@ public class ESFPartecipantTypeWrapper implements ESFPartecipantType,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<ESFPartecipantType> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<it.ethica.esf.model.ESFPartecipantType> toCacheModel() {
 		return _esfPartecipantType.toCacheModel();
 	}
 
 	@Override
-	public ESFPartecipantType toEscapedModel() {
+	public it.ethica.esf.model.ESFPartecipantType toEscapedModel() {
 		return new ESFPartecipantTypeWrapper(_esfPartecipantType.toEscapedModel());
 	}
 
 	@Override
-	public ESFPartecipantType toUnescapedModel() {
+	public it.ethica.esf.model.ESFPartecipantType toUnescapedModel() {
 		return new ESFPartecipantTypeWrapper(_esfPartecipantType.toUnescapedModel());
 	}
 

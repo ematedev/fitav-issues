@@ -5,6 +5,7 @@ import it.ethica.esf.model.ESFAddress;
 import it.ethica.esf.model.ESFCard;
 import it.ethica.esf.model.ESFCatridge;
 import it.ethica.esf.model.ESFDocument;
+import it.ethica.esf.model.ESFDocumentType;
 import it.ethica.esf.model.ESFEntityState;
 import it.ethica.esf.model.ESFGun;
 import it.ethica.esf.model.ESFOrganization;
@@ -20,6 +21,7 @@ import it.ethica.esf.service.ESFAddressLocalServiceUtil;
 import it.ethica.esf.service.ESFCardLocalServiceUtil;
 import it.ethica.esf.service.ESFCatridgeLocalServiceUtil;
 import it.ethica.esf.service.ESFDocumentLocalServiceUtil;
+import it.ethica.esf.service.ESFDocumentTypeLocalServiceUtil;
 import it.ethica.esf.service.ESFEntityStateLocalServiceUtil;
 import it.ethica.esf.service.ESFGunKindLocalServiceUtil;
 import it.ethica.esf.service.ESFGunLocalServiceUtil;
@@ -429,7 +431,10 @@ public class ShooterUtility extends MVCPortlet {
 		
 		Date expirationDate = ManageDate.StringToDate(eDate);
 		
-		String type = ParamUtil.getString(uploadRequest, "type");
+		long esfDocumentTypeId = ParamUtil.getLong(uploadRequest, "esfDocumentTypeId");
+		ESFDocumentType documentType = ESFDocumentTypeLocalServiceUtil.getESFDocumentType(esfDocumentTypeId);
+//		String type = ParamUtil.getString(uploadRequest, "type");	//Descrizione
+		String type = documentType.getDescription();	//Descrizione
 		
 		long userId =  ParamUtil.getLong(request, "esfUserId");
 		
@@ -480,7 +485,7 @@ public class ShooterUtility extends MVCPortlet {
 				ESFDocumentLocalServiceUtil.updateEsfDocument(
 					esfDocumentId, groupId, companyId, userName,
 					user.getUserId(), code, releasedBy, modifiedDate,
-					releaseDate, expirationDate, type, path, serviceContext);
+					releaseDate, expirationDate, esfDocumentTypeId, type, path, serviceContext);
 				
 				if(!oldFilePath.equalsIgnoreCase(path)){
 					File toBeDeletedFile = new File(dirDeleteFile+oldFilePath);
@@ -511,7 +516,7 @@ public class ShooterUtility extends MVCPortlet {
 					ESFDocumentLocalServiceUtil.addEsfDocument(
 						groupId, companyId, userName, user.getUserId(), code,
 						releasedBy, createDate, releaseDate, expirationDate,
-						type, path, serviceContext);
+						esfDocumentTypeId, type, path, serviceContext);
 
 					SessionMessages.add(request, "esfDocumentUpdated");
 

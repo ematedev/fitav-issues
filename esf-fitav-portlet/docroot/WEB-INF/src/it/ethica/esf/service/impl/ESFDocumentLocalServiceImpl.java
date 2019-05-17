@@ -61,7 +61,7 @@ public class ESFDocumentLocalServiceImpl extends
 
 	public ESFDocument addEsfDocument(long groupId, long companyId,
 			String userName, long esfUserId, String code, String releasedBy,
-			Date createDate, Date releaseDate, Date expirationDate,
+			Date createDate, Date releaseDate, Date expirationDate, long esfDocumentTypeId,
 			String type, String path, ServiceContext serviceContext)
 			throws SystemException {
 
@@ -81,6 +81,7 @@ public class ESFDocumentLocalServiceImpl extends
 		esfDocument.setCode(code);
 		esfDocument.setReleasedBy(releasedBy);
 		esfDocument.setType(type);
+		esfDocument.setEsfDocumentTypeId(esfDocumentTypeId);
 		esfDocument.setPath(path);
 
 		esfDocumentLocalService.updateESFDocument(esfDocument);
@@ -91,7 +92,7 @@ public class ESFDocumentLocalServiceImpl extends
 	public ESFDocument updateEsfDocument(long esfDocumentId, long groupId,
 			long companyId, String userName, long esfUserId, String code,
 			String releasedBy, Date modifiedDate, Date releaseDate,
-			Date expirationDate, String type, String path,
+			Date expirationDate, long esfDocumentTypeId, String type, String path,
 			ServiceContext serviceContext) throws SystemException {
 		
 		ESFDocument esfDocument = esfDocumentLocalService
@@ -119,9 +120,12 @@ public class ESFDocumentLocalServiceImpl extends
 	}
 
 	public List<ESFDocument> findByesfUserId(long esfUserId)
-			throws SystemException {
-
+			throws SystemException {		
 		return esfDocumentPersistence.findByesfUserId(esfUserId);
+	}
+	
+	public List<ESFDocument> findByEsfDocumentTypeId(long esfDocumentTypeId) throws SystemException{
+		return this.esfDocumentPersistence.findByEsfDocumentTypeId(esfDocumentTypeId);
 	}
 
 	public List<ESFDocument> findByT_U(String type, long esfUserId)

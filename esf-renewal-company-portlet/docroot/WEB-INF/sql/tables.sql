@@ -34,5 +34,6 @@ create table ESFRenewalCompany (
 	firstName VARCHAR(75) not null,
 	CodiceTessera VARCHAR(75) null,
 	DataTesseramento DATE null,
+	CodiceFiscale VARCHAR(75) null,
 	primary key (AnniPrecedenti, AnnoFineIncarico, AnnoInizioIncarico, AnnoCorrente, NomeRuolo, startDate, esfUserId, esfOrganizationId, lastName, firstName)
 );

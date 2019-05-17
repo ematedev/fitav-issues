@@ -103,6 +103,7 @@ public class VW_ESFListaIncarichiTesseraClp extends BaseModelImpl<VW_ESFListaInc
 		attributes.put("firstName", getFirstName());
 		attributes.put("CodiceTessera", getCodiceTessera());
 		attributes.put("DataTesseramento", getDataTesseramento());
+		attributes.put("CodiceFiscale", getCodiceFiscale());
 
 		return attributes;
 	}
@@ -186,6 +187,12 @@ public class VW_ESFListaIncarichiTesseraClp extends BaseModelImpl<VW_ESFListaInc
 
 		if (DataTesseramento != null) {
 			setDataTesseramento(DataTesseramento);
+		}
+
+		String CodiceFiscale = (String)attributes.get("CodiceFiscale");
+
+		if (CodiceFiscale != null) {
+			setCodiceFiscale(CodiceFiscale);
 		}
 	}
 
@@ -508,6 +515,30 @@ public class VW_ESFListaIncarichiTesseraClp extends BaseModelImpl<VW_ESFListaInc
 		}
 	}
 
+	@Override
+	public String getCodiceFiscale() {
+		return _CodiceFiscale;
+	}
+
+	@Override
+	public void setCodiceFiscale(String CodiceFiscale) {
+		_CodiceFiscale = CodiceFiscale;
+
+		if (_vw_esfListaIncarichiTesseraRemoteModel != null) {
+			try {
+				Class<?> clazz = _vw_esfListaIncarichiTesseraRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setCodiceFiscale", String.class);
+
+				method.invoke(_vw_esfListaIncarichiTesseraRemoteModel,
+					CodiceFiscale);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
 	public BaseModel<?> getVW_ESFListaIncarichiTesseraRemoteModel() {
 		return _vw_esfListaIncarichiTesseraRemoteModel;
 	}
@@ -592,6 +623,7 @@ public class VW_ESFListaIncarichiTesseraClp extends BaseModelImpl<VW_ESFListaInc
 		clone.setFirstName(getFirstName());
 		clone.setCodiceTessera(getCodiceTessera());
 		clone.setDataTesseramento(getDataTesseramento());
+		clone.setCodiceFiscale(getCodiceFiscale());
 
 		return clone;
 	}
@@ -654,7 +686,7 @@ public class VW_ESFListaIncarichiTesseraClp extends BaseModelImpl<VW_ESFListaInc
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(27);
+		StringBundler sb = new StringBundler(29);
 
 		sb.append("{AnniPrecedenti=");
 		sb.append(getAnniPrecedenti());
@@ -682,6 +714,8 @@ public class VW_ESFListaIncarichiTesseraClp extends BaseModelImpl<VW_ESFListaInc
 		sb.append(getCodiceTessera());
 		sb.append(", DataTesseramento=");
 		sb.append(getDataTesseramento());
+		sb.append(", CodiceFiscale=");
+		sb.append(getCodiceFiscale());
 		sb.append("}");
 
 		return sb.toString();
@@ -689,7 +723,7 @@ public class VW_ESFListaIncarichiTesseraClp extends BaseModelImpl<VW_ESFListaInc
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(43);
+		StringBundler sb = new StringBundler(46);
 
 		sb.append("<model><model-name>");
 		sb.append("it.ethica.esf.renewal.model.VW_ESFListaIncarichiTessera");
@@ -747,6 +781,10 @@ public class VW_ESFListaIncarichiTesseraClp extends BaseModelImpl<VW_ESFListaInc
 			"<column><column-name>DataTesseramento</column-name><column-value><![CDATA[");
 		sb.append(getDataTesseramento());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>CodiceFiscale</column-name><column-value><![CDATA[");
+		sb.append(getCodiceFiscale());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -767,5 +805,6 @@ public class VW_ESFListaIncarichiTesseraClp extends BaseModelImpl<VW_ESFListaInc
 	private String _firstName;
 	private String _CodiceTessera;
 	private Date _DataTesseramento;
+	private String _CodiceFiscale;
 	private BaseModel<?> _vw_esfListaIncarichiTesseraRemoteModel;
 }

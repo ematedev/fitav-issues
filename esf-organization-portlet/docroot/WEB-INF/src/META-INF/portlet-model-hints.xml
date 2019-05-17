@@ -11,11 +11,6 @@
 		<field name="esfProvinceId" type="String" />
 		<field name="esfCityId" type="String" />
 		<field name="groupId" type="long" />
-		<field name="street1" type="String" />
-		<field name="street2" type="String" />
-		<field name="street3" type="String" />
-		<field name="zip" type="String" />
-		<field name="mailing" type="boolean" />
 	</model>
 	<model name="it.ethica.esf.model.ESFField">
 		<field name="uuid" type="String" />
@@ -50,7 +45,6 @@
 		<field name="establishmentDate" type="Date" />
 		<field name="closureDate" type="Date" />
 		<field name="groupId" type="long" />
-		<field name="name" type="String" />
 	</model>
 	<model name="it.ethica.esf.model.ESFSportType">
 		<field name="uuid" type="String" />
