@@ -121,6 +121,10 @@ public class ESFDocumentTypeLocalServiceClp
 		_methodParameterTypes19 = new String[] {
 				"it.ethica.esf.model.ESFDocumentType"
 			};
+
+		_methodName20 = "getUserFilteredList";
+
+		_methodParameterTypes20 = new String[] { "long" };
 	}
 
 	@Override
@@ -703,6 +707,35 @@ public class ESFDocumentTypeLocalServiceClp
 		return (it.ethica.esf.model.ESFDocumentType)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
+	public java.util.List<it.ethica.esf.model.ESFDocumentType> getUserFilteredList(
+		long esfUserId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName20,
+					_methodParameterTypes20, new Object[] { esfUserId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<it.ethica.esf.model.ESFDocumentType>)ClpSerializer.translateOutput(returnObj);
+	}
+
 	private InvokableLocalService _invokableLocalService;
 	private String _methodName0;
 	private String[] _methodParameterTypes0;
@@ -742,4 +775,6 @@ public class ESFDocumentTypeLocalServiceClp
 	private String[] _methodParameterTypes17;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
+	private String _methodName20;
+	private String[] _methodParameterTypes20;
 }

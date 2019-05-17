@@ -119,6 +119,10 @@ public class ESFDocumentTypeLocalServiceClpInvoker {
 		_methodParameterTypes382 = new String[] {
 				"it.ethica.esf.model.ESFDocumentType"
 			};
+
+		_methodName383 = "getUserFilteredList";
+
+		_methodParameterTypes383 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -227,6 +231,11 @@ public class ESFDocumentTypeLocalServiceClpInvoker {
 			return ESFDocumentTypeLocalServiceUtil.saveUpdateESFDocumentType((it.ethica.esf.model.ESFDocumentType)arguments[0]);
 		}
 
+		if (_methodName383.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes383, parameterTypes)) {
+			return ESFDocumentTypeLocalServiceUtil.getUserFilteredList(((Long)arguments[0]).longValue());
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -268,4 +277,6 @@ public class ESFDocumentTypeLocalServiceClpInvoker {
 	private String[] _methodParameterTypes377;
 	private String _methodName382;
 	private String[] _methodParameterTypes382;
+	private String _methodName383;
+	private String[] _methodParameterTypes383;
 }

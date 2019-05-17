@@ -1,13 +1,18 @@
-<%@ include file="init.jsp"%>
+<%@ page import="com.liferay.portal.kernel.dao.orm.QueryUtil" %>
+<%@ page import="it.ethica.esf.service.ESFDocumentTypeLocalServiceUtil" %>
+<%@ page import="it.ethica.esf.model.ESFDocumentType" %>
+<%@ include file="init.jsp" %>
 
 <%
 	ESFDocument esfDocument = null;
-
+	List<ESFDocumentType> documentTypes = null;
 	long esfDocumentId = ParamUtil.getLong(request, "esfDocumentId");
 
 	if (esfDocumentId > 0) {
-
 		esfDocument = ESFDocumentLocalServiceUtil.getESFDocument(esfDocumentId);
+		documentTypes = ESFDocumentTypeLocalServiceUtil.getUserFilteredList(esfDocument.getEsfUserId());
+	}else{
+		documentTypes = ESFDocumentTypeLocalServiceUtil.getESFDocumentTypes(QueryUtil.ALL_POS, QueryUtil.ALL_POS);
 	}
 
 	String releaseDate = "";
@@ -16,6 +21,7 @@
 	String code = "";
 	String releasedby = "";
 	String path = "";
+	long esfDocumentTypeId = 0;
 
 	if (Validator.isNotNull(esfDocument)) {
 		type = String.valueOf(esfDocument.getType());
@@ -24,6 +30,7 @@
 		releaseDate = ManageDate.DateToString(esfDocument.getReleaseDate());
 		expirationDate = ManageDate.DateToString(esfDocument.getExpirationDate());
 		path = String.valueOf(esfDocument.getPath());
+		esfDocumentTypeId = esfDocument.getEsfDocumentTypeId();
 	}else{
 		Calendar calendar = CalendarFactoryUtil.getCalendar();
 		releaseDate=ManageDate.CalendarToString(calendar);	
@@ -55,42 +62,27 @@
 </portlet:actionURL>
 
 <aui:form action="<%=editESFDocumentURL%>" enctype="multipart/form-data" name="fm">
-	<aui:model-context bean="<%=esfDocument%>"
-		model="<%=ESFDocument.class%>" />
+	<aui:model-context bean="<%=esfDocument%>" model="<%=ESFDocument.class%>" />
 
 	<aui:fieldset>
 		<aui:input type="hidden" name="esfDocumentId"
 			value='<%=esfDocumentId%>' />
 
 		<%  if(esfDocumentId==0){ %>
-				<aui:select id="type" name="type" showEmptyOption="false"
-					required="true" label="type">
-				<%
-					List<ListType> document =
-						ListTypeServiceUtil.getListTypes(ESFDocument.class.getName() +ESFListType.DOCUMENT);
-					for (ListType documents : document) {
-				%>
-						<aui:option label="<%=documents.getName()%>" value="<%=documents.getName()%>" />
-				<%
-					}
-				%>
-				</aui:select>
-			<%
-			}else{
-				List<ListType> documents =
-					ListTypeServiceUtil.getListTypes(ESFDocument.class.getName() +ESFListType.DOCUMENT);
-				for (ListType document : documents) {
-					if(document.getName().equalsIgnoreCase(type)){
-			%>	
-						<aui:input type="text" name="typet" label="type" value='<%= document.getName()%>' disabled="true" />
-						<aui:input type="hidden" name="type"	value='<%=document.getName()%>' />
-			<%
-					}
-				}
-			}
-			%>
+		<!-- Documento in creazione -->
+			<aui:select id="esfDocumentTypeId" name="esfDocumentTypeId" showEmptyOption="false"
+				required="true" label="type">
+			<% for (ESFDocumentType documents : documentTypes) { %>
+				<aui:option label="<%=documents.getDescription()%>" value="<%=documents.getPrimaryKey()%>" />
+			<% } %>
+			</aui:select>
+		<% }else{ %>
+		<!-- Documento in modifica -->
+			<aui:input type="text" name="typet" label="type" value='<%=type%>' disabled="true" />
+			<aui:input type="hidden" name="type" value='<%=type%>' />
+			<aui:input type="hidden" name="esfDocumentTypeId" value='<%=esfDocumentTypeId%>' />
+		<% } %>
 	
-
 		<aui:input name="code" type="text" label="Code" value='<%=code%>'>
 			<aui:validator name="required" />
 		</aui:input>
