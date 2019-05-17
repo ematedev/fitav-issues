@@ -301,7 +301,7 @@
 	<class name="it.ethica.esf.model.impl.ESFDocumentTypeImpl" table="ESFDocumentType">
 		<cache usage="read-write" />
 		<id name="esfDocumentTypeId" type="long">
-			<generator class="assigned" />
+			<generator class="identity" />
 		</id>
 		<property name="createDate" type="org.hibernate.type.TimestampType" />
 		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />

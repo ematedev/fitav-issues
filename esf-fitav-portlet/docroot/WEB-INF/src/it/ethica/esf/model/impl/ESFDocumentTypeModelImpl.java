@@ -65,7 +65,7 @@ public class ESFDocumentTypeModelImpl extends BaseModelImpl<ESFDocumentType>
 			{ "description", Types.VARCHAR },
 			{ "expirationMonthsNotice", Types.INTEGER }
 		};
-	public static final String TABLE_SQL_CREATE = "create table ESFDocumentType (esfDocumentTypeId LONG not null primary key,createDate DATE null,modifiedDate DATE null,description VARCHAR(75) null,expirationMonthsNotice INTEGER)";
+	public static final String TABLE_SQL_CREATE = "create table ESFDocumentType (esfDocumentTypeId LONG not null primary key IDENTITY,createDate DATE null,modifiedDate DATE null,description VARCHAR(75) null,expirationMonthsNotice INTEGER)";
 	public static final String TABLE_SQL_DROP = "drop table ESFDocumentType";
 	public static final String ORDER_BY_JPQL = " ORDER BY esfDocumentType.esfDocumentTypeId ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY ESFDocumentType.esfDocumentTypeId ASC";

@@ -2,7 +2,9 @@
 package it.ethica.esf.portlet;
 
 import it.ethica.esf.model.ESFDocument;
+import it.ethica.esf.model.ESFDocumentType;
 import it.ethica.esf.service.ESFDocumentLocalServiceUtil;
+import it.ethica.esf.service.ESFDocumentTypeLocalServiceUtil;
 import it.ethica.esf.util.ManageDate;
 
 import java.io.File;
@@ -48,7 +50,7 @@ public class ESFDocumentPortlet extends MVCPortlet {
 
 		UploadPortletRequest uploadRequest =
 			PortalUtil.getUploadPortletRequest(request);
-
+		
 		long esfDocumentId = ParamUtil.getLong(uploadRequest, "esfDocumentId");
 
 		String code = ParamUtil.getString(uploadRequest, "code");
@@ -63,8 +65,13 @@ public class ESFDocumentPortlet extends MVCPortlet {
 
 		Date expirationDate = ManageDate.StringToDate(eDate);
 
-		String type = ParamUtil.getString(uploadRequest, "type");
-
+		long esfDocumentTypeId = ParamUtil.getLong(uploadRequest, "esfDocumentTypeId");
+		ESFDocumentType documentType = ESFDocumentTypeLocalServiceUtil.getESFDocumentType(esfDocumentTypeId);
+//		String type = ParamUtil.getString(uploadRequest, "type");	//Descrizione
+		String type = documentType.getDescription();	//Descrizione
+		
+		_log.debug("DocumentType read:"+documentType.getEsfDocumentTypeId()+" - "+documentType.getDescription());
+		
 		ThemeDisplay themeDisplay =
 			(ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);
 
@@ -79,11 +86,12 @@ public class ESFDocumentPortlet extends MVCPortlet {
 		String path = "";
 
 		if (esfDocumentId > 0) {
+			_log.debug("Aggiornamento del documento con ID: "+esfDocumentId);
 			path = uploadFile(uploadRequest, user, type);
 			Date modifiedDate = new Date();
 			ESFDocumentLocalServiceUtil.updateEsfDocument(
 				esfDocumentId, groupId, companyId, userName, user.getUserId(),
-				code, releasedBy, modifiedDate, releaseDate, expirationDate,
+				code, releasedBy, modifiedDate, releaseDate, expirationDate, esfDocumentTypeId,
 				type, path, serviceContext);
 
 			SessionMessages.add(request, "esfDocumentUpdated");
@@ -92,17 +100,17 @@ public class ESFDocumentPortlet extends MVCPortlet {
 				"esfDocumentId", Long.toString(esfDocumentId));
 		}
 		else {
+			_log.debug("Creazione di un nuovo documento");
 			Date createDate = new Date();
 			List<ESFDocument> list =
 				ESFDocumentLocalServiceUtil.findByT_U(type, user.getUserId());
 			if (Validator.isNotNull(list) && list.size() > 0) {
 				SessionErrors.add(request, "Document-type-message");
-			}
-			else {
+			} else {
 				path = uploadFile(uploadRequest, user, type);
 				ESFDocumentLocalServiceUtil.addEsfDocument(
 					groupId, companyId, userName, user.getUserId(), code,
-					releasedBy, createDate, releaseDate, expirationDate, type,
+					releasedBy, createDate, releaseDate, expirationDate, esfDocumentTypeId, type,
 					path, serviceContext);
 
 				SessionMessages.add(request, "esfDocumentUpdated");
