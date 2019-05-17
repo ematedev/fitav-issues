@@ -31,21 +31,6 @@ public class ESFFederalRoleServiceClp implements ESFFederalRoleService {
 		_methodName1 = "setBeanIdentifier";
 
 		_methodParameterTypes1 = new String[] { "java.lang.String" };
-
-		_methodName3 = "updateEsfFederalRole";
-
-		_methodParameterTypes3 = new String[] {
-				"long", "java.lang.String", "java.lang.String", "boolean",
-				"boolean"
-			};
-
-		_methodName4 = "getFederalRoleSpecifics";
-
-		_methodParameterTypes4 = new String[] { "long" };
-
-		_methodName5 = "findByCode";
-
-		_methodParameterTypes5 = new String[] { "java.lang.String" };
 	}
 
 	@Override
@@ -98,110 +83,9 @@ public class ESFFederalRoleServiceClp implements ESFFederalRoleService {
 		throw new UnsupportedOperationException();
 	}
 
-	@Override
-	public it.ethica.esf.model.ESFFederalRole updateEsfFederalRole(
-		long esfFederalRoleId, java.lang.String name,
-		java.lang.String description, boolean regional, boolean provincial)
-		throws com.liferay.portal.kernel.exception.SystemException,
-			com.liferay.portal.security.auth.PrincipalException {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableService.invokeMethod(_methodName3,
-					_methodParameterTypes3,
-					new Object[] {
-						esfFederalRoleId,
-						
-					ClpSerializer.translateInput(name),
-						
-					ClpSerializer.translateInput(description),
-						
-					regional,
-						
-					provincial
-					});
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
-				throw (com.liferay.portal.kernel.exception.SystemException)t;
-			}
-
-			if (t instanceof com.liferay.portal.security.auth.PrincipalException) {
-				throw (com.liferay.portal.security.auth.PrincipalException)t;
-			}
-
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
-			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (it.ethica.esf.model.ESFFederalRole)ClpSerializer.translateOutput(returnObj);
-	}
-
-	@Override
-	public java.util.List<it.ethica.esf.model.ESFSpecific> getFederalRoleSpecifics(
-		long esfFederalRoleId) {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableService.invokeMethod(_methodName4,
-					_methodParameterTypes4, new Object[] { esfFederalRoleId });
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
-			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (java.util.List<it.ethica.esf.model.ESFSpecific>)ClpSerializer.translateOutput(returnObj);
-	}
-
-	@Override
-	public java.util.List<it.ethica.esf.model.ESFFederalRole> findByCode(
-		java.lang.String name) {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableService.invokeMethod(_methodName5,
-					_methodParameterTypes5,
-					new Object[] { ClpSerializer.translateInput(name) });
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
-			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (java.util.List<it.ethica.esf.model.ESFFederalRole>)ClpSerializer.translateOutput(returnObj);
-	}
-
 	private InvokableService _invokableService;
 	private String _methodName0;
 	private String[] _methodParameterTypes0;
 	private String _methodName1;
 	private String[] _methodParameterTypes1;
-	private String _methodName3;
-	private String[] _methodParameterTypes3;
-	private String _methodName4;
-	private String[] _methodParameterTypes4;
-	private String _methodName5;
-	private String[] _methodParameterTypes5;
 }

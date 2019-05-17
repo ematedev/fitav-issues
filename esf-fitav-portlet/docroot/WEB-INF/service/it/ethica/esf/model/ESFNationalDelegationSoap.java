@@ -31,7 +31,6 @@ public class ESFNationalDelegationSoap implements Serializable {
 		ESFNationalDelegation model) {
 		ESFNationalDelegationSoap soapModel = new ESFNationalDelegationSoap();
 
-		soapModel.setUuid(model.getUuid());
 		soapModel.setEsfUserId(model.getEsfUserId());
 		soapModel.setGroupId(model.getGroupId());
 		soapModel.setCompanyId(model.getCompanyId());
@@ -105,14 +104,6 @@ public class ESFNationalDelegationSoap implements Serializable {
 
 	public void setPrimaryKey(long pk) {
 		setEsfNationalDelgationId(pk);
-	}
-
-	public String getUuid() {
-		return _uuid;
-	}
-
-	public void setUuid(String uuid) {
-		_uuid = uuid;
 	}
 
 	public long getEsfUserId() {
@@ -275,7 +266,6 @@ public class ESFNationalDelegationSoap implements Serializable {
 		_refusal = refusal;
 	}
 
-	private String _uuid;
 	private long _esfUserId;
 	private long _groupId;
 	private long _companyId;

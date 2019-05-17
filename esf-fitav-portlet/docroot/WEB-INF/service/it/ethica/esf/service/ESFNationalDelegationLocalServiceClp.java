@@ -86,105 +86,89 @@ public class ESFNationalDelegationLocalServiceClp
 
 		_methodParameterTypes10 = new String[] { "long" };
 
-		_methodName11 = "fetchESFNationalDelegationByUuidAndCompanyId";
+		_methodName11 = "getESFNationalDelegation";
 
-		_methodParameterTypes11 = new String[] { "java.lang.String", "long" };
+		_methodParameterTypes11 = new String[] { "long" };
 
-		_methodName12 = "fetchESFNationalDelegationByUuidAndGroupId";
+		_methodName12 = "getPersistedModel";
 
-		_methodParameterTypes12 = new String[] { "java.lang.String", "long" };
+		_methodParameterTypes12 = new String[] { "java.io.Serializable" };
 
-		_methodName13 = "getESFNationalDelegation";
+		_methodName13 = "getESFNationalDelegations";
 
-		_methodParameterTypes13 = new String[] { "long" };
+		_methodParameterTypes13 = new String[] { "int", "int" };
 
-		_methodName14 = "getPersistedModel";
+		_methodName14 = "getESFNationalDelegationsCount";
 
-		_methodParameterTypes14 = new String[] { "java.io.Serializable" };
+		_methodParameterTypes14 = new String[] {  };
 
-		_methodName15 = "getESFNationalDelegationByUuidAndCompanyId";
+		_methodName15 = "updateESFNationalDelegation";
 
-		_methodParameterTypes15 = new String[] { "java.lang.String", "long" };
-
-		_methodName16 = "getESFNationalDelegationByUuidAndGroupId";
-
-		_methodParameterTypes16 = new String[] { "java.lang.String", "long" };
-
-		_methodName17 = "getESFNationalDelegations";
-
-		_methodParameterTypes17 = new String[] { "int", "int" };
-
-		_methodName18 = "getESFNationalDelegationsCount";
-
-		_methodParameterTypes18 = new String[] {  };
-
-		_methodName19 = "updateESFNationalDelegation";
-
-		_methodParameterTypes19 = new String[] {
+		_methodParameterTypes15 = new String[] {
 				"it.ethica.esf.model.ESFNationalDelegation"
 			};
 
-		_methodName20 = "getBeanIdentifier";
+		_methodName16 = "getBeanIdentifier";
 
-		_methodParameterTypes20 = new String[] {  };
+		_methodParameterTypes16 = new String[] {  };
 
-		_methodName21 = "setBeanIdentifier";
+		_methodName17 = "setBeanIdentifier";
 
-		_methodParameterTypes21 = new String[] { "java.lang.String" };
+		_methodParameterTypes17 = new String[] { "java.lang.String" };
 
-		_methodName23 = "getESFNationalDelegationByMatchId_PartecipantTypeId";
+		_methodName19 = "getESFNationalDelegationByMatchId_PartecipantTypeId";
+
+		_methodParameterTypes19 = new String[] { "long", "long" };
+
+		_methodName20 = "getESFNationalDelegationByMatchId_PartecipantTypeId_sportTypeId";
+
+		_methodParameterTypes20 = new String[] { "long", "long", "long" };
+
+		_methodName21 = "getMatchId_SportTypeId_QualificationId";
+
+		_methodParameterTypes21 = new String[] { "long", "long", "long" };
+
+		_methodName22 = "getMatchId_UserId_SportTypeId_QualificationId";
+
+		_methodParameterTypes22 = new String[] { "long", "long", "long", "long" };
+
+		_methodName23 = "getESFNationalDelegationByESFUserId_ESFMatchId";
 
 		_methodParameterTypes23 = new String[] { "long", "long" };
 
-		_methodName24 = "getESFNationalDelegationByMatchId_PartecipantTypeId_sportTypeId";
+		_methodName24 = "getESFNationalDelegationByESFMatchId";
 
-		_methodParameterTypes24 = new String[] { "long", "long", "long" };
+		_methodParameterTypes24 = new String[] { "long" };
 
-		_methodName25 = "getMatchId_SportTypeId_QualificationId";
+		_methodName25 = "getPartecipantType_EsfUserId";
 
-		_methodParameterTypes25 = new String[] { "long", "long", "long" };
+		_methodParameterTypes25 = new String[] { "long" };
 
-		_methodName26 = "getMatchId_UserId_SportTypeId_QualificationId";
+		_methodName26 = "findByPartecipantType_EsfUserId";
 
-		_methodParameterTypes26 = new String[] { "long", "long", "long", "long" };
+		_methodParameterTypes26 = new String[] { "long", "long", "int", "int" };
 
-		_methodName27 = "getESFNationalDelegationByESFUserId_ESFMatchId";
+		_methodName27 = "countPartecipantType_EsfUserId";
 
 		_methodParameterTypes27 = new String[] { "long", "long" };
 
-		_methodName28 = "getESFNationalDelegationByESFMatchId";
+		_methodName28 = "getESFNationalDelegationByESFMatchIdNotShooter";
 
 		_methodParameterTypes28 = new String[] { "long" };
 
-		_methodName29 = "getPartecipantType_EsfUserId";
+		_methodName29 = "deleteESFNationalDelegation";
 
-		_methodParameterTypes29 = new String[] { "long" };
+		_methodParameterTypes29 = new String[] { "long", "long" };
 
-		_methodName30 = "findByPartecipantType_EsfUserId";
+		_methodName30 = "changeCard";
 
-		_methodParameterTypes30 = new String[] { "long", "long", "int", "int" };
-
-		_methodName31 = "countPartecipantType_EsfUserId";
-
-		_methodParameterTypes31 = new String[] { "long", "long" };
-
-		_methodName32 = "getESFNationalDelegationByESFMatchIdNotShooter";
-
-		_methodParameterTypes32 = new String[] { "long" };
-
-		_methodName33 = "deleteESFNationalDelegation";
-
-		_methodParameterTypes33 = new String[] { "long", "long" };
-
-		_methodName34 = "changeCard";
-
-		_methodParameterTypes34 = new String[] {
+		_methodParameterTypes30 = new String[] {
 				"javax.portlet.ActionRequest", "javax.portlet.ActionResponse"
 			};
 
-		_methodName35 = "findConvocation";
+		_methodName31 = "findConvocation";
 
-		_methodParameterTypes35 = new String[] { "long", "long", "int" };
+		_methodParameterTypes31 = new String[] { "long", "long", "int" };
 	}
 
 	@Override
@@ -539,66 +523,6 @@ public class ESFNationalDelegationLocalServiceClp
 	}
 
 	@Override
-	public it.ethica.esf.model.ESFNationalDelegation fetchESFNationalDelegationByUuidAndCompanyId(
-		java.lang.String uuid, long companyId)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName11,
-					_methodParameterTypes11,
-					new Object[] { ClpSerializer.translateInput(uuid), companyId });
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
-				throw (com.liferay.portal.kernel.exception.SystemException)t;
-			}
-
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
-			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (it.ethica.esf.model.ESFNationalDelegation)ClpSerializer.translateOutput(returnObj);
-	}
-
-	@Override
-	public it.ethica.esf.model.ESFNationalDelegation fetchESFNationalDelegationByUuidAndGroupId(
-		java.lang.String uuid, long groupId)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName12,
-					_methodParameterTypes12,
-					new Object[] { ClpSerializer.translateInput(uuid), groupId });
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
-				throw (com.liferay.portal.kernel.exception.SystemException)t;
-			}
-
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
-			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (it.ethica.esf.model.ESFNationalDelegation)ClpSerializer.translateOutput(returnObj);
-	}
-
-	@Override
 	public it.ethica.esf.model.ESFNationalDelegation getESFNationalDelegation(
 		long esfNationalDelgationId)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -606,8 +530,8 @@ public class ESFNationalDelegationLocalServiceClp
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName13,
-					_methodParameterTypes13,
+			returnObj = _invokableLocalService.invokeMethod(_methodName11,
+					_methodParameterTypes11,
 					new Object[] { esfNationalDelgationId });
 		}
 		catch (Throwable t) {
@@ -641,8 +565,8 @@ public class ESFNationalDelegationLocalServiceClp
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName14,
-					_methodParameterTypes14,
+			returnObj = _invokableLocalService.invokeMethod(_methodName12,
+					_methodParameterTypes12,
 					new Object[] { ClpSerializer.translateInput(primaryKeyObj) });
 		}
 		catch (Throwable t) {
@@ -669,84 +593,14 @@ public class ESFNationalDelegationLocalServiceClp
 	}
 
 	@Override
-	public it.ethica.esf.model.ESFNationalDelegation getESFNationalDelegationByUuidAndCompanyId(
-		java.lang.String uuid, long companyId)
-		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName15,
-					_methodParameterTypes15,
-					new Object[] { ClpSerializer.translateInput(uuid), companyId });
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
-				throw (com.liferay.portal.kernel.exception.PortalException)t;
-			}
-
-			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
-				throw (com.liferay.portal.kernel.exception.SystemException)t;
-			}
-
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
-			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (it.ethica.esf.model.ESFNationalDelegation)ClpSerializer.translateOutput(returnObj);
-	}
-
-	@Override
-	public it.ethica.esf.model.ESFNationalDelegation getESFNationalDelegationByUuidAndGroupId(
-		java.lang.String uuid, long groupId)
-		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName16,
-					_methodParameterTypes16,
-					new Object[] { ClpSerializer.translateInput(uuid), groupId });
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
-				throw (com.liferay.portal.kernel.exception.PortalException)t;
-			}
-
-			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
-				throw (com.liferay.portal.kernel.exception.SystemException)t;
-			}
-
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
-			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (it.ethica.esf.model.ESFNationalDelegation)ClpSerializer.translateOutput(returnObj);
-	}
-
-	@Override
 	public java.util.List<it.ethica.esf.model.ESFNationalDelegation> getESFNationalDelegations(
 		int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName17,
-					_methodParameterTypes17, new Object[] { start, end });
+			returnObj = _invokableLocalService.invokeMethod(_methodName13,
+					_methodParameterTypes13, new Object[] { start, end });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -773,8 +627,8 @@ public class ESFNationalDelegationLocalServiceClp
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName18,
-					_methodParameterTypes18, new Object[] {  });
+			returnObj = _invokableLocalService.invokeMethod(_methodName14,
+					_methodParameterTypes14, new Object[] {  });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -802,8 +656,8 @@ public class ESFNationalDelegationLocalServiceClp
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName19,
-					_methodParameterTypes19,
+			returnObj = _invokableLocalService.invokeMethod(_methodName15,
+					_methodParameterTypes15,
 					new Object[] {
 						ClpSerializer.translateInput(esfNationalDelegation)
 					});
@@ -832,8 +686,8 @@ public class ESFNationalDelegationLocalServiceClp
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName20,
-					_methodParameterTypes20, new Object[] {  });
+			returnObj = _invokableLocalService.invokeMethod(_methodName16,
+					_methodParameterTypes16, new Object[] {  });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -853,8 +707,8 @@ public class ESFNationalDelegationLocalServiceClp
 	@Override
 	public void setBeanIdentifier(java.lang.String beanIdentifier) {
 		try {
-			_invokableLocalService.invokeMethod(_methodName21,
-				_methodParameterTypes21,
+			_invokableLocalService.invokeMethod(_methodName17,
+				_methodParameterTypes17,
 				new Object[] { ClpSerializer.translateInput(beanIdentifier) });
 		}
 		catch (Throwable t) {
@@ -884,8 +738,8 @@ public class ESFNationalDelegationLocalServiceClp
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName23,
-					_methodParameterTypes23,
+			returnObj = _invokableLocalService.invokeMethod(_methodName19,
+					_methodParameterTypes19,
 					new Object[] { esfMatchId, esfPartecipantTypeId });
 		}
 		catch (Throwable t) {
@@ -914,8 +768,8 @@ public class ESFNationalDelegationLocalServiceClp
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName24,
-					_methodParameterTypes24,
+			returnObj = _invokableLocalService.invokeMethod(_methodName20,
+					_methodParameterTypes20,
 					new Object[] { esfMatchId, esfPartecipantTypeId, sportTypeId });
 		}
 		catch (Throwable t) {
@@ -944,8 +798,8 @@ public class ESFNationalDelegationLocalServiceClp
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName25,
-					_methodParameterTypes25,
+			returnObj = _invokableLocalService.invokeMethod(_methodName21,
+					_methodParameterTypes21,
 					new Object[] { esfMatchId, sportTypeId, esfQualicationId });
 		}
 		catch (Throwable t) {
@@ -974,8 +828,8 @@ public class ESFNationalDelegationLocalServiceClp
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName26,
-					_methodParameterTypes26,
+			returnObj = _invokableLocalService.invokeMethod(_methodName22,
+					_methodParameterTypes22,
 					new Object[] {
 						esfMatchId,
 						
@@ -1012,8 +866,8 @@ public class ESFNationalDelegationLocalServiceClp
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName27,
-					_methodParameterTypes27,
+			returnObj = _invokableLocalService.invokeMethod(_methodName23,
+					_methodParameterTypes23,
 					new Object[] { esfUserId, esfMatchId });
 		}
 		catch (Throwable t) {
@@ -1042,8 +896,8 @@ public class ESFNationalDelegationLocalServiceClp
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName28,
-					_methodParameterTypes28, new Object[] { esfMatchId });
+			returnObj = _invokableLocalService.invokeMethod(_methodName24,
+					_methodParameterTypes24, new Object[] { esfMatchId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -1071,8 +925,8 @@ public class ESFNationalDelegationLocalServiceClp
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName29,
-					_methodParameterTypes29, new Object[] { esfUserId });
+			returnObj = _invokableLocalService.invokeMethod(_methodName25,
+					_methodParameterTypes25, new Object[] { esfUserId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -1100,8 +954,8 @@ public class ESFNationalDelegationLocalServiceClp
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName30,
-					_methodParameterTypes30,
+			returnObj = _invokableLocalService.invokeMethod(_methodName26,
+					_methodParameterTypes26,
 					new Object[] { esfUserId, partecipantType, start, end });
 		}
 		catch (Throwable t) {
@@ -1130,8 +984,8 @@ public class ESFNationalDelegationLocalServiceClp
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName31,
-					_methodParameterTypes31,
+			returnObj = _invokableLocalService.invokeMethod(_methodName27,
+					_methodParameterTypes27,
 					new Object[] { esfUserId, partecipantType });
 		}
 		catch (Throwable t) {
@@ -1160,8 +1014,8 @@ public class ESFNationalDelegationLocalServiceClp
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName32,
-					_methodParameterTypes32, new Object[] { esfMatchId });
+			returnObj = _invokableLocalService.invokeMethod(_methodName28,
+					_methodParameterTypes28, new Object[] { esfMatchId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -1189,8 +1043,8 @@ public class ESFNationalDelegationLocalServiceClp
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName33,
-					_methodParameterTypes33,
+			returnObj = _invokableLocalService.invokeMethod(_methodName29,
+					_methodParameterTypes29,
 					new Object[] { esfMatchId, esfUserId });
 		}
 		catch (Throwable t) {
@@ -1219,8 +1073,8 @@ public class ESFNationalDelegationLocalServiceClp
 			com.liferay.portal.kernel.exception.SystemException,
 			java.text.ParseException, javax.portlet.PortletException {
 		try {
-			_invokableLocalService.invokeMethod(_methodName34,
-				_methodParameterTypes34,
+			_invokableLocalService.invokeMethod(_methodName30,
+				_methodParameterTypes30,
 				new Object[] {
 					ClpSerializer.translateInput(actionRequest),
 					
@@ -1263,8 +1117,8 @@ public class ESFNationalDelegationLocalServiceClp
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName35,
-					_methodParameterTypes35,
+			returnObj = _invokableLocalService.invokeMethod(_methodName31,
+					_methodParameterTypes31,
 					new Object[] { matchId, userId, partecipantType });
 		}
 		catch (Throwable t) {
@@ -1323,14 +1177,14 @@ public class ESFNationalDelegationLocalServiceClp
 	private String[] _methodParameterTypes16;
 	private String _methodName17;
 	private String[] _methodParameterTypes17;
-	private String _methodName18;
-	private String[] _methodParameterTypes18;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
 	private String _methodName20;
 	private String[] _methodParameterTypes20;
 	private String _methodName21;
 	private String[] _methodParameterTypes21;
+	private String _methodName22;
+	private String[] _methodParameterTypes22;
 	private String _methodName23;
 	private String[] _methodParameterTypes23;
 	private String _methodName24;
@@ -1349,12 +1203,4 @@ public class ESFNationalDelegationLocalServiceClp
 	private String[] _methodParameterTypes30;
 	private String _methodName31;
 	private String[] _methodParameterTypes31;
-	private String _methodName32;
-	private String[] _methodParameterTypes32;
-	private String _methodName33;
-	private String[] _methodParameterTypes33;
-	private String _methodName34;
-	private String[] _methodParameterTypes34;
-	private String _methodName35;
-	private String[] _methodParameterTypes35;
 }

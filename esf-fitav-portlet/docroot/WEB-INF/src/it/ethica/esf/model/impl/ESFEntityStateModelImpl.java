@@ -16,7 +16,6 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -53,7 +52,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFEntityStateModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFEntityStateModelImpl extends BaseModelImpl<ESFEntityState>
 	implements ESFEntityStateModel {
 	/*
@@ -227,7 +225,6 @@ public class ESFEntityStateModelImpl extends BaseModelImpl<ESFEntityState>
 		}
 	}
 
-	@JSON
 	@Override
 	public long getEsfEntityStateId() {
 		return _esfEntityStateId;
@@ -238,7 +235,6 @@ public class ESFEntityStateModelImpl extends BaseModelImpl<ESFEntityState>
 		_esfEntityStateId = esfEntityStateId;
 	}
 
-	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -249,7 +245,6 @@ public class ESFEntityStateModelImpl extends BaseModelImpl<ESFEntityState>
 		_groupId = groupId;
 	}
 
-	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -260,7 +255,6 @@ public class ESFEntityStateModelImpl extends BaseModelImpl<ESFEntityState>
 		_companyId = companyId;
 	}
 
-	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -281,7 +275,6 @@ public class ESFEntityStateModelImpl extends BaseModelImpl<ESFEntityState>
 		_userUuid = userUuid;
 	}
 
-	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -297,7 +290,6 @@ public class ESFEntityStateModelImpl extends BaseModelImpl<ESFEntityState>
 		_userName = userName;
 	}
 
-	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -308,7 +300,6 @@ public class ESFEntityStateModelImpl extends BaseModelImpl<ESFEntityState>
 		_createDate = createDate;
 	}
 
-	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -319,7 +310,6 @@ public class ESFEntityStateModelImpl extends BaseModelImpl<ESFEntityState>
 		_modifiedDate = modifiedDate;
 	}
 
-	@JSON
 	@Override
 	public String getClassName() {
 		if (_className == null) {
@@ -345,7 +335,6 @@ public class ESFEntityStateModelImpl extends BaseModelImpl<ESFEntityState>
 		return GetterUtil.getString(_originalClassName);
 	}
 
-	@JSON
 	@Override
 	public long getClassPK() {
 		return _classPK;
@@ -368,7 +357,6 @@ public class ESFEntityStateModelImpl extends BaseModelImpl<ESFEntityState>
 		return _originalClassPK;
 	}
 
-	@JSON
 	@Override
 	public Date getStartDate() {
 		return _startDate;
@@ -379,7 +367,6 @@ public class ESFEntityStateModelImpl extends BaseModelImpl<ESFEntityState>
 		_startDate = startDate;
 	}
 
-	@JSON
 	@Override
 	public Date getEndDate() {
 		return _endDate;
@@ -390,7 +377,6 @@ public class ESFEntityStateModelImpl extends BaseModelImpl<ESFEntityState>
 		_endDate = endDate;
 	}
 
-	@JSON
 	@Override
 	public long getEsfStateId() {
 		return _esfStateId;

@@ -14,13 +14,6 @@
 
 package it.ethica.esf.service.http;
 
-import com.liferay.portal.kernel.log.Log;
-import com.liferay.portal.kernel.log.LogFactoryUtil;
-
-import it.ethica.esf.service.ESFUserServiceUtil;
-
-import java.rmi.RemoteException;
-
 /**
  * Provides the SOAP utility for the
  * {@link it.ethica.esf.service.ESFUserServiceUtil} service utility. The
@@ -62,21 +55,4 @@ import java.rmi.RemoteException;
  * @generated
  */
 public class ESFUserServiceSoap {
-	public static com.liferay.portal.model.UserSoap[] findByLastnameLike(
-		long esfOrganizationId, java.lang.String lastName)
-		throws RemoteException {
-		try {
-			java.util.List<com.liferay.portal.model.User> returnValue = ESFUserServiceUtil.findByLastnameLike(esfOrganizationId,
-					lastName);
-
-			return com.liferay.portal.model.UserSoap.toSoapModels(returnValue);
-		}
-		catch (Exception e) {
-			_log.error(e, e);
-
-			throw new RemoteException(e.getMessage());
-		}
-	}
-
-	private static Log _log = LogFactoryUtil.getLog(ESFUserServiceSoap.class);
 }

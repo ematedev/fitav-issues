@@ -16,7 +16,6 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
@@ -54,7 +53,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFFornitureTypeModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFFornitureTypeModelImpl extends BaseModelImpl<ESFFornitureType>
 	implements ESFFornitureTypeModel {
 	/*
@@ -205,7 +203,6 @@ public class ESFFornitureTypeModelImpl extends BaseModelImpl<ESFFornitureType>
 		}
 	}
 
-	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -229,7 +226,6 @@ public class ESFFornitureTypeModelImpl extends BaseModelImpl<ESFFornitureType>
 		return GetterUtil.getString(_originalUuid);
 	}
 
-	@JSON
 	@Override
 	public long getEsfFornitureTypeId() {
 		return _esfFornitureTypeId;
@@ -240,7 +236,6 @@ public class ESFFornitureTypeModelImpl extends BaseModelImpl<ESFFornitureType>
 		_esfFornitureTypeId = esfFornitureTypeId;
 	}
 
-	@JSON
 	@Override
 	public String getDescription() {
 		if (_description == null) {
@@ -266,7 +261,6 @@ public class ESFFornitureTypeModelImpl extends BaseModelImpl<ESFFornitureType>
 		return GetterUtil.getString(_originalDescription);
 	}
 
-	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -289,7 +283,6 @@ public class ESFFornitureTypeModelImpl extends BaseModelImpl<ESFFornitureType>
 		return _originalGroupId;
 	}
 
-	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -312,7 +305,6 @@ public class ESFFornitureTypeModelImpl extends BaseModelImpl<ESFFornitureType>
 		return _originalCompanyId;
 	}
 
-	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -333,7 +325,6 @@ public class ESFFornitureTypeModelImpl extends BaseModelImpl<ESFFornitureType>
 		_userUuid = userUuid;
 	}
 
-	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -349,7 +340,6 @@ public class ESFFornitureTypeModelImpl extends BaseModelImpl<ESFFornitureType>
 		_userName = userName;
 	}
 
-	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -360,7 +350,6 @@ public class ESFFornitureTypeModelImpl extends BaseModelImpl<ESFFornitureType>
 		_createDate = createDate;
 	}
 
-	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;

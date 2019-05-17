@@ -31,10 +31,6 @@ public class ESFUserServiceClp implements ESFUserService {
 		_methodName1 = "setBeanIdentifier";
 
 		_methodParameterTypes1 = new String[] { "java.lang.String" };
-
-		_methodName3 = "findByLastnameLike";
-
-		_methodParameterTypes3 = new String[] { "long", "java.lang.String" };
 	}
 
 	@Override
@@ -87,40 +83,9 @@ public class ESFUserServiceClp implements ESFUserService {
 		throw new UnsupportedOperationException();
 	}
 
-	@Override
-	public java.util.List<com.liferay.portal.model.User> findByLastnameLike(
-		long esfOrganizationId, java.lang.String lastName) {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableService.invokeMethod(_methodName3,
-					_methodParameterTypes3,
-					new Object[] {
-						esfOrganizationId,
-						
-					ClpSerializer.translateInput(lastName)
-					});
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
-			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (java.util.List<com.liferay.portal.model.User>)ClpSerializer.translateOutput(returnObj);
-	}
-
 	private InvokableService _invokableService;
 	private String _methodName0;
 	private String[] _methodParameterTypes0;
 	private String _methodName1;
 	private String[] _methodParameterTypes1;
-	private String _methodName3;
-	private String[] _methodParameterTypes3;
 }

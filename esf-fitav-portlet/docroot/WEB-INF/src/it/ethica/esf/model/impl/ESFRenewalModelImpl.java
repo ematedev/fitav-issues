@@ -16,7 +16,6 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -53,7 +52,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFRenewalModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFRenewalModelImpl extends BaseModelImpl<ESFRenewal>
 	implements ESFRenewalModel {
 	/*
@@ -295,7 +293,6 @@ public class ESFRenewalModelImpl extends BaseModelImpl<ESFRenewal>
 		}
 	}
 
-	@JSON
 	@Override
 	public long getEsfRenewalId() {
 		return _esfRenewalId;
@@ -306,7 +303,6 @@ public class ESFRenewalModelImpl extends BaseModelImpl<ESFRenewal>
 		_esfRenewalId = esfRenewalId;
 	}
 
-	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -317,7 +313,6 @@ public class ESFRenewalModelImpl extends BaseModelImpl<ESFRenewal>
 		_companyId = companyId;
 	}
 
-	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -350,7 +345,6 @@ public class ESFRenewalModelImpl extends BaseModelImpl<ESFRenewal>
 		return _originalUserId;
 	}
 
-	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -361,7 +355,6 @@ public class ESFRenewalModelImpl extends BaseModelImpl<ESFRenewal>
 		_modifiedDate = modifiedDate;
 	}
 
-	@JSON
 	@Override
 	public long getQuantity() {
 		return _quantity;
@@ -372,7 +365,6 @@ public class ESFRenewalModelImpl extends BaseModelImpl<ESFRenewal>
 		_quantity = quantity;
 	}
 
-	@JSON
 	@Override
 	public String getPaymentReason() {
 		if (_paymentReason == null) {
@@ -398,7 +390,6 @@ public class ESFRenewalModelImpl extends BaseModelImpl<ESFRenewal>
 		return GetterUtil.getString(_originalPaymentReason);
 	}
 
-	@JSON
 	@Override
 	public String getPaymentType() {
 		if (_paymentType == null) {
@@ -414,7 +405,6 @@ public class ESFRenewalModelImpl extends BaseModelImpl<ESFRenewal>
 		_paymentType = paymentType;
 	}
 
-	@JSON
 	@Override
 	public Date getPaymentDate() {
 		return _paymentDate;
@@ -425,7 +415,6 @@ public class ESFRenewalModelImpl extends BaseModelImpl<ESFRenewal>
 		_paymentDate = paymentDate;
 	}
 
-	@JSON
 	@Override
 	public boolean getPaymentReceived() {
 		return _paymentReceived;
@@ -453,7 +442,6 @@ public class ESFRenewalModelImpl extends BaseModelImpl<ESFRenewal>
 		return _originalPaymentReceived;
 	}
 
-	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -464,7 +452,6 @@ public class ESFRenewalModelImpl extends BaseModelImpl<ESFRenewal>
 		_createDate = createDate;
 	}
 
-	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -475,7 +462,6 @@ public class ESFRenewalModelImpl extends BaseModelImpl<ESFRenewal>
 		_groupId = groupId;
 	}
 
-	@JSON
 	@Override
 	public String getInfo() {
 		if (_info == null) {
@@ -491,7 +477,6 @@ public class ESFRenewalModelImpl extends BaseModelImpl<ESFRenewal>
 		_info = info;
 	}
 
-	@JSON
 	@Override
 	public String getMadeBy() {
 		if (_madeBy == null) {
@@ -507,7 +492,6 @@ public class ESFRenewalModelImpl extends BaseModelImpl<ESFRenewal>
 		_madeBy = madeBy;
 	}
 
-	@JSON
 	@Override
 	public double getAmount() {
 		return _amount;
@@ -518,7 +502,6 @@ public class ESFRenewalModelImpl extends BaseModelImpl<ESFRenewal>
 		_amount = amount;
 	}
 
-	@JSON
 	@Override
 	public long getOrganizationId() {
 		return _organizationId;
@@ -541,7 +524,6 @@ public class ESFRenewalModelImpl extends BaseModelImpl<ESFRenewal>
 		return _originalOrganizationId;
 	}
 
-	@JSON
 	@Override
 	public int getReportingYear() {
 		return _reportingYear;
@@ -564,7 +546,6 @@ public class ESFRenewalModelImpl extends BaseModelImpl<ESFRenewal>
 		return _originalReportingYear;
 	}
 
-	@JSON
 	@Override
 	public double getAmountTotal() {
 		return _amountTotal;
@@ -575,7 +556,6 @@ public class ESFRenewalModelImpl extends BaseModelImpl<ESFRenewal>
 		_amountTotal = amountTotal;
 	}
 
-	@JSON
 	@Override
 	public boolean getIsTotal() {
 		return _isTotal;
@@ -603,7 +583,6 @@ public class ESFRenewalModelImpl extends BaseModelImpl<ESFRenewal>
 		return _originalIsTotal;
 	}
 
-	@JSON
 	@Override
 	public long getRenewalFatherId() {
 		return _renewalFatherId;
@@ -626,7 +605,6 @@ public class ESFRenewalModelImpl extends BaseModelImpl<ESFRenewal>
 		return _originalRenewalFatherId;
 	}
 
-	@JSON
 	@Override
 	public boolean getAffiliates() {
 		return _affiliates;

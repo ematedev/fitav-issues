@@ -16,7 +16,6 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
@@ -54,7 +53,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFCardModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 	implements ESFCardModel {
 	/*
@@ -88,10 +86,10 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 	public static final String TX_MANAGER = "liferayTransactionManager";
 	public static final boolean ENTITY_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.entity.cache.enabled.it.ethica.esf.model.ESFCard"),
-			true);
+			false);
 	public static final boolean FINDER_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.finder.cache.enabled.it.ethica.esf.model.ESFCard"),
-			true);
+			false);
 	public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.column.bitmask.enabled.it.ethica.esf.model.ESFCard"),
 			true);
@@ -249,7 +247,6 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		}
 	}
 
-	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -273,7 +270,6 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		return GetterUtil.getString(_originalUuid);
 	}
 
-	@JSON
 	@Override
 	public long getEsfCardId() {
 		return _esfCardId;
@@ -284,7 +280,6 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		_esfCardId = esfCardId;
 	}
 
-	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -307,7 +302,6 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		return _originalGroupId;
 	}
 
-	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -330,7 +324,6 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		return _originalCompanyId;
 	}
 
-	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -351,7 +344,6 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		_userUuid = userUuid;
 	}
 
-	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -367,7 +359,6 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		_userName = userName;
 	}
 
-	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -378,7 +369,6 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		_createDate = createDate;
 	}
 
-	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -389,7 +379,6 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		_modifiedDate = modifiedDate;
 	}
 
-	@JSON
 	@Override
 	public String getCodeAlfa() {
 		if (_codeAlfa == null) {
@@ -415,7 +404,6 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		return GetterUtil.getString(_originalCodeAlfa);
 	}
 
-	@JSON
 	@Override
 	public long getCodeNum() {
 		return _codeNum;
@@ -428,7 +416,6 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		_codeNum = codeNum;
 	}
 
-	@JSON
 	@Override
 	public long getEsfUserId() {
 		return _esfUserId;
@@ -461,7 +448,6 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		return _originalEsfUserId;
 	}
 
-	@JSON
 	@Override
 	public long getEsfOrganizationId() {
 		return _esfOrganizationId;
@@ -484,7 +470,6 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		return _originalEsfOrganizationId;
 	}
 
-	@JSON
 	@Override
 	public String getCode() {
 		if (_code == null) {
@@ -510,7 +495,6 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		return GetterUtil.getString(_originalCode);
 	}
 
-	@JSON
 	@Override
 	public String getOldCode() {
 		if (_oldCode == null) {

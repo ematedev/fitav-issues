@@ -56,23 +56,6 @@ public class ESFCardServiceWrapper implements ESFCardService,
 		return _esfCardService.invokeMethod(name, parameterTypes, arguments);
 	}
 
-	@Override
-	public java.util.List<it.ethica.esf.model.ESFCard> findByUserId(long userId) {
-		return _esfCardService.findByUserId(userId);
-	}
-
-	@Override
-	public java.util.List<it.ethica.esf.model.ESFCard> findCurrentByUserId(
-		long userId) {
-		return _esfCardService.findCurrentByUserId(userId);
-	}
-
-	@Override
-	public java.util.List<it.ethica.esf.model.ESFCard> findHistoryByUserId(
-		long userId) {
-		return _esfCardService.findHistoryByUserId(userId);
-	}
-
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

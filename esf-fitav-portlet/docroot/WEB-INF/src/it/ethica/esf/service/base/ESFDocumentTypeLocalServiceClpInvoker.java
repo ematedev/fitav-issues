@@ -106,23 +106,23 @@ public class ESFDocumentTypeLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFDocumentType"
 			};
 
-		_methodName376 = "getBeanIdentifier";
+		_methodName380 = "getBeanIdentifier";
 
-		_methodParameterTypes376 = new String[] {  };
+		_methodParameterTypes380 = new String[] {  };
 
-		_methodName377 = "setBeanIdentifier";
+		_methodName381 = "setBeanIdentifier";
 
-		_methodParameterTypes377 = new String[] { "java.lang.String" };
+		_methodParameterTypes381 = new String[] { "java.lang.String" };
 
-		_methodName382 = "saveUpdateESFDocumentType";
+		_methodName386 = "saveUpdateESFDocumentType";
 
-		_methodParameterTypes382 = new String[] {
+		_methodParameterTypes386 = new String[] {
 				"it.ethica.esf.model.ESFDocumentType"
 			};
 
-		_methodName383 = "getUserFilteredList";
+		_methodName387 = "getUserFilteredList";
 
-		_methodParameterTypes383 = new String[] { "long" };
+		_methodParameterTypes387 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -214,25 +214,25 @@ public class ESFDocumentTypeLocalServiceClpInvoker {
 			return ESFDocumentTypeLocalServiceUtil.updateESFDocumentType((it.ethica.esf.model.ESFDocumentType)arguments[0]);
 		}
 
-		if (_methodName376.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes376, parameterTypes)) {
+		if (_methodName380.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
 			return ESFDocumentTypeLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName377.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes377, parameterTypes)) {
+		if (_methodName381.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes381, parameterTypes)) {
 			ESFDocumentTypeLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName382.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
+		if (_methodName386.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
 			return ESFDocumentTypeLocalServiceUtil.saveUpdateESFDocumentType((it.ethica.esf.model.ESFDocumentType)arguments[0]);
 		}
 
-		if (_methodName383.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes383, parameterTypes)) {
+		if (_methodName387.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
 			return ESFDocumentTypeLocalServiceUtil.getUserFilteredList(((Long)arguments[0]).longValue());
 		}
 
@@ -271,12 +271,12 @@ public class ESFDocumentTypeLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName376;
-	private String[] _methodParameterTypes376;
-	private String _methodName377;
-	private String[] _methodParameterTypes377;
-	private String _methodName382;
-	private String[] _methodParameterTypes382;
-	private String _methodName383;
-	private String[] _methodParameterTypes383;
+	private String _methodName380;
+	private String[] _methodParameterTypes380;
+	private String _methodName381;
+	private String[] _methodParameterTypes381;
+	private String _methodName386;
+	private String[] _methodParameterTypes386;
+	private String _methodName387;
+	private String[] _methodParameterTypes387;
 }

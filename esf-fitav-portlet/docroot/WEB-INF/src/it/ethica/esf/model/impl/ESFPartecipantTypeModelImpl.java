@@ -15,7 +15,6 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -50,7 +49,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFPartecipantTypeModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFPartecipantTypeModelImpl extends BaseModelImpl<ESFPartecipantType>
 	implements ESFPartecipantTypeModel {
 	/*
@@ -60,11 +58,10 @@ public class ESFPartecipantTypeModelImpl extends BaseModelImpl<ESFPartecipantTyp
 	 */
 	public static final String TABLE_NAME = "ESFPartecipantType";
 	public static final Object[][] TABLE_COLUMNS = {
-			{ "uuid_", Types.VARCHAR },
 			{ "esfPartecipantTypeId", Types.BIGINT },
 			{ "name", Types.VARCHAR }
 		};
-	public static final String TABLE_SQL_CREATE = "create table ESFPartecipantType (uuid_ VARCHAR(75) null,esfPartecipantTypeId LONG not null primary key,name VARCHAR(75) null)";
+	public static final String TABLE_SQL_CREATE = "create table ESFPartecipantType (esfPartecipantTypeId LONG not null primary key,name VARCHAR(75) null)";
 	public static final String TABLE_SQL_DROP = "drop table ESFPartecipantType";
 	public static final String ORDER_BY_JPQL = " ORDER BY esfPartecipantType.esfPartecipantTypeId ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY ESFPartecipantType.esfPartecipantTypeId ASC";
@@ -73,15 +70,11 @@ public class ESFPartecipantTypeModelImpl extends BaseModelImpl<ESFPartecipantTyp
 	public static final String TX_MANAGER = "liferayTransactionManager";
 	public static final boolean ENTITY_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.entity.cache.enabled.it.ethica.esf.model.ESFPartecipantType"),
-			true);
+			false);
 	public static final boolean FINDER_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.finder.cache.enabled.it.ethica.esf.model.ESFPartecipantType"),
-			true);
-	public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
-				"value.object.column.bitmask.enabled.it.ethica.esf.model.ESFPartecipantType"),
-			true);
-	public static long UUID_COLUMN_BITMASK = 1L;
-	public static long ESFPARTECIPANTTYPEID_COLUMN_BITMASK = 2L;
+			false);
+	public static final boolean COLUMN_BITMASK_ENABLED = false;
 	public static final long LOCK_EXPIRATION_TIME = GetterUtil.getLong(com.liferay.util.service.ServiceProps.get(
 				"lock.expiration.time.it.ethica.esf.model.ESFPartecipantType"));
 
@@ -122,7 +115,6 @@ public class ESFPartecipantTypeModelImpl extends BaseModelImpl<ESFPartecipantTyp
 	public Map<String, Object> getModelAttributes() {
 		Map<String, Object> attributes = new HashMap<String, Object>();
 
-		attributes.put("uuid", getUuid());
 		attributes.put("esfPartecipantTypeId", getEsfPartecipantTypeId());
 		attributes.put("name", getName());
 
@@ -131,12 +123,6 @@ public class ESFPartecipantTypeModelImpl extends BaseModelImpl<ESFPartecipantTyp
 
 	@Override
 	public void setModelAttributes(Map<String, Object> attributes) {
-		String uuid = (String)attributes.get("uuid");
-
-		if (uuid != null) {
-			setUuid(uuid);
-		}
-
 		Long esfPartecipantTypeId = (Long)attributes.get("esfPartecipantTypeId");
 
 		if (esfPartecipantTypeId != null) {
@@ -150,31 +136,6 @@ public class ESFPartecipantTypeModelImpl extends BaseModelImpl<ESFPartecipantTyp
 		}
 	}
 
-	@JSON
-	@Override
-	public String getUuid() {
-		if (_uuid == null) {
-			return StringPool.BLANK;
-		}
-		else {
-			return _uuid;
-		}
-	}
-
-	@Override
-	public void setUuid(String uuid) {
-		if (_originalUuid == null) {
-			_originalUuid = _uuid;
-		}
-
-		_uuid = uuid;
-	}
-
-	public String getOriginalUuid() {
-		return GetterUtil.getString(_originalUuid);
-	}
-
-	@JSON
 	@Override
 	public long getEsfPartecipantTypeId() {
 		return _esfPartecipantTypeId;
@@ -185,7 +146,6 @@ public class ESFPartecipantTypeModelImpl extends BaseModelImpl<ESFPartecipantTyp
 		_esfPartecipantTypeId = esfPartecipantTypeId;
 	}
 
-	@JSON
 	@Override
 	public String getName() {
 		if (_name == null) {
@@ -199,10 +159,6 @@ public class ESFPartecipantTypeModelImpl extends BaseModelImpl<ESFPartecipantTyp
 	@Override
 	public void setName(String name) {
 		_name = name;
-	}
-
-	public long getColumnBitmask() {
-		return _columnBitmask;
 	}
 
 	@Override
@@ -232,7 +188,6 @@ public class ESFPartecipantTypeModelImpl extends BaseModelImpl<ESFPartecipantTyp
 	public Object clone() {
 		ESFPartecipantTypeImpl esfPartecipantTypeImpl = new ESFPartecipantTypeImpl();
 
-		esfPartecipantTypeImpl.setUuid(getUuid());
 		esfPartecipantTypeImpl.setEsfPartecipantTypeId(getEsfPartecipantTypeId());
 		esfPartecipantTypeImpl.setName(getName());
 
@@ -285,24 +240,11 @@ public class ESFPartecipantTypeModelImpl extends BaseModelImpl<ESFPartecipantTyp
 
 	@Override
 	public void resetOriginalValues() {
-		ESFPartecipantTypeModelImpl esfPartecipantTypeModelImpl = this;
-
-		esfPartecipantTypeModelImpl._originalUuid = esfPartecipantTypeModelImpl._uuid;
-
-		esfPartecipantTypeModelImpl._columnBitmask = 0;
 	}
 
 	@Override
 	public CacheModel<ESFPartecipantType> toCacheModel() {
 		ESFPartecipantTypeCacheModel esfPartecipantTypeCacheModel = new ESFPartecipantTypeCacheModel();
-
-		esfPartecipantTypeCacheModel.uuid = getUuid();
-
-		String uuid = esfPartecipantTypeCacheModel.uuid;
-
-		if ((uuid != null) && (uuid.length() == 0)) {
-			esfPartecipantTypeCacheModel.uuid = null;
-		}
 
 		esfPartecipantTypeCacheModel.esfPartecipantTypeId = getEsfPartecipantTypeId();
 
@@ -319,11 +261,9 @@ public class ESFPartecipantTypeModelImpl extends BaseModelImpl<ESFPartecipantTyp
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(7);
+		StringBundler sb = new StringBundler(5);
 
-		sb.append("{uuid=");
-		sb.append(getUuid());
-		sb.append(", esfPartecipantTypeId=");
+		sb.append("{esfPartecipantTypeId=");
 		sb.append(getEsfPartecipantTypeId());
 		sb.append(", name=");
 		sb.append(getName());
@@ -334,16 +274,12 @@ public class ESFPartecipantTypeModelImpl extends BaseModelImpl<ESFPartecipantTyp
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(13);
+		StringBundler sb = new StringBundler(10);
 
 		sb.append("<model><model-name>");
 		sb.append("it.ethica.esf.model.ESFPartecipantType");
 		sb.append("</model-name>");
 
-		sb.append(
-			"<column><column-name>uuid</column-name><column-value><![CDATA[");
-		sb.append(getUuid());
-		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>esfPartecipantTypeId</column-name><column-value><![CDATA[");
 		sb.append(getEsfPartecipantTypeId());
@@ -362,10 +298,7 @@ public class ESFPartecipantTypeModelImpl extends BaseModelImpl<ESFPartecipantTyp
 	private static Class<?>[] _escapedModelInterfaces = new Class[] {
 			ESFPartecipantType.class
 		};
-	private String _uuid;
-	private String _originalUuid;
 	private long _esfPartecipantTypeId;
 	private String _name;
-	private long _columnBitmask;
 	private ESFPartecipantType _escapedModel;
 }

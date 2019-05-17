@@ -58,21 +58,6 @@ public interface ESFPartecipantTypeModel extends BaseModel<ESFPartecipantType> {
 	public void setPrimaryKey(long primaryKey);
 
 	/**
-	 * Returns the uuid of this e s f partecipant type.
-	 *
-	 * @return the uuid of this e s f partecipant type
-	 */
-	@AutoEscape
-	public String getUuid();
-
-	/**
-	 * Sets the uuid of this e s f partecipant type.
-	 *
-	 * @param uuid the uuid of this e s f partecipant type
-	 */
-	public void setUuid(String uuid);
-
-	/**
 	 * Returns the esf partecipant type ID of this e s f partecipant type.
 	 *
 	 * @return the esf partecipant type ID of this e s f partecipant type

@@ -63,12 +63,4 @@ public interface ESFCardService extends BaseService, InvokableService {
 	public java.lang.Object invokeMethod(java.lang.String name,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
-
-	public java.util.List<it.ethica.esf.model.ESFCard> findByUserId(long userId);
-
-	public java.util.List<it.ethica.esf.model.ESFCard> findCurrentByUserId(
-		long userId);
-
-	public java.util.List<it.ethica.esf.model.ESFCard> findHistoryByUserId(
-		long userId);
 }

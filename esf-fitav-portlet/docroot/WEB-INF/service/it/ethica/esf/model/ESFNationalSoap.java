@@ -30,7 +30,6 @@ public class ESFNationalSoap implements Serializable {
 	public static ESFNationalSoap toSoapModel(ESFNational model) {
 		ESFNationalSoap soapModel = new ESFNationalSoap();
 
-		soapModel.setUuid(model.getUuid());
 		soapModel.setEsfNationalId(model.getEsfNationalId());
 		soapModel.setGroupId(model.getGroupId());
 		soapModel.setCompanyId(model.getCompanyId());
@@ -98,14 +97,6 @@ public class ESFNationalSoap implements Serializable {
 
 	public void setPrimaryKey(long pk) {
 		setEsfNationalId(pk);
-	}
-
-	public String getUuid() {
-		return _uuid;
-	}
-
-	public void setUuid(String uuid) {
-		_uuid = uuid;
 	}
 
 	public long getEsfNationalId() {
@@ -252,7 +243,6 @@ public class ESFNationalSoap implements Serializable {
 		_deliberateDate = deliberateDate;
 	}
 
-	private String _uuid;
 	private long _esfNationalId;
 	private long _groupId;
 	private long _companyId;

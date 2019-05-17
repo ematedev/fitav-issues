@@ -15,7 +15,6 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -50,7 +49,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFBrandModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFBrandModelImpl extends BaseModelImpl<ESFBrand>
 	implements ESFBrandModel {
 	/*
@@ -146,7 +144,6 @@ public class ESFBrandModelImpl extends BaseModelImpl<ESFBrand>
 		}
 	}
 
-	@JSON
 	@Override
 	public long getBrandId() {
 		return _brandId;
@@ -157,7 +154,6 @@ public class ESFBrandModelImpl extends BaseModelImpl<ESFBrand>
 		_brandId = brandId;
 	}
 
-	@JSON
 	@Override
 	public String getName() {
 		if (_name == null) {
@@ -173,7 +169,6 @@ public class ESFBrandModelImpl extends BaseModelImpl<ESFBrand>
 		_name = name;
 	}
 
-	@JSON
 	@Override
 	public String getDescription() {
 		if (_description == null) {

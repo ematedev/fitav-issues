@@ -16,7 +16,6 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -53,7 +52,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFDocumentModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 	implements ESFDocumentModel {
 	/*
@@ -261,7 +259,6 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		}
 	}
 
-	@JSON
 	@Override
 	public long getEsfDocumentId() {
 		return _esfDocumentId;
@@ -272,7 +269,6 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		_esfDocumentId = esfDocumentId;
 	}
 
-	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -283,7 +279,6 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		_groupId = groupId;
 	}
 
-	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -294,7 +289,6 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		_companyId = companyId;
 	}
 
-	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -315,7 +309,6 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		_userUuid = userUuid;
 	}
 
-	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -331,7 +324,6 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		_userName = userName;
 	}
 
-	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -342,7 +334,6 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		_createDate = createDate;
 	}
 
-	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -353,7 +344,6 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		_modifiedDate = modifiedDate;
 	}
 
-	@JSON
 	@Override
 	public String getCode() {
 		if (_code == null) {
@@ -379,7 +369,6 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		return GetterUtil.getString(_originalCode);
 	}
 
-	@JSON
 	@Override
 	public String getReleasedBy() {
 		if (_releasedBy == null) {
@@ -395,7 +384,6 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		_releasedBy = releasedBy;
 	}
 
-	@JSON
 	@Override
 	public Date getReleaseDate() {
 		return _releaseDate;
@@ -406,7 +394,6 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		_releaseDate = releaseDate;
 	}
 
-	@JSON
 	@Override
 	public Date getExpirationDate() {
 		return _expirationDate;
@@ -427,7 +414,6 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		return _originalExpirationDate;
 	}
 
-	@JSON
 	@Override
 	public long getEsfUserId() {
 		return _esfUserId;
@@ -460,7 +446,6 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		return _originalEsfUserId;
 	}
 
-	@JSON
 	@Override
 	public String getType() {
 		if (_type == null) {
@@ -486,21 +471,9 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 		return GetterUtil.getString(_originalType);
 	}
 
-	@JSON
 	@Override
 	public long getEsfDocumentTypeId() {
 		return _esfDocumentTypeId;
-	}
-
-	@JSON
-	@Override
-	public long getEsfPublicAuthorityId() {
-		return _esfPublicAuthorityId;
-	}
-
-	@Override
-	public void setEsfPublicAuthorityId(long esfPublicAuthorityId) {
-		_esfPublicAuthorityId = esfPublicAuthorityId;
 	}
 
 	@Override
@@ -518,6 +491,16 @@ public class ESFDocumentModelImpl extends BaseModelImpl<ESFDocument>
 
 	public long getOriginalEsfDocumentTypeId() {
 		return _originalEsfDocumentTypeId;
+	}
+
+	@Override
+	public long getEsfPublicAuthorityId() {
+		return _esfPublicAuthorityId;
+	}
+
+	@Override
+	public void setEsfPublicAuthorityId(long esfPublicAuthorityId) {
+		_esfPublicAuthorityId = esfPublicAuthorityId;
 	}
 
 	@Override

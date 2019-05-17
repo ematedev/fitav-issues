@@ -63,26 +63,6 @@ public class ESFFederalRoleServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
-	public static it.ethica.esf.model.ESFFederalRole updateEsfFederalRole(
-		long esfFederalRoleId, java.lang.String name,
-		java.lang.String description, boolean regional, boolean provincial)
-		throws com.liferay.portal.kernel.exception.SystemException,
-			com.liferay.portal.security.auth.PrincipalException {
-		return getService()
-				   .updateEsfFederalRole(esfFederalRoleId, name, description,
-			regional, provincial);
-	}
-
-	public static java.util.List<it.ethica.esf.model.ESFSpecific> getFederalRoleSpecifics(
-		long esfFederalRoleId) {
-		return getService().getFederalRoleSpecifics(esfFederalRoleId);
-	}
-
-	public static java.util.List<it.ethica.esf.model.ESFFederalRole> findByCode(
-		java.lang.String name) {
-		return getService().findByCode(name);
-	}
-
 	public static void clearService() {
 		_service = null;
 	}

@@ -14,13 +14,6 @@
 
 package it.ethica.esf.service.http;
 
-import com.liferay.portal.kernel.log.Log;
-import com.liferay.portal.kernel.log.LogFactoryUtil;
-
-import it.ethica.esf.service.ESFCardServiceUtil;
-
-import java.rmi.RemoteException;
-
 /**
  * Provides the SOAP utility for the
  * {@link it.ethica.esf.service.ESFCardServiceUtil} service utility. The
@@ -62,47 +55,4 @@ import java.rmi.RemoteException;
  * @generated
  */
 public class ESFCardServiceSoap {
-	public static it.ethica.esf.model.ESFCardSoap[] findByUserId(long userId)
-		throws RemoteException {
-		try {
-			java.util.List<it.ethica.esf.model.ESFCard> returnValue = ESFCardServiceUtil.findByUserId(userId);
-
-			return it.ethica.esf.model.ESFCardSoap.toSoapModels(returnValue);
-		}
-		catch (Exception e) {
-			_log.error(e, e);
-
-			throw new RemoteException(e.getMessage());
-		}
-	}
-
-	public static it.ethica.esf.model.ESFCardSoap[] findCurrentByUserId(
-		long userId) throws RemoteException {
-		try {
-			java.util.List<it.ethica.esf.model.ESFCard> returnValue = ESFCardServiceUtil.findCurrentByUserId(userId);
-
-			return it.ethica.esf.model.ESFCardSoap.toSoapModels(returnValue);
-		}
-		catch (Exception e) {
-			_log.error(e, e);
-
-			throw new RemoteException(e.getMessage());
-		}
-	}
-
-	public static it.ethica.esf.model.ESFCardSoap[] findHistoryByUserId(
-		long userId) throws RemoteException {
-		try {
-			java.util.List<it.ethica.esf.model.ESFCard> returnValue = ESFCardServiceUtil.findHistoryByUserId(userId);
-
-			return it.ethica.esf.model.ESFCardSoap.toSoapModels(returnValue);
-		}
-		catch (Exception e) {
-			_log.error(e, e);
-
-			throw new RemoteException(e.getMessage());
-		}
-	}
-
-	private static Log _log = LogFactoryUtil.getLog(ESFCardServiceSoap.class);
 }

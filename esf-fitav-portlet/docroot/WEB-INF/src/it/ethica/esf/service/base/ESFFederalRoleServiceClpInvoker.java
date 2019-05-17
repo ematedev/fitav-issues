@@ -24,73 +24,34 @@ import java.util.Arrays;
  */
 public class ESFFederalRoleServiceClpInvoker {
 	public ESFFederalRoleServiceClpInvoker() {
-		_methodName356 = "getBeanIdentifier";
+		_methodName364 = "getBeanIdentifier";
 
-		_methodParameterTypes356 = new String[] {  };
+		_methodParameterTypes364 = new String[] {  };
 
-		_methodName357 = "setBeanIdentifier";
+		_methodName365 = "setBeanIdentifier";
 
-		_methodParameterTypes357 = new String[] { "java.lang.String" };
-
-		_methodName362 = "updateEsfFederalRole";
-
-		_methodParameterTypes362 = new String[] {
-				"long", "java.lang.String", "java.lang.String", "boolean",
-				"boolean"
-			};
-
-		_methodName363 = "getFederalRoleSpecifics";
-
-		_methodParameterTypes363 = new String[] { "long" };
-
-		_methodName364 = "findByCode";
-
-		_methodParameterTypes364 = new String[] { "java.lang.String" };
+		_methodParameterTypes365 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
 		Object[] arguments) throws Throwable {
-		if (_methodName356.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes356, parameterTypes)) {
+		if (_methodName364.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes364, parameterTypes)) {
 			return ESFFederalRoleServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName357.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes357, parameterTypes)) {
+		if (_methodName365.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes365, parameterTypes)) {
 			ESFFederalRoleServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName362.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes362, parameterTypes)) {
-			return ESFFederalRoleServiceUtil.updateEsfFederalRole(((Long)arguments[0]).longValue(),
-				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
-				((Boolean)arguments[3]).booleanValue(),
-				((Boolean)arguments[4]).booleanValue());
-		}
-
-		if (_methodName363.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes363, parameterTypes)) {
-			return ESFFederalRoleServiceUtil.getFederalRoleSpecifics(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName364.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes364, parameterTypes)) {
-			return ESFFederalRoleServiceUtil.findByCode((java.lang.String)arguments[0]);
-		}
-
 		throw new UnsupportedOperationException();
 	}
 
-	private String _methodName356;
-	private String[] _methodParameterTypes356;
-	private String _methodName357;
-	private String[] _methodParameterTypes357;
-	private String _methodName362;
-	private String[] _methodParameterTypes362;
-	private String _methodName363;
-	private String[] _methodParameterTypes363;
 	private String _methodName364;
 	private String[] _methodParameterTypes364;
+	private String _methodName365;
+	private String[] _methodParameterTypes365;
 }

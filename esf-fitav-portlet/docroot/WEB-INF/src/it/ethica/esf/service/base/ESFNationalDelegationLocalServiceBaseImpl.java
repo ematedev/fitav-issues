@@ -313,35 +313,6 @@ public abstract class ESFNationalDelegationLocalServiceBaseImpl
 	}
 
 	/**
-	 * Returns the e s f national delegation with the matching UUID and company.
-	 *
-	 * @param uuid the e s f national delegation's UUID
-	 * @param  companyId the primary key of the company
-	 * @return the matching e s f national delegation, or <code>null</code> if a matching e s f national delegation could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	@Override
-	public ESFNationalDelegation fetchESFNationalDelegationByUuidAndCompanyId(
-		String uuid, long companyId) throws SystemException {
-		return esfNationalDelegationPersistence.fetchByUuid_C_First(uuid,
-			companyId, null);
-	}
-
-	/**
-	 * Returns the e s f national delegation matching the UUID and group.
-	 *
-	 * @param uuid the e s f national delegation's UUID
-	 * @param groupId the primary key of the group
-	 * @return the matching e s f national delegation, or <code>null</code> if a matching e s f national delegation could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	@Override
-	public ESFNationalDelegation fetchESFNationalDelegationByUuidAndGroupId(
-		String uuid, long groupId) throws SystemException {
-		return esfNationalDelegationPersistence.fetchByUUID_G(uuid, groupId);
-	}
-
-	/**
 	 * Returns the e s f national delegation with the primary key.
 	 *
 	 * @param esfNationalDelgationId the primary key of the e s f national delegation
@@ -359,37 +330,6 @@ public abstract class ESFNationalDelegationLocalServiceBaseImpl
 	public PersistedModel getPersistedModel(Serializable primaryKeyObj)
 		throws PortalException, SystemException {
 		return esfNationalDelegationPersistence.findByPrimaryKey(primaryKeyObj);
-	}
-
-	/**
-	 * Returns the e s f national delegation with the matching UUID and company.
-	 *
-	 * @param uuid the e s f national delegation's UUID
-	 * @param  companyId the primary key of the company
-	 * @return the matching e s f national delegation
-	 * @throws PortalException if a matching e s f national delegation could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	@Override
-	public ESFNationalDelegation getESFNationalDelegationByUuidAndCompanyId(
-		String uuid, long companyId) throws PortalException, SystemException {
-		return esfNationalDelegationPersistence.findByUuid_C_First(uuid,
-			companyId, null);
-	}
-
-	/**
-	 * Returns the e s f national delegation matching the UUID and group.
-	 *
-	 * @param uuid the e s f national delegation's UUID
-	 * @param groupId the primary key of the group
-	 * @return the matching e s f national delegation
-	 * @throws PortalException if a matching e s f national delegation could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	@Override
-	public ESFNationalDelegation getESFNationalDelegationByUuidAndGroupId(
-		String uuid, long groupId) throws PortalException, SystemException {
-		return esfNationalDelegationPersistence.findByUUID_G(uuid, groupId);
 	}
 
 	/**

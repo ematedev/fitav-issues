@@ -16,8 +16,6 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.json.JSON;
-import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -54,7 +52,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFNationalModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 	implements ESFNationalModel {
 	/*
@@ -64,7 +61,6 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 	 */
 	public static final String TABLE_NAME = "ESFNational";
 	public static final Object[][] TABLE_COLUMNS = {
-			{ "uuid_", Types.VARCHAR },
 			{ "esfNationalId", Types.BIGINT },
 			{ "groupId", Types.BIGINT },
 			{ "companyId", Types.BIGINT },
@@ -83,7 +79,7 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 			{ "deliberate", Types.VARCHAR },
 			{ "deliberateDate", Types.TIMESTAMP }
 		};
-	public static final String TABLE_SQL_CREATE = "create table ESFNational (uuid_ VARCHAR(75) null,esfNationalId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,esfUserId LONG,esfSportTypeId LONG,startDate DATE null,endDate DATE null,BDODate DATE null,idInternational VARCHAR(75) null,isUniversity BOOLEAN,isNational BOOLEAN,deliberate VARCHAR(75) null,deliberateDate DATE null)";
+	public static final String TABLE_SQL_CREATE = "create table ESFNational (esfNationalId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,esfUserId LONG,esfSportTypeId LONG,startDate DATE null,endDate DATE null,BDODate DATE null,idInternational VARCHAR(75) null,isUniversity BOOLEAN,isNational BOOLEAN,deliberate VARCHAR(75) null,deliberateDate DATE null)";
 	public static final String TABLE_SQL_DROP = "drop table ESFNational";
 	public static final String ORDER_BY_JPQL = " ORDER BY esfNational.esfNationalId ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY ESFNational.esfNationalId ASC";
@@ -99,14 +95,11 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 	public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.column.bitmask.enabled.it.ethica.esf.model.ESFNational"),
 			true);
-	public static long COMPANYID_COLUMN_BITMASK = 1L;
-	public static long ENDDATE_COLUMN_BITMASK = 2L;
-	public static long ESFSPORTTYPEID_COLUMN_BITMASK = 4L;
-	public static long ESFUSERID_COLUMN_BITMASK = 8L;
-	public static long GROUPID_COLUMN_BITMASK = 16L;
-	public static long STARTDATE_COLUMN_BITMASK = 32L;
-	public static long UUID_COLUMN_BITMASK = 64L;
-	public static long ESFNATIONALID_COLUMN_BITMASK = 128L;
+	public static long ENDDATE_COLUMN_BITMASK = 1L;
+	public static long ESFSPORTTYPEID_COLUMN_BITMASK = 2L;
+	public static long ESFUSERID_COLUMN_BITMASK = 4L;
+	public static long STARTDATE_COLUMN_BITMASK = 8L;
+	public static long ESFNATIONALID_COLUMN_BITMASK = 16L;
 	public static final long LOCK_EXPIRATION_TIME = GetterUtil.getLong(com.liferay.util.service.ServiceProps.get(
 				"lock.expiration.time.it.ethica.esf.model.ESFNational"));
 
@@ -147,7 +140,6 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 	public Map<String, Object> getModelAttributes() {
 		Map<String, Object> attributes = new HashMap<String, Object>();
 
-		attributes.put("uuid", getUuid());
 		attributes.put("esfNationalId", getEsfNationalId());
 		attributes.put("groupId", getGroupId());
 		attributes.put("companyId", getCompanyId());
@@ -171,12 +163,6 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 
 	@Override
 	public void setModelAttributes(Map<String, Object> attributes) {
-		String uuid = (String)attributes.get("uuid");
-
-		if (uuid != null) {
-			setUuid(uuid);
-		}
-
 		Long esfNationalId = (Long)attributes.get("esfNationalId");
 
 		if (esfNationalId != null) {
@@ -280,31 +266,6 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		}
 	}
 
-	@JSON
-	@Override
-	public String getUuid() {
-		if (_uuid == null) {
-			return StringPool.BLANK;
-		}
-		else {
-			return _uuid;
-		}
-	}
-
-	@Override
-	public void setUuid(String uuid) {
-		if (_originalUuid == null) {
-			_originalUuid = _uuid;
-		}
-
-		_uuid = uuid;
-	}
-
-	public String getOriginalUuid() {
-		return GetterUtil.getString(_originalUuid);
-	}
-
-	@JSON
 	@Override
 	public long getEsfNationalId() {
 		return _esfNationalId;
@@ -315,7 +276,6 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		_esfNationalId = esfNationalId;
 	}
 
-	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -323,22 +283,9 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 
 	@Override
 	public void setGroupId(long groupId) {
-		_columnBitmask |= GROUPID_COLUMN_BITMASK;
-
-		if (!_setOriginalGroupId) {
-			_setOriginalGroupId = true;
-
-			_originalGroupId = _groupId;
-		}
-
 		_groupId = groupId;
 	}
 
-	public long getOriginalGroupId() {
-		return _originalGroupId;
-	}
-
-	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -346,22 +293,9 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 
 	@Override
 	public void setCompanyId(long companyId) {
-		_columnBitmask |= COMPANYID_COLUMN_BITMASK;
-
-		if (!_setOriginalCompanyId) {
-			_setOriginalCompanyId = true;
-
-			_originalCompanyId = _companyId;
-		}
-
 		_companyId = companyId;
 	}
 
-	public long getOriginalCompanyId() {
-		return _originalCompanyId;
-	}
-
-	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -382,7 +316,6 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		_userUuid = userUuid;
 	}
 
-	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -398,7 +331,6 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		_userName = userName;
 	}
 
-	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -409,7 +341,6 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		_createDate = createDate;
 	}
 
-	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -420,7 +351,6 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		_modifiedDate = modifiedDate;
 	}
 
-	@JSON
 	@Override
 	public long getEsfUserId() {
 		return _esfUserId;
@@ -453,7 +383,6 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		return _originalEsfUserId;
 	}
 
-	@JSON
 	@Override
 	public long getEsfSportTypeId() {
 		return _esfSportTypeId;
@@ -476,7 +405,6 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		return _originalEsfSportTypeId;
 	}
 
-	@JSON
 	@Override
 	public Date getStartDate() {
 		return _startDate;
@@ -497,7 +425,6 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		return _originalStartDate;
 	}
 
-	@JSON
 	@Override
 	public Date getEndDate() {
 		return _endDate;
@@ -518,7 +445,6 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		return _originalEndDate;
 	}
 
-	@JSON
 	@Override
 	public Date getBDODate() {
 		return _BDODate;
@@ -529,7 +455,6 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		_BDODate = BDODate;
 	}
 
-	@JSON
 	@Override
 	public String getIdInternational() {
 		if (_idInternational == null) {
@@ -545,7 +470,6 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		_idInternational = idInternational;
 	}
 
-	@JSON
 	@Override
 	public boolean getIsUniversity() {
 		return _isUniversity;
@@ -561,7 +485,6 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		_isUniversity = isUniversity;
 	}
 
-	@JSON
 	@Override
 	public boolean getIsNational() {
 		return _isNational;
@@ -577,7 +500,6 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		_isNational = isNational;
 	}
 
-	@JSON
 	@Override
 	public String getDeliberate() {
 		if (_deliberate == null) {
@@ -593,7 +515,6 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 		_deliberate = deliberate;
 	}
 
-	@JSON
 	@Override
 	public Date getDeliberateDate() {
 		return _deliberateDate;
@@ -602,12 +523,6 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 	@Override
 	public void setDeliberateDate(Date deliberateDate) {
 		_deliberateDate = deliberateDate;
-	}
-
-	@Override
-	public StagedModelType getStagedModelType() {
-		return new StagedModelType(PortalUtil.getClassNameId(
-				ESFNational.class.getName()));
 	}
 
 	public long getColumnBitmask() {
@@ -641,7 +556,6 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 	public Object clone() {
 		ESFNationalImpl esfNationalImpl = new ESFNationalImpl();
 
-		esfNationalImpl.setUuid(getUuid());
 		esfNationalImpl.setEsfNationalId(getEsfNationalId());
 		esfNationalImpl.setGroupId(getGroupId());
 		esfNationalImpl.setCompanyId(getCompanyId());
@@ -711,16 +625,6 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 	public void resetOriginalValues() {
 		ESFNationalModelImpl esfNationalModelImpl = this;
 
-		esfNationalModelImpl._originalUuid = esfNationalModelImpl._uuid;
-
-		esfNationalModelImpl._originalGroupId = esfNationalModelImpl._groupId;
-
-		esfNationalModelImpl._setOriginalGroupId = false;
-
-		esfNationalModelImpl._originalCompanyId = esfNationalModelImpl._companyId;
-
-		esfNationalModelImpl._setOriginalCompanyId = false;
-
 		esfNationalModelImpl._originalEsfUserId = esfNationalModelImpl._esfUserId;
 
 		esfNationalModelImpl._setOriginalEsfUserId = false;
@@ -739,14 +643,6 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 	@Override
 	public CacheModel<ESFNational> toCacheModel() {
 		ESFNationalCacheModel esfNationalCacheModel = new ESFNationalCacheModel();
-
-		esfNationalCacheModel.uuid = getUuid();
-
-		String uuid = esfNationalCacheModel.uuid;
-
-		if ((uuid != null) && (uuid.length() == 0)) {
-			esfNationalCacheModel.uuid = null;
-		}
 
 		esfNationalCacheModel.esfNationalId = getEsfNationalId();
 
@@ -847,11 +743,9 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(37);
+		StringBundler sb = new StringBundler(35);
 
-		sb.append("{uuid=");
-		sb.append(getUuid());
-		sb.append(", esfNationalId=");
+		sb.append("{esfNationalId=");
 		sb.append(getEsfNationalId());
 		sb.append(", groupId=");
 		sb.append(getGroupId());
@@ -892,16 +786,12 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(58);
+		StringBundler sb = new StringBundler(55);
 
 		sb.append("<model><model-name>");
 		sb.append("it.ethica.esf.model.ESFNational");
 		sb.append("</model-name>");
 
-		sb.append(
-			"<column><column-name>uuid</column-name><column-value><![CDATA[");
-		sb.append(getUuid());
-		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>esfNationalId</column-name><column-value><![CDATA[");
 		sb.append(getEsfNationalId());
@@ -980,15 +870,9 @@ public class ESFNationalModelImpl extends BaseModelImpl<ESFNational>
 	private static Class<?>[] _escapedModelInterfaces = new Class[] {
 			ESFNational.class
 		};
-	private String _uuid;
-	private String _originalUuid;
 	private long _esfNationalId;
 	private long _groupId;
-	private long _originalGroupId;
-	private boolean _setOriginalGroupId;
 	private long _companyId;
-	private long _originalCompanyId;
-	private boolean _setOriginalCompanyId;
 	private long _userId;
 	private String _userUuid;
 	private String _userName;

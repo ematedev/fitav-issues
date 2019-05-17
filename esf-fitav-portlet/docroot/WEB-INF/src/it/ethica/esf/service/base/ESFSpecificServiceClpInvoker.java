@@ -24,24 +24,24 @@ import java.util.Arrays;
  */
 public class ESFSpecificServiceClpInvoker {
 	public ESFSpecificServiceClpInvoker() {
-		_methodName356 = "getBeanIdentifier";
+		_methodName368 = "getBeanIdentifier";
 
-		_methodParameterTypes356 = new String[] {  };
+		_methodParameterTypes368 = new String[] {  };
 
-		_methodName357 = "setBeanIdentifier";
+		_methodName369 = "setBeanIdentifier";
 
-		_methodParameterTypes357 = new String[] { "java.lang.String" };
+		_methodParameterTypes369 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
 		Object[] arguments) throws Throwable {
-		if (_methodName356.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes356, parameterTypes)) {
+		if (_methodName368.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes368, parameterTypes)) {
 			return ESFSpecificServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName357.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes357, parameterTypes)) {
+		if (_methodName369.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes369, parameterTypes)) {
 			ESFSpecificServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
@@ -50,8 +50,8 @@ public class ESFSpecificServiceClpInvoker {
 		throw new UnsupportedOperationException();
 	}
 
-	private String _methodName356;
-	private String[] _methodParameterTypes356;
-	private String _methodName357;
-	private String[] _methodParameterTypes357;
+	private String _methodName368;
+	private String[] _methodParameterTypes368;
+	private String _methodName369;
+	private String[] _methodParameterTypes369;
 }

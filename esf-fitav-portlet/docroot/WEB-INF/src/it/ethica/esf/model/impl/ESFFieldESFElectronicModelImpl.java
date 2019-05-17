@@ -15,7 +15,6 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -50,7 +49,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFFieldESFElectronicModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFFieldESFElectronicModelImpl extends BaseModelImpl<ESFFieldESFElectronic>
 	implements ESFFieldESFElectronicModel {
 	/*
@@ -168,7 +166,6 @@ public class ESFFieldESFElectronicModelImpl extends BaseModelImpl<ESFFieldESFEle
 		}
 	}
 
-	@JSON
 	@Override
 	public long getId() {
 		return _id;
@@ -179,7 +176,6 @@ public class ESFFieldESFElectronicModelImpl extends BaseModelImpl<ESFFieldESFEle
 		_id = id;
 	}
 
-	@JSON
 	@Override
 	public long getBrandId() {
 		return _brandId;
@@ -202,7 +198,6 @@ public class ESFFieldESFElectronicModelImpl extends BaseModelImpl<ESFFieldESFEle
 		return _originalBrandId;
 	}
 
-	@JSON
 	@Override
 	public long getElectronicId() {
 		return _electronicId;
@@ -225,7 +220,6 @@ public class ESFFieldESFElectronicModelImpl extends BaseModelImpl<ESFFieldESFEle
 		return _originalElectronicId;
 	}
 
-	@JSON
 	@Override
 	public long getFieldId() {
 		return _fieldId;
@@ -248,7 +242,6 @@ public class ESFFieldESFElectronicModelImpl extends BaseModelImpl<ESFFieldESFEle
 		return _originalFieldId;
 	}
 
-	@JSON
 	@Override
 	public String getDescription() {
 		if (_description == null) {

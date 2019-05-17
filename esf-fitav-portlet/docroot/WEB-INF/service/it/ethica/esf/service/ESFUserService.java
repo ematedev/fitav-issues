@@ -63,7 +63,4 @@ public interface ESFUserService extends BaseService, InvokableService {
 	public java.lang.Object invokeMethod(java.lang.String name,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
-
-	public java.util.List<com.liferay.portal.model.User> findByLastnameLike(
-		long esfOrganizationId, java.lang.String lastName);
 }

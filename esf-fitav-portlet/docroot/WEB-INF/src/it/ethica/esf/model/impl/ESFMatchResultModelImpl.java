@@ -16,7 +16,6 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -53,7 +52,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFMatchResultModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 	implements ESFMatchResultModel {
 	/*
@@ -356,7 +354,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		}
 	}
 
-	@JSON
 	@Override
 	public long getEsfMatchResultId() {
 		return _esfMatchResultId;
@@ -367,7 +364,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		_esfMatchResultId = esfMatchResultId;
 	}
 
-	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -378,7 +374,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		_groupId = groupId;
 	}
 
-	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -389,7 +384,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		_companyId = companyId;
 	}
 
-	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -410,7 +404,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		_userUuid = userUuid;
 	}
 
-	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -426,7 +419,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		_userName = userName;
 	}
 
-	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -437,7 +429,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		_createDate = createDate;
 	}
 
-	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -448,7 +439,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		_modifiedDate = modifiedDate;
 	}
 
-	@JSON
 	@Override
 	public long getEsfMatchId() {
 		return _esfMatchId;
@@ -471,7 +461,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		return _originalEsfMatchId;
 	}
 
-	@JSON
 	@Override
 	public long getEsfPartecipantId() {
 		return _esfPartecipantId;
@@ -494,7 +483,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		return _originalEsfPartecipantId;
 	}
 
-	@JSON
 	@Override
 	public String getCardCode() {
 		if (_cardCode == null) {
@@ -510,7 +498,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		_cardCode = cardCode;
 	}
 
-	@JSON
 	@Override
 	public int getGeneralClassPosition() {
 		return _generalClassPosition;
@@ -521,7 +508,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		_generalClassPosition = generalClassPosition;
 	}
 
-	@JSON
 	@Override
 	public int getCategoryClassPosition() {
 		return _categoryClassPosition;
@@ -532,7 +518,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		_categoryClassPosition = categoryClassPosition;
 	}
 
-	@JSON
 	@Override
 	public String getCategoryName() {
 		if (_categoryName == null) {
@@ -548,7 +533,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		_categoryName = categoryName;
 	}
 
-	@JSON
 	@Override
 	public String getQualification() {
 		if (_qualification == null) {
@@ -564,7 +548,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		_qualification = qualification;
 	}
 
-	@JSON
 	@Override
 	public int getFirst() {
 		return _first;
@@ -575,7 +558,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		_first = first;
 	}
 
-	@JSON
 	@Override
 	public int getSecond() {
 		return _second;
@@ -586,7 +568,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		_second = second;
 	}
 
-	@JSON
 	@Override
 	public int getThird() {
 		return _third;
@@ -597,7 +578,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		_third = third;
 	}
 
-	@JSON
 	@Override
 	public int getFourth() {
 		return _fourth;
@@ -608,7 +588,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		_fourth = fourth;
 	}
 
-	@JSON
 	@Override
 	public int getFifth() {
 		return _fifth;
@@ -619,7 +598,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		_fifth = fifth;
 	}
 
-	@JSON
 	@Override
 	public int getTotal() {
 		return _total;
@@ -630,7 +608,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		_total = total;
 	}
 
-	@JSON
 	@Override
 	public int getFirstPlayOff() {
 		return _firstPlayOff;
@@ -641,7 +618,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		_firstPlayOff = firstPlayOff;
 	}
 
-	@JSON
 	@Override
 	public int getSecondPlayOff() {
 		return _secondPlayOff;
@@ -652,7 +628,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		_secondPlayOff = secondPlayOff;
 	}
 
-	@JSON
 	@Override
 	public int getThirdPlayOff() {
 		return _thirdPlayOff;
@@ -663,7 +638,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		_thirdPlayOff = thirdPlayOff;
 	}
 
-	@JSON
 	@Override
 	public int getTotalAfterPlayOff() {
 		return _totalAfterPlayOff;
@@ -674,7 +648,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		_totalAfterPlayOff = totalAfterPlayOff;
 	}
 
-	@JSON
 	@Override
 	public int getNextFirstPlayOff() {
 		return _nextFirstPlayOff;
@@ -685,7 +658,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		_nextFirstPlayOff = nextFirstPlayOff;
 	}
 
-	@JSON
 	@Override
 	public int getNextSecondPlayOff() {
 		return _nextSecondPlayOff;
@@ -696,7 +668,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		_nextSecondPlayOff = nextSecondPlayOff;
 	}
 
-	@JSON
 	@Override
 	public int getNextTotalPlayOff() {
 		return _nextTotalPlayOff;
@@ -707,7 +678,6 @@ public class ESFMatchResultModelImpl extends BaseModelImpl<ESFMatchResult>
 		_nextTotalPlayOff = nextTotalPlayOff;
 	}
 
-	@JSON
 	@Override
 	public String getFiscalCode() {
 		if (_fiscalCode == null) {

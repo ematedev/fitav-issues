@@ -63,21 +63,6 @@ public class ESFCardServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
-	public static java.util.List<it.ethica.esf.model.ESFCard> findByUserId(
-		long userId) {
-		return getService().findByUserId(userId);
-	}
-
-	public static java.util.List<it.ethica.esf.model.ESFCard> findCurrentByUserId(
-		long userId) {
-		return getService().findCurrentByUserId(userId);
-	}
-
-	public static java.util.List<it.ethica.esf.model.ESFCard> findHistoryByUserId(
-		long userId) {
-		return getService().findHistoryByUserId(userId);
-	}
-
 	public static void clearService() {
 		_service = null;
 	}

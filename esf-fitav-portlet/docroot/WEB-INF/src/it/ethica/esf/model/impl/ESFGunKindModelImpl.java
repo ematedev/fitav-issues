@@ -16,7 +16,6 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
@@ -54,7 +53,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFGunKindModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFGunKindModelImpl extends BaseModelImpl<ESFGunKind>
 	implements ESFGunKindModel {
 	/*
@@ -222,7 +220,6 @@ public class ESFGunKindModelImpl extends BaseModelImpl<ESFGunKind>
 		}
 	}
 
-	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -246,7 +243,6 @@ public class ESFGunKindModelImpl extends BaseModelImpl<ESFGunKind>
 		return GetterUtil.getString(_originalUuid);
 	}
 
-	@JSON
 	@Override
 	public long getEsfGunKindId() {
 		return _esfGunKindId;
@@ -269,7 +265,6 @@ public class ESFGunKindModelImpl extends BaseModelImpl<ESFGunKind>
 		return _originalEsfGunKindId;
 	}
 
-	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -292,7 +287,6 @@ public class ESFGunKindModelImpl extends BaseModelImpl<ESFGunKind>
 		return _originalGroupId;
 	}
 
-	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -315,7 +309,6 @@ public class ESFGunKindModelImpl extends BaseModelImpl<ESFGunKind>
 		return _originalCompanyId;
 	}
 
-	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -336,7 +329,6 @@ public class ESFGunKindModelImpl extends BaseModelImpl<ESFGunKind>
 		_userUuid = userUuid;
 	}
 
-	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -352,7 +344,6 @@ public class ESFGunKindModelImpl extends BaseModelImpl<ESFGunKind>
 		_userName = userName;
 	}
 
-	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -363,7 +354,6 @@ public class ESFGunKindModelImpl extends BaseModelImpl<ESFGunKind>
 		_createDate = createDate;
 	}
 
-	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -374,7 +364,6 @@ public class ESFGunKindModelImpl extends BaseModelImpl<ESFGunKind>
 		_modifiedDate = modifiedDate;
 	}
 
-	@JSON
 	@Override
 	public String getName() {
 		if (_name == null) {
@@ -400,7 +389,6 @@ public class ESFGunKindModelImpl extends BaseModelImpl<ESFGunKind>
 		return GetterUtil.getString(_originalName);
 	}
 
-	@JSON
 	@Override
 	public String getDescription() {
 		if (_description == null) {
@@ -416,7 +404,6 @@ public class ESFGunKindModelImpl extends BaseModelImpl<ESFGunKind>
 		_description = description;
 	}
 
-	@JSON
 	@Override
 	public long getEsfGunTypeId() {
 		return _esfGunTypeId;

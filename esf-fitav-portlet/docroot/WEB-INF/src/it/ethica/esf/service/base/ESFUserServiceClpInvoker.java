@@ -24,46 +24,34 @@ import java.util.Arrays;
  */
 public class ESFUserServiceClpInvoker {
 	public ESFUserServiceClpInvoker() {
-		_methodName372 = "getBeanIdentifier";
+		_methodName380 = "getBeanIdentifier";
 
-		_methodParameterTypes372 = new String[] {  };
+		_methodParameterTypes380 = new String[] {  };
 
-		_methodName373 = "setBeanIdentifier";
+		_methodName381 = "setBeanIdentifier";
 
-		_methodParameterTypes373 = new String[] { "java.lang.String" };
-
-		_methodName378 = "findByLastnameLike";
-
-		_methodParameterTypes378 = new String[] { "long", "java.lang.String" };
+		_methodParameterTypes381 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
 		Object[] arguments) throws Throwable {
-		if (_methodName372.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes372, parameterTypes)) {
+		if (_methodName380.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
 			return ESFUserServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName373.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes373, parameterTypes)) {
+		if (_methodName381.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes381, parameterTypes)) {
 			ESFUserServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName378.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes378, parameterTypes)) {
-			return ESFUserServiceUtil.findByLastnameLike(((Long)arguments[0]).longValue(),
-				(java.lang.String)arguments[1]);
-		}
-
 		throw new UnsupportedOperationException();
 	}
 
-	private String _methodName372;
-	private String[] _methodParameterTypes372;
-	private String _methodName373;
-	private String[] _methodParameterTypes373;
-	private String _methodName378;
-	private String[] _methodParameterTypes378;
+	private String _methodName380;
+	private String[] _methodParameterTypes380;
+	private String _methodName381;
+	private String[] _methodParameterTypes381;
 }
