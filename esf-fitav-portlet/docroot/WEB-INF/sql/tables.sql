@@ -109,7 +109,6 @@ create table ESFCity (
 );
 
 create table ESFCodeOrg (
-	uuid_ VARCHAR(75) null,
 	esfCodeOrgId LONG not null primary key,
 	className VARCHAR(75) null,
 	code_ VARCHAR(75) null,
@@ -528,7 +527,6 @@ create table ESFMatchType (
 );
 
 create table ESFNational (
-	uuid_ VARCHAR(75) null,
 	esfNationalId LONG not null primary key,
 	groupId LONG,
 	companyId LONG,
@@ -549,7 +547,6 @@ create table ESFNational (
 );
 
 create table ESFNationalDelegation (
-	uuid_ VARCHAR(75) null,
 	esfUserId LONG,
 	groupId LONG,
 	companyId LONG,
@@ -715,7 +712,6 @@ create table ESFPartecipantInfo (
 );
 
 create table ESFPartecipantType (
-	uuid_ VARCHAR(75) null,
 	esfPartecipantTypeId LONG not null primary key,
 	name VARCHAR(75) null
 );

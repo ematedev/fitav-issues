@@ -42,7 +42,7 @@
 		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset"></reference>
 		<reference entity="AssetLink" package-path="com.liferay.portlet.asset"></reference>
 	</entity>
-	<entity name="ESFCard" local-service="true" remote-service="true"
+	<entity name="ESFCard" local-service="true" remote-service="false"
 		uuid="true" cache-enabled="false">
 
 		<!-- PK fields -->
@@ -725,7 +725,7 @@
 		<reference entity="AssetLink" package-path="com.liferay.portlet.asset"></reference>
 	</entity>
 	<entity name="ESFUser" uuid="true" local-service="true"
-		remote-service="true" cache-enabled="false">
+		remote-service="false" cache-enabled="false">
 
 		<!-- PK fields -->
 
@@ -881,7 +881,7 @@
 		</finder>
 	</entity>
 
-	<entity name="ESFFederalRole" local-service="true" remote-service="true"
+	<entity name="ESFFederalRole" local-service="true" remote-service="false"
 		uuid="true">
 
 		<!-- PK fields -->
@@ -913,7 +913,7 @@
 
 	</entity>
 
-	<entity name="ESFSpecific" local-service="true" remote-service="true"
+	<entity name="ESFSpecific" local-service="true" remote-service="false"
 		uuid="true">
 
 		<!-- PK fields -->
@@ -943,7 +943,7 @@
 
 	</entity>
 
-	<entity name="ESFFederalRoleESFSpecific" local-service="true" remote-service="true"
+	<entity name="ESFFederalRoleESFSpecific" local-service="true" remote-service="false"
 		uuid="true">
 
 		<!-- PK fields -->
@@ -1106,7 +1106,7 @@
         </finder>
 
 	</entity>
-	<entity name="ESFShooterCategoryESFTournament" local-service="false"
+	<entity name="ESFShooterCategoryESFTournament" local-service="true"
 		remote-service="false" uuid="true" cache-enabled="false">
 
 		<!-- PK fields -->
@@ -1186,7 +1186,7 @@
 
 	</entity>
 	<entity name="ESFShooterQualificationESFTournament"
-		local-service="false" remote-service="false" uuid="true"
+		local-service="true" remote-service="false" uuid="true"
 		cache-enabled="false">
 
 		<!-- PK fields -->
@@ -1232,7 +1232,7 @@
 		</finder>
 	</entity>
 	<entity name="ESFMatch" local-service="true" remote-service="false"
-		uuid="true" cache-enabled="false">
+		uuid="true" cache-enabled="true">
 		<!-- PK fields -->
 		<column name="esfMatchId" type="long" primary="true"></column>
 		<!-- <column name="esfTorunamentId" type="long"></column> <column name="esfFieldId" 
@@ -1431,7 +1431,7 @@
         </finder>
 	</entity>
 	<entity name="ESFNational" local-service="true" remote-service="false"
-		cache-enabled="false">
+		cache-enabled="true">
 
 		<!-- PK fields -->
 
@@ -1610,7 +1610,7 @@
 		<column name="esfPartecipantTypeId" primary="true" type="long"></column>
 		<column name="name" type="String"></column>
 	</entity>
-	<entity name="ESFStateAssEntity" remote-service="false">
+	<entity name="ESFStateAssEntity" remote-service="false" local-service="true">
 		<column name="esfStateId" primary="true" type="long"></column>
 		<column name="className" primary="true" type="String"></column>
 		<finder name="ClassName" return-type="Collection">
