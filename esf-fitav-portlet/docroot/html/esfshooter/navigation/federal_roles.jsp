@@ -20,6 +20,11 @@
 <%@ page import="java.util.Date"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
+
+
+<% // Questa pagina visualizza i dati storici e attuali del Singolo Tiratore %>
+
+
 <%
 	long esfUserId = ParamUtil.getLong(request, "esfUserId", -1);
 	Calendar calendar = CalendarFactoryUtil.getCalendar();
@@ -37,14 +42,22 @@
 	</div>
 	<div class="row-fluid">
 		<div class="span7">
+			<%//  Prima tabella che mostra la lista degli incarichi federali in corso %>
 			<liferay-ui:search-container emptyResultsMessage="no-results">
+
+				<%//  Prendi la lista degli incarichi Federali Possibili %>
 				<liferay-ui:search-container-results results="${results}" total="${total}" />
 
+				<% //  Lista di oggetti di tipo ESFFederalRole %>
 				<liferay-ui:search-container-row className="it.ethica.esf.model.ESFFederalRole" modelVar="federalRole">
 
 					<liferay-ui:search-container-column-text property="code" />
 					<liferay-ui:search-container-column-text property="description" />
 					<liferay-ui:search-container-column-text name="startDate">
+					
+					
+					<% // TESTA UNO AD UNO gli incarichi Federali possibili e verifica se il tiratore selezionato ce l'ha %>
+					
 						<c:if test="<%=ESFFederalRoleLocalServiceUtil.isAssociated(esfUserId, federalRole.getEsfFederalRoleId())%>">
 							<fmt:formatDate value='<%=ESFFederalRoleLocalServiceUtil.getActiveAssociationDate(esfUserId, federalRole.getEsfFederalRoleId())%>' type='date' pattern='dd-MM-yyyy' />
 						</c:if>

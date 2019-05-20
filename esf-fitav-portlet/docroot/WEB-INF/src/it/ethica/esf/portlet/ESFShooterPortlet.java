@@ -1148,6 +1148,14 @@ public class ESFShooterPortlet extends MVCPortlet {
 		actionResponse.setRenderParameter("esfUserId", String.valueOf(esfUserId));
 	}
 
+	
+	
+	/**
+	 * Imposta la lista degli incarichi per cui non e' terminato il mandato
+	 * 
+	 * @param request
+	 * @param response
+	 */
 	public void getAssociatedEsfFederalRoles(RenderRequest request, RenderResponse response){
 		long esfUserId = ParamUtil.getLong(request, "esfUserId", -1);
 		int total = 0;
@@ -1161,6 +1169,18 @@ public class ESFShooterPortlet extends MVCPortlet {
 		request.setAttribute("assTotal", total);
 	}
 
+	
+	
+	
+	/**
+	 * Imposta sulla response la lista degli incarichi possibili
+	 * se ci sono
+	 * 
+	 * se non ci sono imposta la lista vuota
+	 * 
+	 * @param request
+	 * @param response
+	 */
 	public void getEsfFederalRoles(RenderRequest request, RenderResponse response){
 		long esfUserId = ParamUtil.getLong(request, "esfUserId", -1);
 		int total = 0;
@@ -1168,6 +1188,7 @@ public class ESFShooterPortlet extends MVCPortlet {
 		int end = -1;
 		List<ESFFederalRole> federalRoles = new ArrayList<ESFFederalRole>();
 		try {
+			// Restituisci la lista degli Incarichi Federali possibili
 			federalRoles = ESFFederalRoleLocalServiceUtil.getESFFederalRoles(start, end);
 			total = ESFFederalRoleLocalServiceUtil.getESFFederalRolesCount();
 		} catch (SystemException e) {
