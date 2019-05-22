@@ -2587,8 +2587,25 @@
             <finder-column name="esfShootingDirectorId" comparator="="></finder-column>
         </finder>
     </entity>
-	
-	<exceptions>
+    <entity local-service="true" remote-service="false" json-enabled="false" name="VW_ESFIncarichiFederali" table="VW_ESFIncarichiFederali">
+        <column name="esfUserId" type="long" primary="true"></column>
+        <column name="esfFederalRoleId" type="long" primary="true"></column>
+        <column name="code_" type="String" primary="false"></column>
+        <column name="description" type="String"></column>
+        <column name="startDate" type="long" primary="true"></column>
+        <column name="endDate" type="Date" primary="true"></column>
+        <column name="active_" type="boolean" primary="true"></column>
+        <order by="asc">
+            <order-column name="esfUserId" order-by="asc"></order-column>
+            <order-column name="endDate" order-by="asc"></order-column>
+        </order>
+        <finder name="listaIncarichi" return-type="Collection">
+            <finder-column name="active_" comparator="="></finder-column>
+            <finder-column name="esfUserId" comparator="="></finder-column>
+        </finder>
+    </entity>
+
+    <exceptions>
 		<exception>ESFAddressLatitude</exception>
 		<exception>ESFAddressLongitude</exception>
 		<exception>ESFCardCode</exception>
