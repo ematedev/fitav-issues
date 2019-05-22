@@ -340,6 +340,13 @@ public class ESFDocumentLocalServiceWrapper implements ESFDocumentLocalService,
 	}
 
 	@Override
+	public java.util.List<it.ethica.esf.model.ESFDocument> findByEsfPublicAuthorityId(
+		long esfPublicAuthorityId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _esfDocumentLocalService.findByEsfPublicAuthorityId(esfPublicAuthorityId);
+	}
+
+	@Override
 	public java.util.List<it.ethica.esf.model.ESFDocument> findByT_U(
 		java.lang.String type, long esfUserId)
 		throws com.liferay.portal.kernel.exception.SystemException {

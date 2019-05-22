@@ -326,6 +326,12 @@ public class ESFDocumentLocalServiceUtil {
 		return getService().findByEsfDocumentTypeId(esfDocumentTypeId);
 	}
 
+	public static java.util.List<it.ethica.esf.model.ESFDocument> findByEsfPublicAuthorityId(
+		long esfPublicAuthorityId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().findByEsfPublicAuthorityId(esfPublicAuthorityId);
+	}
+
 	public static java.util.List<it.ethica.esf.model.ESFDocument> findByT_U(
 		java.lang.String type, long esfUserId)
 		throws com.liferay.portal.kernel.exception.SystemException {

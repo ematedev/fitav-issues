@@ -113,6 +113,12 @@ public class ESFPublicAuthorityLocalServiceClpInvoker {
 		_methodName377 = "setBeanIdentifier";
 
 		_methodParameterTypes377 = new String[] { "java.lang.String" };
+
+		_methodName382 = "saveUpdateESFPublicAuthority";
+
+		_methodParameterTypes382 = new String[] {
+				"it.ethica.esf.model.ESFPublicAuthority"
+			};
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -216,6 +222,11 @@ public class ESFPublicAuthorityLocalServiceClpInvoker {
 			return null;
 		}
 
+		if (_methodName382.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
+			return ESFPublicAuthorityLocalServiceUtil.saveUpdateESFPublicAuthority((it.ethica.esf.model.ESFPublicAuthority)arguments[0]);
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -255,4 +266,6 @@ public class ESFPublicAuthorityLocalServiceClpInvoker {
 	private String[] _methodParameterTypes376;
 	private String _methodName377;
 	private String[] _methodParameterTypes377;
+	private String _methodName382;
+	private String[] _methodParameterTypes382;
 }

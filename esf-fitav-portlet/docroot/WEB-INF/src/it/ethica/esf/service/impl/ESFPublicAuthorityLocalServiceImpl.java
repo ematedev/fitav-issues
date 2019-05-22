@@ -14,6 +14,14 @@
 
 package it.ethica.esf.service.impl;
 
+import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+import com.liferay.portal.kernel.util.DateUtil;
+
+import it.ethica.esf.model.ESFDocumentType;
+import it.ethica.esf.model.ESFPublicAuthority;
+import it.ethica.esf.service.base.ESFDocumentTypeLocalServiceBaseImpl;
 import it.ethica.esf.service.base.ESFPublicAuthorityLocalServiceBaseImpl;
 
 /**
@@ -32,9 +40,33 @@ import it.ethica.esf.service.base.ESFPublicAuthorityLocalServiceBaseImpl;
  */
 public class ESFPublicAuthorityLocalServiceImpl
 	extends ESFPublicAuthorityLocalServiceBaseImpl {
+	private static Log logger = LogFactoryUtil.getLog(ESFPublicAuthorityLocalServiceImpl.class);
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
 	 * Never reference this interface directly. Always use {@link it.ethica.esf.service.ESFPublicAuthorityLocalServiceUtil} to access the e s f public authority local service.
 	 */
+	
+	public ESFPublicAuthority saveUpdateESFPublicAuthority(ESFPublicAuthority authority) throws SystemException{
+		ESFPublicAuthority result = null;
+		boolean isUpdate = authority.getEsfPublicAuthorityId()>0;
+		if(isUpdate){
+			logger.debug("Aggiornamento public authority con ID: "+authority.getEsfPublicAuthorityId());
+			result = this.fetchESFPublicAuthority(authority.getEsfPublicAuthorityId());
+			result.setModifiedDate(DateUtil.newDate());
+		}else{
+			result = this.createESFPublicAuthority(authority.getEsfPublicAuthorityId());
+//			result.setPrimaryKey(null);
+			result.setCreateDate(DateUtil.newDate());
+			result.setNew(true);
+			logger.debug("Creazione della public authority con ID: "+authority.getEsfPublicAuthorityId());
+		}
+		result.setDescription(authority.getDescription());
+		if(isUpdate){
+			result = this.updateESFPublicAuthority(result);
+		}else{
+			result = this.addESFPublicAuthority(result);
+		}
+		return result;
+	}
 }

@@ -128,6 +128,10 @@ public class ESFDocumentLocalServiceImpl extends
 		return this.esfDocumentPersistence.findByEsfDocumentTypeId(esfDocumentTypeId);
 	}
 
+	public List<ESFDocument> findByEsfPublicAuthorityId(long esfPublicAuthorityId) throws SystemException{
+		return this.esfDocumentPersistence.findByEsfPublicAuthorityId(esfPublicAuthorityId);
+	}
+	
 	public List<ESFDocument> findByT_U(String type, long esfUserId)
 			throws SystemException {
 

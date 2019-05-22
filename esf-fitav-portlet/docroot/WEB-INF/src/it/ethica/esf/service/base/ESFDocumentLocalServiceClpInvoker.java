@@ -142,13 +142,17 @@ public class ESFDocumentLocalServiceClpInvoker {
 
 		_methodParameterTypes387 = new String[] { "long" };
 
-		_methodName388 = "findByT_U";
+		_methodName388 = "findByEsfPublicAuthorityId";
 
-		_methodParameterTypes388 = new String[] { "java.lang.String", "long" };
+		_methodParameterTypes388 = new String[] { "long" };
 
-		_methodName389 = "findByU_ED";
+		_methodName389 = "findByT_U";
 
-		_methodParameterTypes389 = new String[] { "long", "java.util.Date" };
+		_methodParameterTypes389 = new String[] { "java.lang.String", "long" };
+
+		_methodName390 = "findByU_ED";
+
+		_methodParameterTypes390 = new String[] { "long", "java.util.Date" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -304,12 +308,17 @@ public class ESFDocumentLocalServiceClpInvoker {
 
 		if (_methodName388.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
-			return ESFDocumentLocalServiceUtil.findByT_U((java.lang.String)arguments[0],
-				((Long)arguments[1]).longValue());
+			return ESFDocumentLocalServiceUtil.findByEsfPublicAuthorityId(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName389.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes389, parameterTypes)) {
+			return ESFDocumentLocalServiceUtil.findByT_U((java.lang.String)arguments[0],
+				((Long)arguments[1]).longValue());
+		}
+
+		if (_methodName390.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
 			return ESFDocumentLocalServiceUtil.findByU_ED(((Long)arguments[0]).longValue(),
 				(java.util.Date)arguments[1]);
 		}
@@ -369,4 +378,6 @@ public class ESFDocumentLocalServiceClpInvoker {
 	private String[] _methodParameterTypes388;
 	private String _methodName389;
 	private String[] _methodParameterTypes389;
+	private String _methodName390;
+	private String[] _methodParameterTypes390;
 }
