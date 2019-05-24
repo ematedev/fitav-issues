@@ -324,7 +324,8 @@ public interface ESFFederalRoleLocalService extends BaseLocalService,
 		java.lang.String code);
 
 	public void associateEsfUser(long esfUserId, long esfFederalRoleId,
-		long startDate, long esfSpecificId, java.lang.String notes)
+		long startDate, java.util.Date endDate, long esfSpecificId,
+		java.lang.String notes)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	public void deAssociateEsfUser(long esfUserId, long esfFederalRoleId)
@@ -337,6 +338,14 @@ public interface ESFFederalRoleLocalService extends BaseLocalService,
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.Date getActiveAssociationDate(long esfUserId,
 		long esfFederalRoleId);
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.Date getEndAssociationDate(long esfUserId,
+		long esfFederalRoleId);
+
+	public void deleteEsfUserEsfFederalRole(long esfUserId,
+		long esfFederalRoleId)
+		throws com.liferay.portal.kernel.exception.SystemException;
 
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List<it.ethica.esf.model.ESFUserESFFederalRole> getAssociationsByEsfUser(

@@ -153,7 +153,8 @@ public class ESFFederalRoleLocalServiceClp implements ESFFederalRoleLocalService
 		_methodName27 = "associateEsfUser";
 
 		_methodParameterTypes27 = new String[] {
-				"long", "long", "long", "long", "java.lang.String"
+				"long", "long", "long", "java.util.Date", "long",
+				"java.lang.String"
 			};
 
 		_methodName28 = "deAssociateEsfUser";
@@ -168,29 +169,37 @@ public class ESFFederalRoleLocalServiceClp implements ESFFederalRoleLocalService
 
 		_methodParameterTypes30 = new String[] { "long", "long" };
 
-		_methodName31 = "getAssociationsByEsfUser";
+		_methodName31 = "getEndAssociationDate";
 
-		_methodParameterTypes31 = new String[] { "long" };
+		_methodParameterTypes31 = new String[] { "long", "long" };
 
-		_methodName32 = "getAssociationsByEsfUserActive";
+		_methodName32 = "deleteEsfUserEsfFederalRole";
 
-		_methodParameterTypes32 = new String[] { "long", "boolean" };
+		_methodParameterTypes32 = new String[] { "long", "long" };
 
-		_methodName33 = "isAssociated";
+		_methodName33 = "getAssociationsByEsfUser";
 
-		_methodParameterTypes33 = new String[] { "long", "long" };
+		_methodParameterTypes33 = new String[] { "long" };
 
-		_methodName34 = "cleanEsfUserAssociation";
+		_methodName34 = "getAssociationsByEsfUserActive";
 
-		_methodParameterTypes34 = new String[] { "long" };
+		_methodParameterTypes34 = new String[] { "long", "boolean" };
 
-		_methodName35 = "cleanEsfFederalRoleAssociation";
+		_methodName35 = "isAssociated";
 
-		_methodParameterTypes35 = new String[] { "long" };
+		_methodParameterTypes35 = new String[] { "long", "long" };
 
-		_methodName36 = "getFederalRoleSpecifics";
+		_methodName36 = "cleanEsfUserAssociation";
 
 		_methodParameterTypes36 = new String[] { "long" };
+
+		_methodName37 = "cleanEsfFederalRoleAssociation";
+
+		_methodParameterTypes37 = new String[] { "long" };
+
+		_methodName38 = "getFederalRoleSpecifics";
+
+		_methodParameterTypes38 = new String[] { "long" };
 	}
 
 	@Override
@@ -1009,7 +1018,8 @@ public class ESFFederalRoleLocalServiceClp implements ESFFederalRoleLocalService
 
 	@Override
 	public void associateEsfUser(long esfUserId, long esfFederalRoleId,
-		long startDate, long esfSpecificId, java.lang.String notes)
+		long startDate, java.util.Date endDate, long esfSpecificId,
+		java.lang.String notes)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		try {
 			_invokableLocalService.invokeMethod(_methodName27,
@@ -1020,6 +1030,8 @@ public class ESFFederalRoleLocalServiceClp implements ESFFederalRoleLocalService
 				esfFederalRoleId,
 					
 				startDate,
+					
+				ClpSerializer.translateInput(endDate),
 					
 				esfSpecificId,
 					
@@ -1119,13 +1131,64 @@ public class ESFFederalRoleLocalServiceClp implements ESFFederalRoleLocalService
 	}
 
 	@Override
+	public java.util.Date getEndAssociationDate(long esfUserId,
+		long esfFederalRoleId) {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName31,
+					_methodParameterTypes31,
+					new Object[] { esfUserId, esfFederalRoleId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.Date)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public void deleteEsfUserEsfFederalRole(long esfUserId,
+		long esfFederalRoleId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		try {
+			_invokableLocalService.invokeMethod(_methodName32,
+				_methodParameterTypes32,
+				new Object[] { esfUserId, esfFederalRoleId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+	}
+
+	@Override
 	public java.util.List<it.ethica.esf.model.ESFUserESFFederalRole> getAssociationsByEsfUser(
 		long esfUserId) {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName31,
-					_methodParameterTypes31, new Object[] { esfUserId });
+			returnObj = _invokableLocalService.invokeMethod(_methodName33,
+					_methodParameterTypes33, new Object[] { esfUserId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -1148,8 +1211,8 @@ public class ESFFederalRoleLocalServiceClp implements ESFFederalRoleLocalService
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName32,
-					_methodParameterTypes32, new Object[] { esfUserId, active });
+			returnObj = _invokableLocalService.invokeMethod(_methodName34,
+					_methodParameterTypes34, new Object[] { esfUserId, active });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -1171,8 +1234,8 @@ public class ESFFederalRoleLocalServiceClp implements ESFFederalRoleLocalService
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName33,
-					_methodParameterTypes33,
+			returnObj = _invokableLocalService.invokeMethod(_methodName35,
+					_methodParameterTypes35,
 					new Object[] { esfUserId, esfFederalRoleId });
 		}
 		catch (Throwable t) {
@@ -1193,8 +1256,8 @@ public class ESFFederalRoleLocalServiceClp implements ESFFederalRoleLocalService
 	@Override
 	public void cleanEsfUserAssociation(long esfUserId) {
 		try {
-			_invokableLocalService.invokeMethod(_methodName34,
-				_methodParameterTypes34, new Object[] { esfUserId });
+			_invokableLocalService.invokeMethod(_methodName36,
+				_methodParameterTypes36, new Object[] { esfUserId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -1212,8 +1275,8 @@ public class ESFFederalRoleLocalServiceClp implements ESFFederalRoleLocalService
 	@Override
 	public void cleanEsfFederalRoleAssociation(long esfFederalRoleId) {
 		try {
-			_invokableLocalService.invokeMethod(_methodName35,
-				_methodParameterTypes35, new Object[] { esfFederalRoleId });
+			_invokableLocalService.invokeMethod(_methodName37,
+				_methodParameterTypes37, new Object[] { esfFederalRoleId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -1234,8 +1297,8 @@ public class ESFFederalRoleLocalServiceClp implements ESFFederalRoleLocalService
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName36,
-					_methodParameterTypes36, new Object[] { esfFederalRoleId });
+			returnObj = _invokableLocalService.invokeMethod(_methodName38,
+					_methodParameterTypes38, new Object[] { esfFederalRoleId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -1325,4 +1388,8 @@ public class ESFFederalRoleLocalServiceClp implements ESFFederalRoleLocalService
 	private String[] _methodParameterTypes35;
 	private String _methodName36;
 	private String[] _methodParameterTypes36;
+	private String _methodName37;
+	private String[] _methodParameterTypes37;
+	private String _methodName38;
+	private String[] _methodParameterTypes38;
 }
