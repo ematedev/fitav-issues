@@ -142,7 +142,6 @@
 		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFCaneImpl" table="ESFCane">
-		<cache usage="read-write" />
 		<id name="esfCaneId" type="long">
 			<generator class="assigned" />
 		</id>
@@ -185,7 +184,6 @@
 		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFCatridgeImpl" table="ESFCatridge">
-		<cache usage="read-write" />
 		<id name="esfCatridgeId" type="long">
 			<generator class="assigned" />
 		</id>
@@ -591,7 +589,6 @@
 		<property name="actualOwnerId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFMatchImpl" table="ESFMatch">
-		<cache usage="read-write" />
 		<id name="esfMatchId" type="long">
 			<generator class="assigned" />
 		</id>
@@ -680,7 +677,6 @@
 		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFNationalImpl" table="ESFNational">
-		<cache usage="read-write" />
 		<id name="esfNationalId" type="long">
 			<generator class="assigned" />
 		</id>

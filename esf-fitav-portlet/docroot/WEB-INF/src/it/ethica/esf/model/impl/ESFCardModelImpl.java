@@ -16,6 +16,7 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
@@ -31,13 +32,16 @@ import com.liferay.portlet.expando.util.ExpandoBridgeFactoryUtil;
 
 import it.ethica.esf.model.ESFCard;
 import it.ethica.esf.model.ESFCardModel;
+import it.ethica.esf.model.ESFCardSoap;
 
 import java.io.Serializable;
 
 import java.sql.Types;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -53,6 +57,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFCardModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 	implements ESFCardModel {
 	/*
@@ -102,6 +107,58 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 	public static long OLDCODE_COLUMN_BITMASK = 64L;
 	public static long UUID_COLUMN_BITMASK = 128L;
 	public static long CODENUM_COLUMN_BITMASK = 256L;
+
+	/**
+	 * Converts the soap model instance into a normal model instance.
+	 *
+	 * @param soapModel the soap model instance to convert
+	 * @return the normal model instance
+	 */
+	public static ESFCard toModel(ESFCardSoap soapModel) {
+		if (soapModel == null) {
+			return null;
+		}
+
+		ESFCard model = new ESFCardImpl();
+
+		model.setUuid(soapModel.getUuid());
+		model.setEsfCardId(soapModel.getEsfCardId());
+		model.setGroupId(soapModel.getGroupId());
+		model.setCompanyId(soapModel.getCompanyId());
+		model.setUserId(soapModel.getUserId());
+		model.setUserName(soapModel.getUserName());
+		model.setCreateDate(soapModel.getCreateDate());
+		model.setModifiedDate(soapModel.getModifiedDate());
+		model.setCodeAlfa(soapModel.getCodeAlfa());
+		model.setCodeNum(soapModel.getCodeNum());
+		model.setEsfUserId(soapModel.getEsfUserId());
+		model.setEsfOrganizationId(soapModel.getEsfOrganizationId());
+		model.setCode(soapModel.getCode());
+		model.setOldCode(soapModel.getOldCode());
+
+		return model;
+	}
+
+	/**
+	 * Converts the soap model instances into normal model instances.
+	 *
+	 * @param soapModels the soap model instances to convert
+	 * @return the normal model instances
+	 */
+	public static List<ESFCard> toModels(ESFCardSoap[] soapModels) {
+		if (soapModels == null) {
+			return null;
+		}
+
+		List<ESFCard> models = new ArrayList<ESFCard>(soapModels.length);
+
+		for (ESFCardSoap soapModel : soapModels) {
+			models.add(toModel(soapModel));
+		}
+
+		return models;
+	}
+
 	public static final long LOCK_EXPIRATION_TIME = GetterUtil.getLong(com.liferay.util.service.ServiceProps.get(
 				"lock.expiration.time.it.ethica.esf.model.ESFCard"));
 
@@ -247,6 +304,7 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		}
 	}
 
+	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -270,6 +328,7 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		return GetterUtil.getString(_originalUuid);
 	}
 
+	@JSON
 	@Override
 	public long getEsfCardId() {
 		return _esfCardId;
@@ -280,6 +339,7 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		_esfCardId = esfCardId;
 	}
 
+	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -302,6 +362,7 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		return _originalGroupId;
 	}
 
+	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -324,6 +385,7 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		return _originalCompanyId;
 	}
 
+	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -344,6 +406,7 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		_userUuid = userUuid;
 	}
 
+	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -359,6 +422,7 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		_userName = userName;
 	}
 
+	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -369,6 +433,7 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		_createDate = createDate;
 	}
 
+	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -379,6 +444,7 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		_modifiedDate = modifiedDate;
 	}
 
+	@JSON
 	@Override
 	public String getCodeAlfa() {
 		if (_codeAlfa == null) {
@@ -404,6 +470,7 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		return GetterUtil.getString(_originalCodeAlfa);
 	}
 
+	@JSON
 	@Override
 	public long getCodeNum() {
 		return _codeNum;
@@ -416,6 +483,7 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		_codeNum = codeNum;
 	}
 
+	@JSON
 	@Override
 	public long getEsfUserId() {
 		return _esfUserId;
@@ -448,6 +516,7 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		return _originalEsfUserId;
 	}
 
+	@JSON
 	@Override
 	public long getEsfOrganizationId() {
 		return _esfOrganizationId;
@@ -470,6 +539,7 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		return _originalEsfOrganizationId;
 	}
 
+	@JSON
 	@Override
 	public String getCode() {
 		if (_code == null) {
@@ -495,6 +565,7 @@ public class ESFCardModelImpl extends BaseModelImpl<ESFCard>
 		return GetterUtil.getString(_originalCode);
 	}
 
+	@JSON
 	@Override
 	public String getOldCode() {
 		if (_oldCode == null) {

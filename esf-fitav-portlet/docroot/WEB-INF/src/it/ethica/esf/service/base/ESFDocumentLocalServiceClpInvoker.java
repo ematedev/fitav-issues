@@ -100,55 +100,55 @@ public class ESFDocumentLocalServiceClpInvoker {
 
 		_methodParameterTypes15 = new String[] { "it.ethica.esf.model.ESFDocument" };
 
-		_methodName380 = "getBeanIdentifier";
+		_methodName384 = "getBeanIdentifier";
 
-		_methodParameterTypes380 = new String[] {  };
+		_methodParameterTypes384 = new String[] {  };
 
-		_methodName381 = "setBeanIdentifier";
+		_methodName385 = "setBeanIdentifier";
 
-		_methodParameterTypes381 = new String[] { "java.lang.String" };
+		_methodParameterTypes385 = new String[] { "java.lang.String" };
 
-		_methodName386 = "findAll";
+		_methodName390 = "findAll";
 
-		_methodParameterTypes386 = new String[] {  };
+		_methodParameterTypes390 = new String[] {  };
 
-		_methodName387 = "addEsfDocument";
+		_methodName391 = "addEsfDocument";
 
-		_methodParameterTypes387 = new String[] {
+		_methodParameterTypes391 = new String[] {
 				"long", "long", "java.lang.String", "long", "java.lang.String",
 				"java.lang.String", "java.util.Date", "java.util.Date",
 				"java.util.Date", "long", "java.lang.String", "java.lang.String",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName388 = "updateEsfDocument";
+		_methodName392 = "updateEsfDocument";
 
-		_methodParameterTypes388 = new String[] {
+		_methodParameterTypes392 = new String[] {
 				"long", "long", "long", "java.lang.String", "long",
 				"java.lang.String", "java.lang.String", "java.util.Date",
 				"java.util.Date", "java.util.Date", "long", "java.lang.String",
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName389 = "findByCode";
+		_methodName393 = "findByCode";
 
-		_methodParameterTypes389 = new String[] { "java.lang.String" };
+		_methodParameterTypes393 = new String[] { "java.lang.String" };
 
-		_methodName390 = "findByesfUserId";
+		_methodName394 = "findByesfUserId";
 
-		_methodParameterTypes390 = new String[] { "long" };
+		_methodParameterTypes394 = new String[] { "long" };
 
-		_methodName391 = "findByEsfDocumentTypeId";
+		_methodName395 = "findByEsfDocumentTypeId";
 
-		_methodParameterTypes391 = new String[] { "long" };
+		_methodParameterTypes395 = new String[] { "long" };
 
-		_methodName392 = "findByT_U";
+		_methodName396 = "findByT_U";
 
-		_methodParameterTypes392 = new String[] { "java.lang.String", "long" };
+		_methodParameterTypes396 = new String[] { "java.lang.String", "long" };
 
-		_methodName393 = "findByU_ED";
+		_methodName397 = "findByU_ED";
 
-		_methodParameterTypes393 = new String[] { "long", "java.util.Date" };
+		_methodParameterTypes397 = new String[] { "long", "java.util.Date" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -240,25 +240,25 @@ public class ESFDocumentLocalServiceClpInvoker {
 			return ESFDocumentLocalServiceUtil.updateESFDocument((it.ethica.esf.model.ESFDocument)arguments[0]);
 		}
 
-		if (_methodName380.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
+		if (_methodName384.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
 			return ESFDocumentLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName381.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes381, parameterTypes)) {
+		if (_methodName385.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
 			ESFDocumentLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName386.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
+		if (_methodName390.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
 			return ESFDocumentLocalServiceUtil.findAll();
 		}
 
-		if (_methodName387.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
+		if (_methodName391.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
 			return ESFDocumentLocalServiceUtil.addEsfDocument(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2],
@@ -271,8 +271,8 @@ public class ESFDocumentLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[12]);
 		}
 
-		if (_methodName388.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
+		if (_methodName392.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFDocumentLocalServiceUtil.updateEsfDocument(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -287,29 +287,29 @@ public class ESFDocumentLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[13]);
 		}
 
-		if (_methodName389.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes389, parameterTypes)) {
+		if (_methodName393.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
 			return ESFDocumentLocalServiceUtil.findByCode((java.lang.String)arguments[0]);
 		}
 
-		if (_methodName390.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
+		if (_methodName394.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
 			return ESFDocumentLocalServiceUtil.findByesfUserId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName391.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
+		if (_methodName395.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
 			return ESFDocumentLocalServiceUtil.findByEsfDocumentTypeId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName392.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
+		if (_methodName396.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
 			return ESFDocumentLocalServiceUtil.findByT_U((java.lang.String)arguments[0],
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName393.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
+		if (_methodName397.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
 			return ESFDocumentLocalServiceUtil.findByU_ED(((Long)arguments[0]).longValue(),
 				(java.util.Date)arguments[1]);
 		}
@@ -349,18 +349,10 @@ public class ESFDocumentLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName380;
-	private String[] _methodParameterTypes380;
-	private String _methodName381;
-	private String[] _methodParameterTypes381;
-	private String _methodName386;
-	private String[] _methodParameterTypes386;
-	private String _methodName387;
-	private String[] _methodParameterTypes387;
-	private String _methodName388;
-	private String[] _methodParameterTypes388;
-	private String _methodName389;
-	private String[] _methodParameterTypes389;
+	private String _methodName384;
+	private String[] _methodParameterTypes384;
+	private String _methodName385;
+	private String[] _methodParameterTypes385;
 	private String _methodName390;
 	private String[] _methodParameterTypes390;
 	private String _methodName391;
@@ -369,4 +361,12 @@ public class ESFDocumentLocalServiceClpInvoker {
 	private String[] _methodParameterTypes392;
 	private String _methodName393;
 	private String[] _methodParameterTypes393;
+	private String _methodName394;
+	private String[] _methodParameterTypes394;
+	private String _methodName395;
+	private String[] _methodParameterTypes395;
+	private String _methodName396;
+	private String[] _methodParameterTypes396;
+	private String _methodName397;
+	private String[] _methodParameterTypes397;
 }

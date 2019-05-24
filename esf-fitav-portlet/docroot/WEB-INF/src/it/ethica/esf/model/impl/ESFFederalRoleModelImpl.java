@@ -16,6 +16,7 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
@@ -31,13 +32,16 @@ import com.liferay.portlet.expando.util.ExpandoBridgeFactoryUtil;
 
 import it.ethica.esf.model.ESFFederalRole;
 import it.ethica.esf.model.ESFFederalRoleModel;
+import it.ethica.esf.model.ESFFederalRoleSoap;
 
 import java.io.Serializable;
 
 import java.sql.Types;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -53,6 +57,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFFederalRoleModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFFederalRoleModelImpl extends BaseModelImpl<ESFFederalRole>
 	implements ESFFederalRoleModel {
 	/*
@@ -96,6 +101,56 @@ public class ESFFederalRoleModelImpl extends BaseModelImpl<ESFFederalRole>
 	public static long GROUPID_COLUMN_BITMASK = 4L;
 	public static long UUID_COLUMN_BITMASK = 8L;
 	public static long ESFFEDERALROLEID_COLUMN_BITMASK = 16L;
+
+	/**
+	 * Converts the soap model instance into a normal model instance.
+	 *
+	 * @param soapModel the soap model instance to convert
+	 * @return the normal model instance
+	 */
+	public static ESFFederalRole toModel(ESFFederalRoleSoap soapModel) {
+		if (soapModel == null) {
+			return null;
+		}
+
+		ESFFederalRole model = new ESFFederalRoleImpl();
+
+		model.setUuid(soapModel.getUuid());
+		model.setEsfFederalRoleId(soapModel.getEsfFederalRoleId());
+		model.setGroupId(soapModel.getGroupId());
+		model.setCompanyId(soapModel.getCompanyId());
+		model.setUserId(soapModel.getUserId());
+		model.setUserName(soapModel.getUserName());
+		model.setCreateDate(soapModel.getCreateDate());
+		model.setModifiedDate(soapModel.getModifiedDate());
+		model.setCode(soapModel.getCode());
+		model.setDescription(soapModel.getDescription());
+		model.setRegional(soapModel.getRegional());
+		model.setProvincial(soapModel.getProvincial());
+
+		return model;
+	}
+
+	/**
+	 * Converts the soap model instances into normal model instances.
+	 *
+	 * @param soapModels the soap model instances to convert
+	 * @return the normal model instances
+	 */
+	public static List<ESFFederalRole> toModels(ESFFederalRoleSoap[] soapModels) {
+		if (soapModels == null) {
+			return null;
+		}
+
+		List<ESFFederalRole> models = new ArrayList<ESFFederalRole>(soapModels.length);
+
+		for (ESFFederalRoleSoap soapModel : soapModels) {
+			models.add(toModel(soapModel));
+		}
+
+		return models;
+	}
+
 	public static final long LOCK_EXPIRATION_TIME = GetterUtil.getLong(com.liferay.util.service.ServiceProps.get(
 				"lock.expiration.time.it.ethica.esf.model.ESFFederalRole"));
 
@@ -227,6 +282,7 @@ public class ESFFederalRoleModelImpl extends BaseModelImpl<ESFFederalRole>
 		}
 	}
 
+	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -250,6 +306,7 @@ public class ESFFederalRoleModelImpl extends BaseModelImpl<ESFFederalRole>
 		return GetterUtil.getString(_originalUuid);
 	}
 
+	@JSON
 	@Override
 	public long getEsfFederalRoleId() {
 		return _esfFederalRoleId;
@@ -260,6 +317,7 @@ public class ESFFederalRoleModelImpl extends BaseModelImpl<ESFFederalRole>
 		_esfFederalRoleId = esfFederalRoleId;
 	}
 
+	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -282,6 +340,7 @@ public class ESFFederalRoleModelImpl extends BaseModelImpl<ESFFederalRole>
 		return _originalGroupId;
 	}
 
+	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -304,6 +363,7 @@ public class ESFFederalRoleModelImpl extends BaseModelImpl<ESFFederalRole>
 		return _originalCompanyId;
 	}
 
+	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -324,6 +384,7 @@ public class ESFFederalRoleModelImpl extends BaseModelImpl<ESFFederalRole>
 		_userUuid = userUuid;
 	}
 
+	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -339,6 +400,7 @@ public class ESFFederalRoleModelImpl extends BaseModelImpl<ESFFederalRole>
 		_userName = userName;
 	}
 
+	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -349,6 +411,7 @@ public class ESFFederalRoleModelImpl extends BaseModelImpl<ESFFederalRole>
 		_createDate = createDate;
 	}
 
+	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -359,6 +422,7 @@ public class ESFFederalRoleModelImpl extends BaseModelImpl<ESFFederalRole>
 		_modifiedDate = modifiedDate;
 	}
 
+	@JSON
 	@Override
 	public String getCode() {
 		if (_code == null) {
@@ -384,6 +448,7 @@ public class ESFFederalRoleModelImpl extends BaseModelImpl<ESFFederalRole>
 		return GetterUtil.getString(_originalCode);
 	}
 
+	@JSON
 	@Override
 	public String getDescription() {
 		if (_description == null) {
@@ -399,6 +464,7 @@ public class ESFFederalRoleModelImpl extends BaseModelImpl<ESFFederalRole>
 		_description = description;
 	}
 
+	@JSON
 	@Override
 	public boolean getRegional() {
 		return _regional;
@@ -414,6 +480,7 @@ public class ESFFederalRoleModelImpl extends BaseModelImpl<ESFFederalRole>
 		_regional = regional;
 	}
 
+	@JSON
 	@Override
 	public boolean getProvincial() {
 		return _provincial;

@@ -231,12 +231,6 @@ public class ESFStateAssEntityWrapper implements ESFStateAssEntity,
 	}
 
 	@Override
-	public void persist()
-		throws com.liferay.portal.kernel.exception.SystemException {
-		_esfStateAssEntity.persist();
-	}
-
-	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;

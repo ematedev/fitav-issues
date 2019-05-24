@@ -688,6 +688,25 @@ public abstract class ESFShooterCategoryESFMatchLocalServiceBaseImpl
 	}
 
 	/**
+	 * Returns the e s f card remote service.
+	 *
+	 * @return the e s f card remote service
+	 */
+	public it.ethica.esf.service.ESFCardService getESFCardService() {
+		return esfCardService;
+	}
+
+	/**
+	 * Sets the e s f card remote service.
+	 *
+	 * @param esfCardService the e s f card remote service
+	 */
+	public void setESFCardService(
+		it.ethica.esf.service.ESFCardService esfCardService) {
+		this.esfCardService = esfCardService;
+	}
+
+	/**
 	 * Returns the e s f card persistence.
 	 *
 	 * @return the e s f card persistence
@@ -1255,6 +1274,25 @@ public abstract class ESFShooterCategoryESFMatchLocalServiceBaseImpl
 	}
 
 	/**
+	 * Returns the e s f federal role remote service.
+	 *
+	 * @return the e s f federal role remote service
+	 */
+	public it.ethica.esf.service.ESFFederalRoleService getESFFederalRoleService() {
+		return esfFederalRoleService;
+	}
+
+	/**
+	 * Sets the e s f federal role remote service.
+	 *
+	 * @param esfFederalRoleService the e s f federal role remote service
+	 */
+	public void setESFFederalRoleService(
+		it.ethica.esf.service.ESFFederalRoleService esfFederalRoleService) {
+		this.esfFederalRoleService = esfFederalRoleService;
+	}
+
+	/**
 	 * Returns the e s f federal role persistence.
 	 *
 	 * @return the e s f federal role persistence
@@ -1309,6 +1347,25 @@ public abstract class ESFShooterCategoryESFMatchLocalServiceBaseImpl
 	public void setESFFederalRoleESFSpecificLocalService(
 		it.ethica.esf.service.ESFFederalRoleESFSpecificLocalService esfFederalRoleESFSpecificLocalService) {
 		this.esfFederalRoleESFSpecificLocalService = esfFederalRoleESFSpecificLocalService;
+	}
+
+	/**
+	 * Returns the e s f federal role e s f specific remote service.
+	 *
+	 * @return the e s f federal role e s f specific remote service
+	 */
+	public it.ethica.esf.service.ESFFederalRoleESFSpecificService getESFFederalRoleESFSpecificService() {
+		return esfFederalRoleESFSpecificService;
+	}
+
+	/**
+	 * Sets the e s f federal role e s f specific remote service.
+	 *
+	 * @param esfFederalRoleESFSpecificService the e s f federal role e s f specific remote service
+	 */
+	public void setESFFederalRoleESFSpecificService(
+		it.ethica.esf.service.ESFFederalRoleESFSpecificService esfFederalRoleESFSpecificService) {
+		this.esfFederalRoleESFSpecificService = esfFederalRoleESFSpecificService;
 	}
 
 	/**
@@ -2822,25 +2879,6 @@ public abstract class ESFShooterCategoryESFMatchLocalServiceBaseImpl
 	}
 
 	/**
-	 * Returns the e s f shooter category e s f tournament local service.
-	 *
-	 * @return the e s f shooter category e s f tournament local service
-	 */
-	public it.ethica.esf.service.ESFShooterCategoryESFTournamentLocalService getESFShooterCategoryESFTournamentLocalService() {
-		return esfShooterCategoryESFTournamentLocalService;
-	}
-
-	/**
-	 * Sets the e s f shooter category e s f tournament local service.
-	 *
-	 * @param esfShooterCategoryESFTournamentLocalService the e s f shooter category e s f tournament local service
-	 */
-	public void setESFShooterCategoryESFTournamentLocalService(
-		it.ethica.esf.service.ESFShooterCategoryESFTournamentLocalService esfShooterCategoryESFTournamentLocalService) {
-		this.esfShooterCategoryESFTournamentLocalService = esfShooterCategoryESFTournamentLocalService;
-	}
-
-	/**
 	 * Returns the e s f shooter category e s f tournament persistence.
 	 *
 	 * @return the e s f shooter category e s f tournament persistence
@@ -2933,25 +2971,6 @@ public abstract class ESFShooterCategoryESFMatchLocalServiceBaseImpl
 	public void setESFShooterQualificationESFMatchPersistence(
 		ESFShooterQualificationESFMatchPersistence esfShooterQualificationESFMatchPersistence) {
 		this.esfShooterQualificationESFMatchPersistence = esfShooterQualificationESFMatchPersistence;
-	}
-
-	/**
-	 * Returns the e s f shooter qualification e s f tournament local service.
-	 *
-	 * @return the e s f shooter qualification e s f tournament local service
-	 */
-	public it.ethica.esf.service.ESFShooterQualificationESFTournamentLocalService getESFShooterQualificationESFTournamentLocalService() {
-		return esfShooterQualificationESFTournamentLocalService;
-	}
-
-	/**
-	 * Sets the e s f shooter qualification e s f tournament local service.
-	 *
-	 * @param esfShooterQualificationESFTournamentLocalService the e s f shooter qualification e s f tournament local service
-	 */
-	public void setESFShooterQualificationESFTournamentLocalService(
-		it.ethica.esf.service.ESFShooterQualificationESFTournamentLocalService esfShooterQualificationESFTournamentLocalService) {
-		this.esfShooterQualificationESFTournamentLocalService = esfShooterQualificationESFTournamentLocalService;
 	}
 
 	/**
@@ -3088,6 +3107,25 @@ public abstract class ESFShooterCategoryESFMatchLocalServiceBaseImpl
 	}
 
 	/**
+	 * Returns the e s f specific remote service.
+	 *
+	 * @return the e s f specific remote service
+	 */
+	public it.ethica.esf.service.ESFSpecificService getESFSpecificService() {
+		return esfSpecificService;
+	}
+
+	/**
+	 * Sets the e s f specific remote service.
+	 *
+	 * @param esfSpecificService the e s f specific remote service
+	 */
+	public void setESFSpecificService(
+		it.ethica.esf.service.ESFSpecificService esfSpecificService) {
+		this.esfSpecificService = esfSpecificService;
+	}
+
+	/**
 	 * Returns the e s f specific persistence.
 	 *
 	 * @return the e s f specific persistence
@@ -3179,25 +3217,6 @@ public abstract class ESFShooterCategoryESFMatchLocalServiceBaseImpl
 	 */
 	public void setESFStatePersistence(ESFStatePersistence esfStatePersistence) {
 		this.esfStatePersistence = esfStatePersistence;
-	}
-
-	/**
-	 * Returns the e s f state ass entity local service.
-	 *
-	 * @return the e s f state ass entity local service
-	 */
-	public it.ethica.esf.service.ESFStateAssEntityLocalService getESFStateAssEntityLocalService() {
-		return esfStateAssEntityLocalService;
-	}
-
-	/**
-	 * Sets the e s f state ass entity local service.
-	 *
-	 * @param esfStateAssEntityLocalService the e s f state ass entity local service
-	 */
-	public void setESFStateAssEntityLocalService(
-		it.ethica.esf.service.ESFStateAssEntityLocalService esfStateAssEntityLocalService) {
-		this.esfStateAssEntityLocalService = esfStateAssEntityLocalService;
 	}
 
 	/**
@@ -3463,6 +3482,25 @@ public abstract class ESFShooterCategoryESFMatchLocalServiceBaseImpl
 	public void setESFUserLocalService(
 		it.ethica.esf.service.ESFUserLocalService esfUserLocalService) {
 		this.esfUserLocalService = esfUserLocalService;
+	}
+
+	/**
+	 * Returns the e s f user remote service.
+	 *
+	 * @return the e s f user remote service
+	 */
+	public it.ethica.esf.service.ESFUserService getESFUserService() {
+		return esfUserService;
+	}
+
+	/**
+	 * Sets the e s f user remote service.
+	 *
+	 * @param esfUserService the e s f user remote service
+	 */
+	public void setESFUserService(
+		it.ethica.esf.service.ESFUserService esfUserService) {
+		this.esfUserService = esfUserService;
 	}
 
 	/**
@@ -3969,6 +4007,8 @@ public abstract class ESFShooterCategoryESFMatchLocalServiceBaseImpl
 	protected ESFCanePersistence esfCanePersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFCardLocalService.class)
 	protected it.ethica.esf.service.ESFCardLocalService esfCardLocalService;
+	@BeanReference(type = it.ethica.esf.service.ESFCardService.class)
+	protected it.ethica.esf.service.ESFCardService esfCardService;
 	@BeanReference(type = ESFCardPersistence.class)
 	protected ESFCardPersistence esfCardPersistence;
 	@BeanReference(type = ESFCardFinder.class)
@@ -4029,12 +4069,16 @@ public abstract class ESFShooterCategoryESFMatchLocalServiceBaseImpl
 	protected ESFEventTypePersistence esfEventTypePersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFFederalRoleLocalService.class)
 	protected it.ethica.esf.service.ESFFederalRoleLocalService esfFederalRoleLocalService;
+	@BeanReference(type = it.ethica.esf.service.ESFFederalRoleService.class)
+	protected it.ethica.esf.service.ESFFederalRoleService esfFederalRoleService;
 	@BeanReference(type = ESFFederalRolePersistence.class)
 	protected ESFFederalRolePersistence esfFederalRolePersistence;
 	@BeanReference(type = ESFFederalRoleFinder.class)
 	protected ESFFederalRoleFinder esfFederalRoleFinder;
 	@BeanReference(type = it.ethica.esf.service.ESFFederalRoleESFSpecificLocalService.class)
 	protected it.ethica.esf.service.ESFFederalRoleESFSpecificLocalService esfFederalRoleESFSpecificLocalService;
+	@BeanReference(type = it.ethica.esf.service.ESFFederalRoleESFSpecificService.class)
+	protected it.ethica.esf.service.ESFFederalRoleESFSpecificService esfFederalRoleESFSpecificService;
 	@BeanReference(type = ESFFederalRoleESFSpecificPersistence.class)
 	protected ESFFederalRoleESFSpecificPersistence esfFederalRoleESFSpecificPersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFFieldLocalService.class)
@@ -4195,8 +4239,6 @@ public abstract class ESFShooterCategoryESFMatchLocalServiceBaseImpl
 	protected it.ethica.esf.service.ESFShooterCategoryESFMatchLocalService esfShooterCategoryESFMatchLocalService;
 	@BeanReference(type = ESFShooterCategoryESFMatchPersistence.class)
 	protected ESFShooterCategoryESFMatchPersistence esfShooterCategoryESFMatchPersistence;
-	@BeanReference(type = it.ethica.esf.service.ESFShooterCategoryESFTournamentLocalService.class)
-	protected it.ethica.esf.service.ESFShooterCategoryESFTournamentLocalService esfShooterCategoryESFTournamentLocalService;
 	@BeanReference(type = ESFShooterCategoryESFTournamentPersistence.class)
 	protected ESFShooterCategoryESFTournamentPersistence esfShooterCategoryESFTournamentPersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFShooterQualificationLocalService.class)
@@ -4207,8 +4249,6 @@ public abstract class ESFShooterCategoryESFMatchLocalServiceBaseImpl
 	protected it.ethica.esf.service.ESFShooterQualificationESFMatchLocalService esfShooterQualificationESFMatchLocalService;
 	@BeanReference(type = ESFShooterQualificationESFMatchPersistence.class)
 	protected ESFShooterQualificationESFMatchPersistence esfShooterQualificationESFMatchPersistence;
-	@BeanReference(type = it.ethica.esf.service.ESFShooterQualificationESFTournamentLocalService.class)
-	protected it.ethica.esf.service.ESFShooterQualificationESFTournamentLocalService esfShooterQualificationESFTournamentLocalService;
 	@BeanReference(type = ESFShooterQualificationESFTournamentPersistence.class)
 	protected ESFShooterQualificationESFTournamentPersistence esfShooterQualificationESFTournamentPersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFShootingDirectorLocalService.class)
@@ -4223,6 +4263,8 @@ public abstract class ESFShooterCategoryESFMatchLocalServiceBaseImpl
 	protected ESFShootingDirectorQualificationPersistence esfShootingDirectorQualificationPersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFSpecificLocalService.class)
 	protected it.ethica.esf.service.ESFSpecificLocalService esfSpecificLocalService;
+	@BeanReference(type = it.ethica.esf.service.ESFSpecificService.class)
+	protected it.ethica.esf.service.ESFSpecificService esfSpecificService;
 	@BeanReference(type = ESFSpecificPersistence.class)
 	protected ESFSpecificPersistence esfSpecificPersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFSportTypeLocalService.class)
@@ -4233,8 +4275,6 @@ public abstract class ESFShooterCategoryESFMatchLocalServiceBaseImpl
 	protected it.ethica.esf.service.ESFStateLocalService esfStateLocalService;
 	@BeanReference(type = ESFStatePersistence.class)
 	protected ESFStatePersistence esfStatePersistence;
-	@BeanReference(type = it.ethica.esf.service.ESFStateAssEntityLocalService.class)
-	protected it.ethica.esf.service.ESFStateAssEntityLocalService esfStateAssEntityLocalService;
 	@BeanReference(type = ESFStateAssEntityPersistence.class)
 	protected ESFStateAssEntityPersistence esfStateAssEntityPersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFSuspensiveCodeLocalService.class)
@@ -4263,6 +4303,8 @@ public abstract class ESFShooterCategoryESFMatchLocalServiceBaseImpl
 	protected ESFUnitservicePersistence esfUnitservicePersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFUserLocalService.class)
 	protected it.ethica.esf.service.ESFUserLocalService esfUserLocalService;
+	@BeanReference(type = it.ethica.esf.service.ESFUserService.class)
+	protected it.ethica.esf.service.ESFUserService esfUserService;
 	@BeanReference(type = ESFUserPersistence.class)
 	protected ESFUserPersistence esfUserPersistence;
 	@BeanReference(type = ESFUserFinder.class)

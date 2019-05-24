@@ -15,7 +15,6 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -50,7 +49,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFSuspensiveCodeModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFSuspensiveCodeModelImpl extends BaseModelImpl<ESFSuspensiveCode>
 	implements ESFSuspensiveCodeModel {
 	/*
@@ -146,7 +144,6 @@ public class ESFSuspensiveCodeModelImpl extends BaseModelImpl<ESFSuspensiveCode>
 		}
 	}
 
-	@JSON
 	@Override
 	public long getEsfSuspensiveCodeId() {
 		return _esfSuspensiveCodeId;
@@ -157,7 +154,6 @@ public class ESFSuspensiveCodeModelImpl extends BaseModelImpl<ESFSuspensiveCode>
 		_esfSuspensiveCodeId = esfSuspensiveCodeId;
 	}
 
-	@JSON
 	@Override
 	public String getCode() {
 		if (_code == null) {
@@ -173,7 +169,6 @@ public class ESFSuspensiveCodeModelImpl extends BaseModelImpl<ESFSuspensiveCode>
 		_code = code;
 	}
 
-	@JSON
 	@Override
 	public String getDescription() {
 		if (_description == null) {

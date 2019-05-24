@@ -123,7 +123,7 @@ if (Validator.isNull(orderByType)) {
 		List<ESFUser> esfusers = new ArrayList<ESFUser>();
 		int esfusersTot = 0 ;
 
-		System.out.println("isAss = "+isAss+" isRegional = "+isRegional);
+		
 
 		if(isAss){
 			

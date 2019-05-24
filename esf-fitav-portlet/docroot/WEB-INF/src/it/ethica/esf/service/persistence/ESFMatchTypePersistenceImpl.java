@@ -967,7 +967,7 @@ public class ESFMatchTypePersistenceImpl extends BasePersistenceImpl<ESFMatchTyp
 				QueryPos qPos = QueryPos.getInstance(q);
 
 				if (bindName) {
-					qPos.add(name.toLowerCase());
+					qPos.add(name);
 				}
 
 				if (!pagination) {
@@ -1251,7 +1251,7 @@ public class ESFMatchTypePersistenceImpl extends BasePersistenceImpl<ESFMatchTyp
 		QueryPos qPos = QueryPos.getInstance(q);
 
 		if (bindName) {
-			qPos.add(name.toLowerCase());
+			qPos.add(name);
 		}
 
 		if (orderByComparator != null) {
@@ -1334,7 +1334,7 @@ public class ESFMatchTypePersistenceImpl extends BasePersistenceImpl<ESFMatchTyp
 				QueryPos qPos = QueryPos.getInstance(q);
 
 				if (bindName) {
-					qPos.add(name.toLowerCase());
+					qPos.add(name);
 				}
 
 				count = (Long)q.uniqueResult();
@@ -1355,7 +1355,7 @@ public class ESFMatchTypePersistenceImpl extends BasePersistenceImpl<ESFMatchTyp
 	}
 
 	private static final String _FINDER_COLUMN_FINDBYDESCRIPTION_NAME_1 = "esfMatchType.name IS NULL";
-	private static final String _FINDER_COLUMN_FINDBYDESCRIPTION_NAME_2 = "lower(esfMatchType.name) = ?";
+	private static final String _FINDER_COLUMN_FINDBYDESCRIPTION_NAME_2 = "esfMatchType.name = ?";
 	private static final String _FINDER_COLUMN_FINDBYDESCRIPTION_NAME_3 = "(esfMatchType.name IS NULL OR esfMatchType.name = '')";
 
 	public ESFMatchTypePersistenceImpl() {

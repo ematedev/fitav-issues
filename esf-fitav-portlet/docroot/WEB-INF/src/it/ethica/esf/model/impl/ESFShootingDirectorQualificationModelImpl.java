@@ -15,7 +15,6 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -50,7 +49,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFShootingDirectorQualificationModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFShootingDirectorQualificationModelImpl extends BaseModelImpl<ESFShootingDirectorQualification>
 	implements ESFShootingDirectorQualificationModel {
 	/*
@@ -142,7 +140,6 @@ public class ESFShootingDirectorQualificationModelImpl extends BaseModelImpl<ESF
 		}
 	}
 
-	@JSON
 	@Override
 	public long getEsfShootingDirectorQualificationId() {
 		return _esfShootingDirectorQualificationId;
@@ -154,7 +151,6 @@ public class ESFShootingDirectorQualificationModelImpl extends BaseModelImpl<ESF
 		_esfShootingDirectorQualificationId = esfShootingDirectorQualificationId;
 	}
 
-	@JSON
 	@Override
 	public String getEsfShootingDirectorQualificationDesc() {
 		if (_esfShootingDirectorQualificationDesc == null) {

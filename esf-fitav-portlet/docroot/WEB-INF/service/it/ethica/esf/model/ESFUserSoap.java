@@ -21,9 +21,10 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * This class is used by SOAP remote services.
+ * This class is used by SOAP remote services, specifically {@link it.ethica.esf.service.http.ESFUserServiceSoap}.
  *
  * @author Ethica
+ * @see it.ethica.esf.service.http.ESFUserServiceSoap
  * @generated
  */
 public class ESFUserSoap implements Serializable {

@@ -19,7 +19,7 @@ long esfUserId = shDr.getEsfUserId();
 				value='<%=templatePath + "shootingDirectorInfo.jsp"%>' />
 	</portlet:renderURL>
 
-	<liferay-ui:icon image="edit" message="view" url="<%=editURL.toString()%>" />
+	<liferay-ui:icon image="date" message="view" url="<%=editURL.toString()%>" />
 	
 	<portlet:renderURL var="addSospensiveURL">
 			<portlet:param name="esfUserId"

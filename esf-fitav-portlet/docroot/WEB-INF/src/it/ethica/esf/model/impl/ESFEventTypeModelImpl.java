@@ -16,7 +16,6 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -53,7 +52,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFEventTypeModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFEventTypeModelImpl extends BaseModelImpl<ESFEventType>
 	implements ESFEventTypeModel {
 	/*
@@ -197,7 +195,6 @@ public class ESFEventTypeModelImpl extends BaseModelImpl<ESFEventType>
 		}
 	}
 
-	@JSON
 	@Override
 	public long getEsfEventTypeId() {
 		return _esfEventTypeId;
@@ -208,7 +205,6 @@ public class ESFEventTypeModelImpl extends BaseModelImpl<ESFEventType>
 		_esfEventTypeId = esfEventTypeId;
 	}
 
-	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -219,7 +215,6 @@ public class ESFEventTypeModelImpl extends BaseModelImpl<ESFEventType>
 		_groupId = groupId;
 	}
 
-	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -230,7 +225,6 @@ public class ESFEventTypeModelImpl extends BaseModelImpl<ESFEventType>
 		_companyId = companyId;
 	}
 
-	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -251,7 +245,6 @@ public class ESFEventTypeModelImpl extends BaseModelImpl<ESFEventType>
 		_userUuid = userUuid;
 	}
 
-	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -267,7 +260,6 @@ public class ESFEventTypeModelImpl extends BaseModelImpl<ESFEventType>
 		_userName = userName;
 	}
 
-	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -278,7 +270,6 @@ public class ESFEventTypeModelImpl extends BaseModelImpl<ESFEventType>
 		_createDate = createDate;
 	}
 
-	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -289,7 +280,6 @@ public class ESFEventTypeModelImpl extends BaseModelImpl<ESFEventType>
 		_modifiedDate = modifiedDate;
 	}
 
-	@JSON
 	@Override
 	public String getMacrocategory() {
 		if (_macrocategory == null) {
@@ -305,7 +295,6 @@ public class ESFEventTypeModelImpl extends BaseModelImpl<ESFEventType>
 		_macrocategory = macrocategory;
 	}
 
-	@JSON
 	@Override
 	public String getEventType() {
 		if (_eventType == null) {

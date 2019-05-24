@@ -16,7 +16,6 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -53,7 +52,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFShootingDirectorModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFShootingDirectorModelImpl extends BaseModelImpl<ESFShootingDirector>
 	implements ESFShootingDirectorModel {
 	/*
@@ -231,7 +229,6 @@ public class ESFShootingDirectorModelImpl extends BaseModelImpl<ESFShootingDirec
 		}
 	}
 
-	@JSON
 	@Override
 	public long getEsfShootingDirectorId() {
 		return _esfShootingDirectorId;
@@ -242,7 +239,6 @@ public class ESFShootingDirectorModelImpl extends BaseModelImpl<ESFShootingDirec
 		_esfShootingDirectorId = esfShootingDirectorId;
 	}
 
-	@JSON
 	@Override
 	public String getEsfCodeData() {
 		if (_esfCodeData == null) {
@@ -258,7 +254,6 @@ public class ESFShootingDirectorModelImpl extends BaseModelImpl<ESFShootingDirec
 		_esfCodeData = esfCodeData;
 	}
 
-	@JSON
 	@Override
 	public Date getEsfStartData() {
 		return _esfStartData;
@@ -269,7 +264,6 @@ public class ESFShootingDirectorModelImpl extends BaseModelImpl<ESFShootingDirec
 		_esfStartData = esfStartData;
 	}
 
-	@JSON
 	@Override
 	public Date getEsfEndData() {
 		return _esfEndData;
@@ -280,7 +274,6 @@ public class ESFShootingDirectorModelImpl extends BaseModelImpl<ESFShootingDirec
 		_esfEndData = esfEndData;
 	}
 
-	@JSON
 	@Override
 	public long getEsfUserId() {
 		return _esfUserId;
@@ -313,7 +306,6 @@ public class ESFShootingDirectorModelImpl extends BaseModelImpl<ESFShootingDirec
 		return _originalEsfUserId;
 	}
 
-	@JSON
 	@Override
 	public long getCodeUser() {
 		return _codeUser;
@@ -324,7 +316,6 @@ public class ESFShootingDirectorModelImpl extends BaseModelImpl<ESFShootingDirec
 		_codeUser = codeUser;
 	}
 
-	@JSON
 	@Override
 	public long getShootingDirectorQualificationId() {
 		return _shootingDirectorQualificationId;
@@ -348,7 +339,6 @@ public class ESFShootingDirectorModelImpl extends BaseModelImpl<ESFShootingDirec
 		return _originalShootingDirectorQualificationId;
 	}
 
-	@JSON
 	@Override
 	public long getSportTypeId() {
 		return _sportTypeId;
@@ -371,7 +361,6 @@ public class ESFShootingDirectorModelImpl extends BaseModelImpl<ESFShootingDirec
 		return _originalSportTypeId;
 	}
 
-	@JSON
 	@Override
 	public String getRegionId() {
 		if (_regionId == null) {
@@ -397,7 +386,6 @@ public class ESFShootingDirectorModelImpl extends BaseModelImpl<ESFShootingDirec
 		return GetterUtil.getString(_originalRegionId);
 	}
 
-	@JSON
 	@Override
 	public String getProvinceId() {
 		if (_provinceId == null) {
@@ -423,7 +411,6 @@ public class ESFShootingDirectorModelImpl extends BaseModelImpl<ESFShootingDirec
 		return GetterUtil.getString(_originalProvinceId);
 	}
 
-	@JSON
 	@Override
 	public String getFlagCrea() {
 		if (_flagCrea == null) {
@@ -439,7 +426,6 @@ public class ESFShootingDirectorModelImpl extends BaseModelImpl<ESFShootingDirec
 		_flagCrea = flagCrea;
 	}
 
-	@JSON
 	@Override
 	public Date getDateVar() {
 		return _DateVar;

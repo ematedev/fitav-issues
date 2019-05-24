@@ -16,7 +16,6 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -52,7 +51,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFCaneModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFCaneModelImpl extends BaseModelImpl<ESFCane>
 	implements ESFCaneModel {
 	/*
@@ -84,10 +82,10 @@ public class ESFCaneModelImpl extends BaseModelImpl<ESFCane>
 	public static final String TX_MANAGER = "liferayTransactionManager";
 	public static final boolean ENTITY_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.entity.cache.enabled.it.ethica.esf.model.ESFCane"),
-			true);
+			false);
 	public static final boolean FINDER_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.finder.cache.enabled.it.ethica.esf.model.ESFCane"),
-			true);
+			false);
 	public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.column.bitmask.enabled.it.ethica.esf.model.ESFCane"),
 			true);
@@ -227,7 +225,6 @@ public class ESFCaneModelImpl extends BaseModelImpl<ESFCane>
 		}
 	}
 
-	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -251,7 +248,6 @@ public class ESFCaneModelImpl extends BaseModelImpl<ESFCane>
 		return GetterUtil.getString(_originalUuid);
 	}
 
-	@JSON
 	@Override
 	public long getEsfCaneId() {
 		return _esfCaneId;
@@ -262,7 +258,6 @@ public class ESFCaneModelImpl extends BaseModelImpl<ESFCane>
 		_esfCaneId = esfCaneId;
 	}
 
-	@JSON
 	@Override
 	public long getEsfUserId() {
 		return _esfUserId;
@@ -295,7 +290,6 @@ public class ESFCaneModelImpl extends BaseModelImpl<ESFCane>
 		return _originalEsfUserId;
 	}
 
-	@JSON
 	@Override
 	public String getCode() {
 		if (_code == null) {
@@ -321,7 +315,6 @@ public class ESFCaneModelImpl extends BaseModelImpl<ESFCane>
 		return GetterUtil.getString(_originalCode);
 	}
 
-	@JSON
 	@Override
 	public long getEsfGunKindId() {
 		return _esfGunKindId;
@@ -344,7 +337,6 @@ public class ESFCaneModelImpl extends BaseModelImpl<ESFCane>
 		return _originalEsfGunKindId;
 	}
 
-	@JSON
 	@Override
 	public long getEsfOrganizationId() {
 		return _esfOrganizationId;
@@ -367,7 +359,6 @@ public class ESFCaneModelImpl extends BaseModelImpl<ESFCane>
 		return _originalEsfOrganizationId;
 	}
 
-	@JSON
 	@Override
 	public long getCaneCaliber() {
 		return _caneCaliber;
@@ -378,7 +369,6 @@ public class ESFCaneModelImpl extends BaseModelImpl<ESFCane>
 		_caneCaliber = caneCaliber;
 	}
 
-	@JSON
 	@Override
 	public boolean getIsFavoriteGun() {
 		return _isFavoriteGun;
@@ -394,7 +384,6 @@ public class ESFCaneModelImpl extends BaseModelImpl<ESFCane>
 		_isFavoriteGun = isFavoriteGun;
 	}
 
-	@JSON
 	@Override
 	public int getTypeId() {
 		return _typeId;
@@ -405,7 +394,6 @@ public class ESFCaneModelImpl extends BaseModelImpl<ESFCane>
 		_typeId = typeId;
 	}
 
-	@JSON
 	@Override
 	public String getMeasures() {
 		if (_measures == null) {
@@ -421,7 +409,6 @@ public class ESFCaneModelImpl extends BaseModelImpl<ESFCane>
 		_measures = measures;
 	}
 
-	@JSON
 	@Override
 	public long getShooterId() {
 		return _shooterId;
@@ -432,7 +419,6 @@ public class ESFCaneModelImpl extends BaseModelImpl<ESFCane>
 		_shooterId = shooterId;
 	}
 
-	@JSON
 	@Override
 	public long getEsfGunTypeId() {
 		return _esfGunTypeId;

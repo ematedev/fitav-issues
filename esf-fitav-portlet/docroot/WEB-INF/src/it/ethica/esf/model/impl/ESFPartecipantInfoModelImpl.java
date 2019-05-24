@@ -16,7 +16,6 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -53,7 +52,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFPartecipantInfoModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInfo>
 	implements ESFPartecipantInfoModel {
 	/*
@@ -538,7 +536,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		}
 	}
 
-	@JSON
 	@Override
 	public long getEsfPartecipantInfoId() {
 		return _esfPartecipantInfoId;
@@ -549,7 +546,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_esfPartecipantInfoId = esfPartecipantInfoId;
 	}
 
-	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -560,7 +556,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_groupId = groupId;
 	}
 
-	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -571,7 +566,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_companyId = companyId;
 	}
 
-	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -592,7 +586,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_userUuid = userUuid;
 	}
 
-	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -608,7 +601,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_userName = userName;
 	}
 
-	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -619,7 +611,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_createDate = createDate;
 	}
 
-	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -630,7 +621,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_modifiedDate = modifiedDate;
 	}
 
-	@JSON
 	@Override
 	public boolean getIsPortalUser() {
 		return _isPortalUser;
@@ -646,7 +636,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_isPortalUser = isPortalUser;
 	}
 
-	@JSON
 	@Override
 	public long getEsfUserId() {
 		return _esfUserId;
@@ -667,7 +656,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_esfUserUuid = esfUserUuid;
 	}
 
-	@JSON
 	@Override
 	public long getProtocol() {
 		return _protocol;
@@ -690,7 +678,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		return _originalProtocol;
 	}
 
-	@JSON
 	@Override
 	public String getFirstName() {
 		if (_firstName == null) {
@@ -716,7 +703,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		return GetterUtil.getString(_originalFirstName);
 	}
 
-	@JSON
 	@Override
 	public String getLastName() {
 		if (_lastName == null) {
@@ -742,7 +728,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		return GetterUtil.getString(_originalLastName);
 	}
 
-	@JSON
 	@Override
 	public String getPlaceOfBirth() {
 		if (_placeOfBirth == null) {
@@ -758,7 +743,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_placeOfBirth = placeOfBirth;
 	}
 
-	@JSON
 	@Override
 	public Date getDateOfBirth() {
 		return _dateOfBirth;
@@ -769,7 +753,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_dateOfBirth = dateOfBirth;
 	}
 
-	@JSON
 	@Override
 	public String getResidenceCity() {
 		if (_residenceCity == null) {
@@ -785,7 +768,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_residenceCity = residenceCity;
 	}
 
-	@JSON
 	@Override
 	public String getProvince() {
 		if (_province == null) {
@@ -801,7 +783,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_province = province;
 	}
 
-	@JSON
 	@Override
 	public int getZip() {
 		return _zip;
@@ -812,7 +793,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_zip = zip;
 	}
 
-	@JSON
 	@Override
 	public String getAddress() {
 		if (_address == null) {
@@ -828,7 +808,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_address = address;
 	}
 
-	@JSON
 	@Override
 	public String getPhonNumber() {
 		if (_phonNumber == null) {
@@ -844,7 +823,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_phonNumber = phonNumber;
 	}
 
-	@JSON
 	@Override
 	public String getEmail() {
 		if (_email == null) {
@@ -860,7 +838,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_email = email;
 	}
 
-	@JSON
 	@Override
 	public String getMaritialStatus() {
 		if (_maritialStatus == null) {
@@ -876,7 +853,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_maritialStatus = maritialStatus;
 	}
 
-	@JSON
 	@Override
 	public String getFiscalCode() {
 		if (_fiscalCode == null) {
@@ -892,7 +868,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_fiscalCode = fiscalCode;
 	}
 
-	@JSON
 	@Override
 	public String getPassport() {
 		if (_passport == null) {
@@ -908,7 +883,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_passport = passport;
 	}
 
-	@JSON
 	@Override
 	public String getReleasedBy() {
 		if (_releasedBy == null) {
@@ -924,7 +898,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_releasedBy = releasedBy;
 	}
 
-	@JSON
 	@Override
 	public Date getPassportReleaseDate() {
 		return _passportReleaseDate;
@@ -935,7 +908,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_passportReleaseDate = passportReleaseDate;
 	}
 
-	@JSON
 	@Override
 	public Date getPassportExpirationDate() {
 		return _passportExpirationDate;
@@ -946,7 +918,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_passportExpirationDate = passportExpirationDate;
 	}
 
-	@JSON
 	@Override
 	public String getEuropeanCardNumber() {
 		if (_europeanCardNumber == null) {
@@ -962,7 +933,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_europeanCardNumber = europeanCardNumber;
 	}
 
-	@JSON
 	@Override
 	public Date getEuropeanCardReleaseDate() {
 		return _europeanCardReleaseDate;
@@ -973,7 +943,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_europeanCardReleaseDate = europeanCardReleaseDate;
 	}
 
-	@JSON
 	@Override
 	public Date getEuropeanCardExpirationDate() {
 		return _europeanCardExpirationDate;
@@ -984,7 +953,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_europeanCardExpirationDate = europeanCardExpirationDate;
 	}
 
-	@JSON
 	@Override
 	public String getGunLicenceNumber() {
 		if (_gunLicenceNumber == null) {
@@ -1000,7 +968,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_gunLicenceNumber = gunLicenceNumber;
 	}
 
-	@JSON
 	@Override
 	public Date getGunLicenceReleaseDate() {
 		return _gunLicenceReleaseDate;
@@ -1011,7 +978,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_gunLicenceReleaseDate = gunLicenceReleaseDate;
 	}
 
-	@JSON
 	@Override
 	public Date getGunLicenceExpirationDate() {
 		return _gunLicenceExpirationDate;
@@ -1022,7 +988,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_gunLicenceExpirationDate = gunLicenceExpirationDate;
 	}
 
-	@JSON
 	@Override
 	public String getFirstGunType() {
 		if (_firstGunType == null) {
@@ -1038,7 +1003,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_firstGunType = firstGunType;
 	}
 
-	@JSON
 	@Override
 	public String getFirstGunKind() {
 		if (_firstGunKind == null) {
@@ -1054,7 +1018,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_firstGunKind = firstGunKind;
 	}
 
-	@JSON
 	@Override
 	public double getFirstGunCaliber() {
 		return _firstGunCaliber;
@@ -1065,7 +1028,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_firstGunCaliber = firstGunCaliber;
 	}
 
-	@JSON
 	@Override
 	public String getFirstGunCode() {
 		if (_firstGunCode == null) {
@@ -1081,7 +1043,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_firstGunCode = firstGunCode;
 	}
 
-	@JSON
 	@Override
 	public String getFirstGunExtraCanes() {
 		if (_firstGunExtraCanes == null) {
@@ -1097,7 +1058,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_firstGunExtraCanes = firstGunExtraCanes;
 	}
 
-	@JSON
 	@Override
 	public String getSecondGunType() {
 		if (_secondGunType == null) {
@@ -1113,7 +1073,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_secondGunType = secondGunType;
 	}
 
-	@JSON
 	@Override
 	public String getSecondGunKind() {
 		if (_secondGunKind == null) {
@@ -1129,7 +1088,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_secondGunKind = secondGunKind;
 	}
 
-	@JSON
 	@Override
 	public double getSecondGunCaliber() {
 		return _secondGunCaliber;
@@ -1140,7 +1098,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_secondGunCaliber = secondGunCaliber;
 	}
 
-	@JSON
 	@Override
 	public String getSecondGunCode() {
 		if (_secondGunCode == null) {
@@ -1156,7 +1113,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_secondGunCode = secondGunCode;
 	}
 
-	@JSON
 	@Override
 	public String getSecondGunExtraCanes() {
 		if (_secondGunExtraCanes == null) {
@@ -1172,7 +1128,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_secondGunExtraCanes = secondGunExtraCanes;
 	}
 
-	@JSON
 	@Override
 	public String getGunCartridgeType() {
 		if (_gunCartridgeType == null) {
@@ -1188,7 +1143,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_gunCartridgeType = gunCartridgeType;
 	}
 
-	@JSON
 	@Override
 	public String getGunCartridgeKind() {
 		if (_gunCartridgeKind == null) {
@@ -1204,7 +1158,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_gunCartridgeKind = gunCartridgeKind;
 	}
 
-	@JSON
 	@Override
 	public String getCartridgeCaliber() {
 		if (_cartridgeCaliber == null) {
@@ -1220,7 +1173,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_cartridgeCaliber = cartridgeCaliber;
 	}
 
-	@JSON
 	@Override
 	public long getEsfMatchId() {
 		return _esfMatchId;
@@ -1231,7 +1183,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_esfMatchId = esfMatchId;
 	}
 
-	@JSON
 	@Override
 	public long getEsfGunTypeIdOne() {
 		return _esfGunTypeIdOne;
@@ -1242,7 +1193,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_esfGunTypeIdOne = esfGunTypeIdOne;
 	}
 
-	@JSON
 	@Override
 	public long getEsfGunKindIdOne() {
 		return _esfGunKindIdOne;
@@ -1253,7 +1203,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_esfGunKindIdOne = esfGunKindIdOne;
 	}
 
-	@JSON
 	@Override
 	public long getEsfGunTypeIdTwo() {
 		return _esfGunTypeIdTwo;
@@ -1264,7 +1213,6 @@ public class ESFPartecipantInfoModelImpl extends BaseModelImpl<ESFPartecipantInf
 		_esfGunTypeIdTwo = esfGunTypeIdTwo;
 	}
 
-	@JSON
 	@Override
 	public long getEsfGunKindIdTwo() {
 		return _esfGunKindIdTwo;

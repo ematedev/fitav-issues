@@ -1054,6 +1054,25 @@ public abstract class ESFUserServiceBaseImpl extends BaseServiceImpl
 	}
 
 	/**
+	 * Returns the e s f federal role e s f specific remote service.
+	 *
+	 * @return the e s f federal role e s f specific remote service
+	 */
+	public it.ethica.esf.service.ESFFederalRoleESFSpecificService getESFFederalRoleESFSpecificService() {
+		return esfFederalRoleESFSpecificService;
+	}
+
+	/**
+	 * Sets the e s f federal role e s f specific remote service.
+	 *
+	 * @param esfFederalRoleESFSpecificService the e s f federal role e s f specific remote service
+	 */
+	public void setESFFederalRoleESFSpecificService(
+		it.ethica.esf.service.ESFFederalRoleESFSpecificService esfFederalRoleESFSpecificService) {
+		this.esfFederalRoleESFSpecificService = esfFederalRoleESFSpecificService;
+	}
+
+	/**
 	 * Returns the e s f federal role e s f specific persistence.
 	 *
 	 * @return the e s f federal role e s f specific persistence
@@ -2792,6 +2811,25 @@ public abstract class ESFUserServiceBaseImpl extends BaseServiceImpl
 	}
 
 	/**
+	 * Returns the e s f specific remote service.
+	 *
+	 * @return the e s f specific remote service
+	 */
+	public it.ethica.esf.service.ESFSpecificService getESFSpecificService() {
+		return esfSpecificService;
+	}
+
+	/**
+	 * Sets the e s f specific remote service.
+	 *
+	 * @param esfSpecificService the e s f specific remote service
+	 */
+	public void setESFSpecificService(
+		it.ethica.esf.service.ESFSpecificService esfSpecificService) {
+		this.esfSpecificService = esfSpecificService;
+	}
+
+	/**
 	 * Returns the e s f specific persistence.
 	 *
 	 * @return the e s f specific persistence
@@ -3889,6 +3927,8 @@ public abstract class ESFUserServiceBaseImpl extends BaseServiceImpl
 	protected ESFFederalRoleFinder esfFederalRoleFinder;
 	@BeanReference(type = it.ethica.esf.service.ESFFederalRoleESFSpecificLocalService.class)
 	protected it.ethica.esf.service.ESFFederalRoleESFSpecificLocalService esfFederalRoleESFSpecificLocalService;
+	@BeanReference(type = it.ethica.esf.service.ESFFederalRoleESFSpecificService.class)
+	protected it.ethica.esf.service.ESFFederalRoleESFSpecificService esfFederalRoleESFSpecificService;
 	@BeanReference(type = ESFFederalRoleESFSpecificPersistence.class)
 	protected ESFFederalRoleESFSpecificPersistence esfFederalRoleESFSpecificPersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFFieldLocalService.class)
@@ -4073,6 +4113,8 @@ public abstract class ESFUserServiceBaseImpl extends BaseServiceImpl
 	protected ESFShootingDirectorQualificationPersistence esfShootingDirectorQualificationPersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFSpecificLocalService.class)
 	protected it.ethica.esf.service.ESFSpecificLocalService esfSpecificLocalService;
+	@BeanReference(type = it.ethica.esf.service.ESFSpecificService.class)
+	protected it.ethica.esf.service.ESFSpecificService esfSpecificService;
 	@BeanReference(type = ESFSpecificPersistence.class)
 	protected ESFSpecificPersistence esfSpecificPersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFSportTypeLocalService.class)

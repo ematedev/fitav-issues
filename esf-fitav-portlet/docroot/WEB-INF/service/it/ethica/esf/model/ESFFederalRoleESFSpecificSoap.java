@@ -22,9 +22,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This class is used by SOAP remote services.
+ * This class is used by SOAP remote services, specifically {@link it.ethica.esf.service.http.ESFFederalRoleESFSpecificServiceSoap}.
  *
  * @author Ethica
+ * @see it.ethica.esf.service.http.ESFFederalRoleESFSpecificServiceSoap
  * @generated
  */
 public class ESFFederalRoleESFSpecificSoap implements Serializable {

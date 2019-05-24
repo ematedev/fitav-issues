@@ -15,7 +15,6 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -50,7 +49,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFFornitureUserModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFFornitureUserModelImpl extends BaseModelImpl<ESFFornitureUser>
 	implements ESFFornitureUserModel {
 	/*
@@ -162,7 +160,6 @@ public class ESFFornitureUserModelImpl extends BaseModelImpl<ESFFornitureUser>
 		}
 	}
 
-	@JSON
 	@Override
 	public long getEsfIDForniture() {
 		return _esfIDForniture;
@@ -173,7 +170,6 @@ public class ESFFornitureUserModelImpl extends BaseModelImpl<ESFFornitureUser>
 		_esfIDForniture = esfIDForniture;
 	}
 
-	@JSON
 	@Override
 	public long getEsfIdUser() {
 		return _esfIdUser;
@@ -184,7 +180,6 @@ public class ESFFornitureUserModelImpl extends BaseModelImpl<ESFFornitureUser>
 		_esfIdUser = esfIdUser;
 	}
 
-	@JSON
 	@Override
 	public long getEsfQuantity() {
 		return _esfQuantity;
@@ -195,7 +190,6 @@ public class ESFFornitureUserModelImpl extends BaseModelImpl<ESFFornitureUser>
 		_esfQuantity = esfQuantity;
 	}
 
-	@JSON
 	@Override
 	public Date getEsfDateAssign() {
 		return _esfDateAssign;
@@ -206,7 +200,6 @@ public class ESFFornitureUserModelImpl extends BaseModelImpl<ESFFornitureUser>
 		_esfDateAssign = esfDateAssign;
 	}
 
-	@JSON
 	@Override
 	public long getEsfFornitureUserID() {
 		return _esfFornitureUserID;

@@ -16,7 +16,6 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -53,7 +52,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFDepartureModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFDepartureModelImpl extends BaseModelImpl<ESFDeparture>
 	implements ESFDepartureModel {
 	/*
@@ -303,7 +301,6 @@ public class ESFDepartureModelImpl extends BaseModelImpl<ESFDeparture>
 		}
 	}
 
-	@JSON
 	@Override
 	public long getEsfDepartureId() {
 		return _esfDepartureId;
@@ -314,7 +311,6 @@ public class ESFDepartureModelImpl extends BaseModelImpl<ESFDeparture>
 		_esfDepartureId = esfDepartureId;
 	}
 
-	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -325,7 +321,6 @@ public class ESFDepartureModelImpl extends BaseModelImpl<ESFDeparture>
 		_groupId = groupId;
 	}
 
-	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -336,7 +331,6 @@ public class ESFDepartureModelImpl extends BaseModelImpl<ESFDeparture>
 		_companyId = companyId;
 	}
 
-	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -357,7 +351,6 @@ public class ESFDepartureModelImpl extends BaseModelImpl<ESFDeparture>
 		_userUuid = userUuid;
 	}
 
-	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -373,7 +366,6 @@ public class ESFDepartureModelImpl extends BaseModelImpl<ESFDeparture>
 		_userName = userName;
 	}
 
-	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -384,7 +376,6 @@ public class ESFDepartureModelImpl extends BaseModelImpl<ESFDeparture>
 		_createDate = createDate;
 	}
 
-	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -395,7 +386,6 @@ public class ESFDepartureModelImpl extends BaseModelImpl<ESFDeparture>
 		_modifiedDate = modifiedDate;
 	}
 
-	@JSON
 	@Override
 	public Date getLeaveDate() {
 		return _leaveDate;
@@ -416,7 +406,6 @@ public class ESFDepartureModelImpl extends BaseModelImpl<ESFDeparture>
 		return _originalLeaveDate;
 	}
 
-	@JSON
 	@Override
 	public String getLeaveHour() {
 		if (_leaveHour == null) {
@@ -442,7 +431,6 @@ public class ESFDepartureModelImpl extends BaseModelImpl<ESFDeparture>
 		return GetterUtil.getString(_originalLeaveHour);
 	}
 
-	@JSON
 	@Override
 	public Date getArriveDate() {
 		return _arriveDate;
@@ -453,7 +441,6 @@ public class ESFDepartureModelImpl extends BaseModelImpl<ESFDeparture>
 		_arriveDate = arriveDate;
 	}
 
-	@JSON
 	@Override
 	public String getArriveHour() {
 		if (_arriveHour == null) {
@@ -469,7 +456,6 @@ public class ESFDepartureModelImpl extends BaseModelImpl<ESFDeparture>
 		_arriveHour = arriveHour;
 	}
 
-	@JSON
 	@Override
 	public String getCode() {
 		if (_code == null) {
@@ -495,7 +481,6 @@ public class ESFDepartureModelImpl extends BaseModelImpl<ESFDeparture>
 		return GetterUtil.getString(_originalCode);
 	}
 
-	@JSON
 	@Override
 	public String getCompanyName() {
 		if (_companyName == null) {
@@ -521,7 +506,6 @@ public class ESFDepartureModelImpl extends BaseModelImpl<ESFDeparture>
 		return GetterUtil.getString(_originalCompanyName);
 	}
 
-	@JSON
 	@Override
 	public String getDepartureFrom() {
 		if (_departureFrom == null) {
@@ -547,7 +531,6 @@ public class ESFDepartureModelImpl extends BaseModelImpl<ESFDeparture>
 		return GetterUtil.getString(_originalDepartureFrom);
 	}
 
-	@JSON
 	@Override
 	public String getArrivalTo() {
 		if (_arrivalTo == null) {
@@ -563,7 +546,6 @@ public class ESFDepartureModelImpl extends BaseModelImpl<ESFDeparture>
 		_arrivalTo = arrivalTo;
 	}
 
-	@JSON
 	@Override
 	public long getEsfMatchId() {
 		return _esfMatchId;
@@ -586,7 +568,6 @@ public class ESFDepartureModelImpl extends BaseModelImpl<ESFDeparture>
 		return _originalEsfMatchId;
 	}
 
-	@JSON
 	@Override
 	public long getEsfUserId() {
 		return _esfUserId;
@@ -619,7 +600,6 @@ public class ESFDepartureModelImpl extends BaseModelImpl<ESFDeparture>
 		return _originalEsfUserId;
 	}
 
-	@JSON
 	@Override
 	public boolean getIsReturn() {
 		return _isReturn;
@@ -635,7 +615,6 @@ public class ESFDepartureModelImpl extends BaseModelImpl<ESFDeparture>
 		_isReturn = isReturn;
 	}
 
-	@JSON
 	@Override
 	public String getMeetingPlace() {
 		if (_meetingPlace == null) {
@@ -651,7 +630,6 @@ public class ESFDepartureModelImpl extends BaseModelImpl<ESFDeparture>
 		_meetingPlace = meetingPlace;
 	}
 
-	@JSON
 	@Override
 	public String getTypeTravel() {
 		if (_typeTravel == null) {
@@ -667,7 +645,6 @@ public class ESFDepartureModelImpl extends BaseModelImpl<ESFDeparture>
 		_typeTravel = typeTravel;
 	}
 
-	@JSON
 	@Override
 	public String getStopoverId() {
 		if (_stopoverId == null) {

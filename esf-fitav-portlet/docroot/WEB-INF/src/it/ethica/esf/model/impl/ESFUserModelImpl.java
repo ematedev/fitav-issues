@@ -16,6 +16,7 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -30,13 +31,16 @@ import com.liferay.portlet.expando.util.ExpandoBridgeFactoryUtil;
 
 import it.ethica.esf.model.ESFUser;
 import it.ethica.esf.model.ESFUserModel;
+import it.ethica.esf.model.ESFUserSoap;
 
 import java.io.Serializable;
 
 import java.sql.Types;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -52,6 +56,7 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFUserModel
  * @generated
  */
+@JSON(strict = true)
 public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 	implements ESFUserModel {
 	/*
@@ -104,6 +109,65 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 	public static long ESFUSERID_COLUMN_BITMASK = 4L;
 	public static long FISCALCODE_COLUMN_BITMASK = 8L;
 	public static long UUID_COLUMN_BITMASK = 16L;
+
+	/**
+	 * Converts the soap model instance into a normal model instance.
+	 *
+	 * @param soapModel the soap model instance to convert
+	 * @return the normal model instance
+	 */
+	public static ESFUser toModel(ESFUserSoap soapModel) {
+		if (soapModel == null) {
+			return null;
+		}
+
+		ESFUser model = new ESFUserImpl();
+
+		model.setUuid(soapModel.getUuid());
+		model.setEsfUserId(soapModel.getEsfUserId());
+		model.setCode(soapModel.getCode());
+		model.setTypearmy(soapModel.getTypearmy());
+		model.setFiscalCode(soapModel.getFiscalCode());
+		model.setBirthcity(soapModel.getBirthcity());
+		model.setNationality(soapModel.getNationality());
+		model.setIsSportsGroups(soapModel.getIsSportsGroups());
+		model.setJob(soapModel.getJob());
+		model.setIssfIdNumber(soapModel.getIssfIdNumber());
+		model.setCategoryId(soapModel.getCategoryId());
+		model.setPin(soapModel.getPin());
+		model.setCodeUser(soapModel.getCodeUser());
+		model.setDateOfDeath(soapModel.getDateOfDeath());
+		model.setPrivacy1(soapModel.getPrivacy1());
+		model.setPrivacy2(soapModel.getPrivacy2());
+		model.setPrivacy3(soapModel.getPrivacy3());
+		model.setDatePrivacy1(soapModel.getDatePrivacy1());
+		model.setDatePrivacy2(soapModel.getDatePrivacy2());
+		model.setDatePrivacy3(soapModel.getDatePrivacy3());
+		model.setValidateCF(soapModel.getValidateCF());
+
+		return model;
+	}
+
+	/**
+	 * Converts the soap model instances into normal model instances.
+	 *
+	 * @param soapModels the soap model instances to convert
+	 * @return the normal model instances
+	 */
+	public static List<ESFUser> toModels(ESFUserSoap[] soapModels) {
+		if (soapModels == null) {
+			return null;
+		}
+
+		List<ESFUser> models = new ArrayList<ESFUser>(soapModels.length);
+
+		for (ESFUserSoap soapModel : soapModels) {
+			models.add(toModel(soapModel));
+		}
+
+		return models;
+	}
+
 	public static final long LOCK_EXPIRATION_TIME = GetterUtil.getLong(com.liferay.util.service.ServiceProps.get(
 				"lock.expiration.time.it.ethica.esf.model.ESFUser"));
 
@@ -298,6 +362,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		}
 	}
 
+	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -321,6 +386,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		return GetterUtil.getString(_originalUuid);
 	}
 
+	@JSON
 	@Override
 	public long getEsfUserId() {
 		return _esfUserId;
@@ -353,6 +419,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		return _originalEsfUserId;
 	}
 
+	@JSON
 	@Override
 	public String getCode() {
 		if (_code == null) {
@@ -378,6 +445,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		return GetterUtil.getString(_originalCode);
 	}
 
+	@JSON
 	@Override
 	public long getTypearmy() {
 		return _typearmy;
@@ -388,6 +456,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_typearmy = typearmy;
 	}
 
+	@JSON
 	@Override
 	public String getFiscalCode() {
 		if (_fiscalCode == null) {
@@ -413,6 +482,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		return GetterUtil.getString(_originalFiscalCode);
 	}
 
+	@JSON
 	@Override
 	public String getBirthcity() {
 		if (_birthcity == null) {
@@ -428,6 +498,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_birthcity = birthcity;
 	}
 
+	@JSON
 	@Override
 	public String getNationality() {
 		if (_nationality == null) {
@@ -443,6 +514,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_nationality = nationality;
 	}
 
+	@JSON
 	@Override
 	public boolean getIsSportsGroups() {
 		return _isSportsGroups;
@@ -458,6 +530,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_isSportsGroups = isSportsGroups;
 	}
 
+	@JSON
 	@Override
 	public String getJob() {
 		if (_job == null) {
@@ -473,6 +546,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_job = job;
 	}
 
+	@JSON
 	@Override
 	public String getIssfIdNumber() {
 		if (_issfIdNumber == null) {
@@ -488,6 +562,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_issfIdNumber = issfIdNumber;
 	}
 
+	@JSON
 	@Override
 	public long getCategoryId() {
 		return _categoryId;
@@ -498,6 +573,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_categoryId = categoryId;
 	}
 
+	@JSON
 	@Override
 	public long getPin() {
 		return _pin;
@@ -508,6 +584,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_pin = pin;
 	}
 
+	@JSON
 	@Override
 	public long getCodeUser() {
 		return _codeUser;
@@ -530,6 +607,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		return _originalCodeUser;
 	}
 
+	@JSON
 	@Override
 	public Date getDateOfDeath() {
 		return _DateOfDeath;
@@ -540,6 +618,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_DateOfDeath = DateOfDeath;
 	}
 
+	@JSON
 	@Override
 	public boolean getPrivacy1() {
 		return _privacy1;
@@ -555,6 +634,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_privacy1 = privacy1;
 	}
 
+	@JSON
 	@Override
 	public boolean getPrivacy2() {
 		return _privacy2;
@@ -570,6 +650,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_privacy2 = privacy2;
 	}
 
+	@JSON
 	@Override
 	public boolean getPrivacy3() {
 		return _privacy3;
@@ -585,6 +666,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_privacy3 = privacy3;
 	}
 
+	@JSON
 	@Override
 	public Date getDatePrivacy1() {
 		return _datePrivacy1;
@@ -595,6 +677,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_datePrivacy1 = datePrivacy1;
 	}
 
+	@JSON
 	@Override
 	public Date getDatePrivacy2() {
 		return _datePrivacy2;
@@ -605,6 +688,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_datePrivacy2 = datePrivacy2;
 	}
 
+	@JSON
 	@Override
 	public Date getDatePrivacy3() {
 		return _datePrivacy3;
@@ -615,6 +699,7 @@ public class ESFUserModelImpl extends BaseModelImpl<ESFUser>
 		_datePrivacy3 = datePrivacy3;
 	}
 
+	@JSON
 	@Override
 	public boolean getValidateCF() {
 		return _validateCF;

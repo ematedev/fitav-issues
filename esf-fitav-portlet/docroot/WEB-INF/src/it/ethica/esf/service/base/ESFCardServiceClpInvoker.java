@@ -24,24 +24,24 @@ import java.util.Arrays;
  */
 public class ESFCardServiceClpInvoker {
 	public ESFCardServiceClpInvoker() {
-		_methodName374 = "getBeanIdentifier";
+		_methodName378 = "getBeanIdentifier";
 
-		_methodParameterTypes374 = new String[] {  };
+		_methodParameterTypes378 = new String[] {  };
 
-		_methodName375 = "setBeanIdentifier";
+		_methodName379 = "setBeanIdentifier";
 
-		_methodParameterTypes375 = new String[] { "java.lang.String" };
+		_methodParameterTypes379 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
 		Object[] arguments) throws Throwable {
-		if (_methodName374.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes374, parameterTypes)) {
+		if (_methodName378.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes378, parameterTypes)) {
 			return ESFCardServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName375.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes375, parameterTypes)) {
+		if (_methodName379.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes379, parameterTypes)) {
 			ESFCardServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
@@ -50,8 +50,8 @@ public class ESFCardServiceClpInvoker {
 		throw new UnsupportedOperationException();
 	}
 
-	private String _methodName374;
-	private String[] _methodParameterTypes374;
-	private String _methodName375;
-	private String[] _methodParameterTypes375;
+	private String _methodName378;
+	private String[] _methodParameterTypes378;
+	private String _methodName379;
+	private String[] _methodParameterTypes379;
 }

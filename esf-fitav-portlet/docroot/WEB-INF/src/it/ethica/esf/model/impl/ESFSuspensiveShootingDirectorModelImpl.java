@@ -16,7 +16,6 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -53,7 +52,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFSuspensiveShootingDirectorModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSuspensiveShootingDirector>
 	implements ESFSuspensiveShootingDirectorModel {
 	/*
@@ -316,7 +314,6 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 		}
 	}
 
-	@JSON
 	@Override
 	public long getEsfSuspensiveShooingDirectorId() {
 		return _esfSuspensiveShooingDirectorId;
@@ -330,7 +327,6 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 		_esfSuspensiveShooingDirectorId = esfSuspensiveShooingDirectorId;
 	}
 
-	@JSON
 	@Override
 	public Date getEsfData() {
 		return _esfData;
@@ -341,7 +337,6 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 		_esfData = esfData;
 	}
 
-	@JSON
 	@Override
 	public String getEsfCodeData() {
 		if (_esfCodeData == null) {
@@ -357,7 +352,6 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 		_esfCodeData = esfCodeData;
 	}
 
-	@JSON
 	@Override
 	public Date getEsfStartData() {
 		return _esfStartData;
@@ -368,7 +362,6 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 		_esfStartData = esfStartData;
 	}
 
-	@JSON
 	@Override
 	public Date getEsfEndData() {
 		return _esfEndData;
@@ -389,7 +382,6 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 		return _originalEsfEndData;
 	}
 
-	@JSON
 	@Override
 	public long getEsfUserId() {
 		return _esfUserId;
@@ -422,7 +414,6 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 		return _originalEsfUserId;
 	}
 
-	@JSON
 	@Override
 	public long getCodeUser() {
 		return _codeUser;
@@ -433,7 +424,6 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 		_codeUser = codeUser;
 	}
 
-	@JSON
 	@Override
 	public long getCodice_Sosp() {
 		return _Codice_Sosp;
@@ -444,7 +434,6 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 		_Codice_Sosp = Codice_Sosp;
 	}
 
-	@JSON
 	@Override
 	public String getNote() {
 		if (_note == null) {
@@ -460,7 +449,6 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 		_note = note;
 	}
 
-	@JSON
 	@Override
 	public long getQualif1_Utiliz() {
 		return _Qualif1_Utiliz;
@@ -471,7 +459,6 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 		_Qualif1_Utiliz = Qualif1_Utiliz;
 	}
 
-	@JSON
 	@Override
 	public long getQualif2_Utiliz() {
 		return _Qualif2_Utiliz;
@@ -482,7 +469,6 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 		_Qualif2_Utiliz = Qualif2_Utiliz;
 	}
 
-	@JSON
 	@Override
 	public long getQualif3_Utiliz() {
 		return _Qualif3_Utiliz;
@@ -493,7 +479,6 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 		_Qualif3_Utiliz = Qualif3_Utiliz;
 	}
 
-	@JSON
 	@Override
 	public long getTipo_Gara1_noUtil() {
 		return _Tipo_Gara1_noUtil;
@@ -504,7 +489,6 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 		_Tipo_Gara1_noUtil = Tipo_Gara1_noUtil;
 	}
 
-	@JSON
 	@Override
 	public long getTipo_Gara2_noUtil() {
 		return _Tipo_Gara2_noUtil;
@@ -515,7 +499,6 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 		_Tipo_Gara2_noUtil = Tipo_Gara2_noUtil;
 	}
 
-	@JSON
 	@Override
 	public long getTipo_Gara3_noUtil() {
 		return _Tipo_Gara3_noUtil;
@@ -526,7 +509,6 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 		_Tipo_Gara3_noUtil = Tipo_Gara3_noUtil;
 	}
 
-	@JSON
 	@Override
 	public long getTipo_Gara4_noUtil() {
 		return _Tipo_Gara4_noUtil;
@@ -537,7 +519,6 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 		_Tipo_Gara4_noUtil = Tipo_Gara4_noUtil;
 	}
 
-	@JSON
 	@Override
 	public long getTipo_Gara5_noUtil() {
 		return _Tipo_Gara5_noUtil;
@@ -548,7 +529,6 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 		_Tipo_Gara5_noUtil = Tipo_Gara5_noUtil;
 	}
 
-	@JSON
 	@Override
 	public long getTipo_Gara6_noUtil() {
 		return _Tipo_Gara6_noUtil;
@@ -559,7 +539,6 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 		_Tipo_Gara6_noUtil = Tipo_Gara6_noUtil;
 	}
 
-	@JSON
 	@Override
 	public long getTipo_Gara7_noUtil() {
 		return _Tipo_Gara7_noUtil;
@@ -570,7 +549,6 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 		_Tipo_Gara7_noUtil = Tipo_Gara7_noUtil;
 	}
 
-	@JSON
 	@Override
 	public long getTipo_Gara8_noUtil() {
 		return _Tipo_Gara8_noUtil;
@@ -581,7 +559,6 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 		_Tipo_Gara8_noUtil = Tipo_Gara8_noUtil;
 	}
 
-	@JSON
 	@Override
 	public long getTipo_Gara9_noUtil() {
 		return _Tipo_Gara9_noUtil;
@@ -592,7 +569,6 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 		_Tipo_Gara9_noUtil = Tipo_Gara9_noUtil;
 	}
 
-	@JSON
 	@Override
 	public long getTipo_Gara10_noUtil() {
 		return _Tipo_Gara10_noUtil;
@@ -603,7 +579,6 @@ public class ESFSuspensiveShootingDirectorModelImpl extends BaseModelImpl<ESFSus
 		_Tipo_Gara10_noUtil = Tipo_Gara10_noUtil;
 	}
 
-	@JSON
 	@Override
 	public Date getEsfVariationData() {
 		return _esfVariationData;
