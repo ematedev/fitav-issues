@@ -1926,6 +1926,24 @@
 			<transient name="primaryKeyObj" />
 		</attributes>
 	</mapped-superclass>
+	<mapped-superclass class="it.ethica.esf.model.impl.VW_ESFIncarichiFederaliModelImpl">
+		<id-class class="it.ethica.esf.service.persistence.VW_ESFIncarichiFederaliPK" />
+		<attributes>
+			<id name="esfUserId" />
+			<id name="esfFederalRoleId" />
+			<id name="startDate" />
+			<id name="endDate">
+				<temporal>TIMESTAMP</temporal>
+			</id>
+			<id name="active_" />
+			<basic name="code_" />
+			<basic name="description" />
+			<transient name="esfUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
 	<mapped-superclass class="it.ethica.esf.model.impl.VW_ESFListaIncarichiModelImpl">
 		<id-class class="it.ethica.esf.service.persistence.VW_ESFListaIncarichiPK" />
 		<attributes>
@@ -2313,6 +2331,10 @@
 	</entity>
 	<entity class="it.ethica.esf.model.impl.VW_DatiDrettoreTiroImpl" name="VW_DatiDrettoreTiro">
 		<table name="vw_datidirettoretiro" />
+		<attributes />
+	</entity>
+	<entity class="it.ethica.esf.model.impl.VW_ESFIncarichiFederaliImpl" name="VW_ESFIncarichiFederali">
+		<table name="VW_ESFIncarichiFederali" />
 		<attributes />
 	</entity>
 	<entity class="it.ethica.esf.model.impl.VW_ESFListaIncarichiImpl" name="VW_ESFListaIncarichi">

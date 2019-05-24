@@ -244,8 +244,7 @@ public class ESFStateAssEntityUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFStateAssEntity[] findByClassName_PrevAndNext(
-		it.ethica.esf.service.persistence.ESFStateAssEntityPK esfStateAssEntityPK,
-		java.lang.String className,
+		ESFStateAssEntityPK esfStateAssEntityPK, java.lang.String className,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchStateAssEntityException {
@@ -410,8 +409,7 @@ public class ESFStateAssEntityUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFStateAssEntity[] findByESFStateId_PrevAndNext(
-		it.ethica.esf.service.persistence.ESFStateAssEntityPK esfStateAssEntityPK,
-		long esfStateId,
+		ESFStateAssEntityPK esfStateAssEntityPK, long esfStateId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchStateAssEntityException {
@@ -470,7 +468,7 @@ public class ESFStateAssEntityUtil {
 	* @return the new e s f state ass entity
 	*/
 	public static it.ethica.esf.model.ESFStateAssEntity create(
-		it.ethica.esf.service.persistence.ESFStateAssEntityPK esfStateAssEntityPK) {
+		ESFStateAssEntityPK esfStateAssEntityPK) {
 		return getPersistence().create(esfStateAssEntityPK);
 	}
 
@@ -483,7 +481,7 @@ public class ESFStateAssEntityUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFStateAssEntity remove(
-		it.ethica.esf.service.persistence.ESFStateAssEntityPK esfStateAssEntityPK)
+		ESFStateAssEntityPK esfStateAssEntityPK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchStateAssEntityException {
 		return getPersistence().remove(esfStateAssEntityPK);
@@ -504,7 +502,7 @@ public class ESFStateAssEntityUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFStateAssEntity findByPrimaryKey(
-		it.ethica.esf.service.persistence.ESFStateAssEntityPK esfStateAssEntityPK)
+		ESFStateAssEntityPK esfStateAssEntityPK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchStateAssEntityException {
 		return getPersistence().findByPrimaryKey(esfStateAssEntityPK);
@@ -518,7 +516,7 @@ public class ESFStateAssEntityUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFStateAssEntity fetchByPrimaryKey(
-		it.ethica.esf.service.persistence.ESFStateAssEntityPK esfStateAssEntityPK)
+		ESFStateAssEntityPK esfStateAssEntityPK)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence().fetchByPrimaryKey(esfStateAssEntityPK);
 	}

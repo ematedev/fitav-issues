@@ -100,25 +100,25 @@ public class ESFAirportLocalServiceClpInvoker {
 
 		_methodParameterTypes15 = new String[] { "it.ethica.esf.model.ESFAirport" };
 
-		_methodName376 = "getBeanIdentifier";
+		_methodName384 = "getBeanIdentifier";
 
-		_methodParameterTypes376 = new String[] {  };
+		_methodParameterTypes384 = new String[] {  };
 
-		_methodName377 = "setBeanIdentifier";
+		_methodName385 = "setBeanIdentifier";
 
-		_methodParameterTypes377 = new String[] { "java.lang.String" };
+		_methodParameterTypes385 = new String[] { "java.lang.String" };
 
-		_methodName382 = "getAllESFAirport";
+		_methodName390 = "getAllESFAirport";
 
-		_methodParameterTypes382 = new String[] {  };
+		_methodParameterTypes390 = new String[] {  };
 
-		_methodName383 = "getAllESFAirport";
+		_methodName391 = "getAllESFAirport";
 
-		_methodParameterTypes383 = new String[] { "int", "int" };
+		_methodParameterTypes391 = new String[] { "int", "int" };
 
-		_methodName384 = "adESFAirport";
+		_methodName392 = "adESFAirport";
 
-		_methodParameterTypes384 = new String[] {
+		_methodParameterTypes392 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String"
 			};
 	}
@@ -212,31 +212,31 @@ public class ESFAirportLocalServiceClpInvoker {
 			return ESFAirportLocalServiceUtil.updateESFAirport((it.ethica.esf.model.ESFAirport)arguments[0]);
 		}
 
-		if (_methodName376.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes376, parameterTypes)) {
+		if (_methodName384.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
 			return ESFAirportLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName377.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes377, parameterTypes)) {
+		if (_methodName385.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
 			ESFAirportLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName382.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
+		if (_methodName390.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
 			return ESFAirportLocalServiceUtil.getAllESFAirport();
 		}
 
-		if (_methodName383.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes383, parameterTypes)) {
+		if (_methodName391.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
 			return ESFAirportLocalServiceUtil.getAllESFAirport(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
-		if (_methodName384.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
+		if (_methodName392.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			ESFAirportLocalServiceUtil.adESFAirport((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2]);
 
@@ -278,14 +278,14 @@ public class ESFAirportLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName376;
-	private String[] _methodParameterTypes376;
-	private String _methodName377;
-	private String[] _methodParameterTypes377;
-	private String _methodName382;
-	private String[] _methodParameterTypes382;
-	private String _methodName383;
-	private String[] _methodParameterTypes383;
 	private String _methodName384;
 	private String[] _methodParameterTypes384;
+	private String _methodName385;
+	private String[] _methodParameterTypes385;
+	private String _methodName390;
+	private String[] _methodParameterTypes390;
+	private String _methodName391;
+	private String[] _methodParameterTypes391;
+	private String _methodName392;
+	private String[] _methodParameterTypes392;
 }

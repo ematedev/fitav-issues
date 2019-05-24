@@ -100,27 +100,27 @@ public class ESFCategoryLocalServiceClpInvoker {
 
 		_methodParameterTypes15 = new String[] { "it.ethica.esf.model.ESFCategory" };
 
-		_methodName376 = "getBeanIdentifier";
+		_methodName384 = "getBeanIdentifier";
 
-		_methodParameterTypes376 = new String[] {  };
+		_methodParameterTypes384 = new String[] {  };
 
-		_methodName377 = "setBeanIdentifier";
+		_methodName385 = "setBeanIdentifier";
 
-		_methodParameterTypes377 = new String[] { "java.lang.String" };
+		_methodParameterTypes385 = new String[] { "java.lang.String" };
 
-		_methodName382 = "findMapLongIdCategory";
+		_methodName390 = "findMapLongIdCategory";
 
-		_methodParameterTypes382 = new String[] {  };
+		_methodParameterTypes390 = new String[] {  };
 
-		_methodName383 = "addESFCategory";
+		_methodName391 = "addESFCategory";
 
-		_methodParameterTypes383 = new String[] {
+		_methodParameterTypes391 = new String[] {
 				"java.lang.String", "java.lang.String"
 			};
 
-		_methodName384 = "updateESFCategory";
+		_methodName392 = "updateESFCategory";
 
-		_methodParameterTypes384 = new String[] {
+		_methodParameterTypes392 = new String[] {
 				"long", "java.lang.String", "java.lang.String"
 			};
 	}
@@ -214,31 +214,31 @@ public class ESFCategoryLocalServiceClpInvoker {
 			return ESFCategoryLocalServiceUtil.updateESFCategory((it.ethica.esf.model.ESFCategory)arguments[0]);
 		}
 
-		if (_methodName376.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes376, parameterTypes)) {
+		if (_methodName384.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
 			return ESFCategoryLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName377.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes377, parameterTypes)) {
+		if (_methodName385.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
 			ESFCategoryLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName382.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
+		if (_methodName390.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
 			return ESFCategoryLocalServiceUtil.findMapLongIdCategory();
 		}
 
-		if (_methodName383.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes383, parameterTypes)) {
+		if (_methodName391.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
 			return ESFCategoryLocalServiceUtil.addESFCategory((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1]);
 		}
 
-		if (_methodName384.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
+		if (_methodName392.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFCategoryLocalServiceUtil.updateESFCategory(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2]);
 		}
@@ -278,14 +278,14 @@ public class ESFCategoryLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName376;
-	private String[] _methodParameterTypes376;
-	private String _methodName377;
-	private String[] _methodParameterTypes377;
-	private String _methodName382;
-	private String[] _methodParameterTypes382;
-	private String _methodName383;
-	private String[] _methodParameterTypes383;
 	private String _methodName384;
 	private String[] _methodParameterTypes384;
+	private String _methodName385;
+	private String[] _methodParameterTypes385;
+	private String _methodName390;
+	private String[] _methodParameterTypes390;
+	private String _methodName391;
+	private String[] _methodParameterTypes391;
+	private String _methodName392;
+	private String[] _methodParameterTypes392;
 }

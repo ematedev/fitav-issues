@@ -102,25 +102,25 @@ public class ESFLentFieldLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFLentField"
 			};
 
-		_methodName376 = "getBeanIdentifier";
+		_methodName384 = "getBeanIdentifier";
 
-		_methodParameterTypes376 = new String[] {  };
+		_methodParameterTypes384 = new String[] {  };
 
-		_methodName377 = "setBeanIdentifier";
+		_methodName385 = "setBeanIdentifier";
 
-		_methodParameterTypes377 = new String[] { "java.lang.String" };
+		_methodParameterTypes385 = new String[] { "java.lang.String" };
 
-		_methodName382 = "findESFLentFieldbyF_S";
+		_methodName390 = "findESFLentFieldbyF_S";
 
-		_methodParameterTypes382 = new String[] { "long", "long" };
+		_methodParameterTypes390 = new String[] { "long", "long" };
 
-		_methodName383 = "findESFLentFieldsbyF_S";
+		_methodName391 = "findESFLentFieldsbyF_S";
 
-		_methodParameterTypes383 = new String[] { "long", "long" };
+		_methodParameterTypes391 = new String[] { "long", "long" };
 
-		_methodName384 = "addESFLentField";
+		_methodName392 = "addESFLentField";
 
-		_methodParameterTypes384 = new String[] { "long", "long", "long", "long" };
+		_methodParameterTypes392 = new String[] { "long", "long", "long", "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -212,32 +212,32 @@ public class ESFLentFieldLocalServiceClpInvoker {
 			return ESFLentFieldLocalServiceUtil.updateESFLentField((it.ethica.esf.model.ESFLentField)arguments[0]);
 		}
 
-		if (_methodName376.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes376, parameterTypes)) {
+		if (_methodName384.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
 			return ESFLentFieldLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName377.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes377, parameterTypes)) {
+		if (_methodName385.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
 			ESFLentFieldLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName382.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
+		if (_methodName390.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
 			return ESFLentFieldLocalServiceUtil.findESFLentFieldbyF_S(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName383.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes383, parameterTypes)) {
+		if (_methodName391.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
 			return ESFLentFieldLocalServiceUtil.findESFLentFieldsbyF_S(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName384.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
+		if (_methodName392.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFLentFieldLocalServiceUtil.addESFLentField(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -279,14 +279,14 @@ public class ESFLentFieldLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName376;
-	private String[] _methodParameterTypes376;
-	private String _methodName377;
-	private String[] _methodParameterTypes377;
-	private String _methodName382;
-	private String[] _methodParameterTypes382;
-	private String _methodName383;
-	private String[] _methodParameterTypes383;
 	private String _methodName384;
 	private String[] _methodParameterTypes384;
+	private String _methodName385;
+	private String[] _methodParameterTypes385;
+	private String _methodName390;
+	private String[] _methodParameterTypes390;
+	private String _methodName391;
+	private String[] _methodParameterTypes391;
+	private String _methodName392;
+	private String[] _methodParameterTypes392;
 }

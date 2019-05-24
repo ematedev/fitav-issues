@@ -151,7 +151,7 @@ public interface ESFFederalRoleESFSpecificPersistence extends BasePersistence<ES
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFFederalRoleESFSpecific[] findByUuid_PrevAndNext(
-		it.ethica.esf.service.persistence.ESFFederalRoleESFSpecificPK esfFederalRoleESFSpecificPK,
+		ESFFederalRoleESFSpecificPK esfFederalRoleESFSpecificPK,
 		java.lang.String uuid,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
@@ -290,7 +290,7 @@ public interface ESFFederalRoleESFSpecificPersistence extends BasePersistence<ES
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFFederalRoleESFSpecific[] findBySpecific_PrevAndNext(
-		it.ethica.esf.service.persistence.ESFFederalRoleESFSpecificPK esfFederalRoleESFSpecificPK,
+		ESFFederalRoleESFSpecificPK esfFederalRoleESFSpecificPK,
 		long esfSpecificId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
@@ -429,7 +429,7 @@ public interface ESFFederalRoleESFSpecificPersistence extends BasePersistence<ES
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFFederalRoleESFSpecific[] findByFederalRole_PrevAndNext(
-		it.ethica.esf.service.persistence.ESFFederalRoleESFSpecificPK esfFederalRoleESFSpecificPK,
+		ESFFederalRoleESFSpecificPK esfFederalRoleESFSpecificPK,
 		long esfFederalRoleId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
@@ -477,7 +477,7 @@ public interface ESFFederalRoleESFSpecificPersistence extends BasePersistence<ES
 	* @return the new e s f federal role e s f specific
 	*/
 	public it.ethica.esf.model.ESFFederalRoleESFSpecific create(
-		it.ethica.esf.service.persistence.ESFFederalRoleESFSpecificPK esfFederalRoleESFSpecificPK);
+		ESFFederalRoleESFSpecificPK esfFederalRoleESFSpecificPK);
 
 	/**
 	* Removes the e s f federal role e s f specific with the primary key from the database. Also notifies the appropriate model listeners.
@@ -488,7 +488,7 @@ public interface ESFFederalRoleESFSpecificPersistence extends BasePersistence<ES
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFFederalRoleESFSpecific remove(
-		it.ethica.esf.service.persistence.ESFFederalRoleESFSpecificPK esfFederalRoleESFSpecificPK)
+		ESFFederalRoleESFSpecificPK esfFederalRoleESFSpecificPK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchFederalRoleESFSpecificException;
 
@@ -505,7 +505,7 @@ public interface ESFFederalRoleESFSpecificPersistence extends BasePersistence<ES
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFFederalRoleESFSpecific findByPrimaryKey(
-		it.ethica.esf.service.persistence.ESFFederalRoleESFSpecificPK esfFederalRoleESFSpecificPK)
+		ESFFederalRoleESFSpecificPK esfFederalRoleESFSpecificPK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchFederalRoleESFSpecificException;
 
@@ -517,7 +517,7 @@ public interface ESFFederalRoleESFSpecificPersistence extends BasePersistence<ES
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFFederalRoleESFSpecific fetchByPrimaryKey(
-		it.ethica.esf.service.persistence.ESFFederalRoleESFSpecificPK esfFederalRoleESFSpecificPK)
+		ESFFederalRoleESFSpecificPK esfFederalRoleESFSpecificPK)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**

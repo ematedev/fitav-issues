@@ -730,7 +730,7 @@ create table ESFProvince (
 );
 
 create table ESFPublicAuthority (
-	esfPublicAuthorityId LONG not null primary key,
+	esfPublicAuthorityId LONG not null primary key IDENTITY,
 	createDate DATE null,
 	modifiedDate DATE null,
 	description VARCHAR(75) null
@@ -1163,6 +1163,17 @@ create table ESFgunUser (
 	typeId LONG,
 	esfMeasures VARCHAR(75) null,
 	esfCaliber VARCHAR(75) null
+);
+
+create table VW_ESFIncarichiFederali (
+	esfUserId LONG not null,
+	esfFederalRoleId LONG not null,
+	code_ VARCHAR(75) null,
+	description VARCHAR(75) null,
+	startDate LONG not null,
+	endDate DATE not null,
+	active_ BOOLEAN not null,
+	primary key (esfUserId, esfFederalRoleId, startDate, endDate, active_)
 );
 
 create table VW_ESFListaIncarichi (

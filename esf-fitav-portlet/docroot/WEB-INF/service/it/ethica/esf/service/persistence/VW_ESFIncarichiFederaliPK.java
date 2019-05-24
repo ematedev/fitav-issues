@@ -24,6 +24,7 @@ import java.util.Date;
 
 /**
  * @author Ethica
+ * @generated
  */
 public class VW_ESFIncarichiFederaliPK implements Comparable<VW_ESFIncarichiFederaliPK>,
 	Serializable {

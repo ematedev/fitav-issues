@@ -240,8 +240,7 @@ public class ESFRegionUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFRegion[] findByCountry_PrevAndNext(
-		it.ethica.esf.service.persistence.ESFRegionPK esfRegionPK,
-		java.lang.String idCountry,
+		ESFRegionPK esfRegionPK, java.lang.String idCountry,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchRegionException {
@@ -298,8 +297,7 @@ public class ESFRegionUtil {
 	* @param esfRegionPK the primary key for the new e s f region
 	* @return the new e s f region
 	*/
-	public static it.ethica.esf.model.ESFRegion create(
-		it.ethica.esf.service.persistence.ESFRegionPK esfRegionPK) {
+	public static it.ethica.esf.model.ESFRegion create(ESFRegionPK esfRegionPK) {
 		return getPersistence().create(esfRegionPK);
 	}
 
@@ -311,8 +309,7 @@ public class ESFRegionUtil {
 	* @throws it.ethica.esf.NoSuchRegionException if a e s f region with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public static it.ethica.esf.model.ESFRegion remove(
-		it.ethica.esf.service.persistence.ESFRegionPK esfRegionPK)
+	public static it.ethica.esf.model.ESFRegion remove(ESFRegionPK esfRegionPK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchRegionException {
 		return getPersistence().remove(esfRegionPK);
@@ -333,7 +330,7 @@ public class ESFRegionUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFRegion findByPrimaryKey(
-		it.ethica.esf.service.persistence.ESFRegionPK esfRegionPK)
+		ESFRegionPK esfRegionPK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchRegionException {
 		return getPersistence().findByPrimaryKey(esfRegionPK);
@@ -347,7 +344,7 @@ public class ESFRegionUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFRegion fetchByPrimaryKey(
-		it.ethica.esf.service.persistence.ESFRegionPK esfRegionPK)
+		ESFRegionPK esfRegionPK)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence().fetchByPrimaryKey(esfRegionPK);
 	}

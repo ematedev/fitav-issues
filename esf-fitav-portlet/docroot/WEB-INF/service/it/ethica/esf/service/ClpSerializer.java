@@ -105,6 +105,7 @@ import it.ethica.esf.model.ESFUserESFUserRoleClp;
 import it.ethica.esf.model.ESFUserRoleClp;
 import it.ethica.esf.model.ESFgunUserClp;
 import it.ethica.esf.model.VW_DatiDrettoreTiroClp;
+import it.ethica.esf.model.VW_ESFIncarichiFederaliClp;
 import it.ethica.esf.model.VW_ESFListaIncarichiClp;
 
 import java.io.ObjectInputStream;
@@ -511,6 +512,10 @@ public class ClpSerializer {
 
 		if (oldModelClassName.equals(VW_DatiDrettoreTiroClp.class.getName())) {
 			return translateInputVW_DatiDrettoreTiro(oldModel);
+		}
+
+		if (oldModelClassName.equals(VW_ESFIncarichiFederaliClp.class.getName())) {
+			return translateInputVW_ESFIncarichiFederali(oldModel);
 		}
 
 		if (oldModelClassName.equals(VW_ESFListaIncarichiClp.class.getName())) {
@@ -1352,6 +1357,17 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+	public static Object translateInputVW_ESFIncarichiFederali(
+		BaseModel<?> oldModel) {
+		VW_ESFIncarichiFederaliClp oldClpModel = (VW_ESFIncarichiFederaliClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getVW_ESFIncarichiFederaliRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
 	public static Object translateInputVW_ESFListaIncarichi(
 		BaseModel<?> oldModel) {
 		VW_ESFListaIncarichiClp oldClpModel = (VW_ESFListaIncarichiClp)oldModel;
@@ -1470,15 +1486,7 @@ public class ClpSerializer {
 				Method translateOutputMethod = newClpSerializerClass.getMethod("translateOutput",
 						BaseModel.class);
 
-		if (oldModelClassName.equals(
-					"it.ethica.esf.model.impl.ESFDocumentTypeImpl")) {
-			return translateOutputESFDocumentType(oldModel);
-		}
-
-		if (oldModelClassName.equals(
-					"it.ethica.esf.model.impl.ESFElectronicImpl")) {
-			return translateOutputESFElectronic(oldModel);
-		}
+				Class<?> oldModelModelClass = oldModel.getModelClass();
 
 				Method getRemoteModelMethod = oldModelClass.getMethod("get" +
 						oldModelModelClass.getSimpleName() + "RemoteModel");
@@ -1606,13 +1614,8 @@ public class ClpSerializer {
 			}
 		}
 
-		if (oldModelClassName.equals(
-					"it.ethica.esf.model.impl.ESFPublicAuthorityImpl")) {
-			return translateOutputESFPublicAuthority(oldModel);
-		}
-
-		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFRegionImpl")) {
-			return translateOutputESFRegion(oldModel);
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFCardImpl")) {
+			return translateOutputESFCard(oldModel);
 		}
 		else if (oldModelClassName.endsWith("Clp")) {
 			try {
@@ -4290,10 +4293,111 @@ public class ClpSerializer {
 					"it.ethica.esf.model.impl.VW_DatiDrettoreTiroImpl")) {
 			return translateOutputVW_DatiDrettoreTiro(oldModel);
 		}
+		else if (oldModelClassName.endsWith("Clp")) {
+			try {
+				ClassLoader classLoader = ClpSerializer.class.getClassLoader();
+
+				Method getClpSerializerClassMethod = oldModelClass.getMethod(
+						"getClpSerializerClass");
+
+				Class<?> oldClpSerializerClass = (Class<?>)getClpSerializerClassMethod.invoke(oldModel);
+
+				Class<?> newClpSerializerClass = classLoader.loadClass(oldClpSerializerClass.getName());
+
+				Method translateOutputMethod = newClpSerializerClass.getMethod("translateOutput",
+						BaseModel.class);
+
+				Class<?> oldModelModelClass = oldModel.getModelClass();
+
+				Method getRemoteModelMethod = oldModelClass.getMethod("get" +
+						oldModelModelClass.getSimpleName() + "RemoteModel");
+
+				Object oldRemoteModel = getRemoteModelMethod.invoke(oldModel);
+
+				BaseModel<?> newModel = (BaseModel<?>)translateOutputMethod.invoke(null,
+						oldRemoteModel);
+
+				return newModel;
+			}
+			catch (Throwable t) {
+				if (_log.isInfoEnabled()) {
+					_log.info("Unable to translate " + oldModelClassName, t);
+				}
+			}
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.VW_ESFIncarichiFederaliImpl")) {
+			return translateOutputVW_ESFIncarichiFederali(oldModel);
+		}
+		else if (oldModelClassName.endsWith("Clp")) {
+			try {
+				ClassLoader classLoader = ClpSerializer.class.getClassLoader();
+
+				Method getClpSerializerClassMethod = oldModelClass.getMethod(
+						"getClpSerializerClass");
+
+				Class<?> oldClpSerializerClass = (Class<?>)getClpSerializerClassMethod.invoke(oldModel);
+
+				Class<?> newClpSerializerClass = classLoader.loadClass(oldClpSerializerClass.getName());
+
+				Method translateOutputMethod = newClpSerializerClass.getMethod("translateOutput",
+						BaseModel.class);
+
+				Class<?> oldModelModelClass = oldModel.getModelClass();
+
+				Method getRemoteModelMethod = oldModelClass.getMethod("get" +
+						oldModelModelClass.getSimpleName() + "RemoteModel");
+
+				Object oldRemoteModel = getRemoteModelMethod.invoke(oldModel);
+
+				BaseModel<?> newModel = (BaseModel<?>)translateOutputMethod.invoke(null,
+						oldRemoteModel);
+
+				return newModel;
+			}
+			catch (Throwable t) {
+				if (_log.isInfoEnabled()) {
+					_log.info("Unable to translate " + oldModelClassName, t);
+				}
+			}
+		}
 
 		if (oldModelClassName.equals(
 					"it.ethica.esf.model.impl.VW_ESFListaIncarichiImpl")) {
 			return translateOutputVW_ESFListaIncarichi(oldModel);
+		}
+		else if (oldModelClassName.endsWith("Clp")) {
+			try {
+				ClassLoader classLoader = ClpSerializer.class.getClassLoader();
+
+				Method getClpSerializerClassMethod = oldModelClass.getMethod(
+						"getClpSerializerClass");
+
+				Class<?> oldClpSerializerClass = (Class<?>)getClpSerializerClassMethod.invoke(oldModel);
+
+				Class<?> newClpSerializerClass = classLoader.loadClass(oldClpSerializerClass.getName());
+
+				Method translateOutputMethod = newClpSerializerClass.getMethod("translateOutput",
+						BaseModel.class);
+
+				Class<?> oldModelModelClass = oldModel.getModelClass();
+
+				Method getRemoteModelMethod = oldModelClass.getMethod("get" +
+						oldModelModelClass.getSimpleName() + "RemoteModel");
+
+				Object oldRemoteModel = getRemoteModelMethod.invoke(oldModel);
+
+				BaseModel<?> newModel = (BaseModel<?>)translateOutputMethod.invoke(null,
+						oldRemoteModel);
+
+				return newModel;
+			}
+			catch (Throwable t) {
+				if (_log.isInfoEnabled()) {
+					_log.info("Unable to translate " + oldModelClassName, t);
+				}
+			}
 		}
 
 		return oldModel;
@@ -4770,6 +4874,11 @@ public class ClpSerializer {
 
 		if (className.equals("it.ethica.esf.NoSuchVW_DatiDrettoreTiroException")) {
 			return new it.ethica.esf.NoSuchVW_DatiDrettoreTiroException();
+		}
+
+		if (className.equals(
+					"it.ethica.esf.NoSuchVW_ESFIncarichiFederaliException")) {
+			return new it.ethica.esf.NoSuchVW_ESFIncarichiFederaliException();
 		}
 
 		if (className.equals(
@@ -5601,6 +5710,17 @@ public class ClpSerializer {
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
 		newModel.setVW_DatiDrettoreTiroRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputVW_ESFIncarichiFederali(
+		BaseModel<?> oldModel) {
+		VW_ESFIncarichiFederaliClp newModel = new VW_ESFIncarichiFederaliClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setVW_ESFIncarichiFederaliRemoteModel(oldModel);
 
 		return newModel;
 	}

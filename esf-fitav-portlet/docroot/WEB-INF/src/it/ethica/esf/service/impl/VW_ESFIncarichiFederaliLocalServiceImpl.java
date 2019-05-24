@@ -56,7 +56,7 @@ public class VW_ESFIncarichiFederaliLocalServiceImpl
 	
 	public java.util.List<it.ethica.esf.model.VW_ESFIncarichiFederali> getListaIncarichifindBylistaIncarichi (long esfUserId, boolean attivo) throws SystemException{
 		List<VW_ESFIncarichiFederali> listaIncarichiAttivi = new ArrayList<VW_ESFIncarichiFederali>();
-		listaIncarichiAttivi = VW_ESFIncarichiFederaliLocalServiceUtil.findBylistaIncarichi(esfUserId, ESFKeys.EsfFederalRole.INCARICO_ATTIVO);
+		listaIncarichiAttivi = VW_ESFIncarichiFederaliLocalServiceUtil.findBylistaIncarichi(esfUserId, attivo);
 		return listaIncarichiAttivi;
 	}
 }

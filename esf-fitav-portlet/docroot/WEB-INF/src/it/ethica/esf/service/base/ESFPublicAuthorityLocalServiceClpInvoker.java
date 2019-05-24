@@ -106,17 +106,17 @@ public class ESFPublicAuthorityLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFPublicAuthority"
 			};
 
-		_methodName376 = "getBeanIdentifier";
+		_methodName384 = "getBeanIdentifier";
 
-		_methodParameterTypes376 = new String[] {  };
+		_methodParameterTypes384 = new String[] {  };
 
-		_methodName377 = "setBeanIdentifier";
+		_methodName385 = "setBeanIdentifier";
 
-		_methodParameterTypes377 = new String[] { "java.lang.String" };
+		_methodParameterTypes385 = new String[] { "java.lang.String" };
 
-		_methodName382 = "saveUpdateESFPublicAuthority";
+		_methodName390 = "saveUpdateESFPublicAuthority";
 
-		_methodParameterTypes382 = new String[] {
+		_methodParameterTypes390 = new String[] {
 				"it.ethica.esf.model.ESFPublicAuthority"
 			};
 	}
@@ -210,20 +210,20 @@ public class ESFPublicAuthorityLocalServiceClpInvoker {
 			return ESFPublicAuthorityLocalServiceUtil.updateESFPublicAuthority((it.ethica.esf.model.ESFPublicAuthority)arguments[0]);
 		}
 
-		if (_methodName376.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes376, parameterTypes)) {
+		if (_methodName384.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
 			return ESFPublicAuthorityLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName377.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes377, parameterTypes)) {
+		if (_methodName385.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
 			ESFPublicAuthorityLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName382.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
+		if (_methodName390.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
 			return ESFPublicAuthorityLocalServiceUtil.saveUpdateESFPublicAuthority((it.ethica.esf.model.ESFPublicAuthority)arguments[0]);
 		}
 
@@ -262,10 +262,10 @@ public class ESFPublicAuthorityLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName376;
-	private String[] _methodParameterTypes376;
-	private String _methodName377;
-	private String[] _methodParameterTypes377;
-	private String _methodName382;
-	private String[] _methodParameterTypes382;
+	private String _methodName384;
+	private String[] _methodParameterTypes384;
+	private String _methodName385;
+	private String[] _methodParameterTypes385;
+	private String _methodName390;
+	private String[] _methodParameterTypes390;
 }

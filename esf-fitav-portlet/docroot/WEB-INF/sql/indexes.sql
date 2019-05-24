@@ -46,6 +46,7 @@ create index IX_D87ED82A on ESFDescription (uuid_);
 
 create index IX_50A20689 on ESFDocument (code_);
 create index IX_39A403FF on ESFDocument (esfDocumentTypeId);
+create index IX_782F548A on ESFDocument (esfPublicAuthorityId);
 create index IX_BCA7F2D5 on ESFDocument (esfUserId);
 create index IX_6613DE06 on ESFDocument (esfUserId, expirationDate);
 create index IX_E3752272 on ESFDocument (type_, esfUserId);
@@ -361,6 +362,8 @@ create index IX_8C0C93A0 on ESFgunUser (esfUserId, type_);
 create index IX_10328453 on ESFgunUser (idUser);
 create index IX_7CE3728F on ESFgunUser (idUser, code_);
 create index IX_D710E7DC on ESFgunUser (type_);
+
+create index IX_AA078FA7 on VW_ESFIncarichiFederali (active_, esfUserId);
 
 create index IX_ED8BB4AF on VW_ESFListaIncarichi (esfOrganizationId);
 

@@ -449,6 +449,10 @@ public class VW_ESFIncarichiFederaliClp extends BaseModelImpl<VW_ESFIncarichiFed
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey().hashCode();
@@ -528,4 +532,5 @@ public class VW_ESFIncarichiFederaliClp extends BaseModelImpl<VW_ESFIncarichiFed
 	private Date _endDate;
 	private boolean _active_;
 	private BaseModel<?> _vw_esfIncarichiFederaliRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

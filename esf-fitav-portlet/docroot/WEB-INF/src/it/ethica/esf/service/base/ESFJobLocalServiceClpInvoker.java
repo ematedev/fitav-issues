@@ -100,34 +100,34 @@ public class ESFJobLocalServiceClpInvoker {
 
 		_methodParameterTypes15 = new String[] { "it.ethica.esf.model.ESFJob" };
 
-		_methodName376 = "getBeanIdentifier";
+		_methodName384 = "getBeanIdentifier";
 
-		_methodParameterTypes376 = new String[] {  };
+		_methodParameterTypes384 = new String[] {  };
 
-		_methodName377 = "setBeanIdentifier";
+		_methodName385 = "setBeanIdentifier";
 
-		_methodParameterTypes377 = new String[] { "java.lang.String" };
+		_methodParameterTypes385 = new String[] { "java.lang.String" };
 
-		_methodName382 = "findAll";
+		_methodName390 = "findAll";
 
-		_methodParameterTypes382 = new String[] {  };
+		_methodParameterTypes390 = new String[] {  };
 
-		_methodName383 = "addEsfJob";
+		_methodName391 = "addEsfJob";
 
-		_methodParameterTypes383 = new String[] {
+		_methodParameterTypes391 = new String[] {
 				"com.liferay.portal.service.ServiceContext", "java.lang.String"
 			};
 
-		_methodName384 = "updateEsfJob";
+		_methodName392 = "updateEsfJob";
 
-		_methodParameterTypes384 = new String[] {
+		_methodParameterTypes392 = new String[] {
 				"com.liferay.portal.service.ServiceContext", "long",
 				"java.lang.String"
 			};
 
-		_methodName385 = "deleteEsfJob";
+		_methodName393 = "deleteEsfJob";
 
-		_methodParameterTypes385 = new String[] { "long" };
+		_methodParameterTypes393 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -219,37 +219,37 @@ public class ESFJobLocalServiceClpInvoker {
 			return ESFJobLocalServiceUtil.updateESFJob((it.ethica.esf.model.ESFJob)arguments[0]);
 		}
 
-		if (_methodName376.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes376, parameterTypes)) {
+		if (_methodName384.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
 			return ESFJobLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName377.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes377, parameterTypes)) {
+		if (_methodName385.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
 			ESFJobLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName382.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
+		if (_methodName390.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
 			return ESFJobLocalServiceUtil.findAll();
 		}
 
-		if (_methodName383.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes383, parameterTypes)) {
+		if (_methodName391.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
 			return ESFJobLocalServiceUtil.addEsfJob((com.liferay.portal.service.ServiceContext)arguments[0],
 				(java.lang.String)arguments[1]);
 		}
 
-		if (_methodName384.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
+		if (_methodName392.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFJobLocalServiceUtil.updateEsfJob((com.liferay.portal.service.ServiceContext)arguments[0],
 				((Long)arguments[1]).longValue(), (java.lang.String)arguments[2]);
 		}
 
-		if (_methodName385.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
+		if (_methodName393.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
 			return ESFJobLocalServiceUtil.deleteEsfJob(((Long)arguments[0]).longValue());
 		}
 
@@ -288,16 +288,16 @@ public class ESFJobLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName376;
-	private String[] _methodParameterTypes376;
-	private String _methodName377;
-	private String[] _methodParameterTypes377;
-	private String _methodName382;
-	private String[] _methodParameterTypes382;
-	private String _methodName383;
-	private String[] _methodParameterTypes383;
 	private String _methodName384;
 	private String[] _methodParameterTypes384;
 	private String _methodName385;
 	private String[] _methodParameterTypes385;
+	private String _methodName390;
+	private String[] _methodParameterTypes390;
+	private String _methodName391;
+	private String[] _methodParameterTypes391;
+	private String _methodName392;
+	private String[] _methodParameterTypes392;
+	private String _methodName393;
+	private String[] _methodParameterTypes393;
 }
