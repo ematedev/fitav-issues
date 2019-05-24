@@ -3,8 +3,10 @@ package it.ethica.esf.portlet;
 
 import it.ethica.esf.model.ESFDocument;
 import it.ethica.esf.model.ESFDocumentType;
+import it.ethica.esf.model.ESFPublicAuthority;
 import it.ethica.esf.service.ESFDocumentLocalServiceUtil;
 import it.ethica.esf.service.ESFDocumentTypeLocalServiceUtil;
+import it.ethica.esf.service.ESFPublicAuthorityLocalServiceUtil;
 import it.ethica.esf.util.ManageDate;
 
 import java.io.File;
@@ -52,10 +54,11 @@ public class ESFDocumentPortlet extends MVCPortlet {
 			PortalUtil.getUploadPortletRequest(request);
 		
 		long esfDocumentId = ParamUtil.getLong(uploadRequest, "esfDocumentId");
-
+//		long esfPublicAuthorityId = ParamUtil.getLong(uploadRequest, "esfPublicAuthorityId");
+		
 		String code = ParamUtil.getString(uploadRequest, "code");
 
-		String releasedBy = ParamUtil.getString(uploadRequest, "releasedby");
+//		String releasedBy = ParamUtil.getString(uploadRequest, "releasedby");
 
 		String rDate = ParamUtil.getString(uploadRequest, "releasedate");
 
@@ -69,6 +72,11 @@ public class ESFDocumentPortlet extends MVCPortlet {
 		ESFDocumentType documentType = ESFDocumentTypeLocalServiceUtil.getESFDocumentType(esfDocumentTypeId);
 //		String type = ParamUtil.getString(uploadRequest, "type");	//Descrizione
 		String type = documentType.getDescription();	//Descrizione
+		
+		//Add in Anomlia.ID16
+		long esfPublicAuthorityId = ParamUtil.getLong(uploadRequest, "esfPublicAuthorityId");
+		ESFPublicAuthority authority = ESFPublicAuthorityLocalServiceUtil.getESFPublicAuthority(esfPublicAuthorityId);
+		String releasedBy = authority.getDescription();
 		
 		_log.debug("DocumentType read:"+documentType.getEsfDocumentTypeId()+" - "+documentType.getDescription());
 		
@@ -91,7 +99,7 @@ public class ESFDocumentPortlet extends MVCPortlet {
 			Date modifiedDate = new Date();
 			ESFDocumentLocalServiceUtil.updateEsfDocument(
 				esfDocumentId, groupId, companyId, userName, user.getUserId(),
-				code, releasedBy, modifiedDate, releaseDate, expirationDate, esfDocumentTypeId,
+				code, releasedBy, modifiedDate, releaseDate, expirationDate, esfDocumentTypeId, esfPublicAuthorityId,
 				type, path, serviceContext);
 
 			SessionMessages.add(request, "esfDocumentUpdated");
@@ -110,7 +118,7 @@ public class ESFDocumentPortlet extends MVCPortlet {
 				path = uploadFile(uploadRequest, user, type);
 				ESFDocumentLocalServiceUtil.addEsfDocument(
 					groupId, companyId, userName, user.getUserId(), code,
-					releasedBy, createDate, releaseDate, expirationDate, esfDocumentTypeId, type,
+					releasedBy, createDate, releaseDate, expirationDate, esfDocumentTypeId, esfPublicAuthorityId, type,
 					path, serviceContext);
 
 				SessionMessages.add(request, "esfDocumentUpdated");

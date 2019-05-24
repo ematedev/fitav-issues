@@ -66,7 +66,7 @@ public class ESFPublicAuthorityModelImpl extends BaseModelImpl<ESFPublicAuthorit
 			{ "modifiedDate", Types.TIMESTAMP },
 			{ "description", Types.VARCHAR }
 		};
-	public static final String TABLE_SQL_CREATE = "create table ESFPublicAuthority (esfPublicAuthorityId LONG not null primary key,createDate DATE null,modifiedDate DATE null,description VARCHAR(75) null)";
+	public static final String TABLE_SQL_CREATE = "create table ESFPublicAuthority (esfPublicAuthorityId LONG not null primary key IDENTITY,createDate DATE null,modifiedDate DATE null,description VARCHAR(75) null)";
 	public static final String TABLE_SQL_DROP = "drop table ESFPublicAuthority";
 	public static final String ORDER_BY_JPQL = " ORDER BY esfPublicAuthority.esfPublicAuthorityId ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY ESFPublicAuthority.esfPublicAuthorityId ASC";

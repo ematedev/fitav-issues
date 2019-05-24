@@ -290,6 +290,13 @@ public class ESFPublicAuthorityLocalServiceWrapper
 			parameterTypes, arguments);
 	}
 
+	@Override
+	public it.ethica.esf.model.ESFPublicAuthority saveUpdateESFPublicAuthority(
+		it.ethica.esf.model.ESFPublicAuthority authority)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _esfPublicAuthorityLocalService.saveUpdateESFPublicAuthority(authority);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

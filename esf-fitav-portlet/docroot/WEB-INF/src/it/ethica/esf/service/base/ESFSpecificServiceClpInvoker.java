@@ -24,6 +24,7 @@ import java.util.Arrays;
  */
 public class ESFSpecificServiceClpInvoker {
 	public ESFSpecificServiceClpInvoker() {
+<<<<<<< HEAD
 		_methodName368 = "getBeanIdentifier";
 
 		_methodParameterTypes368 = new String[] {  };
@@ -31,10 +32,20 @@ public class ESFSpecificServiceClpInvoker {
 		_methodName369 = "setBeanIdentifier";
 
 		_methodParameterTypes369 = new String[] { "java.lang.String" };
+=======
+		_methodName360 = "getBeanIdentifier";
+
+		_methodParameterTypes360 = new String[] {  };
+
+		_methodName361 = "setBeanIdentifier";
+
+		_methodParameterTypes361 = new String[] { "java.lang.String" };
+>>>>>>> anomalia-id16
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
 		Object[] arguments) throws Throwable {
+<<<<<<< HEAD
 		if (_methodName368.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes368, parameterTypes)) {
 			return ESFSpecificServiceUtil.getBeanIdentifier();
@@ -42,6 +53,15 @@ public class ESFSpecificServiceClpInvoker {
 
 		if (_methodName369.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes369, parameterTypes)) {
+=======
+		if (_methodName360.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes360, parameterTypes)) {
+			return ESFSpecificServiceUtil.getBeanIdentifier();
+		}
+
+		if (_methodName361.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes361, parameterTypes)) {
+>>>>>>> anomalia-id16
 			ESFSpecificServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
@@ -50,8 +70,15 @@ public class ESFSpecificServiceClpInvoker {
 		throw new UnsupportedOperationException();
 	}
 
+<<<<<<< HEAD
 	private String _methodName368;
 	private String[] _methodParameterTypes368;
 	private String _methodName369;
 	private String[] _methodParameterTypes369;
+=======
+	private String _methodName360;
+	private String[] _methodParameterTypes360;
+	private String _methodName361;
+	private String[] _methodParameterTypes361;
+>>>>>>> anomalia-id16
 }

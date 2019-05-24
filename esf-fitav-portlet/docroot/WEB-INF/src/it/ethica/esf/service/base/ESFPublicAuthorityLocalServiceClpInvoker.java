@@ -112,7 +112,17 @@ public class ESFPublicAuthorityLocalServiceClpInvoker {
 
 		_methodName385 = "setBeanIdentifier";
 
+<<<<<<< HEAD
 		_methodParameterTypes385 = new String[] { "java.lang.String" };
+=======
+		_methodParameterTypes377 = new String[] { "java.lang.String" };
+
+		_methodName382 = "saveUpdateESFPublicAuthority";
+
+		_methodParameterTypes382 = new String[] {
+				"it.ethica.esf.model.ESFPublicAuthority"
+			};
+>>>>>>> anomalia-id16
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -216,6 +226,11 @@ public class ESFPublicAuthorityLocalServiceClpInvoker {
 			return null;
 		}
 
+		if (_methodName382.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
+			return ESFPublicAuthorityLocalServiceUtil.saveUpdateESFPublicAuthority((it.ethica.esf.model.ESFPublicAuthority)arguments[0]);
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -251,8 +266,17 @@ public class ESFPublicAuthorityLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
+<<<<<<< HEAD
 	private String _methodName384;
 	private String[] _methodParameterTypes384;
 	private String _methodName385;
 	private String[] _methodParameterTypes385;
+=======
+	private String _methodName376;
+	private String[] _methodParameterTypes376;
+	private String _methodName377;
+	private String[] _methodParameterTypes377;
+	private String _methodName382;
+	private String[] _methodParameterTypes382;
+>>>>>>> anomalia-id16
 }

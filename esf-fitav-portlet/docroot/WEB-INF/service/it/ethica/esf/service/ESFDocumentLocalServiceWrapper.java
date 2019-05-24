@@ -295,12 +295,14 @@ public class ESFDocumentLocalServiceWrapper implements ESFDocumentLocalService,
 		java.lang.String code, java.lang.String releasedBy,
 		java.util.Date createDate, java.util.Date releaseDate,
 		java.util.Date expirationDate, long esfDocumentTypeId,
-		java.lang.String type, java.lang.String path,
+		long esfPublicAuthorityId, java.lang.String type,
+		java.lang.String path,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return _esfDocumentLocalService.addEsfDocument(groupId, companyId,
 			userName, esfUserId, code, releasedBy, createDate, releaseDate,
-			expirationDate, esfDocumentTypeId, type, path, serviceContext);
+			expirationDate, esfDocumentTypeId, esfPublicAuthorityId, type,
+			path, serviceContext);
 	}
 
 	@Override
@@ -309,13 +311,14 @@ public class ESFDocumentLocalServiceWrapper implements ESFDocumentLocalService,
 		java.lang.String userName, long esfUserId, java.lang.String code,
 		java.lang.String releasedBy, java.util.Date modifiedDate,
 		java.util.Date releaseDate, java.util.Date expirationDate,
-		long esfDocumentTypeId, java.lang.String type, java.lang.String path,
+		long esfDocumentTypeId, long esfPublicAuthorityId,
+		java.lang.String type, java.lang.String path,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return _esfDocumentLocalService.updateEsfDocument(esfDocumentId,
 			groupId, companyId, userName, esfUserId, code, releasedBy,
-			modifiedDate, releaseDate, expirationDate, esfDocumentTypeId, type,
-			path, serviceContext);
+			modifiedDate, releaseDate, expirationDate, esfDocumentTypeId,
+			esfPublicAuthorityId, type, path, serviceContext);
 	}
 
 	@Override
@@ -337,6 +340,13 @@ public class ESFDocumentLocalServiceWrapper implements ESFDocumentLocalService,
 		long esfDocumentTypeId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return _esfDocumentLocalService.findByEsfDocumentTypeId(esfDocumentTypeId);
+	}
+
+	@Override
+	public java.util.List<it.ethica.esf.model.ESFDocument> findByEsfPublicAuthorityId(
+		long esfPublicAuthorityId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _esfDocumentLocalService.findByEsfPublicAuthorityId(esfPublicAuthorityId);
 	}
 
 	@Override

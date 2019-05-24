@@ -106,6 +106,7 @@ public class ESFConfigurationLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFConfiguration"
 			};
 
+<<<<<<< HEAD
 		_methodName384 = "getBeanIdentifier";
 
 		_methodParameterTypes384 = new String[] {  };
@@ -141,17 +142,61 @@ public class ESFConfigurationLocalServiceClpInvoker {
 		_methodName396 = "addESFConfiguration";
 
 		_methodParameterTypes396 = new String[] {
+=======
+		_methodName376 = "getBeanIdentifier";
+
+		_methodParameterTypes376 = new String[] {  };
+
+		_methodName377 = "setBeanIdentifier";
+
+		_methodParameterTypes377 = new String[] { "java.lang.String" };
+
+		_methodName382 = "getAllEsfConfigurations";
+
+		_methodParameterTypes382 = new String[] {  };
+
+		_methodName383 = "getAllEsfConfigurations";
+
+		_methodParameterTypes383 = new String[] { "int", "int" };
+
+		_methodName384 = "getAllEsfConfigurations";
+
+		_methodParameterTypes384 = new String[] { "long" };
+
+		_methodName385 = "getAllEsfConfigurations";
+
+		_methodParameterTypes385 = new String[] { "long", "int", "int" };
+
+		_methodName386 = "countByGroupId";
+
+		_methodParameterTypes386 = new String[] { "long" };
+
+		_methodName387 = "findESFConfigurationTypeByKey";
+
+		_methodParameterTypes387 = new String[] { "java.lang.String" };
+
+		_methodName388 = "addESFConfiguration";
+
+		_methodParameterTypes388 = new String[] {
+>>>>>>> anomalia-id16
 				"long", "java.lang.String", "java.lang.String",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
+<<<<<<< HEAD
 		_methodName397 = "updateESFConfiguration";
 
 		_methodParameterTypes397 = new String[] {
+=======
+		_methodName389 = "updateESFConfiguration";
+
+		_methodParameterTypes389 = new String[] {
+>>>>>>> anomalia-id16
 				"long", "long", "java.lang.String",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
+<<<<<<< HEAD
 		_methodName398 = "deleteESFConfiguration";
 
 		_methodParameterTypes398 = new String[] {
@@ -169,6 +214,25 @@ public class ESFConfigurationLocalServiceClpInvoker {
 		_methodName401 = "getESFConfigurationByESFKey";
 
 		_methodParameterTypes401 = new String[] { "java.lang.String" };
+=======
+		_methodName390 = "deleteESFConfiguration";
+
+		_methodParameterTypes390 = new String[] {
+				"long", "com.liferay.portal.service.ServiceContext"
+			};
+
+		_methodName391 = "findAgeByName";
+
+		_methodParameterTypes391 = new String[] {  };
+
+		_methodName392 = "findAgeYouthShooter";
+
+		_methodParameterTypes392 = new String[] { "java.lang.String" };
+
+		_methodName393 = "getESFConfigurationByESFKey";
+
+		_methodParameterTypes393 = new String[] { "java.lang.String" };
+>>>>>>> anomalia-id16
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -260,6 +324,7 @@ public class ESFConfigurationLocalServiceClpInvoker {
 			return ESFConfigurationLocalServiceUtil.updateESFConfiguration((it.ethica.esf.model.ESFConfiguration)arguments[0]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName384.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
 			return ESFConfigurationLocalServiceUtil.getBeanIdentifier();
@@ -267,11 +332,21 @@ public class ESFConfigurationLocalServiceClpInvoker {
 
 		if (_methodName385.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
+=======
+		if (_methodName376.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes376, parameterTypes)) {
+			return ESFConfigurationLocalServiceUtil.getBeanIdentifier();
+		}
+
+		if (_methodName377.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes377, parameterTypes)) {
+>>>>>>> anomalia-id16
 			ESFConfigurationLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
+<<<<<<< HEAD
 		if (_methodName390.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
 			return ESFConfigurationLocalServiceUtil.getAllEsfConfigurations();
@@ -279,10 +354,20 @@ public class ESFConfigurationLocalServiceClpInvoker {
 
 		if (_methodName391.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
+=======
+		if (_methodName382.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
+			return ESFConfigurationLocalServiceUtil.getAllEsfConfigurations();
+		}
+
+		if (_methodName383.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes383, parameterTypes)) {
+>>>>>>> anomalia-id16
 			return ESFConfigurationLocalServiceUtil.getAllEsfConfigurations(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName392.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFConfigurationLocalServiceUtil.getAllEsfConfigurations(((Long)arguments[0]).longValue());
@@ -290,11 +375,21 @@ public class ESFConfigurationLocalServiceClpInvoker {
 
 		if (_methodName393.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
+=======
+		if (_methodName384.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
+			return ESFConfigurationLocalServiceUtil.getAllEsfConfigurations(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName385.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
+>>>>>>> anomalia-id16
 			return ESFConfigurationLocalServiceUtil.getAllEsfConfigurations(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName394.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
 			return ESFConfigurationLocalServiceUtil.countByGroupId(((Long)arguments[0]).longValue());
@@ -307,25 +402,50 @@ public class ESFConfigurationLocalServiceClpInvoker {
 
 		if (_methodName396.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
+=======
+		if (_methodName386.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
+			return ESFConfigurationLocalServiceUtil.countByGroupId(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName387.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
+			return ESFConfigurationLocalServiceUtil.findESFConfigurationTypeByKey((java.lang.String)arguments[0]);
+		}
+
+		if (_methodName388.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
+>>>>>>> anomalia-id16
 			return ESFConfigurationLocalServiceUtil.addESFConfiguration(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(com.liferay.portal.service.ServiceContext)arguments[3]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName397.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
+=======
+		if (_methodName389.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes389, parameterTypes)) {
+>>>>>>> anomalia-id16
 			return ESFConfigurationLocalServiceUtil.updateESFConfiguration(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2],
 				(com.liferay.portal.service.ServiceContext)arguments[3]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName398.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
+=======
+		if (_methodName390.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
+>>>>>>> anomalia-id16
 			return ESFConfigurationLocalServiceUtil.deleteESFConfiguration(((Long)arguments[0]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName399.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes399, parameterTypes)) {
 			return ESFConfigurationLocalServiceUtil.findAgeByName();
@@ -338,6 +458,20 @@ public class ESFConfigurationLocalServiceClpInvoker {
 
 		if (_methodName401.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes401, parameterTypes)) {
+=======
+		if (_methodName391.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
+			return ESFConfigurationLocalServiceUtil.findAgeByName();
+		}
+
+		if (_methodName392.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
+			return ESFConfigurationLocalServiceUtil.findAgeYouthShooter((java.lang.String)arguments[0]);
+		}
+
+		if (_methodName393.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
+>>>>>>> anomalia-id16
 			return ESFConfigurationLocalServiceUtil.getESFConfigurationByESFKey((java.lang.String)arguments[0]);
 		}
 
@@ -376,10 +510,32 @@ public class ESFConfigurationLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
+<<<<<<< HEAD
+=======
+	private String _methodName376;
+	private String[] _methodParameterTypes376;
+	private String _methodName377;
+	private String[] _methodParameterTypes377;
+	private String _methodName382;
+	private String[] _methodParameterTypes382;
+	private String _methodName383;
+	private String[] _methodParameterTypes383;
+>>>>>>> anomalia-id16
 	private String _methodName384;
 	private String[] _methodParameterTypes384;
 	private String _methodName385;
 	private String[] _methodParameterTypes385;
+<<<<<<< HEAD
+=======
+	private String _methodName386;
+	private String[] _methodParameterTypes386;
+	private String _methodName387;
+	private String[] _methodParameterTypes387;
+	private String _methodName388;
+	private String[] _methodParameterTypes388;
+	private String _methodName389;
+	private String[] _methodParameterTypes389;
+>>>>>>> anomalia-id16
 	private String _methodName390;
 	private String[] _methodParameterTypes390;
 	private String _methodName391;
@@ -388,6 +544,7 @@ public class ESFConfigurationLocalServiceClpInvoker {
 	private String[] _methodParameterTypes392;
 	private String _methodName393;
 	private String[] _methodParameterTypes393;
+<<<<<<< HEAD
 	private String _methodName394;
 	private String[] _methodParameterTypes394;
 	private String _methodName395;
@@ -404,4 +561,6 @@ public class ESFConfigurationLocalServiceClpInvoker {
 	private String[] _methodParameterTypes400;
 	private String _methodName401;
 	private String[] _methodParameterTypes401;
+=======
+>>>>>>> anomalia-id16
 }

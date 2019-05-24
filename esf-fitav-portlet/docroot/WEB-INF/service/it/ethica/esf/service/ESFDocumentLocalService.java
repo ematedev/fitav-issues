@@ -253,7 +253,8 @@ public interface ESFDocumentLocalService extends BaseLocalService,
 		java.lang.String code, java.lang.String releasedBy,
 		java.util.Date createDate, java.util.Date releaseDate,
 		java.util.Date expirationDate, long esfDocumentTypeId,
-		java.lang.String type, java.lang.String path,
+		long esfPublicAuthorityId, java.lang.String type,
+		java.lang.String path,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
@@ -262,7 +263,8 @@ public interface ESFDocumentLocalService extends BaseLocalService,
 		java.lang.String userName, long esfUserId, java.lang.String code,
 		java.lang.String releasedBy, java.util.Date modifiedDate,
 		java.util.Date releaseDate, java.util.Date expirationDate,
-		long esfDocumentTypeId, java.lang.String type, java.lang.String path,
+		long esfDocumentTypeId, long esfPublicAuthorityId,
+		java.lang.String type, java.lang.String path,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
@@ -276,6 +278,10 @@ public interface ESFDocumentLocalService extends BaseLocalService,
 
 	public java.util.List<it.ethica.esf.model.ESFDocument> findByEsfDocumentTypeId(
 		long esfDocumentTypeId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public java.util.List<it.ethica.esf.model.ESFDocument> findByEsfPublicAuthorityId(
+		long esfPublicAuthorityId)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	public java.util.List<it.ethica.esf.model.ESFDocument> findByT_U(

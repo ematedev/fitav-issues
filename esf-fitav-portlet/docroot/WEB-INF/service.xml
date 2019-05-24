@@ -2120,6 +2120,9 @@
 		<finder name="EsfDocumentTypeId" return-type="Collection" >
 			<finder-column name="esfDocumentTypeId"></finder-column>
 		</finder>
+		<finder name="EsfPublicAuthorityId" return-type="Collection" >
+			<finder-column name="esfPublicAuthorityId"></finder-column>
+		</finder>
 	</entity>
 	<entity name="ESFEventType" local-service="true" remote-service="false">
 
@@ -2549,9 +2552,9 @@
 		<column name="expirationMonthsNotice" type="int"></column>
 	</entity>
 	<!-- ADDED for anomalia-id16 -->
-	<entity name="ESFPublicAuthority" local-service="true" remote-service="false" json-enabled="true">
+	<entity name="ESFPublicAuthority" local-service="true" remote-service="false">
 		<!-- PK fields -->
-		<column name="esfPublicAuthorityId" type="long" primary="true"></column>
+		<column name="esfPublicAuthorityId" type="long" primary="true" id-type="identity"></column>
 		<!-- Audit fields -->
 		<column name="createDate" type="Date"></column>
 		<column name="modifiedDate" type="Date"></column>
