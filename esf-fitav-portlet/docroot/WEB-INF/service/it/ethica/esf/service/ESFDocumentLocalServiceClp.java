@@ -118,8 +118,8 @@ public class ESFDocumentLocalServiceClp implements ESFDocumentLocalService {
 		_methodParameterTypes20 = new String[] {
 				"long", "long", "java.lang.String", "long", "java.lang.String",
 				"java.lang.String", "java.util.Date", "java.util.Date",
-				"java.util.Date", "long", "java.lang.String", "java.lang.String",
-				"com.liferay.portal.service.ServiceContext"
+				"java.util.Date", "long", "long", "java.lang.String",
+				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 
 		_methodName21 = "updateEsfDocument";
@@ -127,8 +127,9 @@ public class ESFDocumentLocalServiceClp implements ESFDocumentLocalService {
 		_methodParameterTypes21 = new String[] {
 				"long", "long", "long", "java.lang.String", "long",
 				"java.lang.String", "java.lang.String", "java.util.Date",
-				"java.util.Date", "java.util.Date", "long", "java.lang.String",
-				"java.lang.String", "com.liferay.portal.service.ServiceContext"
+				"java.util.Date", "java.util.Date", "long", "long",
+				"java.lang.String", "java.lang.String",
+				"com.liferay.portal.service.ServiceContext"
 			};
 
 		_methodName22 = "findByCode";
@@ -736,7 +737,8 @@ public class ESFDocumentLocalServiceClp implements ESFDocumentLocalService {
 		java.lang.String code, java.lang.String releasedBy,
 		java.util.Date createDate, java.util.Date releaseDate,
 		java.util.Date expirationDate, long esfDocumentTypeId,
-		java.lang.String type, java.lang.String path,
+		long esfPublicAuthorityId, java.lang.String type,
+		java.lang.String path,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
@@ -764,6 +766,8 @@ public class ESFDocumentLocalServiceClp implements ESFDocumentLocalService {
 					ClpSerializer.translateInput(expirationDate),
 						
 					esfDocumentTypeId,
+						
+					esfPublicAuthorityId,
 						
 					ClpSerializer.translateInput(type),
 						
@@ -797,7 +801,8 @@ public class ESFDocumentLocalServiceClp implements ESFDocumentLocalService {
 		java.lang.String userName, long esfUserId, java.lang.String code,
 		java.lang.String releasedBy, java.util.Date modifiedDate,
 		java.util.Date releaseDate, java.util.Date expirationDate,
-		long esfDocumentTypeId, java.lang.String type, java.lang.String path,
+		long esfDocumentTypeId, long esfPublicAuthorityId,
+		java.lang.String type, java.lang.String path,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
@@ -827,6 +832,8 @@ public class ESFDocumentLocalServiceClp implements ESFDocumentLocalService {
 					ClpSerializer.translateInput(expirationDate),
 						
 					esfDocumentTypeId,
+						
+					esfPublicAuthorityId,
 						
 					ClpSerializer.translateInput(type),
 						

@@ -1,13 +1,7 @@
 
 package it.ethica.esf.portlet;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -46,7 +40,6 @@ import com.liferay.portal.theme.ThemeDisplay;
 import com.liferay.portal.util.PortalUtil;
 import com.liferay.util.bridges.mvc.MVCPortlet;
 
-import it.ethica.esf.util.FiscalCodeCalculatorUtil;
 import it.ethica.esf.model.ESFAddress;
 import it.ethica.esf.model.ESFCane;
 import it.ethica.esf.model.ESFCard;
@@ -85,6 +78,7 @@ import it.ethica.esf.service.persistence.ESFUserESFUserRolePK;
 import it.ethica.esf.util.ESFJsonUtil;
 import it.ethica.esf.util.ESFKeys;
 import it.ethica.esf.util.ESFServiceUtil;
+import it.ethica.esf.util.FiscalCodeCalculatorUtil;
 import it.ethica.esf.util.ManageDate;
 import it.ethica.esf.util.ManageOperationsField;
 

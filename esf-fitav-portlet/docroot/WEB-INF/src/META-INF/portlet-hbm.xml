@@ -896,7 +896,7 @@
 	<class name="it.ethica.esf.model.impl.ESFPublicAuthorityImpl" table="ESFPublicAuthority">
 		<cache usage="read-write" />
 		<id name="esfPublicAuthorityId" type="long">
-			<generator class="assigned" />
+			<generator class="identity" />
 		</id>
 		<property name="createDate" type="org.hibernate.type.TimestampType" />
 		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />

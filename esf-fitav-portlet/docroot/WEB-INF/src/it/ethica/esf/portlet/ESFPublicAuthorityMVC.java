@@ -30,7 +30,6 @@ public class ESFPublicAuthorityMVC extends MVCPortlet {
 		long esfPublicAuthorityId = ParamUtil.getLong(request, "esfPublicAuthorityId");
 		String descrizione = ParamUtil.getString(request, "description");
 		ESFPublicAuthority authority = null;
-		
 		authority = ESFPublicAuthorityLocalServiceUtil.createESFPublicAuthority(esfPublicAuthorityId);
 		authority.setDescription(descrizione);
 		try {
@@ -49,8 +48,7 @@ public class ESFPublicAuthorityMVC extends MVCPortlet {
 		List<ESFDocument> relatedDocuments = null;
 		try {
 			logger.debug("Authority da cancellare: "+esfPublicAuthorityId);
-			relatedDocuments = ESFDocumentLocalServiceUtil.findByEsfPublicAuthorityId(esfPublicAuthorityId);
-			
+			relatedDocuments = ESFDocumentLocalServiceUtil.findByEsfPublicAuthorityId(esfPublicAuthorityId);			
 			hasRelations = relatedDocuments!=null && relatedDocuments.size()>0;
 			logger.debug("Authority  hasRelations: "+hasRelations);
 			if(!hasRelations){
