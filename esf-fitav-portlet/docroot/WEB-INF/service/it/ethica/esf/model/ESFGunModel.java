@@ -424,19 +424,19 @@ public interface ESFGunModel extends BaseModel<ESFGun>, StagedGroupedModel {
 	public Object clone();
 
 	@Override
-	public int compareTo(ESFGun esfGun);
+	public int compareTo(it.ethica.esf.model.ESFGun esfGun);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ESFGun> toCacheModel();
+	public CacheModel<it.ethica.esf.model.ESFGun> toCacheModel();
 
 	@Override
-	public ESFGun toEscapedModel();
+	public it.ethica.esf.model.ESFGun toEscapedModel();
 
 	@Override
-	public ESFGun toUnescapedModel();
+	public it.ethica.esf.model.ESFGun toUnescapedModel();
 
 	@Override
 	public String toString();

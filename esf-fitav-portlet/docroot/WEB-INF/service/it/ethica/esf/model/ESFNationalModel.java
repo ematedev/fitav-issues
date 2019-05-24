@@ -415,19 +415,19 @@ public interface ESFNationalModel extends BaseModel<ESFNational>,
 	public Object clone();
 
 	@Override
-	public int compareTo(ESFNational esfNational);
+	public int compareTo(it.ethica.esf.model.ESFNational esfNational);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ESFNational> toCacheModel();
+	public CacheModel<it.ethica.esf.model.ESFNational> toCacheModel();
 
 	@Override
-	public ESFNational toEscapedModel();
+	public it.ethica.esf.model.ESFNational toEscapedModel();
 
 	@Override
-	public ESFNational toUnescapedModel();
+	public it.ethica.esf.model.ESFNational toUnescapedModel();
 
 	@Override
 	public String toString();

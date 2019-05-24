@@ -287,6 +287,10 @@ public class ESFPartecipantTypeClp extends BaseModelImpl<ESFPartecipantType>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -337,4 +341,5 @@ public class ESFPartecipantTypeClp extends BaseModelImpl<ESFPartecipantType>
 	private long _esfPartecipantTypeId;
 	private String _name;
 	private BaseModel<?> _esfPartecipantTypeRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

@@ -100,53 +100,53 @@ public class ESFRenewalLocalServiceClpInvoker {
 
 		_methodParameterTypes15 = new String[] { "it.ethica.esf.model.ESFRenewal" };
 
-		_methodName380 = "getBeanIdentifier";
+		_methodName376 = "getBeanIdentifier";
 
-		_methodParameterTypes380 = new String[] {  };
+		_methodParameterTypes376 = new String[] {  };
 
-		_methodName381 = "setBeanIdentifier";
+		_methodName377 = "setBeanIdentifier";
 
-		_methodParameterTypes381 = new String[] { "java.lang.String" };
+		_methodParameterTypes377 = new String[] { "java.lang.String" };
 
-		_methodName386 = "findByESFRenewalUser_id";
+		_methodName382 = "findByESFRenewalUser_id";
 
-		_methodParameterTypes386 = new String[] { "long" };
+		_methodParameterTypes382 = new String[] { "long" };
 
-		_methodName387 = "findAll";
+		_methodName383 = "findAll";
 
-		_methodParameterTypes387 = new String[] {  };
+		_methodParameterTypes383 = new String[] {  };
 
-		_methodName388 = "findByRegion";
+		_methodName384 = "findByRegion";
 
-		_methodParameterTypes388 = new String[] { "long" };
+		_methodParameterTypes384 = new String[] { "long" };
 
-		_methodName389 = "findByRegion";
+		_methodName385 = "findByRegion";
 
-		_methodParameterTypes389 = new String[] { "long", "int", "int" };
+		_methodParameterTypes385 = new String[] { "long", "int", "int" };
 
-		_methodName390 = "findByOrgId_IsTotal";
+		_methodName386 = "findByOrgId_IsTotal";
 
-		_methodParameterTypes390 = new String[] { "long", "boolean" };
+		_methodParameterTypes386 = new String[] { "long", "boolean" };
 
-		_methodName391 = "findByRenewalFatherId";
+		_methodName387 = "findByRenewalFatherId";
+
+		_methodParameterTypes387 = new String[] { "long" };
+
+		_methodName388 = "findByOrg_Year";
+
+		_methodParameterTypes388 = new String[] { "long", "int" };
+
+		_methodName389 = "findByReason_IsTotal";
+
+		_methodParameterTypes389 = new String[] { "java.lang.String", "boolean" };
+
+		_methodName390 = "findByRenewalFatherId_OrgId";
+
+		_methodParameterTypes390 = new String[] { "long", "long" };
+
+		_methodName391 = "findByOrgId";
 
 		_methodParameterTypes391 = new String[] { "long" };
-
-		_methodName392 = "findByOrg_Year";
-
-		_methodParameterTypes392 = new String[] { "long", "int" };
-
-		_methodName393 = "findByReason_IsTotal";
-
-		_methodParameterTypes393 = new String[] { "java.lang.String", "boolean" };
-
-		_methodName394 = "findByRenewalFatherId_OrgId";
-
-		_methodParameterTypes394 = new String[] { "long", "long" };
-
-		_methodName395 = "findByOrgId";
-
-		_methodParameterTypes395 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -238,71 +238,71 @@ public class ESFRenewalLocalServiceClpInvoker {
 			return ESFRenewalLocalServiceUtil.updateESFRenewal((it.ethica.esf.model.ESFRenewal)arguments[0]);
 		}
 
-		if (_methodName380.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
+		if (_methodName376.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes376, parameterTypes)) {
 			return ESFRenewalLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName381.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes381, parameterTypes)) {
+		if (_methodName377.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes377, parameterTypes)) {
 			ESFRenewalLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName386.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
+		if (_methodName382.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
 			return ESFRenewalLocalServiceUtil.findByESFRenewalUser_id(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName387.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
+		if (_methodName383.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes383, parameterTypes)) {
 			return ESFRenewalLocalServiceUtil.findAll();
 		}
 
-		if (_methodName388.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
+		if (_methodName384.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
 			return ESFRenewalLocalServiceUtil.findByRegion(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName389.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes389, parameterTypes)) {
+		if (_methodName385.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
 			return ESFRenewalLocalServiceUtil.findByRegion(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName390.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
+		if (_methodName386.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
 			return ESFRenewalLocalServiceUtil.findByOrgId_IsTotal(((Long)arguments[0]).longValue(),
 				((Boolean)arguments[1]).booleanValue());
 		}
 
-		if (_methodName391.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
+		if (_methodName387.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
 			return ESFRenewalLocalServiceUtil.findByRenewalFatherId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName392.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
+		if (_methodName388.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
 			return ESFRenewalLocalServiceUtil.findByOrg_Year(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
-		if (_methodName393.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
+		if (_methodName389.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes389, parameterTypes)) {
 			return ESFRenewalLocalServiceUtil.findByReason_IsTotal((java.lang.String)arguments[0],
 				((Boolean)arguments[1]).booleanValue());
 		}
 
-		if (_methodName394.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
+		if (_methodName390.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
 			return ESFRenewalLocalServiceUtil.findByRenewalFatherId_OrgId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName395.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
+		if (_methodName391.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
 			return ESFRenewalLocalServiceUtil.findByOrgId(((Long)arguments[0]).longValue());
 		}
 
@@ -341,10 +341,18 @@ public class ESFRenewalLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName380;
-	private String[] _methodParameterTypes380;
-	private String _methodName381;
-	private String[] _methodParameterTypes381;
+	private String _methodName376;
+	private String[] _methodParameterTypes376;
+	private String _methodName377;
+	private String[] _methodParameterTypes377;
+	private String _methodName382;
+	private String[] _methodParameterTypes382;
+	private String _methodName383;
+	private String[] _methodParameterTypes383;
+	private String _methodName384;
+	private String[] _methodParameterTypes384;
+	private String _methodName385;
+	private String[] _methodParameterTypes385;
 	private String _methodName386;
 	private String[] _methodParameterTypes386;
 	private String _methodName387;
@@ -357,12 +365,4 @@ public class ESFRenewalLocalServiceClpInvoker {
 	private String[] _methodParameterTypes390;
 	private String _methodName391;
 	private String[] _methodParameterTypes391;
-	private String _methodName392;
-	private String[] _methodParameterTypes392;
-	private String _methodName393;
-	private String[] _methodParameterTypes393;
-	private String _methodName394;
-	private String[] _methodParameterTypes394;
-	private String _methodName395;
-	private String[] _methodParameterTypes395;
 }

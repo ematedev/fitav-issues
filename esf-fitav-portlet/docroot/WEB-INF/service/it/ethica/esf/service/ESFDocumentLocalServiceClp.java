@@ -118,8 +118,8 @@ public class ESFDocumentLocalServiceClp implements ESFDocumentLocalService {
 		_methodParameterTypes20 = new String[] {
 				"long", "long", "java.lang.String", "long", "java.lang.String",
 				"java.lang.String", "java.util.Date", "java.util.Date",
-				"java.util.Date", "long", "java.lang.String", "java.lang.String",
-				"com.liferay.portal.service.ServiceContext"
+				"java.util.Date", "long", "long", "java.lang.String",
+				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 
 		_methodName21 = "updateEsfDocument";
@@ -127,8 +127,9 @@ public class ESFDocumentLocalServiceClp implements ESFDocumentLocalService {
 		_methodParameterTypes21 = new String[] {
 				"long", "long", "long", "java.lang.String", "long",
 				"java.lang.String", "java.lang.String", "java.util.Date",
-				"java.util.Date", "java.util.Date", "long", "java.lang.String",
-				"java.lang.String", "com.liferay.portal.service.ServiceContext"
+				"java.util.Date", "java.util.Date", "long", "long",
+				"java.lang.String", "java.lang.String",
+				"com.liferay.portal.service.ServiceContext"
 			};
 
 		_methodName22 = "findByCode";
@@ -143,13 +144,17 @@ public class ESFDocumentLocalServiceClp implements ESFDocumentLocalService {
 
 		_methodParameterTypes24 = new String[] { "long" };
 
-		_methodName25 = "findByT_U";
+		_methodName25 = "findByEsfPublicAuthorityId";
 
-		_methodParameterTypes25 = new String[] { "java.lang.String", "long" };
+		_methodParameterTypes25 = new String[] { "long" };
 
-		_methodName26 = "findByU_ED";
+		_methodName26 = "findByT_U";
 
-		_methodParameterTypes26 = new String[] { "long", "java.util.Date" };
+		_methodParameterTypes26 = new String[] { "java.lang.String", "long" };
+
+		_methodName27 = "findByU_ED";
+
+		_methodParameterTypes27 = new String[] { "long", "java.util.Date" };
 	}
 
 	@Override
@@ -732,7 +737,8 @@ public class ESFDocumentLocalServiceClp implements ESFDocumentLocalService {
 		java.lang.String code, java.lang.String releasedBy,
 		java.util.Date createDate, java.util.Date releaseDate,
 		java.util.Date expirationDate, long esfDocumentTypeId,
-		java.lang.String type, java.lang.String path,
+		long esfPublicAuthorityId, java.lang.String type,
+		java.lang.String path,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
@@ -760,6 +766,8 @@ public class ESFDocumentLocalServiceClp implements ESFDocumentLocalService {
 					ClpSerializer.translateInput(expirationDate),
 						
 					esfDocumentTypeId,
+						
+					esfPublicAuthorityId,
 						
 					ClpSerializer.translateInput(type),
 						
@@ -793,7 +801,8 @@ public class ESFDocumentLocalServiceClp implements ESFDocumentLocalService {
 		java.lang.String userName, long esfUserId, java.lang.String code,
 		java.lang.String releasedBy, java.util.Date modifiedDate,
 		java.util.Date releaseDate, java.util.Date expirationDate,
-		long esfDocumentTypeId, java.lang.String type, java.lang.String path,
+		long esfDocumentTypeId, long esfPublicAuthorityId,
+		java.lang.String type, java.lang.String path,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
@@ -823,6 +832,8 @@ public class ESFDocumentLocalServiceClp implements ESFDocumentLocalService {
 					ClpSerializer.translateInput(expirationDate),
 						
 					esfDocumentTypeId,
+						
+					esfPublicAuthorityId,
 						
 					ClpSerializer.translateInput(type),
 						
@@ -939,14 +950,44 @@ public class ESFDocumentLocalServiceClp implements ESFDocumentLocalService {
 	}
 
 	@Override
-	public java.util.List<it.ethica.esf.model.ESFDocument> findByT_U(
-		java.lang.String type, long esfUserId)
+	public java.util.List<it.ethica.esf.model.ESFDocument> findByEsfPublicAuthorityId(
+		long esfPublicAuthorityId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
 			returnObj = _invokableLocalService.invokeMethod(_methodName25,
 					_methodParameterTypes25,
+					new Object[] { esfPublicAuthorityId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<it.ethica.esf.model.ESFDocument>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public java.util.List<it.ethica.esf.model.ESFDocument> findByT_U(
+		java.lang.String type, long esfUserId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName26,
+					_methodParameterTypes26,
 					new Object[] { ClpSerializer.translateInput(type), esfUserId });
 		}
 		catch (Throwable t) {
@@ -975,8 +1016,8 @@ public class ESFDocumentLocalServiceClp implements ESFDocumentLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName26,
-					_methodParameterTypes26,
+			returnObj = _invokableLocalService.invokeMethod(_methodName27,
+					_methodParameterTypes27,
 					new Object[] {
 						esfUserId,
 						
@@ -1055,4 +1096,6 @@ public class ESFDocumentLocalServiceClp implements ESFDocumentLocalService {
 	private String[] _methodParameterTypes25;
 	private String _methodName26;
 	private String[] _methodParameterTypes26;
+	private String _methodName27;
+	private String[] _methodParameterTypes27;
 }

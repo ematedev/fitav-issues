@@ -10,6 +10,7 @@ import it.ethica.esf.model.ESFEntityState;
 import it.ethica.esf.model.ESFGun;
 import it.ethica.esf.model.ESFOrganization;
 import it.ethica.esf.model.ESFPhone;
+import it.ethica.esf.model.ESFPublicAuthority;
 import it.ethica.esf.model.ESFUser;
 import it.ethica.esf.model.impl.ESFCardImpl;
 import it.ethica.esf.model.impl.ESFDocumentImpl;
@@ -26,6 +27,7 @@ import it.ethica.esf.service.ESFEntityStateLocalServiceUtil;
 import it.ethica.esf.service.ESFGunKindLocalServiceUtil;
 import it.ethica.esf.service.ESFGunLocalServiceUtil;
 import it.ethica.esf.service.ESFOrganizationLocalServiceUtil;
+import it.ethica.esf.service.ESFPublicAuthorityLocalServiceUtil;
 import it.ethica.esf.service.ESFUserLocalServiceUtil;
 import it.ethica.esf.util.ESFJsonUtil;
 import it.ethica.esf.util.ESFKeys;
@@ -89,8 +91,7 @@ public class ShooterUtility extends MVCPortlet {
 	
 		long esfMatchId = ParamUtil.getLong(request, "esfMatchId");
 		if (esfMatchId > 0) {
-			request.setAttribute("esfMatchId", esfMatchId);
-			
+			request.setAttribute("esfMatchId", esfMatchId);			
 		}
 		String op = ParamUtil.getString(request, "op");
 		
@@ -421,7 +422,7 @@ public class ShooterUtility extends MVCPortlet {
 		
 		long esfMatchId = ParamUtil.getLong(request, "esfMatchId");
 		
-		String releasedBy = ParamUtil.getString(uploadRequest, "releasedby");
+//		String releasedBy = ParamUtil.getString(uploadRequest, "releasedby");	//Change in Anomalia.ID16
 		
 		String rDate = ParamUtil.getString(uploadRequest, "releasedate");
 		
@@ -431,10 +432,15 @@ public class ShooterUtility extends MVCPortlet {
 		
 		Date expirationDate = ManageDate.StringToDate(eDate);
 		
+		//Add in Anomlia.ID16
 		long esfDocumentTypeId = ParamUtil.getLong(uploadRequest, "esfDocumentTypeId");
 		ESFDocumentType documentType = ESFDocumentTypeLocalServiceUtil.getESFDocumentType(esfDocumentTypeId);
 //		String type = ParamUtil.getString(uploadRequest, "type");	//Descrizione
 		String type = documentType.getDescription();	//Descrizione
+		//Add in Anomlia.ID16
+		long esfPublicAuthorityId = ParamUtil.getLong(uploadRequest, "esfPublicAuthorityId");
+		ESFPublicAuthority authority = ESFPublicAuthorityLocalServiceUtil.getESFPublicAuthority(esfPublicAuthorityId);
+		String releasedBy = authority.getDescription();
 		
 		long userId =  ParamUtil.getLong(request, "esfUserId");
 		
@@ -485,7 +491,7 @@ public class ShooterUtility extends MVCPortlet {
 				ESFDocumentLocalServiceUtil.updateEsfDocument(
 					esfDocumentId, groupId, companyId, userName,
 					user.getUserId(), code, releasedBy, modifiedDate,
-					releaseDate, expirationDate, esfDocumentTypeId, type, path, serviceContext);
+					releaseDate, expirationDate, esfDocumentTypeId, esfPublicAuthorityId, type, path, serviceContext);
 				
 				if(!oldFilePath.equalsIgnoreCase(path)){
 					File toBeDeletedFile = new File(dirDeleteFile+oldFilePath);
@@ -516,7 +522,7 @@ public class ShooterUtility extends MVCPortlet {
 					ESFDocumentLocalServiceUtil.addEsfDocument(
 						groupId, companyId, userName, user.getUserId(), code,
 						releasedBy, createDate, releaseDate, expirationDate,
-						esfDocumentTypeId, type, path, serviceContext);
+						esfDocumentTypeId, esfPublicAuthorityId, type, path, serviceContext);
 
 					SessionMessages.add(request, "esfDocumentUpdated");
 

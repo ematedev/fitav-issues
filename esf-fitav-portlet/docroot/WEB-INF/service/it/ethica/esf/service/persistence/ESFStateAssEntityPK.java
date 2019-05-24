@@ -21,6 +21,7 @@ import java.io.Serializable;
 
 /**
  * @author Ethica
+ * @generated
  */
 public class ESFStateAssEntityPK implements Comparable<ESFStateAssEntityPK>,
 	Serializable {

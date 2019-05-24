@@ -261,19 +261,19 @@ public interface ESFShooterQualificationESFMatchModel extends BaseModel<ESFShoot
 
 	@Override
 	public int compareTo(
-		ESFShooterQualificationESFMatch esfShooterQualificationESFMatch);
+		it.ethica.esf.model.ESFShooterQualificationESFMatch esfShooterQualificationESFMatch);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ESFShooterQualificationESFMatch> toCacheModel();
+	public CacheModel<it.ethica.esf.model.ESFShooterQualificationESFMatch> toCacheModel();
 
 	@Override
-	public ESFShooterQualificationESFMatch toEscapedModel();
+	public it.ethica.esf.model.ESFShooterQualificationESFMatch toEscapedModel();
 
 	@Override
-	public ESFShooterQualificationESFMatch toUnescapedModel();
+	public it.ethica.esf.model.ESFShooterQualificationESFMatch toUnescapedModel();
 
 	@Override
 	public String toString();

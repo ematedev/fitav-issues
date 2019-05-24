@@ -138,19 +138,20 @@ public interface ESFPartecipantTypeModel extends BaseModel<ESFPartecipantType> {
 	public Object clone();
 
 	@Override
-	public int compareTo(ESFPartecipantType esfPartecipantType);
+	public int compareTo(
+		it.ethica.esf.model.ESFPartecipantType esfPartecipantType);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ESFPartecipantType> toCacheModel();
+	public CacheModel<it.ethica.esf.model.ESFPartecipantType> toCacheModel();
 
 	@Override
-	public ESFPartecipantType toEscapedModel();
+	public it.ethica.esf.model.ESFPartecipantType toEscapedModel();
 
 	@Override
-	public ESFPartecipantType toUnescapedModel();
+	public it.ethica.esf.model.ESFPartecipantType toUnescapedModel();
 
 	@Override
 	public String toString();

@@ -248,4 +248,8 @@ public interface ESFPublicAuthorityLocalService extends BaseLocalService,
 	public java.lang.Object invokeMethod(java.lang.String name,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
+
+	public it.ethica.esf.model.ESFPublicAuthority saveUpdateESFPublicAuthority(
+		it.ethica.esf.model.ESFPublicAuthority authority)
+		throws com.liferay.portal.kernel.exception.SystemException;
 }

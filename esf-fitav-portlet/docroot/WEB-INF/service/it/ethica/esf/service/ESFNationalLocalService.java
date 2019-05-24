@@ -16,6 +16,7 @@ package it.ethica.esf.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface ESFNationalLocalService extends BaseLocalService,
 	* @return the e s f national that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFNational addESFNational(
 		it.ethica.esf.model.ESFNational esfNational)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -72,6 +74,7 @@ public interface ESFNationalLocalService extends BaseLocalService,
 	* @throws PortalException if a e s f national with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFNational deleteESFNational(long esfNationalId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
@@ -83,6 +86,7 @@ public interface ESFNationalLocalService extends BaseLocalService,
 	* @return the e s f national that was removed
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFNational deleteESFNational(
 		it.ethica.esf.model.ESFNational esfNational)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -278,6 +282,7 @@ public interface ESFNationalLocalService extends BaseLocalService,
 	* @return the e s f national that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFNational updateESFNational(
 		it.ethica.esf.model.ESFNational esfNational)
 		throws com.liferay.portal.kernel.exception.SystemException;

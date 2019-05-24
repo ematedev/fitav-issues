@@ -501,6 +501,10 @@ public class ESFCityClp extends BaseModelImpl<ESFCity> implements ESFCity {
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey().hashCode();
@@ -600,4 +604,5 @@ public class ESFCityClp extends BaseModelImpl<ESFCity> implements ESFCity {
 	private double _altitude;
 	private String _website;
 	private BaseModel<?> _esfCityRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

@@ -275,6 +275,12 @@ public class ESFPublicAuthorityLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static it.ethica.esf.model.ESFPublicAuthority saveUpdateESFPublicAuthority(
+		it.ethica.esf.model.ESFPublicAuthority authority)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().saveUpdateESFPublicAuthority(authority);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

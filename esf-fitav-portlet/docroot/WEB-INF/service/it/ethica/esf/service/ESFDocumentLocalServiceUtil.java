@@ -285,13 +285,14 @@ public class ESFDocumentLocalServiceUtil {
 		java.lang.String code, java.lang.String releasedBy,
 		java.util.Date createDate, java.util.Date releaseDate,
 		java.util.Date expirationDate, long esfDocumentTypeId,
-		java.lang.String type, java.lang.String path,
+		long esfPublicAuthorityId, java.lang.String type,
+		java.lang.String path,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getService()
 				   .addEsfDocument(groupId, companyId, userName, esfUserId,
 			code, releasedBy, createDate, releaseDate, expirationDate,
-			esfDocumentTypeId, type, path, serviceContext);
+			esfDocumentTypeId, esfPublicAuthorityId, type, path, serviceContext);
 	}
 
 	public static it.ethica.esf.model.ESFDocument updateEsfDocument(
@@ -299,13 +300,15 @@ public class ESFDocumentLocalServiceUtil {
 		java.lang.String userName, long esfUserId, java.lang.String code,
 		java.lang.String releasedBy, java.util.Date modifiedDate,
 		java.util.Date releaseDate, java.util.Date expirationDate,
-		long esfDocumentTypeId, java.lang.String type, java.lang.String path,
+		long esfDocumentTypeId, long esfPublicAuthorityId,
+		java.lang.String type, java.lang.String path,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getService()
 				   .updateEsfDocument(esfDocumentId, groupId, companyId,
 			userName, esfUserId, code, releasedBy, modifiedDate, releaseDate,
-			expirationDate, esfDocumentTypeId, type, path, serviceContext);
+			expirationDate, esfDocumentTypeId, esfPublicAuthorityId, type,
+			path, serviceContext);
 	}
 
 	public static java.util.List<it.ethica.esf.model.ESFDocument> findByCode(
@@ -324,6 +327,12 @@ public class ESFDocumentLocalServiceUtil {
 		long esfDocumentTypeId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getService().findByEsfDocumentTypeId(esfDocumentTypeId);
+	}
+
+	public static java.util.List<it.ethica.esf.model.ESFDocument> findByEsfPublicAuthorityId(
+		long esfPublicAuthorityId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().findByEsfPublicAuthorityId(esfPublicAuthorityId);
 	}
 
 	public static java.util.List<it.ethica.esf.model.ESFDocument> findByT_U(

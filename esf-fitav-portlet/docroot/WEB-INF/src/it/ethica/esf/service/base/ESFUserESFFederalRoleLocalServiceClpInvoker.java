@@ -114,29 +114,29 @@ public class ESFUserESFFederalRoleLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFUserESFFederalRole"
 			};
 
-		_methodName380 = "getBeanIdentifier";
+		_methodName376 = "getBeanIdentifier";
 
-		_methodParameterTypes380 = new String[] {  };
+		_methodParameterTypes376 = new String[] {  };
 
-		_methodName381 = "setBeanIdentifier";
+		_methodName377 = "setBeanIdentifier";
 
-		_methodParameterTypes381 = new String[] { "java.lang.String" };
+		_methodParameterTypes377 = new String[] { "java.lang.String" };
 
-		_methodName386 = "findByEsfFederalRoleId";
+		_methodName382 = "findByEsfFederalRoleId";
 
-		_methodParameterTypes386 = new String[] { "long" };
+		_methodParameterTypes382 = new String[] { "long" };
 
-		_methodName387 = "findByEsfUserId";
+		_methodName383 = "findByEsfUserId";
 
-		_methodParameterTypes387 = new String[] { "long" };
+		_methodParameterTypes383 = new String[] { "long" };
 
-		_methodName388 = "findByEsfUserIdAndActive";
+		_methodName384 = "findByEsfUserIdAndActive";
 
-		_methodParameterTypes388 = new String[] { "long", "boolean" };
+		_methodParameterTypes384 = new String[] { "long", "boolean" };
 
-		_methodName389 = "findByEsfUserIdAndEsfFederalRoleIdActive";
+		_methodName385 = "findByEsfUserIdAndEsfFederalRoleIdActive";
 
-		_methodParameterTypes389 = new String[] { "long", "long", "boolean" };
+		_methodParameterTypes385 = new String[] { "long", "long", "boolean" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -228,36 +228,36 @@ public class ESFUserESFFederalRoleLocalServiceClpInvoker {
 			return ESFUserESFFederalRoleLocalServiceUtil.updateESFUserESFFederalRole((it.ethica.esf.model.ESFUserESFFederalRole)arguments[0]);
 		}
 
-		if (_methodName380.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes380, parameterTypes)) {
+		if (_methodName376.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes376, parameterTypes)) {
 			return ESFUserESFFederalRoleLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName381.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes381, parameterTypes)) {
+		if (_methodName377.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes377, parameterTypes)) {
 			ESFUserESFFederalRoleLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName386.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
+		if (_methodName382.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
 			return ESFUserESFFederalRoleLocalServiceUtil.findByEsfFederalRoleId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName387.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
+		if (_methodName383.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes383, parameterTypes)) {
 			return ESFUserESFFederalRoleLocalServiceUtil.findByEsfUserId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName388.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
+		if (_methodName384.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
 			return ESFUserESFFederalRoleLocalServiceUtil.findByEsfUserIdAndActive(((Long)arguments[0]).longValue(),
 				((Boolean)arguments[1]).booleanValue());
 		}
 
-		if (_methodName389.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes389, parameterTypes)) {
+		if (_methodName385.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
 			return ESFUserESFFederalRoleLocalServiceUtil.findByEsfUserIdAndEsfFederalRoleIdActive(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Boolean)arguments[2]).booleanValue());
@@ -298,16 +298,16 @@ public class ESFUserESFFederalRoleLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName380;
-	private String[] _methodParameterTypes380;
-	private String _methodName381;
-	private String[] _methodParameterTypes381;
-	private String _methodName386;
-	private String[] _methodParameterTypes386;
-	private String _methodName387;
-	private String[] _methodParameterTypes387;
-	private String _methodName388;
-	private String[] _methodParameterTypes388;
-	private String _methodName389;
-	private String[] _methodParameterTypes389;
+	private String _methodName376;
+	private String[] _methodParameterTypes376;
+	private String _methodName377;
+	private String[] _methodParameterTypes377;
+	private String _methodName382;
+	private String[] _methodParameterTypes382;
+	private String _methodName383;
+	private String[] _methodParameterTypes383;
+	private String _methodName384;
+	private String[] _methodParameterTypes384;
+	private String _methodName385;
+	private String[] _methodParameterTypes385;
 }

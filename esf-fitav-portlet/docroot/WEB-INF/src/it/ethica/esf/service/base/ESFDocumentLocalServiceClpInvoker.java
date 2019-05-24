@@ -117,8 +117,8 @@ public class ESFDocumentLocalServiceClpInvoker {
 		_methodParameterTypes383 = new String[] {
 				"long", "long", "java.lang.String", "long", "java.lang.String",
 				"java.lang.String", "java.util.Date", "java.util.Date",
-				"java.util.Date", "long", "java.lang.String", "java.lang.String",
-				"com.liferay.portal.service.ServiceContext"
+				"java.util.Date", "long", "long", "java.lang.String",
+				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 
 		_methodName384 = "updateEsfDocument";
@@ -126,8 +126,9 @@ public class ESFDocumentLocalServiceClpInvoker {
 		_methodParameterTypes384 = new String[] {
 				"long", "long", "long", "java.lang.String", "long",
 				"java.lang.String", "java.lang.String", "java.util.Date",
-				"java.util.Date", "java.util.Date", "long", "java.lang.String",
-				"java.lang.String", "com.liferay.portal.service.ServiceContext"
+				"java.util.Date", "java.util.Date", "long", "long",
+				"java.lang.String", "java.lang.String",
+				"com.liferay.portal.service.ServiceContext"
 			};
 
 		_methodName385 = "findByCode";
@@ -142,13 +143,17 @@ public class ESFDocumentLocalServiceClpInvoker {
 
 		_methodParameterTypes387 = new String[] { "long" };
 
-		_methodName388 = "findByT_U";
+		_methodName388 = "findByEsfPublicAuthorityId";
 
-		_methodParameterTypes388 = new String[] { "java.lang.String", "long" };
+		_methodParameterTypes388 = new String[] { "long" };
 
-		_methodName389 = "findByU_ED";
+		_methodName389 = "findByT_U";
 
-		_methodParameterTypes389 = new String[] { "long", "java.util.Date" };
+		_methodParameterTypes389 = new String[] { "java.lang.String", "long" };
+
+		_methodName390 = "findByU_ED";
+
+		_methodParameterTypes390 = new String[] { "long", "java.util.Date" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -266,9 +271,10 @@ public class ESFDocumentLocalServiceClpInvoker {
 				(java.lang.String)arguments[4], (java.lang.String)arguments[5],
 				(java.util.Date)arguments[6], (java.util.Date)arguments[7],
 				(java.util.Date)arguments[8], ((Long)arguments[9]).longValue(),
-				(java.lang.String)arguments[10],
+				((Long)arguments[10]).longValue(),
 				(java.lang.String)arguments[11],
-				(com.liferay.portal.service.ServiceContext)arguments[12]);
+				(java.lang.String)arguments[12],
+				(com.liferay.portal.service.ServiceContext)arguments[13]);
 		}
 
 		if (_methodName384.equals(name) &&
@@ -282,9 +288,10 @@ public class ESFDocumentLocalServiceClpInvoker {
 				(java.util.Date)arguments[7], (java.util.Date)arguments[8],
 				(java.util.Date)arguments[9],
 				((Long)arguments[10]).longValue(),
-				(java.lang.String)arguments[11],
+				((Long)arguments[11]).longValue(),
 				(java.lang.String)arguments[12],
-				(com.liferay.portal.service.ServiceContext)arguments[13]);
+				(java.lang.String)arguments[13],
+				(com.liferay.portal.service.ServiceContext)arguments[14]);
 		}
 
 		if (_methodName385.equals(name) &&
@@ -304,12 +311,17 @@ public class ESFDocumentLocalServiceClpInvoker {
 
 		if (_methodName388.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
-			return ESFDocumentLocalServiceUtil.findByT_U((java.lang.String)arguments[0],
-				((Long)arguments[1]).longValue());
+			return ESFDocumentLocalServiceUtil.findByEsfPublicAuthorityId(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName389.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes389, parameterTypes)) {
+			return ESFDocumentLocalServiceUtil.findByT_U((java.lang.String)arguments[0],
+				((Long)arguments[1]).longValue());
+		}
+
+		if (_methodName390.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
 			return ESFDocumentLocalServiceUtil.findByU_ED(((Long)arguments[0]).longValue(),
 				(java.util.Date)arguments[1]);
 		}
@@ -369,4 +381,6 @@ public class ESFDocumentLocalServiceClpInvoker {
 	private String[] _methodParameterTypes388;
 	private String _methodName389;
 	private String[] _methodParameterTypes389;
+	private String _methodName390;
+	private String[] _methodParameterTypes390;
 }

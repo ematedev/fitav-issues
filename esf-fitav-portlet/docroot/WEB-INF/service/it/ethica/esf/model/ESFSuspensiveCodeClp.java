@@ -286,6 +286,10 @@ public class ESFSuspensiveCodeClp extends BaseModelImpl<ESFSuspensiveCode>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -336,4 +340,5 @@ public class ESFSuspensiveCodeClp extends BaseModelImpl<ESFSuspensiveCode>
 	private String _code;
 	private String _description;
 	private BaseModel<?> _esfSuspensiveCodeRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }
