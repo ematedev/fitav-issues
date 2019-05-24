@@ -18,7 +18,7 @@ import com.liferay.portal.kernel.bean.AutoEscape;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
-import com.liferay.portal.model.StagedGroupedModel;
+import com.liferay.portal.model.GroupedModel;
 import com.liferay.portal.service.ServiceContext;
 
 import com.liferay.portlet.expando.model.ExpandoBridge;
@@ -40,8 +40,7 @@ import java.util.Date;
  * @see it.ethica.esf.model.impl.ESFNationalModelImpl
  * @generated
  */
-public interface ESFNationalModel extends BaseModel<ESFNational>,
-	StagedGroupedModel {
+public interface ESFNationalModel extends BaseModel<ESFNational>, GroupedModel {
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
@@ -61,23 +60,6 @@ public interface ESFNationalModel extends BaseModel<ESFNational>,
 	 * @param primaryKey the primary key of this e s f national
 	 */
 	public void setPrimaryKey(long primaryKey);
-
-	/**
-	 * Returns the uuid of this e s f national.
-	 *
-	 * @return the uuid of this e s f national
-	 */
-	@AutoEscape
-	@Override
-	public String getUuid();
-
-	/**
-	 * Sets the uuid of this e s f national.
-	 *
-	 * @param uuid the uuid of this e s f national
-	 */
-	@Override
-	public void setUuid(String uuid);
 
 	/**
 	 * Returns the esf national ID of this e s f national.

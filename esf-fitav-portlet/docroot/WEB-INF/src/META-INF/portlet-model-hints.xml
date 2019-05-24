@@ -102,7 +102,6 @@
 		<field name="website" type="String" />
 	</model>
 	<model name="it.ethica.esf.model.ESFCodeOrg">
-		<field name="uuid" type="String" />
 		<field name="esfCodeOrgId" type="long" />
 		<field name="className" type="String" />
 		<field name="code" type="String" />
@@ -490,7 +489,6 @@
 		<field name="code" type="String" />
 	</model>
 	<model name="it.ethica.esf.model.ESFNational">
-		<field name="uuid" type="String" />
 		<field name="esfNationalId" type="long" />
 		<field name="groupId" type="long" />
 		<field name="companyId" type="long" />
@@ -510,7 +508,6 @@
 		<field name="deliberateDate" type="Date" />
 	</model>
 	<model name="it.ethica.esf.model.ESFNationalDelegation">
-		<field name="uuid" type="String" />
 		<field name="esfUserId" type="long" />
 		<field name="groupId" type="long" />
 		<field name="companyId" type="long" />
@@ -672,7 +669,6 @@
 		<field name="esfGunKindIdTwo" type="long" />
 	</model>
 	<model name="it.ethica.esf.model.ESFPartecipantType">
-		<field name="uuid" type="String" />
 		<field name="esfPartecipantTypeId" type="long" />
 		<field name="name" type="String" />
 	</model>

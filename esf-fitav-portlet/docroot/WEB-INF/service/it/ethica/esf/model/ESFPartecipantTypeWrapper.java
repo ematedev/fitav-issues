@@ -49,7 +49,6 @@ public class ESFPartecipantTypeWrapper implements ESFPartecipantType,
 	public Map<String, Object> getModelAttributes() {
 		Map<String, Object> attributes = new HashMap<String, Object>();
 
-		attributes.put("uuid", getUuid());
 		attributes.put("esfPartecipantTypeId", getEsfPartecipantTypeId());
 		attributes.put("name", getName());
 
@@ -58,12 +57,6 @@ public class ESFPartecipantTypeWrapper implements ESFPartecipantType,
 
 	@Override
 	public void setModelAttributes(Map<String, Object> attributes) {
-		String uuid = (String)attributes.get("uuid");
-
-		if (uuid != null) {
-			setUuid(uuid);
-		}
-
 		Long esfPartecipantTypeId = (Long)attributes.get("esfPartecipantTypeId");
 
 		if (esfPartecipantTypeId != null) {
@@ -95,26 +88,6 @@ public class ESFPartecipantTypeWrapper implements ESFPartecipantType,
 	@Override
 	public void setPrimaryKey(long primaryKey) {
 		_esfPartecipantType.setPrimaryKey(primaryKey);
-	}
-
-	/**
-	* Returns the uuid of this e s f partecipant type.
-	*
-	* @return the uuid of this e s f partecipant type
-	*/
-	@Override
-	public java.lang.String getUuid() {
-		return _esfPartecipantType.getUuid();
-	}
-
-	/**
-	* Sets the uuid of this e s f partecipant type.
-	*
-	* @param uuid the uuid of this e s f partecipant type
-	*/
-	@Override
-	public void setUuid(java.lang.String uuid) {
-		_esfPartecipantType.setUuid(uuid);
 	}
 
 	/**

@@ -16,7 +16,6 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
@@ -54,7 +53,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFOrganizationUnitserviceModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFOrganizationUnitserviceModelImpl extends BaseModelImpl<ESFOrganizationUnitservice>
 	implements ESFOrganizationUnitserviceModel {
 	/*
@@ -232,7 +230,6 @@ public class ESFOrganizationUnitserviceModelImpl extends BaseModelImpl<ESFOrgani
 		}
 	}
 
-	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -256,7 +253,6 @@ public class ESFOrganizationUnitserviceModelImpl extends BaseModelImpl<ESFOrgani
 		return GetterUtil.getString(_originalUuid);
 	}
 
-	@JSON
 	@Override
 	public long getEsfOrganizationUnitserviceId() {
 		return _esfOrganizationUnitserviceId;
@@ -268,7 +264,6 @@ public class ESFOrganizationUnitserviceModelImpl extends BaseModelImpl<ESFOrgani
 		_esfOrganizationUnitserviceId = esfOrganizationUnitserviceId;
 	}
 
-	@JSON
 	@Override
 	public long getEsfOrganizationId() {
 		return _esfOrganizationId;
@@ -291,7 +286,6 @@ public class ESFOrganizationUnitserviceModelImpl extends BaseModelImpl<ESFOrgani
 		return _originalEsfOrganizationId;
 	}
 
-	@JSON
 	@Override
 	public long getEsfUnitserviceId() {
 		return _esfUnitserviceId;
@@ -314,7 +308,6 @@ public class ESFOrganizationUnitserviceModelImpl extends BaseModelImpl<ESFOrgani
 		return _originalEsfUnitserviceId;
 	}
 
-	@JSON
 	@Override
 	public long getNumberUnitservices() {
 		return _numberUnitservices;
@@ -325,7 +318,6 @@ public class ESFOrganizationUnitserviceModelImpl extends BaseModelImpl<ESFOrgani
 		_numberUnitservices = numberUnitservices;
 	}
 
-	@JSON
 	@Override
 	public String getDescription() {
 		if (_description == null) {
@@ -343,7 +335,6 @@ public class ESFOrganizationUnitserviceModelImpl extends BaseModelImpl<ESFOrgani
 		_description = description;
 	}
 
-	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -366,7 +357,6 @@ public class ESFOrganizationUnitserviceModelImpl extends BaseModelImpl<ESFOrgani
 		return _originalGroupId;
 	}
 
-	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -389,7 +379,6 @@ public class ESFOrganizationUnitserviceModelImpl extends BaseModelImpl<ESFOrgani
 		return _originalCompanyId;
 	}
 
-	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -410,7 +399,6 @@ public class ESFOrganizationUnitserviceModelImpl extends BaseModelImpl<ESFOrgani
 		_userUuid = userUuid;
 	}
 
-	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -426,7 +414,6 @@ public class ESFOrganizationUnitserviceModelImpl extends BaseModelImpl<ESFOrgani
 		_userName = userName;
 	}
 
-	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -437,7 +424,6 @@ public class ESFOrganizationUnitserviceModelImpl extends BaseModelImpl<ESFOrgani
 		_createDate = createDate;
 	}
 
-	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;

@@ -85,14 +85,15 @@ public class ESFFederalRolePortlet extends MVCPortlet {
 		String errorKey = null;
 		if(Validator.isNotNull(code) && Validator.isNotNull(description)){
 			try {
-				federalRole = ESFFederalRoleServiceUtil.updateEsfFederalRole(esfFederalRoleId, code, description, regional, provincial);
+				federalRole = ESFFederalRoleLocalServiceUtil.updateEsfFederalRole(esfFederalRoleId, code, description, regional, provincial);
 			} catch (SystemException e) {
 				errorKey = "update-esf-federal-role-failure";
 				_log.fatal(e.getMessage());
-			} catch (PrincipalException e) {
-				errorKey = "update-esf-federal-role-permission-error";
-				_log.error(e.getMessage());
 			}
+//			} catch (PrincipalException e) {
+//				errorKey = "update-esf-federal-role-permission-error";
+//				_log.error(e.getMessage());
+//			}
 		}
 		if(federalRole !=null){
 			SessionMessages.add(request, "update-esf-federal-role-success");

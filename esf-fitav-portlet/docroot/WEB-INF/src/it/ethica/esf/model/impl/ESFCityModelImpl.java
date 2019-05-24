@@ -15,7 +15,6 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -47,7 +46,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFCityModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFCityModelImpl extends BaseModelImpl<ESFCity>
 	implements ESFCityModel {
 	/*
@@ -208,7 +206,6 @@ public class ESFCityModelImpl extends BaseModelImpl<ESFCity>
 		}
 	}
 
-	@JSON
 	@Override
 	public long getIdCity() {
 		return _idCity;
@@ -219,7 +216,6 @@ public class ESFCityModelImpl extends BaseModelImpl<ESFCity>
 		_idCity = idCity;
 	}
 
-	@JSON
 	@Override
 	public String getIdProvince() {
 		if (_idProvince == null) {
@@ -245,7 +241,6 @@ public class ESFCityModelImpl extends BaseModelImpl<ESFCity>
 		return GetterUtil.getString(_originalIdProvince);
 	}
 
-	@JSON
 	@Override
 	public String getIdRegion() {
 		if (_idRegion == null) {
@@ -271,7 +266,6 @@ public class ESFCityModelImpl extends BaseModelImpl<ESFCity>
 		return GetterUtil.getString(_originalIdRegion);
 	}
 
-	@JSON
 	@Override
 	public String getIdCountry() {
 		if (_idCountry == null) {
@@ -297,7 +291,6 @@ public class ESFCityModelImpl extends BaseModelImpl<ESFCity>
 		return GetterUtil.getString(_originalIdCountry);
 	}
 
-	@JSON
 	@Override
 	public long getZip() {
 		return _zip;
@@ -308,7 +301,6 @@ public class ESFCityModelImpl extends BaseModelImpl<ESFCity>
 		_zip = zip;
 	}
 
-	@JSON
 	@Override
 	public String getName() {
 		if (_name == null) {
@@ -334,7 +326,6 @@ public class ESFCityModelImpl extends BaseModelImpl<ESFCity>
 		return GetterUtil.getString(_originalName);
 	}
 
-	@JSON
 	@Override
 	public double getLatitude() {
 		return _latitude;
@@ -345,7 +336,6 @@ public class ESFCityModelImpl extends BaseModelImpl<ESFCity>
 		_latitude = latitude;
 	}
 
-	@JSON
 	@Override
 	public double getLongitude() {
 		return _longitude;
@@ -356,7 +346,6 @@ public class ESFCityModelImpl extends BaseModelImpl<ESFCity>
 		_longitude = longitude;
 	}
 
-	@JSON
 	@Override
 	public double getAltitude() {
 		return _altitude;
@@ -367,7 +356,6 @@ public class ESFCityModelImpl extends BaseModelImpl<ESFCity>
 		_altitude = altitude;
 	}
 
-	@JSON
 	@Override
 	public String getWebsite() {
 		if (_website == null) {

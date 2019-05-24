@@ -389,10 +389,11 @@ public class ESFFederalRoleLocalServiceWrapper
 
 	@Override
 	public void associateEsfUser(long esfUserId, long esfFederalRoleId,
-		long startDate, long esfSpecificId, java.lang.String notes)
+		long startDate, java.util.Date endDate, long esfSpecificId,
+		java.lang.String notes)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		_esfFederalRoleLocalService.associateEsfUser(esfUserId,
-			esfFederalRoleId, startDate, esfSpecificId, notes);
+			esfFederalRoleId, startDate, endDate, esfSpecificId, notes);
 	}
 
 	@Override
@@ -413,6 +414,21 @@ public class ESFFederalRoleLocalServiceWrapper
 	public java.util.Date getActiveAssociationDate(long esfUserId,
 		long esfFederalRoleId) {
 		return _esfFederalRoleLocalService.getActiveAssociationDate(esfUserId,
+			esfFederalRoleId);
+	}
+
+	@Override
+	public java.util.Date getEndAssociationDate(long esfUserId,
+		long esfFederalRoleId) {
+		return _esfFederalRoleLocalService.getEndAssociationDate(esfUserId,
+			esfFederalRoleId);
+	}
+
+	@Override
+	public void deleteEsfUserEsfFederalRole(long esfUserId,
+		long esfFederalRoleId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		_esfFederalRoleLocalService.deleteEsfUserEsfFederalRole(esfUserId,
 			esfFederalRoleId);
 	}
 

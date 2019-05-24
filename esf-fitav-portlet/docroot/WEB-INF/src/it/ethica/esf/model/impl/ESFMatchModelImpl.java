@@ -16,7 +16,6 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
@@ -54,7 +53,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFMatchModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 	implements ESFMatchModel {
 	/*
@@ -427,7 +425,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		}
 	}
 
-	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -451,7 +448,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		return GetterUtil.getString(_originalUuid);
 	}
 
-	@JSON
 	@Override
 	public long getEsfMatchId() {
 		return _esfMatchId;
@@ -462,7 +458,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		_esfMatchId = esfMatchId;
 	}
 
-	@JSON
 	@Override
 	public Date getStartDate() {
 		return _startDate;
@@ -483,7 +478,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		return _originalStartDate;
 	}
 
-	@JSON
 	@Override
 	public String getStartHour() {
 		if (_startHour == null) {
@@ -499,7 +493,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		_startHour = startHour;
 	}
 
-	@JSON
 	@Override
 	public long getEsfSportTypeId() {
 		return _esfSportTypeId;
@@ -522,7 +515,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		return _originalEsfSportTypeId;
 	}
 
-	@JSON
 	@Override
 	public long getEsfMatchTypeId() {
 		return _esfMatchTypeId;
@@ -545,7 +537,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		return _originalEsfMatchTypeId;
 	}
 
-	@JSON
 	@Override
 	public boolean getIsDraft() {
 		return _isDraft;
@@ -561,7 +552,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		_isDraft = isDraft;
 	}
 
-	@JSON
 	@Override
 	public boolean getIsTeamMatch() {
 		return _isTeamMatch;
@@ -577,7 +567,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		_isTeamMatch = isTeamMatch;
 	}
 
-	@JSON
 	@Override
 	public boolean getIsIndividualMatch() {
 		return _isIndividualMatch;
@@ -593,7 +582,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		_isIndividualMatch = isIndividualMatch;
 	}
 
-	@JSON
 	@Override
 	public boolean getIsJuniorMatch() {
 		return _isJuniorMatch;
@@ -609,7 +597,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		_isJuniorMatch = isJuniorMatch;
 	}
 
-	@JSON
 	@Override
 	public int getNumDisk() {
 		return _numDisk;
@@ -620,7 +607,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		_numDisk = numDisk;
 	}
 
-	@JSON
 	@Override
 	public int getNumDiskTeam() {
 		return _numDiskTeam;
@@ -631,7 +617,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		_numDiskTeam = numDiskTeam;
 	}
 
-	@JSON
 	@Override
 	public long getEsfAssociationId() {
 		return _esfAssociationId;
@@ -654,7 +639,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		return _originalEsfAssociationId;
 	}
 
-	@JSON
 	@Override
 	public String getNotes() {
 		if (_notes == null) {
@@ -670,7 +654,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		_notes = notes;
 	}
 
-	@JSON
 	@Override
 	public long getDescription() {
 		return _description;
@@ -693,7 +676,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		return _originalDescription;
 	}
 
-	@JSON
 	@Override
 	public Date getEndDate() {
 		return _endDate;
@@ -704,7 +686,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		_endDate = endDate;
 	}
 
-	@JSON
 	@Override
 	public int getNumFields() {
 		return _numFields;
@@ -715,7 +696,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		_numFields = numFields;
 	}
 
-	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -738,7 +718,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		return _originalGroupId;
 	}
 
-	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -761,7 +740,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		return _originalCompanyId;
 	}
 
-	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -794,7 +772,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		return _originalUserId;
 	}
 
-	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -810,7 +787,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		_userName = userName;
 	}
 
-	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -821,7 +797,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		_createDate = createDate;
 	}
 
-	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -832,7 +807,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		_modifiedDate = modifiedDate;
 	}
 
-	@JSON
 	@Override
 	public boolean getIsSingleMatch() {
 		return _isSingleMatch;
@@ -848,7 +822,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		_isSingleMatch = isSingleMatch;
 	}
 
-	@JSON
 	@Override
 	public String getSite() {
 		if (_site == null) {
@@ -864,7 +837,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		_site = site;
 	}
 
-	@JSON
 	@Override
 	public long getCountryId() {
 		return _countryId;
@@ -875,7 +847,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		_countryId = countryId;
 	}
 
-	@JSON
 	@Override
 	public String getCode() {
 		if (_code == null) {
@@ -901,7 +872,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		return GetterUtil.getString(_originalCode);
 	}
 
-	@JSON
 	@Override
 	public boolean getIsNational() {
 		return _isNational;
@@ -929,7 +899,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		return _originalIsNational;
 	}
 
-	@JSON
 	@Override
 	public boolean getHasPenality() {
 		return _HasPenality;
@@ -945,7 +914,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		_HasPenality = HasPenality;
 	}
 
-	@JSON
 	@Override
 	public boolean getIsOlimpicQualificationMatch() {
 		return _isOlimpicQualificationMatch;
@@ -962,7 +930,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		_isOlimpicQualificationMatch = isOlimpicQualificationMatch;
 	}
 
-	@JSON
 	@Override
 	public String getEventType() {
 		if (_eventType == null) {
@@ -988,7 +955,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		return GetterUtil.getString(_originalEventType);
 	}
 
-	@JSON
 	@Override
 	public String getNotNationalAssotiation() {
 		if (_notNationalAssotiation == null) {
@@ -1004,7 +970,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		_notNationalAssotiation = notNationalAssotiation;
 	}
 
-	@JSON
 	@Override
 	public boolean getIsChangeCategoryMatch() {
 		return _isChangeCategoryMatch;
@@ -1032,7 +997,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		return _originalIsChangeCategoryMatch;
 	}
 
-	@JSON
 	@Override
 	public String getEsfNationalSportTypeId() {
 		if (_esfNationalSportTypeId == null) {
@@ -1048,7 +1012,6 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		_esfNationalSportTypeId = esfNationalSportTypeId;
 	}
 
-	@JSON
 	@Override
 	public String getOldCode() {
 		if (_oldCode == null) {

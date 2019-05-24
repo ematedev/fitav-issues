@@ -237,7 +237,6 @@ String[] requiredRolesListClone = (String[])requiredRolesList.clone();
 	 value='<%=categoryAssosiation %>' readonly="true" 
 	 />Categoria di affiliazione</div>
 	
-<<<<<<< HEAD
 	<p><strong>COMPOSIZIONE DEL CONSIGLIO DIRETTIVO: </strong></p>
 	<% List<VW_ESFListaIncarichiTessera> listaIncarichiConsiglioDirettivo = (List<VW_ESFListaIncarichiTessera>) request.getAttribute("listaIncarichiConsiglioDirettivo"); %>
 	<% int size = listaIncarichiConsiglioDirettivo.size(); %>
@@ -279,35 +278,6 @@ String[] requiredRolesListClone = (String[])requiredRolesList.clone();
 
 	</liferay-ui:search-container>
 	<hr>
-=======
-	<p> COMPOSIZIONE DEL CONSIGLIO DIRETTIVO: </p>
-	
-	<liferay-ui:search-container emptyResultsMessage="no-results">
-	
-	<% List<VW_ESFListaIncarichiTessera> listaIncarichiConsiglioDirettivo = (List<VW_ESFListaIncarichiTessera>) request.getAttribute("listaIncarichiConsiglioDirettivo"); %>
-	<% int size = listaIncarichiConsiglioDirettivo.size(); %>
-	
-		<liferay-ui:search-container-results
-			results='<%= listaIncarichiConsiglioDirettivo %>'
-			total='<%= size %>' />
-			
-			
-		<liferay-ui:search-container-row  
-			className="it.ethica.esf.renewal.model.VW_ESFListaIncarichiTessera" modelVar="incarico">
-
-			<liferay-ui:search-container-column-text title="N. Tessera" cssClass="firstCss">
-					<%= incarico.getCodiceTessera()  %>
-			</liferay-ui:search-container-column-text>
-			
-			<liferay-ui:search-container-column-text property="lastName" title="Cognome" cssClass="firstCss"/>
-			
-			<liferay-ui:search-container-column-text property="firstName" title="Nome" cssClass="firstCss" />
-		</liferay-ui:search-container-row>
-	
-
-	</liferay-ui:search-container>
-	
->>>>>>> origin/master
 	<aui:field-wrapper label="payment-type">
 		<aui:input name="paymentType" value="<%= ESFRenewalConstants.RENEWAL_PAYMENT_TYPE_ELECTRONIC %>" type="radio" label="electronic-payment" checked="<%= true %>"/>
 		<aui:input name="paymentType" value="<%= ESFRenewalConstants.RENEWAL_PAYMENT_TYPE_POSTAL %>" type="radio" label="postal" />
@@ -317,10 +287,7 @@ String[] requiredRolesListClone = (String[])requiredRolesList.clone();
 	<strong><u><liferay-ui:message key="acknowledgment-title" /></u></strong>
 	<p><liferay-ui:message key="acknowledgment" /></p>
 	
-<<<<<<< HEAD
-	
-=======
->>>>>>> origin/master
+
 	<aui:field-wrapper>
 		<aui:input name="acknowledge" label="accept" type="radio" value="0" />
 		<aui:input name="acknowledge" label="not-accept" type="radio" value="1" />

@@ -16,8 +16,6 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.json.JSON;
-import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -54,7 +52,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFNationalDelegationModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDelegation>
 	implements ESFNationalDelegationModel {
 	/*
@@ -64,7 +61,6 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 	 */
 	public static final String TABLE_NAME = "ESFNationalDelegation";
 	public static final Object[][] TABLE_COLUMNS = {
-			{ "uuid_", Types.VARCHAR },
 			{ "esfUserId", Types.BIGINT },
 			{ "groupId", Types.BIGINT },
 			{ "companyId", Types.BIGINT },
@@ -86,7 +82,7 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 			{ "taskId", Types.BIGINT },
 			{ "refusal", Types.VARCHAR }
 		};
-	public static final String TABLE_SQL_CREATE = "create table ESFNationalDelegation (uuid_ VARCHAR(75) null,esfUserId LONG,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,leaveDate DATE null,returnDate DATE null,esfMatchId LONG,esfSportTypeId LONG,esfShooterQualificationId LONG,esfGunId1 LONG,esfGunId2 LONG,esfNationalDelgationId LONG not null primary key,esfPartecipantTypeId LONG,nominationDate DATE null,refusalDate DATE null,taskId LONG,refusal VARCHAR(75) null)";
+	public static final String TABLE_SQL_CREATE = "create table ESFNationalDelegation (esfUserId LONG,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,leaveDate DATE null,returnDate DATE null,esfMatchId LONG,esfSportTypeId LONG,esfShooterQualificationId LONG,esfGunId1 LONG,esfGunId2 LONG,esfNationalDelgationId LONG not null primary key,esfPartecipantTypeId LONG,nominationDate DATE null,refusalDate DATE null,taskId LONG,refusal VARCHAR(75) null)";
 	public static final String TABLE_SQL_DROP = "drop table ESFNationalDelegation";
 	public static final String ORDER_BY_JPQL = " ORDER BY esfNationalDelegation.esfNationalDelgationId ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY ESFNationalDelegation.esfNationalDelgationId ASC";
@@ -102,16 +98,13 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 	public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.column.bitmask.enabled.it.ethica.esf.model.ESFNationalDelegation"),
 			true);
-	public static long COMPANYID_COLUMN_BITMASK = 1L;
-	public static long ESFMATCHID_COLUMN_BITMASK = 2L;
-	public static long ESFPARTECIPANTTYPEID_COLUMN_BITMASK = 4L;
-	public static long ESFSHOOTERQUALIFICATIONID_COLUMN_BITMASK = 8L;
-	public static long ESFSPORTTYPEID_COLUMN_BITMASK = 16L;
-	public static long ESFUSERID_COLUMN_BITMASK = 32L;
-	public static long GROUPID_COLUMN_BITMASK = 64L;
-	public static long LEAVEDATE_COLUMN_BITMASK = 128L;
-	public static long UUID_COLUMN_BITMASK = 256L;
-	public static long ESFNATIONALDELGATIONID_COLUMN_BITMASK = 512L;
+	public static long ESFMATCHID_COLUMN_BITMASK = 1L;
+	public static long ESFPARTECIPANTTYPEID_COLUMN_BITMASK = 2L;
+	public static long ESFSHOOTERQUALIFICATIONID_COLUMN_BITMASK = 4L;
+	public static long ESFSPORTTYPEID_COLUMN_BITMASK = 8L;
+	public static long ESFUSERID_COLUMN_BITMASK = 16L;
+	public static long LEAVEDATE_COLUMN_BITMASK = 32L;
+	public static long ESFNATIONALDELGATIONID_COLUMN_BITMASK = 64L;
 	public static final long LOCK_EXPIRATION_TIME = GetterUtil.getLong(com.liferay.util.service.ServiceProps.get(
 				"lock.expiration.time.it.ethica.esf.model.ESFNationalDelegation"));
 
@@ -152,7 +145,6 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 	public Map<String, Object> getModelAttributes() {
 		Map<String, Object> attributes = new HashMap<String, Object>();
 
-		attributes.put("uuid", getUuid());
 		attributes.put("esfUserId", getEsfUserId());
 		attributes.put("groupId", getGroupId());
 		attributes.put("companyId", getCompanyId());
@@ -180,12 +172,6 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 
 	@Override
 	public void setModelAttributes(Map<String, Object> attributes) {
-		String uuid = (String)attributes.get("uuid");
-
-		if (uuid != null) {
-			setUuid(uuid);
-		}
-
 		Long esfUserId = (Long)attributes.get("esfUserId");
 
 		if (esfUserId != null) {
@@ -309,31 +295,6 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		}
 	}
 
-	@JSON
-	@Override
-	public String getUuid() {
-		if (_uuid == null) {
-			return StringPool.BLANK;
-		}
-		else {
-			return _uuid;
-		}
-	}
-
-	@Override
-	public void setUuid(String uuid) {
-		if (_originalUuid == null) {
-			_originalUuid = _uuid;
-		}
-
-		_uuid = uuid;
-	}
-
-	public String getOriginalUuid() {
-		return GetterUtil.getString(_originalUuid);
-	}
-
-	@JSON
 	@Override
 	public long getEsfUserId() {
 		return _esfUserId;
@@ -366,7 +327,6 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		return _originalEsfUserId;
 	}
 
-	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -374,22 +334,9 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 
 	@Override
 	public void setGroupId(long groupId) {
-		_columnBitmask |= GROUPID_COLUMN_BITMASK;
-
-		if (!_setOriginalGroupId) {
-			_setOriginalGroupId = true;
-
-			_originalGroupId = _groupId;
-		}
-
 		_groupId = groupId;
 	}
 
-	public long getOriginalGroupId() {
-		return _originalGroupId;
-	}
-
-	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -397,22 +344,9 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 
 	@Override
 	public void setCompanyId(long companyId) {
-		_columnBitmask |= COMPANYID_COLUMN_BITMASK;
-
-		if (!_setOriginalCompanyId) {
-			_setOriginalCompanyId = true;
-
-			_originalCompanyId = _companyId;
-		}
-
 		_companyId = companyId;
 	}
 
-	public long getOriginalCompanyId() {
-		return _originalCompanyId;
-	}
-
-	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -433,7 +367,6 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		_userUuid = userUuid;
 	}
 
-	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -449,7 +382,6 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		_userName = userName;
 	}
 
-	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -460,7 +392,6 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		_createDate = createDate;
 	}
 
-	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -471,7 +402,6 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		_modifiedDate = modifiedDate;
 	}
 
-	@JSON
 	@Override
 	public Date getLeaveDate() {
 		return _leaveDate;
@@ -492,7 +422,6 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		return _originalLeaveDate;
 	}
 
-	@JSON
 	@Override
 	public Date getReturnDate() {
 		return _returnDate;
@@ -503,7 +432,6 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		_returnDate = returnDate;
 	}
 
-	@JSON
 	@Override
 	public long getEsfMatchId() {
 		return _esfMatchId;
@@ -526,7 +454,6 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		return _originalEsfMatchId;
 	}
 
-	@JSON
 	@Override
 	public long getEsfSportTypeId() {
 		return _esfSportTypeId;
@@ -549,7 +476,6 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		return _originalEsfSportTypeId;
 	}
 
-	@JSON
 	@Override
 	public long getEsfShooterQualificationId() {
 		return _esfShooterQualificationId;
@@ -572,7 +498,6 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		return _originalEsfShooterQualificationId;
 	}
 
-	@JSON
 	@Override
 	public long getEsfGunId1() {
 		return _esfGunId1;
@@ -583,7 +508,6 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		_esfGunId1 = esfGunId1;
 	}
 
-	@JSON
 	@Override
 	public long getEsfGunId2() {
 		return _esfGunId2;
@@ -594,7 +518,6 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		_esfGunId2 = esfGunId2;
 	}
 
-	@JSON
 	@Override
 	public long getEsfNationalDelgationId() {
 		return _esfNationalDelgationId;
@@ -605,7 +528,6 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		_esfNationalDelgationId = esfNationalDelgationId;
 	}
 
-	@JSON
 	@Override
 	public long getEsfPartecipantTypeId() {
 		return _esfPartecipantTypeId;
@@ -628,7 +550,6 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		return _originalEsfPartecipantTypeId;
 	}
 
-	@JSON
 	@Override
 	public Date getNominationDate() {
 		return _nominationDate;
@@ -639,7 +560,6 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		_nominationDate = nominationDate;
 	}
 
-	@JSON
 	@Override
 	public Date getRefusalDate() {
 		return _refusalDate;
@@ -650,7 +570,6 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		_refusalDate = refusalDate;
 	}
 
-	@JSON
 	@Override
 	public long getTaskId() {
 		return _taskId;
@@ -661,7 +580,6 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 		_taskId = taskId;
 	}
 
-	@JSON
 	@Override
 	public String getRefusal() {
 		if (_refusal == null) {
@@ -675,12 +593,6 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 	@Override
 	public void setRefusal(String refusal) {
 		_refusal = refusal;
-	}
-
-	@Override
-	public StagedModelType getStagedModelType() {
-		return new StagedModelType(PortalUtil.getClassNameId(
-				ESFNationalDelegation.class.getName()));
 	}
 
 	public long getColumnBitmask() {
@@ -714,7 +626,6 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 	public Object clone() {
 		ESFNationalDelegationImpl esfNationalDelegationImpl = new ESFNationalDelegationImpl();
 
-		esfNationalDelegationImpl.setUuid(getUuid());
 		esfNationalDelegationImpl.setEsfUserId(getEsfUserId());
 		esfNationalDelegationImpl.setGroupId(getGroupId());
 		esfNationalDelegationImpl.setCompanyId(getCompanyId());
@@ -787,19 +698,9 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 	public void resetOriginalValues() {
 		ESFNationalDelegationModelImpl esfNationalDelegationModelImpl = this;
 
-		esfNationalDelegationModelImpl._originalUuid = esfNationalDelegationModelImpl._uuid;
-
 		esfNationalDelegationModelImpl._originalEsfUserId = esfNationalDelegationModelImpl._esfUserId;
 
 		esfNationalDelegationModelImpl._setOriginalEsfUserId = false;
-
-		esfNationalDelegationModelImpl._originalGroupId = esfNationalDelegationModelImpl._groupId;
-
-		esfNationalDelegationModelImpl._setOriginalGroupId = false;
-
-		esfNationalDelegationModelImpl._originalCompanyId = esfNationalDelegationModelImpl._companyId;
-
-		esfNationalDelegationModelImpl._setOriginalCompanyId = false;
 
 		esfNationalDelegationModelImpl._originalLeaveDate = esfNationalDelegationModelImpl._leaveDate;
 
@@ -825,14 +726,6 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 	@Override
 	public CacheModel<ESFNationalDelegation> toCacheModel() {
 		ESFNationalDelegationCacheModel esfNationalDelegationCacheModel = new ESFNationalDelegationCacheModel();
-
-		esfNationalDelegationCacheModel.uuid = getUuid();
-
-		String uuid = esfNationalDelegationCacheModel.uuid;
-
-		if ((uuid != null) && (uuid.length() == 0)) {
-			esfNationalDelegationCacheModel.uuid = null;
-		}
 
 		esfNationalDelegationCacheModel.esfUserId = getEsfUserId();
 
@@ -933,11 +826,9 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(43);
+		StringBundler sb = new StringBundler(41);
 
-		sb.append("{uuid=");
-		sb.append(getUuid());
-		sb.append(", esfUserId=");
+		sb.append("{esfUserId=");
 		sb.append(getEsfUserId());
 		sb.append(", groupId=");
 		sb.append(getGroupId());
@@ -984,16 +875,12 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(67);
+		StringBundler sb = new StringBundler(64);
 
 		sb.append("<model><model-name>");
 		sb.append("it.ethica.esf.model.ESFNationalDelegation");
 		sb.append("</model-name>");
 
-		sb.append(
-			"<column><column-name>uuid</column-name><column-value><![CDATA[");
-		sb.append(getUuid());
-		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>esfUserId</column-name><column-value><![CDATA[");
 		sb.append(getEsfUserId());
@@ -1084,18 +971,12 @@ public class ESFNationalDelegationModelImpl extends BaseModelImpl<ESFNationalDel
 	private static Class<?>[] _escapedModelInterfaces = new Class[] {
 			ESFNationalDelegation.class
 		};
-	private String _uuid;
-	private String _originalUuid;
 	private long _esfUserId;
 	private String _esfUserUuid;
 	private long _originalEsfUserId;
 	private boolean _setOriginalEsfUserId;
 	private long _groupId;
-	private long _originalGroupId;
-	private boolean _setOriginalGroupId;
 	private long _companyId;
-	private long _originalCompanyId;
-	private boolean _setOriginalCompanyId;
 	private long _userId;
 	private String _userUuid;
 	private String _userName;

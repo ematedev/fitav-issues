@@ -16,7 +16,6 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
@@ -54,7 +53,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFShooterQualificationModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFShooterQualificationModelImpl extends BaseModelImpl<ESFShooterQualification>
 	implements ESFShooterQualificationModel {
 	/*
@@ -231,7 +229,6 @@ public class ESFShooterQualificationModelImpl extends BaseModelImpl<ESFShooterQu
 		}
 	}
 
-	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -255,7 +252,6 @@ public class ESFShooterQualificationModelImpl extends BaseModelImpl<ESFShooterQu
 		return GetterUtil.getString(_originalUuid);
 	}
 
-	@JSON
 	@Override
 	public long getEsfShooterQualificationId() {
 		return _esfShooterQualificationId;
@@ -266,7 +262,6 @@ public class ESFShooterQualificationModelImpl extends BaseModelImpl<ESFShooterQu
 		_esfShooterQualificationId = esfShooterQualificationId;
 	}
 
-	@JSON
 	@Override
 	public String getName() {
 		if (_name == null) {
@@ -284,7 +279,6 @@ public class ESFShooterQualificationModelImpl extends BaseModelImpl<ESFShooterQu
 		_name = name;
 	}
 
-	@JSON
 	@Override
 	public boolean getIsJunior() {
 		return _isJunior;
@@ -300,7 +294,6 @@ public class ESFShooterQualificationModelImpl extends BaseModelImpl<ESFShooterQu
 		_isJunior = isJunior;
 	}
 
-	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -323,7 +316,6 @@ public class ESFShooterQualificationModelImpl extends BaseModelImpl<ESFShooterQu
 		return _originalGroupId;
 	}
 
-	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -346,7 +338,6 @@ public class ESFShooterQualificationModelImpl extends BaseModelImpl<ESFShooterQu
 		return _originalCompanyId;
 	}
 
-	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -367,7 +358,6 @@ public class ESFShooterQualificationModelImpl extends BaseModelImpl<ESFShooterQu
 		_userUuid = userUuid;
 	}
 
-	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -383,7 +373,6 @@ public class ESFShooterQualificationModelImpl extends BaseModelImpl<ESFShooterQu
 		_userName = userName;
 	}
 
-	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -394,7 +383,6 @@ public class ESFShooterQualificationModelImpl extends BaseModelImpl<ESFShooterQu
 		_createDate = createDate;
 	}
 
-	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -405,7 +393,6 @@ public class ESFShooterQualificationModelImpl extends BaseModelImpl<ESFShooterQu
 		_modifiedDate = modifiedDate;
 	}
 
-	@JSON
 	@Override
 	public String getDescription() {
 		if (_description == null) {
@@ -421,7 +408,6 @@ public class ESFShooterQualificationModelImpl extends BaseModelImpl<ESFShooterQu
 		_description = description;
 	}
 
-	@JSON
 	@Override
 	public String getCode() {
 		if (_code == null) {

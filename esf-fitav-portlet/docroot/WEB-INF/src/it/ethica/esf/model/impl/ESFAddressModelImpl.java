@@ -15,7 +15,6 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -50,7 +49,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFAddressModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFAddressModelImpl extends BaseModelImpl<ESFAddress>
 	implements ESFAddressModel {
 	/*
@@ -225,7 +223,6 @@ public class ESFAddressModelImpl extends BaseModelImpl<ESFAddress>
 		}
 	}
 
-	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -249,7 +246,6 @@ public class ESFAddressModelImpl extends BaseModelImpl<ESFAddress>
 		return GetterUtil.getString(_originalUuid);
 	}
 
-	@JSON
 	@Override
 	public long getEsfAddressId() {
 		return _esfAddressId;
@@ -260,7 +256,6 @@ public class ESFAddressModelImpl extends BaseModelImpl<ESFAddress>
 		_esfAddressId = esfAddressId;
 	}
 
-	@JSON
 	@Override
 	public double getLongitude() {
 		return _longitude;
@@ -283,7 +278,6 @@ public class ESFAddressModelImpl extends BaseModelImpl<ESFAddress>
 		return _originalLongitude;
 	}
 
-	@JSON
 	@Override
 	public double getLatitude() {
 		return _latitude;
@@ -306,7 +300,6 @@ public class ESFAddressModelImpl extends BaseModelImpl<ESFAddress>
 		return _originalLatitude;
 	}
 
-	@JSON
 	@Override
 	public String getEsfCountryId() {
 		if (_esfCountryId == null) {
@@ -322,7 +315,6 @@ public class ESFAddressModelImpl extends BaseModelImpl<ESFAddress>
 		_esfCountryId = esfCountryId;
 	}
 
-	@JSON
 	@Override
 	public String getEsfRegionId() {
 		if (_esfRegionId == null) {
@@ -338,7 +330,6 @@ public class ESFAddressModelImpl extends BaseModelImpl<ESFAddress>
 		_esfRegionId = esfRegionId;
 	}
 
-	@JSON
 	@Override
 	public String getEsfProvinceId() {
 		if (_esfProvinceId == null) {
@@ -354,7 +345,6 @@ public class ESFAddressModelImpl extends BaseModelImpl<ESFAddress>
 		_esfProvinceId = esfProvinceId;
 	}
 
-	@JSON
 	@Override
 	public long getEsfCityId() {
 		return _esfCityId;
@@ -365,7 +355,6 @@ public class ESFAddressModelImpl extends BaseModelImpl<ESFAddress>
 		_esfCityId = esfCityId;
 	}
 
-	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -388,7 +377,6 @@ public class ESFAddressModelImpl extends BaseModelImpl<ESFAddress>
 		return _originalGroupId;
 	}
 
-	@JSON
 	@Override
 	public String getType() {
 		if (_type == null) {
@@ -404,7 +392,6 @@ public class ESFAddressModelImpl extends BaseModelImpl<ESFAddress>
 		_type = type;
 	}
 
-	@JSON
 	@Override
 	public boolean getIsNotNational() {
 		return _isNotNational;
@@ -420,7 +407,6 @@ public class ESFAddressModelImpl extends BaseModelImpl<ESFAddress>
 		_isNotNational = isNotNational;
 	}
 
-	@JSON
 	@Override
 	public int getListTypeId() {
 		return _listTypeId;

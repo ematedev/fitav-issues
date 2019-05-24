@@ -58,21 +58,6 @@ public interface ESFCodeOrgModel extends BaseModel<ESFCodeOrg> {
 	public void setPrimaryKey(long primaryKey);
 
 	/**
-	 * Returns the uuid of this e s f code org.
-	 *
-	 * @return the uuid of this e s f code org
-	 */
-	@AutoEscape
-	public String getUuid();
-
-	/**
-	 * Sets the uuid of this e s f code org.
-	 *
-	 * @param uuid the uuid of this e s f code org
-	 */
-	public void setUuid(String uuid);
-
-	/**
 	 * Returns the esf code org ID of this e s f code org.
 	 *
 	 * @return the esf code org ID of this e s f code org

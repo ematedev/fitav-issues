@@ -14,13 +14,6 @@
 
 package it.ethica.esf.service.http;
 
-import com.liferay.portal.kernel.log.Log;
-import com.liferay.portal.kernel.log.LogFactoryUtil;
-
-import it.ethica.esf.service.ESFFederalRoleServiceUtil;
-
-import java.rmi.RemoteException;
-
 /**
  * Provides the SOAP utility for the
  * {@link it.ethica.esf.service.ESFFederalRoleServiceUtil} service utility. The
@@ -62,50 +55,4 @@ import java.rmi.RemoteException;
  * @generated
  */
 public class ESFFederalRoleServiceSoap {
-	public static it.ethica.esf.model.ESFFederalRoleSoap updateEsfFederalRole(
-		long esfFederalRoleId, java.lang.String name,
-		java.lang.String description, boolean regional, boolean provincial)
-		throws RemoteException {
-		try {
-			it.ethica.esf.model.ESFFederalRole returnValue = ESFFederalRoleServiceUtil.updateEsfFederalRole(esfFederalRoleId,
-					name, description, regional, provincial);
-
-			return it.ethica.esf.model.ESFFederalRoleSoap.toSoapModel(returnValue);
-		}
-		catch (Exception e) {
-			_log.error(e, e);
-
-			throw new RemoteException(e.getMessage());
-		}
-	}
-
-	public static it.ethica.esf.model.ESFSpecificSoap[] getFederalRoleSpecifics(
-		long esfFederalRoleId) throws RemoteException {
-		try {
-			java.util.List<it.ethica.esf.model.ESFSpecific> returnValue = ESFFederalRoleServiceUtil.getFederalRoleSpecifics(esfFederalRoleId);
-
-			return it.ethica.esf.model.ESFSpecificSoap.toSoapModels(returnValue);
-		}
-		catch (Exception e) {
-			_log.error(e, e);
-
-			throw new RemoteException(e.getMessage());
-		}
-	}
-
-	public static it.ethica.esf.model.ESFFederalRoleSoap[] findByCode(
-		java.lang.String name) throws RemoteException {
-		try {
-			java.util.List<it.ethica.esf.model.ESFFederalRole> returnValue = ESFFederalRoleServiceUtil.findByCode(name);
-
-			return it.ethica.esf.model.ESFFederalRoleSoap.toSoapModels(returnValue);
-		}
-		catch (Exception e) {
-			_log.error(e, e);
-
-			throw new RemoteException(e.getMessage());
-		}
-	}
-
-	private static Log _log = LogFactoryUtil.getLog(ESFFederalRoleServiceSoap.class);
 }

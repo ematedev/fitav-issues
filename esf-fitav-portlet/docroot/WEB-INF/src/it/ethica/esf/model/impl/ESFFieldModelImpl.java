@@ -16,7 +16,6 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
@@ -54,7 +53,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFFieldModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFFieldModelImpl extends BaseModelImpl<ESFField>
 	implements ESFFieldModel {
 	/*
@@ -92,10 +90,10 @@ public class ESFFieldModelImpl extends BaseModelImpl<ESFField>
 	public static final String TX_MANAGER = "liferayTransactionManager";
 	public static final boolean ENTITY_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.entity.cache.enabled.it.ethica.esf.model.ESFField"),
-			true);
+			false);
 	public static final boolean FINDER_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.finder.cache.enabled.it.ethica.esf.model.ESFField"),
-			true);
+			false);
 	public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.column.bitmask.enabled.it.ethica.esf.model.ESFField"),
 			true);
@@ -278,7 +276,6 @@ public class ESFFieldModelImpl extends BaseModelImpl<ESFField>
 		}
 	}
 
-	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -302,7 +299,6 @@ public class ESFFieldModelImpl extends BaseModelImpl<ESFField>
 		return GetterUtil.getString(_originalUuid);
 	}
 
-	@JSON
 	@Override
 	public long getEsfFieldId() {
 		return _esfFieldId;
@@ -313,7 +309,6 @@ public class ESFFieldModelImpl extends BaseModelImpl<ESFField>
 		_esfFieldId = esfFieldId;
 	}
 
-	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -336,7 +331,6 @@ public class ESFFieldModelImpl extends BaseModelImpl<ESFField>
 		return _originalGroupId;
 	}
 
-	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -359,7 +353,6 @@ public class ESFFieldModelImpl extends BaseModelImpl<ESFField>
 		return _originalCompanyId;
 	}
 
-	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -380,7 +373,6 @@ public class ESFFieldModelImpl extends BaseModelImpl<ESFField>
 		_userUuid = userUuid;
 	}
 
-	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -396,7 +388,6 @@ public class ESFFieldModelImpl extends BaseModelImpl<ESFField>
 		_userName = userName;
 	}
 
-	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -407,7 +398,6 @@ public class ESFFieldModelImpl extends BaseModelImpl<ESFField>
 		_createDate = createDate;
 	}
 
-	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -418,7 +408,6 @@ public class ESFFieldModelImpl extends BaseModelImpl<ESFField>
 		_modifiedDate = modifiedDate;
 	}
 
-	@JSON
 	@Override
 	public String getName() {
 		if (_name == null) {
@@ -444,7 +433,6 @@ public class ESFFieldModelImpl extends BaseModelImpl<ESFField>
 		return GetterUtil.getString(_originalName);
 	}
 
-	@JSON
 	@Override
 	public long getOwnerOrganizationId() {
 		return _ownerOrganizationId;
@@ -467,7 +455,6 @@ public class ESFFieldModelImpl extends BaseModelImpl<ESFField>
 		return _originalOwnerOrganizationId;
 	}
 
-	@JSON
 	@Override
 	public long getEsfAddressId() {
 		return _esfAddressId;
@@ -478,7 +465,6 @@ public class ESFFieldModelImpl extends BaseModelImpl<ESFField>
 		_esfAddressId = esfAddressId;
 	}
 
-	@JSON
 	@Override
 	public long getBillboard() {
 		return _billboard;
@@ -489,7 +475,6 @@ public class ESFFieldModelImpl extends BaseModelImpl<ESFField>
 		_billboard = billboard;
 	}
 
-	@JSON
 	@Override
 	public boolean getBillboardStations() {
 		return _billboardStations;
@@ -505,7 +490,6 @@ public class ESFFieldModelImpl extends BaseModelImpl<ESFField>
 		_billboardStations = billboardStations;
 	}
 
-	@JSON
 	@Override
 	public boolean getBackgroundRampart() {
 		return _backgroundRampart;
@@ -521,7 +505,6 @@ public class ESFFieldModelImpl extends BaseModelImpl<ESFField>
 		_backgroundRampart = backgroundRampart;
 	}
 
-	@JSON
 	@Override
 	public boolean getBackgroundNet() {
 		return _backgroundNet;
@@ -537,7 +520,6 @@ public class ESFFieldModelImpl extends BaseModelImpl<ESFField>
 		_backgroundNet = backgroundNet;
 	}
 
-	@JSON
 	@Override
 	public boolean getBackgroundLeadRecovery() {
 		return _backgroundLeadRecovery;
@@ -553,7 +535,6 @@ public class ESFFieldModelImpl extends BaseModelImpl<ESFField>
 		_backgroundLeadRecovery = backgroundLeadRecovery;
 	}
 
-	@JSON
 	@Override
 	public boolean getDisabledAccess() {
 		return _disabledAccess;
@@ -569,7 +550,6 @@ public class ESFFieldModelImpl extends BaseModelImpl<ESFField>
 		_disabledAccess = disabledAccess;
 	}
 
-	@JSON
 	@Override
 	public String getNote() {
 		if (_note == null) {

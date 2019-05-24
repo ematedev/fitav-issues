@@ -18,6 +18,8 @@ import javax.portlet.ResourceRequest;
 import javax.portlet.ResourceResponse;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.poi.ss.usermodel.DataFormat;
+
 import com.liferay.counter.service.CounterLocalServiceUtil;
 import com.liferay.portal.ContactBirthdayException;
 import com.liferay.portal.kernel.exception.PortalException;
@@ -55,6 +57,7 @@ import it.ethica.esf.model.ESFUserESFFederalRole;
 import it.ethica.esf.model.ESFUserESFUserRole;
 import it.ethica.esf.model.ESFUserRole;
 import it.ethica.esf.model.ESFgunUser;
+import it.ethica.esf.model.VW_ESFIncarichiFederali;
 import it.ethica.esf.model.impl.ESFCaneImpl;
 import it.ethica.esf.model.impl.ESFCardImpl;
 import it.ethica.esf.model.impl.ESFEntityStateImpl;
@@ -74,7 +77,9 @@ import it.ethica.esf.service.ESFUserESFUserRoleLocalServiceUtil;
 import it.ethica.esf.service.ESFUserLocalServiceUtil;
 import it.ethica.esf.service.ESFUserRoleLocalServiceUtil;
 import it.ethica.esf.service.ESFgunUserLocalServiceUtil;
+import it.ethica.esf.service.VW_ESFIncarichiFederaliLocalServiceUtil;
 import it.ethica.esf.service.persistence.ESFUserESFUserRolePK;
+import it.ethica.esf.util.DateUtilFormatter;
 import it.ethica.esf.util.ESFJsonUtil;
 import it.ethica.esf.util.ESFKeys;
 import it.ethica.esf.util.ESFServiceUtil;
@@ -91,6 +96,37 @@ public class ESFShooterPortlet extends MVCPortlet {
 	public void render(RenderRequest request, RenderResponse response)
 		throws IOException, PortletException {
 
+//		carica la lista degli incarichi attivi del tiratore selezionato
+//		carica la lista dello storicho incarichi terminati del tiratore selezionato
+//		controllo errori da gestire 
+//		try {
+//			getIncarichiFederaliAttivi(request, response);
+//		} catch (SystemException e1) {
+//			e1.printStackTrace();
+//		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		getEsfFederalRoles(request, response);
 		getAssociatedEsfFederalRoles(request, response);
 		String from = ParamUtil.getString(request, "from");
@@ -1141,6 +1177,23 @@ public class ESFShooterPortlet extends MVCPortlet {
 		actionResponse.setRenderParameter("mvcPath", "/html/esfshooter/edit_esfShooter.jsp");
 		actionResponse.setRenderParameter("esfUserId", String.valueOf(esfUserId));
 	}
+	
+	
+//	private void getIncarichiFederaliAttivi (RenderRequest request, RenderResponse response) throws SystemException{
+//		long esfUserId = ParamUtil.getLong(request,"esfUserId");
+//		int totaleIncarichiAttivi = 0;
+//		List<VW_ESFIncarichiFederali> listaIncarichiAttivi = new ArrayList<VW_ESFIncarichiFederali>();
+//		try {
+//			listaIncarichiAttivi = VW_ESFIncarichiFederaliLocalServiceUtil.getListaIncarichifindBylistaIncarichi(esfUserId, ESFKeys.EsfFederalRole.INCARICO_ATTIVO);
+//			totaleIncarichiAttivi = VW_ESFIncarichiFederaliLocalServiceUtil.getVW_ESFIncarichiFederalisCount();
+//		} catch (SystemException e) {
+//			_log.fatal(e.getMessage());
+//		}
+//		
+//		request.setAttribute("esfUserId", esfUserId);
+//		request.setAttribute("listaIncarichiAttivi", listaIncarichiAttivi);
+//		request.setAttribute("totaleIncarichiAttivi", totaleIncarichiAttivi);
+//	}
 
 	public void getAssociatedEsfFederalRoles(RenderRequest request, RenderResponse response){
 		long esfUserId = ParamUtil.getLong(request, "esfUserId", -1);
@@ -1182,7 +1235,7 @@ public class ESFShooterPortlet extends MVCPortlet {
 		long startDate = Calendar.getInstance().getTimeInMillis();
 		if(esfUserId > 0 && esfFederalRoleId > 0){
 			try {
-				ESFFederalRoleLocalServiceUtil.associateEsfUser(esfUserId, esfFederalRoleId, startDate, esfSpecificId, notes);
+				ESFFederalRoleLocalServiceUtil.associateEsfUser(esfUserId, esfFederalRoleId, startDate, Calendar.getInstance().getTime(),esfSpecificId, notes);
 			} catch (SystemException e) {
 				_log.fatal(e.getMessage());
 			}
@@ -1194,6 +1247,21 @@ public class ESFShooterPortlet extends MVCPortlet {
 		response.setRenderParameter("mvcPath", mvcPath);
 	}
 
+	public void deleteEsfUserEsfFederalRole(ActionRequest request, ActionResponse response){
+		long esfUserId = ParamUtil.getLong(request, "esfUserId", -1);
+		long esfFederalRoleId = ParamUtil.getLong(request, "esfFederalRoleId", -1);
+		String mvcPath = ParamUtil.getString(request, "mvcPath");
+		if(esfUserId > 0 && esfFederalRoleId > 0){
+			try {
+				ESFFederalRoleLocalServiceUtil.deleteEsfUserEsfFederalRole(esfUserId, esfFederalRoleId);
+			} catch (SystemException e) {
+				_log.fatal(e.getMessage());
+			}
+		}
+		response.setRenderParameter("esfUserId", String.valueOf(esfUserId));
+		response.setRenderParameter("mvcPath", mvcPath);
+	}
+	
 	public void deAssociateEsfFederalRole(ActionRequest request, ActionResponse response){
 		long esfUserId = ParamUtil.getLong(request, "esfUserId", -1);
 		long esfFederalRoleId = ParamUtil.getLong(request, "esfFederalRoleId", -1);

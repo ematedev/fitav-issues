@@ -73,7 +73,6 @@ public class ESFPartecipantTypeClp extends BaseModelImpl<ESFPartecipantType>
 	public Map<String, Object> getModelAttributes() {
 		Map<String, Object> attributes = new HashMap<String, Object>();
 
-		attributes.put("uuid", getUuid());
 		attributes.put("esfPartecipantTypeId", getEsfPartecipantTypeId());
 		attributes.put("name", getName());
 
@@ -82,12 +81,6 @@ public class ESFPartecipantTypeClp extends BaseModelImpl<ESFPartecipantType>
 
 	@Override
 	public void setModelAttributes(Map<String, Object> attributes) {
-		String uuid = (String)attributes.get("uuid");
-
-		if (uuid != null) {
-			setUuid(uuid);
-		}
-
 		Long esfPartecipantTypeId = (Long)attributes.get("esfPartecipantTypeId");
 
 		if (esfPartecipantTypeId != null) {
@@ -98,29 +91,6 @@ public class ESFPartecipantTypeClp extends BaseModelImpl<ESFPartecipantType>
 
 		if (name != null) {
 			setName(name);
-		}
-	}
-
-	@Override
-	public String getUuid() {
-		return _uuid;
-	}
-
-	@Override
-	public void setUuid(String uuid) {
-		_uuid = uuid;
-
-		if (_esfPartecipantTypeRemoteModel != null) {
-			try {
-				Class<?> clazz = _esfPartecipantTypeRemoteModel.getClass();
-
-				Method method = clazz.getMethod("setUuid", String.class);
-
-				method.invoke(_esfPartecipantTypeRemoteModel, uuid);
-			}
-			catch (Exception e) {
-				throw new UnsupportedOperationException(e);
-			}
 		}
 	}
 
@@ -243,7 +213,6 @@ public class ESFPartecipantTypeClp extends BaseModelImpl<ESFPartecipantType>
 	public Object clone() {
 		ESFPartecipantTypeClp clone = new ESFPartecipantTypeClp();
 
-		clone.setUuid(getUuid());
 		clone.setEsfPartecipantTypeId(getEsfPartecipantTypeId());
 		clone.setName(getName());
 
@@ -298,11 +267,9 @@ public class ESFPartecipantTypeClp extends BaseModelImpl<ESFPartecipantType>
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(7);
+		StringBundler sb = new StringBundler(5);
 
-		sb.append("{uuid=");
-		sb.append(getUuid());
-		sb.append(", esfPartecipantTypeId=");
+		sb.append("{esfPartecipantTypeId=");
 		sb.append(getEsfPartecipantTypeId());
 		sb.append(", name=");
 		sb.append(getName());
@@ -313,16 +280,12 @@ public class ESFPartecipantTypeClp extends BaseModelImpl<ESFPartecipantType>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(13);
+		StringBundler sb = new StringBundler(10);
 
 		sb.append("<model><model-name>");
 		sb.append("it.ethica.esf.model.ESFPartecipantType");
 		sb.append("</model-name>");
 
-		sb.append(
-			"<column><column-name>uuid</column-name><column-value><![CDATA[");
-		sb.append(getUuid());
-		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>esfPartecipantTypeId</column-name><column-value><![CDATA[");
 		sb.append(getEsfPartecipantTypeId());
@@ -337,7 +300,6 @@ public class ESFPartecipantTypeClp extends BaseModelImpl<ESFPartecipantType>
 		return sb.toString();
 	}
 
-	private String _uuid;
 	private long _esfPartecipantTypeId;
 	private String _name;
 	private BaseModel<?> _esfPartecipantTypeRemoteModel;

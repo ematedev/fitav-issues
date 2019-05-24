@@ -87,13 +87,7 @@
 	name="<portlet:namespace />fm">
 
 		<aui:fieldset>
-<<<<<<< HEAD
 		<% String startDate = DateUtilFormatter.formatDate( DateUtilFormatter.DEFAULT_DATE_FORMAT_ENG, assegnazioneDirettoreDiTiro.getEsfStartData() ); %>
-=======
-		<%
-				String	startDate = DateUtilFormatter.getEngFormatter().format(assegnazioneDirettoreDiTiro.getEsfStartData());
-		%>
->>>>>>> refs/remotes/origin/master
 		<aui:script>
 		$(function() {
 			$("#<portlet:namespace/>startDate").datepicker();

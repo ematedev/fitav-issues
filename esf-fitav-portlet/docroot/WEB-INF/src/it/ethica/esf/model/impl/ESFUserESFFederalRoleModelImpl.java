@@ -16,7 +16,6 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -50,7 +49,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFUserESFFederalRoleModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFUserESFFederalRoleModelImpl extends BaseModelImpl<ESFUserESFFederalRole>
 	implements ESFUserESFFederalRoleModel {
 	/*
@@ -212,7 +210,6 @@ public class ESFUserESFFederalRoleModelImpl extends BaseModelImpl<ESFUserESFFede
 		}
 	}
 
-	@JSON
 	@Override
 	public long getEsfUserId() {
 		return _esfUserId;
@@ -245,7 +242,6 @@ public class ESFUserESFFederalRoleModelImpl extends BaseModelImpl<ESFUserESFFede
 		return _originalEsfUserId;
 	}
 
-	@JSON
 	@Override
 	public long getEsfFederalRoleId() {
 		return _esfFederalRoleId;
@@ -268,7 +264,6 @@ public class ESFUserESFFederalRoleModelImpl extends BaseModelImpl<ESFUserESFFede
 		return _originalEsfFederalRoleId;
 	}
 
-	@JSON
 	@Override
 	public long getStartDate() {
 		return _startDate;
@@ -279,7 +274,6 @@ public class ESFUserESFFederalRoleModelImpl extends BaseModelImpl<ESFUserESFFede
 		_startDate = startDate;
 	}
 
-	@JSON
 	@Override
 	public Date getEndDate() {
 		return _endDate;
@@ -290,7 +284,6 @@ public class ESFUserESFFederalRoleModelImpl extends BaseModelImpl<ESFUserESFFede
 		_endDate = endDate;
 	}
 
-	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -301,7 +294,6 @@ public class ESFUserESFFederalRoleModelImpl extends BaseModelImpl<ESFUserESFFede
 		_modifiedDate = modifiedDate;
 	}
 
-	@JSON
 	@Override
 	public boolean getActive() {
 		return _active;
@@ -329,7 +321,6 @@ public class ESFUserESFFederalRoleModelImpl extends BaseModelImpl<ESFUserESFFede
 		return _originalActive;
 	}
 
-	@JSON
 	@Override
 	public long getEsfSpecificId() {
 		return _esfSpecificId;
@@ -340,7 +331,6 @@ public class ESFUserESFFederalRoleModelImpl extends BaseModelImpl<ESFUserESFFede
 		_esfSpecificId = esfSpecificId;
 	}
 
-	@JSON
 	@Override
 	public String getRegionId() {
 		if (_regionId == null) {
@@ -356,7 +346,6 @@ public class ESFUserESFFederalRoleModelImpl extends BaseModelImpl<ESFUserESFFede
 		_regionId = regionId;
 	}
 
-	@JSON
 	@Override
 	public String getProvinceId() {
 		if (_provinceId == null) {
@@ -372,7 +361,6 @@ public class ESFUserESFFederalRoleModelImpl extends BaseModelImpl<ESFUserESFFede
 		_provinceId = provinceId;
 	}
 
-	@JSON
 	@Override
 	public String getNotes() {
 		if (_notes == null) {

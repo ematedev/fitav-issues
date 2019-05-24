@@ -16,7 +16,6 @@ package it.ethica.esf.model;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.model.BaseModel;
@@ -76,7 +75,6 @@ public class ESFNationalDelegationClp extends BaseModelImpl<ESFNationalDelegatio
 	public Map<String, Object> getModelAttributes() {
 		Map<String, Object> attributes = new HashMap<String, Object>();
 
-		attributes.put("uuid", getUuid());
 		attributes.put("esfUserId", getEsfUserId());
 		attributes.put("groupId", getGroupId());
 		attributes.put("companyId", getCompanyId());
@@ -104,12 +102,6 @@ public class ESFNationalDelegationClp extends BaseModelImpl<ESFNationalDelegatio
 
 	@Override
 	public void setModelAttributes(Map<String, Object> attributes) {
-		String uuid = (String)attributes.get("uuid");
-
-		if (uuid != null) {
-			setUuid(uuid);
-		}
-
 		Long esfUserId = (Long)attributes.get("esfUserId");
 
 		if (esfUserId != null) {
@@ -230,29 +222,6 @@ public class ESFNationalDelegationClp extends BaseModelImpl<ESFNationalDelegatio
 
 		if (refusal != null) {
 			setRefusal(refusal);
-		}
-	}
-
-	@Override
-	public String getUuid() {
-		return _uuid;
-	}
-
-	@Override
-	public void setUuid(String uuid) {
-		_uuid = uuid;
-
-		if (_esfNationalDelegationRemoteModel != null) {
-			try {
-				Class<?> clazz = _esfNationalDelegationRemoteModel.getClass();
-
-				Method method = clazz.getMethod("setUuid", String.class);
-
-				method.invoke(_esfNationalDelegationRemoteModel, uuid);
-			}
-			catch (Exception e) {
-				throw new UnsupportedOperationException(e);
-			}
 		}
 	}
 
@@ -742,12 +711,6 @@ public class ESFNationalDelegationClp extends BaseModelImpl<ESFNationalDelegatio
 		}
 	}
 
-	@Override
-	public StagedModelType getStagedModelType() {
-		return new StagedModelType(PortalUtil.getClassNameId(
-				ESFNationalDelegation.class.getName()));
-	}
-
 	public BaseModel<?> getESFNationalDelegationRemoteModel() {
 		return _esfNationalDelegationRemoteModel;
 	}
@@ -819,7 +782,6 @@ public class ESFNationalDelegationClp extends BaseModelImpl<ESFNationalDelegatio
 	public Object clone() {
 		ESFNationalDelegationClp clone = new ESFNationalDelegationClp();
 
-		clone.setUuid(getUuid());
 		clone.setEsfUserId(getEsfUserId());
 		clone.setGroupId(getGroupId());
 		clone.setCompanyId(getCompanyId());
@@ -892,11 +854,9 @@ public class ESFNationalDelegationClp extends BaseModelImpl<ESFNationalDelegatio
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(43);
+		StringBundler sb = new StringBundler(41);
 
-		sb.append("{uuid=");
-		sb.append(getUuid());
-		sb.append(", esfUserId=");
+		sb.append("{esfUserId=");
 		sb.append(getEsfUserId());
 		sb.append(", groupId=");
 		sb.append(getGroupId());
@@ -943,16 +903,12 @@ public class ESFNationalDelegationClp extends BaseModelImpl<ESFNationalDelegatio
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(67);
+		StringBundler sb = new StringBundler(64);
 
 		sb.append("<model><model-name>");
 		sb.append("it.ethica.esf.model.ESFNationalDelegation");
 		sb.append("</model-name>");
 
-		sb.append(
-			"<column><column-name>uuid</column-name><column-value><![CDATA[");
-		sb.append(getUuid());
-		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>esfUserId</column-name><column-value><![CDATA[");
 		sb.append(getEsfUserId());
@@ -1039,7 +995,6 @@ public class ESFNationalDelegationClp extends BaseModelImpl<ESFNationalDelegatio
 		return sb.toString();
 	}
 
-	private String _uuid;
 	private long _esfUserId;
 	private String _esfUserUuid;
 	private long _groupId;

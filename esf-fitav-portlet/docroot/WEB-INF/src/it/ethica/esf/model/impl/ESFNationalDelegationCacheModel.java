@@ -38,11 +38,9 @@ public class ESFNationalDelegationCacheModel implements CacheModel<ESFNationalDe
 	Externalizable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(43);
+		StringBundler sb = new StringBundler(41);
 
-		sb.append("{uuid=");
-		sb.append(uuid);
-		sb.append(", esfUserId=");
+		sb.append("{esfUserId=");
 		sb.append(esfUserId);
 		sb.append(", groupId=");
 		sb.append(groupId);
@@ -90,13 +88,6 @@ public class ESFNationalDelegationCacheModel implements CacheModel<ESFNationalDe
 	@Override
 	public ESFNationalDelegation toEntityModel() {
 		ESFNationalDelegationImpl esfNationalDelegationImpl = new ESFNationalDelegationImpl();
-
-		if (uuid == null) {
-			esfNationalDelegationImpl.setUuid(StringPool.BLANK);
-		}
-		else {
-			esfNationalDelegationImpl.setUuid(uuid);
-		}
 
 		esfNationalDelegationImpl.setEsfUserId(esfUserId);
 		esfNationalDelegationImpl.setGroupId(groupId);
@@ -176,7 +167,6 @@ public class ESFNationalDelegationCacheModel implements CacheModel<ESFNationalDe
 
 	@Override
 	public void readExternal(ObjectInput objectInput) throws IOException {
-		uuid = objectInput.readUTF();
 		esfUserId = objectInput.readLong();
 		groupId = objectInput.readLong();
 		companyId = objectInput.readLong();
@@ -202,13 +192,6 @@ public class ESFNationalDelegationCacheModel implements CacheModel<ESFNationalDe
 	@Override
 	public void writeExternal(ObjectOutput objectOutput)
 		throws IOException {
-		if (uuid == null) {
-			objectOutput.writeUTF(StringPool.BLANK);
-		}
-		else {
-			objectOutput.writeUTF(uuid);
-		}
-
 		objectOutput.writeLong(esfUserId);
 		objectOutput.writeLong(groupId);
 		objectOutput.writeLong(companyId);
@@ -244,7 +227,6 @@ public class ESFNationalDelegationCacheModel implements CacheModel<ESFNationalDe
 		}
 	}
 
-	public String uuid;
 	public long esfUserId;
 	public long groupId;
 	public long companyId;

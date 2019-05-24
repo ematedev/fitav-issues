@@ -16,7 +16,6 @@ package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
@@ -54,7 +53,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFUnitserviceModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFUnitserviceModelImpl extends BaseModelImpl<ESFUnitservice>
 	implements ESFUnitserviceModel {
 	/*
@@ -204,7 +202,6 @@ public class ESFUnitserviceModelImpl extends BaseModelImpl<ESFUnitservice>
 		}
 	}
 
-	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -228,7 +225,6 @@ public class ESFUnitserviceModelImpl extends BaseModelImpl<ESFUnitservice>
 		return GetterUtil.getString(_originalUuid);
 	}
 
-	@JSON
 	@Override
 	public long getEsfUnitserviceId() {
 		return _esfUnitserviceId;
@@ -239,7 +235,6 @@ public class ESFUnitserviceModelImpl extends BaseModelImpl<ESFUnitservice>
 		_esfUnitserviceId = esfUnitserviceId;
 	}
 
-	@JSON
 	@Override
 	public String getDescription() {
 		if (_description == null) {
@@ -265,7 +260,6 @@ public class ESFUnitserviceModelImpl extends BaseModelImpl<ESFUnitservice>
 		return GetterUtil.getString(_originalDescription);
 	}
 
-	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -288,7 +282,6 @@ public class ESFUnitserviceModelImpl extends BaseModelImpl<ESFUnitservice>
 		return _originalGroupId;
 	}
 
-	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -311,7 +304,6 @@ public class ESFUnitserviceModelImpl extends BaseModelImpl<ESFUnitservice>
 		return _originalCompanyId;
 	}
 
-	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -332,7 +324,6 @@ public class ESFUnitserviceModelImpl extends BaseModelImpl<ESFUnitservice>
 		_userUuid = userUuid;
 	}
 
-	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -348,7 +339,6 @@ public class ESFUnitserviceModelImpl extends BaseModelImpl<ESFUnitservice>
 		_userName = userName;
 	}
 
-	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -359,7 +349,6 @@ public class ESFUnitserviceModelImpl extends BaseModelImpl<ESFUnitservice>
 		_createDate = createDate;
 	}
 
-	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;

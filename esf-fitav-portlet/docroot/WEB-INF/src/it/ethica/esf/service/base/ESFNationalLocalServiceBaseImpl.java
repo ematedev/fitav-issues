@@ -312,34 +312,6 @@ public abstract class ESFNationalLocalServiceBaseImpl
 	}
 
 	/**
-	 * Returns the e s f national with the matching UUID and company.
-	 *
-	 * @param uuid the e s f national's UUID
-	 * @param  companyId the primary key of the company
-	 * @return the matching e s f national, or <code>null</code> if a matching e s f national could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	@Override
-	public ESFNational fetchESFNationalByUuidAndCompanyId(String uuid,
-		long companyId) throws SystemException {
-		return esfNationalPersistence.fetchByUuid_C_First(uuid, companyId, null);
-	}
-
-	/**
-	 * Returns the e s f national matching the UUID and group.
-	 *
-	 * @param uuid the e s f national's UUID
-	 * @param groupId the primary key of the group
-	 * @return the matching e s f national, or <code>null</code> if a matching e s f national could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	@Override
-	public ESFNational fetchESFNationalByUuidAndGroupId(String uuid,
-		long groupId) throws SystemException {
-		return esfNationalPersistence.fetchByUUID_G(uuid, groupId);
-	}
-
-	/**
 	 * Returns the e s f national with the primary key.
 	 *
 	 * @param esfNationalId the primary key of the e s f national
@@ -357,36 +329,6 @@ public abstract class ESFNationalLocalServiceBaseImpl
 	public PersistedModel getPersistedModel(Serializable primaryKeyObj)
 		throws PortalException, SystemException {
 		return esfNationalPersistence.findByPrimaryKey(primaryKeyObj);
-	}
-
-	/**
-	 * Returns the e s f national with the matching UUID and company.
-	 *
-	 * @param uuid the e s f national's UUID
-	 * @param  companyId the primary key of the company
-	 * @return the matching e s f national
-	 * @throws PortalException if a matching e s f national could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	@Override
-	public ESFNational getESFNationalByUuidAndCompanyId(String uuid,
-		long companyId) throws PortalException, SystemException {
-		return esfNationalPersistence.findByUuid_C_First(uuid, companyId, null);
-	}
-
-	/**
-	 * Returns the e s f national matching the UUID and group.
-	 *
-	 * @param uuid the e s f national's UUID
-	 * @param groupId the primary key of the group
-	 * @return the matching e s f national
-	 * @throws PortalException if a matching e s f national could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	@Override
-	public ESFNational getESFNationalByUuidAndGroupId(String uuid, long groupId)
-		throws PortalException, SystemException {
-		return esfNationalPersistence.findByUUID_G(uuid, groupId);
 	}
 
 	/**

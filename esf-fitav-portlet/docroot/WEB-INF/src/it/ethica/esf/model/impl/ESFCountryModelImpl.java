@@ -15,7 +15,6 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
-import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
@@ -46,7 +45,6 @@ import java.util.Map;
  * @see it.ethica.esf.model.ESFCountryModel
  * @generated
  */
-@JSON(strict = true)
 public class ESFCountryModelImpl extends BaseModelImpl<ESFCountry>
 	implements ESFCountryModel {
 	/*
@@ -134,7 +132,6 @@ public class ESFCountryModelImpl extends BaseModelImpl<ESFCountry>
 		}
 	}
 
-	@JSON
 	@Override
 	public String getIdCountry() {
 		if (_idCountry == null) {
@@ -150,7 +147,6 @@ public class ESFCountryModelImpl extends BaseModelImpl<ESFCountry>
 		_idCountry = idCountry;
 	}
 
-	@JSON
 	@Override
 	public String getName() {
 		if (_name == null) {

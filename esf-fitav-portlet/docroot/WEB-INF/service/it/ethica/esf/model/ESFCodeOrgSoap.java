@@ -29,7 +29,6 @@ public class ESFCodeOrgSoap implements Serializable {
 	public static ESFCodeOrgSoap toSoapModel(ESFCodeOrg model) {
 		ESFCodeOrgSoap soapModel = new ESFCodeOrgSoap();
 
-		soapModel.setUuid(model.getUuid());
 		soapModel.setEsfCodeOrgId(model.getEsfCodeOrgId());
 		soapModel.setClassName(model.getClassName());
 		soapModel.setCode(model.getCode());
@@ -86,14 +85,6 @@ public class ESFCodeOrgSoap implements Serializable {
 		setEsfCodeOrgId(pk);
 	}
 
-	public String getUuid() {
-		return _uuid;
-	}
-
-	public void setUuid(String uuid) {
-		_uuid = uuid;
-	}
-
 	public long getEsfCodeOrgId() {
 		return _esfCodeOrgId;
 	}
@@ -126,7 +117,6 @@ public class ESFCodeOrgSoap implements Serializable {
 		_sequence = sequence;
 	}
 
-	private String _uuid;
 	private long _esfCodeOrgId;
 	private String _className;
 	private String _code;

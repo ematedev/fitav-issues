@@ -24,67 +24,34 @@ import java.util.Arrays;
  */
 public class ESFCardServiceClpInvoker {
 	public ESFCardServiceClpInvoker() {
-		_methodName370 = "getBeanIdentifier";
+		_methodName374 = "getBeanIdentifier";
 
-		_methodParameterTypes370 = new String[] {  };
+		_methodParameterTypes374 = new String[] {  };
 
-		_methodName371 = "setBeanIdentifier";
+		_methodName375 = "setBeanIdentifier";
 
-		_methodParameterTypes371 = new String[] { "java.lang.String" };
-
-		_methodName376 = "findByUserId";
-
-		_methodParameterTypes376 = new String[] { "long" };
-
-		_methodName377 = "findCurrentByUserId";
-
-		_methodParameterTypes377 = new String[] { "long" };
-
-		_methodName378 = "findHistoryByUserId";
-
-		_methodParameterTypes378 = new String[] { "long" };
+		_methodParameterTypes375 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
 		Object[] arguments) throws Throwable {
-		if (_methodName370.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes370, parameterTypes)) {
+		if (_methodName374.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes374, parameterTypes)) {
 			return ESFCardServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName371.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes371, parameterTypes)) {
+		if (_methodName375.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes375, parameterTypes)) {
 			ESFCardServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName376.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes376, parameterTypes)) {
-			return ESFCardServiceUtil.findByUserId(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName377.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes377, parameterTypes)) {
-			return ESFCardServiceUtil.findCurrentByUserId(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName378.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes378, parameterTypes)) {
-			return ESFCardServiceUtil.findHistoryByUserId(((Long)arguments[0]).longValue());
-		}
-
 		throw new UnsupportedOperationException();
 	}
 
-	private String _methodName370;
-	private String[] _methodParameterTypes370;
-	private String _methodName371;
-	private String[] _methodParameterTypes371;
-	private String _methodName376;
-	private String[] _methodParameterTypes376;
-	private String _methodName377;
-	private String[] _methodParameterTypes377;
-	private String _methodName378;
-	private String[] _methodParameterTypes378;
+	private String _methodName374;
+	private String[] _methodParameterTypes374;
+	private String _methodName375;
+	private String[] _methodParameterTypes375;
 }

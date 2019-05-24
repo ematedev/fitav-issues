@@ -63,11 +63,6 @@ public class ESFUserServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
-	public static java.util.List<com.liferay.portal.model.User> findByLastnameLike(
-		long esfOrganizationId, java.lang.String lastName) {
-		return getService().findByLastnameLike(esfOrganizationId, lastName);
-	}
-
 	public static void clearService() {
 		_service = null;
 	}

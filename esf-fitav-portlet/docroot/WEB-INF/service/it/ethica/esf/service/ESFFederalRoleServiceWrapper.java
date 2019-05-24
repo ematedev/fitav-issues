@@ -58,28 +58,6 @@ public class ESFFederalRoleServiceWrapper implements ESFFederalRoleService,
 			arguments);
 	}
 
-	@Override
-	public it.ethica.esf.model.ESFFederalRole updateEsfFederalRole(
-		long esfFederalRoleId, java.lang.String name,
-		java.lang.String description, boolean regional, boolean provincial)
-		throws com.liferay.portal.kernel.exception.SystemException,
-			com.liferay.portal.security.auth.PrincipalException {
-		return _esfFederalRoleService.updateEsfFederalRole(esfFederalRoleId,
-			name, description, regional, provincial);
-	}
-
-	@Override
-	public java.util.List<it.ethica.esf.model.ESFSpecific> getFederalRoleSpecifics(
-		long esfFederalRoleId) {
-		return _esfFederalRoleService.getFederalRoleSpecifics(esfFederalRoleId);
-	}
-
-	@Override
-	public java.util.List<it.ethica.esf.model.ESFFederalRole> findByCode(
-		java.lang.String name) {
-		return _esfFederalRoleService.findByCode(name);
-	}
-
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */
