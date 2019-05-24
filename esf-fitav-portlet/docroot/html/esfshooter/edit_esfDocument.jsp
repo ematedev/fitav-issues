@@ -1,3 +1,6 @@
+<%@page import="com.liferay.portal.kernel.dao.orm.QueryUtil"%>
+<%@page import="it.ethica.esf.service.ESFPublicAuthorityLocalServiceUtil"%>
+<%@page import="it.ethica.esf.model.ESFPublicAuthority"%>
 <%@ include file="init.jsp"%>
 <%@page import="it.ethica.esf.service.ESFDocumentTypeLocalServiceUtil"%>
 <%@page import="it.ethica.esf.model.ESFDocumentType"%>
@@ -6,20 +9,23 @@
 	String backToEditUrl = (String)portletSession.getAttribute("backUrlEdit");
 	portletDisplay.setURLBack(backToEditUrl);
 	List<ESFDocumentType> documentTypes = null;
+	List<ESFPublicAuthority> authorities = null;
 	long esfDocumentId = ParamUtil.getLong(request, "esfDocumentId");
 	long esfUserId = ParamUtil.getLong(request, "esfUserId");
 	if (esfDocumentId > 0) {
 		esfDocument = ESFDocumentLocalServiceUtil.getESFDocument(esfDocumentId);
 	}
 	documentTypes = ESFDocumentTypeLocalServiceUtil.getUserFilteredList(esfUserId);
+	authorities = ESFPublicAuthorityLocalServiceUtil.getESFPublicAuthorities(QueryUtil.ALL_POS, QueryUtil.ALL_POS);
 	String releaseDate = "";
 	String expirationDate = "";
 	String type = "";
 	String code = "";
-	String releasedby = "";
+	String releasedby = "";	//TODO	togliere ?
 	String path = "";
 	String dir = PortletProps.get("auto.deploy.tomcat.dest.dir");
 	long esfDocumentTypeId = 0;
+	long esfPublicAuthorityId = 0;
 	if (Validator.isNotNull(esfDocument)) {
 		type = String.valueOf(esfDocument.getType());
 		code = String.valueOf(esfDocument.getCode());
@@ -28,6 +34,7 @@
 		expirationDate = ManageDate.DateToString(esfDocument.getExpirationDate());
 		path = String.valueOf(esfDocument.getPath());
 		esfDocumentTypeId = esfDocument.getEsfDocumentTypeId();
+		esfPublicAuthorityId = esfDocument.getEsfPublicAuthorityId();
 	}else{
 		Calendar calendar = CalendarFactoryUtil.getCalendar();
 		releaseDate=ManageDate.CalendarToString(calendar);	
@@ -38,8 +45,7 @@
 	if (esfUserId > 0) {
 		esfUser = ESFUserLocalServiceUtil.getESFUser(esfUserId);
 	}
-	if( Validator.isNotNull(esfUser) ){
-		
+	if( Validator.isNotNull(esfUser) ){		
 		userName = esfUser.getFirstName()+" "+esfUser.getLastName();
 		String[] shooterName = {userName};
 	%>	
@@ -98,10 +104,18 @@
 			<%--aui:validator name="required" /--%>
 		</aui:input>
 
-		<aui:input name="releasedby" type="text" label="ReleasedBy"
-			value='<%=releasedby%>'>
+		<aui:select id="esfPublicAuthorityId" name="esfPublicAuthorityId" showEmptyOption="false" required="true" label="ReleasedBy" onchange="validateInputs();">
+		<% for (ESFPublicAuthority authority : authorities) {
+			boolean isSelected = authority.getEsfPublicAuthorityId() == esfPublicAuthorityId;
+			%>
+			<aui:option label="<%=authority.getDescription()%>" value="<%=authority.getPrimaryKey()%>" selected="" />
+		<% } %>
+		</aui:select>
+
+<%-- 		<aui:input name="releasedby" type="text" label="ReleasedBy" --%>
+<%-- 			value='<%=releasedby%>'> --%>
 			<!-- aui:validator name="required" /-->
-		</aui:input>
+<%-- 		</aui:input> --%>
 
 		<aui:input name="releasedate" type="text" id="ReleaseDate" 
 			label="ReleaseDate" value='<%=releaseDate%>'>

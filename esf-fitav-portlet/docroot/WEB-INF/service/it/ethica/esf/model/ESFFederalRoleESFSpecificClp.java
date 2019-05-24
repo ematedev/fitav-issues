@@ -282,6 +282,10 @@ public class ESFFederalRoleESFSpecificClp extends BaseModelImpl<ESFFederalRoleES
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey().hashCode();
@@ -332,4 +336,5 @@ public class ESFFederalRoleESFSpecificClp extends BaseModelImpl<ESFFederalRoleES
 	private long _esfSpecificId;
 	private long _esfFederalRoleId;
 	private BaseModel<?> _esfFederalRoleESFSpecificRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

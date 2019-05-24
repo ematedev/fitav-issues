@@ -358,6 +358,10 @@ public class ESFUserESFUserRoleClp extends BaseModelImpl<ESFUserESFUserRole>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey().hashCode();
@@ -423,4 +427,5 @@ public class ESFUserESFUserRoleClp extends BaseModelImpl<ESFUserESFUserRole>
 	private Date _startDate;
 	private Date _endDate;
 	private BaseModel<?> _esfUserESFUserRoleRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

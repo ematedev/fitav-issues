@@ -657,6 +657,10 @@ public class ESFSportTypeClp extends BaseModelImpl<ESFSportType>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -785,4 +789,5 @@ public class ESFSportTypeClp extends BaseModelImpl<ESFSportType>
 	private boolean _isChangeCategory;
 	private boolean _isOlimpic;
 	private BaseModel<?> _esfSportTypeRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

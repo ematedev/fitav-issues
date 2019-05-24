@@ -50,6 +50,7 @@ import it.ethica.esf.service.persistence.ESFCountryPersistence;
 import it.ethica.esf.service.persistence.ESFDeparturePersistence;
 import it.ethica.esf.service.persistence.ESFDescriptionPersistence;
 import it.ethica.esf.service.persistence.ESFDocumentPersistence;
+import it.ethica.esf.service.persistence.ESFDocumentTypePersistence;
 import it.ethica.esf.service.persistence.ESFElectronicPersistence;
 import it.ethica.esf.service.persistence.ESFEntityStateFinder;
 import it.ethica.esf.service.persistence.ESFEntityStatePersistence;
@@ -89,6 +90,7 @@ import it.ethica.esf.service.persistence.ESFPartecipantPersistence;
 import it.ethica.esf.service.persistence.ESFPartecipantTypePersistence;
 import it.ethica.esf.service.persistence.ESFPhonePersistence;
 import it.ethica.esf.service.persistence.ESFProvincePersistence;
+import it.ethica.esf.service.persistence.ESFPublicAuthorityPersistence;
 import it.ethica.esf.service.persistence.ESFRegionPersistence;
 import it.ethica.esf.service.persistence.ESFRenewalPersistence;
 import it.ethica.esf.service.persistence.ESFResultFinder;
@@ -1009,6 +1011,44 @@ public abstract class ESFCategoryLocalServiceBaseImpl
 	public void setESFDocumentPersistence(
 		ESFDocumentPersistence esfDocumentPersistence) {
 		this.esfDocumentPersistence = esfDocumentPersistence;
+	}
+
+	/**
+	 * Returns the e s f document type local service.
+	 *
+	 * @return the e s f document type local service
+	 */
+	public it.ethica.esf.service.ESFDocumentTypeLocalService getESFDocumentTypeLocalService() {
+		return esfDocumentTypeLocalService;
+	}
+
+	/**
+	 * Sets the e s f document type local service.
+	 *
+	 * @param esfDocumentTypeLocalService the e s f document type local service
+	 */
+	public void setESFDocumentTypeLocalService(
+		it.ethica.esf.service.ESFDocumentTypeLocalService esfDocumentTypeLocalService) {
+		this.esfDocumentTypeLocalService = esfDocumentTypeLocalService;
+	}
+
+	/**
+	 * Returns the e s f document type persistence.
+	 *
+	 * @return the e s f document type persistence
+	 */
+	public ESFDocumentTypePersistence getESFDocumentTypePersistence() {
+		return esfDocumentTypePersistence;
+	}
+
+	/**
+	 * Sets the e s f document type persistence.
+	 *
+	 * @param esfDocumentTypePersistence the e s f document type persistence
+	 */
+	public void setESFDocumentTypePersistence(
+		ESFDocumentTypePersistence esfDocumentTypePersistence) {
+		this.esfDocumentTypePersistence = esfDocumentTypePersistence;
 	}
 
 	/**
@@ -2466,6 +2506,44 @@ public abstract class ESFCategoryLocalServiceBaseImpl
 	}
 
 	/**
+	 * Returns the e s f public authority local service.
+	 *
+	 * @return the e s f public authority local service
+	 */
+	public it.ethica.esf.service.ESFPublicAuthorityLocalService getESFPublicAuthorityLocalService() {
+		return esfPublicAuthorityLocalService;
+	}
+
+	/**
+	 * Sets the e s f public authority local service.
+	 *
+	 * @param esfPublicAuthorityLocalService the e s f public authority local service
+	 */
+	public void setESFPublicAuthorityLocalService(
+		it.ethica.esf.service.ESFPublicAuthorityLocalService esfPublicAuthorityLocalService) {
+		this.esfPublicAuthorityLocalService = esfPublicAuthorityLocalService;
+	}
+
+	/**
+	 * Returns the e s f public authority persistence.
+	 *
+	 * @return the e s f public authority persistence
+	 */
+	public ESFPublicAuthorityPersistence getESFPublicAuthorityPersistence() {
+		return esfPublicAuthorityPersistence;
+	}
+
+	/**
+	 * Sets the e s f public authority persistence.
+	 *
+	 * @param esfPublicAuthorityPersistence the e s f public authority persistence
+	 */
+	public void setESFPublicAuthorityPersistence(
+		ESFPublicAuthorityPersistence esfPublicAuthorityPersistence) {
+		this.esfPublicAuthorityPersistence = esfPublicAuthorityPersistence;
+	}
+
+	/**
 	 * Returns the e s f region local service.
 	 *
 	 * @return the e s f region local service
@@ -3825,6 +3903,10 @@ public abstract class ESFCategoryLocalServiceBaseImpl
 	protected it.ethica.esf.service.ESFDocumentLocalService esfDocumentLocalService;
 	@BeanReference(type = ESFDocumentPersistence.class)
 	protected ESFDocumentPersistence esfDocumentPersistence;
+	@BeanReference(type = it.ethica.esf.service.ESFDocumentTypeLocalService.class)
+	protected it.ethica.esf.service.ESFDocumentTypeLocalService esfDocumentTypeLocalService;
+	@BeanReference(type = ESFDocumentTypePersistence.class)
+	protected ESFDocumentTypePersistence esfDocumentTypePersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFElectronicLocalService.class)
 	protected it.ethica.esf.service.ESFElectronicLocalService esfElectronicLocalService;
 	@BeanReference(type = ESFElectronicPersistence.class)
@@ -3979,6 +4061,10 @@ public abstract class ESFCategoryLocalServiceBaseImpl
 	protected it.ethica.esf.service.ESFProvinceLocalService esfProvinceLocalService;
 	@BeanReference(type = ESFProvincePersistence.class)
 	protected ESFProvincePersistence esfProvincePersistence;
+	@BeanReference(type = it.ethica.esf.service.ESFPublicAuthorityLocalService.class)
+	protected it.ethica.esf.service.ESFPublicAuthorityLocalService esfPublicAuthorityLocalService;
+	@BeanReference(type = ESFPublicAuthorityPersistence.class)
+	protected ESFPublicAuthorityPersistence esfPublicAuthorityPersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFRegionLocalService.class)
 	protected it.ethica.esf.service.ESFRegionLocalService esfRegionLocalService;
 	@BeanReference(type = ESFRegionPersistence.class)

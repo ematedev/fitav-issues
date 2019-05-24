@@ -748,53 +748,15 @@ public class ESFUserClp extends BaseModelImpl<ESFUser> implements ESFUser {
 	}
 
 	@Override
-	public java.lang.String getFirstName() {
+	public long getCompanyId() {
 		try {
-			String methodName = "getFirstName";
+			String methodName = "getCompanyId";
 
 			Class<?>[] parameterTypes = new Class<?>[] {  };
 
 			Object[] parameterValues = new Object[] {  };
 
-			java.lang.String returnObj = (java.lang.String)invokeOnRemoteModel(methodName,
-					parameterTypes, parameterValues);
-
-			return returnObj;
-		}
-		catch (Exception e) {
-			throw new UnsupportedOperationException(e);
-		}
-	}
-
-	@Override
-	public java.lang.String getLastName() {
-		try {
-			String methodName = "getLastName";
-
-			Class<?>[] parameterTypes = new Class<?>[] {  };
-
-			Object[] parameterValues = new Object[] {  };
-
-			java.lang.String returnObj = (java.lang.String)invokeOnRemoteModel(methodName,
-					parameterTypes, parameterValues);
-
-			return returnObj;
-		}
-		catch (Exception e) {
-			throw new UnsupportedOperationException(e);
-		}
-	}
-
-	@Override
-	public java.lang.String getJobTitle() {
-		try {
-			String methodName = "getJobTitle";
-
-			Class<?>[] parameterTypes = new Class<?>[] {  };
-
-			Object[] parameterValues = new Object[] {  };
-
-			java.lang.String returnObj = (java.lang.String)invokeOnRemoteModel(methodName,
+			Long returnObj = (Long)invokeOnRemoteModel(methodName,
 					parameterTypes, parameterValues);
 
 			return returnObj;
@@ -843,15 +805,15 @@ public class ESFUserClp extends BaseModelImpl<ESFUser> implements ESFUser {
 	}
 
 	@Override
-	public long getCompanyId() {
+	public java.lang.String getFirstName() {
 		try {
-			String methodName = "getCompanyId";
+			String methodName = "getFirstName";
 
 			Class<?>[] parameterTypes = new Class<?>[] {  };
 
 			Object[] parameterValues = new Object[] {  };
 
-			Long returnObj = (Long)invokeOnRemoteModel(methodName,
+			java.lang.String returnObj = (java.lang.String)invokeOnRemoteModel(methodName,
 					parameterTypes, parameterValues);
 
 			return returnObj;
@@ -881,15 +843,34 @@ public class ESFUserClp extends BaseModelImpl<ESFUser> implements ESFUser {
 	}
 
 	@Override
-	public java.lang.String getScreenName() {
+	public java.lang.String getJobTitle() {
 		try {
-			String methodName = "getScreenName";
+			String methodName = "getJobTitle";
 
 			Class<?>[] parameterTypes = new Class<?>[] {  };
 
 			Object[] parameterValues = new Object[] {  };
 
 			java.lang.String returnObj = (java.lang.String)invokeOnRemoteModel(methodName,
+					parameterTypes, parameterValues);
+
+			return returnObj;
+		}
+		catch (Exception e) {
+			throw new UnsupportedOperationException(e);
+		}
+	}
+
+	@Override
+	public com.liferay.portal.model.User getOriginalUser() {
+		try {
+			String methodName = "getOriginalUser";
+
+			Class<?>[] parameterTypes = new Class<?>[] {  };
+
+			Object[] parameterValues = new Object[] {  };
+
+			com.liferay.portal.model.User returnObj = (com.liferay.portal.model.User)invokeOnRemoteModel(methodName,
 					parameterTypes, parameterValues);
 
 			return returnObj;
@@ -919,15 +900,34 @@ public class ESFUserClp extends BaseModelImpl<ESFUser> implements ESFUser {
 	}
 
 	@Override
-	public com.liferay.portal.model.User getOriginalUser() {
+	public java.lang.String getScreenName() {
 		try {
-			String methodName = "getOriginalUser";
+			String methodName = "getScreenName";
 
 			Class<?>[] parameterTypes = new Class<?>[] {  };
 
 			Object[] parameterValues = new Object[] {  };
 
-			com.liferay.portal.model.User returnObj = (com.liferay.portal.model.User)invokeOnRemoteModel(methodName,
+			java.lang.String returnObj = (java.lang.String)invokeOnRemoteModel(methodName,
+					parameterTypes, parameterValues);
+
+			return returnObj;
+		}
+		catch (Exception e) {
+			throw new UnsupportedOperationException(e);
+		}
+	}
+
+	@Override
+	public java.lang.String getLastName() {
+		try {
+			String methodName = "getLastName";
+
+			Class<?>[] parameterTypes = new Class<?>[] {  };
+
+			Object[] parameterValues = new Object[] {  };
+
+			java.lang.String returnObj = (java.lang.String)invokeOnRemoteModel(methodName,
 					parameterTypes, parameterValues);
 
 			return returnObj;
@@ -1072,6 +1072,10 @@ public class ESFUserClp extends BaseModelImpl<ESFUser> implements ESFUser {
 		else {
 			return false;
 		}
+	}
+
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
 	}
 
 	@Override
@@ -1251,4 +1255,5 @@ public class ESFUserClp extends BaseModelImpl<ESFUser> implements ESFUser {
 	private Date _datePrivacy3;
 	private boolean _validateCF;
 	private BaseModel<?> _esfUserRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

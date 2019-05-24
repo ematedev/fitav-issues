@@ -659,6 +659,10 @@ public class ESFCardClp extends BaseModelImpl<ESFCard> implements ESFCard {
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -788,4 +792,5 @@ public class ESFCardClp extends BaseModelImpl<ESFCard> implements ESFCard {
 	private String _code;
 	private String _oldCode;
 	private BaseModel<?> _esfCardRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

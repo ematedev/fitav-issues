@@ -534,6 +534,44 @@ public class ESFUserRoleClp extends BaseModelImpl<ESFUserRole>
 	}
 
 	@Override
+	public java.lang.String getDescription() {
+		try {
+			String methodName = "getDescription";
+
+			Class<?>[] parameterTypes = new Class<?>[] {  };
+
+			Object[] parameterValues = new Object[] {  };
+
+			java.lang.String returnObj = (java.lang.String)invokeOnRemoteModel(methodName,
+					parameterTypes, parameterValues);
+
+			return returnObj;
+		}
+		catch (Exception e) {
+			throw new UnsupportedOperationException(e);
+		}
+	}
+
+	@Override
+	public java.lang.String getTitle() {
+		try {
+			String methodName = "getTitle";
+
+			Class<?>[] parameterTypes = new Class<?>[] {  };
+
+			Object[] parameterValues = new Object[] {  };
+
+			java.lang.String returnObj = (java.lang.String)invokeOnRemoteModel(methodName,
+					parameterTypes, parameterValues);
+
+			return returnObj;
+		}
+		catch (Exception e) {
+			throw new UnsupportedOperationException(e);
+		}
+	}
+
+	@Override
 	public void setTitle(java.lang.String title) {
 		try {
 			String methodName = "setTitle";
@@ -566,37 +604,15 @@ public class ESFUserRoleClp extends BaseModelImpl<ESFUserRole>
 	}
 
 	@Override
-	public java.lang.String getTitle() {
+	public void setDescription(java.lang.String description) {
 		try {
-			String methodName = "getTitle";
+			String methodName = "setDescription";
 
-			Class<?>[] parameterTypes = new Class<?>[] {  };
+			Class<?>[] parameterTypes = new Class<?>[] { java.lang.String.class };
 
-			Object[] parameterValues = new Object[] {  };
+			Object[] parameterValues = new Object[] { description };
 
-			java.lang.String returnObj = (java.lang.String)invokeOnRemoteModel(methodName,
-					parameterTypes, parameterValues);
-
-			return returnObj;
-		}
-		catch (Exception e) {
-			throw new UnsupportedOperationException(e);
-		}
-	}
-
-	@Override
-	public java.lang.String getDescription() {
-		try {
-			String methodName = "getDescription";
-
-			Class<?>[] parameterTypes = new Class<?>[] {  };
-
-			Object[] parameterValues = new Object[] {  };
-
-			java.lang.String returnObj = (java.lang.String)invokeOnRemoteModel(methodName,
-					parameterTypes, parameterValues);
-
-			return returnObj;
+			invokeOnRemoteModel(methodName, parameterTypes, parameterValues);
 		}
 		catch (Exception e) {
 			throw new UnsupportedOperationException(e);
@@ -616,22 +632,6 @@ public class ESFUserRoleClp extends BaseModelImpl<ESFUserRole>
 					parameterTypes, parameterValues);
 
 			return returnObj;
-		}
-		catch (Exception e) {
-			throw new UnsupportedOperationException(e);
-		}
-	}
-
-	@Override
-	public void setDescription(java.lang.String description) {
-		try {
-			String methodName = "setDescription";
-
-			Class<?>[] parameterTypes = new Class<?>[] { java.lang.String.class };
-
-			Object[] parameterValues = new Object[] { description };
-
-			invokeOnRemoteModel(methodName, parameterTypes, parameterValues);
 		}
 		catch (Exception e) {
 			throw new UnsupportedOperationException(e);
@@ -768,6 +768,10 @@ public class ESFUserRoleClp extends BaseModelImpl<ESFUserRole>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -896,4 +900,5 @@ public class ESFUserRoleClp extends BaseModelImpl<ESFUserRole>
 	private boolean _isOrgAdmin;
 	private boolean _isEditable;
 	private BaseModel<?> _esfUserRoleRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }
