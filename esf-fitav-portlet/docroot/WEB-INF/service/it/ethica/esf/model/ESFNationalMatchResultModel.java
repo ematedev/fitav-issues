@@ -433,19 +433,20 @@ public interface ESFNationalMatchResultModel extends BaseModel<ESFNationalMatchR
 	public Object clone();
 
 	@Override
-	public int compareTo(ESFNationalMatchResult esfNationalMatchResult);
+	public int compareTo(
+		it.ethica.esf.model.ESFNationalMatchResult esfNationalMatchResult);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ESFNationalMatchResult> toCacheModel();
+	public CacheModel<it.ethica.esf.model.ESFNationalMatchResult> toCacheModel();
 
 	@Override
-	public ESFNationalMatchResult toEscapedModel();
+	public it.ethica.esf.model.ESFNationalMatchResult toEscapedModel();
 
 	@Override
-	public ESFNationalMatchResult toUnescapedModel();
+	public it.ethica.esf.model.ESFNationalMatchResult toUnescapedModel();
 
 	@Override
 	public String toString();

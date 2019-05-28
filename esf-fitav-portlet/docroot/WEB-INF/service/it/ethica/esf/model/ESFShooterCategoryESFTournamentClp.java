@@ -305,6 +305,10 @@ public class ESFShooterCategoryESFTournamentClp extends BaseModelImpl<ESFShooter
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey().hashCode();
@@ -362,4 +366,5 @@ public class ESFShooterCategoryESFTournamentClp extends BaseModelImpl<ESFShooter
 	private long _esfTournamentId;
 	private long _groupId;
 	private BaseModel<?> _esfShooterCategoryESFTournamentRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

@@ -365,10 +365,11 @@ public class ESFFederalRoleLocalServiceUtil {
 	}
 
 	public static void associateEsfUser(long esfUserId, long esfFederalRoleId,
-		long startDate, long esfSpecificId, java.lang.String notes)
+		long startDate, java.util.Date endDate, long esfSpecificId,
+		java.lang.String notes)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		getService()
-			.associateEsfUser(esfUserId, esfFederalRoleId, startDate,
+			.associateEsfUser(esfUserId, esfFederalRoleId, startDate, endDate,
 			esfSpecificId, notes);
 	}
 
@@ -386,6 +387,17 @@ public class ESFFederalRoleLocalServiceUtil {
 	public static java.util.Date getActiveAssociationDate(long esfUserId,
 		long esfFederalRoleId) {
 		return getService().getActiveAssociationDate(esfUserId, esfFederalRoleId);
+	}
+
+	public static java.util.Date getEndAssociationDate(long esfUserId,
+		long esfFederalRoleId) {
+		return getService().getEndAssociationDate(esfUserId, esfFederalRoleId);
+	}
+
+	public static void deleteEsfUserEsfFederalRole(long esfUserId,
+		long esfFederalRoleId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		getService().deleteEsfUserEsfFederalRole(esfUserId, esfFederalRoleId);
 	}
 
 	public static java.util.List<it.ethica.esf.model.ESFUserESFFederalRole> getAssociationsByEsfUser(

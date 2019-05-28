@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4e2f23245d33f5cc80bffcdd36acf34e75accc38
 /**
  * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
  *
@@ -62,7 +65,7 @@ public class ESFDocumentLocalServiceImpl extends
 
 	public ESFDocument addEsfDocument(long groupId, long companyId,
 			String userName, long esfUserId, String code, String releasedBy,
-			Date createDate, Date releaseDate, Date expirationDate, long esfDocumentTypeId,
+			Date createDate, Date releaseDate, Date expirationDate, long esfDocumentTypeId, long esfPublicAuthorityId,
 			String type, String path, ServiceContext serviceContext)
 			throws SystemException {
 
@@ -83,6 +86,7 @@ public class ESFDocumentLocalServiceImpl extends
 		esfDocument.setReleasedBy(releasedBy);
 		esfDocument.setType(type);
 		esfDocument.setEsfDocumentTypeId(esfDocumentTypeId);
+		esfDocument.setEsfPublicAuthorityId(esfPublicAuthorityId);
 		esfDocument.setPath(path);
 
 		esfDocumentLocalService.updateESFDocument(esfDocument);
@@ -93,7 +97,7 @@ public class ESFDocumentLocalServiceImpl extends
 	public ESFDocument updateEsfDocument(long esfDocumentId, long groupId,
 			long companyId, String userName, long esfUserId, String code,
 			String releasedBy, Date modifiedDate, Date releaseDate,
-			Date expirationDate, long esfDocumentTypeId, String type, String path,
+			Date expirationDate, long esfDocumentTypeId, long esfPublicAuthorityId, String type, String path,
 			ServiceContext serviceContext) throws SystemException {
 		
 		ESFDocument esfDocument = esfDocumentLocalService
@@ -108,6 +112,7 @@ public class ESFDocumentLocalServiceImpl extends
 		esfDocument.setExpirationDate(expirationDate);
 		esfDocument.setCode(code);
 		esfDocument.setReleasedBy(releasedBy);
+		esfDocument.setEsfPublicAuthorityId(esfPublicAuthorityId);
 		esfDocument.setType(type);
 		esfDocument.setPath(path);
 
@@ -129,6 +134,10 @@ public class ESFDocumentLocalServiceImpl extends
 		return this.esfDocumentPersistence.findByEsfDocumentTypeId(esfDocumentTypeId);
 	}
 
+	public List<ESFDocument> findByEsfPublicAuthorityId(long esfPublicAuthorityId) throws SystemException{
+		return this.esfDocumentPersistence.findByEsfPublicAuthorityId(esfPublicAuthorityId);
+	}
+	
 	public List<ESFDocument> findByT_U(String type, long esfUserId)
 			throws SystemException {
 
@@ -142,6 +151,7 @@ public class ESFDocumentLocalServiceImpl extends
 	}
 
 	private static Log _log = LogFactoryUtil.getLog(ESFUserAdminPortlet.class);
+<<<<<<< HEAD
 =======
 /**
  * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
@@ -293,4 +303,6 @@ public class ESFDocumentLocalServiceImpl extends
 
 	private static Log _log = LogFactoryUtil.getLog(ESFUserAdminPortlet.class);
 >>>>>>> anomalia-id16
+=======
+>>>>>>> 4e2f23245d33f5cc80bffcdd36acf34e75accc38
 }

@@ -448,19 +448,19 @@ public interface ESFUserModel extends BaseModel<ESFUser> {
 	public Object clone();
 
 	@Override
-	public int compareTo(ESFUser esfUser);
+	public int compareTo(it.ethica.esf.model.ESFUser esfUser);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ESFUser> toCacheModel();
+	public CacheModel<it.ethica.esf.model.ESFUser> toCacheModel();
 
 	@Override
-	public ESFUser toEscapedModel();
+	public it.ethica.esf.model.ESFUser toEscapedModel();
 
 	@Override
-	public ESFUser toUnescapedModel();
+	public it.ethica.esf.model.ESFUser toUnescapedModel();
 
 	@Override
 	public String toString();

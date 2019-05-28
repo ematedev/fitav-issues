@@ -271,19 +271,20 @@ public interface VW_ESFListaIncarichiModel extends BaseModel<VW_ESFListaIncarich
 	public Object clone();
 
 	@Override
-	public int compareTo(VW_ESFListaIncarichi vw_esfListaIncarichi);
+	public int compareTo(
+		it.ethica.esf.model.VW_ESFListaIncarichi vw_esfListaIncarichi);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<VW_ESFListaIncarichi> toCacheModel();
+	public CacheModel<it.ethica.esf.model.VW_ESFListaIncarichi> toCacheModel();
 
 	@Override
-	public VW_ESFListaIncarichi toEscapedModel();
+	public it.ethica.esf.model.VW_ESFListaIncarichi toEscapedModel();
 
 	@Override
-	public VW_ESFListaIncarichi toUnescapedModel();
+	public it.ethica.esf.model.VW_ESFListaIncarichi toUnescapedModel();
 
 	@Override
 	public String toString();

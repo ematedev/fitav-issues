@@ -42,7 +42,7 @@
 		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset"></reference>
 		<reference entity="AssetLink" package-path="com.liferay.portlet.asset"></reference>
 	</entity>
-	<entity name="ESFCard" local-service="true" remote-service="true"
+	<entity name="ESFCard" local-service="true" remote-service="false"
 		uuid="true" cache-enabled="false">
 
 		<!-- PK fields -->

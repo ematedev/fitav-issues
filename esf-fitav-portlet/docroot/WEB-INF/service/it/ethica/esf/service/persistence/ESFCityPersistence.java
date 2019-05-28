@@ -174,9 +174,8 @@ public interface ESFCityPersistence extends BasePersistence<ESFCity> {
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFCity[] findByC_R_P_PrevAndNext(
-		it.ethica.esf.service.persistence.ESFCityPK esfCityPK,
-		java.lang.String idCountry, java.lang.String idRegion,
-		java.lang.String idProvince,
+		ESFCityPK esfCityPK, java.lang.String idCountry,
+		java.lang.String idRegion, java.lang.String idProvince,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchCityException;
@@ -317,8 +316,7 @@ public interface ESFCityPersistence extends BasePersistence<ESFCity> {
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFCity[] findByName_PrevAndNext(
-		it.ethica.esf.service.persistence.ESFCityPK esfCityPK,
-		java.lang.String name,
+		ESFCityPK esfCityPK, java.lang.String name,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchCityException;
@@ -363,8 +361,7 @@ public interface ESFCityPersistence extends BasePersistence<ESFCity> {
 	* @param esfCityPK the primary key for the new e s f city
 	* @return the new e s f city
 	*/
-	public it.ethica.esf.model.ESFCity create(
-		it.ethica.esf.service.persistence.ESFCityPK esfCityPK);
+	public it.ethica.esf.model.ESFCity create(ESFCityPK esfCityPK);
 
 	/**
 	* Removes the e s f city with the primary key from the database. Also notifies the appropriate model listeners.
@@ -374,8 +371,7 @@ public interface ESFCityPersistence extends BasePersistence<ESFCity> {
 	* @throws it.ethica.esf.NoSuchCityException if a e s f city with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public it.ethica.esf.model.ESFCity remove(
-		it.ethica.esf.service.persistence.ESFCityPK esfCityPK)
+	public it.ethica.esf.model.ESFCity remove(ESFCityPK esfCityPK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchCityException;
 
@@ -391,8 +387,7 @@ public interface ESFCityPersistence extends BasePersistence<ESFCity> {
 	* @throws it.ethica.esf.NoSuchCityException if a e s f city with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public it.ethica.esf.model.ESFCity findByPrimaryKey(
-		it.ethica.esf.service.persistence.ESFCityPK esfCityPK)
+	public it.ethica.esf.model.ESFCity findByPrimaryKey(ESFCityPK esfCityPK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchCityException;
 
@@ -403,8 +398,7 @@ public interface ESFCityPersistence extends BasePersistence<ESFCity> {
 	* @return the e s f city, or <code>null</code> if a e s f city with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public it.ethica.esf.model.ESFCity fetchByPrimaryKey(
-		it.ethica.esf.service.persistence.ESFCityPK esfCityPK)
+	public it.ethica.esf.model.ESFCity fetchByPrimaryKey(ESFCityPK esfCityPK)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**

@@ -16,6 +16,7 @@ package it.ethica.esf.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface ESFFederalRoleLocalService extends BaseLocalService,
 	* @return the e s f federal role that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFFederalRole addESFFederalRole(
 		it.ethica.esf.model.ESFFederalRole esfFederalRole)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -73,6 +75,7 @@ public interface ESFFederalRoleLocalService extends BaseLocalService,
 	* @throws PortalException if a e s f federal role with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFFederalRole deleteESFFederalRole(
 		long esfFederalRoleId)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -85,6 +88,7 @@ public interface ESFFederalRoleLocalService extends BaseLocalService,
 	* @return the e s f federal role that was removed
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFFederalRole deleteESFFederalRole(
 		it.ethica.esf.model.ESFFederalRole esfFederalRole)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -282,6 +286,7 @@ public interface ESFFederalRoleLocalService extends BaseLocalService,
 	* @return the e s f federal role that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFFederalRole updateESFFederalRole(
 		it.ethica.esf.model.ESFFederalRole esfFederalRole)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -324,7 +329,8 @@ public interface ESFFederalRoleLocalService extends BaseLocalService,
 		java.lang.String code);
 
 	public void associateEsfUser(long esfUserId, long esfFederalRoleId,
-		long startDate, long esfSpecificId, java.lang.String notes)
+		long startDate, java.util.Date endDate, long esfSpecificId,
+		java.lang.String notes)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	public void deAssociateEsfUser(long esfUserId, long esfFederalRoleId)
@@ -337,6 +343,14 @@ public interface ESFFederalRoleLocalService extends BaseLocalService,
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.Date getActiveAssociationDate(long esfUserId,
 		long esfFederalRoleId);
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.Date getEndAssociationDate(long esfUserId,
+		long esfFederalRoleId);
+
+	public void deleteEsfUserEsfFederalRole(long esfUserId,
+		long esfFederalRoleId)
+		throws com.liferay.portal.kernel.exception.SystemException;
 
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List<it.ethica.esf.model.ESFUserESFFederalRole> getAssociationsByEsfUser(

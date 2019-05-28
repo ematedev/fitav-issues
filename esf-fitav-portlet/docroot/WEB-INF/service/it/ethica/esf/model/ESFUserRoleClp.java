@@ -768,6 +768,10 @@ public class ESFUserRoleClp extends BaseModelImpl<ESFUserRole>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -896,4 +900,5 @@ public class ESFUserRoleClp extends BaseModelImpl<ESFUserRole>
 	private boolean _isOrgAdmin;
 	private boolean _isEditable;
 	private BaseModel<?> _esfUserRoleRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

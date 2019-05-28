@@ -115,7 +115,7 @@ public class ESFFederalRoleLocalServiceImpl
 		return esfFederalRoleFinder.findByCode(code);
 	}
 	
-	public void associateEsfUser(long esfUserId, long esfFederalRoleId, long startDate, long esfSpecificId, String notes) throws SystemException{
+	public void associateEsfUser(long esfUserId, long esfFederalRoleId, long startDate, Date endDate, long esfSpecificId, String notes) throws SystemException{
 		if(esfUserId > 0 && esfFederalRoleId > 0){
 			ESFUserESFFederalRolePK pk = new ESFUserESFFederalRolePK();
 			pk.setEsfFederalRoleId(esfFederalRoleId);
@@ -130,10 +130,11 @@ public class ESFFederalRoleLocalServiceImpl
 			}else{
 				association = ESFUserESFFederalRoleLocalServiceUtil.createESFUserESFFederalRole(pk);
 				association.setActive(Boolean.TRUE);
-				association.setStartDate(Calendar.getInstance().getTimeInMillis());
+				association.setStartDate(startDate);
 				association.setModifiedDate(Calendar.getInstance().getTime());
 				association.setEsfSpecificId(esfSpecificId);
 				association.setNotes(notes);
+				association.setEndDate(endDate);
 //				association.setRegionId(String.valueOf(esfOrganization.getRegionCode()));
 				ESFUserESFFederalRoleLocalServiceUtil.updateESFUserESFFederalRole(association);
 			}
@@ -144,9 +145,12 @@ public class ESFFederalRoleLocalServiceImpl
 		ESFUserESFFederalRole association;
 		try {
 			association = ESFUserESFFederalRoleLocalServiceUtil.findByEsfUserIdAndEsfFederalRoleIdActive(esfUserId, esfFederalRoleId, Boolean.TRUE);
+			Date dataTermineMandato= association.getEndDate();
+			if (dataTermineMandato == null || dataTermineMandato.after(Calendar.getInstance().getTime()))
+				dataTermineMandato = Calendar.getInstance().getTime();
 			if(association != null){
 				association.setActive(Boolean.FALSE);
-				association.setEndDate(Calendar.getInstance().getTime());
+				association.setEndDate(dataTermineMandato);
 				association.setModifiedDate(Calendar.getInstance().getTime());
 				esfUserESFFederalRolePersistence.update(association);
 			}
@@ -182,6 +186,46 @@ public class ESFFederalRoleLocalServiceImpl
 		}
 		return date;
 	}
+	
+	public Date getEndAssociationDate(long esfUserId, long esfFederalRoleId){
+		Date date = null;
+		ESFUserESFFederalRole association = null;
+		try {
+			association = ESFUserESFFederalRoleLocalServiceUtil.findByEsfUserIdAndEsfFederalRoleIdActive(esfUserId, esfFederalRoleId, Boolean.TRUE);
+			date = association.getEndDate();
+		} catch (SystemException e) {
+			_log.fatal(e.getMessage());
+		} catch (NoSuchUserESFFederalRoleException e) {
+			_log.warn(e.getMessage());
+		}
+		return date;
+	}
+	
+	public void deleteEsfUserEsfFederalRole(long esfUserId, long esfFederalRoleId) throws SystemException{
+		ESFUserESFFederalRole association;
+		try {
+			association = ESFUserESFFederalRoleLocalServiceUtil.findByEsfUserIdAndEsfFederalRoleIdActive(esfUserId, esfFederalRoleId, Boolean.TRUE);
+			if(association != null){
+				ESFUserESFFederalRoleLocalServiceUtil.deleteESFUserESFFederalRole(association);
+//				esfUserESFFederalRolePersistence.update(association);
+			}
+		} catch (NoSuchUserESFFederalRoleException e) {
+			_log.warn(e.getMessage());
+		} 
+	}
+	
+//	public void setEndAssociationDate(long esfUserId, long esfFederalRoleId) throws SystemException{
+//		ESFUserESFFederalRole association;
+//		try {
+//			association = ESFUserESFFederalRoleLocalServiceUtil.findByEsfUserIdAndEsfFederalRoleIdActive(esfUserId, esfFederalRoleId, Boolean.TRUE);
+//			if(association != null){
+//				association.setEndDate(Calendar.getInstance().getTime());
+////				esfUserESFFederalRolePersistence.update(association);
+//			}
+//		} catch (NoSuchUserESFFederalRoleException e) {
+//			_log.warn(e.getMessage());
+//		} 
+//	}
 
 	public List<ESFUserESFFederalRole> getAssociationsByEsfUser(long esfUserId){
 		List<ESFUserESFFederalRole> associations = new ArrayList<ESFUserESFFederalRole>();

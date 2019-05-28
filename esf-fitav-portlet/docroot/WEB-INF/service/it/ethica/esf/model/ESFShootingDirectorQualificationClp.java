@@ -271,6 +271,10 @@ public class ESFShootingDirectorQualificationClp extends BaseModelImpl<ESFShooti
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -314,4 +318,5 @@ public class ESFShootingDirectorQualificationClp extends BaseModelImpl<ESFShooti
 	private long _esfShootingDirectorQualificationId;
 	private String _esfShootingDirectorQualificationDesc;
 	private BaseModel<?> _esfShootingDirectorQualificationRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }
