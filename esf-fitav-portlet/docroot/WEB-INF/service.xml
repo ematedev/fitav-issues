@@ -1106,7 +1106,7 @@
         </finder>
 
 	</entity>
-	<entity name="ESFShooterCategoryESFTournament" local-service="false"
+	<entity name="ESFShooterCategoryESFTournament" local-service="true"
 		remote-service="false" uuid="true" cache-enabled="false">
 
 		<!-- PK fields -->
@@ -1186,7 +1186,7 @@
 
 	</entity>
 	<entity name="ESFShooterQualificationESFTournament"
-		local-service="false" remote-service="false" uuid="true"
+		local-service="true" remote-service="false" uuid="true"
 		cache-enabled="false">
 
 		<!-- PK fields -->
