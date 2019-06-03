@@ -1186,7 +1186,7 @@
 
 	</entity>
 	<entity name="ESFShooterQualificationESFTournament"
-		local-service="false" remote-service="false" uuid="true"
+		local-service="true" remote-service="false" uuid="true"
 		cache-enabled="false">
 
 		<!-- PK fields -->
