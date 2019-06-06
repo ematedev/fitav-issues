@@ -45,8 +45,8 @@
 	findESFMatchesByYearIsNational(
 				cal.get(cal.YEAR),isNational);
 	String matchCodeValue = "";
-	matchCodeValue = String.valueOf(cal.get(cal.YEAR)) + String.valueOf(esfMatches.size() + 1);
-	
+	//matchCodeValue = String.valueOf(cal.get(cal.YEAR)) + String.valueOf(esfMatches.size() + 1);
+	matchCodeValue ="";
 	String esfDescription = "";
 	List<ESFMatchType> esfMatchTypes = null;
 	esfMatchTypes  = ESFMatchTypeLocalServiceUtil.findAllByNational(false);
@@ -86,7 +86,7 @@
 				String	startDate = ManageDate.CalendarToString(calendar);
 				String endDate = ManageDate.CalendarToString(calendar);
 
-				SimpleDateFormat format1 = new SimpleDateFormat("MM/dd/yyyy");
+				SimpleDateFormat format1 = new SimpleDateFormat("dd/MM/yyyy");
 				if(esfMatchId>0){
 					startDate = format1.format(esfMatch.getStartDate());
 					endDate = format1.format(esfMatch.getEndDate());
@@ -95,9 +95,9 @@
 					startDate= format1.format(new Date());
 					endDate= format1.format(new Date());
 				}
-		%>
-
-		<aui:script>
+		%> 
+		
+	 	<aui:script>
 		$(function() {
 			$("#<portlet:namespace/>startDate").datepicker();
 			
@@ -110,9 +110,10 @@
 			$("#<portlet:namespace/>endDate").datepicker();
 			
 			$("#<portlet:namespace/>endDate").datepicker("setDate", '<%= endDate %>');
-			$("#<portlet:namespace/>endDate").datepicker("option", "dateFormat", 'dd/mm/yy');
+			$("#<portlet:namespace/>endDate").datepicker("option", "dateFormat", 'dd/mm/yy'); 
 			
-		});
+		}); 
+	
 		
 		$(function() {
 			$('input[name="<portlet:namespace/>startHour"]').ptTimeSelect({
@@ -128,27 +129,113 @@
 					onClose:        undefined
 			});
 		});	
-		</aui:script>
+		</aui:script> 
 		
 
-		<aui:input name="code" value = "<%=matchCodeValue%>" >
-			<aui:validator name="digits"></aui:validator>
+	   	<aui:input name="code" value = "<%=matchCodeValue%>" disabled="true">			
+		</aui:input> 
+
+		<aui:input name="startDate" type="text">			
+		<aui:validator name="required" errorMessage="this-field-is-required" />			                        
+                        <aui:validator name="custom"
+                            errorMessage="La Data non ha un formato corretto.Inserire gg/mm/aaaa">
+                            		function (val, fieldNode, ruleValue)
+                       {
+                         var result = true;
+                         var pattern=/^(0?[1-9]|1\d|2\d|3[01])\/(0?[1-9]|1[0-2])\/(19|20)\d{2}$/;        
+                         var check = pattern.test(val);
+                         var checkValue = $("#<portlet:namespace />startDate").val();                         
+                                                 
+                         if(check == false && checkValue)
+                          {
+                           result=false;
+                          }
+                         val=$.trim(val);
+                         $("#<portlet:namespace />startDate").val(val);
+                         return result;
+                        }
+                      						
+		</aui:validator>
 		</aui:input>
 
-		<aui:input name="startDate" type="text" >
-			<aui:validator name="required" errorMessage="this-field-is-required" />
+		<aui:input name="endDate" type="text">			
+		<aui:validator name="required" errorMessage="this-field-is-required" />
+		      
+			<aui:validator name="custom" errorMessage="La Data Fine deve essere maggiore o uguale alla Data Inizio.">                                                              
+                        	function(val, fieldNode, ruleValue) 
+                        {                         
+                        	var startDateObj = document.getElementById("<portlet:namespace />startDate");
+                            var startDate;
+                            var result=false;
+                           
+                            if(val == ""){
+                                return true;
+                            }
+                            if(startDateObj) {
+                                startDate = new Date(Date.parse(startDateObj.value,"dd MM yyyy"));
+                            }else{
+                                result = false;
+                            }
+                            var endDate = new Date(Date.parse(val,"dd MM yyyy"));                                                        
+                            
+                            if(startDate && endDate){
+                            	if (endDate.getTime() >= startDate.getTime()) {
+                                	result = true;
+                                }
+                            }else{
+                                result = false;
+                            } 
+                            
+                            return result;
+                        }
+                        </aui:validator>
+                        
+                        <aui:validator name="custom"
+                            errorMessage="La Data non ha un formato corretto. Inserire gg/mm/aaaa">
+                            		function (val, fieldNode, ruleValue)
+                       {
+                         var result = true;
+                                 
+                         var pattern=/^(0?[1-9]|1\d|2\d|3[01])\/(0?[1-9]|1[0-2])\/(19|20)\d{2}$/;               
+                         var check = pattern.test(val);
+                         var checkValue = $("#<portlet:namespace />endDate").val();
+                                                                    
+                         if(check == false && checkValue)
+                          {
+                           result=false;
+                          }
+                         val=$.trim(val);
+                         $("#<portlet:namespace />endDate").val(val);
+                         return result;
+                        }                                          						
+						</aui:validator>
 		</aui:input>
 
-		<aui:input name="endDate" type="text" >
-			<aui:validator name="required" errorMessage="this-field-is-required" />
+		<aui:input name="startHour" type="text"> 
+		<aui:validator name="required" errorMessage="this-field-is-required" />		
+			<aui:validator name="custom"
+                                  errorMessage="L'ora non ha un formato corretto. Inserire hh/mm">
+                       function (val, fieldNode, ruleValue)
+                       {
+                         var result = true;
+                         var pattern=/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/;
+                         var check = pattern.test(val);
+                         var checkValue = $("#<portlet:namespace />startHour").val();
+                         if(check == false && checkValue)
+                          {
+                           result=false;
+                          }
+                         val=$.trim(val);
+                         $("#<portlet:namespace />startHour").val(val);
+                         return result;
+                        }
+                       </aui:validator>		
 		</aui:input>
-
-		<aui:input name="startHour" ></aui:input>
 
 		
 	<div  class="btn-field-align">	
 		<aui:select name="esfMatchTypeId" lable="esfMatchTypeId" id="esfMatchTypeId" inlineField="true">
-			<aui:option label="-" value="0" />
+		<%-- 	<aui:option label="-" value="0" />   --%>
 			<%
 				boolean select = false;
 			
@@ -207,7 +294,7 @@
 
 </div>		
 		<aui:select name="esfSportTypeid">
-			<aui:option label="-" value="0" />
+		<%--  	<aui:option label="-" value="0" /> --%>
 			<%
 			List<ESFSportType> esfSportTypes = ESFSportTypeLocalServiceUtil.getAllESFSportTypes();
 			for (ESFSportType esfSportType : esfSportTypes) {
@@ -466,4 +553,15 @@ A.one("#<portlet:namespace/>checkDraft").on('click',function() {
 	}
 });
 
+$('#<portlet:namespace/>startDate').on('change', function(){
+	$('#<portlet:namespace/>endDate').val($(this).val());
+});
+
+$('#<portlet:namespace/>startDate').on('change', function(){
+	$('#<portlet:namespace/>startDate').show();
+});
+
+$('#<portlet:namespace/>endDate').on('change', function(){
+	$('#<portlet:namespace/>endDate').show();
+});  
 </aui:script>
