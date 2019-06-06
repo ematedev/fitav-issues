@@ -1,5 +1,6 @@
 package it.ethica.esf.util;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -26,6 +27,26 @@ public class DateUtilFormatter {
 		return formattedDate;
 	}
 	
+	public static Date parseDate(String pattern, String sDate) throws MissingDateException, ParseException {
+		if(sDate==null){
+			throw new MissingDateException("Please provide a String to format");
+		}
+		return getFormatter(pattern).parse(sDate);
+	}
+	
+	/**
+	 * Metodo per trasformare una data in formato dd/MM/yyyy in un oggetto java.util.Date
+	 * @param sDate la data nel formato dd/MM/yyyy
+	 * @return L'oggetto date che rappresenta la data passata come parametro
+	 * @throws MissingDateException
+	 * @throws ParseException
+	 */
+	public static Date parseDate(String sDate) throws MissingDateException, ParseException {
+		if(sDate==null){
+			throw new MissingDateException("Please provide a String to format");
+		}
+		return getDefaultFormatter().parse(sDate);
+	}
 	
 	/**
 	 * Format a date using  the default  
@@ -60,4 +81,5 @@ public class DateUtilFormatter {
 	public static SimpleDateFormat getDefaultFormatter() {
 		return getFormatter(DEFAULT_DATE_FORMAT_ITA);
 	}
+	
 }

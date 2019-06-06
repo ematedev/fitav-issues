@@ -2,6 +2,7 @@
 package it.ethica.esf.portlet;
 
 import java.io.IOException;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -86,6 +87,7 @@ import it.ethica.esf.util.ESFServiceUtil;
 import it.ethica.esf.util.FiscalCodeCalculatorUtil;
 import it.ethica.esf.util.ManageDate;
 import it.ethica.esf.util.ManageOperationsField;
+import it.ethica.esf.util.MissingDateException;
 
 /**
  * Portlet implementation class ESFShooter
@@ -1247,18 +1249,30 @@ public class ESFShooterPortlet extends MVCPortlet {
 	}
 	
 	public void associateEsfFederalRole(ActionRequest request, ActionResponse response){
-		ThemeDisplay themeDisplay = (ThemeDisplay)request.getAttribute(WebKeys.THEME_DISPLAY);
 		long esfUserId = ParamUtil.getLong(request, "esfUserId", -1);
 		long esfFederalRoleId = ParamUtil.getLong(request, "esfFederalRoleId", -1);
 		String mvcPath = ParamUtil.getString(request, "mvcPath");
 		long esfSpecificId = ParamUtil.getLong(request, "esfSpecificId");
 		String notes = ParamUtil.getString(request, "notes");
-		long startDate = Calendar.getInstance().getTimeInMillis();
+		String sEndDate = ParamUtil.getString(request, "endDateIncarico");
+		String sStartDate = ParamUtil.getString(request, "startDateIncarico");
+		_log.debug("IncaricoFederale - StartDate(V): "+sStartDate+" - EndDate(V): "+sEndDate);
+		Date endDate = null;
+		Date startDate = null;
 		if(esfUserId > 0 && esfFederalRoleId > 0){
 			try {
-				ESFFederalRoleLocalServiceUtil.associateEsfUser(esfUserId, esfFederalRoleId, startDate, Calendar.getInstance().getTime(),esfSpecificId, notes);
+				startDate = DateUtilFormatter.parseDate(sStartDate);
+				endDate = DateUtilFormatter.parseDate(sEndDate);
+				ESFFederalRoleLocalServiceUtil.associateEsfUser(esfUserId, esfFederalRoleId, startDate.getTime(), endDate,esfSpecificId, notes);
 			} catch (SystemException e) {
 				_log.fatal(e.getMessage());
+				SessionErrors.add(request, "error-federal-role");
+			} catch (MissingDateException e) {
+				_log.fatal(e.getMessage());
+				SessionErrors.add(request, "error-federal-role");
+			} catch (ParseException e) {
+				_log.fatal(e.getMessage());
+				SessionErrors.add(request, "error-federal-role");
 			}
 		}
 		_log.debug("SPECIFIC ID: "+esfSpecificId);

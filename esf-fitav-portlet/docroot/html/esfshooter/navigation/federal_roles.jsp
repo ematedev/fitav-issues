@@ -77,17 +77,6 @@
 <%--    				<liferay-ui:search-iterator />  --%>
 <%--  			</liferay-ui:search-container>  --%>
 
-
-		
-
-
-
-
-
-
-
-
-
 			<%-- Parte funzionante versione vecchia--%>
 
 						<liferay-ui:search-container emptyResultsMessage="no-results">
@@ -141,7 +130,7 @@
 										</aui:a>
 									</c:if>
 								</liferay-ui:search-container-column-text>
-								<liferay-ui:search-container-column-text name="Elimina Definittivamente">
+								<liferay-ui:search-container-column-text name="Elimina Definitivamente">
 									<c:if test="<%= ESFFederalRoleLocalServiceUtil.isAssociated(esfUserId, federalRole.getEsfFederalRoleId()) %>">
 										<portlet:actionURL name="deleteEsfUserEsfFederalRole"  var="deleteEsfUserEsfFederalRoleURL">
 											<portlet:param name="mvcPath" value='/html/esfshooter/edit_esfShooter.jsp' />
@@ -171,13 +160,14 @@
 						</div>
 					</div>
 				</div>
-				<aui:form action="${associateEsfFederalRoleActionURL}">
+				<aui:form action="${associateEsfFederalRoleActionURL}" method="POST" name="associaIncarico">
 					<aui:input name="esfUserId" type="hidden"
 						value="<%=String.valueOf(esfUserId)%>" />
 					<aui:input name="esfFederalRoleId" type="hidden" />
 					<aui:input name="notes" type="textarea" />
-					<aui:input name="startDate" />
-					<aui:input name="endDate" />
+					<aui:input name="startDateIncarico" type="text" label="startDate" />
+					<aui:input name="endDateIncarico" type="text" label="endDate" />
+					<aui:input name="test" label="test" />
 					<aui:button type="submit" value="associate" />
 				</aui:form>
 			</div>
@@ -219,10 +209,15 @@
 
 <aui:script use="aui-base,node,aui-io-request">
 	$(function() {
-		$("#<portlet:namespace/>endDate").datepicker();
-		$("#<portlet:namespace/>endDate").datepicker("option",
+		$("#<portlet:namespace/>endDateIncarico").datepicker();
+		$("#<portlet:namespace/>endDateIncarico").datepicker("option",
 				"dateFormat", "dd/mm/yy");
-
+		$("#<portlet:namespace/>endDateIncarico").datepicker("setDate", '');
+		
+		$("#<portlet:namespace/>startDateIncarico").datepicker();
+		$("#<portlet:namespace/>startDateIncarico").datepicker("option",
+				"dateFormat", "dd/mm/yy");
+		$("#<portlet:namespace/>startDateIncarico").datepicker("setDate", '');
 	});
 </aui:script>
 
