@@ -167,7 +167,6 @@
 					<aui:input name="notes" type="textarea" />
 					<aui:input name="startDateIncarico" type="text" label="startDate" />
 					<aui:input name="endDateIncarico" type="text" label="endDate" />
-					<aui:input name="test" label="test" />
 					<aui:button type="submit" value="associate" />
 				</aui:form>
 			</div>

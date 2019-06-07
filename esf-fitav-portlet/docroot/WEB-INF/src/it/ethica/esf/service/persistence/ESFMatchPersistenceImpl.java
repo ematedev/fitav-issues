@@ -5330,6 +5330,1543 @@ public class ESFMatchPersistenceImpl extends BasePersistenceImpl<ESFMatch>
 	private static final String _FINDER_COLUMN_CODE_CODE_1 = "esfMatch.code IS NULL";
 	private static final String _FINDER_COLUMN_CODE_CODE_2 = "esfMatch.code = ?";
 	private static final String _FINDER_COLUMN_CODE_CODE_3 = "(esfMatch.code IS NULL OR esfMatch.code = '')";
+	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_LIKECODE = new FinderPath(ESFMatchModelImpl.ENTITY_CACHE_ENABLED,
+			ESFMatchModelImpl.FINDER_CACHE_ENABLED, ESFMatchImpl.class,
+			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByLikeCode",
+			new String[] {
+				String.class.getName(),
+				
+			Integer.class.getName(), Integer.class.getName(),
+				OrderByComparator.class.getName()
+			});
+	public static final FinderPath FINDER_PATH_WITH_PAGINATION_COUNT_BY_LIKECODE =
+		new FinderPath(ESFMatchModelImpl.ENTITY_CACHE_ENABLED,
+			ESFMatchModelImpl.FINDER_CACHE_ENABLED, Long.class,
+			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "countByLikeCode",
+			new String[] { String.class.getName() });
+
+	/**
+	 * Returns all the e s f matchs where code LIKE &#63;.
+	 *
+	 * @param code the code
+	 * @return the matching e s f matchs
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<ESFMatch> findByLikeCode(String code) throws SystemException {
+		return findByLikeCode(code, QueryUtil.ALL_POS, QueryUtil.ALL_POS, null);
+	}
+
+	/**
+	 * Returns a range of all the e s f matchs where code LIKE &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link it.ethica.esf.model.impl.ESFMatchModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param code the code
+	 * @param start the lower bound of the range of e s f matchs
+	 * @param end the upper bound of the range of e s f matchs (not inclusive)
+	 * @return the range of matching e s f matchs
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<ESFMatch> findByLikeCode(String code, int start, int end)
+		throws SystemException {
+		return findByLikeCode(code, start, end, null);
+	}
+
+	/**
+	 * Returns an ordered range of all the e s f matchs where code LIKE &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link it.ethica.esf.model.impl.ESFMatchModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param code the code
+	 * @param start the lower bound of the range of e s f matchs
+	 * @param end the upper bound of the range of e s f matchs (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @return the ordered range of matching e s f matchs
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<ESFMatch> findByLikeCode(String code, int start, int end,
+		OrderByComparator orderByComparator) throws SystemException {
+		boolean pagination = true;
+		FinderPath finderPath = null;
+		Object[] finderArgs = null;
+
+		finderPath = FINDER_PATH_WITH_PAGINATION_FIND_BY_LIKECODE;
+		finderArgs = new Object[] { code, start, end, orderByComparator };
+
+		List<ESFMatch> list = (List<ESFMatch>)FinderCacheUtil.getResult(finderPath,
+				finderArgs, this);
+
+		if ((list != null) && !list.isEmpty()) {
+			for (ESFMatch esfMatch : list) {
+				if (!StringUtil.wildcardMatches(esfMatch.getCode(), code,
+							CharPool.UNDERLINE, CharPool.PERCENT,
+							CharPool.BACK_SLASH, true)) {
+					list = null;
+
+					break;
+				}
+			}
+		}
+
+		if (list == null) {
+			StringBundler query = null;
+
+			if (orderByComparator != null) {
+				query = new StringBundler(3 +
+						(orderByComparator.getOrderByFields().length * 3));
+			}
+			else {
+				query = new StringBundler(3);
+			}
+
+			query.append(_SQL_SELECT_ESFMATCH_WHERE);
+
+			boolean bindCode = false;
+
+			if (code == null) {
+				query.append(_FINDER_COLUMN_LIKECODE_CODE_1);
+			}
+			else if (code.equals(StringPool.BLANK)) {
+				query.append(_FINDER_COLUMN_LIKECODE_CODE_3);
+			}
+			else {
+				bindCode = true;
+
+				query.append(_FINDER_COLUMN_LIKECODE_CODE_2);
+			}
+
+			if (orderByComparator != null) {
+				appendOrderByComparator(query, _ORDER_BY_ENTITY_ALIAS,
+					orderByComparator);
+			}
+			else
+			 if (pagination) {
+				query.append(ESFMatchModelImpl.ORDER_BY_JPQL);
+			}
+
+			String sql = query.toString();
+
+			Session session = null;
+
+			try {
+				session = openSession();
+
+				Query q = session.createQuery(sql);
+
+				QueryPos qPos = QueryPos.getInstance(q);
+
+				if (bindCode) {
+					qPos.add(code);
+				}
+
+				if (!pagination) {
+					list = (List<ESFMatch>)QueryUtil.list(q, getDialect(),
+							start, end, false);
+
+					Collections.sort(list);
+
+					list = new UnmodifiableList<ESFMatch>(list);
+				}
+				else {
+					list = (List<ESFMatch>)QueryUtil.list(q, getDialect(),
+							start, end);
+				}
+
+				cacheResult(list);
+
+				FinderCacheUtil.putResult(finderPath, finderArgs, list);
+			}
+			catch (Exception e) {
+				FinderCacheUtil.removeResult(finderPath, finderArgs);
+
+				throw processException(e);
+			}
+			finally {
+				closeSession(session);
+			}
+		}
+
+		return list;
+	}
+
+	/**
+	 * Returns the first e s f match in the ordered set where code LIKE &#63;.
+	 *
+	 * @param code the code
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching e s f match
+	 * @throws it.ethica.esf.NoSuchMatchException if a matching e s f match could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public ESFMatch findByLikeCode_First(String code,
+		OrderByComparator orderByComparator)
+		throws NoSuchMatchException, SystemException {
+		ESFMatch esfMatch = fetchByLikeCode_First(code, orderByComparator);
+
+		if (esfMatch != null) {
+			return esfMatch;
+		}
+
+		StringBundler msg = new StringBundler(4);
+
+		msg.append(_NO_SUCH_ENTITY_WITH_KEY);
+
+		msg.append("code=");
+		msg.append(code);
+
+		msg.append(StringPool.CLOSE_CURLY_BRACE);
+
+		throw new NoSuchMatchException(msg.toString());
+	}
+
+	/**
+	 * Returns the first e s f match in the ordered set where code LIKE &#63;.
+	 *
+	 * @param code the code
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching e s f match, or <code>null</code> if a matching e s f match could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public ESFMatch fetchByLikeCode_First(String code,
+		OrderByComparator orderByComparator) throws SystemException {
+		List<ESFMatch> list = findByLikeCode(code, 0, 1, orderByComparator);
+
+		if (!list.isEmpty()) {
+			return list.get(0);
+		}
+
+		return null;
+	}
+
+	/**
+	 * Returns the last e s f match in the ordered set where code LIKE &#63;.
+	 *
+	 * @param code the code
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching e s f match
+	 * @throws it.ethica.esf.NoSuchMatchException if a matching e s f match could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public ESFMatch findByLikeCode_Last(String code,
+		OrderByComparator orderByComparator)
+		throws NoSuchMatchException, SystemException {
+		ESFMatch esfMatch = fetchByLikeCode_Last(code, orderByComparator);
+
+		if (esfMatch != null) {
+			return esfMatch;
+		}
+
+		StringBundler msg = new StringBundler(4);
+
+		msg.append(_NO_SUCH_ENTITY_WITH_KEY);
+
+		msg.append("code=");
+		msg.append(code);
+
+		msg.append(StringPool.CLOSE_CURLY_BRACE);
+
+		throw new NoSuchMatchException(msg.toString());
+	}
+
+	/**
+	 * Returns the last e s f match in the ordered set where code LIKE &#63;.
+	 *
+	 * @param code the code
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching e s f match, or <code>null</code> if a matching e s f match could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public ESFMatch fetchByLikeCode_Last(String code,
+		OrderByComparator orderByComparator) throws SystemException {
+		int count = countByLikeCode(code);
+
+		if (count == 0) {
+			return null;
+		}
+
+		List<ESFMatch> list = findByLikeCode(code, count - 1, count,
+				orderByComparator);
+
+		if (!list.isEmpty()) {
+			return list.get(0);
+		}
+
+		return null;
+	}
+
+	/**
+	 * Returns the e s f matchs before and after the current e s f match in the ordered set where code LIKE &#63;.
+	 *
+	 * @param esfMatchId the primary key of the current e s f match
+	 * @param code the code
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the previous, current, and next e s f match
+	 * @throws it.ethica.esf.NoSuchMatchException if a e s f match with the primary key could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public ESFMatch[] findByLikeCode_PrevAndNext(long esfMatchId, String code,
+		OrderByComparator orderByComparator)
+		throws NoSuchMatchException, SystemException {
+		ESFMatch esfMatch = findByPrimaryKey(esfMatchId);
+
+		Session session = null;
+
+		try {
+			session = openSession();
+
+			ESFMatch[] array = new ESFMatchImpl[3];
+
+			array[0] = getByLikeCode_PrevAndNext(session, esfMatch, code,
+					orderByComparator, true);
+
+			array[1] = esfMatch;
+
+			array[2] = getByLikeCode_PrevAndNext(session, esfMatch, code,
+					orderByComparator, false);
+
+			return array;
+		}
+		catch (Exception e) {
+			throw processException(e);
+		}
+		finally {
+			closeSession(session);
+		}
+	}
+
+	protected ESFMatch getByLikeCode_PrevAndNext(Session session,
+		ESFMatch esfMatch, String code, OrderByComparator orderByComparator,
+		boolean previous) {
+		StringBundler query = null;
+
+		if (orderByComparator != null) {
+			query = new StringBundler(6 +
+					(orderByComparator.getOrderByFields().length * 6));
+		}
+		else {
+			query = new StringBundler(3);
+		}
+
+		query.append(_SQL_SELECT_ESFMATCH_WHERE);
+
+		boolean bindCode = false;
+
+		if (code == null) {
+			query.append(_FINDER_COLUMN_LIKECODE_CODE_1);
+		}
+		else if (code.equals(StringPool.BLANK)) {
+			query.append(_FINDER_COLUMN_LIKECODE_CODE_3);
+		}
+		else {
+			bindCode = true;
+
+			query.append(_FINDER_COLUMN_LIKECODE_CODE_2);
+		}
+
+		if (orderByComparator != null) {
+			String[] orderByConditionFields = orderByComparator.getOrderByConditionFields();
+
+			if (orderByConditionFields.length > 0) {
+				query.append(WHERE_AND);
+			}
+
+			for (int i = 0; i < orderByConditionFields.length; i++) {
+				query.append(_ORDER_BY_ENTITY_ALIAS);
+				query.append(orderByConditionFields[i]);
+
+				if ((i + 1) < orderByConditionFields.length) {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(WHERE_GREATER_THAN_HAS_NEXT);
+					}
+					else {
+						query.append(WHERE_LESSER_THAN_HAS_NEXT);
+					}
+				}
+				else {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(WHERE_GREATER_THAN);
+					}
+					else {
+						query.append(WHERE_LESSER_THAN);
+					}
+				}
+			}
+
+			query.append(ORDER_BY_CLAUSE);
+
+			String[] orderByFields = orderByComparator.getOrderByFields();
+
+			for (int i = 0; i < orderByFields.length; i++) {
+				query.append(_ORDER_BY_ENTITY_ALIAS);
+				query.append(orderByFields[i]);
+
+				if ((i + 1) < orderByFields.length) {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(ORDER_BY_ASC_HAS_NEXT);
+					}
+					else {
+						query.append(ORDER_BY_DESC_HAS_NEXT);
+					}
+				}
+				else {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(ORDER_BY_ASC);
+					}
+					else {
+						query.append(ORDER_BY_DESC);
+					}
+				}
+			}
+		}
+		else {
+			query.append(ESFMatchModelImpl.ORDER_BY_JPQL);
+		}
+
+		String sql = query.toString();
+
+		Query q = session.createQuery(sql);
+
+		q.setFirstResult(0);
+		q.setMaxResults(2);
+
+		QueryPos qPos = QueryPos.getInstance(q);
+
+		if (bindCode) {
+			qPos.add(code);
+		}
+
+		if (orderByComparator != null) {
+			Object[] values = orderByComparator.getOrderByConditionValues(esfMatch);
+
+			for (Object value : values) {
+				qPos.add(value);
+			}
+		}
+
+		List<ESFMatch> list = q.list();
+
+		if (list.size() == 2) {
+			return list.get(1);
+		}
+		else {
+			return null;
+		}
+	}
+
+	/**
+	 * Removes all the e s f matchs where code LIKE &#63; from the database.
+	 *
+	 * @param code the code
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public void removeByLikeCode(String code) throws SystemException {
+		for (ESFMatch esfMatch : findByLikeCode(code, QueryUtil.ALL_POS,
+				QueryUtil.ALL_POS, null)) {
+			remove(esfMatch);
+		}
+	}
+
+	/**
+	 * Returns the number of e s f matchs where code LIKE &#63;.
+	 *
+	 * @param code the code
+	 * @return the number of matching e s f matchs
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public int countByLikeCode(String code) throws SystemException {
+		FinderPath finderPath = FINDER_PATH_WITH_PAGINATION_COUNT_BY_LIKECODE;
+
+		Object[] finderArgs = new Object[] { code };
+
+		Long count = (Long)FinderCacheUtil.getResult(finderPath, finderArgs,
+				this);
+
+		if (count == null) {
+			StringBundler query = new StringBundler(2);
+
+			query.append(_SQL_COUNT_ESFMATCH_WHERE);
+
+			boolean bindCode = false;
+
+			if (code == null) {
+				query.append(_FINDER_COLUMN_LIKECODE_CODE_1);
+			}
+			else if (code.equals(StringPool.BLANK)) {
+				query.append(_FINDER_COLUMN_LIKECODE_CODE_3);
+			}
+			else {
+				bindCode = true;
+
+				query.append(_FINDER_COLUMN_LIKECODE_CODE_2);
+			}
+
+			String sql = query.toString();
+
+			Session session = null;
+
+			try {
+				session = openSession();
+
+				Query q = session.createQuery(sql);
+
+				QueryPos qPos = QueryPos.getInstance(q);
+
+				if (bindCode) {
+					qPos.add(code);
+				}
+
+				count = (Long)q.uniqueResult();
+
+				FinderCacheUtil.putResult(finderPath, finderArgs, count);
+			}
+			catch (Exception e) {
+				FinderCacheUtil.removeResult(finderPath, finderArgs);
+
+				throw processException(e);
+			}
+			finally {
+				closeSession(session);
+			}
+		}
+
+		return count.intValue();
+	}
+
+	private static final String _FINDER_COLUMN_LIKECODE_CODE_1 = "esfMatch.code LIKE NULL";
+	private static final String _FINDER_COLUMN_LIKECODE_CODE_2 = "esfMatch.code LIKE ?";
+	private static final String _FINDER_COLUMN_LIKECODE_CODE_3 = "(esfMatch.code IS NULL OR esfMatch.code LIKE '')";
+	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_MATCHYEAR =
+		new FinderPath(ESFMatchModelImpl.ENTITY_CACHE_ENABLED,
+			ESFMatchModelImpl.FINDER_CACHE_ENABLED, ESFMatchImpl.class,
+			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByMatchYear",
+			new String[] {
+				Integer.class.getName(),
+				
+			Integer.class.getName(), Integer.class.getName(),
+				OrderByComparator.class.getName()
+			});
+	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_MATCHYEAR =
+		new FinderPath(ESFMatchModelImpl.ENTITY_CACHE_ENABLED,
+			ESFMatchModelImpl.FINDER_CACHE_ENABLED, ESFMatchImpl.class,
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByMatchYear",
+			new String[] { Integer.class.getName() },
+			ESFMatchModelImpl.MATCHYEAR_COLUMN_BITMASK);
+	public static final FinderPath FINDER_PATH_COUNT_BY_MATCHYEAR = new FinderPath(ESFMatchModelImpl.ENTITY_CACHE_ENABLED,
+			ESFMatchModelImpl.FINDER_CACHE_ENABLED, Long.class,
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByMatchYear",
+			new String[] { Integer.class.getName() });
+
+	/**
+	 * Returns all the e s f matchs where matchYear = &#63;.
+	 *
+	 * @param matchYear the match year
+	 * @return the matching e s f matchs
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<ESFMatch> findByMatchYear(int matchYear)
+		throws SystemException {
+		return findByMatchYear(matchYear, QueryUtil.ALL_POS, QueryUtil.ALL_POS,
+			null);
+	}
+
+	/**
+	 * Returns a range of all the e s f matchs where matchYear = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link it.ethica.esf.model.impl.ESFMatchModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param matchYear the match year
+	 * @param start the lower bound of the range of e s f matchs
+	 * @param end the upper bound of the range of e s f matchs (not inclusive)
+	 * @return the range of matching e s f matchs
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<ESFMatch> findByMatchYear(int matchYear, int start, int end)
+		throws SystemException {
+		return findByMatchYear(matchYear, start, end, null);
+	}
+
+	/**
+	 * Returns an ordered range of all the e s f matchs where matchYear = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link it.ethica.esf.model.impl.ESFMatchModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param matchYear the match year
+	 * @param start the lower bound of the range of e s f matchs
+	 * @param end the upper bound of the range of e s f matchs (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @return the ordered range of matching e s f matchs
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<ESFMatch> findByMatchYear(int matchYear, int start, int end,
+		OrderByComparator orderByComparator) throws SystemException {
+		boolean pagination = true;
+		FinderPath finderPath = null;
+		Object[] finderArgs = null;
+
+		if ((start == QueryUtil.ALL_POS) && (end == QueryUtil.ALL_POS) &&
+				(orderByComparator == null)) {
+			pagination = false;
+			finderPath = FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_MATCHYEAR;
+			finderArgs = new Object[] { matchYear };
+		}
+		else {
+			finderPath = FINDER_PATH_WITH_PAGINATION_FIND_BY_MATCHYEAR;
+			finderArgs = new Object[] { matchYear, start, end, orderByComparator };
+		}
+
+		List<ESFMatch> list = (List<ESFMatch>)FinderCacheUtil.getResult(finderPath,
+				finderArgs, this);
+
+		if ((list != null) && !list.isEmpty()) {
+			for (ESFMatch esfMatch : list) {
+				if ((matchYear != esfMatch.getMatchYear())) {
+					list = null;
+
+					break;
+				}
+			}
+		}
+
+		if (list == null) {
+			StringBundler query = null;
+
+			if (orderByComparator != null) {
+				query = new StringBundler(3 +
+						(orderByComparator.getOrderByFields().length * 3));
+			}
+			else {
+				query = new StringBundler(3);
+			}
+
+			query.append(_SQL_SELECT_ESFMATCH_WHERE);
+
+			query.append(_FINDER_COLUMN_MATCHYEAR_MATCHYEAR_2);
+
+			if (orderByComparator != null) {
+				appendOrderByComparator(query, _ORDER_BY_ENTITY_ALIAS,
+					orderByComparator);
+			}
+			else
+			 if (pagination) {
+				query.append(ESFMatchModelImpl.ORDER_BY_JPQL);
+			}
+
+			String sql = query.toString();
+
+			Session session = null;
+
+			try {
+				session = openSession();
+
+				Query q = session.createQuery(sql);
+
+				QueryPos qPos = QueryPos.getInstance(q);
+
+				qPos.add(matchYear);
+
+				if (!pagination) {
+					list = (List<ESFMatch>)QueryUtil.list(q, getDialect(),
+							start, end, false);
+
+					Collections.sort(list);
+
+					list = new UnmodifiableList<ESFMatch>(list);
+				}
+				else {
+					list = (List<ESFMatch>)QueryUtil.list(q, getDialect(),
+							start, end);
+				}
+
+				cacheResult(list);
+
+				FinderCacheUtil.putResult(finderPath, finderArgs, list);
+			}
+			catch (Exception e) {
+				FinderCacheUtil.removeResult(finderPath, finderArgs);
+
+				throw processException(e);
+			}
+			finally {
+				closeSession(session);
+			}
+		}
+
+		return list;
+	}
+
+	/**
+	 * Returns the first e s f match in the ordered set where matchYear = &#63;.
+	 *
+	 * @param matchYear the match year
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching e s f match
+	 * @throws it.ethica.esf.NoSuchMatchException if a matching e s f match could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public ESFMatch findByMatchYear_First(int matchYear,
+		OrderByComparator orderByComparator)
+		throws NoSuchMatchException, SystemException {
+		ESFMatch esfMatch = fetchByMatchYear_First(matchYear, orderByComparator);
+
+		if (esfMatch != null) {
+			return esfMatch;
+		}
+
+		StringBundler msg = new StringBundler(4);
+
+		msg.append(_NO_SUCH_ENTITY_WITH_KEY);
+
+		msg.append("matchYear=");
+		msg.append(matchYear);
+
+		msg.append(StringPool.CLOSE_CURLY_BRACE);
+
+		throw new NoSuchMatchException(msg.toString());
+	}
+
+	/**
+	 * Returns the first e s f match in the ordered set where matchYear = &#63;.
+	 *
+	 * @param matchYear the match year
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching e s f match, or <code>null</code> if a matching e s f match could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public ESFMatch fetchByMatchYear_First(int matchYear,
+		OrderByComparator orderByComparator) throws SystemException {
+		List<ESFMatch> list = findByMatchYear(matchYear, 0, 1, orderByComparator);
+
+		if (!list.isEmpty()) {
+			return list.get(0);
+		}
+
+		return null;
+	}
+
+	/**
+	 * Returns the last e s f match in the ordered set where matchYear = &#63;.
+	 *
+	 * @param matchYear the match year
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching e s f match
+	 * @throws it.ethica.esf.NoSuchMatchException if a matching e s f match could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public ESFMatch findByMatchYear_Last(int matchYear,
+		OrderByComparator orderByComparator)
+		throws NoSuchMatchException, SystemException {
+		ESFMatch esfMatch = fetchByMatchYear_Last(matchYear, orderByComparator);
+
+		if (esfMatch != null) {
+			return esfMatch;
+		}
+
+		StringBundler msg = new StringBundler(4);
+
+		msg.append(_NO_SUCH_ENTITY_WITH_KEY);
+
+		msg.append("matchYear=");
+		msg.append(matchYear);
+
+		msg.append(StringPool.CLOSE_CURLY_BRACE);
+
+		throw new NoSuchMatchException(msg.toString());
+	}
+
+	/**
+	 * Returns the last e s f match in the ordered set where matchYear = &#63;.
+	 *
+	 * @param matchYear the match year
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching e s f match, or <code>null</code> if a matching e s f match could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public ESFMatch fetchByMatchYear_Last(int matchYear,
+		OrderByComparator orderByComparator) throws SystemException {
+		int count = countByMatchYear(matchYear);
+
+		if (count == 0) {
+			return null;
+		}
+
+		List<ESFMatch> list = findByMatchYear(matchYear, count - 1, count,
+				orderByComparator);
+
+		if (!list.isEmpty()) {
+			return list.get(0);
+		}
+
+		return null;
+	}
+
+	/**
+	 * Returns the e s f matchs before and after the current e s f match in the ordered set where matchYear = &#63;.
+	 *
+	 * @param esfMatchId the primary key of the current e s f match
+	 * @param matchYear the match year
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the previous, current, and next e s f match
+	 * @throws it.ethica.esf.NoSuchMatchException if a e s f match with the primary key could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public ESFMatch[] findByMatchYear_PrevAndNext(long esfMatchId,
+		int matchYear, OrderByComparator orderByComparator)
+		throws NoSuchMatchException, SystemException {
+		ESFMatch esfMatch = findByPrimaryKey(esfMatchId);
+
+		Session session = null;
+
+		try {
+			session = openSession();
+
+			ESFMatch[] array = new ESFMatchImpl[3];
+
+			array[0] = getByMatchYear_PrevAndNext(session, esfMatch, matchYear,
+					orderByComparator, true);
+
+			array[1] = esfMatch;
+
+			array[2] = getByMatchYear_PrevAndNext(session, esfMatch, matchYear,
+					orderByComparator, false);
+
+			return array;
+		}
+		catch (Exception e) {
+			throw processException(e);
+		}
+		finally {
+			closeSession(session);
+		}
+	}
+
+	protected ESFMatch getByMatchYear_PrevAndNext(Session session,
+		ESFMatch esfMatch, int matchYear, OrderByComparator orderByComparator,
+		boolean previous) {
+		StringBundler query = null;
+
+		if (orderByComparator != null) {
+			query = new StringBundler(6 +
+					(orderByComparator.getOrderByFields().length * 6));
+		}
+		else {
+			query = new StringBundler(3);
+		}
+
+		query.append(_SQL_SELECT_ESFMATCH_WHERE);
+
+		query.append(_FINDER_COLUMN_MATCHYEAR_MATCHYEAR_2);
+
+		if (orderByComparator != null) {
+			String[] orderByConditionFields = orderByComparator.getOrderByConditionFields();
+
+			if (orderByConditionFields.length > 0) {
+				query.append(WHERE_AND);
+			}
+
+			for (int i = 0; i < orderByConditionFields.length; i++) {
+				query.append(_ORDER_BY_ENTITY_ALIAS);
+				query.append(orderByConditionFields[i]);
+
+				if ((i + 1) < orderByConditionFields.length) {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(WHERE_GREATER_THAN_HAS_NEXT);
+					}
+					else {
+						query.append(WHERE_LESSER_THAN_HAS_NEXT);
+					}
+				}
+				else {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(WHERE_GREATER_THAN);
+					}
+					else {
+						query.append(WHERE_LESSER_THAN);
+					}
+				}
+			}
+
+			query.append(ORDER_BY_CLAUSE);
+
+			String[] orderByFields = orderByComparator.getOrderByFields();
+
+			for (int i = 0; i < orderByFields.length; i++) {
+				query.append(_ORDER_BY_ENTITY_ALIAS);
+				query.append(orderByFields[i]);
+
+				if ((i + 1) < orderByFields.length) {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(ORDER_BY_ASC_HAS_NEXT);
+					}
+					else {
+						query.append(ORDER_BY_DESC_HAS_NEXT);
+					}
+				}
+				else {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(ORDER_BY_ASC);
+					}
+					else {
+						query.append(ORDER_BY_DESC);
+					}
+				}
+			}
+		}
+		else {
+			query.append(ESFMatchModelImpl.ORDER_BY_JPQL);
+		}
+
+		String sql = query.toString();
+
+		Query q = session.createQuery(sql);
+
+		q.setFirstResult(0);
+		q.setMaxResults(2);
+
+		QueryPos qPos = QueryPos.getInstance(q);
+
+		qPos.add(matchYear);
+
+		if (orderByComparator != null) {
+			Object[] values = orderByComparator.getOrderByConditionValues(esfMatch);
+
+			for (Object value : values) {
+				qPos.add(value);
+			}
+		}
+
+		List<ESFMatch> list = q.list();
+
+		if (list.size() == 2) {
+			return list.get(1);
+		}
+		else {
+			return null;
+		}
+	}
+
+	/**
+	 * Removes all the e s f matchs where matchYear = &#63; from the database.
+	 *
+	 * @param matchYear the match year
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public void removeByMatchYear(int matchYear) throws SystemException {
+		for (ESFMatch esfMatch : findByMatchYear(matchYear, QueryUtil.ALL_POS,
+				QueryUtil.ALL_POS, null)) {
+			remove(esfMatch);
+		}
+	}
+
+	/**
+	 * Returns the number of e s f matchs where matchYear = &#63;.
+	 *
+	 * @param matchYear the match year
+	 * @return the number of matching e s f matchs
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public int countByMatchYear(int matchYear) throws SystemException {
+		FinderPath finderPath = FINDER_PATH_COUNT_BY_MATCHYEAR;
+
+		Object[] finderArgs = new Object[] { matchYear };
+
+		Long count = (Long)FinderCacheUtil.getResult(finderPath, finderArgs,
+				this);
+
+		if (count == null) {
+			StringBundler query = new StringBundler(2);
+
+			query.append(_SQL_COUNT_ESFMATCH_WHERE);
+
+			query.append(_FINDER_COLUMN_MATCHYEAR_MATCHYEAR_2);
+
+			String sql = query.toString();
+
+			Session session = null;
+
+			try {
+				session = openSession();
+
+				Query q = session.createQuery(sql);
+
+				QueryPos qPos = QueryPos.getInstance(q);
+
+				qPos.add(matchYear);
+
+				count = (Long)q.uniqueResult();
+
+				FinderCacheUtil.putResult(finderPath, finderArgs, count);
+			}
+			catch (Exception e) {
+				FinderCacheUtil.removeResult(finderPath, finderArgs);
+
+				throw processException(e);
+			}
+			finally {
+				closeSession(session);
+			}
+		}
+
+		return count.intValue();
+	}
+
+	private static final String _FINDER_COLUMN_MATCHYEAR_MATCHYEAR_2 = "esfMatch.matchYear = ?";
+	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_YEARCODE = new FinderPath(ESFMatchModelImpl.ENTITY_CACHE_ENABLED,
+			ESFMatchModelImpl.FINDER_CACHE_ENABLED, ESFMatchImpl.class,
+			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByYearCode",
+			new String[] {
+				Integer.class.getName(), Integer.class.getName(),
+				
+			Integer.class.getName(), Integer.class.getName(),
+				OrderByComparator.class.getName()
+			});
+	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_YEARCODE =
+		new FinderPath(ESFMatchModelImpl.ENTITY_CACHE_ENABLED,
+			ESFMatchModelImpl.FINDER_CACHE_ENABLED, ESFMatchImpl.class,
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByYearCode",
+			new String[] { Integer.class.getName(), Integer.class.getName() },
+			ESFMatchModelImpl.MATCHYEAR_COLUMN_BITMASK |
+			ESFMatchModelImpl.MATCHYEARSEQ_COLUMN_BITMASK);
+	public static final FinderPath FINDER_PATH_COUNT_BY_YEARCODE = new FinderPath(ESFMatchModelImpl.ENTITY_CACHE_ENABLED,
+			ESFMatchModelImpl.FINDER_CACHE_ENABLED, Long.class,
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByYearCode",
+			new String[] { Integer.class.getName(), Integer.class.getName() });
+
+	/**
+	 * Returns all the e s f matchs where matchYear = &#63; and matchYearSeq = &#63;.
+	 *
+	 * @param matchYear the match year
+	 * @param matchYearSeq the match year seq
+	 * @return the matching e s f matchs
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<ESFMatch> findByYearCode(int matchYear, int matchYearSeq)
+		throws SystemException {
+		return findByYearCode(matchYear, matchYearSeq, QueryUtil.ALL_POS,
+			QueryUtil.ALL_POS, null);
+	}
+
+	/**
+	 * Returns a range of all the e s f matchs where matchYear = &#63; and matchYearSeq = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link it.ethica.esf.model.impl.ESFMatchModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param matchYear the match year
+	 * @param matchYearSeq the match year seq
+	 * @param start the lower bound of the range of e s f matchs
+	 * @param end the upper bound of the range of e s f matchs (not inclusive)
+	 * @return the range of matching e s f matchs
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<ESFMatch> findByYearCode(int matchYear, int matchYearSeq,
+		int start, int end) throws SystemException {
+		return findByYearCode(matchYear, matchYearSeq, start, end, null);
+	}
+
+	/**
+	 * Returns an ordered range of all the e s f matchs where matchYear = &#63; and matchYearSeq = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link it.ethica.esf.model.impl.ESFMatchModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param matchYear the match year
+	 * @param matchYearSeq the match year seq
+	 * @param start the lower bound of the range of e s f matchs
+	 * @param end the upper bound of the range of e s f matchs (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @return the ordered range of matching e s f matchs
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<ESFMatch> findByYearCode(int matchYear, int matchYearSeq,
+		int start, int end, OrderByComparator orderByComparator)
+		throws SystemException {
+		boolean pagination = true;
+		FinderPath finderPath = null;
+		Object[] finderArgs = null;
+
+		if ((start == QueryUtil.ALL_POS) && (end == QueryUtil.ALL_POS) &&
+				(orderByComparator == null)) {
+			pagination = false;
+			finderPath = FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_YEARCODE;
+			finderArgs = new Object[] { matchYear, matchYearSeq };
+		}
+		else {
+			finderPath = FINDER_PATH_WITH_PAGINATION_FIND_BY_YEARCODE;
+			finderArgs = new Object[] {
+					matchYear, matchYearSeq,
+					
+					start, end, orderByComparator
+				};
+		}
+
+		List<ESFMatch> list = (List<ESFMatch>)FinderCacheUtil.getResult(finderPath,
+				finderArgs, this);
+
+		if ((list != null) && !list.isEmpty()) {
+			for (ESFMatch esfMatch : list) {
+				if ((matchYear != esfMatch.getMatchYear()) ||
+						(matchYearSeq != esfMatch.getMatchYearSeq())) {
+					list = null;
+
+					break;
+				}
+			}
+		}
+
+		if (list == null) {
+			StringBundler query = null;
+
+			if (orderByComparator != null) {
+				query = new StringBundler(4 +
+						(orderByComparator.getOrderByFields().length * 3));
+			}
+			else {
+				query = new StringBundler(4);
+			}
+
+			query.append(_SQL_SELECT_ESFMATCH_WHERE);
+
+			query.append(_FINDER_COLUMN_YEARCODE_MATCHYEAR_2);
+
+			query.append(_FINDER_COLUMN_YEARCODE_MATCHYEARSEQ_2);
+
+			if (orderByComparator != null) {
+				appendOrderByComparator(query, _ORDER_BY_ENTITY_ALIAS,
+					orderByComparator);
+			}
+			else
+			 if (pagination) {
+				query.append(ESFMatchModelImpl.ORDER_BY_JPQL);
+			}
+
+			String sql = query.toString();
+
+			Session session = null;
+
+			try {
+				session = openSession();
+
+				Query q = session.createQuery(sql);
+
+				QueryPos qPos = QueryPos.getInstance(q);
+
+				qPos.add(matchYear);
+
+				qPos.add(matchYearSeq);
+
+				if (!pagination) {
+					list = (List<ESFMatch>)QueryUtil.list(q, getDialect(),
+							start, end, false);
+
+					Collections.sort(list);
+
+					list = new UnmodifiableList<ESFMatch>(list);
+				}
+				else {
+					list = (List<ESFMatch>)QueryUtil.list(q, getDialect(),
+							start, end);
+				}
+
+				cacheResult(list);
+
+				FinderCacheUtil.putResult(finderPath, finderArgs, list);
+			}
+			catch (Exception e) {
+				FinderCacheUtil.removeResult(finderPath, finderArgs);
+
+				throw processException(e);
+			}
+			finally {
+				closeSession(session);
+			}
+		}
+
+		return list;
+	}
+
+	/**
+	 * Returns the first e s f match in the ordered set where matchYear = &#63; and matchYearSeq = &#63;.
+	 *
+	 * @param matchYear the match year
+	 * @param matchYearSeq the match year seq
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching e s f match
+	 * @throws it.ethica.esf.NoSuchMatchException if a matching e s f match could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public ESFMatch findByYearCode_First(int matchYear, int matchYearSeq,
+		OrderByComparator orderByComparator)
+		throws NoSuchMatchException, SystemException {
+		ESFMatch esfMatch = fetchByYearCode_First(matchYear, matchYearSeq,
+				orderByComparator);
+
+		if (esfMatch != null) {
+			return esfMatch;
+		}
+
+		StringBundler msg = new StringBundler(6);
+
+		msg.append(_NO_SUCH_ENTITY_WITH_KEY);
+
+		msg.append("matchYear=");
+		msg.append(matchYear);
+
+		msg.append(", matchYearSeq=");
+		msg.append(matchYearSeq);
+
+		msg.append(StringPool.CLOSE_CURLY_BRACE);
+
+		throw new NoSuchMatchException(msg.toString());
+	}
+
+	/**
+	 * Returns the first e s f match in the ordered set where matchYear = &#63; and matchYearSeq = &#63;.
+	 *
+	 * @param matchYear the match year
+	 * @param matchYearSeq the match year seq
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching e s f match, or <code>null</code> if a matching e s f match could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public ESFMatch fetchByYearCode_First(int matchYear, int matchYearSeq,
+		OrderByComparator orderByComparator) throws SystemException {
+		List<ESFMatch> list = findByYearCode(matchYear, matchYearSeq, 0, 1,
+				orderByComparator);
+
+		if (!list.isEmpty()) {
+			return list.get(0);
+		}
+
+		return null;
+	}
+
+	/**
+	 * Returns the last e s f match in the ordered set where matchYear = &#63; and matchYearSeq = &#63;.
+	 *
+	 * @param matchYear the match year
+	 * @param matchYearSeq the match year seq
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching e s f match
+	 * @throws it.ethica.esf.NoSuchMatchException if a matching e s f match could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public ESFMatch findByYearCode_Last(int matchYear, int matchYearSeq,
+		OrderByComparator orderByComparator)
+		throws NoSuchMatchException, SystemException {
+		ESFMatch esfMatch = fetchByYearCode_Last(matchYear, matchYearSeq,
+				orderByComparator);
+
+		if (esfMatch != null) {
+			return esfMatch;
+		}
+
+		StringBundler msg = new StringBundler(6);
+
+		msg.append(_NO_SUCH_ENTITY_WITH_KEY);
+
+		msg.append("matchYear=");
+		msg.append(matchYear);
+
+		msg.append(", matchYearSeq=");
+		msg.append(matchYearSeq);
+
+		msg.append(StringPool.CLOSE_CURLY_BRACE);
+
+		throw new NoSuchMatchException(msg.toString());
+	}
+
+	/**
+	 * Returns the last e s f match in the ordered set where matchYear = &#63; and matchYearSeq = &#63;.
+	 *
+	 * @param matchYear the match year
+	 * @param matchYearSeq the match year seq
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching e s f match, or <code>null</code> if a matching e s f match could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public ESFMatch fetchByYearCode_Last(int matchYear, int matchYearSeq,
+		OrderByComparator orderByComparator) throws SystemException {
+		int count = countByYearCode(matchYear, matchYearSeq);
+
+		if (count == 0) {
+			return null;
+		}
+
+		List<ESFMatch> list = findByYearCode(matchYear, matchYearSeq,
+				count - 1, count, orderByComparator);
+
+		if (!list.isEmpty()) {
+			return list.get(0);
+		}
+
+		return null;
+	}
+
+	/**
+	 * Returns the e s f matchs before and after the current e s f match in the ordered set where matchYear = &#63; and matchYearSeq = &#63;.
+	 *
+	 * @param esfMatchId the primary key of the current e s f match
+	 * @param matchYear the match year
+	 * @param matchYearSeq the match year seq
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the previous, current, and next e s f match
+	 * @throws it.ethica.esf.NoSuchMatchException if a e s f match with the primary key could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public ESFMatch[] findByYearCode_PrevAndNext(long esfMatchId,
+		int matchYear, int matchYearSeq, OrderByComparator orderByComparator)
+		throws NoSuchMatchException, SystemException {
+		ESFMatch esfMatch = findByPrimaryKey(esfMatchId);
+
+		Session session = null;
+
+		try {
+			session = openSession();
+
+			ESFMatch[] array = new ESFMatchImpl[3];
+
+			array[0] = getByYearCode_PrevAndNext(session, esfMatch, matchYear,
+					matchYearSeq, orderByComparator, true);
+
+			array[1] = esfMatch;
+
+			array[2] = getByYearCode_PrevAndNext(session, esfMatch, matchYear,
+					matchYearSeq, orderByComparator, false);
+
+			return array;
+		}
+		catch (Exception e) {
+			throw processException(e);
+		}
+		finally {
+			closeSession(session);
+		}
+	}
+
+	protected ESFMatch getByYearCode_PrevAndNext(Session session,
+		ESFMatch esfMatch, int matchYear, int matchYearSeq,
+		OrderByComparator orderByComparator, boolean previous) {
+		StringBundler query = null;
+
+		if (orderByComparator != null) {
+			query = new StringBundler(6 +
+					(orderByComparator.getOrderByFields().length * 6));
+		}
+		else {
+			query = new StringBundler(3);
+		}
+
+		query.append(_SQL_SELECT_ESFMATCH_WHERE);
+
+		query.append(_FINDER_COLUMN_YEARCODE_MATCHYEAR_2);
+
+		query.append(_FINDER_COLUMN_YEARCODE_MATCHYEARSEQ_2);
+
+		if (orderByComparator != null) {
+			String[] orderByConditionFields = orderByComparator.getOrderByConditionFields();
+
+			if (orderByConditionFields.length > 0) {
+				query.append(WHERE_AND);
+			}
+
+			for (int i = 0; i < orderByConditionFields.length; i++) {
+				query.append(_ORDER_BY_ENTITY_ALIAS);
+				query.append(orderByConditionFields[i]);
+
+				if ((i + 1) < orderByConditionFields.length) {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(WHERE_GREATER_THAN_HAS_NEXT);
+					}
+					else {
+						query.append(WHERE_LESSER_THAN_HAS_NEXT);
+					}
+				}
+				else {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(WHERE_GREATER_THAN);
+					}
+					else {
+						query.append(WHERE_LESSER_THAN);
+					}
+				}
+			}
+
+			query.append(ORDER_BY_CLAUSE);
+
+			String[] orderByFields = orderByComparator.getOrderByFields();
+
+			for (int i = 0; i < orderByFields.length; i++) {
+				query.append(_ORDER_BY_ENTITY_ALIAS);
+				query.append(orderByFields[i]);
+
+				if ((i + 1) < orderByFields.length) {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(ORDER_BY_ASC_HAS_NEXT);
+					}
+					else {
+						query.append(ORDER_BY_DESC_HAS_NEXT);
+					}
+				}
+				else {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(ORDER_BY_ASC);
+					}
+					else {
+						query.append(ORDER_BY_DESC);
+					}
+				}
+			}
+		}
+		else {
+			query.append(ESFMatchModelImpl.ORDER_BY_JPQL);
+		}
+
+		String sql = query.toString();
+
+		Query q = session.createQuery(sql);
+
+		q.setFirstResult(0);
+		q.setMaxResults(2);
+
+		QueryPos qPos = QueryPos.getInstance(q);
+
+		qPos.add(matchYear);
+
+		qPos.add(matchYearSeq);
+
+		if (orderByComparator != null) {
+			Object[] values = orderByComparator.getOrderByConditionValues(esfMatch);
+
+			for (Object value : values) {
+				qPos.add(value);
+			}
+		}
+
+		List<ESFMatch> list = q.list();
+
+		if (list.size() == 2) {
+			return list.get(1);
+		}
+		else {
+			return null;
+		}
+	}
+
+	/**
+	 * Removes all the e s f matchs where matchYear = &#63; and matchYearSeq = &#63; from the database.
+	 *
+	 * @param matchYear the match year
+	 * @param matchYearSeq the match year seq
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public void removeByYearCode(int matchYear, int matchYearSeq)
+		throws SystemException {
+		for (ESFMatch esfMatch : findByYearCode(matchYear, matchYearSeq,
+				QueryUtil.ALL_POS, QueryUtil.ALL_POS, null)) {
+			remove(esfMatch);
+		}
+	}
+
+	/**
+	 * Returns the number of e s f matchs where matchYear = &#63; and matchYearSeq = &#63;.
+	 *
+	 * @param matchYear the match year
+	 * @param matchYearSeq the match year seq
+	 * @return the number of matching e s f matchs
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public int countByYearCode(int matchYear, int matchYearSeq)
+		throws SystemException {
+		FinderPath finderPath = FINDER_PATH_COUNT_BY_YEARCODE;
+
+		Object[] finderArgs = new Object[] { matchYear, matchYearSeq };
+
+		Long count = (Long)FinderCacheUtil.getResult(finderPath, finderArgs,
+				this);
+
+		if (count == null) {
+			StringBundler query = new StringBundler(3);
+
+			query.append(_SQL_COUNT_ESFMATCH_WHERE);
+
+			query.append(_FINDER_COLUMN_YEARCODE_MATCHYEAR_2);
+
+			query.append(_FINDER_COLUMN_YEARCODE_MATCHYEARSEQ_2);
+
+			String sql = query.toString();
+
+			Session session = null;
+
+			try {
+				session = openSession();
+
+				Query q = session.createQuery(sql);
+
+				QueryPos qPos = QueryPos.getInstance(q);
+
+				qPos.add(matchYear);
+
+				qPos.add(matchYearSeq);
+
+				count = (Long)q.uniqueResult();
+
+				FinderCacheUtil.putResult(finderPath, finderArgs, count);
+			}
+			catch (Exception e) {
+				FinderCacheUtil.removeResult(finderPath, finderArgs);
+
+				throw processException(e);
+			}
+			finally {
+				closeSession(session);
+			}
+		}
+
+		return count.intValue();
+	}
+
+	private static final String _FINDER_COLUMN_YEARCODE_MATCHYEAR_2 = "esfMatch.matchYear = ? AND ";
+	private static final String _FINDER_COLUMN_YEARCODE_MATCHYEARSEQ_2 = "esfMatch.matchYearSeq = ?";
 	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_DATE_CODE =
 		new FinderPath(ESFMatchModelImpl.ENTITY_CACHE_ENABLED,
 			ESFMatchModelImpl.FINDER_CACHE_ENABLED, ESFMatchImpl.class,
@@ -6506,6 +8043,46 @@ public class ESFMatchPersistenceImpl extends BasePersistenceImpl<ESFMatch>
 				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_DESCRIPTION,
 					args);
 			}
+
+			if ((esfMatchModelImpl.getColumnBitmask() &
+					FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_MATCHYEAR.getColumnBitmask()) != 0) {
+				Object[] args = new Object[] {
+						esfMatchModelImpl.getOriginalMatchYear()
+					};
+
+				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_MATCHYEAR,
+					args);
+				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_MATCHYEAR,
+					args);
+
+				args = new Object[] { esfMatchModelImpl.getMatchYear() };
+
+				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_MATCHYEAR,
+					args);
+				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_MATCHYEAR,
+					args);
+			}
+
+			if ((esfMatchModelImpl.getColumnBitmask() &
+					FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_YEARCODE.getColumnBitmask()) != 0) {
+				Object[] args = new Object[] {
+						esfMatchModelImpl.getOriginalMatchYear(),
+						esfMatchModelImpl.getOriginalMatchYearSeq()
+					};
+
+				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_YEARCODE, args);
+				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_YEARCODE,
+					args);
+
+				args = new Object[] {
+						esfMatchModelImpl.getMatchYear(),
+						esfMatchModelImpl.getMatchYearSeq()
+					};
+
+				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_YEARCODE, args);
+				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_YEARCODE,
+					args);
+			}
 		}
 
 		EntityCacheUtil.putResult(ESFMatchModelImpl.ENTITY_CACHE_ENABLED,
@@ -6562,6 +8139,8 @@ public class ESFMatchPersistenceImpl extends BasePersistenceImpl<ESFMatch>
 		esfMatchImpl.setIsChangeCategoryMatch(esfMatch.isIsChangeCategoryMatch());
 		esfMatchImpl.setEsfNationalSportTypeId(esfMatch.getEsfNationalSportTypeId());
 		esfMatchImpl.setOldCode(esfMatch.getOldCode());
+		esfMatchImpl.setMatchYear(esfMatch.getMatchYear());
+		esfMatchImpl.setMatchYearSeq(esfMatch.getMatchYearSeq());
 
 		return esfMatchImpl;
 	}

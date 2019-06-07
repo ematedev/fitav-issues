@@ -37,7 +37,7 @@ import java.util.Date;
 public class ESFMatchCacheModel implements CacheModel<ESFMatch>, Externalizable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(71);
+		StringBundler sb = new StringBundler(75);
 
 		sb.append("{uuid=");
 		sb.append(uuid);
@@ -109,6 +109,10 @@ public class ESFMatchCacheModel implements CacheModel<ESFMatch>, Externalizable 
 		sb.append(esfNationalSportTypeId);
 		sb.append(", oldCode=");
 		sb.append(oldCode);
+		sb.append(", matchYear=");
+		sb.append(matchYear);
+		sb.append(", matchYearSeq=");
+		sb.append(matchYearSeq);
 		sb.append("}");
 
 		return sb.toString();
@@ -245,6 +249,9 @@ public class ESFMatchCacheModel implements CacheModel<ESFMatch>, Externalizable 
 			esfMatchImpl.setOldCode(oldCode);
 		}
 
+		esfMatchImpl.setMatchYear(matchYear);
+		esfMatchImpl.setMatchYearSeq(matchYearSeq);
+
 		esfMatchImpl.resetOriginalValues();
 
 		return esfMatchImpl;
@@ -287,6 +294,8 @@ public class ESFMatchCacheModel implements CacheModel<ESFMatch>, Externalizable 
 		isChangeCategoryMatch = objectInput.readBoolean();
 		esfNationalSportTypeId = objectInput.readUTF();
 		oldCode = objectInput.readUTF();
+		matchYear = objectInput.readInt();
+		matchYearSeq = objectInput.readInt();
 	}
 
 	@Override
@@ -393,6 +402,9 @@ public class ESFMatchCacheModel implements CacheModel<ESFMatch>, Externalizable 
 		else {
 			objectOutput.writeUTF(oldCode);
 		}
+
+		objectOutput.writeInt(matchYear);
+		objectOutput.writeInt(matchYearSeq);
 	}
 
 	public String uuid;
@@ -430,4 +442,6 @@ public class ESFMatchCacheModel implements CacheModel<ESFMatch>, Externalizable 
 	public boolean isChangeCategoryMatch;
 	public String esfNationalSportTypeId;
 	public String oldCode;
+	public int matchYear;
+	public int matchYearSeq;
 }

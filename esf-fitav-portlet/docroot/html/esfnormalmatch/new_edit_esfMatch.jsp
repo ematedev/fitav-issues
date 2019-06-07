@@ -4,21 +4,25 @@
 	String namespace = renderResponse.getNamespace();
 	ESFMatch esfMatch = null;
 	ESFOrganization esfMatchOrganization = null;
-	
+	String matchCodeValue = "";
 	Long esfOrganizationId = null;
-
 	if(Validator.isNotNull(currentESFOrganization) && currentESFOrganization.getType()==3){
 		esfOrganizationId=currentOrganizationId;
 	}
 
 	boolean disabled=false;
+	boolean isEdit = false;
+	long esfDescription = 0;
 	if (esfMatchId > 0) {
-		
+		//Se id > 0 allora sto editando un match esistente
 		esfMatch = ESFMatchLocalServiceUtil.getESFMatch(esfMatchId);
 		if(esfMatch.getEsfAssociationId()>0){
 			esfMatchOrganization = ESFOrganizationLocalServiceUtil
 				.getESFOrganization(esfMatch.getEsfAssociationId());
 		}
+		matchCodeValue= esfMatch.getCode();
+		esfDescription= esfMatch.getDescription();
+		isEdit = true;		
 	}
 	
 	Long esfMatchOrganizationId = null;
@@ -44,10 +48,8 @@
 	List <ESFMatch> esfMatches = ESFMatchLocalServiceUtil.
 	findESFMatchesByYearIsNational(
 				cal.get(cal.YEAR),isNational);
-	String matchCodeValue = "";
+	
 	//matchCodeValue = String.valueOf(cal.get(cal.YEAR)) + String.valueOf(esfMatches.size() + 1);
-	matchCodeValue ="";
-	String esfDescription = "";
 	List<ESFMatchType> esfMatchTypes = null;
 	esfMatchTypes  = ESFMatchTypeLocalServiceUtil.findAllByNational(false);
 	
@@ -131,10 +133,10 @@
 		});	
 		</aui:script> 
 		
-
-	   	<aui:input name="code" value = "<%=matchCodeValue%>" disabled="true">			
-		</aui:input> 
-
+		<% if(isEdit){%>
+	   		<aui:input name="code" value="<%=matchCodeValue%>" disabled="true" />
+		<%} %>
+		<aui:input name="isEdit" type="hidden" value="<%=isEdit%>" />
 		<aui:input name="startDate" type="text">			
 		<aui:validator name="required" errorMessage="this-field-is-required" />			                        
                         <aui:validator name="custom"
@@ -270,10 +272,11 @@
 			<aui:option label="-" value="0" />
 			<%
 				List<ESFDescription> esfDescriptions = ESFDescriptionLocalServiceUtil.findAllByNational(isNational);
-					for (ESFDescription esfDescriptio : esfDescriptions) {
+				for (ESFDescription esfDescriptio : esfDescriptions) {
+					boolean isDescSelected = esfDescription == esfDescriptio.getEsfDescriptionId();
 			%>
 			<aui:option label="<%=esfDescriptio.getName()%>"
-				value="<%=esfDescriptio.getEsfDescriptionId()%>"></aui:option>
+				value="<%=esfDescriptio.getEsfDescriptionId()%>" selected="<%=isDescSelected%>" ></aui:option>
 			<%
 				}
 			%>

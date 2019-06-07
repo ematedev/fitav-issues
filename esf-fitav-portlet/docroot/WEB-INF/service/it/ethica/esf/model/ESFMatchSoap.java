@@ -65,6 +65,8 @@ public class ESFMatchSoap implements Serializable {
 		soapModel.setIsChangeCategoryMatch(model.getIsChangeCategoryMatch());
 		soapModel.setEsfNationalSportTypeId(model.getEsfNationalSportTypeId());
 		soapModel.setOldCode(model.getOldCode());
+		soapModel.setMatchYear(model.getMatchYear());
+		soapModel.setMatchYearSeq(model.getMatchYearSeq());
 
 		return soapModel;
 	}
@@ -434,6 +436,22 @@ public class ESFMatchSoap implements Serializable {
 		_oldCode = oldCode;
 	}
 
+	public int getMatchYear() {
+		return _matchYear;
+	}
+
+	public void setMatchYear(int matchYear) {
+		_matchYear = matchYear;
+	}
+
+	public int getMatchYearSeq() {
+		return _matchYearSeq;
+	}
+
+	public void setMatchYearSeq(int matchYearSeq) {
+		_matchYearSeq = matchYearSeq;
+	}
+
 	private String _uuid;
 	private long _esfMatchId;
 	private Date _startDate;
@@ -469,4 +487,6 @@ public class ESFMatchSoap implements Serializable {
 	private boolean _isChangeCategoryMatch;
 	private String _esfNationalSportTypeId;
 	private String _oldCode;
+	private int _matchYear;
+	private int _matchYearSeq;
 }

@@ -86,6 +86,8 @@ public class ESFMatchWrapper implements ESFMatch, ModelWrapper<ESFMatch> {
 		attributes.put("isChangeCategoryMatch", getIsChangeCategoryMatch());
 		attributes.put("esfNationalSportTypeId", getEsfNationalSportTypeId());
 		attributes.put("oldCode", getOldCode());
+		attributes.put("matchYear", getMatchYear());
+		attributes.put("matchYearSeq", getMatchYearSeq());
 
 		return attributes;
 	}
@@ -304,6 +306,18 @@ public class ESFMatchWrapper implements ESFMatch, ModelWrapper<ESFMatch> {
 
 		if (oldCode != null) {
 			setOldCode(oldCode);
+		}
+
+		Integer matchYear = (Integer)attributes.get("matchYear");
+
+		if (matchYear != null) {
+			setMatchYear(matchYear);
+		}
+
+		Integer matchYearSeq = (Integer)attributes.get("matchYearSeq");
+
+		if (matchYearSeq != null) {
+			setMatchYearSeq(matchYearSeq);
 		}
 	}
 
@@ -1140,6 +1154,46 @@ public class ESFMatchWrapper implements ESFMatch, ModelWrapper<ESFMatch> {
 	@Override
 	public void setOldCode(java.lang.String oldCode) {
 		_esfMatch.setOldCode(oldCode);
+	}
+
+	/**
+	* Returns the match year of this e s f match.
+	*
+	* @return the match year of this e s f match
+	*/
+	@Override
+	public int getMatchYear() {
+		return _esfMatch.getMatchYear();
+	}
+
+	/**
+	* Sets the match year of this e s f match.
+	*
+	* @param matchYear the match year of this e s f match
+	*/
+	@Override
+	public void setMatchYear(int matchYear) {
+		_esfMatch.setMatchYear(matchYear);
+	}
+
+	/**
+	* Returns the match year seq of this e s f match.
+	*
+	* @return the match year seq of this e s f match
+	*/
+	@Override
+	public int getMatchYearSeq() {
+		return _esfMatch.getMatchYearSeq();
+	}
+
+	/**
+	* Sets the match year seq of this e s f match.
+	*
+	* @param matchYearSeq the match year seq of this e s f match
+	*/
+	@Override
+	public void setMatchYearSeq(int matchYearSeq) {
+		_esfMatch.setMatchYearSeq(matchYearSeq);
 	}
 
 	@Override

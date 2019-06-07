@@ -96,9 +96,11 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 			{ "notNationalAssotiation", Types.VARCHAR },
 			{ "isChangeCategoryMatch", Types.BOOLEAN },
 			{ "esfNationalSportTypeId", Types.VARCHAR },
-			{ "oldCode", Types.VARCHAR }
+			{ "oldCode", Types.VARCHAR },
+			{ "matchYear", Types.INTEGER },
+			{ "matchYearSeq", Types.INTEGER }
 		};
-	public static final String TABLE_SQL_CREATE = "create table ESFMatch (uuid_ VARCHAR(75) null,esfMatchId LONG not null primary key,startDate DATE null,startHour VARCHAR(75) null,esfSportTypeId LONG,esfMatchTypeId LONG,isDraft BOOLEAN,isTeamMatch BOOLEAN,isIndividualMatch BOOLEAN,isJuniorMatch BOOLEAN,numDisk INTEGER,numDiskTeam INTEGER,esfAssociationId LONG,notes VARCHAR(75) null,description LONG,endDate DATE null,numFields INTEGER,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,isSingleMatch BOOLEAN,site VARCHAR(75) null,countryId LONG,code_ VARCHAR(75) null,isNational BOOLEAN,HasPenality BOOLEAN,isOlimpicQualificationMatch BOOLEAN,eventType VARCHAR(75) null,notNationalAssotiation VARCHAR(75) null,isChangeCategoryMatch BOOLEAN,esfNationalSportTypeId VARCHAR(75) null,oldCode VARCHAR(75) null)";
+	public static final String TABLE_SQL_CREATE = "create table ESFMatch (uuid_ VARCHAR(75) null,esfMatchId LONG not null primary key,startDate DATE null,startHour VARCHAR(75) null,esfSportTypeId LONG,esfMatchTypeId LONG,isDraft BOOLEAN,isTeamMatch BOOLEAN,isIndividualMatch BOOLEAN,isJuniorMatch BOOLEAN,numDisk INTEGER,numDiskTeam INTEGER,esfAssociationId LONG,notes VARCHAR(75) null,description LONG,endDate DATE null,numFields INTEGER,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,isSingleMatch BOOLEAN,site VARCHAR(75) null,countryId LONG,code_ VARCHAR(75) null,isNational BOOLEAN,HasPenality BOOLEAN,isOlimpicQualificationMatch BOOLEAN,eventType VARCHAR(75) null,notNationalAssotiation VARCHAR(75) null,isChangeCategoryMatch BOOLEAN,esfNationalSportTypeId VARCHAR(75) null,oldCode VARCHAR(75) null,matchYear INTEGER,matchYearSeq INTEGER)";
 	public static final String TABLE_SQL_DROP = "drop table ESFMatch";
 	public static final String ORDER_BY_JPQL = " ORDER BY esfMatch.esfMatchId ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY ESFMatch.esfMatchId ASC";
@@ -124,10 +126,12 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 	public static long GROUPID_COLUMN_BITMASK = 128L;
 	public static long ISCHANGECATEGORYMATCH_COLUMN_BITMASK = 256L;
 	public static long ISNATIONAL_COLUMN_BITMASK = 512L;
-	public static long STARTDATE_COLUMN_BITMASK = 1024L;
-	public static long USERID_COLUMN_BITMASK = 2048L;
-	public static long UUID_COLUMN_BITMASK = 4096L;
-	public static long ESFMATCHID_COLUMN_BITMASK = 8192L;
+	public static long MATCHYEAR_COLUMN_BITMASK = 1024L;
+	public static long MATCHYEARSEQ_COLUMN_BITMASK = 2048L;
+	public static long STARTDATE_COLUMN_BITMASK = 4096L;
+	public static long USERID_COLUMN_BITMASK = 8192L;
+	public static long UUID_COLUMN_BITMASK = 16384L;
+	public static long ESFMATCHID_COLUMN_BITMASK = 32768L;
 	public static final long LOCK_EXPIRATION_TIME = GetterUtil.getLong(com.liferay.util.service.ServiceProps.get(
 				"lock.expiration.time.it.ethica.esf.model.ESFMatch"));
 
@@ -204,6 +208,8 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		attributes.put("isChangeCategoryMatch", getIsChangeCategoryMatch());
 		attributes.put("esfNationalSportTypeId", getEsfNationalSportTypeId());
 		attributes.put("oldCode", getOldCode());
+		attributes.put("matchYear", getMatchYear());
+		attributes.put("matchYearSeq", getMatchYearSeq());
 
 		return attributes;
 	}
@@ -422,6 +428,18 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 
 		if (oldCode != null) {
 			setOldCode(oldCode);
+		}
+
+		Integer matchYear = (Integer)attributes.get("matchYear");
+
+		if (matchYear != null) {
+			setMatchYear(matchYear);
+		}
+
+		Integer matchYearSeq = (Integer)attributes.get("matchYearSeq");
+
+		if (matchYearSeq != null) {
+			setMatchYearSeq(matchYearSeq);
 		}
 	}
 
@@ -1028,6 +1046,50 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 	}
 
 	@Override
+	public int getMatchYear() {
+		return _matchYear;
+	}
+
+	@Override
+	public void setMatchYear(int matchYear) {
+		_columnBitmask |= MATCHYEAR_COLUMN_BITMASK;
+
+		if (!_setOriginalMatchYear) {
+			_setOriginalMatchYear = true;
+
+			_originalMatchYear = _matchYear;
+		}
+
+		_matchYear = matchYear;
+	}
+
+	public int getOriginalMatchYear() {
+		return _originalMatchYear;
+	}
+
+	@Override
+	public int getMatchYearSeq() {
+		return _matchYearSeq;
+	}
+
+	@Override
+	public void setMatchYearSeq(int matchYearSeq) {
+		_columnBitmask |= MATCHYEARSEQ_COLUMN_BITMASK;
+
+		if (!_setOriginalMatchYearSeq) {
+			_setOriginalMatchYearSeq = true;
+
+			_originalMatchYearSeq = _matchYearSeq;
+		}
+
+		_matchYearSeq = matchYearSeq;
+	}
+
+	public int getOriginalMatchYearSeq() {
+		return _originalMatchYearSeq;
+	}
+
+	@Override
 	public StagedModelType getStagedModelType() {
 		return new StagedModelType(PortalUtil.getClassNameId(
 				ESFMatch.class.getName()));
@@ -1099,6 +1161,8 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		esfMatchImpl.setIsChangeCategoryMatch(getIsChangeCategoryMatch());
 		esfMatchImpl.setEsfNationalSportTypeId(getEsfNationalSportTypeId());
 		esfMatchImpl.setOldCode(getOldCode());
+		esfMatchImpl.setMatchYear(getMatchYear());
+		esfMatchImpl.setMatchYearSeq(getMatchYearSeq());
 
 		esfMatchImpl.resetOriginalValues();
 
@@ -1194,6 +1258,14 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		esfMatchModelImpl._originalIsChangeCategoryMatch = esfMatchModelImpl._isChangeCategoryMatch;
 
 		esfMatchModelImpl._setOriginalIsChangeCategoryMatch = false;
+
+		esfMatchModelImpl._originalMatchYear = esfMatchModelImpl._matchYear;
+
+		esfMatchModelImpl._setOriginalMatchYear = false;
+
+		esfMatchModelImpl._originalMatchYearSeq = esfMatchModelImpl._matchYearSeq;
+
+		esfMatchModelImpl._setOriginalMatchYearSeq = false;
 
 		esfMatchModelImpl._columnBitmask = 0;
 	}
@@ -1362,12 +1434,16 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 			esfMatchCacheModel.oldCode = null;
 		}
 
+		esfMatchCacheModel.matchYear = getMatchYear();
+
+		esfMatchCacheModel.matchYearSeq = getMatchYearSeq();
+
 		return esfMatchCacheModel;
 	}
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(71);
+		StringBundler sb = new StringBundler(75);
 
 		sb.append("{uuid=");
 		sb.append(getUuid());
@@ -1439,6 +1515,10 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 		sb.append(getEsfNationalSportTypeId());
 		sb.append(", oldCode=");
 		sb.append(getOldCode());
+		sb.append(", matchYear=");
+		sb.append(getMatchYear());
+		sb.append(", matchYearSeq=");
+		sb.append(getMatchYearSeq());
 		sb.append("}");
 
 		return sb.toString();
@@ -1446,7 +1526,7 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(109);
+		StringBundler sb = new StringBundler(115);
 
 		sb.append("<model><model-name>");
 		sb.append("it.ethica.esf.model.ESFMatch");
@@ -1592,6 +1672,14 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 			"<column><column-name>oldCode</column-name><column-value><![CDATA[");
 		sb.append(getOldCode());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>matchYear</column-name><column-value><![CDATA[");
+		sb.append(getMatchYear());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>matchYearSeq</column-name><column-value><![CDATA[");
+		sb.append(getMatchYearSeq());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -1660,6 +1748,12 @@ public class ESFMatchModelImpl extends BaseModelImpl<ESFMatch>
 	private boolean _setOriginalIsChangeCategoryMatch;
 	private String _esfNationalSportTypeId;
 	private String _oldCode;
+	private int _matchYear;
+	private int _originalMatchYear;
+	private boolean _setOriginalMatchYear;
+	private int _matchYearSeq;
+	private int _originalMatchYearSeq;
+	private boolean _setOriginalMatchYearSeq;
 	private long _columnBitmask;
 	private ESFMatch _escapedModel;
 }

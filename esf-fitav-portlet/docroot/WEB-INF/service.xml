@@ -1277,6 +1277,9 @@
         <column name="isChangeCategoryMatch" type="boolean"></column>
         <column name="esfNationalSportTypeId" type="String"></column>
         <column name="oldCode" type="String"></column>
+        <column name="matchYear" type="int"></column>
+        <column name="matchYearSeq" type="int"></column>
+        
 		<finder name="MatchTypeId" return-type="Collection">
 			<finder-column name="esfMatchTypeId"></finder-column>
 		</finder>
@@ -1311,6 +1314,18 @@
         
         <finder return-type="ESFMatch" name="Code" unique="true">
 			<finder-column name="code" />
+		</finder>
+		
+		<finder return-type="Collection" name="LikeCode" >
+			<finder-column name="code" comparator="LIKE" />
+		</finder>
+		
+		<finder return-type="Collection" name="MatchYear" >
+			<finder-column name="matchYear" />
+		</finder>
+		<finder return-type="Collection" name="YearCode" >
+			<finder-column name="matchYear" />
+			<finder-column name="matchYearSeq" />
 		</finder>
 		
 		<finder name="Date_Code" return-type="Collection">
@@ -1610,7 +1625,7 @@
 		<column name="esfPartecipantTypeId" primary="true" type="long"></column>
 		<column name="name" type="String"></column>
 	</entity>
-	<entity name="ESFStateAssEntity" remote-service="false">
+	<entity name="ESFStateAssEntity" remote-service="false" local-service="true">
 		<column name="esfStateId" primary="true" type="long"></column>
 		<column name="className" primary="true" type="String"></column>
 		<finder name="ClassName" return-type="Collection">

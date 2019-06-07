@@ -656,6 +656,34 @@ public interface ESFMatchModel extends BaseModel<ESFMatch>, StagedGroupedModel {
 	 */
 	public void setOldCode(String oldCode);
 
+	/**
+	 * Returns the match year of this e s f match.
+	 *
+	 * @return the match year of this e s f match
+	 */
+	public int getMatchYear();
+
+	/**
+	 * Sets the match year of this e s f match.
+	 *
+	 * @param matchYear the match year of this e s f match
+	 */
+	public void setMatchYear(int matchYear);
+
+	/**
+	 * Returns the match year seq of this e s f match.
+	 *
+	 * @return the match year seq of this e s f match
+	 */
+	public int getMatchYearSeq();
+
+	/**
+	 * Sets the match year seq of this e s f match.
+	 *
+	 * @param matchYearSeq the match year seq of this e s f match
+	 */
+	public void setMatchYearSeq(int matchYearSeq);
+
 	@Override
 	public boolean isNew();
 

@@ -55,8 +55,8 @@
 		<liferay-ui:success key="user-success-insertupdate"
 			message="user-success-insertupdate-mess" />
 		<liferay-ui:error key="date-message" message="date-message" />
-		<liferay-ui:error key="match-success-insertupdate"
-			message="match-success-insertupdate" />
+		<liferay-ui:success key="match-success-insert" message="match-success-insert" />
+		<liferay-ui:success key="match-success-update" message="match-success-update" />
 		
 		<aui:button-row cssClass="esfmatch-admin-buttons">
 		
