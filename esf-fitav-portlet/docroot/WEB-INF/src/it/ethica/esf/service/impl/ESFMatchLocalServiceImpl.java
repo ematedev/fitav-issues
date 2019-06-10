@@ -15,6 +15,7 @@
 package it.ethica.esf.service.impl;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -28,6 +29,7 @@ import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.portlet.PortletClassLoaderUtil;
 import com.liferay.portal.kernel.util.ContentTypes;
+import com.liferay.portal.kernel.util.OrderByComparatorFactoryUtil;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.ResourceConstants;
@@ -36,6 +38,7 @@ import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.asset.model.AssetEntry;
 import com.liferay.portlet.asset.model.AssetLinkConstants;
 
+import it.ethica.esf.NoSuchMatchException;
 import it.ethica.esf.model.ESFEntityState;
 import it.ethica.esf.model.ESFMatch;
 import it.ethica.esf.model.ESFNationalDelegation;
@@ -44,6 +47,9 @@ import it.ethica.esf.model.ESFOrganization;
 import it.ethica.esf.model.ESFShooterCategoryESFMatch;
 import it.ethica.esf.model.ESFShooterQualificationESFMatch;
 import it.ethica.esf.model.impl.ESFMatchImpl;
+import it.ethica.esf.model.impl.ESFMatchModelImpl;
+import it.ethica.esf.portlet.utility.MatchComparator;
+import it.ethica.esf.portlet.utility.MatchYearOrderByComparator;
 import it.ethica.esf.service.ESFEntityStateLocalServiceUtil;
 import it.ethica.esf.service.ESFMatchLocalServiceUtil;
 import it.ethica.esf.service.ESFNationalDelegationLocalServiceUtil;
@@ -55,6 +61,7 @@ import it.ethica.esf.service.persistence.ESFMatchFinderUtil;
 import it.ethica.esf.service.persistence.ESFShooterCategoryESFMatchPK;
 import it.ethica.esf.service.persistence.ESFShooterQualificationESFMatchPK;
 import it.ethica.esf.util.ESFKeys;
+import it.ethica.esf.util.GenericUtility;
 
 /**
  * The implementation of the e s f match local service.
@@ -906,12 +913,15 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 			throws SystemException, PortalException {
 
 		User operator = userPersistence.findByPrimaryKey(userId);
-
+		String actualCode = null;
 		long groupId = serviceContext.getScopeGroupId();
-
+		ESFMatch lastCodeMatch = null;
 		Date now = new Date();
-
+		int year = 0;
+		int seq = 0;
 		ESFMatch esfMatch = null;
+		String lastCode = null;
+		String newCode = null;
 		if (esfMatchId == 0) {
 			esfMatchId = counterLocalService.increment();
 			esfMatch = esfMatchPersistence.create(esfMatchId);
@@ -919,6 +929,43 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 			esfMatch = ESFMatchLocalServiceUtil.fetchESFMatch(esfMatchId);
 		}
 		if (esfMatch != null) {
+			if(code==null || code.trim().isEmpty()){
+				//Genero il codice
+				year = Calendar.getInstance().get(Calendar.YEAR);
+				
+				_log.debug("Verifico il codice dell'ultimo match dell'anno corrente: "+year);
+//				MatchComparator cmp = new MatchComparator();
+				try {
+					lastCodeMatch = this.esfMatchPersistence
+							.findByMatchYear_Last(year, 
+									OrderByComparatorFactoryUtil
+									.create(ESFMatchModelImpl.TABLE_NAME, "matchYearSeq", true));
+				} catch (NoSuchMatchException e) {
+					lastCodeMatch = null;
+					_log.debug("Nessun match per l'anno corrente trovato", e);
+				}
+				_log.debug("Calcolo il codice da assegnare al match rispetto al vecchio");
+				
+				if(lastCodeMatch!=null){
+					//Se esiste un match di quest'anno
+					seq = lastCodeMatch.getMatchYearSeq();
+				}else{
+					//Altrimenti creo un codice fittizio con anno e 4 zeri finali
+					seq = 0;
+				}
+				lastCode = String.valueOf(year)
+						.concat(GenericUtility.getZeroPaddedString(String.valueOf(seq), 4));
+				seq++;
+				_log.debug("Ultimo codice  dell'anno: "+lastCode);
+				newCode = String.valueOf(year)
+						.concat(GenericUtility.getZeroPaddedString(String.valueOf(seq), 4));
+				_log.debug("Codice ricalcolato: "+newCode);
+			}else{
+				//Nel caso in cui arriva un codice allora è un update ed il codice non deve cambiare
+				newCode = code;
+				year = esfMatch.getMatchYear();
+				seq = esfMatch.getMatchYearSeq();
+			}
 			esfMatch.setUserId(userId);
 			esfMatch.setGroupId(groupId);
 			esfMatch.setCompanyId(operator.getCompanyId());
@@ -927,7 +974,9 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 			esfMatch.setModifiedDate(serviceContext.getModifiedDate(now));
 			esfMatch.setExpandoBridgeAttributes(serviceContext);
 			esfMatch.setEsfAssociationId(esfAssociationId);
-			esfMatch.setCode(code);
+			esfMatch.setCode(newCode);
+			esfMatch.setMatchYear(year);
+			esfMatch.setMatchYearSeq(seq);
 			esfMatch.setStartDate(startDate);
 			esfMatch.setEndDate(endDate);
 			esfMatch.setStartHour(startHour);
@@ -946,14 +995,17 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 			esfMatch.setCountryId(esfCountryId);
 			esfMatch.setSite(site);
 			esfMatch.setIsNational(isNational);
-
-			esfMatch = esfMatchPersistence.update(esfMatch);
-
+			_log.debug("Salvataggio ESFMatch con codice: "+esfMatch.getCode());
+			esfMatch = this.trySave(esfMatch, 0);
+			_log.debug("Salvataggio ESFMatch con codice: "+esfMatch.getCode()+" - TERMINATO");
+			_log.debug("Add ESFEntityState: "+esfMatch.getCode());
 			ESFEntityStateLocalServiceUtil.addEntityState(
 					serviceContext.getUserId(), ESFMatch.class.getName(),
 					esfMatchId, esfEntityState.getEsfStateId(), serviceContext);
-
+			_log.debug("Add ESFEntityState: "+esfMatch.getCode()+" - TERMINATO");
+			
 			if (esfShooterCategoryIds != null) {
+				_log.debug("Operazioni su ESFShooterCategoryESFMatch: "+esfMatch.getCode());
 				ESFShooterCategoryESFMatchLocalServiceUtil
 						.deleteESFShooterCategoryByESFMatchId(esfMatchId);
 				for (long esfShooterCategoryId : esfShooterCategoryIds) {
@@ -977,6 +1029,7 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 			}
 
 			if (esfShooterQualificationIds != null) {
+				_log.debug("Operazioni su ESFShooterQualification: "+esfMatch.getCode());
 				ESFShooterQualificationESFMatchLocalServiceUtil
 						.deleteESFShooterQualificationESFMatchId(esfMatchId);
 
@@ -999,7 +1052,7 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 							.updateESFShooterQualificationESFMatch(sqm);
 				}
 			}
-
+			_log.debug("AssetEntry: "+esfMatch.getCode());
 			/*	resourceLocalService.addResources(esfMatch.getCompanyId(), groupId,
 					userId, ESFMatch.class.getName(), esfMatchId, false, true,
 					true);*/
@@ -1016,9 +1069,36 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 			assetLinkLocalService.updateLinks(userId, assetEntry.getEntryId(),
 					serviceContext.getAssetLinkEntryIds(),
 					AssetLinkConstants.TYPE_RELATED);
-
+			_log.debug("Operazioni terminate: "+esfMatch.getCode());
 		}
 		return esfMatch;
+	}
+	
+	private ESFMatch trySave(ESFMatch match, int tryCount) throws SystemException{
+		ESFMatch result = null;
+		int thisTryCount = tryCount +1;
+		int nextSeq = match.getMatchYearSeq()+1;
+		String nextCode = null;
+		nextCode = String.valueOf(match.getMatchYear())
+				.concat(GenericUtility.getZeroPaddedString(String.valueOf(nextSeq), 4));
+		if(tryCount<10){	//Ritendo il salvataggio fino ad un massimo di 10 volte
+			try {
+				result = esfMatchPersistence.update(match);
+			} catch (Exception e) {
+				_log.error("Salvataggio fallito, "
+						+ "tryCount: "+tryCount+" - "
+						+ "Year: "+match.getMatchYear()+" - "
+						+ "Seq: "+match.getMatchYearSeq(), e);
+				//Aggiorno la sequence ed il codice e ritento il salvataggio
+				match.setMatchYearSeq(nextSeq);
+				match.setCode(nextCode);
+				this.trySave(match, thisTryCount);
+			}
+		}else{
+			//Dopo 10 tentativi annullo il salvataggio lanciando un eccezione
+			throw new SystemException("Impossibile salvare il match");	
+		}
+		return result;
 	}
 
 	public ESFMatch addOrUpdateESFMatch(long userId, long esfMatchId,

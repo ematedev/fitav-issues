@@ -20,6 +20,7 @@ if( Validator.isNotNull(esfUser) ){
 %>
 <h4><b><liferay-ui:message key="add-new-shooter" /></b>
 				<div class="separator"></div>
+<liferay-ui:error key="error-federal-role" message="error-federal-role" />
 <%
 }
 %>

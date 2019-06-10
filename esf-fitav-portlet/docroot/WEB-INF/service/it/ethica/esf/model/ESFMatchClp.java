@@ -111,6 +111,8 @@ public class ESFMatchClp extends BaseModelImpl<ESFMatch> implements ESFMatch {
 		attributes.put("isChangeCategoryMatch", getIsChangeCategoryMatch());
 		attributes.put("esfNationalSportTypeId", getEsfNationalSportTypeId());
 		attributes.put("oldCode", getOldCode());
+		attributes.put("matchYear", getMatchYear());
+		attributes.put("matchYearSeq", getMatchYearSeq());
 
 		return attributes;
 	}
@@ -329,6 +331,18 @@ public class ESFMatchClp extends BaseModelImpl<ESFMatch> implements ESFMatch {
 
 		if (oldCode != null) {
 			setOldCode(oldCode);
+		}
+
+		Integer matchYear = (Integer)attributes.get("matchYear");
+
+		if (matchYear != null) {
+			setMatchYear(matchYear);
+		}
+
+		Integer matchYearSeq = (Integer)attributes.get("matchYearSeq");
+
+		if (matchYearSeq != null) {
+			setMatchYearSeq(matchYearSeq);
 		}
 	}
 
@@ -1202,6 +1216,52 @@ public class ESFMatchClp extends BaseModelImpl<ESFMatch> implements ESFMatch {
 	}
 
 	@Override
+	public int getMatchYear() {
+		return _matchYear;
+	}
+
+	@Override
+	public void setMatchYear(int matchYear) {
+		_matchYear = matchYear;
+
+		if (_esfMatchRemoteModel != null) {
+			try {
+				Class<?> clazz = _esfMatchRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setMatchYear", int.class);
+
+				method.invoke(_esfMatchRemoteModel, matchYear);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public int getMatchYearSeq() {
+		return _matchYearSeq;
+	}
+
+	@Override
+	public void setMatchYearSeq(int matchYearSeq) {
+		_matchYearSeq = matchYearSeq;
+
+		if (_esfMatchRemoteModel != null) {
+			try {
+				Class<?> clazz = _esfMatchRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setMatchYearSeq", int.class);
+
+				method.invoke(_esfMatchRemoteModel, matchYearSeq);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
 	public StagedModelType getStagedModelType() {
 		return new StagedModelType(PortalUtil.getClassNameId(
 				ESFMatch.class.getName()));
@@ -1311,6 +1371,8 @@ public class ESFMatchClp extends BaseModelImpl<ESFMatch> implements ESFMatch {
 		clone.setIsChangeCategoryMatch(getIsChangeCategoryMatch());
 		clone.setEsfNationalSportTypeId(getEsfNationalSportTypeId());
 		clone.setOldCode(getOldCode());
+		clone.setMatchYear(getMatchYear());
+		clone.setMatchYearSeq(getMatchYearSeq());
 
 		return clone;
 	}
@@ -1352,10 +1414,6 @@ public class ESFMatchClp extends BaseModelImpl<ESFMatch> implements ESFMatch {
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1363,7 +1421,7 @@ public class ESFMatchClp extends BaseModelImpl<ESFMatch> implements ESFMatch {
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(71);
+		StringBundler sb = new StringBundler(75);
 
 		sb.append("{uuid=");
 		sb.append(getUuid());
@@ -1435,6 +1493,10 @@ public class ESFMatchClp extends BaseModelImpl<ESFMatch> implements ESFMatch {
 		sb.append(getEsfNationalSportTypeId());
 		sb.append(", oldCode=");
 		sb.append(getOldCode());
+		sb.append(", matchYear=");
+		sb.append(getMatchYear());
+		sb.append(", matchYearSeq=");
+		sb.append(getMatchYearSeq());
 		sb.append("}");
 
 		return sb.toString();
@@ -1442,7 +1504,7 @@ public class ESFMatchClp extends BaseModelImpl<ESFMatch> implements ESFMatch {
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(109);
+		StringBundler sb = new StringBundler(115);
 
 		sb.append("<model><model-name>");
 		sb.append("it.ethica.esf.model.ESFMatch");
@@ -1588,6 +1650,14 @@ public class ESFMatchClp extends BaseModelImpl<ESFMatch> implements ESFMatch {
 			"<column><column-name>oldCode</column-name><column-value><![CDATA[");
 		sb.append(getOldCode());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>matchYear</column-name><column-value><![CDATA[");
+		sb.append(getMatchYear());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>matchYearSeq</column-name><column-value><![CDATA[");
+		sb.append(getMatchYearSeq());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -1630,6 +1700,7 @@ public class ESFMatchClp extends BaseModelImpl<ESFMatch> implements ESFMatch {
 	private boolean _isChangeCategoryMatch;
 	private String _esfNationalSportTypeId;
 	private String _oldCode;
+	private int _matchYear;
+	private int _matchYearSeq;
 	private BaseModel<?> _esfMatchRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

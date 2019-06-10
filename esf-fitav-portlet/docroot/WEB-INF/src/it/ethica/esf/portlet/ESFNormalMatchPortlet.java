@@ -400,14 +400,17 @@ public class ESFNormalMatchPortlet extends MVCPortlet {
 					esfMatchTypeId, isChangeCategoryMatch , esfShooterCategoryIds,
 					esfShooterQualificationIds, esfCountryId, site, isNational,
 					esfEntityState, serviceContext);
-
+			
 			if (newMatch == null || newMatch.getPrimaryKey() == 0) {
-				SessionErrors.add(request, "match-error-operatiorn");
+				_log.debug("Errore nell'operazione di salvataggio");
+				SessionErrors.add(request, "match-error-operation");
 			}
 			else if (esfMatchId == 0) {
+				_log.debug("Salvataggio OK");
 				SessionMessages.add(request, "match-success-insert");
 			}
 			else {
+				_log.debug("Aggiornamento OK");
 				SessionMessages.add(request, "match-success-update");
 			}
 		}
@@ -945,7 +948,7 @@ public class ESFNormalMatchPortlet extends MVCPortlet {
 		long esfMatchId = ParamUtil.getLong(request, "esfMatchId");
 		String mvcPath = ParamUtil.getString(request, "mvcPath");
 		
-		/*Modalità di sola lettura dei risultati (nella configurazione della portlet)
+		/*Modalitï¿½ di sola lettura dei risultati (nella configurazione della portlet)
 		 *se attivata non deve fare update dei risultati 
 		 * */
 		

@@ -656,6 +656,34 @@ public interface ESFMatchModel extends BaseModel<ESFMatch>, StagedGroupedModel {
 	 */
 	public void setOldCode(String oldCode);
 
+	/**
+	 * Returns the match year of this e s f match.
+	 *
+	 * @return the match year of this e s f match
+	 */
+	public int getMatchYear();
+
+	/**
+	 * Sets the match year of this e s f match.
+	 *
+	 * @param matchYear the match year of this e s f match
+	 */
+	public void setMatchYear(int matchYear);
+
+	/**
+	 * Returns the match year seq of this e s f match.
+	 *
+	 * @return the match year seq of this e s f match
+	 */
+	public int getMatchYearSeq();
+
+	/**
+	 * Sets the match year seq of this e s f match.
+	 *
+	 * @param matchYearSeq the match year seq of this e s f match
+	 */
+	public void setMatchYearSeq(int matchYearSeq);
+
 	@Override
 	public boolean isNew();
 
@@ -693,19 +721,19 @@ public interface ESFMatchModel extends BaseModel<ESFMatch>, StagedGroupedModel {
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFMatch esfMatch);
+	public int compareTo(ESFMatch esfMatch);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFMatch> toCacheModel();
+	public CacheModel<ESFMatch> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFMatch toEscapedModel();
+	public ESFMatch toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFMatch toUnescapedModel();
+	public ESFMatch toUnescapedModel();
 
 	@Override
 	public String toString();
