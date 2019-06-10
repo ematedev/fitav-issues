@@ -114,17 +114,17 @@ public class ESFFieldESFSportTypeLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFFieldESFSportType"
 			};
 
-		_methodName384 = "getBeanIdentifier";
+		_methodName386 = "getBeanIdentifier";
 
-		_methodParameterTypes384 = new String[] {  };
+		_methodParameterTypes386 = new String[] {  };
 
-		_methodName385 = "setBeanIdentifier";
+		_methodName387 = "setBeanIdentifier";
 
-		_methodParameterTypes385 = new String[] { "java.lang.String" };
+		_methodParameterTypes387 = new String[] { "java.lang.String" };
 
-		_methodName390 = "findByesfFieldId";
+		_methodName392 = "findByesfFieldId";
 
-		_methodParameterTypes390 = new String[] { "long" };
+		_methodParameterTypes392 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -216,20 +216,20 @@ public class ESFFieldESFSportTypeLocalServiceClpInvoker {
 			return ESFFieldESFSportTypeLocalServiceUtil.updateESFFieldESFSportType((it.ethica.esf.model.ESFFieldESFSportType)arguments[0]);
 		}
 
-		if (_methodName384.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
+		if (_methodName386.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
 			return ESFFieldESFSportTypeLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName385.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
+		if (_methodName387.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
 			ESFFieldESFSportTypeLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName390.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
+		if (_methodName392.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFFieldESFSportTypeLocalServiceUtil.findByesfFieldId(((Long)arguments[0]).longValue());
 		}
 
@@ -268,10 +268,10 @@ public class ESFFieldESFSportTypeLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName384;
-	private String[] _methodParameterTypes384;
-	private String _methodName385;
-	private String[] _methodParameterTypes385;
-	private String _methodName390;
-	private String[] _methodParameterTypes390;
+	private String _methodName386;
+	private String[] _methodParameterTypes386;
+	private String _methodName387;
+	private String[] _methodParameterTypes387;
+	private String _methodName392;
+	private String[] _methodParameterTypes392;
 }

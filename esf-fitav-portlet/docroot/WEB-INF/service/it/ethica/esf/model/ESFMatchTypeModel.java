@@ -298,19 +298,19 @@ public interface ESFMatchTypeModel extends BaseModel<ESFMatchType>, GroupedModel
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFMatchType esfMatchType);
+	public int compareTo(ESFMatchType esfMatchType);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFMatchType> toCacheModel();
+	public CacheModel<ESFMatchType> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFMatchType toEscapedModel();
+	public ESFMatchType toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFMatchType toUnescapedModel();
+	public ESFMatchType toUnescapedModel();
 
 	@Override
 	public String toString();

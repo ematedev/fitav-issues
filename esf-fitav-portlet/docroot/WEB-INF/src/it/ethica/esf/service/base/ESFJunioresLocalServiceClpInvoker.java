@@ -100,13 +100,13 @@ public class ESFJunioresLocalServiceClpInvoker {
 
 		_methodParameterTypes15 = new String[] { "it.ethica.esf.model.ESFJuniores" };
 
-		_methodName384 = "getBeanIdentifier";
+		_methodName386 = "getBeanIdentifier";
 
-		_methodParameterTypes384 = new String[] {  };
+		_methodParameterTypes386 = new String[] {  };
 
-		_methodName385 = "setBeanIdentifier";
+		_methodName387 = "setBeanIdentifier";
 
-		_methodParameterTypes385 = new String[] { "java.lang.String" };
+		_methodParameterTypes387 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -198,13 +198,13 @@ public class ESFJunioresLocalServiceClpInvoker {
 			return ESFJunioresLocalServiceUtil.updateESFJuniores((it.ethica.esf.model.ESFJuniores)arguments[0]);
 		}
 
-		if (_methodName384.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
+		if (_methodName386.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
 			return ESFJunioresLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName385.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
+		if (_methodName387.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
 			ESFJunioresLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
@@ -245,8 +245,8 @@ public class ESFJunioresLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName384;
-	private String[] _methodParameterTypes384;
-	private String _methodName385;
-	private String[] _methodParameterTypes385;
+	private String _methodName386;
+	private String[] _methodParameterTypes386;
+	private String _methodName387;
+	private String[] _methodParameterTypes387;
 }

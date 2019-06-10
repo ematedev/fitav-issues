@@ -302,20 +302,19 @@ public interface ESFOrganizationUnitserviceModel extends BaseModel<ESFOrganizati
 	public Object clone();
 
 	@Override
-	public int compareTo(
-		it.ethica.esf.model.ESFOrganizationUnitservice esfOrganizationUnitservice);
+	public int compareTo(ESFOrganizationUnitservice esfOrganizationUnitservice);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFOrganizationUnitservice> toCacheModel();
+	public CacheModel<ESFOrganizationUnitservice> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFOrganizationUnitservice toEscapedModel();
+	public ESFOrganizationUnitservice toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFOrganizationUnitservice toUnescapedModel();
+	public ESFOrganizationUnitservice toUnescapedModel();
 
 	@Override
 	public String toString();

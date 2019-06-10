@@ -102,47 +102,47 @@ public class ESFMatchTypeLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFMatchType"
 			};
 
-		_methodName384 = "getBeanIdentifier";
+		_methodName386 = "getBeanIdentifier";
 
-		_methodParameterTypes384 = new String[] {  };
+		_methodParameterTypes386 = new String[] {  };
 
-		_methodName385 = "setBeanIdentifier";
+		_methodName387 = "setBeanIdentifier";
 
-		_methodParameterTypes385 = new String[] { "java.lang.String" };
+		_methodParameterTypes387 = new String[] { "java.lang.String" };
 
-		_methodName390 = "findAll";
+		_methodName392 = "findAll";
 
-		_methodParameterTypes390 = new String[] {  };
+		_methodParameterTypes392 = new String[] {  };
 
-		_methodName391 = "findAllByNational";
+		_methodName393 = "findAllByNational";
 
-		_methodParameterTypes391 = new String[] { "boolean" };
+		_methodParameterTypes393 = new String[] { "boolean" };
 
-		_methodName392 = "findByDescription";
+		_methodName394 = "findByDescription";
 
-		_methodParameterTypes392 = new String[] { "java.lang.String" };
+		_methodParameterTypes394 = new String[] { "java.lang.String" };
 
-		_methodName393 = "addEsfMatchType";
+		_methodName395 = "addEsfMatchType";
 
-		_methodParameterTypes393 = new String[] {
+		_methodParameterTypes395 = new String[] {
 				"java.lang.String", "boolean", "boolean",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName394 = "updateEsfMatchType";
+		_methodName396 = "updateEsfMatchType";
 
-		_methodParameterTypes394 = new String[] {
+		_methodParameterTypes396 = new String[] {
 				"long", "java.lang.String", "boolean", "boolean",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName395 = "deleteEsfMatchType";
+		_methodName397 = "deleteEsfMatchType";
 
-		_methodParameterTypes395 = new String[] { "long" };
+		_methodParameterTypes397 = new String[] { "long" };
 
-		_methodName396 = "allIdMatchTypeFromName";
+		_methodName398 = "allIdMatchTypeFromName";
 
-		_methodParameterTypes396 = new String[] {  };
+		_methodParameterTypes398 = new String[] {  };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -234,43 +234,43 @@ public class ESFMatchTypeLocalServiceClpInvoker {
 			return ESFMatchTypeLocalServiceUtil.updateESFMatchType((it.ethica.esf.model.ESFMatchType)arguments[0]);
 		}
 
-		if (_methodName384.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
+		if (_methodName386.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
 			return ESFMatchTypeLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName385.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
+		if (_methodName387.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
 			ESFMatchTypeLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName390.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
-			return ESFMatchTypeLocalServiceUtil.findAll();
-		}
-
-		if (_methodName391.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
-			return ESFMatchTypeLocalServiceUtil.findAllByNational(((Boolean)arguments[0]).booleanValue());
-		}
-
 		if (_methodName392.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
-			return ESFMatchTypeLocalServiceUtil.findByDescription((java.lang.String)arguments[0]);
+			return ESFMatchTypeLocalServiceUtil.findAll();
 		}
 
 		if (_methodName393.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
+			return ESFMatchTypeLocalServiceUtil.findAllByNational(((Boolean)arguments[0]).booleanValue());
+		}
+
+		if (_methodName394.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
+			return ESFMatchTypeLocalServiceUtil.findByDescription((java.lang.String)arguments[0]);
+		}
+
+		if (_methodName395.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
 			return ESFMatchTypeLocalServiceUtil.addEsfMatchType((java.lang.String)arguments[0],
 				((Boolean)arguments[1]).booleanValue(),
 				((Boolean)arguments[2]).booleanValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[3]);
 		}
 
-		if (_methodName394.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
+		if (_methodName396.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
 			return ESFMatchTypeLocalServiceUtil.updateEsfMatchType(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1],
 				((Boolean)arguments[2]).booleanValue(),
@@ -278,13 +278,13 @@ public class ESFMatchTypeLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[4]);
 		}
 
-		if (_methodName395.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
+		if (_methodName397.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
 			return ESFMatchTypeLocalServiceUtil.deleteEsfMatchType(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName396.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
+		if (_methodName398.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
 			return ESFMatchTypeLocalServiceUtil.allIdMatchTypeFromName();
 		}
 
@@ -323,14 +323,10 @@ public class ESFMatchTypeLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName384;
-	private String[] _methodParameterTypes384;
-	private String _methodName385;
-	private String[] _methodParameterTypes385;
-	private String _methodName390;
-	private String[] _methodParameterTypes390;
-	private String _methodName391;
-	private String[] _methodParameterTypes391;
+	private String _methodName386;
+	private String[] _methodParameterTypes386;
+	private String _methodName387;
+	private String[] _methodParameterTypes387;
 	private String _methodName392;
 	private String[] _methodParameterTypes392;
 	private String _methodName393;
@@ -341,4 +337,8 @@ public class ESFMatchTypeLocalServiceClpInvoker {
 	private String[] _methodParameterTypes395;
 	private String _methodName396;
 	private String[] _methodParameterTypes396;
+	private String _methodName397;
+	private String[] _methodParameterTypes397;
+	private String _methodName398;
+	private String[] _methodParameterTypes398;
 }

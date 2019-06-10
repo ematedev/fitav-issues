@@ -102,17 +102,17 @@ public class ESFDepartureLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFDeparture"
 			};
 
-		_methodName384 = "getBeanIdentifier";
+		_methodName386 = "getBeanIdentifier";
 
-		_methodParameterTypes384 = new String[] {  };
+		_methodParameterTypes386 = new String[] {  };
 
-		_methodName385 = "setBeanIdentifier";
+		_methodName387 = "setBeanIdentifier";
 
-		_methodParameterTypes385 = new String[] { "java.lang.String" };
+		_methodParameterTypes387 = new String[] { "java.lang.String" };
 
-		_methodName390 = "addEsfDeparture";
+		_methodName392 = "addEsfDeparture";
 
-		_methodParameterTypes390 = new String[] {
+		_methodParameterTypes392 = new String[] {
 				"long", "long", "java.lang.String", "long", "long",
 				"java.lang.String", "java.util.Date", "java.util.Date",
 				"java.util.Date", "java.lang.String", "java.lang.String",
@@ -121,9 +121,9 @@ public class ESFDepartureLocalServiceClpInvoker {
 				"java.lang.String"
 			};
 
-		_methodName391 = "updateEsfDeparture";
+		_methodName393 = "updateEsfDeparture";
 
-		_methodParameterTypes391 = new String[] {
+		_methodParameterTypes393 = new String[] {
 				"long", "long", "long", "java.lang.String", "long", "long",
 				"java.lang.String", "java.util.Date", "java.util.Date",
 				"java.lang.String", "java.util.Date", "java.lang.String",
@@ -132,40 +132,40 @@ public class ESFDepartureLocalServiceClpInvoker {
 				"java.lang.String"
 			};
 
-		_methodName392 = "findESFDeparturesByESFMatchId";
+		_methodName394 = "findESFDeparturesByESFMatchId";
 
-		_methodParameterTypes392 = new String[] { "long" };
+		_methodParameterTypes394 = new String[] { "long" };
 
-		_methodName393 = "findESFDeparturesByESFMatchId";
+		_methodName395 = "findESFDeparturesByESFMatchId";
 
-		_methodParameterTypes393 = new String[] { "long", "int", "int" };
+		_methodParameterTypes395 = new String[] { "long", "int", "int" };
 
-		_methodName394 = "findDeparturesByCode";
+		_methodName396 = "findDeparturesByCode";
 
-		_methodParameterTypes394 = new String[] { "java.lang.String" };
+		_methodParameterTypes396 = new String[] { "java.lang.String" };
 
-		_methodName395 = "findDeparturesByCode";
+		_methodName397 = "findDeparturesByCode";
 
-		_methodParameterTypes395 = new String[] { "java.lang.String", "int", "int" };
+		_methodParameterTypes397 = new String[] { "java.lang.String", "int", "int" };
 
-		_methodName396 = "getByEsfMatchIdEsfUserId";
+		_methodName398 = "getByEsfMatchIdEsfUserId";
 
-		_methodParameterTypes396 = new String[] { "long", "long" };
+		_methodParameterTypes398 = new String[] { "long", "long" };
 
-		_methodName397 = "getByEsfMatchIdEsfUserId";
+		_methodName399 = "getByEsfMatchIdEsfUserId";
 
-		_methodParameterTypes397 = new String[] { "long", "long", "int", "int" };
+		_methodParameterTypes399 = new String[] { "long", "long", "int", "int" };
 
-		_methodName398 = "getESFDeparturesByEsfMatchId_F_L_L_C_D";
+		_methodName400 = "getESFDeparturesByEsfMatchId_F_L_L_C_D";
 
-		_methodParameterTypes398 = new String[] {
+		_methodParameterTypes400 = new String[] {
 				"long", "java.lang.String", "java.util.Date", "java.lang.String",
 				"java.lang.String", "java.lang.String"
 			};
 
-		_methodName399 = "getESFDeparturesByEsfMatchId_F_L_L_C_D";
+		_methodName401 = "getESFDeparturesByEsfMatchId_F_L_L_C_D";
 
-		_methodParameterTypes399 = new String[] {
+		_methodParameterTypes401 = new String[] {
 				"long", "java.lang.String", "java.util.Date", "java.lang.String",
 				"java.lang.String", "java.lang.String", "int", "int"
 			};
@@ -260,20 +260,20 @@ public class ESFDepartureLocalServiceClpInvoker {
 			return ESFDepartureLocalServiceUtil.updateESFDeparture((it.ethica.esf.model.ESFDeparture)arguments[0]);
 		}
 
-		if (_methodName384.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
+		if (_methodName386.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
 			return ESFDepartureLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName385.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
+		if (_methodName387.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
 			ESFDepartureLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName390.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
+		if (_methodName392.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFDepartureLocalServiceUtil.addEsfDeparture(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2],
@@ -292,8 +292,8 @@ public class ESFDepartureLocalServiceClpInvoker {
 				(java.lang.String)arguments[17], (java.lang.String)arguments[18]);
 		}
 
-		if (_methodName391.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
+		if (_methodName393.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
 			return ESFDepartureLocalServiceUtil.updateEsfDeparture(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -312,54 +312,54 @@ public class ESFDepartureLocalServiceClpInvoker {
 				(java.lang.String)arguments[18], (java.lang.String)arguments[19]);
 		}
 
-		if (_methodName392.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
-			return ESFDepartureLocalServiceUtil.findESFDeparturesByESFMatchId(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName393.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
-			return ESFDepartureLocalServiceUtil.findESFDeparturesByESFMatchId(((Long)arguments[0]).longValue(),
-				((Integer)arguments[1]).intValue(),
-				((Integer)arguments[2]).intValue());
-		}
-
 		if (_methodName394.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
-			return ESFDepartureLocalServiceUtil.findDeparturesByCode((java.lang.String)arguments[0]);
+			return ESFDepartureLocalServiceUtil.findESFDeparturesByESFMatchId(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName395.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
-			return ESFDepartureLocalServiceUtil.findDeparturesByCode((java.lang.String)arguments[0],
+			return ESFDepartureLocalServiceUtil.findESFDeparturesByESFMatchId(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
 		if (_methodName396.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
-			return ESFDepartureLocalServiceUtil.getByEsfMatchIdEsfUserId(((Long)arguments[0]).longValue(),
-				((Long)arguments[1]).longValue());
+			return ESFDepartureLocalServiceUtil.findDeparturesByCode((java.lang.String)arguments[0]);
 		}
 
 		if (_methodName397.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
+			return ESFDepartureLocalServiceUtil.findDeparturesByCode((java.lang.String)arguments[0],
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue());
+		}
+
+		if (_methodName398.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
+			return ESFDepartureLocalServiceUtil.getByEsfMatchIdEsfUserId(((Long)arguments[0]).longValue(),
+				((Long)arguments[1]).longValue());
+		}
+
+		if (_methodName399.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes399, parameterTypes)) {
 			return ESFDepartureLocalServiceUtil.getByEsfMatchIdEsfUserId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
-		if (_methodName398.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
+		if (_methodName400.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes400, parameterTypes)) {
 			return ESFDepartureLocalServiceUtil.getESFDeparturesByEsfMatchId_F_L_L_C_D(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.util.Date)arguments[2],
 				(java.lang.String)arguments[3], (java.lang.String)arguments[4],
 				(java.lang.String)arguments[5]);
 		}
 
-		if (_methodName399.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes399, parameterTypes)) {
+		if (_methodName401.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes401, parameterTypes)) {
 			return ESFDepartureLocalServiceUtil.getESFDeparturesByEsfMatchId_F_L_L_C_D(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.util.Date)arguments[2],
 				(java.lang.String)arguments[3], (java.lang.String)arguments[4],
@@ -403,14 +403,10 @@ public class ESFDepartureLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName384;
-	private String[] _methodParameterTypes384;
-	private String _methodName385;
-	private String[] _methodParameterTypes385;
-	private String _methodName390;
-	private String[] _methodParameterTypes390;
-	private String _methodName391;
-	private String[] _methodParameterTypes391;
+	private String _methodName386;
+	private String[] _methodParameterTypes386;
+	private String _methodName387;
+	private String[] _methodParameterTypes387;
 	private String _methodName392;
 	private String[] _methodParameterTypes392;
 	private String _methodName393;
@@ -427,4 +423,8 @@ public class ESFDepartureLocalServiceClpInvoker {
 	private String[] _methodParameterTypes398;
 	private String _methodName399;
 	private String[] _methodParameterTypes399;
+	private String _methodName400;
+	private String[] _methodParameterTypes400;
+	private String _methodName401;
+	private String[] _methodParameterTypes401;
 }

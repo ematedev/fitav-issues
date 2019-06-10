@@ -210,20 +210,19 @@ public interface ESFHistoricalAssociationModel extends BaseModel<ESFHistoricalAs
 	public Object clone();
 
 	@Override
-	public int compareTo(
-		it.ethica.esf.model.ESFHistoricalAssociation esfHistoricalAssociation);
+	public int compareTo(ESFHistoricalAssociation esfHistoricalAssociation);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFHistoricalAssociation> toCacheModel();
+	public CacheModel<ESFHistoricalAssociation> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFHistoricalAssociation toEscapedModel();
+	public ESFHistoricalAssociation toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFHistoricalAssociation toUnescapedModel();
+	public ESFHistoricalAssociation toUnescapedModel();
 
 	@Override
 	public String toString();

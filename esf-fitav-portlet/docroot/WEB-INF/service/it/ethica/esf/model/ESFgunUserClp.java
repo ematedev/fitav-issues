@@ -589,10 +589,6 @@ public class ESFgunUserClp extends BaseModelImpl<ESFgunUser>
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -708,5 +704,4 @@ public class ESFgunUserClp extends BaseModelImpl<ESFgunUser>
 	private String _esfMeasures;
 	private String _esfCaliber;
 	private BaseModel<?> _esFgunUserRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

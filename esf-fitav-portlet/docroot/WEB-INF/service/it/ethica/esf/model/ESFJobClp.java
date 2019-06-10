@@ -251,10 +251,6 @@ public class ESFJobClp extends BaseModelImpl<ESFJob> implements ESFJob {
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -298,5 +294,4 @@ public class ESFJobClp extends BaseModelImpl<ESFJob> implements ESFJob {
 	private long _esfJobId;
 	private String _esfName;
 	private BaseModel<?> _esfJobRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

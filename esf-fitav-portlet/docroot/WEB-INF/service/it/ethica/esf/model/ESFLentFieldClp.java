@@ -346,10 +346,6 @@ public class ESFLentFieldClp extends BaseModelImpl<ESFLentField>
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -414,5 +410,4 @@ public class ESFLentFieldClp extends BaseModelImpl<ESFLentField>
 	private long _realOwnerId;
 	private long _actualOwnerId;
 	private BaseModel<?> _esfLentFieldRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

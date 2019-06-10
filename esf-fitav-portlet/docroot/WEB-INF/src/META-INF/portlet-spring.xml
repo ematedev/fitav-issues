@@ -14,7 +14,6 @@
 	<bean id="it.ethica.esf.service.ESFCaneLocalService" class="it.ethica.esf.service.impl.ESFCaneLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFCanePersistence" class="it.ethica.esf.service.persistence.ESFCanePersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFCardLocalService" class="it.ethica.esf.service.impl.ESFCardLocalServiceImpl" />
-	<bean id="it.ethica.esf.service.ESFCardService" class="it.ethica.esf.service.impl.ESFCardServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFCardPersistence" class="it.ethica.esf.service.persistence.ESFCardPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.persistence.ESFCardFinder" class="it.ethica.esf.service.persistence.ESFCardFinderImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFCategoryLocalService" class="it.ethica.esf.service.impl.ESFCategoryLocalServiceImpl" />
@@ -130,11 +129,13 @@
 	<bean id="it.ethica.esf.service.persistence.ESFShooterCategoryPersistence" class="it.ethica.esf.service.persistence.ESFShooterCategoryPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFShooterCategoryESFMatchLocalService" class="it.ethica.esf.service.impl.ESFShooterCategoryESFMatchLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFShooterCategoryESFMatchPersistence" class="it.ethica.esf.service.persistence.ESFShooterCategoryESFMatchPersistenceImpl" parent="basePersistence" />
+	<bean id="it.ethica.esf.service.ESFShooterCategoryESFTournamentLocalService" class="it.ethica.esf.service.impl.ESFShooterCategoryESFTournamentLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFShooterCategoryESFTournamentPersistence" class="it.ethica.esf.service.persistence.ESFShooterCategoryESFTournamentPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFShooterQualificationLocalService" class="it.ethica.esf.service.impl.ESFShooterQualificationLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFShooterQualificationPersistence" class="it.ethica.esf.service.persistence.ESFShooterQualificationPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFShooterQualificationESFMatchLocalService" class="it.ethica.esf.service.impl.ESFShooterQualificationESFMatchLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFShooterQualificationESFMatchPersistence" class="it.ethica.esf.service.persistence.ESFShooterQualificationESFMatchPersistenceImpl" parent="basePersistence" />
+	<bean id="it.ethica.esf.service.ESFShooterQualificationESFTournamentLocalService" class="it.ethica.esf.service.impl.ESFShooterQualificationESFTournamentLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFShooterQualificationESFTournamentPersistence" class="it.ethica.esf.service.persistence.ESFShooterQualificationESFTournamentPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFShootingDirectorLocalService" class="it.ethica.esf.service.impl.ESFShootingDirectorLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFShootingDirectorPersistence" class="it.ethica.esf.service.persistence.ESFShootingDirectorPersistenceImpl" parent="basePersistence" />
@@ -177,7 +178,6 @@
 	<bean id="it.ethica.esf.service.persistence.ESFUserRolePersistence" class="it.ethica.esf.service.persistence.ESFUserRolePersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.VW_DatiDrettoreTiroLocalService" class="it.ethica.esf.service.impl.VW_DatiDrettoreTiroLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPersistence" class="it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPersistenceImpl" parent="basePersistence" />
-	<bean id="it.ethica.esf.service.VW_ESFIncarichiFederaliLocalService" class="it.ethica.esf.service.impl.VW_ESFIncarichiFederaliLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.VW_ESFIncarichiFederaliPersistence" class="it.ethica.esf.service.persistence.VW_ESFIncarichiFederaliPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.VW_ESFListaIncarichiLocalService" class="it.ethica.esf.service.impl.VW_ESFListaIncarichiLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.VW_ESFListaIncarichiPersistence" class="it.ethica.esf.service.persistence.VW_ESFListaIncarichiPersistenceImpl" parent="basePersistence" />

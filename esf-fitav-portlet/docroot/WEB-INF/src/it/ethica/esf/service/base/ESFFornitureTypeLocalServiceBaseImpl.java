@@ -127,7 +127,6 @@ import it.ethica.esf.service.persistence.ESFUserRolePersistence;
 import it.ethica.esf.service.persistence.ESFgunUserFinder;
 import it.ethica.esf.service.persistence.ESFgunUserPersistence;
 import it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPersistence;
-import it.ethica.esf.service.persistence.VW_ESFIncarichiFederaliPersistence;
 import it.ethica.esf.service.persistence.VW_ESFListaIncarichiPersistence;
 
 import java.io.Serializable;
@@ -678,25 +677,6 @@ public abstract class ESFFornitureTypeLocalServiceBaseImpl
 	public void setESFCardLocalService(
 		it.ethica.esf.service.ESFCardLocalService esfCardLocalService) {
 		this.esfCardLocalService = esfCardLocalService;
-	}
-
-	/**
-	 * Returns the e s f card remote service.
-	 *
-	 * @return the e s f card remote service
-	 */
-	public it.ethica.esf.service.ESFCardService getESFCardService() {
-		return esfCardService;
-	}
-
-	/**
-	 * Sets the e s f card remote service.
-	 *
-	 * @param esfCardService the e s f card remote service
-	 */
-	public void setESFCardService(
-		it.ethica.esf.service.ESFCardService esfCardService) {
-		this.esfCardService = esfCardService;
 	}
 
 	/**
@@ -2872,6 +2852,25 @@ public abstract class ESFFornitureTypeLocalServiceBaseImpl
 	}
 
 	/**
+	 * Returns the e s f shooter category e s f tournament local service.
+	 *
+	 * @return the e s f shooter category e s f tournament local service
+	 */
+	public it.ethica.esf.service.ESFShooterCategoryESFTournamentLocalService getESFShooterCategoryESFTournamentLocalService() {
+		return esfShooterCategoryESFTournamentLocalService;
+	}
+
+	/**
+	 * Sets the e s f shooter category e s f tournament local service.
+	 *
+	 * @param esfShooterCategoryESFTournamentLocalService the e s f shooter category e s f tournament local service
+	 */
+	public void setESFShooterCategoryESFTournamentLocalService(
+		it.ethica.esf.service.ESFShooterCategoryESFTournamentLocalService esfShooterCategoryESFTournamentLocalService) {
+		this.esfShooterCategoryESFTournamentLocalService = esfShooterCategoryESFTournamentLocalService;
+	}
+
+	/**
 	 * Returns the e s f shooter category e s f tournament persistence.
 	 *
 	 * @return the e s f shooter category e s f tournament persistence
@@ -2964,6 +2963,25 @@ public abstract class ESFFornitureTypeLocalServiceBaseImpl
 	public void setESFShooterQualificationESFMatchPersistence(
 		ESFShooterQualificationESFMatchPersistence esfShooterQualificationESFMatchPersistence) {
 		this.esfShooterQualificationESFMatchPersistence = esfShooterQualificationESFMatchPersistence;
+	}
+
+	/**
+	 * Returns the e s f shooter qualification e s f tournament local service.
+	 *
+	 * @return the e s f shooter qualification e s f tournament local service
+	 */
+	public it.ethica.esf.service.ESFShooterQualificationESFTournamentLocalService getESFShooterQualificationESFTournamentLocalService() {
+		return esfShooterQualificationESFTournamentLocalService;
+	}
+
+	/**
+	 * Sets the e s f shooter qualification e s f tournament local service.
+	 *
+	 * @param esfShooterQualificationESFTournamentLocalService the e s f shooter qualification e s f tournament local service
+	 */
+	public void setESFShooterQualificationESFTournamentLocalService(
+		it.ethica.esf.service.ESFShooterQualificationESFTournamentLocalService esfShooterQualificationESFTournamentLocalService) {
+		this.esfShooterQualificationESFTournamentLocalService = esfShooterQualificationESFTournamentLocalService;
 	}
 
 	/**
@@ -3761,44 +3779,6 @@ public abstract class ESFFornitureTypeLocalServiceBaseImpl
 	}
 
 	/**
-	 * Returns the v w_ e s f incarichi federali local service.
-	 *
-	 * @return the v w_ e s f incarichi federali local service
-	 */
-	public it.ethica.esf.service.VW_ESFIncarichiFederaliLocalService getVW_ESFIncarichiFederaliLocalService() {
-		return vw_esfIncarichiFederaliLocalService;
-	}
-
-	/**
-	 * Sets the v w_ e s f incarichi federali local service.
-	 *
-	 * @param vw_esfIncarichiFederaliLocalService the v w_ e s f incarichi federali local service
-	 */
-	public void setVW_ESFIncarichiFederaliLocalService(
-		it.ethica.esf.service.VW_ESFIncarichiFederaliLocalService vw_esfIncarichiFederaliLocalService) {
-		this.vw_esfIncarichiFederaliLocalService = vw_esfIncarichiFederaliLocalService;
-	}
-
-	/**
-	 * Returns the v w_ e s f incarichi federali persistence.
-	 *
-	 * @return the v w_ e s f incarichi federali persistence
-	 */
-	public VW_ESFIncarichiFederaliPersistence getVW_ESFIncarichiFederaliPersistence() {
-		return vw_esfIncarichiFederaliPersistence;
-	}
-
-	/**
-	 * Sets the v w_ e s f incarichi federali persistence.
-	 *
-	 * @param vw_esfIncarichiFederaliPersistence the v w_ e s f incarichi federali persistence
-	 */
-	public void setVW_ESFIncarichiFederaliPersistence(
-		VW_ESFIncarichiFederaliPersistence vw_esfIncarichiFederaliPersistence) {
-		this.vw_esfIncarichiFederaliPersistence = vw_esfIncarichiFederaliPersistence;
-	}
-
-	/**
 	 * Returns the v w_ e s f lista incarichi local service.
 	 *
 	 * @return the v w_ e s f lista incarichi local service
@@ -4038,8 +4018,6 @@ public abstract class ESFFornitureTypeLocalServiceBaseImpl
 	protected ESFCanePersistence esfCanePersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFCardLocalService.class)
 	protected it.ethica.esf.service.ESFCardLocalService esfCardLocalService;
-	@BeanReference(type = it.ethica.esf.service.ESFCardService.class)
-	protected it.ethica.esf.service.ESFCardService esfCardService;
 	@BeanReference(type = ESFCardPersistence.class)
 	protected ESFCardPersistence esfCardPersistence;
 	@BeanReference(type = ESFCardFinder.class)
@@ -4270,6 +4248,8 @@ public abstract class ESFFornitureTypeLocalServiceBaseImpl
 	protected it.ethica.esf.service.ESFShooterCategoryESFMatchLocalService esfShooterCategoryESFMatchLocalService;
 	@BeanReference(type = ESFShooterCategoryESFMatchPersistence.class)
 	protected ESFShooterCategoryESFMatchPersistence esfShooterCategoryESFMatchPersistence;
+	@BeanReference(type = it.ethica.esf.service.ESFShooterCategoryESFTournamentLocalService.class)
+	protected it.ethica.esf.service.ESFShooterCategoryESFTournamentLocalService esfShooterCategoryESFTournamentLocalService;
 	@BeanReference(type = ESFShooterCategoryESFTournamentPersistence.class)
 	protected ESFShooterCategoryESFTournamentPersistence esfShooterCategoryESFTournamentPersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFShooterQualificationLocalService.class)
@@ -4280,6 +4260,8 @@ public abstract class ESFFornitureTypeLocalServiceBaseImpl
 	protected it.ethica.esf.service.ESFShooterQualificationESFMatchLocalService esfShooterQualificationESFMatchLocalService;
 	@BeanReference(type = ESFShooterQualificationESFMatchPersistence.class)
 	protected ESFShooterQualificationESFMatchPersistence esfShooterQualificationESFMatchPersistence;
+	@BeanReference(type = it.ethica.esf.service.ESFShooterQualificationESFTournamentLocalService.class)
+	protected it.ethica.esf.service.ESFShooterQualificationESFTournamentLocalService esfShooterQualificationESFTournamentLocalService;
 	@BeanReference(type = ESFShooterQualificationESFTournamentPersistence.class)
 	protected ESFShooterQualificationESFTournamentPersistence esfShooterQualificationESFTournamentPersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFShootingDirectorLocalService.class)
@@ -4364,10 +4346,6 @@ public abstract class ESFFornitureTypeLocalServiceBaseImpl
 	protected it.ethica.esf.service.VW_DatiDrettoreTiroLocalService vw_DatiDrettoreTiroLocalService;
 	@BeanReference(type = VW_DatiDrettoreTiroPersistence.class)
 	protected VW_DatiDrettoreTiroPersistence vw_DatiDrettoreTiroPersistence;
-	@BeanReference(type = it.ethica.esf.service.VW_ESFIncarichiFederaliLocalService.class)
-	protected it.ethica.esf.service.VW_ESFIncarichiFederaliLocalService vw_esfIncarichiFederaliLocalService;
-	@BeanReference(type = VW_ESFIncarichiFederaliPersistence.class)
-	protected VW_ESFIncarichiFederaliPersistence vw_esfIncarichiFederaliPersistence;
 	@BeanReference(type = it.ethica.esf.service.VW_ESFListaIncarichiLocalService.class)
 	protected it.ethica.esf.service.VW_ESFListaIncarichiLocalService vw_esfListaIncarichiLocalService;
 	@BeanReference(type = VW_ESFListaIncarichiPersistence.class)

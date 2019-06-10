@@ -106,32 +106,32 @@ public class ESFHistoricalAssociationLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFHistoricalAssociation"
 			};
 
-		_methodName384 = "getBeanIdentifier";
+		_methodName386 = "getBeanIdentifier";
 
-		_methodParameterTypes384 = new String[] {  };
+		_methodParameterTypes386 = new String[] {  };
 
-		_methodName385 = "setBeanIdentifier";
+		_methodName387 = "setBeanIdentifier";
 
-		_methodParameterTypes385 = new String[] { "java.lang.String" };
+		_methodParameterTypes387 = new String[] { "java.lang.String" };
 
-		_methodName390 = "findESFHistoricalAssociationByesfOrganizationId";
+		_methodName392 = "findESFHistoricalAssociationByesfOrganizationId";
 
-		_methodParameterTypes390 = new String[] { "long" };
+		_methodParameterTypes392 = new String[] { "long" };
 
-		_methodName391 = "findESFHistoricalAssociationByesfOrganizationId";
+		_methodName393 = "findESFHistoricalAssociationByesfOrganizationId";
 
-		_methodParameterTypes391 = new String[] { "long", "int", "int" };
+		_methodParameterTypes393 = new String[] { "long", "int", "int" };
 
-		_methodName392 = "addESFHistoricalAssociation";
+		_methodName394 = "addESFHistoricalAssociation";
 
-		_methodParameterTypes392 = new String[] {
+		_methodParameterTypes394 = new String[] {
 				"long", "java.lang.String", "java.lang.String", "java.lang.Long",
 				"java.lang.Long", "java.lang.String"
 			};
 
-		_methodName393 = "findbyOrg_Date";
+		_methodName395 = "findbyOrg_Date";
 
-		_methodParameterTypes393 = new String[] { "long" };
+		_methodParameterTypes395 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -223,40 +223,40 @@ public class ESFHistoricalAssociationLocalServiceClpInvoker {
 			return ESFHistoricalAssociationLocalServiceUtil.updateESFHistoricalAssociation((it.ethica.esf.model.ESFHistoricalAssociation)arguments[0]);
 		}
 
-		if (_methodName384.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
+		if (_methodName386.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
 			return ESFHistoricalAssociationLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName385.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
+		if (_methodName387.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
 			ESFHistoricalAssociationLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName390.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
+		if (_methodName392.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFHistoricalAssociationLocalServiceUtil.findESFHistoricalAssociationByesfOrganizationId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName391.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
+		if (_methodName393.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
 			return ESFHistoricalAssociationLocalServiceUtil.findESFHistoricalAssociationByesfOrganizationId(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName392.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
+		if (_methodName394.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
 			return ESFHistoricalAssociationLocalServiceUtil.addESFHistoricalAssociation(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(java.lang.Long)arguments[3], (java.lang.Long)arguments[4],
 				(java.lang.String)arguments[5]);
 		}
 
-		if (_methodName393.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
+		if (_methodName395.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
 			return ESFHistoricalAssociationLocalServiceUtil.findbyOrg_Date(((Long)arguments[0]).longValue());
 		}
 
@@ -295,16 +295,16 @@ public class ESFHistoricalAssociationLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName384;
-	private String[] _methodParameterTypes384;
-	private String _methodName385;
-	private String[] _methodParameterTypes385;
-	private String _methodName390;
-	private String[] _methodParameterTypes390;
-	private String _methodName391;
-	private String[] _methodParameterTypes391;
+	private String _methodName386;
+	private String[] _methodParameterTypes386;
+	private String _methodName387;
+	private String[] _methodParameterTypes387;
 	private String _methodName392;
 	private String[] _methodParameterTypes392;
 	private String _methodName393;
 	private String[] _methodParameterTypes393;
+	private String _methodName394;
+	private String[] _methodParameterTypes394;
+	private String _methodName395;
+	private String[] _methodParameterTypes395;
 }

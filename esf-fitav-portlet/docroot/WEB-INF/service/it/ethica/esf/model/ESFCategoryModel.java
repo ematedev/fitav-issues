@@ -138,19 +138,19 @@ public interface ESFCategoryModel extends BaseModel<ESFCategory> {
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFCategory esfCategory);
+	public int compareTo(ESFCategory esfCategory);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFCategory> toCacheModel();
+	public CacheModel<ESFCategory> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFCategory toEscapedModel();
+	public ESFCategory toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFCategory toUnescapedModel();
+	public ESFCategory toUnescapedModel();
 
 	@Override
 	public String toString();

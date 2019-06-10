@@ -16,7 +16,6 @@ package it.ethica.esf.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -53,7 +52,6 @@ public interface ESFShooterQualificationESFTournamentLocalService
 	* @return the e s f shooter qualification e s f tournament that was added
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFShooterQualificationESFTournament addESFShooterQualificationESFTournament(
 		it.ethica.esf.model.ESFShooterQualificationESFTournament esfShooterQualificationESFTournament)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -75,7 +73,6 @@ public interface ESFShooterQualificationESFTournamentLocalService
 	* @throws PortalException if a e s f shooter qualification e s f tournament with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFShooterQualificationESFTournament deleteESFShooterQualificationESFTournament(
 		it.ethica.esf.service.persistence.ESFShooterQualificationESFTournamentPK esfShooterQualificationESFTournamentPK)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -88,7 +85,6 @@ public interface ESFShooterQualificationESFTournamentLocalService
 	* @return the e s f shooter qualification e s f tournament that was removed
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFShooterQualificationESFTournament deleteESFShooterQualificationESFTournament(
 		it.ethica.esf.model.ESFShooterQualificationESFTournament esfShooterQualificationESFTournament)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -258,7 +254,6 @@ public interface ESFShooterQualificationESFTournamentLocalService
 	* @return the e s f shooter qualification e s f tournament that was updated
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFShooterQualificationESFTournament updateESFShooterQualificationESFTournament(
 		it.ethica.esf.model.ESFShooterQualificationESFTournament esfShooterQualificationESFTournament)
 		throws com.liferay.portal.kernel.exception.SystemException;

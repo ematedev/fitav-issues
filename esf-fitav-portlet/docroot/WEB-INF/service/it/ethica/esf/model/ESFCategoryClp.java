@@ -283,10 +283,6 @@ public class ESFCategoryClp extends BaseModelImpl<ESFCategory>
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -337,5 +333,4 @@ public class ESFCategoryClp extends BaseModelImpl<ESFCategory>
 	private String _name;
 	private String _description;
 	private BaseModel<?> _esfCategoryRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

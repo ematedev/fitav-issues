@@ -392,25 +392,6 @@ public abstract class ESFUserServiceBaseImpl extends BaseServiceImpl
 	}
 
 	/**
-	 * Returns the e s f card remote service.
-	 *
-	 * @return the e s f card remote service
-	 */
-	public it.ethica.esf.service.ESFCardService getESFCardService() {
-		return esfCardService;
-	}
-
-	/**
-	 * Sets the e s f card remote service.
-	 *
-	 * @param esfCardService the e s f card remote service
-	 */
-	public void setESFCardService(
-		it.ethica.esf.service.ESFCardService esfCardService) {
-		this.esfCardService = esfCardService;
-	}
-
-	/**
 	 * Returns the e s f card persistence.
 	 *
 	 * @return the e s f card persistence
@@ -2583,6 +2564,25 @@ public abstract class ESFUserServiceBaseImpl extends BaseServiceImpl
 	}
 
 	/**
+	 * Returns the e s f shooter category e s f tournament local service.
+	 *
+	 * @return the e s f shooter category e s f tournament local service
+	 */
+	public it.ethica.esf.service.ESFShooterCategoryESFTournamentLocalService getESFShooterCategoryESFTournamentLocalService() {
+		return esfShooterCategoryESFTournamentLocalService;
+	}
+
+	/**
+	 * Sets the e s f shooter category e s f tournament local service.
+	 *
+	 * @param esfShooterCategoryESFTournamentLocalService the e s f shooter category e s f tournament local service
+	 */
+	public void setESFShooterCategoryESFTournamentLocalService(
+		it.ethica.esf.service.ESFShooterCategoryESFTournamentLocalService esfShooterCategoryESFTournamentLocalService) {
+		this.esfShooterCategoryESFTournamentLocalService = esfShooterCategoryESFTournamentLocalService;
+	}
+
+	/**
 	 * Returns the e s f shooter category e s f tournament persistence.
 	 *
 	 * @return the e s f shooter category e s f tournament persistence
@@ -2675,6 +2675,25 @@ public abstract class ESFUserServiceBaseImpl extends BaseServiceImpl
 	public void setESFShooterQualificationESFMatchPersistence(
 		ESFShooterQualificationESFMatchPersistence esfShooterQualificationESFMatchPersistence) {
 		this.esfShooterQualificationESFMatchPersistence = esfShooterQualificationESFMatchPersistence;
+	}
+
+	/**
+	 * Returns the e s f shooter qualification e s f tournament local service.
+	 *
+	 * @return the e s f shooter qualification e s f tournament local service
+	 */
+	public it.ethica.esf.service.ESFShooterQualificationESFTournamentLocalService getESFShooterQualificationESFTournamentLocalService() {
+		return esfShooterQualificationESFTournamentLocalService;
+	}
+
+	/**
+	 * Sets the e s f shooter qualification e s f tournament local service.
+	 *
+	 * @param esfShooterQualificationESFTournamentLocalService the e s f shooter qualification e s f tournament local service
+	 */
+	public void setESFShooterQualificationESFTournamentLocalService(
+		it.ethica.esf.service.ESFShooterQualificationESFTournamentLocalService esfShooterQualificationESFTournamentLocalService) {
+		this.esfShooterQualificationESFTournamentLocalService = esfShooterQualificationESFTournamentLocalService;
 	}
 
 	/**
@@ -3857,8 +3876,6 @@ public abstract class ESFUserServiceBaseImpl extends BaseServiceImpl
 	protected ESFCanePersistence esfCanePersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFCardLocalService.class)
 	protected it.ethica.esf.service.ESFCardLocalService esfCardLocalService;
-	@BeanReference(type = it.ethica.esf.service.ESFCardService.class)
-	protected it.ethica.esf.service.ESFCardService esfCardService;
 	@BeanReference(type = ESFCardPersistence.class)
 	protected ESFCardPersistence esfCardPersistence;
 	@BeanReference(type = ESFCardFinder.class)
@@ -4089,6 +4106,8 @@ public abstract class ESFUserServiceBaseImpl extends BaseServiceImpl
 	protected it.ethica.esf.service.ESFShooterCategoryESFMatchLocalService esfShooterCategoryESFMatchLocalService;
 	@BeanReference(type = ESFShooterCategoryESFMatchPersistence.class)
 	protected ESFShooterCategoryESFMatchPersistence esfShooterCategoryESFMatchPersistence;
+	@BeanReference(type = it.ethica.esf.service.ESFShooterCategoryESFTournamentLocalService.class)
+	protected it.ethica.esf.service.ESFShooterCategoryESFTournamentLocalService esfShooterCategoryESFTournamentLocalService;
 	@BeanReference(type = ESFShooterCategoryESFTournamentPersistence.class)
 	protected ESFShooterCategoryESFTournamentPersistence esfShooterCategoryESFTournamentPersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFShooterQualificationLocalService.class)
@@ -4099,6 +4118,8 @@ public abstract class ESFUserServiceBaseImpl extends BaseServiceImpl
 	protected it.ethica.esf.service.ESFShooterQualificationESFMatchLocalService esfShooterQualificationESFMatchLocalService;
 	@BeanReference(type = ESFShooterQualificationESFMatchPersistence.class)
 	protected ESFShooterQualificationESFMatchPersistence esfShooterQualificationESFMatchPersistence;
+	@BeanReference(type = it.ethica.esf.service.ESFShooterQualificationESFTournamentLocalService.class)
+	protected it.ethica.esf.service.ESFShooterQualificationESFTournamentLocalService esfShooterQualificationESFTournamentLocalService;
 	@BeanReference(type = ESFShooterQualificationESFTournamentPersistence.class)
 	protected ESFShooterQualificationESFTournamentPersistence esfShooterQualificationESFTournamentPersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFShootingDirectorLocalService.class)

@@ -484,10 +484,6 @@ public class ESFConfigurationClp extends BaseModelImpl<ESFConfiguration>
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -581,5 +577,4 @@ public class ESFConfigurationClp extends BaseModelImpl<ESFConfiguration>
 	private String _key;
 	private String _value;
 	private BaseModel<?> _esfConfigurationRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

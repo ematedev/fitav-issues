@@ -285,20 +285,19 @@ public interface ESFShootingDirectorModel extends BaseModel<ESFShootingDirector>
 	public Object clone();
 
 	@Override
-	public int compareTo(
-		it.ethica.esf.model.ESFShootingDirector esfShootingDirector);
+	public int compareTo(ESFShootingDirector esfShootingDirector);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFShootingDirector> toCacheModel();
+	public CacheModel<ESFShootingDirector> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFShootingDirector toEscapedModel();
+	public ESFShootingDirector toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFShootingDirector toUnescapedModel();
+	public ESFShootingDirector toUnescapedModel();
 
 	@Override
 	public String toString();

@@ -106,44 +106,44 @@ public class ESFShootingDirectorLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFShootingDirector"
 			};
 
-		_methodName384 = "getBeanIdentifier";
+		_methodName386 = "getBeanIdentifier";
 
-		_methodParameterTypes384 = new String[] {  };
+		_methodParameterTypes386 = new String[] {  };
 
-		_methodName385 = "setBeanIdentifier";
+		_methodName387 = "setBeanIdentifier";
 
-		_methodParameterTypes385 = new String[] { "java.lang.String" };
+		_methodParameterTypes387 = new String[] { "java.lang.String" };
 
-		_methodName390 = "findByUserId";
+		_methodName392 = "findByUserId";
 
-		_methodParameterTypes390 = new String[] { "long", "int", "int" };
+		_methodParameterTypes392 = new String[] { "long", "int", "int" };
 
-		_methodName391 = "countByUserId";
+		_methodName393 = "countByUserId";
 
-		_methodParameterTypes391 = new String[] { "long" };
+		_methodParameterTypes393 = new String[] { "long" };
 
-		_methodName392 = "findedShDr";
+		_methodName394 = "findedShDr";
 
-		_methodParameterTypes392 = new String[] { "long", "long", "long" };
+		_methodParameterTypes394 = new String[] { "long", "long", "long" };
 
-		_methodName393 = "findAll";
+		_methodName395 = "findAll";
 
-		_methodParameterTypes393 = new String[] { "int", "int" };
+		_methodParameterTypes395 = new String[] { "int", "int" };
 
-		_methodName394 = "countTotal";
+		_methodName396 = "countTotal";
 
-		_methodParameterTypes394 = new String[] {  };
+		_methodParameterTypes396 = new String[] {  };
 
-		_methodName395 = "findShootingDirector";
+		_methodName397 = "findShootingDirector";
 
-		_methodParameterTypes395 = new String[] {
+		_methodParameterTypes397 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "long", "long", "int", "int"
 			};
 
-		_methodName396 = "countShootingDirector";
+		_methodName398 = "countShootingDirector";
 
-		_methodParameterTypes396 = new String[] {
+		_methodParameterTypes398 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "long", "long"
 			};
@@ -238,50 +238,50 @@ public class ESFShootingDirectorLocalServiceClpInvoker {
 			return ESFShootingDirectorLocalServiceUtil.updateESFShootingDirector((it.ethica.esf.model.ESFShootingDirector)arguments[0]);
 		}
 
-		if (_methodName384.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
+		if (_methodName386.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
 			return ESFShootingDirectorLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName385.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
+		if (_methodName387.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
 			ESFShootingDirectorLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName390.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
+		if (_methodName392.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFShootingDirectorLocalServiceUtil.findByUserId(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName391.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
+		if (_methodName393.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
 			return ESFShootingDirectorLocalServiceUtil.countByUserId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName392.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
+		if (_methodName394.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
 			return ESFShootingDirectorLocalServiceUtil.findedShDr(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue());
 		}
 
-		if (_methodName393.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
+		if (_methodName395.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
 			return ESFShootingDirectorLocalServiceUtil.findAll(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
-		if (_methodName394.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
+		if (_methodName396.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
 			return ESFShootingDirectorLocalServiceUtil.countTotal();
 		}
 
-		if (_methodName395.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
+		if (_methodName397.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
 			return ESFShootingDirectorLocalServiceUtil.findShootingDirector((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(java.lang.String)arguments[3],
@@ -291,8 +291,8 @@ public class ESFShootingDirectorLocalServiceClpInvoker {
 				((Integer)arguments[7]).intValue());
 		}
 
-		if (_methodName396.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
+		if (_methodName398.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
 			return ESFShootingDirectorLocalServiceUtil.countShootingDirector((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(java.lang.String)arguments[3],
@@ -335,14 +335,10 @@ public class ESFShootingDirectorLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName384;
-	private String[] _methodParameterTypes384;
-	private String _methodName385;
-	private String[] _methodParameterTypes385;
-	private String _methodName390;
-	private String[] _methodParameterTypes390;
-	private String _methodName391;
-	private String[] _methodParameterTypes391;
+	private String _methodName386;
+	private String[] _methodParameterTypes386;
+	private String _methodName387;
+	private String[] _methodParameterTypes387;
 	private String _methodName392;
 	private String[] _methodParameterTypes392;
 	private String _methodName393;
@@ -353,4 +349,8 @@ public class ESFShootingDirectorLocalServiceClpInvoker {
 	private String[] _methodParameterTypes395;
 	private String _methodName396;
 	private String[] _methodParameterTypes396;
+	private String _methodName397;
+	private String[] _methodParameterTypes397;
+	private String _methodName398;
+	private String[] _methodParameterTypes398;
 }

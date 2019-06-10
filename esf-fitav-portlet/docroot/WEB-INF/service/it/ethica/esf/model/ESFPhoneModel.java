@@ -121,19 +121,19 @@ public interface ESFPhoneModel extends BaseModel<ESFPhone> {
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFPhone esfPhone);
+	public int compareTo(ESFPhone esfPhone);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFPhone> toCacheModel();
+	public CacheModel<ESFPhone> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFPhone toEscapedModel();
+	public ESFPhone toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFPhone toUnescapedModel();
+	public ESFPhone toUnescapedModel();
 
 	@Override
 	public String toString();

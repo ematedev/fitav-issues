@@ -242,7 +242,7 @@ public class ESFShooterCategoryESFTournamentUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShooterCategoryESFTournament[] findByUuid_PrevAndNext(
-		ESFShooterCategoryESFTournamentPK esfShooterCategoryESFTournamentPK,
+		it.ethica.esf.service.persistence.ESFShooterCategoryESFTournamentPK esfShooterCategoryESFTournamentPK,
 		java.lang.String uuid,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
@@ -483,7 +483,7 @@ public class ESFShooterCategoryESFTournamentUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShooterCategoryESFTournament[] findByESFTournament_PrevAndNext(
-		ESFShooterCategoryESFTournamentPK esfShooterCategoryESFTournamentPK,
+		it.ethica.esf.service.persistence.ESFShooterCategoryESFTournamentPK esfShooterCategoryESFTournamentPK,
 		long esfTournamentId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
@@ -543,7 +543,7 @@ public class ESFShooterCategoryESFTournamentUtil {
 	* @return the new e s f shooter category e s f tournament
 	*/
 	public static it.ethica.esf.model.ESFShooterCategoryESFTournament create(
-		ESFShooterCategoryESFTournamentPK esfShooterCategoryESFTournamentPK) {
+		it.ethica.esf.service.persistence.ESFShooterCategoryESFTournamentPK esfShooterCategoryESFTournamentPK) {
 		return getPersistence().create(esfShooterCategoryESFTournamentPK);
 	}
 
@@ -556,7 +556,7 @@ public class ESFShooterCategoryESFTournamentUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShooterCategoryESFTournament remove(
-		ESFShooterCategoryESFTournamentPK esfShooterCategoryESFTournamentPK)
+		it.ethica.esf.service.persistence.ESFShooterCategoryESFTournamentPK esfShooterCategoryESFTournamentPK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchShooterCategoryESFTournamentException {
 		return getPersistence().remove(esfShooterCategoryESFTournamentPK);
@@ -577,7 +577,7 @@ public class ESFShooterCategoryESFTournamentUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShooterCategoryESFTournament findByPrimaryKey(
-		ESFShooterCategoryESFTournamentPK esfShooterCategoryESFTournamentPK)
+		it.ethica.esf.service.persistence.ESFShooterCategoryESFTournamentPK esfShooterCategoryESFTournamentPK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchShooterCategoryESFTournamentException {
 		return getPersistence()
@@ -592,7 +592,7 @@ public class ESFShooterCategoryESFTournamentUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShooterCategoryESFTournament fetchByPrimaryKey(
-		ESFShooterCategoryESFTournamentPK esfShooterCategoryESFTournamentPK)
+		it.ethica.esf.service.persistence.ESFShooterCategoryESFTournamentPK esfShooterCategoryESFTournamentPK)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence()
 				   .fetchByPrimaryKey(esfShooterCategoryESFTournamentPK);
