@@ -1,3 +1,4 @@
+<%@page import="com.liferay.portal.kernel.language.LanguageUtil"%>
 <%@page import="java.util.GregorianCalendar"%>
 <%@page import="com.liferay.portal.service.OrganizationLocalServiceUtil"%>
 <%@page import="it.ethica.esf.service.ESFResultLocalServiceUtil"%>
@@ -13,6 +14,10 @@
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		startDate = sdf.parse("01/01/"+actualYear);
 	}
+	
+	String successMessage = ParamUtil.getString(request, "successMessage", "");
+// 	successMessage = LanguageUtil.format(pageContext, "match-success-insert", successMessage);
+	
 	
 	long matchTypeId = ParamUtil.getLong(request, "matchType");
 	String code = ParamUtil.getString(request, "code");
@@ -55,8 +60,8 @@
 		<liferay-ui:success key="user-success-insertupdate"
 			message="user-success-insertupdate-mess" />
 		<liferay-ui:error key="date-message" message="date-message" />
-		<liferay-ui:success key="match-success-insert" message="match-success-insert" />
-		<liferay-ui:success key="match-success-update" message="match-success-update" />
+		<liferay-ui:success key="match-success-insert" message='<%= LanguageUtil.format(pageContext, "match-success-insert", successMessage) %>'  />
+		<liferay-ui:success key="match-success-update" message='<%= LanguageUtil.format(pageContext, "match-success-update", successMessage) %>' />
 		
 		<aui:button-row cssClass="esfmatch-admin-buttons">
 		

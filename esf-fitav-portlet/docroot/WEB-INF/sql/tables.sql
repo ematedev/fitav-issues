@@ -478,7 +478,9 @@ create table ESFMatch (
 	notNationalAssotiation VARCHAR(75) null,
 	isChangeCategoryMatch BOOLEAN,
 	esfNationalSportTypeId VARCHAR(75) null,
-	oldCode VARCHAR(75) null
+	oldCode VARCHAR(75) null,
+	matchYear INTEGER,
+	matchYearSeq INTEGER
 );
 
 create table ESFMatchResult (
