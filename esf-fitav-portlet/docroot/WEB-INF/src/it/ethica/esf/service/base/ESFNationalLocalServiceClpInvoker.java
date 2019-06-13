@@ -100,71 +100,71 @@ public class ESFNationalLocalServiceClpInvoker {
 
 		_methodParameterTypes15 = new String[] { "it.ethica.esf.model.ESFNational" };
 
-		_methodName386 = "getBeanIdentifier";
+		_methodName388 = "getBeanIdentifier";
 
-		_methodParameterTypes386 = new String[] {  };
+		_methodParameterTypes388 = new String[] {  };
 
-		_methodName387 = "setBeanIdentifier";
+		_methodName389 = "setBeanIdentifier";
 
-		_methodParameterTypes387 = new String[] { "java.lang.String" };
+		_methodParameterTypes389 = new String[] { "java.lang.String" };
 
-		_methodName392 = "getActiveESFNationals";
-
-		_methodParameterTypes392 = new String[] { "long", "int", "int" };
-
-		_methodName393 = "getActiveESFNationals";
-
-		_methodParameterTypes393 = new String[] { "int", "int" };
-
-		_methodName394 = "countActiveESFNationals";
+		_methodName394 = "getActiveESFNationals";
 
 		_methodParameterTypes394 = new String[] { "long", "int", "int" };
 
-		_methodName395 = "countActiveESFNationals";
+		_methodName395 = "getActiveESFNationals";
 
-		_methodParameterTypes395 = new String[] {  };
+		_methodParameterTypes395 = new String[] { "int", "int" };
 
-		_methodName396 = "getActiveESFNational";
+		_methodName396 = "countActiveESFNationals";
 
-		_methodParameterTypes396 = new String[] { "long" };
+		_methodParameterTypes396 = new String[] { "long", "int", "int" };
 
-		_methodName397 = "getActiveESFNational_UserId";
+		_methodName397 = "countActiveESFNationals";
 
-		_methodParameterTypes397 = new String[] { "long" };
+		_methodParameterTypes397 = new String[] {  };
 
-		_methodName398 = "isActiveESFNationals";
+		_methodName398 = "getActiveESFNational";
 
 		_methodParameterTypes398 = new String[] { "long" };
 
-		_methodName399 = "addESFNational";
+		_methodName399 = "getActiveESFNational_UserId";
 
-		_methodParameterTypes399 = new String[] {
+		_methodParameterTypes399 = new String[] { "long" };
+
+		_methodName400 = "isActiveESFNationals";
+
+		_methodParameterTypes400 = new String[] { "long" };
+
+		_methodName401 = "addESFNational";
+
+		_methodParameterTypes401 = new String[] {
 				"long", "long", "long", "java.util.Date", "java.util.Date",
 				"java.util.Date", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName400 = "deleteESFNational";
+		_methodName402 = "deleteESFNational";
 
-		_methodParameterTypes400 = new String[] {
+		_methodParameterTypes402 = new String[] {
 				"long", "long", "java.util.Date",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName401 = "getEXESFNationalUser";
+		_methodName403 = "getEXESFNationalUser";
 
-		_methodParameterTypes401 = new String[] { "long" };
+		_methodParameterTypes403 = new String[] { "long" };
 
-		_methodName402 = "findNationalbySportId_MatchId";
-
-		_methodParameterTypes402 = new String[] { "long", "long", "int", "int" };
-
-		_methodName403 = "countNationalbySportId_MatchId";
-
-		_methodParameterTypes403 = new String[] { "long", "long" };
-
-		_methodName404 = "findNationalFreeMatchIdSportId";
+		_methodName404 = "findNationalbySportId_MatchId";
 
 		_methodParameterTypes404 = new String[] { "long", "long", "int", "int" };
+
+		_methodName405 = "countNationalbySportId_MatchId";
+
+		_methodParameterTypes405 = new String[] { "long", "long" };
+
+		_methodName406 = "findNationalFreeMatchIdSportId";
+
+		_methodParameterTypes406 = new String[] { "long", "long", "int", "int" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -256,60 +256,60 @@ public class ESFNationalLocalServiceClpInvoker {
 			return ESFNationalLocalServiceUtil.updateESFNational((it.ethica.esf.model.ESFNational)arguments[0]);
 		}
 
-		if (_methodName386.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
+		if (_methodName388.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
 			return ESFNationalLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName387.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
+		if (_methodName389.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes389, parameterTypes)) {
 			ESFNationalLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName392.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
-			return ESFNationalLocalServiceUtil.getActiveESFNationals(((Long)arguments[0]).longValue(),
-				((Integer)arguments[1]).intValue(),
-				((Integer)arguments[2]).intValue());
-		}
-
-		if (_methodName393.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
-			return ESFNationalLocalServiceUtil.getActiveESFNationals(((Integer)arguments[0]).intValue(),
-				((Integer)arguments[1]).intValue());
-		}
-
 		if (_methodName394.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
-			return ESFNationalLocalServiceUtil.countActiveESFNationals(((Long)arguments[0]).longValue(),
+			return ESFNationalLocalServiceUtil.getActiveESFNationals(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
 		if (_methodName395.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
-			return ESFNationalLocalServiceUtil.countActiveESFNationals();
+			return ESFNationalLocalServiceUtil.getActiveESFNationals(((Integer)arguments[0]).intValue(),
+				((Integer)arguments[1]).intValue());
 		}
 
 		if (_methodName396.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
-			return ESFNationalLocalServiceUtil.getActiveESFNational(((Long)arguments[0]).longValue());
+			return ESFNationalLocalServiceUtil.countActiveESFNationals(((Long)arguments[0]).longValue(),
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue());
 		}
 
 		if (_methodName397.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
-			return ESFNationalLocalServiceUtil.getActiveESFNational_UserId(((Long)arguments[0]).longValue());
+			return ESFNationalLocalServiceUtil.countActiveESFNationals();
 		}
 
 		if (_methodName398.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
-			return ESFNationalLocalServiceUtil.isActiveESFNationals(((Long)arguments[0]).longValue());
+			return ESFNationalLocalServiceUtil.getActiveESFNational(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName399.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes399, parameterTypes)) {
+			return ESFNationalLocalServiceUtil.getActiveESFNational_UserId(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName400.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes400, parameterTypes)) {
+			return ESFNationalLocalServiceUtil.isActiveESFNationals(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName401.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes401, parameterTypes)) {
 			return ESFNationalLocalServiceUtil.addESFNational(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(), (java.util.Date)arguments[3],
@@ -317,34 +317,34 @@ public class ESFNationalLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[6]);
 		}
 
-		if (_methodName400.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes400, parameterTypes)) {
+		if (_methodName402.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes402, parameterTypes)) {
 			return ESFNationalLocalServiceUtil.deleteESFNational(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(), (java.util.Date)arguments[2],
 				(com.liferay.portal.service.ServiceContext)arguments[3]);
 		}
 
-		if (_methodName401.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes401, parameterTypes)) {
+		if (_methodName403.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes403, parameterTypes)) {
 			return ESFNationalLocalServiceUtil.getEXESFNationalUser(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName402.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes402, parameterTypes)) {
+		if (_methodName404.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes404, parameterTypes)) {
 			return ESFNationalLocalServiceUtil.findNationalbySportId_MatchId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
-		if (_methodName403.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes403, parameterTypes)) {
+		if (_methodName405.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes405, parameterTypes)) {
 			return ESFNationalLocalServiceUtil.countNationalbySportId_MatchId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName404.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes404, parameterTypes)) {
+		if (_methodName406.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes406, parameterTypes)) {
 			return ESFNationalLocalServiceUtil.findNationalFreeMatchIdSportId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Integer)arguments[2]).intValue(),
@@ -386,14 +386,10 @@ public class ESFNationalLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName386;
-	private String[] _methodParameterTypes386;
-	private String _methodName387;
-	private String[] _methodParameterTypes387;
-	private String _methodName392;
-	private String[] _methodParameterTypes392;
-	private String _methodName393;
-	private String[] _methodParameterTypes393;
+	private String _methodName388;
+	private String[] _methodParameterTypes388;
+	private String _methodName389;
+	private String[] _methodParameterTypes389;
 	private String _methodName394;
 	private String[] _methodParameterTypes394;
 	private String _methodName395;
@@ -416,4 +412,8 @@ public class ESFNationalLocalServiceClpInvoker {
 	private String[] _methodParameterTypes403;
 	private String _methodName404;
 	private String[] _methodParameterTypes404;
+	private String _methodName405;
+	private String[] _methodParameterTypes405;
+	private String _methodName406;
+	private String[] _methodParameterTypes406;
 }

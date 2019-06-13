@@ -626,6 +626,8 @@
 		<property name="isChangeCategoryMatch" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
 		<property name="esfNationalSportTypeId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="oldCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="matchYear" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="matchYearSeq" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFMatchResultImpl" table="ESFMatchResult">
 		<cache usage="read-write" />

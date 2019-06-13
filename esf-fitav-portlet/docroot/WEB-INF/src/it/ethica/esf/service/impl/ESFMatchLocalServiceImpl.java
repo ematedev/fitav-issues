@@ -48,8 +48,6 @@ import it.ethica.esf.model.ESFShooterCategoryESFMatch;
 import it.ethica.esf.model.ESFShooterQualificationESFMatch;
 import it.ethica.esf.model.impl.ESFMatchImpl;
 import it.ethica.esf.model.impl.ESFMatchModelImpl;
-import it.ethica.esf.portlet.utility.MatchComparator;
-import it.ethica.esf.portlet.utility.MatchYearOrderByComparator;
 import it.ethica.esf.service.ESFEntityStateLocalServiceUtil;
 import it.ethica.esf.service.ESFMatchLocalServiceUtil;
 import it.ethica.esf.service.ESFNationalDelegationLocalServiceUtil;

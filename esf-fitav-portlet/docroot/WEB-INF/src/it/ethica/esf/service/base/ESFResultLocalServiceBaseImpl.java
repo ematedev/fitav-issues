@@ -3169,6 +3169,25 @@ public abstract class ESFResultLocalServiceBaseImpl extends BaseLocalServiceImpl
 	}
 
 	/**
+	 * Returns the e s f state ass entity local service.
+	 *
+	 * @return the e s f state ass entity local service
+	 */
+	public it.ethica.esf.service.ESFStateAssEntityLocalService getESFStateAssEntityLocalService() {
+		return esfStateAssEntityLocalService;
+	}
+
+	/**
+	 * Sets the e s f state ass entity local service.
+	 *
+	 * @param esfStateAssEntityLocalService the e s f state ass entity local service
+	 */
+	public void setESFStateAssEntityLocalService(
+		it.ethica.esf.service.ESFStateAssEntityLocalService esfStateAssEntityLocalService) {
+		this.esfStateAssEntityLocalService = esfStateAssEntityLocalService;
+	}
+
+	/**
 	 * Returns the e s f state ass entity persistence.
 	 *
 	 * @return the e s f state ass entity persistence
@@ -4226,6 +4245,8 @@ public abstract class ESFResultLocalServiceBaseImpl extends BaseLocalServiceImpl
 	protected it.ethica.esf.service.ESFStateLocalService esfStateLocalService;
 	@BeanReference(type = ESFStatePersistence.class)
 	protected ESFStatePersistence esfStatePersistence;
+	@BeanReference(type = it.ethica.esf.service.ESFStateAssEntityLocalService.class)
+	protected it.ethica.esf.service.ESFStateAssEntityLocalService esfStateAssEntityLocalService;
 	@BeanReference(type = ESFStateAssEntityPersistence.class)
 	protected ESFStateAssEntityPersistence esfStateAssEntityPersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFSuspensiveCodeLocalService.class)

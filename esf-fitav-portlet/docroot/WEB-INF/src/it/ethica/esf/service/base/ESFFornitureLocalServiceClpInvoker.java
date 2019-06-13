@@ -118,57 +118,57 @@ public class ESFFornitureLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFForniture"
 			};
 
-		_methodName400 = "getBeanIdentifier";
+		_methodName402 = "getBeanIdentifier";
 
-		_methodParameterTypes400 = new String[] {  };
+		_methodParameterTypes402 = new String[] {  };
 
-		_methodName401 = "setBeanIdentifier";
+		_methodName403 = "setBeanIdentifier";
 
-		_methodParameterTypes401 = new String[] { "java.lang.String" };
-
-		_methodName406 = "getAllESFFornitures";
-
-		_methodParameterTypes406 = new String[] {  };
-
-		_methodName407 = "getAllESFFornitures";
-
-		_methodParameterTypes407 = new String[] { "int", "int" };
+		_methodParameterTypes403 = new String[] { "java.lang.String" };
 
 		_methodName408 = "getAllESFFornitures";
 
-		_methodParameterTypes408 = new String[] { "long" };
+		_methodParameterTypes408 = new String[] {  };
 
 		_methodName409 = "getAllESFFornitures";
 
-		_methodParameterTypes409 = new String[] { "long", "int", "int" };
+		_methodParameterTypes409 = new String[] { "int", "int" };
 
-		_methodName410 = "findAllESFFornituresByType";
+		_methodName410 = "getAllESFFornitures";
 
 		_methodParameterTypes410 = new String[] { "long" };
 
-		_methodName411 = "countByGroupId";
+		_methodName411 = "getAllESFFornitures";
 
-		_methodParameterTypes411 = new String[] { "long" };
+		_methodParameterTypes411 = new String[] { "long", "int", "int" };
 
-		_methodName412 = "addESFForniture";
+		_methodName412 = "findAllESFFornituresByType";
 
-		_methodParameterTypes412 = new String[] {
+		_methodParameterTypes412 = new String[] { "long" };
+
+		_methodName413 = "countByGroupId";
+
+		_methodParameterTypes413 = new String[] { "long" };
+
+		_methodName414 = "addESFForniture";
+
+		_methodParameterTypes414 = new String[] {
 				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "long", "long", "java.util.Date",
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName413 = "updateESFForniture";
+		_methodName415 = "updateESFForniture";
 
-		_methodParameterTypes413 = new String[] {
+		_methodParameterTypes415 = new String[] {
 				"long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "long", "long", "java.util.Date",
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName414 = "deleteESFForniture";
+		_methodName416 = "deleteESFForniture";
 
-		_methodParameterTypes414 = new String[] {
+		_methodParameterTypes416 = new String[] {
 				"long", "com.liferay.portal.service.ServiceContext"
 			};
 	}
@@ -286,53 +286,53 @@ public class ESFFornitureLocalServiceClpInvoker {
 			return ESFFornitureLocalServiceUtil.updateESFForniture((it.ethica.esf.model.ESFForniture)arguments[0]);
 		}
 
-		if (_methodName400.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes400, parameterTypes)) {
+		if (_methodName402.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes402, parameterTypes)) {
 			return ESFFornitureLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName401.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes401, parameterTypes)) {
+		if (_methodName403.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes403, parameterTypes)) {
 			ESFFornitureLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName406.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes406, parameterTypes)) {
-			return ESFFornitureLocalServiceUtil.getAllESFFornitures();
-		}
-
-		if (_methodName407.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes407, parameterTypes)) {
-			return ESFFornitureLocalServiceUtil.getAllESFFornitures(((Integer)arguments[0]).intValue(),
-				((Integer)arguments[1]).intValue());
-		}
-
 		if (_methodName408.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes408, parameterTypes)) {
-			return ESFFornitureLocalServiceUtil.getAllESFFornitures(((Long)arguments[0]).longValue());
+			return ESFFornitureLocalServiceUtil.getAllESFFornitures();
 		}
 
 		if (_methodName409.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes409, parameterTypes)) {
+			return ESFFornitureLocalServiceUtil.getAllESFFornitures(((Integer)arguments[0]).intValue(),
+				((Integer)arguments[1]).intValue());
+		}
+
+		if (_methodName410.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes410, parameterTypes)) {
+			return ESFFornitureLocalServiceUtil.getAllESFFornitures(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName411.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes411, parameterTypes)) {
 			return ESFFornitureLocalServiceUtil.getAllESFFornitures(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName410.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes410, parameterTypes)) {
+		if (_methodName412.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes412, parameterTypes)) {
 			return ESFFornitureLocalServiceUtil.findAllESFFornituresByType(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName411.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes411, parameterTypes)) {
+		if (_methodName413.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes413, parameterTypes)) {
 			return ESFFornitureLocalServiceUtil.countByGroupId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName412.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes412, parameterTypes)) {
+		if (_methodName414.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes414, parameterTypes)) {
 			return ESFFornitureLocalServiceUtil.addESFForniture(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(java.lang.String)arguments[3],
@@ -342,8 +342,8 @@ public class ESFFornitureLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[8]);
 		}
 
-		if (_methodName413.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes413, parameterTypes)) {
+		if (_methodName415.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes415, parameterTypes)) {
 			return ESFFornitureLocalServiceUtil.updateESFForniture(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
@@ -354,8 +354,8 @@ public class ESFFornitureLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[9]);
 		}
 
-		if (_methodName414.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes414, parameterTypes)) {
+		if (_methodName416.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes416, parameterTypes)) {
 			return ESFFornitureLocalServiceUtil.deleteESFForniture(((Long)arguments[0]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
@@ -403,14 +403,10 @@ public class ESFFornitureLocalServiceClpInvoker {
 	private String[] _methodParameterTypes18;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
-	private String _methodName400;
-	private String[] _methodParameterTypes400;
-	private String _methodName401;
-	private String[] _methodParameterTypes401;
-	private String _methodName406;
-	private String[] _methodParameterTypes406;
-	private String _methodName407;
-	private String[] _methodParameterTypes407;
+	private String _methodName402;
+	private String[] _methodParameterTypes402;
+	private String _methodName403;
+	private String[] _methodParameterTypes403;
 	private String _methodName408;
 	private String[] _methodParameterTypes408;
 	private String _methodName409;
@@ -425,4 +421,8 @@ public class ESFFornitureLocalServiceClpInvoker {
 	private String[] _methodParameterTypes413;
 	private String _methodName414;
 	private String[] _methodParameterTypes414;
+	private String _methodName415;
+	private String[] _methodParameterTypes415;
+	private String _methodName416;
+	private String[] _methodParameterTypes416;
 }

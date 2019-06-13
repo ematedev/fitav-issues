@@ -444,6 +444,8 @@
 		<field name="isChangeCategoryMatch" type="boolean" />
 		<field name="esfNationalSportTypeId" type="String" />
 		<field name="oldCode" type="String" />
+		<field name="matchYear" type="int" />
+		<field name="matchYearSeq" type="int" />
 	</model>
 	<model name="it.ethica.esf.model.ESFMatchResult">
 		<field name="esfMatchResultId" type="long" />
