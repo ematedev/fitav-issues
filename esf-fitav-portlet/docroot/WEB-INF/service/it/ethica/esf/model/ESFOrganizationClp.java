@@ -1724,6 +1724,10 @@ public class ESFOrganizationClp extends BaseModelImpl<ESFOrganization>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1970,4 +1974,5 @@ public class ESFOrganizationClp extends BaseModelImpl<ESFOrganization>
 	private boolean _includeConiReport;
 	private String _organizzationCategory;
 	private BaseModel<?> _esfOrganizationRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

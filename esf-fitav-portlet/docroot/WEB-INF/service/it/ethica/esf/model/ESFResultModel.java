@@ -1086,19 +1086,19 @@ public interface ESFResultModel extends BaseModel<ESFResult>, GroupedModel {
 	public Object clone();
 
 	@Override
-	public int compareTo(ESFResult esfResult);
+	public int compareTo(it.ethica.esf.model.ESFResult esfResult);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ESFResult> toCacheModel();
+	public CacheModel<it.ethica.esf.model.ESFResult> toCacheModel();
 
 	@Override
-	public ESFResult toEscapedModel();
+	public it.ethica.esf.model.ESFResult toEscapedModel();
 
 	@Override
-	public ESFResult toUnescapedModel();
+	public it.ethica.esf.model.ESFResult toUnescapedModel();
 
 	@Override
 	public String toString();

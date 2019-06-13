@@ -256,19 +256,19 @@ public interface ESFEventTypeModel extends BaseModel<ESFEventType>, GroupedModel
 	public Object clone();
 
 	@Override
-	public int compareTo(ESFEventType esfEventType);
+	public int compareTo(it.ethica.esf.model.ESFEventType esfEventType);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ESFEventType> toCacheModel();
+	public CacheModel<it.ethica.esf.model.ESFEventType> toCacheModel();
 
 	@Override
-	public ESFEventType toEscapedModel();
+	public it.ethica.esf.model.ESFEventType toEscapedModel();
 
 	@Override
-	public ESFEventType toUnescapedModel();
+	public it.ethica.esf.model.ESFEventType toUnescapedModel();
 
 	@Override
 	public String toString();

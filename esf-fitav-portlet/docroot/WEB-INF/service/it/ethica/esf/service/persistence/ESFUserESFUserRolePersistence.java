@@ -151,8 +151,7 @@ public interface ESFUserESFUserRolePersistence extends BasePersistence<ESFUserES
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFUserESFUserRole[] findByESFUserRoleId_PrevAndNext(
-		it.ethica.esf.service.persistence.ESFUserESFUserRolePK esfUserESFUserRolePK,
-		long esfUserRoleId,
+		ESFUserESFUserRolePK esfUserESFUserRolePK, long esfUserRoleId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchUserESFUserRoleException;
@@ -290,8 +289,7 @@ public interface ESFUserESFUserRolePersistence extends BasePersistence<ESFUserES
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFUserESFUserRole[] findByESFUserId_PrevAndNext(
-		it.ethica.esf.service.persistence.ESFUserESFUserRolePK esfUserESFUserRolePK,
-		long esfUserId,
+		ESFUserESFUserRolePK esfUserESFUserRolePK, long esfUserId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchUserESFUserRoleException;
@@ -446,8 +444,8 @@ public interface ESFUserESFUserRolePersistence extends BasePersistence<ESFUserES
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFUserESFUserRole[] findByESFUserRole_PrevAndNext(
-		it.ethica.esf.service.persistence.ESFUserESFUserRolePK esfUserESFUserRolePK,
-		long esfUserRoleId, long esfUserId, java.util.Date endDate,
+		ESFUserESFUserRolePK esfUserESFUserRolePK, long esfUserRoleId,
+		long esfUserId, java.util.Date endDate,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchUserESFUserRoleException;
@@ -654,8 +652,7 @@ public interface ESFUserESFUserRolePersistence extends BasePersistence<ESFUserES
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFUserESFUserRole[] findByESFU_ED_PrevAndNext(
-		it.ethica.esf.service.persistence.ESFUserESFUserRolePK esfUserESFUserRolePK,
-		long esfUserRoleId,
+		ESFUserESFUserRolePK esfUserESFUserRolePK, long esfUserRoleId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchUserESFUserRoleException;
@@ -801,8 +798,8 @@ public interface ESFUserESFUserRolePersistence extends BasePersistence<ESFUserES
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFUserESFUserRole[] findByESFO_R_PrevAndNext(
-		it.ethica.esf.service.persistence.ESFUserESFUserRolePK esfUserESFUserRolePK,
-		long esfOrganizationId, long esfUserRoleId,
+		ESFUserESFUserRolePK esfUserESFUserRolePK, long esfOrganizationId,
+		long esfUserRoleId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchUserESFUserRoleException;
@@ -1012,8 +1009,7 @@ public interface ESFUserESFUserRolePersistence extends BasePersistence<ESFUserES
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFUserESFUserRole[] findByESFOrganizationId_PrevAndNext(
-		it.ethica.esf.service.persistence.ESFUserESFUserRolePK esfUserESFUserRolePK,
-		long esfOrganizationId,
+		ESFUserESFUserRolePK esfUserESFUserRolePK, long esfOrganizationId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchUserESFUserRoleException;
@@ -1151,8 +1147,7 @@ public interface ESFUserESFUserRolePersistence extends BasePersistence<ESFUserES
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFUserESFUserRole[] findByESFUserId_ED_PrevAndNext(
-		it.ethica.esf.service.persistence.ESFUserESFUserRolePK esfUserESFUserRolePK,
-		long esfUserId,
+		ESFUserESFUserRolePK esfUserESFUserRolePK, long esfUserId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchUserESFUserRoleException;
@@ -1298,8 +1293,8 @@ public interface ESFUserESFUserRolePersistence extends BasePersistence<ESFUserES
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFUserESFUserRole[] findByESFO_R_YEAR_PrevAndNext(
-		it.ethica.esf.service.persistence.ESFUserESFUserRolePK esfUserESFUserRolePK,
-		long esfOrganizationId, long esfUserRoleId,
+		ESFUserESFUserRolePK esfUserESFUserRolePK, long esfOrganizationId,
+		long esfUserRoleId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchUserESFUserRoleException;
@@ -1348,7 +1343,7 @@ public interface ESFUserESFUserRolePersistence extends BasePersistence<ESFUserES
 	* @return the new e s f user e s f user role
 	*/
 	public it.ethica.esf.model.ESFUserESFUserRole create(
-		it.ethica.esf.service.persistence.ESFUserESFUserRolePK esfUserESFUserRolePK);
+		ESFUserESFUserRolePK esfUserESFUserRolePK);
 
 	/**
 	* Removes the e s f user e s f user role with the primary key from the database. Also notifies the appropriate model listeners.
@@ -1359,7 +1354,7 @@ public interface ESFUserESFUserRolePersistence extends BasePersistence<ESFUserES
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFUserESFUserRole remove(
-		it.ethica.esf.service.persistence.ESFUserESFUserRolePK esfUserESFUserRolePK)
+		ESFUserESFUserRolePK esfUserESFUserRolePK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchUserESFUserRoleException;
 
@@ -1376,7 +1371,7 @@ public interface ESFUserESFUserRolePersistence extends BasePersistence<ESFUserES
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFUserESFUserRole findByPrimaryKey(
-		it.ethica.esf.service.persistence.ESFUserESFUserRolePK esfUserESFUserRolePK)
+		ESFUserESFUserRolePK esfUserESFUserRolePK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchUserESFUserRoleException;
 
@@ -1388,7 +1383,7 @@ public interface ESFUserESFUserRolePersistence extends BasePersistence<ESFUserES
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFUserESFUserRole fetchByPrimaryKey(
-		it.ethica.esf.service.persistence.ESFUserESFUserRolePK esfUserESFUserRolePK)
+		ESFUserESFUserRolePK esfUserESFUserRolePK)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**

@@ -151,8 +151,7 @@ public interface ESFFieldESFSportTypePersistence extends BasePersistence<ESFFiel
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFFieldESFSportType[] findByesfFieldId_PrevAndNext(
-		it.ethica.esf.service.persistence.ESFFieldESFSportTypePK esfFieldESFSportTypePK,
-		long esfFieldId,
+		ESFFieldESFSportTypePK esfFieldESFSportTypePK, long esfFieldId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchFieldESFSportTypeException;
@@ -290,8 +289,7 @@ public interface ESFFieldESFSportTypePersistence extends BasePersistence<ESFFiel
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFFieldESFSportType[] findByesfSportTypeId_PrevAndNext(
-		it.ethica.esf.service.persistence.ESFFieldESFSportTypePK esfFieldESFSportTypePK,
-		long esfSportTypeId,
+		ESFFieldESFSportTypePK esfFieldESFSportTypePK, long esfSportTypeId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchFieldESFSportTypeException;
@@ -338,7 +336,7 @@ public interface ESFFieldESFSportTypePersistence extends BasePersistence<ESFFiel
 	* @return the new e s f field e s f sport type
 	*/
 	public it.ethica.esf.model.ESFFieldESFSportType create(
-		it.ethica.esf.service.persistence.ESFFieldESFSportTypePK esfFieldESFSportTypePK);
+		ESFFieldESFSportTypePK esfFieldESFSportTypePK);
 
 	/**
 	* Removes the e s f field e s f sport type with the primary key from the database. Also notifies the appropriate model listeners.
@@ -349,7 +347,7 @@ public interface ESFFieldESFSportTypePersistence extends BasePersistence<ESFFiel
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFFieldESFSportType remove(
-		it.ethica.esf.service.persistence.ESFFieldESFSportTypePK esfFieldESFSportTypePK)
+		ESFFieldESFSportTypePK esfFieldESFSportTypePK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchFieldESFSportTypeException;
 
@@ -366,7 +364,7 @@ public interface ESFFieldESFSportTypePersistence extends BasePersistence<ESFFiel
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFFieldESFSportType findByPrimaryKey(
-		it.ethica.esf.service.persistence.ESFFieldESFSportTypePK esfFieldESFSportTypePK)
+		ESFFieldESFSportTypePK esfFieldESFSportTypePK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchFieldESFSportTypeException;
 
@@ -378,7 +376,7 @@ public interface ESFFieldESFSportTypePersistence extends BasePersistence<ESFFiel
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFFieldESFSportType fetchByPrimaryKey(
-		it.ethica.esf.service.persistence.ESFFieldESFSportTypePK esfFieldESFSportTypePK)
+		ESFFieldESFSportTypePK esfFieldESFSportTypePK)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**

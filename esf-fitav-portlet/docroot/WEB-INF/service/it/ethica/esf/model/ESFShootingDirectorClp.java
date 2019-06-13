@@ -590,6 +590,10 @@ public class ESFShootingDirectorClp extends BaseModelImpl<ESFShootingDirector>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -704,4 +708,5 @@ public class ESFShootingDirectorClp extends BaseModelImpl<ESFShootingDirector>
 	private String _flagCrea;
 	private Date _DateVar;
 	private BaseModel<?> _esfShootingDirectorRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

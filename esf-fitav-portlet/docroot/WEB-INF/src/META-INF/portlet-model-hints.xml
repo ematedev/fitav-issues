@@ -1070,6 +1070,15 @@
 		<field name="Cognome" type="String" />
 		<field name="CodiceRegione" type="String" />
 	</model>
+	<model name="it.ethica.esf.model.VW_ESFIncarichiFederali">
+		<field name="esfUserId" type="long" />
+		<field name="esfFederalRoleId" type="long" />
+		<field name="code_" type="String" />
+		<field name="description" type="String" />
+		<field name="startDate" type="long" />
+		<field name="endDate" type="Date" />
+		<field name="active_" type="boolean" />
+	</model>
 	<model name="it.ethica.esf.model.VW_ESFListaIncarichi">
 		<field name="AnniPrecedenti" type="int" />
 		<field name="AnnoFineIncarico" type="int" />

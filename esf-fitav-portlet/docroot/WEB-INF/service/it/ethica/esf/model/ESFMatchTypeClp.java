@@ -553,6 +553,10 @@ public class ESFMatchTypeClp extends BaseModelImpl<ESFMatchType>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -660,4 +664,5 @@ public class ESFMatchTypeClp extends BaseModelImpl<ESFMatchType>
 	private boolean _isNational;
 	private String _code;
 	private BaseModel<?> _esfMatchTypeRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

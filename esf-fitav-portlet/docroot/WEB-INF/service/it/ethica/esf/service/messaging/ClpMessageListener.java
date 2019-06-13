@@ -25,6 +25,7 @@ import it.ethica.esf.service.ESFAnnualFreeCardLocalServiceUtil;
 import it.ethica.esf.service.ESFBrandLocalServiceUtil;
 import it.ethica.esf.service.ESFCaneLocalServiceUtil;
 import it.ethica.esf.service.ESFCardLocalServiceUtil;
+import it.ethica.esf.service.ESFCardServiceUtil;
 import it.ethica.esf.service.ESFCategoryLocalServiceUtil;
 import it.ethica.esf.service.ESFCatridgeLocalServiceUtil;
 import it.ethica.esf.service.ESFCityLocalServiceUtil;
@@ -76,10 +77,8 @@ import it.ethica.esf.service.ESFRenewalLocalServiceUtil;
 import it.ethica.esf.service.ESFResultLocalServiceUtil;
 import it.ethica.esf.service.ESFShooterAffiliationChronoLocalServiceUtil;
 import it.ethica.esf.service.ESFShooterCategoryESFMatchLocalServiceUtil;
-import it.ethica.esf.service.ESFShooterCategoryESFTournamentLocalServiceUtil;
 import it.ethica.esf.service.ESFShooterCategoryLocalServiceUtil;
 import it.ethica.esf.service.ESFShooterQualificationESFMatchLocalServiceUtil;
-import it.ethica.esf.service.ESFShooterQualificationESFTournamentLocalServiceUtil;
 import it.ethica.esf.service.ESFShooterQualificationLocalServiceUtil;
 import it.ethica.esf.service.ESFShootingDirectorLocalServiceUtil;
 import it.ethica.esf.service.ESFShootingDirectorQualificationLocalServiceUtil;
@@ -102,6 +101,7 @@ import it.ethica.esf.service.ESFUserRoleLocalServiceUtil;
 import it.ethica.esf.service.ESFUserServiceUtil;
 import it.ethica.esf.service.ESFgunUserLocalServiceUtil;
 import it.ethica.esf.service.VW_DatiDrettoreTiroLocalServiceUtil;
+import it.ethica.esf.service.VW_ESFIncarichiFederaliLocalServiceUtil;
 import it.ethica.esf.service.VW_ESFListaIncarichiLocalServiceUtil;
 
 /**
@@ -133,6 +133,7 @@ public class ClpMessageListener extends BaseMessageListener {
 
 			ESFCardLocalServiceUtil.clearService();
 
+			ESFCardServiceUtil.clearService();
 			ESFCategoryLocalServiceUtil.clearService();
 
 			ESFCatridgeLocalServiceUtil.clearService();
@@ -237,13 +238,9 @@ public class ClpMessageListener extends BaseMessageListener {
 
 			ESFShooterCategoryESFMatchLocalServiceUtil.clearService();
 
-			ESFShooterCategoryESFTournamentLocalServiceUtil.clearService();
-
 			ESFShooterQualificationLocalServiceUtil.clearService();
 
 			ESFShooterQualificationESFMatchLocalServiceUtil.clearService();
-
-			ESFShooterQualificationESFTournamentLocalServiceUtil.clearService();
 
 			ESFShootingDirectorLocalServiceUtil.clearService();
 
@@ -282,6 +279,8 @@ public class ClpMessageListener extends BaseMessageListener {
 			ESFUserRoleLocalServiceUtil.clearService();
 
 			VW_DatiDrettoreTiroLocalServiceUtil.clearService();
+
+			VW_ESFIncarichiFederaliLocalServiceUtil.clearService();
 
 			VW_ESFListaIncarichiLocalServiceUtil.clearService();
 		}

@@ -326,6 +326,10 @@ public class ESFTransitionClp extends BaseModelImpl<ESFTransition>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -384,4 +388,5 @@ public class ESFTransitionClp extends BaseModelImpl<ESFTransition>
 	private long _esfCategoryId;
 	private String _season;
 	private BaseModel<?> _esfTransitionRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

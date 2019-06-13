@@ -336,6 +336,7 @@ public class ESFNormalMatchPortlet extends MVCPortlet {
 			ServiceContextFactory.getInstance(ESFMatch.class.getName(), request);
 
 		long esfMatchId = ParamUtil.getLong(request, "esfMatchId");
+//		boolean isEdit = ParamUtil.getBoolean(request, "isEdit");
 		_log.debug("nella portlet esfMatchId="+esfMatchId);
 		String code = ParamUtil.getString(request, "code");
 		String sd = ParamUtil.getString(request, "startDate");
@@ -408,10 +409,12 @@ public class ESFNormalMatchPortlet extends MVCPortlet {
 			else if (esfMatchId == 0) {
 				_log.debug("Salvataggio OK");
 				SessionMessages.add(request, "match-success-insert");
+				response.setRenderParameter("successMessage", newMatch.getCode());
 			}
 			else {
 				_log.debug("Aggiornamento OK");
 				SessionMessages.add(request, "match-success-update");
+				response.setRenderParameter("successMessage", newMatch.getCode());
 			}
 		}
 

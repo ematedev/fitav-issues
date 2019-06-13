@@ -14,10 +14,7 @@
 
 package it.ethica.esf.model.impl;
 
-import com.liferay.portal.kernel.exception.SystemException;
-
 import it.ethica.esf.model.ESFShooterCategoryESFTournament;
-import it.ethica.esf.service.ESFShooterCategoryESFTournamentLocalServiceUtil;
 
 /**
  * The extended model base implementation for the ESFShooterCategoryESFTournament service. Represents a row in the &quot;ESFShooterCategoryESFTournament&quot; database table, with each column mapped to a property of this class.
@@ -39,13 +36,4 @@ public abstract class ESFShooterCategoryESFTournamentBaseImpl
 	 *
 	 * Never modify or reference this class directly. All methods that expect a e s f shooter category e s f tournament model instance should use the {@link ESFShooterCategoryESFTournament} interface instead.
 	 */
-	@Override
-	public void persist() throws SystemException {
-		if (this.isNew()) {
-			ESFShooterCategoryESFTournamentLocalServiceUtil.addESFShooterCategoryESFTournament(this);
-		}
-		else {
-			ESFShooterCategoryESFTournamentLocalServiceUtil.updateESFShooterCategoryESFTournament(this);
-		}
-	}
 }

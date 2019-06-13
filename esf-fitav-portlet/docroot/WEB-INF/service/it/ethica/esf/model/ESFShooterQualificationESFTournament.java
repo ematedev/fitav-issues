@@ -14,8 +14,6 @@
 
 package it.ethica.esf.model;
 
-import com.liferay.portal.model.PersistedModel;
-
 /**
  * The extended model interface for the ESFShooterQualificationESFTournament service. Represents a row in the &quot;ESFShooterQualificationESFTournament&quot; database table, with each column mapped to a property of this class.
  *
@@ -26,7 +24,7 @@ import com.liferay.portal.model.PersistedModel;
  * @generated
  */
 public interface ESFShooterQualificationESFTournament
-	extends ESFShooterQualificationESFTournamentModel, PersistedModel {
+	extends ESFShooterQualificationESFTournamentModel {
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *

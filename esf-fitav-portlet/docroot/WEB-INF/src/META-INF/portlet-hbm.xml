@@ -82,6 +82,7 @@
 	<import class="it.ethica.esf.model.ESFUserESFUserRole" />
 	<import class="it.ethica.esf.model.ESFUserRole" />
 	<import class="it.ethica.esf.model.VW_DatiDrettoreTiro" />
+	<import class="it.ethica.esf.model.VW_ESFIncarichiFederali" />
 	<import class="it.ethica.esf.model.VW_ESFListaIncarichi" />
 	<class name="it.ethica.esf.model.impl.ESFAddressImpl" table="ESFAddress">
 		<cache usage="read-write" />
@@ -1357,6 +1358,18 @@
 			<key-property name="Cognome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 			<key-property name="CodiceRegione" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		</composite-id>
+	</class>
+	<class name="it.ethica.esf.model.impl.VW_ESFIncarichiFederaliImpl" table="VW_ESFIncarichiFederali">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.VW_ESFIncarichiFederaliPK">
+			<key-property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="esfFederalRoleId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="startDate" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="endDate" type="org.hibernate.type.TimestampType" />
+			<key-property name="active_" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		</composite-id>
+		<property name="code_" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.VW_ESFListaIncarichiImpl" table="VW_ESFListaIncarichi">
 		<cache usage="read-write" />

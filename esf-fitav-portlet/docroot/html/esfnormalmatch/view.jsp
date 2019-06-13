@@ -45,6 +45,8 @@
 		if(org.getType()==ESFKeys.ESFOrganizationTypeId.ASSOCIATION)
 			esfOrganizations.add(org);
 	*/
+	
+	
 %>
 
 <aui:script use="aui-base,node,aui-io-request">

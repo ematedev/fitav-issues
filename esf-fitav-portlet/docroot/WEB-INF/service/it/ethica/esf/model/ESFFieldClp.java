@@ -796,6 +796,10 @@ public class ESFFieldClp extends BaseModelImpl<ESFField> implements ESFField {
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -952,4 +956,5 @@ public class ESFFieldClp extends BaseModelImpl<ESFField> implements ESFField {
 	private boolean _disabledAccess;
 	private String _note;
 	private BaseModel<?> _esfFieldRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }
