@@ -345,19 +345,19 @@ public interface ESFCardModel extends BaseModel<ESFCard>, StagedGroupedModel {
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFCard esfCard);
+	public int compareTo(ESFCard esfCard);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFCard> toCacheModel();
+	public CacheModel<ESFCard> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFCard toEscapedModel();
+	public ESFCard toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFCard toUnescapedModel();
+	public ESFCard toUnescapedModel();
 
 	@Override
 	public String toString();

@@ -239,7 +239,9 @@
 			<%
 				boolean select = false;
 			
-				for(ESFMatchType esfMatchType : esfMatchTypes){
+				System.out.println("REFRESH");
+			
+				for(ESFMatchType esfMatchType : esfMatchTypes){ 
 					if(Validator.isNotNull(esfMatch) && Validator.isNotNull(esfMatch.getEsfMatchTypeId())
 							&& esfMatch.getEsfMatchTypeId() == esfMatchType.getEsfMatchTypeId()){
 						select = true;
@@ -264,8 +266,8 @@
 		
 			</c:if>
 		<% }%>
-</div>
-<div  class="btn-field-align">
+	</div>
+	<div  class="btn-field-align">
 		<aui:select name="description" inlineField="true">
 			<aui:option label="-" value="0" />
 			<%
@@ -292,7 +294,7 @@
 			</c:if>
 		<%}%>
 
-</div>		
+	</div>		
 		<aui:select name="esfSportTypeid">
 		<%--  	<aui:option label="-" value="0" /> --%>
 			<%
@@ -328,7 +330,7 @@
 
 
 
-<div class="btn-field-align">
+	<div class="btn-field-align">
 		<aui:input name="esfAssociationId" type="hidden"
 			value="<%=(esfMatchOrganization == null && Validator.isNull( esfOrganizationId)) ? StringPool.BLANK : esfMatchOrganizationId%>">
 		</aui:input>
@@ -363,7 +365,7 @@
 		<%	 }
 		}
 		 %>
-</div>	
+	</div>	
 		<aui:input id="numFields" name="numFields">
 			<aui:validator name="digits"></aui:validator>
 			<aui:validator name="min">1</aui:validator>

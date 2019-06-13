@@ -243,7 +243,8 @@ public class ESFFornitureRelUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFFornitureRel[] findByESFToolId_PrevAndNext(
-		ESFFornitureRelPK esfFornitureRelPK, long esfToolId,
+		it.ethica.esf.service.persistence.ESFFornitureRelPK esfFornitureRelPK,
+		long esfToolId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchFornitureRelException {
@@ -416,8 +417,8 @@ public class ESFFornitureRelUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFFornitureRel[] findByN_P_PrevAndNext(
-		ESFFornitureRelPK esfFornitureRelPK, java.lang.String className,
-		long classPK,
+		it.ethica.esf.service.persistence.ESFFornitureRelPK esfFornitureRelPK,
+		java.lang.String className, long classPK,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchFornitureRelException {
@@ -586,7 +587,8 @@ public class ESFFornitureRelUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFFornitureRel[] findByAssignmentDate_PrevAndNext(
-		ESFFornitureRelPK esfFornitureRelPK, java.util.Date assignmentDate,
+		it.ethica.esf.service.persistence.ESFFornitureRelPK esfFornitureRelPK,
+		java.util.Date assignmentDate,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchFornitureRelException {
@@ -645,7 +647,7 @@ public class ESFFornitureRelUtil {
 	* @return the new e s f forniture rel
 	*/
 	public static it.ethica.esf.model.ESFFornitureRel create(
-		ESFFornitureRelPK esfFornitureRelPK) {
+		it.ethica.esf.service.persistence.ESFFornitureRelPK esfFornitureRelPK) {
 		return getPersistence().create(esfFornitureRelPK);
 	}
 
@@ -658,7 +660,7 @@ public class ESFFornitureRelUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFFornitureRel remove(
-		ESFFornitureRelPK esfFornitureRelPK)
+		it.ethica.esf.service.persistence.ESFFornitureRelPK esfFornitureRelPK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchFornitureRelException {
 		return getPersistence().remove(esfFornitureRelPK);
@@ -679,7 +681,7 @@ public class ESFFornitureRelUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFFornitureRel findByPrimaryKey(
-		ESFFornitureRelPK esfFornitureRelPK)
+		it.ethica.esf.service.persistence.ESFFornitureRelPK esfFornitureRelPK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchFornitureRelException {
 		return getPersistence().findByPrimaryKey(esfFornitureRelPK);
@@ -693,7 +695,7 @@ public class ESFFornitureRelUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFFornitureRel fetchByPrimaryKey(
-		ESFFornitureRelPK esfFornitureRelPK)
+		it.ethica.esf.service.persistence.ESFFornitureRelPK esfFornitureRelPK)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence().fetchByPrimaryKey(esfFornitureRelPK);
 	}

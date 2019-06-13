@@ -35,12 +35,10 @@
 			value='<%= esfDescriptionId %>' />
 			
 		<aui:input name="name"></aui:input>
+		
+		<aui:input type="hidden" name="isNational" value='true' />
+		<liferay-ui:message key="isNationalMessage"></liferay-ui:message>
 
-		<aui:input name="isNational"
-			label="isNational" type="checkbox"
-			value='<%=esfDescription != null
-							? esfDescription.getIsNational()
-							: StringPool.BLANK%>'></aui:input>
 	</aui:fieldset>
 	<aui:button-row>
 		<aui:button type="submit"></aui:button>

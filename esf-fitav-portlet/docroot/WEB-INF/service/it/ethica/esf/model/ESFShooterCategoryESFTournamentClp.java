@@ -15,12 +15,14 @@
 package it.ethica.esf.model;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.impl.BaseModelImpl;
 
 import it.ethica.esf.service.ClpSerializer;
+import it.ethica.esf.service.ESFShooterCategoryESFTournamentLocalServiceUtil;
 import it.ethica.esf.service.persistence.ESFShooterCategoryESFTournamentPK;
 
 import java.io.Serializable;
@@ -257,6 +259,16 @@ public class ESFShooterCategoryESFTournamentClp extends BaseModelImpl<ESFShooter
 	}
 
 	@Override
+	public void persist() throws SystemException {
+		if (this.isNew()) {
+			ESFShooterCategoryESFTournamentLocalServiceUtil.addESFShooterCategoryESFTournament(this);
+		}
+		else {
+			ESFShooterCategoryESFTournamentLocalServiceUtil.updateESFShooterCategoryESFTournament(this);
+		}
+	}
+
+	@Override
 	public ESFShooterCategoryESFTournament toEscapedModel() {
 		return (ESFShooterCategoryESFTournament)ProxyUtil.newProxyInstance(ESFShooterCategoryESFTournament.class.getClassLoader(),
 			new Class[] { ESFShooterCategoryESFTournament.class },
@@ -303,10 +315,6 @@ public class ESFShooterCategoryESFTournamentClp extends BaseModelImpl<ESFShooter
 		else {
 			return false;
 		}
-	}
-
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
 	}
 
 	@Override
@@ -366,5 +374,4 @@ public class ESFShooterCategoryESFTournamentClp extends BaseModelImpl<ESFShooter
 	private long _esfTournamentId;
 	private long _groupId;
 	private BaseModel<?> _esfShooterCategoryESFTournamentRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

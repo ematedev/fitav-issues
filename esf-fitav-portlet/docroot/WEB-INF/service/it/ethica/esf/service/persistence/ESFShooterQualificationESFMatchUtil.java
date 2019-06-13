@@ -242,7 +242,7 @@ public class ESFShooterQualificationESFMatchUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShooterQualificationESFMatch[] findByUuid_PrevAndNext(
-		ESFShooterQualificationESFMatchPK esfShooterQualificationESFMatchPK,
+		it.ethica.esf.service.persistence.ESFShooterQualificationESFMatchPK esfShooterQualificationESFMatchPK,
 		java.lang.String uuid,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
@@ -489,7 +489,7 @@ public class ESFShooterQualificationESFMatchUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShooterQualificationESFMatch[] findByUuid_C_PrevAndNext(
-		ESFShooterQualificationESFMatchPK esfShooterQualificationESFMatchPK,
+		it.ethica.esf.service.persistence.ESFShooterQualificationESFMatchPK esfShooterQualificationESFMatchPK,
 		java.lang.String uuid, long companyId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
@@ -657,7 +657,7 @@ public class ESFShooterQualificationESFMatchUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShooterQualificationESFMatch[] findByESFMatch_PrevAndNext(
-		ESFShooterQualificationESFMatchPK esfShooterQualificationESFMatchPK,
+		it.ethica.esf.service.persistence.ESFShooterQualificationESFMatchPK esfShooterQualificationESFMatchPK,
 		long esfMatchId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
@@ -717,7 +717,7 @@ public class ESFShooterQualificationESFMatchUtil {
 	* @return the new e s f shooter qualification e s f match
 	*/
 	public static it.ethica.esf.model.ESFShooterQualificationESFMatch create(
-		ESFShooterQualificationESFMatchPK esfShooterQualificationESFMatchPK) {
+		it.ethica.esf.service.persistence.ESFShooterQualificationESFMatchPK esfShooterQualificationESFMatchPK) {
 		return getPersistence().create(esfShooterQualificationESFMatchPK);
 	}
 
@@ -730,7 +730,7 @@ public class ESFShooterQualificationESFMatchUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShooterQualificationESFMatch remove(
-		ESFShooterQualificationESFMatchPK esfShooterQualificationESFMatchPK)
+		it.ethica.esf.service.persistence.ESFShooterQualificationESFMatchPK esfShooterQualificationESFMatchPK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchShooterQualificationESFMatchException {
 		return getPersistence().remove(esfShooterQualificationESFMatchPK);
@@ -751,7 +751,7 @@ public class ESFShooterQualificationESFMatchUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShooterQualificationESFMatch findByPrimaryKey(
-		ESFShooterQualificationESFMatchPK esfShooterQualificationESFMatchPK)
+		it.ethica.esf.service.persistence.ESFShooterQualificationESFMatchPK esfShooterQualificationESFMatchPK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchShooterQualificationESFMatchException {
 		return getPersistence()
@@ -766,7 +766,7 @@ public class ESFShooterQualificationESFMatchUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.ESFShooterQualificationESFMatch fetchByPrimaryKey(
-		ESFShooterQualificationESFMatchPK esfShooterQualificationESFMatchPK)
+		it.ethica.esf.service.persistence.ESFShooterQualificationESFMatchPK esfShooterQualificationESFMatchPK)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence()
 				   .fetchByPrimaryKey(esfShooterQualificationESFMatchPK);

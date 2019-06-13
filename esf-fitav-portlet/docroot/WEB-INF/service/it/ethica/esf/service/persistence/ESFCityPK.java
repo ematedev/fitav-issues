@@ -21,7 +21,6 @@ import java.io.Serializable;
 
 /**
  * @author Ethica
- * @generated
  */
 public class ESFCityPK implements Comparable<ESFCityPK>, Serializable {
 	public long idCity;

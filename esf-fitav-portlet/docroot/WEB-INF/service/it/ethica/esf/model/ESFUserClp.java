@@ -1074,10 +1074,6 @@ public class ESFUserClp extends BaseModelImpl<ESFUser> implements ESFUser {
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1255,5 +1251,4 @@ public class ESFUserClp extends BaseModelImpl<ESFUser> implements ESFUser {
 	private Date _datePrivacy3;
 	private boolean _validateCF;
 	private BaseModel<?> _esfUserRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

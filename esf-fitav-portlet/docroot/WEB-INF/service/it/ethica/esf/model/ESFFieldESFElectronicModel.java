@@ -165,20 +165,19 @@ public interface ESFFieldESFElectronicModel extends BaseModel<ESFFieldESFElectro
 	public Object clone();
 
 	@Override
-	public int compareTo(
-		it.ethica.esf.model.ESFFieldESFElectronic esfFieldESFElectronic);
+	public int compareTo(ESFFieldESFElectronic esfFieldESFElectronic);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFFieldESFElectronic> toCacheModel();
+	public CacheModel<ESFFieldESFElectronic> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFFieldESFElectronic toEscapedModel();
+	public ESFFieldESFElectronic toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFFieldESFElectronic toUnescapedModel();
+	public ESFFieldESFElectronic toUnescapedModel();
 
 	@Override
 	public String toString();

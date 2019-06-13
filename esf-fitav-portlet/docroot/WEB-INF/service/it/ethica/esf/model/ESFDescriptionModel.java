@@ -144,19 +144,19 @@ public interface ESFDescriptionModel extends BaseModel<ESFDescription> {
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFDescription esfDescription);
+	public int compareTo(ESFDescription esfDescription);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFDescription> toCacheModel();
+	public CacheModel<ESFDescription> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFDescription toEscapedModel();
+	public ESFDescription toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFDescription toUnescapedModel();
+	public ESFDescription toUnescapedModel();
 
 	@Override
 	public String toString();

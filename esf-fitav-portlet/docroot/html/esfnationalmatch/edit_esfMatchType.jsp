@@ -19,6 +19,7 @@
 
 <portlet:actionURL name="editESFMatchType" var="editESFMatchTypeURL">
 	<portlet:param name="esfMatchId" value="<%=String.valueOf(matchId)%>" />
+<%-- 	<portlet:param name="esfMatchTypeId" value="<%= esfMatchType %>" /> --%>
 </portlet:actionURL>
 
 <portlet:renderURL var="backUrl">
@@ -39,7 +40,8 @@
 		
 		<aui:input name="isCategoryQualification" label="isCategoryQualification" type="checkbox"/>
 		
-		<aui:input name="isNational" label="isNational" type="checkbox"/>
+		<aui:input name="isNational" value="true" type="hidden"/>
+		<liferay-ui:message key="isNationalMessage"></liferay-ui:message>
 		
 	</aui:fieldset>
 

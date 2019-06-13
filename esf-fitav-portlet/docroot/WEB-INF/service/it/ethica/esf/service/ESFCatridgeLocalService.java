@@ -16,7 +16,6 @@ package it.ethica.esf.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -53,7 +52,6 @@ public interface ESFCatridgeLocalService extends BaseLocalService,
 	* @return the e s f catridge that was added
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFCatridge addESFCatridge(
 		it.ethica.esf.model.ESFCatridge esfCatridge)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -74,7 +72,6 @@ public interface ESFCatridgeLocalService extends BaseLocalService,
 	* @throws PortalException if a e s f catridge with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFCatridge deleteESFCatridge(long esfCatridgeId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
@@ -86,7 +83,6 @@ public interface ESFCatridgeLocalService extends BaseLocalService,
 	* @return the e s f catridge that was removed
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFCatridge deleteESFCatridge(
 		it.ethica.esf.model.ESFCatridge esfCatridge)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -226,7 +222,6 @@ public interface ESFCatridgeLocalService extends BaseLocalService,
 	* @return the e s f catridge that was updated
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFCatridge updateESFCatridge(
 		it.ethica.esf.model.ESFCatridge esfCatridge)
 		throws com.liferay.portal.kernel.exception.SystemException;
