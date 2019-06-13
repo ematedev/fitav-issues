@@ -2587,6 +2587,42 @@
             <finder-column name="esfShootingDirectorId" comparator="="></finder-column>
         </finder>
     </entity>
+    <entity name="ESFRaduno" remote-service="false" local-service="true">
+        <column name="id_esf_raduno" type="long" primary="true" id-type="identity"></column>
+        <column name="codice" type="String"></column>
+        <column name="data_inizio" type="Date"></column>
+        <column name="data_fine" type="Date"></column>
+        <column name="tipo_raduno" type="long"></column>
+        <column name="id_sottotipo_raduno" type="long"></column>
+        <column name="note" type="String"></column>
+        <column name="id_associazione_ospitante" type="long"></column>
+        <column name="altra_sede_ospitante" type="String"></column>
+    </entity>
+    <entity local-service="true" name="ESFRadunoTipo" remote-service="false">
+        <column id-type="identity" name="id_esf_raduno_tipo" primary="true" type="long"></column>
+        <column name="descrizione" type="String"></column>
+    </entity>
+    <entity name="ESFRadunoSottotipo" remote-service="false" local-service="true">
+        <column name="id_esf_raduno_sottotipo" type="long" primary="true" id-type="identity"></column>
+        <column name="descrizione" type="String"></column>
+    </entity>
+    <entity name="ESFRadunoSottotipiRaduno" remote-service="false" local-service="true">
+        <column name="id_esf_raduno_sottotipi_raduno" primary="true" type="long" id-type="identity"></column>
+        <column name="id_esf_raduno" type="long"></column>
+        <column name="id_esf_raduno_sottotipo" type="long"></column>
+        <finder name="findByIdEsfRaduno" return-type="Collection">
+            <finder-column name="id_esf_raduno"></finder-column>
+        </finder>
+    </entity>
+    <entity name="ESFRadunoFiles" local-service="true" remote-service="false">
+        <column name="id_esf_raduno_files" primary="true" type="long" id-type="identity"></column>
+        <column name="id_esf_raduno" type="long" primary="false"></column>
+        <column name="nome" type="String"></column>
+        <column name="path" type="String"></column>
+        <finder name="findByRaduno" return-type="Collection">
+            <finder-column name="id_esf_raduno"></finder-column>
+        </finder>
+    </entity>
 	
 	<exceptions>
 		<exception>ESFAddressLatitude</exception>

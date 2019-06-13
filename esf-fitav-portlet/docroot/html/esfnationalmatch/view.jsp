@@ -222,10 +222,10 @@
 				<liferay-ui:search-container-column-text
 					name="match-site" value='<%=site%>' />
 
-				
-					<liferay-ui:search-container-column-jsp
-						path='<%=templatePath + "esfMatch_actions.jsp"%>' align="right" />
 
-			</liferay-ui:search-container-row>
+		<liferay-ui:search-container-column-jsp
+			path='<%=templatePath + "esfMatch_actions.jsp"%>' align="right"/>
+
+	</liferay-ui:search-container-row>
 			<liferay-ui:search-iterator />
 		</liferay-ui:search-container>

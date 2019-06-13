@@ -736,6 +736,41 @@ create table ESFPublicAuthority (
 	description VARCHAR(75) null
 );
 
+create table ESFRaduno (
+	id_esf_raduno LONG not null primary key IDENTITY,
+	codice VARCHAR(75) null,
+	data_inizio DATE null,
+	data_fine DATE null,
+	tipo_raduno LONG,
+	id_sottotipo_raduno LONG,
+	note VARCHAR(75) null,
+	id_associazione_ospitante LONG,
+	altra_sede_ospitante VARCHAR(75) null
+);
+
+create table ESFRadunoFiles (
+	id_esf_raduno_files LONG not null primary key IDENTITY,
+	id_esf_raduno LONG,
+	nome VARCHAR(75) null,
+	path_ VARCHAR(75) null
+);
+
+create table ESFRadunoSottotipiRaduno (
+	id_esf_raduno_sottotipi_raduno LONG not null primary key IDENTITY,
+	id_esf_raduno LONG,
+	id_esf_raduno_sottotipo LONG
+);
+
+create table ESFRadunoSottotipo (
+	id_esf_raduno_sottotipo LONG not null primary key IDENTITY,
+	descrizione VARCHAR(75) null
+);
+
+create table ESFRadunoTipo (
+	id_esf_raduno_tipo LONG not null primary key IDENTITY,
+	descrizione VARCHAR(75) null
+);
+
 create table ESFRegion (
 	idRegion VARCHAR(75) not null,
 	idCountry VARCHAR(75) not null,

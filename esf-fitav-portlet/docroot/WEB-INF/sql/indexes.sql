@@ -224,6 +224,13 @@ create index IX_1021F1BC on ESFProvince (idCountry, name);
 create index IX_CD7C5E8D on ESFProvince (idProvince);
 create index IX_B354063A on ESFProvince (idRegion, idCountry);
 
+create index IX_1FED4786 on ESFRaduno (codice);
+create index IX_C8556021 on ESFRaduno (codice, data_inizio, tipo_raduno);
+
+create index IX_E7450A38 on ESFRadunoFiles (id_esf_raduno);
+
+create index IX_E0B934ED on ESFRadunoSottotipiRaduno (id_esf_raduno);
+
 create index IX_63532879 on ESFRegion (idCountry);
 
 create index IX_38BBCB82 on ESFRenewal (organizationId, isTotal);

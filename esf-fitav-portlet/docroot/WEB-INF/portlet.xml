@@ -2063,4 +2063,42 @@
 			<role-name>user</role-name>
 		</security-role-ref>
 	</portlet>
+	<portlet>
+		<portlet-name>esf-raduni</portlet-name>
+		<display-name>Esf Raduni</display-name>
+		<portlet-class>
+			it.ethica.esf.portlet.raduni.ESFRaduni
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/esfraduni/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>help-template</name>
+			<value>/html/esfraduni/help.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>help</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Gestione Raduni</title>
+			<short-title>Esf Raduni</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
 </portlet-app>

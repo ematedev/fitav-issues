@@ -688,6 +688,36 @@
 		<field name="modifiedDate" type="Date" />
 		<field name="description" type="String" />
 	</model>
+	<model name="it.ethica.esf.model.ESFRaduno">
+		<field name="id_esf_raduno" type="long" />
+		<field name="codice" type="String" />
+		<field name="data_inizio" type="Date" />
+		<field name="data_fine" type="Date" />
+		<field name="tipo_raduno" type="long" />
+		<field name="id_sottotipo_raduno" type="long" />
+		<field name="note" type="String" />
+		<field name="id_associazione_ospitante" type="long" />
+		<field name="altra_sede_ospitante" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.ESFRadunoFiles">
+		<field name="id_esf_raduno_files" type="long" />
+		<field name="id_esf_raduno" type="long" />
+		<field name="nome" type="String" />
+		<field name="path" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.ESFRadunoSottotipiRaduno">
+		<field name="id_esf_raduno_sottotipi_raduno" type="long" />
+		<field name="id_esf_raduno" type="long" />
+		<field name="id_esf_raduno_sottotipo" type="long" />
+	</model>
+	<model name="it.ethica.esf.model.ESFRadunoSottotipo">
+		<field name="id_esf_raduno_sottotipo" type="long" />
+		<field name="descrizione" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.ESFRadunoTipo">
+		<field name="id_esf_raduno_tipo" type="long" />
+		<field name="descrizione" type="String" />
+	</model>
 	<model name="it.ethica.esf.model.ESFRegion">
 		<field name="idRegion" type="String" />
 		<field name="idCountry" type="String" />

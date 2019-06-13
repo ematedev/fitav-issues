@@ -69,6 +69,11 @@ import it.ethica.esf.service.ESFPartecipantTypeLocalServiceUtil;
 import it.ethica.esf.service.ESFPhoneLocalServiceUtil;
 import it.ethica.esf.service.ESFProvinceLocalServiceUtil;
 import it.ethica.esf.service.ESFPublicAuthorityLocalServiceUtil;
+import it.ethica.esf.service.ESFRadunoFilesLocalServiceUtil;
+import it.ethica.esf.service.ESFRadunoLocalServiceUtil;
+import it.ethica.esf.service.ESFRadunoSottotipiRadunoLocalServiceUtil;
+import it.ethica.esf.service.ESFRadunoSottotipoLocalServiceUtil;
+import it.ethica.esf.service.ESFRadunoTipoLocalServiceUtil;
 import it.ethica.esf.service.ESFRegionLocalServiceUtil;
 import it.ethica.esf.service.ESFRenewalLocalServiceUtil;
 import it.ethica.esf.service.ESFResultLocalServiceUtil;
@@ -218,6 +223,16 @@ public class ClpMessageListener extends BaseMessageListener {
 			ESFProvinceLocalServiceUtil.clearService();
 
 			ESFPublicAuthorityLocalServiceUtil.clearService();
+
+			ESFRadunoLocalServiceUtil.clearService();
+
+			ESFRadunoFilesLocalServiceUtil.clearService();
+
+			ESFRadunoSottotipiRadunoLocalServiceUtil.clearService();
+
+			ESFRadunoSottotipoLocalServiceUtil.clearService();
+
+			ESFRadunoTipoLocalServiceUtil.clearService();
 
 			ESFRegionLocalServiceUtil.clearService();
 

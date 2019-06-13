@@ -122,13 +122,13 @@ public class ESFShooterCategoryESFTournamentLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFShooterCategoryESFTournament"
 			};
 
-		_methodName382 = "getBeanIdentifier";
+		_methodName402 = "getBeanIdentifier";
 
-		_methodParameterTypes382 = new String[] {  };
+		_methodParameterTypes402 = new String[] {  };
 
-		_methodName383 = "setBeanIdentifier";
+		_methodName403 = "setBeanIdentifier";
 
-		_methodParameterTypes383 = new String[] { "java.lang.String" };
+		_methodParameterTypes403 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -232,13 +232,13 @@ public class ESFShooterCategoryESFTournamentLocalServiceClpInvoker {
 			return ESFShooterCategoryESFTournamentLocalServiceUtil.updateESFShooterCategoryESFTournament((it.ethica.esf.model.ESFShooterCategoryESFTournament)arguments[0]);
 		}
 
-		if (_methodName382.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
+		if (_methodName402.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes402, parameterTypes)) {
 			return ESFShooterCategoryESFTournamentLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName383.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes383, parameterTypes)) {
+		if (_methodName403.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes403, parameterTypes)) {
 			ESFShooterCategoryESFTournamentLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
@@ -283,8 +283,8 @@ public class ESFShooterCategoryESFTournamentLocalServiceClpInvoker {
 	private String[] _methodParameterTypes16;
 	private String _methodName17;
 	private String[] _methodParameterTypes17;
-	private String _methodName382;
-	private String[] _methodParameterTypes382;
-	private String _methodName383;
-	private String[] _methodParameterTypes383;
+	private String _methodName402;
+	private String[] _methodParameterTypes402;
+	private String _methodName403;
+	private String[] _methodParameterTypes403;
 }

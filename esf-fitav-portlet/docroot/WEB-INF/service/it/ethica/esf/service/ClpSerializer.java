@@ -76,6 +76,11 @@ import it.ethica.esf.model.ESFPartecipantTypeClp;
 import it.ethica.esf.model.ESFPhoneClp;
 import it.ethica.esf.model.ESFProvinceClp;
 import it.ethica.esf.model.ESFPublicAuthorityClp;
+import it.ethica.esf.model.ESFRadunoClp;
+import it.ethica.esf.model.ESFRadunoFilesClp;
+import it.ethica.esf.model.ESFRadunoSottotipiRadunoClp;
+import it.ethica.esf.model.ESFRadunoSottotipoClp;
+import it.ethica.esf.model.ESFRadunoTipoClp;
 import it.ethica.esf.model.ESFRegionClp;
 import it.ethica.esf.model.ESFRenewalClp;
 import it.ethica.esf.model.ESFResultClp;
@@ -392,6 +397,27 @@ public class ClpSerializer {
 
 		if (oldModelClassName.equals(ESFPublicAuthorityClp.class.getName())) {
 			return translateInputESFPublicAuthority(oldModel);
+		}
+
+		if (oldModelClassName.equals(ESFRadunoClp.class.getName())) {
+			return translateInputESFRaduno(oldModel);
+		}
+
+		if (oldModelClassName.equals(ESFRadunoFilesClp.class.getName())) {
+			return translateInputESFRadunoFiles(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					ESFRadunoSottotipiRadunoClp.class.getName())) {
+			return translateInputESFRadunoSottotipiRaduno(oldModel);
+		}
+
+		if (oldModelClassName.equals(ESFRadunoSottotipoClp.class.getName())) {
+			return translateInputESFRadunoSottotipo(oldModel);
+		}
+
+		if (oldModelClassName.equals(ESFRadunoTipoClp.class.getName())) {
+			return translateInputESFRadunoTipo(oldModel);
 		}
 
 		if (oldModelClassName.equals(ESFRegionClp.class.getName())) {
@@ -1061,6 +1087,57 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+	public static Object translateInputESFRaduno(BaseModel<?> oldModel) {
+		ESFRadunoClp oldClpModel = (ESFRadunoClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getESFRadunoRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputESFRadunoFiles(BaseModel<?> oldModel) {
+		ESFRadunoFilesClp oldClpModel = (ESFRadunoFilesClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getESFRadunoFilesRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputESFRadunoSottotipiRaduno(
+		BaseModel<?> oldModel) {
+		ESFRadunoSottotipiRadunoClp oldClpModel = (ESFRadunoSottotipiRadunoClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getESFRadunoSottotipiRadunoRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputESFRadunoSottotipo(BaseModel<?> oldModel) {
+		ESFRadunoSottotipoClp oldClpModel = (ESFRadunoSottotipoClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getESFRadunoSottotipoRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputESFRadunoTipo(BaseModel<?> oldModel) {
+		ESFRadunoTipoClp oldClpModel = (ESFRadunoTipoClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getESFRadunoTipoRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
 	public static Object translateInputESFRegion(BaseModel<?> oldModel) {
 		ESFRegionClp oldClpModel = (ESFRegionClp)oldModel;
 
@@ -1618,6 +1695,30 @@ public class ClpSerializer {
 			return translateOutputESFPublicAuthority(oldModel);
 		}
 
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFRadunoImpl")) {
+			return translateOutputESFRaduno(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFRadunoFilesImpl")) {
+			return translateOutputESFRadunoFiles(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFRadunoSottotipiRadunoImpl")) {
+			return translateOutputESFRadunoSottotipiRaduno(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFRadunoSottotipoImpl")) {
+			return translateOutputESFRadunoSottotipo(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFRadunoTipoImpl")) {
+			return translateOutputESFRadunoTipo(oldModel);
+		}
+
 		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFRegionImpl")) {
 			return translateOutputESFRegion(oldModel);
 		}
@@ -2109,6 +2210,27 @@ public class ClpSerializer {
 
 		if (className.equals("it.ethica.esf.NoSuchPublicAuthorityException")) {
 			return new it.ethica.esf.NoSuchPublicAuthorityException();
+		}
+
+		if (className.equals("it.ethica.esf.NoSuchRadunoException")) {
+			return new it.ethica.esf.NoSuchRadunoException();
+		}
+
+		if (className.equals("it.ethica.esf.NoSuchRadunoFilesException")) {
+			return new it.ethica.esf.NoSuchRadunoFilesException();
+		}
+
+		if (className.equals(
+					"it.ethica.esf.NoSuchRadunoSottotipiRadunoException")) {
+			return new it.ethica.esf.NoSuchRadunoSottotipiRadunoException();
+		}
+
+		if (className.equals("it.ethica.esf.NoSuchRadunoSottotipoException")) {
+			return new it.ethica.esf.NoSuchRadunoSottotipoException();
+		}
+
+		if (className.equals("it.ethica.esf.NoSuchRadunoTipoException")) {
+			return new it.ethica.esf.NoSuchRadunoTipoException();
 		}
 
 		if (className.equals("it.ethica.esf.NoSuchRegionException")) {
@@ -2767,6 +2889,58 @@ public class ClpSerializer {
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
 		newModel.setESFPublicAuthorityRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputESFRaduno(BaseModel<?> oldModel) {
+		ESFRadunoClp newModel = new ESFRadunoClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setESFRadunoRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputESFRadunoFiles(BaseModel<?> oldModel) {
+		ESFRadunoFilesClp newModel = new ESFRadunoFilesClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setESFRadunoFilesRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputESFRadunoSottotipiRaduno(
+		BaseModel<?> oldModel) {
+		ESFRadunoSottotipiRadunoClp newModel = new ESFRadunoSottotipiRadunoClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setESFRadunoSottotipiRadunoRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputESFRadunoSottotipo(
+		BaseModel<?> oldModel) {
+		ESFRadunoSottotipoClp newModel = new ESFRadunoSottotipoClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setESFRadunoSottotipoRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputESFRadunoTipo(BaseModel<?> oldModel) {
+		ESFRadunoTipoClp newModel = new ESFRadunoTipoClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setESFRadunoTipoRemoteModel(oldModel);
 
 		return newModel;
 	}

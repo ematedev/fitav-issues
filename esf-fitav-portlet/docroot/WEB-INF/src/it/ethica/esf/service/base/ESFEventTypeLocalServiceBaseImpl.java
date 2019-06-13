@@ -91,6 +91,11 @@ import it.ethica.esf.service.persistence.ESFPartecipantTypePersistence;
 import it.ethica.esf.service.persistence.ESFPhonePersistence;
 import it.ethica.esf.service.persistence.ESFProvincePersistence;
 import it.ethica.esf.service.persistence.ESFPublicAuthorityPersistence;
+import it.ethica.esf.service.persistence.ESFRadunoFilesPersistence;
+import it.ethica.esf.service.persistence.ESFRadunoPersistence;
+import it.ethica.esf.service.persistence.ESFRadunoSottotipiRadunoPersistence;
+import it.ethica.esf.service.persistence.ESFRadunoSottotipoPersistence;
+import it.ethica.esf.service.persistence.ESFRadunoTipoPersistence;
 import it.ethica.esf.service.persistence.ESFRegionPersistence;
 import it.ethica.esf.service.persistence.ESFRenewalPersistence;
 import it.ethica.esf.service.persistence.ESFResultFinder;
@@ -2489,6 +2494,196 @@ public abstract class ESFEventTypeLocalServiceBaseImpl
 	}
 
 	/**
+	 * Returns the e s f raduno local service.
+	 *
+	 * @return the e s f raduno local service
+	 */
+	public it.ethica.esf.service.ESFRadunoLocalService getESFRadunoLocalService() {
+		return esfRadunoLocalService;
+	}
+
+	/**
+	 * Sets the e s f raduno local service.
+	 *
+	 * @param esfRadunoLocalService the e s f raduno local service
+	 */
+	public void setESFRadunoLocalService(
+		it.ethica.esf.service.ESFRadunoLocalService esfRadunoLocalService) {
+		this.esfRadunoLocalService = esfRadunoLocalService;
+	}
+
+	/**
+	 * Returns the e s f raduno persistence.
+	 *
+	 * @return the e s f raduno persistence
+	 */
+	public ESFRadunoPersistence getESFRadunoPersistence() {
+		return esfRadunoPersistence;
+	}
+
+	/**
+	 * Sets the e s f raduno persistence.
+	 *
+	 * @param esfRadunoPersistence the e s f raduno persistence
+	 */
+	public void setESFRadunoPersistence(
+		ESFRadunoPersistence esfRadunoPersistence) {
+		this.esfRadunoPersistence = esfRadunoPersistence;
+	}
+
+	/**
+	 * Returns the e s f raduno files local service.
+	 *
+	 * @return the e s f raduno files local service
+	 */
+	public it.ethica.esf.service.ESFRadunoFilesLocalService getESFRadunoFilesLocalService() {
+		return esfRadunoFilesLocalService;
+	}
+
+	/**
+	 * Sets the e s f raduno files local service.
+	 *
+	 * @param esfRadunoFilesLocalService the e s f raduno files local service
+	 */
+	public void setESFRadunoFilesLocalService(
+		it.ethica.esf.service.ESFRadunoFilesLocalService esfRadunoFilesLocalService) {
+		this.esfRadunoFilesLocalService = esfRadunoFilesLocalService;
+	}
+
+	/**
+	 * Returns the e s f raduno files persistence.
+	 *
+	 * @return the e s f raduno files persistence
+	 */
+	public ESFRadunoFilesPersistence getESFRadunoFilesPersistence() {
+		return esfRadunoFilesPersistence;
+	}
+
+	/**
+	 * Sets the e s f raduno files persistence.
+	 *
+	 * @param esfRadunoFilesPersistence the e s f raduno files persistence
+	 */
+	public void setESFRadunoFilesPersistence(
+		ESFRadunoFilesPersistence esfRadunoFilesPersistence) {
+		this.esfRadunoFilesPersistence = esfRadunoFilesPersistence;
+	}
+
+	/**
+	 * Returns the e s f raduno sottotipi raduno local service.
+	 *
+	 * @return the e s f raduno sottotipi raduno local service
+	 */
+	public it.ethica.esf.service.ESFRadunoSottotipiRadunoLocalService getESFRadunoSottotipiRadunoLocalService() {
+		return esfRadunoSottotipiRadunoLocalService;
+	}
+
+	/**
+	 * Sets the e s f raduno sottotipi raduno local service.
+	 *
+	 * @param esfRadunoSottotipiRadunoLocalService the e s f raduno sottotipi raduno local service
+	 */
+	public void setESFRadunoSottotipiRadunoLocalService(
+		it.ethica.esf.service.ESFRadunoSottotipiRadunoLocalService esfRadunoSottotipiRadunoLocalService) {
+		this.esfRadunoSottotipiRadunoLocalService = esfRadunoSottotipiRadunoLocalService;
+	}
+
+	/**
+	 * Returns the e s f raduno sottotipi raduno persistence.
+	 *
+	 * @return the e s f raduno sottotipi raduno persistence
+	 */
+	public ESFRadunoSottotipiRadunoPersistence getESFRadunoSottotipiRadunoPersistence() {
+		return esfRadunoSottotipiRadunoPersistence;
+	}
+
+	/**
+	 * Sets the e s f raduno sottotipi raduno persistence.
+	 *
+	 * @param esfRadunoSottotipiRadunoPersistence the e s f raduno sottotipi raduno persistence
+	 */
+	public void setESFRadunoSottotipiRadunoPersistence(
+		ESFRadunoSottotipiRadunoPersistence esfRadunoSottotipiRadunoPersistence) {
+		this.esfRadunoSottotipiRadunoPersistence = esfRadunoSottotipiRadunoPersistence;
+	}
+
+	/**
+	 * Returns the e s f raduno sottotipo local service.
+	 *
+	 * @return the e s f raduno sottotipo local service
+	 */
+	public it.ethica.esf.service.ESFRadunoSottotipoLocalService getESFRadunoSottotipoLocalService() {
+		return esfRadunoSottotipoLocalService;
+	}
+
+	/**
+	 * Sets the e s f raduno sottotipo local service.
+	 *
+	 * @param esfRadunoSottotipoLocalService the e s f raduno sottotipo local service
+	 */
+	public void setESFRadunoSottotipoLocalService(
+		it.ethica.esf.service.ESFRadunoSottotipoLocalService esfRadunoSottotipoLocalService) {
+		this.esfRadunoSottotipoLocalService = esfRadunoSottotipoLocalService;
+	}
+
+	/**
+	 * Returns the e s f raduno sottotipo persistence.
+	 *
+	 * @return the e s f raduno sottotipo persistence
+	 */
+	public ESFRadunoSottotipoPersistence getESFRadunoSottotipoPersistence() {
+		return esfRadunoSottotipoPersistence;
+	}
+
+	/**
+	 * Sets the e s f raduno sottotipo persistence.
+	 *
+	 * @param esfRadunoSottotipoPersistence the e s f raduno sottotipo persistence
+	 */
+	public void setESFRadunoSottotipoPersistence(
+		ESFRadunoSottotipoPersistence esfRadunoSottotipoPersistence) {
+		this.esfRadunoSottotipoPersistence = esfRadunoSottotipoPersistence;
+	}
+
+	/**
+	 * Returns the e s f raduno tipo local service.
+	 *
+	 * @return the e s f raduno tipo local service
+	 */
+	public it.ethica.esf.service.ESFRadunoTipoLocalService getESFRadunoTipoLocalService() {
+		return esfRadunoTipoLocalService;
+	}
+
+	/**
+	 * Sets the e s f raduno tipo local service.
+	 *
+	 * @param esfRadunoTipoLocalService the e s f raduno tipo local service
+	 */
+	public void setESFRadunoTipoLocalService(
+		it.ethica.esf.service.ESFRadunoTipoLocalService esfRadunoTipoLocalService) {
+		this.esfRadunoTipoLocalService = esfRadunoTipoLocalService;
+	}
+
+	/**
+	 * Returns the e s f raduno tipo persistence.
+	 *
+	 * @return the e s f raduno tipo persistence
+	 */
+	public ESFRadunoTipoPersistence getESFRadunoTipoPersistence() {
+		return esfRadunoTipoPersistence;
+	}
+
+	/**
+	 * Sets the e s f raduno tipo persistence.
+	 *
+	 * @param esfRadunoTipoPersistence the e s f raduno tipo persistence
+	 */
+	public void setESFRadunoTipoPersistence(
+		ESFRadunoTipoPersistence esfRadunoTipoPersistence) {
+		this.esfRadunoTipoPersistence = esfRadunoTipoPersistence;
+	}
+
+	/**
 	 * Returns the e s f region local service.
 	 *
 	 * @return the e s f region local service
@@ -4099,6 +4294,26 @@ public abstract class ESFEventTypeLocalServiceBaseImpl
 	protected it.ethica.esf.service.ESFPublicAuthorityLocalService esfPublicAuthorityLocalService;
 	@BeanReference(type = ESFPublicAuthorityPersistence.class)
 	protected ESFPublicAuthorityPersistence esfPublicAuthorityPersistence;
+	@BeanReference(type = it.ethica.esf.service.ESFRadunoLocalService.class)
+	protected it.ethica.esf.service.ESFRadunoLocalService esfRadunoLocalService;
+	@BeanReference(type = ESFRadunoPersistence.class)
+	protected ESFRadunoPersistence esfRadunoPersistence;
+	@BeanReference(type = it.ethica.esf.service.ESFRadunoFilesLocalService.class)
+	protected it.ethica.esf.service.ESFRadunoFilesLocalService esfRadunoFilesLocalService;
+	@BeanReference(type = ESFRadunoFilesPersistence.class)
+	protected ESFRadunoFilesPersistence esfRadunoFilesPersistence;
+	@BeanReference(type = it.ethica.esf.service.ESFRadunoSottotipiRadunoLocalService.class)
+	protected it.ethica.esf.service.ESFRadunoSottotipiRadunoLocalService esfRadunoSottotipiRadunoLocalService;
+	@BeanReference(type = ESFRadunoSottotipiRadunoPersistence.class)
+	protected ESFRadunoSottotipiRadunoPersistence esfRadunoSottotipiRadunoPersistence;
+	@BeanReference(type = it.ethica.esf.service.ESFRadunoSottotipoLocalService.class)
+	protected it.ethica.esf.service.ESFRadunoSottotipoLocalService esfRadunoSottotipoLocalService;
+	@BeanReference(type = ESFRadunoSottotipoPersistence.class)
+	protected ESFRadunoSottotipoPersistence esfRadunoSottotipoPersistence;
+	@BeanReference(type = it.ethica.esf.service.ESFRadunoTipoLocalService.class)
+	protected it.ethica.esf.service.ESFRadunoTipoLocalService esfRadunoTipoLocalService;
+	@BeanReference(type = ESFRadunoTipoPersistence.class)
+	protected ESFRadunoTipoPersistence esfRadunoTipoPersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFRegionLocalService.class)
 	protected it.ethica.esf.service.ESFRegionLocalService esfRegionLocalService;
 	@BeanReference(type = ESFRegionPersistence.class)

@@ -1243,6 +1243,67 @@
 			<transient name="primaryKeyObj" />
 		</attributes>
 	</mapped-superclass>
+	<mapped-superclass class="it.ethica.esf.model.impl.ESFRadunoModelImpl">
+		<attributes>
+			<id name="id_esf_raduno" />
+			<basic name="codice" />
+			<basic name="data_inizio">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="data_fine">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="tipo_raduno" />
+			<basic name="id_sottotipo_raduno" />
+			<basic name="note" />
+			<basic name="id_associazione_ospitante" />
+			<basic name="altra_sede_ospitante" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="it.ethica.esf.model.impl.ESFRadunoFilesModelImpl">
+		<attributes>
+			<id name="id_esf_raduno_files" />
+			<basic name="id_esf_raduno" />
+			<basic name="nome" />
+			<basic name="path">
+				<column name="PATH_" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="it.ethica.esf.model.impl.ESFRadunoSottotipiRadunoModelImpl">
+		<attributes>
+			<id name="id_esf_raduno_sottotipi_raduno" />
+			<basic name="id_esf_raduno" />
+			<basic name="id_esf_raduno_sottotipo" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="it.ethica.esf.model.impl.ESFRadunoSottotipoModelImpl">
+		<attributes>
+			<id name="id_esf_raduno_sottotipo" />
+			<basic name="descrizione" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="it.ethica.esf.model.impl.ESFRadunoTipoModelImpl">
+		<attributes>
+			<id name="id_esf_raduno_tipo" />
+			<basic name="descrizione" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
 	<mapped-superclass class="it.ethica.esf.model.impl.ESFRegionModelImpl">
 		<id-class class="it.ethica.esf.service.persistence.ESFRegionPK" />
 		<attributes>
@@ -2197,6 +2258,26 @@
 	</entity>
 	<entity class="it.ethica.esf.model.impl.ESFPublicAuthorityImpl" name="ESFPublicAuthority">
 		<table name="ESFPublicAuthority" />
+		<attributes />
+	</entity>
+	<entity class="it.ethica.esf.model.impl.ESFRadunoImpl" name="ESFRaduno">
+		<table name="ESFRaduno" />
+		<attributes />
+	</entity>
+	<entity class="it.ethica.esf.model.impl.ESFRadunoFilesImpl" name="ESFRadunoFiles">
+		<table name="ESFRadunoFiles" />
+		<attributes />
+	</entity>
+	<entity class="it.ethica.esf.model.impl.ESFRadunoSottotipiRadunoImpl" name="ESFRadunoSottotipiRaduno">
+		<table name="ESFRadunoSottotipiRaduno" />
+		<attributes />
+	</entity>
+	<entity class="it.ethica.esf.model.impl.ESFRadunoSottotipoImpl" name="ESFRadunoSottotipo">
+		<table name="ESFRadunoSottotipo" />
+		<attributes />
+	</entity>
+	<entity class="it.ethica.esf.model.impl.ESFRadunoTipoImpl" name="ESFRadunoTipo">
+		<table name="ESFRadunoTipo" />
 		<attributes />
 	</entity>
 	<entity class="it.ethica.esf.model.impl.ESFRegionImpl" name="ESFRegion">
