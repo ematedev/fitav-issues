@@ -134,8 +134,9 @@
 		</aui:script> 
 		
 		<% if(isEdit){%>
-	   		<aui:input name="code" value="<%=matchCodeValue%>" disabled="true" />
+	   		<aui:input name="codeView" type="text" value="<%=matchCodeValue%>" disabled="true" />
 		<%} %>
+		<aui:input name="code" type="hidden" value="<%=matchCodeValue%>" />
 		<aui:input name="isEdit" type="hidden" value="<%=isEdit%>" />
 		<aui:input name="startDate" type="text">			
 		<aui:validator name="required" errorMessage="this-field-is-required" />			                        

@@ -913,7 +913,6 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 			throws SystemException, PortalException {
 
 		User operator = userPersistence.findByPrimaryKey(userId);
-		String actualCode = null;
 		long groupId = serviceContext.getScopeGroupId();
 		ESFMatch lastCodeMatch = null;
 		Date now = new Date();
@@ -932,9 +931,7 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 			if(code==null || code.trim().isEmpty()){
 				//Genero il codice
 				year = Calendar.getInstance().get(Calendar.YEAR);
-				
 				_log.debug("Verifico il codice dell'ultimo match dell'anno corrente: "+year);
-//				MatchComparator cmp = new MatchComparator();
 				try {
 					lastCodeMatch = this.esfMatchPersistence
 							.findByMatchYear_Last(year, 
