@@ -24,7 +24,6 @@
 			"mvcPath", "/html/esfraduni/popup/chooseAssociation.jsp");
 		viewassURL.setParameter("code", code);
 		viewassURL.setParameter("name", name);
-			
 
 	if(code!="" || name!=""){
 		listaAssociazioni = ESFOrganizationLocalServiceUtil.findAllLeafOrganizations(currentOrganizationId,code,name);

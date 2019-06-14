@@ -5,15 +5,19 @@
 <%@page import="it.ethica.esf.service.ESFRadunoLocalServiceUtil"%>
 <%@page import="it.ethica.esf.service.ESFRadunoFilesLocalServiceUtil"%>
 <%@page import="it.ethica.esf.service.ESFOrganizationLocalServiceUtil"%>
-<%@page import="it.ethica.esf.service.ESFRadunoFilesLocalServiceUtil"%>
-<%@page import="it.ethica.esf.service.ESFRadunoFilesLocalService"%>
+<%@page import="it.ethica.esf.service.ESFRadunoAzzurriLocalServiceUtil"%>
+<%@page import="it.ethica.esf.service.ESFSportTypeLocalServiceUtil"%>
+<%@page import="it.ethica.esf.service.ESFNationalLocalServiceUtil"%>
 <%@page import="it.ethica.esf.model.ESFRadunoTipo"%>
 <%@page import="it.ethica.esf.util.DateUtilFormatter"%>
 <%@page import="it.ethica.esf.model.ESFRaduno"%>
 <%@page import="it.ethica.esf.model.ESFRadunoTipo"%>
 <%@page import="it.ethica.esf.model.ESFRadunoSottotipo"%>
 <%@page import="it.ethica.esf.model.ESFRadunoFiles"%>
+<%@page import="it.ethica.esf.model.ESFRadunoAzzurri"%>
 <%@page import="it.ethica.esf.model.ESFOrganization"%>
+<%@page import="it.ethica.esf.model.ESFSportType"%>
+<%@page import="it.ethica.esf.model.ESFNational"%>
 <%@page import="it.ethica.esf.util.ManageDate"%>
 
 
@@ -37,4 +41,12 @@
 <%@page import="com.liferay.portal.theme.ThemeDisplay"%>
 <%@page import="com.liferay.portal.model.Group"%>
 <%@page import="com.liferay.portal.service.GroupLocalServiceUtil"%>
+<%@page import="com.liferay.portal.kernel.portlet.PortletClassLoaderUtil"%>
+<%@page import="com.liferay.portal.kernel.dao.orm.DynamicQuery"%>
+<%@page import="com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil"%>
+<%@page import="com.liferay.portal.kernel.dao.orm.RestrictionsFactoryUtil"%>
+
+
+
+
 

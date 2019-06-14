@@ -2623,6 +2623,14 @@
             <finder-column name="id_esf_raduno"></finder-column>
         </finder>
     </entity>
+    <entity name="ESFRadunoAzzurri" local-service="true" remote-service="false">
+        <column name="id_esf_raduno_azzurri" type="long" primary="true" id-type="identity"></column>
+        <column name="id_esf_raduno" type="long" primary="true"></column>
+        <column name="esf_national_id" type="long"></column>
+        <finder name="findByRaduno" return-type="Collection">
+            <finder-column name="id_esf_raduno"></finder-column>
+        </finder>
+    </entity>
 	
 	<exceptions>
 		<exception>ESFAddressLatitude</exception>

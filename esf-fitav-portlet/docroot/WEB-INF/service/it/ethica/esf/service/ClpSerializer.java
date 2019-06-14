@@ -76,6 +76,7 @@ import it.ethica.esf.model.ESFPartecipantTypeClp;
 import it.ethica.esf.model.ESFPhoneClp;
 import it.ethica.esf.model.ESFProvinceClp;
 import it.ethica.esf.model.ESFPublicAuthorityClp;
+import it.ethica.esf.model.ESFRadunoAzzurriClp;
 import it.ethica.esf.model.ESFRadunoClp;
 import it.ethica.esf.model.ESFRadunoFilesClp;
 import it.ethica.esf.model.ESFRadunoSottotipiRadunoClp;
@@ -401,6 +402,10 @@ public class ClpSerializer {
 
 		if (oldModelClassName.equals(ESFRadunoClp.class.getName())) {
 			return translateInputESFRaduno(oldModel);
+		}
+
+		if (oldModelClassName.equals(ESFRadunoAzzurriClp.class.getName())) {
+			return translateInputESFRadunoAzzurri(oldModel);
 		}
 
 		if (oldModelClassName.equals(ESFRadunoFilesClp.class.getName())) {
@@ -1097,6 +1102,16 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+	public static Object translateInputESFRadunoAzzurri(BaseModel<?> oldModel) {
+		ESFRadunoAzzurriClp oldClpModel = (ESFRadunoAzzurriClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getESFRadunoAzzurriRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
 	public static Object translateInputESFRadunoFiles(BaseModel<?> oldModel) {
 		ESFRadunoFilesClp oldClpModel = (ESFRadunoFilesClp)oldModel;
 
@@ -1700,6 +1715,11 @@ public class ClpSerializer {
 		}
 
 		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFRadunoAzzurriImpl")) {
+			return translateOutputESFRadunoAzzurri(oldModel);
+		}
+
+		if (oldModelClassName.equals(
 					"it.ethica.esf.model.impl.ESFRadunoFilesImpl")) {
 			return translateOutputESFRadunoFiles(oldModel);
 		}
@@ -2214,6 +2234,10 @@ public class ClpSerializer {
 
 		if (className.equals("it.ethica.esf.NoSuchRadunoException")) {
 			return new it.ethica.esf.NoSuchRadunoException();
+		}
+
+		if (className.equals("it.ethica.esf.NoSuchRadunoAzzurriException")) {
+			return new it.ethica.esf.NoSuchRadunoAzzurriException();
 		}
 
 		if (className.equals("it.ethica.esf.NoSuchRadunoFilesException")) {
@@ -2899,6 +2923,16 @@ public class ClpSerializer {
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
 		newModel.setESFRadunoRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputESFRadunoAzzurri(BaseModel<?> oldModel) {
+		ESFRadunoAzzurriClp newModel = new ESFRadunoAzzurriClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setESFRadunoAzzurriRemoteModel(oldModel);
 
 		return newModel;
 	}

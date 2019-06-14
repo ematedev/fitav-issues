@@ -1,7 +1,9 @@
 package it.ethica.esf.portlet.raduni;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,6 +18,8 @@ import javax.portlet.PortletURL;
 import javax.portlet.ProcessAction;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.el.util.Validation;
@@ -36,50 +40,34 @@ import com.liferay.portal.service.GroupLocalServiceUtil;
 import com.liferay.portal.theme.ThemeDisplay;
 import com.liferay.portal.util.PortalUtil;
 import com.liferay.util.bridges.mvc.MVCPortlet;
+import com.liferay.portal.kernel.servlet.ServletResponseUtil;
 import com.liferay.portal.kernel.servlet.SessionMessages;
 import com.liferay.portal.kernel.upload.UploadPortletRequest;
 
 import it.ethica.esf.NoSuchRadunoException;
+import it.ethica.esf.model.ESFNational;
 import it.ethica.esf.model.ESFOrganization;
 import it.ethica.esf.model.ESFRaduno;
 import it.ethica.esf.model.ESFRadunoFiles;
 import it.ethica.esf.model.ESFRadunoSottotipiRaduno;
 import it.ethica.esf.model.ESFRadunoSottotipo;
 import it.ethica.esf.model.ESFRadunoTipo;
+import it.ethica.esf.model.ESFSportType;
 import it.ethica.esf.model.impl.ESFRadunoFilesImpl;
 import it.ethica.esf.model.impl.ESFRadunoImpl;
+import it.ethica.esf.service.ESFNationalLocalServiceUtil;
 import it.ethica.esf.service.ESFOrganizationLocalServiceUtil;
 import it.ethica.esf.service.ESFRadunoFilesLocalServiceUtil;
 import it.ethica.esf.service.ESFRadunoLocalServiceUtil;
 import it.ethica.esf.service.ESFRadunoSottotipiRadunoLocalServiceUtil;
 import it.ethica.esf.service.ESFRadunoTipoLocalServiceUtil;
+import it.ethica.esf.service.ESFSportTypeLocalServiceUtil;
 import it.ethica.esf.util.DateUtilFormatter;
 
 /**
  * Portlet implementation class ESFRaduni
  */
 public class ESFRaduni extends MVCPortlet {
-//	/**
-//	 * 
-//	 * Funzione di ricerca di Tutte le nazioni presenti nel DB
-//	 * restituisce una lista di Country
-//	 * @return
-//	 */
-//	public List<Country> trovaNazioni(){
-//		List<Country> countries = null;
-//		
-//		try {
-//			countries = CountryServiceUtil.getCountries();
-//		} catch (SystemException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		
-//		
-//		return countries;
-//		
-//	}
-//	
 	/**
 	 * 
 	 * Funzione che inizializza i Tipi di raduno
@@ -117,34 +105,15 @@ public class ESFRaduni extends MVCPortlet {
 	
 	@Override
 	public void render(RenderRequest request, RenderResponse response) throws PortletException, IOException {
-
-		System.out.println("########################## RENDER ################################]");
-		
-//		
-//		try {
-//			List<ESFRaduno> listaRaduni = ESFRadunoLocalServiceUtil.findAllRaduni();
-//			int numeroRaduni = ESFRadunoLocalServiceUtil.countAllRaduni();
-//			request.setAttribute("listaRaduni", listaRaduni);
-//			request.setAttribute("numeroRaduni", numeroRaduni);
-//			System.out.println("NUmero righe: " + numeroRaduni);
-//			for(ESFRaduno raduno : listaRaduni){
-//				System.out.println("Codice: " + raduno.getCodice() + " - INIZIO: " + raduno.getData_inizio());
-//			}
-//			
-//		} catch (SystemException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		
-//		
-//		
-		
+		//System.out.println("########################## RENDER ################################]");
 		super.render(request, response);
 	}
 
 
 	/**
 	 * Funzione di risposta al bottone "ricerca" nella View principale
+	 * carica dalla Request i parametri del codice raduno, la data di inizio e la tipologia del raduno
+	 * Restituisce una lista di oggetti ESFRaduno e la mette nella request
 	 * @param request
 	 * @param response
 	 * @throws SystemException 
@@ -158,15 +127,10 @@ public class ESFRaduni extends MVCPortlet {
 			request.setAttribute("listaSottoTipiRaduno", trovaSottoTipiRaduno());
 			
 			String code = ParamUtil.getString(request, "code",null);
-			//Date startDate = ParamUtil.getDate(request, "startDate", DateUtilFormatter.getDefaultFormatter());
 			Date startDate = ParamUtil.getDate(request, "startDate", DateUtilFormatter.getDefaultFormatter(), null);
 			long esfTipoRaduno = ParamUtil.getLong(request, "esfTipoRaduno");
-			//long esfCountryId = ParamUtil.getLong(request, "esfCountryId");
-			
 			
 			List<ESFRaduno> listaRaduno = new ArrayList<ESFRaduno>();
-
-			
 			// TODO RIMUOVERE LE PRINTLN
 			System.out.println("Codice: [" + code + "]");
 			System.out.println("Data Inizio: [" + startDate + "]");
@@ -174,6 +138,7 @@ public class ESFRaduni extends MVCPortlet {
 			//System.out.println("Nazione id: [" + esfCountryId + "]");
 			
 			
+			// CREO la DynamicQuery aggiungendo condizioni a seconda se i campi sono vuoti o sono valorizzati
 			DynamicQuery dq = DynamicQueryFactoryUtil.forClass(ESFRaduno.class, "Raduno", PortletClassLoaderUtil.getClassLoader());
 			if (!code.isEmpty())
 				dq.add(RestrictionsFactoryUtil.eq("Raduno.codice", code));
@@ -183,11 +148,12 @@ public class ESFRaduni extends MVCPortlet {
 				
 			if(esfTipoRaduno!=0)
 				dq.add(RestrictionsFactoryUtil.eq("Raduno.tipo_raduno", esfTipoRaduno));
-			
 			listaRaduno = ESFRadunoLocalServiceUtil.dynamicQuery(dq);
 				
-			
 			request.setAttribute("listaRaduno", listaRaduno);
+			String successMessage = "la ricerca ha prodotto " + listaRaduno.size() + " Risultati";
+			SessionMessages.add(request, "addSuccess");
+			request.setAttribute("successMessage", successMessage);
 			
 			// TODO RIMUOVERE LE PRINTLN
 			for(ESFRaduno raduno : listaRaduno){
@@ -204,42 +170,103 @@ public class ESFRaduni extends MVCPortlet {
 		}
 		
 	}
-
-	@ProcessAction(name="ricercaAssociazioni")
-	public void ricercaAssociazioni(ActionRequest request, ActionResponse response) {
-		System.out.println("################# RICERCA ASSOCIAZIONI #####################");
+	
+	
+	
+	@SuppressWarnings("unchecked")
+	@ProcessAction(name="ricercaAzzurri")
+	public void ricercaAzzurri(ActionRequest request, ActionResponse response) {
+		System.out.println("################# RICERCA AZZURRI #####################");
 		
-		String goToURL = "/html/esfraduni/popup/chooseAssociation.jsp";
-		List<ESFOrganization> allOrganization = new ArrayList<ESFOrganization>();
+		long id_esf_raduno = ParamUtil.getLong(request, "id_esf_raduno");
+		String code = ParamUtil.getString(request, "code");
+		String name = ParamUtil.getString(request, "name","");
+		Date startDate = ParamUtil.getDate(request, "startDate", DateUtilFormatter.getDefaultFormatter(), null);
+		long esfSportType = ParamUtil.getLong(request, "esfSportType");
 		
+		String delta = ParamUtil.getString(request, "delta");
+		String cur = ParamUtil.getString(request, "cur");
 		
 		try {
-			ThemeDisplay themeDisplay= (ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);
-			long scopeGroupId = themeDisplay.getScopeGroupId();
-			Group group = GroupLocalServiceUtil.getGroup(scopeGroupId);
-			long currentOrganizationId = group.getOrganizationId();
-//			ESFOrganization currentESFOrganization = ESFOrganizationLocalServiceUtil.fetchESFOrganization(currentOrganizationId);
-//			long esfOrganizationId = currentESFOrganization.getEsfOrganizationId();
+			List<ESFNational> listaNazionali = new ArrayList<ESFNational>();
+			// CREO la DynamicQuery aggiungendo condizioni a seconda se i campi sono vuoti o sono valorizzati
+			DynamicQuery dq = DynamicQueryFactoryUtil.forClass(ESFNational.class, "Azzurri", PortletClassLoaderUtil.getClassLoader());
+			if (!name.isEmpty())
+				dq.add(RestrictionsFactoryUtil.like("Azzurri.userName", name));
+			
+			if(startDate != null)
+				dq.add(RestrictionsFactoryUtil.ge("Azzurri.userstartDate", startDate));
+				
+			if(esfSportType!=0)
+				dq.add(RestrictionsFactoryUtil.eq("Azzurri.esfSportTypeId", esfSportType));
+			listaNazionali = ESFNationalLocalServiceUtil.dynamicQuery(dq);
+			
+			for (ESFNational nazionale : listaNazionali){
+				System.out.println("[NOME: " + nazionale.getUserName() + " ]");
+			}
 			
 			
-			allOrganization = ESFOrganizationLocalServiceUtil.findAllLeafOrganizations(currentOrganizationId,"","");
-			ListUtil.subList(allOrganization, 0, 5);
-//			// TODO RIMUOVERE LE PRINTLN
-//			for(ESFOrganization org : allOrganization){
-//				System.out.println("Codice: [" + org.getCode() + "] - INIZIO: [" + org.getName()  + "]");
-//			}
-			request.setAttribute("allOrganization", allOrganization);
+			String goToURL = "/html/esfraduni/managementAzzurri.jsp";
+			request.setAttribute("listaNazionali", listaNazionali);
+			response.setRenderParameter("id_esf_raduno", String.valueOf(id_esf_raduno));
+			response.setRenderParameter("code", code);
+			if (!delta.isEmpty())
+				response.setRenderParameter("delta", delta);
+			if(!cur.isEmpty())
+				response.setRenderParameter("cur", cur);
 			response.setRenderParameter("jspPage", goToURL);
-
-			
-		} catch (PortalException | SystemException e) {
+		} catch (SystemException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		
-	}	
+		
+	}
 	
+	
+//
+//	/**
+//	 * Funzione di risposta al bottone "ricerca" nella Popup delle Associazioni
+//	 * carica dalla Request i parametri del codice raduno, la data di inizio e la tipologia del raduno
+//	 * Restituisce una lista di oggetti ESFRaduno e la mette nella request
+//	 * @param request
+//	 * @param response
+//	 */
+//	@ProcessAction(name="ricercaAssociazioni")
+//	public void ricercaAssociazioni(ActionRequest request, ActionResponse response) {
+//		System.out.println("################# RICERCA ASSOCIAZIONI #####################");
+//		
+//		String goToURL = "/html/esfraduni/popup/chooseAssociation.jsp";
+//		List<ESFOrganization> allOrganization = new ArrayList<ESFOrganization>();
+//		
+//		try {
+//			ThemeDisplay themeDisplay= (ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);
+//			long scopeGroupId = themeDisplay.getScopeGroupId();
+//			Group group = GroupLocalServiceUtil.getGroup(scopeGroupId);
+//			long currentOrganizationId = group.getOrganizationId();
+////			ESFOrganization currentESFOrganization = ESFOrganizationLocalServiceUtil.fetchESFOrganization(currentOrganizationId);
+////			long esfOrganizationId = currentESFOrganization.getEsfOrganizationId();
+//			
+//			
+//			allOrganization = ESFOrganizationLocalServiceUtil.findAllLeafOrganizations(currentOrganizationId,"","");
+//			ListUtil.subList(allOrganization, 0, 5);
+////			// TODO RIMUOVERE LE PRINTLN
+////			for(ESFOrganization org : allOrganization){
+////				System.out.println("Codice: [" + org.getCode() + "] - INIZIO: [" + org.getName()  + "]");
+////			}
+//			request.setAttribute("allOrganization", allOrganization);
+//			response.setRenderParameter("jspPage", goToURL);
+//
+//			
+//		} catch (PortalException | SystemException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+//		
+//	}	
+//	
 	
 
 	/**
@@ -402,7 +429,7 @@ public class ESFRaduni extends MVCPortlet {
 			SessionMessages.add(request, "addSuccess");
 			request.setAttribute("successMessage", msg);
 		}else{
-			msg = "Non è stato possibile cancellare Il Raduno con Codice '" + radunoCancellato.getCodice() + "'!";
+			msg = "Non è stato possibile cancellare Il Raduno !";
 			SessionMessages.add(request, "errorMsg");
 			request.setAttribute("errorMessage", msg);
 		}
@@ -424,14 +451,6 @@ public class ESFRaduni extends MVCPortlet {
 		long esfAssociationId = ParamUtil.getLong(request, "esfAssociationId");
 		String site = ParamUtil.getString(request, "site");
 		
-//		System.out.println("ID: " + id_esf_raduno);
-//		System.out.println("Codice: " + code);
-		System.out.println("Data Inizio: " + startDate);
-		System.out.println("Data Fine: " + endDate);
-		System.out.println("esfAssociationId: " + esfAssociationId);
-//		System.out.println("Sotto Tipo Raduno id: " + idSottoTipoRaduno);
-//		System.out.println("Note: " + notes);
-
 		List<ESFRadunoSottotipiRaduno> listaRadunoSottotipiRaduno = new ArrayList<ESFRadunoSottotipiRaduno>();
 		List<ESFRadunoSottotipo> listaSottoTipiRaduno = new ArrayList<ESFRadunoSottotipo>();;
 		try {
@@ -488,8 +507,6 @@ public class ESFRaduni extends MVCPortlet {
 		esfRadunoEdit.setId_associazione_ospitante(esfAssociationId);
 		esfRadunoEdit.setAltra_sede_ospitante(site);
 		
-		
-		
 		request.setAttribute("radunoEdit", esfRadunoEdit);
 		String goToURL = "/html/esfraduni/new_edit_esfRaduno.jsp";
 		response.setRenderParameter("jspPage", goToURL);
@@ -505,12 +522,9 @@ public class ESFRaduni extends MVCPortlet {
 
 	
 	/**
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
+	 * Funzione che trasferisce un File sul Server
+	 * Prende in ingresso dalla uploadRequest sia l'i del raduno, che il suo codice
+	 * Scrive inoltre nel DB i dati del file trasferito
 	 * @param request
 	 * @param response
 	 */
@@ -536,18 +550,14 @@ public class ESFRaduni extends MVCPortlet {
 			
 			
 			File uploadedFile = uploadRequest.getFile(paramName);
-			String sourceFileName = uploadedFile.getName();
-			
+			//String sourceFileName = uploadedFile.getName();
 			String nomeOriginale = uploadRequest.getFileName(paramName);
-
 
 			String dir = PropsUtil.get("auto.deploy.tomcat.dest.dir") + File.separator +
 					"raduni_document" + File.separator + id_esf_raduno;
 			
 			File folder = new File(dir);
 			File filePath = new File(folder.getAbsolutePath() + File.separator + nomeOriginale);
-			//System.out.println("FILE: [" + filePath + "]");
-			//System.out.println("NOME ORIGINALE: [" + nomeOriginale + "]");
 			
 			FileUtils.copyFile(uploadedFile, filePath);
 			
@@ -580,7 +590,12 @@ public class ESFRaduni extends MVCPortlet {
 		
 	}
 	
-	
+	/**
+	 * Funzione che cancella il file associato al raduno, sia dal server che dal database
+	 * Prende in ingresso dalla request l'id della tabella dei files associati ai raduni
+	 * @param request
+	 * @param response
+	 */
 	@ProcessAction(name="deleteFileDocumentRaduno")
 	public void deleteFileDocumentRaduno(ActionRequest request, ActionResponse response){
 		System.out.println("################# CANCELLA FILE #####################");
@@ -594,7 +609,6 @@ public class ESFRaduni extends MVCPortlet {
 				return;
 			
 			long id_esf_raduno = fileCancellato.getId_esf_raduno();
-			
 			File file = FileUtils.getFile(fileCancellato.getPath());
 			
 			if(file == null)
@@ -602,11 +616,9 @@ public class ESFRaduni extends MVCPortlet {
 
 			FileUtils.deleteQuietly(file);
 			ESFRaduno raduno = ESFRadunoLocalServiceUtil.findById(id_esf_raduno);
-
 			String msg = "Il File '" + fileCancellato.getNome()	 + "' è stato Cancellato!";
 			SessionMessages.add(request, "addSuccess");
 			request.setAttribute("successMessage", msg);
-
 			String goToURL = "/html/esfraduni/upload/uploadFileRaduno.jsp";
 			response.setRenderParameter("id_esf_raduno", String.valueOf(id_esf_raduno));
 			response.setRenderParameter("code", raduno.getCodice());
@@ -621,6 +633,30 @@ public class ESFRaduni extends MVCPortlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	/**
+	 * Funzione che permette il download del file associato al raduno
+	 * Prende in ingresso il nome e il path completo del file
+	 * @param request
+	 * @param response
+	 */
+	@ProcessAction(name="downloadFileDocumentRaduno")
+	public void downloadFileDocumentRaduno(ActionRequest request, ActionResponse response){
+		System.out.println("################# DOWNLOAD FILE #####################");
+		String nome = request.getParameter("nome");
+		String path = request.getParameter("path");
+
+        try {
+            File file = new File(path);
+            InputStream in = new FileInputStream(file);
+            HttpServletResponse httpRes = PortalUtil.getHttpServletResponse(response);
+            HttpServletRequest httpReq = PortalUtil.getHttpServletRequest(request);
+            ServletResponseUtil.sendFile(httpReq,httpRes, nome, in, "application/download");
+            in.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }       		
 		
 	}
 }

@@ -94,6 +94,7 @@ import it.ethica.esf.service.persistence.ESFPartecipantTypePersistence;
 import it.ethica.esf.service.persistence.ESFPhonePersistence;
 import it.ethica.esf.service.persistence.ESFProvincePersistence;
 import it.ethica.esf.service.persistence.ESFPublicAuthorityPersistence;
+import it.ethica.esf.service.persistence.ESFRadunoAzzurriPersistence;
 import it.ethica.esf.service.persistence.ESFRadunoFilesPersistence;
 import it.ethica.esf.service.persistence.ESFRadunoPersistence;
 import it.ethica.esf.service.persistence.ESFRadunoSottotipiRadunoPersistence;
@@ -2587,6 +2588,44 @@ public abstract class ESFFieldLocalServiceBaseImpl extends BaseLocalServiceImpl
 	}
 
 	/**
+	 * Returns the e s f raduno azzurri local service.
+	 *
+	 * @return the e s f raduno azzurri local service
+	 */
+	public it.ethica.esf.service.ESFRadunoAzzurriLocalService getESFRadunoAzzurriLocalService() {
+		return esfRadunoAzzurriLocalService;
+	}
+
+	/**
+	 * Sets the e s f raduno azzurri local service.
+	 *
+	 * @param esfRadunoAzzurriLocalService the e s f raduno azzurri local service
+	 */
+	public void setESFRadunoAzzurriLocalService(
+		it.ethica.esf.service.ESFRadunoAzzurriLocalService esfRadunoAzzurriLocalService) {
+		this.esfRadunoAzzurriLocalService = esfRadunoAzzurriLocalService;
+	}
+
+	/**
+	 * Returns the e s f raduno azzurri persistence.
+	 *
+	 * @return the e s f raduno azzurri persistence
+	 */
+	public ESFRadunoAzzurriPersistence getESFRadunoAzzurriPersistence() {
+		return esfRadunoAzzurriPersistence;
+	}
+
+	/**
+	 * Sets the e s f raduno azzurri persistence.
+	 *
+	 * @param esfRadunoAzzurriPersistence the e s f raduno azzurri persistence
+	 */
+	public void setESFRadunoAzzurriPersistence(
+		ESFRadunoAzzurriPersistence esfRadunoAzzurriPersistence) {
+		this.esfRadunoAzzurriPersistence = esfRadunoAzzurriPersistence;
+	}
+
+	/**
 	 * Returns the e s f raduno files local service.
 	 *
 	 * @return the e s f raduno files local service
@@ -4448,6 +4487,10 @@ public abstract class ESFFieldLocalServiceBaseImpl extends BaseLocalServiceImpl
 	protected it.ethica.esf.service.ESFRadunoLocalService esfRadunoLocalService;
 	@BeanReference(type = ESFRadunoPersistence.class)
 	protected ESFRadunoPersistence esfRadunoPersistence;
+	@BeanReference(type = it.ethica.esf.service.ESFRadunoAzzurriLocalService.class)
+	protected it.ethica.esf.service.ESFRadunoAzzurriLocalService esfRadunoAzzurriLocalService;
+	@BeanReference(type = ESFRadunoAzzurriPersistence.class)
+	protected ESFRadunoAzzurriPersistence esfRadunoAzzurriPersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFRadunoFilesLocalService.class)
 	protected it.ethica.esf.service.ESFRadunoFilesLocalService esfRadunoFilesLocalService;
 	@BeanReference(type = ESFRadunoFilesPersistence.class)

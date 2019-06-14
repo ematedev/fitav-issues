@@ -748,6 +748,13 @@ create table ESFRaduno (
 	altra_sede_ospitante VARCHAR(75) null
 );
 
+create table ESFRadunoAzzurri (
+	id_esf_raduno_azzurri LONG not null IDENTITY,
+	id_esf_raduno LONG not null,
+	esf_national_id LONG,
+	primary key (id_esf_raduno_azzurri, id_esf_raduno)
+);
+
 create table ESFRadunoFiles (
 	id_esf_raduno_files LONG not null primary key IDENTITY,
 	id_esf_raduno LONG,
