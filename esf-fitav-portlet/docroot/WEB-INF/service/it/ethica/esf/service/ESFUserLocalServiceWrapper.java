@@ -387,6 +387,13 @@ public class ESFUserLocalServiceWrapper implements ESFUserLocalService,
 	}
 
 	@Override
+	public java.util.List<it.ethica.esf.model.ESFUser> getShooterByStateAndOrganization(
+		int state, long organizationId) {
+		return _esfUserLocalService.getShooterByStateAndOrganization(state,
+			organizationId);
+	}
+
+	@Override
 	public java.util.List<it.ethica.esf.model.ESFUser> getAllShooterByLikeF_C_S(
 		java.lang.String firstName, java.lang.String lastName,
 		java.lang.String cardCode, long organizationId, int start, int end) {

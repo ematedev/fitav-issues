@@ -70,6 +70,40 @@ public class ESFUserFinderImpl extends BasePersistenceImpl<ESFUser>
 		return null;
 	}
 	
+	public List<ESFUser> findShooter(long orgId, int state, int begin, int end) {
+			Session session = null;
+			try {
+				session = openSession();
+
+				String sql = CustomSQLUtil.get("it.ethica.esf.service.persistence.ESFUserFinder.findOrgShooters");
+
+				SQLQuery q = session.createSQLQuery(sql);
+				q.setCacheable(false);
+				q.addEntity("ESFUser", ESFUserImpl.class);
+
+				QueryPos qPos = QueryPos.getInstance(q);
+				qPos.add(state);
+				qPos.add(orgId);
+				List<ESFUser> u= (List<ESFUser>) QueryUtil.list(q, getDialect(), begin, end);
+				if(u==null){
+					u = new ArrayList<ESFUser>();
+				}
+				return u;
+			}
+			catch (Exception e) {
+				try {
+					throw new SystemException(e);
+				}
+				catch (SystemException se) {
+					se.printStackTrace();
+				}
+			}
+			finally {
+				closeSession(session);
+			}
+
+			return null;
+		}
 	
 	public List<ESFUser> findAllShooter(
 			String firstName, String lastName, long orgId, String cardCode,
@@ -1001,7 +1035,7 @@ public class ESFUserFinderImpl extends BasePersistenceImpl<ESFUser>
 	
 	/*
 	 * 
-	 * ricerca dei tiratori in età giovanile ancora non inseriti
+	 * ricerca dei tiratori in etï¿½ giovanile ancora non inseriti
 	 * 
 	 */
 	
@@ -1041,7 +1075,7 @@ public class ESFUserFinderImpl extends BasePersistenceImpl<ESFUser>
 	}
 	/*
 	 * ricerca dei giovani per categoria
-	 * la categoria tiene già conto del sesso
+	 * la categoria tiene giï¿½ conto del sesso
 	 */
 	
 	public List<ESFUser> findYouthByCategory(long categoryId,int year,
@@ -1210,7 +1244,7 @@ public class ESFUserFinderImpl extends BasePersistenceImpl<ESFUser>
 	
 	/*
 	 * 
-	 * Ricerca tiratori associati per nome, cognome, tessera e società
+	 * Ricerca tiratori associati per nome, cognome, tessera e societï¿½
 	 * 
 	 */
 	

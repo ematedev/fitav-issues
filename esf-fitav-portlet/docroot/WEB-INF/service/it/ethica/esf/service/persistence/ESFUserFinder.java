@@ -22,6 +22,9 @@ public interface ESFUserFinder {
 		java.lang.String firstName, java.lang.String lastName, long orgId,
 		java.lang.String cardCode, int state, int begin, int end);
 
+	public java.util.List<it.ethica.esf.model.ESFUser> findShooter(long orgId,
+		int state, int begin, int end);
+
 	public java.util.List<it.ethica.esf.model.ESFUser> findAllShooter(
 		java.lang.String firstName, java.lang.String lastName, long orgId,
 		java.lang.String cardCode, int begin, int end);
