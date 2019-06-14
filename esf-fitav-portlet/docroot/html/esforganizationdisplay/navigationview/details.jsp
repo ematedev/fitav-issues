@@ -87,8 +87,7 @@
 
 	}
 	List<ESFUser> orgShooter = ESFUserLocalServiceUtil
-			.getAllUserByLikeF_C_S("", "", "",
-					ESFKeys.ESFStateType.ENABLE, currentOrganizationId);
+			.getShooterByStateAndOrganization(ESFKeys.ESFStateType.ENABLE, currentOrganizationId);
 
 	if ((Validator.isNull(orgShooter) && 0 < minShooter)
 			|| orgShooter.size() < minShooter) {

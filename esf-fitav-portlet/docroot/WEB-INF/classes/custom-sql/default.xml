@@ -22,7 +22,21 @@
 		and c.code_ LIKE ?
 		order by u.lastName, u.firstName
 	</sql>
-
+	
+	<sql id="it.ethica.esf.service.persistence.ESFUserFinder.findOrgShooters">	
+	Select eu.*
+		from esfuser eu 
+	    join esfcard c 
+	    on c.esfUserId=eu.esfUserId
+	    join esfentitystate e 
+	    on c.esfcardId = e.classPK 
+	    join organization_ o 
+	    on o.organizationId=c.esfOrganizationId 
+	    where 
+	        e.esfStateId = ? 
+	        and o.organizationId = ? 
+	        and e.className = 'it.ethica.esf.model.ESFCard'
+	</sql>
 	
 	<sql id="it.ethica.esf.service.persistence.ESFUserFinder.findAllShooter">
 		select distinct test.* 

@@ -38,10 +38,11 @@
 
 
 			<%
+				String name = null;
 				for (ESFState esfState : esfStates) {
 					boolean selected = false;
 					if (Validator.isNotNull(esfState)) {
-						String name = esfState.getName() + "**";
+						name = esfState.getName();
 						if (Validator.isNotNull(esfEntityState) && (esfState.getEsfStateId() == esfEntityState.getEsfStateId())) {
 							selected = true;
 						}

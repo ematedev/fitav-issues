@@ -12,7 +12,7 @@
 	String variationChanged = "";
 	
 	if(Validator.isNotNull(esfEntityState)){
-		stateName = ESFStateLocalServiceUtil.fetchESFState(esfEntityState.getEsfStateId()).getName()+"**";
+		stateName = ESFStateLocalServiceUtil.fetchESFState(esfEntityState.getEsfStateId()).getName();
 		stateChanged = stateName;
 	}
 	
@@ -126,7 +126,7 @@ if(historyTot.size()>0){
 	System.out.println("state="+state);
 	%>
 		<aui:input name="state" label="state_Org" type="text" disabled="true"
-					value='<%=res.getString(state+"**")%>' inlineField="true">
+					value='<%=state%>' inlineField="true">
 		</aui:input>
 	</div>
 	
