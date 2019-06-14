@@ -113,7 +113,7 @@ sportTypes = ESFSportTypeLocalServiceUtil.getAllESFSportTypes();
 		<liferay-ui:search-container-column-text name="sport-type" value="<%=stName %>" />
 		<liferay-ui:search-container-column-text name="esf-date-assign" value="<%=sdf.format(shDt.getEsfStartData()) %>" />
 		<liferay-ui:search-container-column-jsp
-				path='<%=templatePath + "modifyShDrAction.jsp"%>' align="right" />
+				path='<%=templatePath + "modifyShootingDirectorInfoAction.jsp"%>' align="right" />
 
 		</liferay-ui:search-container-row>
 	<liferay-ui:search-iterator />
