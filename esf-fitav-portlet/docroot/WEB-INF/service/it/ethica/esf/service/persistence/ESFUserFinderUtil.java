@@ -29,6 +29,11 @@ public class ESFUserFinderUtil {
 			begin, end);
 	}
 
+	public static java.util.List<it.ethica.esf.model.ESFUser> findShooter(
+		long orgId, int state, int begin, int end) {
+		return getFinder().findShooter(orgId, state, begin, end);
+	}
+
 	public static java.util.List<it.ethica.esf.model.ESFUser> findAllShooter(
 		java.lang.String firstName, java.lang.String lastName, long orgId,
 		java.lang.String cardCode, int begin, int end) {
