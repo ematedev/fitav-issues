@@ -100,345 +100,345 @@ public class ESFUserLocalServiceClpInvoker {
 
 		_methodParameterTypes15 = new String[] { "it.ethica.esf.model.ESFUser" };
 
-		_methodName404 = "getBeanIdentifier";
+		_methodName408 = "getBeanIdentifier";
 
-		_methodParameterTypes404 = new String[] {  };
+		_methodParameterTypes408 = new String[] {  };
 
-		_methodName405 = "setBeanIdentifier";
+		_methodName409 = "setBeanIdentifier";
 
-		_methodParameterTypes405 = new String[] { "java.lang.String" };
+		_methodParameterTypes409 = new String[] { "java.lang.String" };
 
-		_methodName410 = "getESFUsersByDeparture";
+		_methodName414 = "getESFUsersByDeparture";
 
-		_methodParameterTypes410 = new String[] { "long" };
+		_methodParameterTypes414 = new String[] { "long" };
 
-		_methodName411 = "getESFUsersByCodeCode";
+		_methodName415 = "getESFUsersByCodeCode";
 
-		_methodParameterTypes411 = new String[] { "java.lang.String" };
+		_methodParameterTypes415 = new String[] { "java.lang.String" };
 
-		_methodName412 = "getESFUserByUserCode";
+		_methodName416 = "getESFUserByUserCode";
 
-		_methodParameterTypes412 = new String[] { "long" };
+		_methodParameterTypes416 = new String[] { "long" };
 
-		_methodName413 = "getESFUserByCodeUser2";
+		_methodName417 = "getESFUserByCodeUser2";
 
-		_methodParameterTypes413 = new String[] { "long" };
+		_methodParameterTypes417 = new String[] { "long" };
 
-		_methodName414 = "getESFUserByFirstName_LastName_FiscalCode_NotPartecipants";
+		_methodName418 = "getESFUserByFirstName_LastName_FiscalCode_NotPartecipants";
 
-		_methodParameterTypes414 = new String[] {
+		_methodParameterTypes418 = new String[] {
 				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "int", "long"
 			};
 
-		_methodName415 = "getESFUserByFirstName_LastName_FiscalCode_NotPartecipants";
+		_methodName419 = "getESFUserByFirstName_LastName_FiscalCode_NotPartecipants";
 
-		_methodParameterTypes415 = new String[] {
+		_methodParameterTypes419 = new String[] {
 				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "int", "long", "int", "int"
 			};
 
-		_methodName416 = "getESFUserByFirstName_LastName_FiscalCode";
+		_methodName420 = "getESFUserByFirstName_LastName_FiscalCode";
 
-		_methodParameterTypes416 = new String[] {
+		_methodParameterTypes420 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"int", "long", "int", "int"
 			};
 
-		_methodName417 = "getESFUserByFiscalCode";
+		_methodName421 = "getESFUserByFiscalCode";
 
-		_methodParameterTypes417 = new String[] { "java.lang.String" };
+		_methodParameterTypes421 = new String[] { "java.lang.String" };
 
-		_methodName418 = "getAllUserByLikeF_L";
+		_methodName422 = "getAllUserByLikeF_L";
 
-		_methodParameterTypes418 = new String[] {
+		_methodParameterTypes422 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"int", "int"
 			};
 
-		_methodName419 = "countAllUserByLikeF_L";
+		_methodName423 = "countAllUserByLikeF_L";
 
-		_methodParameterTypes419 = new String[] {
+		_methodParameterTypes423 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String"
 			};
 
-		_methodName420 = "getAllUserByLikeF_L_S";
+		_methodName424 = "getAllUserByLikeF_L_S";
 
-		_methodParameterTypes420 = new String[] {
+		_methodParameterTypes424 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"int", "int", "int"
 			};
 
-		_methodName421 = "getAllUserByLikeF_L_S";
+		_methodName425 = "getAllUserByLikeF_L_S";
 
-		_methodParameterTypes421 = new String[] {
+		_methodParameterTypes425 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"int"
 			};
 
-		_methodName422 = "getAllUserByLikeF_C_S";
+		_methodName426 = "getAllUserByLikeF_C_S";
 
-		_methodParameterTypes422 = new String[] {
+		_methodParameterTypes426 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"int", "long", "int", "int"
 			};
 
-		_methodName423 = "getAllUserByLikeF_C_S";
+		_methodName427 = "getAllUserByLikeF_C_S";
 
-		_methodParameterTypes423 = new String[] {
+		_methodParameterTypes427 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"int", "long"
 			};
 
-		_methodName424 = "getAllShooterByLikeF_C_S";
+		_methodName428 = "getAllShooterByLikeF_C_S";
 
-		_methodParameterTypes424 = new String[] {
+		_methodParameterTypes428 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"long", "int", "int"
 			};
 
-		_methodName425 = "getAllShooterByLikeF_C_S";
+		_methodName429 = "getAllShooterByLikeF_C_S";
 
-		_methodParameterTypes425 = new String[] {
+		_methodParameterTypes429 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"long"
 			};
 
-		_methodName426 = "getAllEsfUserByState";
+		_methodName430 = "getAllEsfUserByState";
 
-		_methodParameterTypes426 = new String[] { "int" };
+		_methodParameterTypes430 = new String[] { "int" };
 
-		_methodName427 = "getAllEsfUserByState";
+		_methodName431 = "getAllEsfUserByState";
 
-		_methodParameterTypes427 = new String[] { "int", "int", "int" };
+		_methodParameterTypes431 = new String[] { "int", "int", "int" };
 
-		_methodName428 = "findUserByRoleT_N_S";
+		_methodName432 = "findUserByRoleT_N_S";
 
-		_methodParameterTypes428 = new String[] {
+		_methodParameterTypes432 = new String[] {
 				"java.lang.String", "java.lang.String", "int"
 			};
 
-		_methodName429 = "findAllShooters";
+		_methodName433 = "findAllShooters";
 
-		_methodParameterTypes429 = new String[] { "int", "int" };
+		_methodParameterTypes433 = new String[] { "int", "int" };
 
-		_methodName430 = "findAllShooters";
+		_methodName434 = "findAllShooters";
 
-		_methodParameterTypes430 = new String[] { "long", "int", "int" };
+		_methodParameterTypes434 = new String[] { "long", "int", "int" };
 
-		_methodName431 = "findAllShooters";
+		_methodName435 = "findAllShooters";
 
-		_methodParameterTypes431 = new String[] {
+		_methodParameterTypes435 = new String[] {
 				"long", "int", "int", "int", "int"
 			};
 
-		_methodName432 = "findRoledUserOrganization";
+		_methodName436 = "findRoledUserOrganization";
 
-		_methodParameterTypes432 = new String[] { "long" };
+		_methodParameterTypes436 = new String[] { "long" };
 
-		_methodName433 = "findRoledUserOrganization";
+		_methodName437 = "findRoledUserOrganization";
 
-		_methodParameterTypes433 = new String[] { "long", "int", "int" };
+		_methodParameterTypes437 = new String[] { "long", "int", "int" };
 
-		_methodName434 = "findAllShootersByLeafOrgAssigned";
+		_methodName438 = "findAllShootersByLeafOrgAssigned";
 
-		_methodParameterTypes434 = new String[] {
+		_methodParameterTypes438 = new String[] {
 				"long", "int", "long", "int", "int", "int"
 			};
 
-		_methodName435 = "findAllShootersByLeafOrgAssignedName";
+		_methodName439 = "findAllShootersByLeafOrgAssignedName";
 
-		_methodParameterTypes435 = new String[] {
+		_methodParameterTypes439 = new String[] {
 				"java.lang.String", "java.lang.String", "long", "int", "long",
 				"int", "int", "int"
 			};
 
-		_methodName436 = "countAllShootersByLeafOrgAssignedName";
+		_methodName440 = "countAllShootersByLeafOrgAssignedName";
 
-		_methodParameterTypes436 = new String[] {
+		_methodParameterTypes440 = new String[] {
 				"java.lang.String", "java.lang.String", "long", "int", "long",
 				"int"
 			};
 
-		_methodName437 = "findAllShootersByLeafOrgAssigned";
+		_methodName441 = "findAllShootersByLeafOrgAssigned";
 
-		_methodParameterTypes437 = new String[] { "long", "int", "long", "int" };
+		_methodParameterTypes441 = new String[] { "long", "int", "long", "int" };
 
-		_methodName438 = "findAllShootersByLeafOrg";
+		_methodName442 = "findAllShootersByLeafOrg";
 
-		_methodParameterTypes438 = new String[] { "long", "int", "int" };
+		_methodParameterTypes442 = new String[] { "long", "int", "int" };
 
-		_methodName439 = "findAllShootersByLeafOrg";
+		_methodName443 = "findAllShootersByLeafOrg";
 
-		_methodParameterTypes439 = new String[] {
+		_methodParameterTypes443 = new String[] {
 				"long", "int", "int", "int", "int"
 			};
 
-		_methodName440 = "finNationalDelegationESFUsersByMatchId";
+		_methodName444 = "finNationalDelegationESFUsersByMatchId";
 
-		_methodParameterTypes440 = new String[] { "long" };
+		_methodParameterTypes444 = new String[] { "long" };
 
-		_methodName441 = "findAllStaff";
-
-		_methodParameterTypes441 = new String[] {
-				"java.lang.Long", "java.lang.String", "java.lang.String",
-				"java.lang.String", "int", "java.lang.Long", "int", "int"
-			};
-
-		_methodName442 = "findAllStaffNamed";
-
-		_methodParameterTypes442 = new String[] {
-				"java.lang.Long", "java.lang.String", "java.lang.String",
-				"java.lang.String", "int", "java.lang.Long", "int", "int"
-			};
-
-		_methodName443 = "findStaffNamed";
-
-		_methodParameterTypes443 = new String[] {
-				"long", "java.lang.String", "java.lang.String",
-				"java.lang.String"
-			};
-
-		_methodName444 = "findStaffNamed";
-
-		_methodParameterTypes444 = new String[] {
-				"long", "java.lang.String", "java.lang.String",
-				"java.lang.String", "int", "int"
-			};
-
-		_methodName445 = "findStaffNamedNational";
+		_methodName445 = "findAllStaff";
 
 		_methodParameterTypes445 = new String[] {
+				"java.lang.Long", "java.lang.String", "java.lang.String",
+				"java.lang.String", "int", "java.lang.Long", "int", "int"
+			};
+
+		_methodName446 = "findAllStaffNamed";
+
+		_methodParameterTypes446 = new String[] {
+				"java.lang.Long", "java.lang.String", "java.lang.String",
+				"java.lang.String", "int", "java.lang.Long", "int", "int"
+			};
+
+		_methodName447 = "findStaffNamed";
+
+		_methodParameterTypes447 = new String[] {
 				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String"
 			};
 
-		_methodName446 = "findStaffNamedNational";
+		_methodName448 = "findStaffNamed";
 
-		_methodParameterTypes446 = new String[] {
+		_methodParameterTypes448 = new String[] {
 				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "int", "int"
 			};
 
-		_methodName447 = "findStaff";
+		_methodName449 = "findStaffNamedNational";
 
-		_methodParameterTypes447 = new String[] { "long" };
+		_methodParameterTypes449 = new String[] {
+				"long", "java.lang.String", "java.lang.String",
+				"java.lang.String"
+			};
 
-		_methodName448 = "findStaff";
+		_methodName450 = "findStaffNamedNational";
 
-		_methodParameterTypes448 = new String[] { "long", "int", "int" };
+		_methodParameterTypes450 = new String[] {
+				"long", "java.lang.String", "java.lang.String",
+				"java.lang.String", "int", "int"
+			};
 
-		_methodName449 = "finNationalDelegationESFUsersByMatchId";
+		_methodName451 = "findStaff";
 
-		_methodParameterTypes449 = new String[] { "long", "int", "int" };
+		_methodParameterTypes451 = new String[] { "long" };
 
-		_methodName450 = "findNationalDelegationStaffESFUsersByMatchId";
+		_methodName452 = "findStaff";
 
-		_methodParameterTypes450 = new String[] { "long" };
+		_methodParameterTypes452 = new String[] { "long", "int", "int" };
 
-		_methodName451 = "findNationalDelegationStaffESFUsersByMatchId";
-
-		_methodParameterTypes451 = new String[] { "long", "int", "int" };
-
-		_methodName452 = "findNationalDelegationsESFUsersByMatchId";
-
-		_methodParameterTypes452 = new String[] { "long" };
-
-		_methodName453 = "findNationalDelegationsESFUsersByMatchId";
+		_methodName453 = "finNationalDelegationESFUsersByMatchId";
 
 		_methodParameterTypes453 = new String[] { "long", "int", "int" };
 
-		_methodName454 = "findNationalDelegationsESFUsersByMatchId_PartecipantTypeId";
+		_methodName454 = "findNationalDelegationStaffESFUsersByMatchId";
 
-		_methodParameterTypes454 = new String[] { "long", "long" };
+		_methodParameterTypes454 = new String[] { "long" };
 
-		_methodName455 = "findNationalDelegationsESFUsersByMatchId_PartecipantTypeId";
+		_methodName455 = "findNationalDelegationStaffESFUsersByMatchId";
 
-		_methodParameterTypes455 = new String[] { "long", "long", "int", "int" };
+		_methodParameterTypes455 = new String[] { "long", "int", "int" };
 
-		_methodName456 = "findNationalShooters";
+		_methodName456 = "findNationalDelegationsESFUsersByMatchId";
 
-		_methodParameterTypes456 = new String[] {  };
+		_methodParameterTypes456 = new String[] { "long" };
 
-		_methodName457 = "findNationalShooters";
+		_methodName457 = "findNationalDelegationsESFUsersByMatchId";
 
-		_methodParameterTypes457 = new String[] { "int", "int" };
+		_methodParameterTypes457 = new String[] { "long", "int", "int" };
 
-		_methodName458 = "findNationalPartecipantShooters";
+		_methodName458 = "findNationalDelegationsESFUsersByMatchId_PartecipantTypeId";
 
-		_methodParameterTypes458 = new String[] { "long", "boolean" };
+		_methodParameterTypes458 = new String[] { "long", "long" };
 
-		_methodName459 = "findNationalPartecipantShooters";
+		_methodName459 = "findNationalDelegationsESFUsersByMatchId_PartecipantTypeId";
 
-		_methodParameterTypes459 = new String[] { "long", "boolean", "int", "int" };
+		_methodParameterTypes459 = new String[] { "long", "long", "int", "int" };
 
-		_methodName460 = "findPartecipantShooters";
+		_methodName460 = "findNationalShooters";
 
-		_methodParameterTypes460 = new String[] { "int", "int", "long", "boolean" };
+		_methodParameterTypes460 = new String[] {  };
 
-		_methodName461 = "findPartecipantShooters";
+		_methodName461 = "findNationalShooters";
 
-		_methodParameterTypes461 = new String[] {
-				"int", "int", "long", "boolean", "int", "int"
-			};
+		_methodParameterTypes461 = new String[] { "int", "int" };
 
-		_methodName462 = "findNationalPartecipantCoaches";
+		_methodName462 = "findNationalPartecipantShooters";
 
 		_methodParameterTypes462 = new String[] { "long", "boolean" };
 
-		_methodName463 = "findNationalPartecipantCoaches";
+		_methodName463 = "findNationalPartecipantShooters";
 
 		_methodParameterTypes463 = new String[] { "long", "boolean", "int", "int" };
 
-		_methodName464 = "findPartecipantCoaches";
+		_methodName464 = "findPartecipantShooters";
 
-		_methodParameterTypes464 = new String[] { "int", "long", "boolean" };
+		_methodParameterTypes464 = new String[] { "int", "int", "long", "boolean" };
 
-		_methodName465 = "findPartecipantCoaches";
+		_methodName465 = "findPartecipantShooters";
 
 		_methodParameterTypes465 = new String[] {
-				"int", "long", "boolean", "int", "int"
+				"int", "int", "long", "boolean", "int", "int"
 			};
 
-		_methodName466 = "findNationalPartecipantReferees";
+		_methodName466 = "findNationalPartecipantCoaches";
 
 		_methodParameterTypes466 = new String[] { "long", "boolean" };
 
-		_methodName467 = "findNationalPartecipantReferees";
+		_methodName467 = "findNationalPartecipantCoaches";
 
 		_methodParameterTypes467 = new String[] { "long", "boolean", "int", "int" };
 
-		_methodName468 = "findPartecipantReferees";
+		_methodName468 = "findPartecipantCoaches";
 
-		_methodParameterTypes468 = new String[] {
+		_methodParameterTypes468 = new String[] { "int", "long", "boolean" };
+
+		_methodName469 = "findPartecipantCoaches";
+
+		_methodParameterTypes469 = new String[] {
 				"int", "long", "boolean", "int", "int"
 			};
 
-		_methodName469 = "findPartecipantReferees";
-
-		_methodParameterTypes469 = new String[] { "int", "long", "boolean" };
-
-		_methodName470 = "findNationalPartecipantDoctor";
+		_methodName470 = "findNationalPartecipantReferees";
 
 		_methodParameterTypes470 = new String[] { "long", "boolean" };
 
-		_methodName471 = "findNationalPartecipantDoctor";
+		_methodName471 = "findNationalPartecipantReferees";
 
 		_methodParameterTypes471 = new String[] { "long", "boolean", "int", "int" };
 
-		_methodName472 = "findPartecipantDoctor";
+		_methodName472 = "findPartecipantReferees";
 
-		_methodParameterTypes472 = new String[] { "int", "long", "boolean" };
-
-		_methodName473 = "findPartecipantDoctor";
-
-		_methodParameterTypes473 = new String[] {
+		_methodParameterTypes472 = new String[] {
 				"int", "long", "boolean", "int", "int"
 			};
 
-		_methodName476 = "addESFUser";
+		_methodName473 = "findPartecipantReferees";
 
-		_methodParameterTypes476 = new String[] {
+		_methodParameterTypes473 = new String[] { "int", "long", "boolean" };
+
+		_methodName474 = "findNationalPartecipantDoctor";
+
+		_methodParameterTypes474 = new String[] { "long", "boolean" };
+
+		_methodName475 = "findNationalPartecipantDoctor";
+
+		_methodParameterTypes475 = new String[] { "long", "boolean", "int", "int" };
+
+		_methodName476 = "findPartecipantDoctor";
+
+		_methodParameterTypes476 = new String[] { "int", "long", "boolean" };
+
+		_methodName477 = "findPartecipantDoctor";
+
+		_methodParameterTypes477 = new String[] {
+				"int", "long", "boolean", "int", "int"
+			};
+
+		_methodName480 = "addESFUser";
+
+		_methodParameterTypes480 = new String[] {
 				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "int", "int", "int", "boolean",
@@ -448,9 +448,9 @@ public class ESFUserLocalServiceClpInvoker {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName477 = "addESFUserInOrganization";
+		_methodName481 = "addESFUserInOrganization";
 
-		_methodParameterTypes477 = new String[] {
+		_methodParameterTypes481 = new String[] {
 				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "long", "java.util.Locale",
 				"java.lang.String", "java.lang.String", "java.lang.String",
@@ -461,9 +461,9 @@ public class ESFUserLocalServiceClpInvoker {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName478 = "addESFUserInOrganization";
+		_methodName482 = "addESFUserInOrganization";
 
-		_methodParameterTypes478 = new String[] {
+		_methodParameterTypes482 = new String[] {
 				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "long", "java.util.Locale",
 				"java.lang.String", "java.lang.String", "java.lang.String",
@@ -473,16 +473,16 @@ public class ESFUserLocalServiceClpInvoker {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName479 = "deleteESFUser";
+		_methodName483 = "deleteESFUser";
 
-		_methodParameterTypes479 = new String[] {
+		_methodParameterTypes483 = new String[] {
 				"long", "java.util.List",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName480 = "updateESFUser";
+		_methodName484 = "updateESFUser";
 
-		_methodParameterTypes480 = new String[] {
+		_methodParameterTypes484 = new String[] {
 				"long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "int", "int", "int", "boolean", "boolean",
@@ -492,9 +492,9 @@ public class ESFUserLocalServiceClpInvoker {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName481 = "addESFShooter";
+		_methodName485 = "addESFShooter";
 
-		_methodParameterTypes481 = new String[] {
+		_methodParameterTypes485 = new String[] {
 				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "int", "int", "int", "java.lang.String",
@@ -508,9 +508,9 @@ public class ESFUserLocalServiceClpInvoker {
 				"long", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName482 = "updateESFShooter";
+		_methodName486 = "updateESFShooter";
 
-		_methodParameterTypes482 = new String[] {
+		_methodParameterTypes486 = new String[] {
 				"long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "int", "int", "int", "java.lang.String",
@@ -524,222 +524,222 @@ public class ESFUserLocalServiceClpInvoker {
 				"boolean", "long", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName483 = "updateESFUserToESFShooter";
+		_methodName487 = "updateESFUserToESFShooter";
 
-		_methodParameterTypes483 = new String[] {
+		_methodParameterTypes487 = new String[] {
 				"long", "long", "it.ethica.esf.model.ESFCard", "java.util.List",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName484 = "addESFUserToESFShooter";
+		_methodName488 = "addESFUserToESFShooter";
 
-		_methodParameterTypes484 = new String[] { "long", "long" };
+		_methodParameterTypes488 = new String[] { "long", "long" };
 
-		_methodName486 = "countByESFUserRole";
+		_methodName490 = "countByESFUserRole";
 
-		_methodParameterTypes486 = new String[] { "long" };
+		_methodParameterTypes490 = new String[] { "long" };
 
-		_methodName487 = "getESFUserRoles";
+		_methodName491 = "getESFUserRoles";
 
-		_methodParameterTypes487 = new String[] { "long", "boolean" };
+		_methodParameterTypes491 = new String[] { "long", "boolean" };
 
-		_methodName488 = "getActiveESFUserRoles";
+		_methodName492 = "getActiveESFUserRoles";
 
-		_methodParameterTypes488 = new String[] { "long" };
+		_methodParameterTypes492 = new String[] { "long" };
 
-		_methodName489 = "findAllUser";
+		_methodName493 = "findAllUser";
 
-		_methodParameterTypes489 = new String[] {  };
+		_methodParameterTypes493 = new String[] {  };
 
-		_methodName490 = "checkEmailAddress";
-
-		_methodParameterTypes490 = new String[] {
-				"java.lang.String", "com.liferay.portal.service.ServiceContext"
-			};
-
-		_methodName491 = "checkScreenName";
-
-		_methodParameterTypes491 = new String[] {
-				"java.lang.String", "com.liferay.portal.service.ServiceContext"
-			};
-
-		_methodName492 = "findAllUserByAgeOnlyPeople";
-
-		_methodParameterTypes492 = new String[] {  };
-
-		_methodName493 = "findAllUserByRolenoNull";
-
-		_methodParameterTypes493 = new String[] { "long", "long" };
-
-		_methodName494 = "findShooterRoleAssignedName";
+		_methodName494 = "checkEmailAddress";
 
 		_methodParameterTypes494 = new String[] {
+				"java.lang.String", "com.liferay.portal.service.ServiceContext"
+			};
+
+		_methodName495 = "checkScreenName";
+
+		_methodParameterTypes495 = new String[] {
+				"java.lang.String", "com.liferay.portal.service.ServiceContext"
+			};
+
+		_methodName496 = "findAllUserByAgeOnlyPeople";
+
+		_methodParameterTypes496 = new String[] {  };
+
+		_methodName497 = "findAllUserByRolenoNull";
+
+		_methodParameterTypes497 = new String[] { "long", "long" };
+
+		_methodName498 = "findShooterRoleAssignedName";
+
+		_methodParameterTypes498 = new String[] {
 				"java.lang.String", "java.lang.String", "long", "long", "int",
 				"int"
 			};
 
-		_methodName495 = "countShooterRoleAssignedName";
+		_methodName499 = "countShooterRoleAssignedName";
 
-		_methodParameterTypes495 = new String[] {
+		_methodParameterTypes499 = new String[] {
 				"java.lang.String", "java.lang.String", "long", "long"
 			};
 
-		_methodName496 = "findStaffMatch";
+		_methodName500 = "findStaffMatch";
 
-		_methodParameterTypes496 = new String[] {
+		_methodParameterTypes500 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"long", "long", "int", "int"
 			};
 
-		_methodName497 = "countStaffMatch";
+		_methodName501 = "countStaffMatch";
 
-		_methodParameterTypes497 = new String[] {
+		_methodParameterTypes501 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"long", "long"
 			};
 
-		_methodName498 = "findShooterNotAssociated";
-
-		_methodParameterTypes498 = new String[] {
-				"java.lang.String", "java.lang.String", "java.lang.String",
-				"long", "int", "int"
-			};
-
-		_methodName499 = "countNotNationalShooterBySPT";
-
-		_methodParameterTypes499 = new String[] {
-				"java.lang.String", "java.lang.String", "java.lang.String",
-				"long"
-			};
-
-		_methodName500 = "findALLShooterNotAssociated";
-
-		_methodParameterTypes500 = new String[] {
-				"java.lang.String", "java.lang.String", "java.lang.String",
-				"long", "int", "int"
-			};
-
-		_methodName501 = "countALLNotNationalShooterBySPT";
-
-		_methodParameterTypes501 = new String[] {
-				"java.lang.String", "java.lang.String", "java.lang.String",
-				"long"
-			};
-
-		_methodName502 = "findStaffNormalMatch";
+		_methodName502 = "findShooterNotAssociated";
 
 		_methodParameterTypes502 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"long", "int", "int"
 			};
 
-		_methodName503 = "countStaffNormalMatch";
+		_methodName503 = "countNotNationalShooterBySPT";
 
 		_methodParameterTypes503 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"long"
 			};
 
-		_methodName504 = "countRenwalUser";
+		_methodName504 = "findALLShooterNotAssociated";
 
 		_methodParameterTypes504 = new String[] {
-				"java.lang.String", "java.lang.String", "long"
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"long", "int", "int"
 			};
 
-		_methodName505 = "countNewUser";
+		_methodName505 = "countALLNotNationalShooterBySPT";
 
 		_methodParameterTypes505 = new String[] {
-				"java.lang.String", "java.lang.String", "long"
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"long"
 			};
 
-		_methodName506 = "findByKeyword";
+		_methodName506 = "findStaffNormalMatch";
 
 		_methodParameterTypes506 = new String[] {
-				"java.lang.String", "java.lang.String"
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"long", "int", "int"
 			};
 
-		_methodName507 = "findShooterByAss";
+		_methodName507 = "countStaffNormalMatch";
 
 		_methodParameterTypes507 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
-				"long", "int", "int"
+				"long"
 			};
 
-		_methodName508 = "countShooterByAss";
+		_methodName508 = "countRenwalUser";
 
 		_methodParameterTypes508 = new String[] {
-				"java.lang.String", "java.lang.String", "java.lang.String",
-				"long"
+				"java.lang.String", "java.lang.String", "long"
 			};
 
-		_methodName509 = "findShooterByAssAndNoAss";
+		_methodName509 = "countNewUser";
 
 		_methodParameterTypes509 = new String[] {
+				"java.lang.String", "java.lang.String", "long"
+			};
+
+		_methodName510 = "findByKeyword";
+
+		_methodParameterTypes510 = new String[] {
+				"java.lang.String", "java.lang.String"
+			};
+
+		_methodName511 = "findShooterByAss";
+
+		_methodParameterTypes511 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"long", "int", "int"
 			};
 
-		_methodName510 = "countShooterByAssAndNoAss";
+		_methodName512 = "countShooterByAss";
 
-		_methodParameterTypes510 = new String[] {
+		_methodParameterTypes512 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"long"
 			};
 
-		_methodName511 = "findDirectorByMatch";
+		_methodName513 = "findShooterByAssAndNoAss";
 
-		_methodParameterTypes511 = new String[] {
+		_methodParameterTypes513 = new String[] {
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"long", "int", "int"
+			};
+
+		_methodName514 = "countShooterByAssAndNoAss";
+
+		_methodParameterTypes514 = new String[] {
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"long"
+			};
+
+		_methodName515 = "findDirectorByMatch";
+
+		_methodParameterTypes515 = new String[] {
 				"java.lang.String", "java.lang.String", "long", "long", "int",
 				"int"
 			};
 
-		_methodName512 = "countDirectorByMatch";
+		_methodName516 = "countDirectorByMatch";
 
-		_methodParameterTypes512 = new String[] {
+		_methodParameterTypes516 = new String[] {
 				"java.lang.String", "java.lang.String", "long", "long"
 			};
 
-		_methodName513 = "findNewYouthShooter";
+		_methodName517 = "findNewYouthShooter";
 
-		_methodParameterTypes513 = new String[] { "int" };
+		_methodParameterTypes517 = new String[] { "int" };
 
-		_methodName514 = "findYouthByCategory";
+		_methodName518 = "findYouthByCategory";
 
-		_methodParameterTypes514 = new String[] { "long", "int", "int", "int" };
+		_methodParameterTypes518 = new String[] { "long", "int", "int", "int" };
 
-		_methodName515 = "findYouthByCategoryTotal";
+		_methodName519 = "findYouthByCategoryTotal";
 
-		_methodParameterTypes515 = new String[] { "long", "int" };
+		_methodParameterTypes519 = new String[] { "long", "int" };
 
-		_methodName516 = "findNotBDOMemberByAssociatioId";
+		_methodName520 = "findNotBDOMemberByAssociatioId";
 
-		_methodParameterTypes516 = new String[] {
+		_methodParameterTypes520 = new String[] {
 				"java.lang.String", "java.lang.String", "long", "int", "int"
 			};
 
-		_methodName517 = "countNotBDOMemberByAssociatioId";
+		_methodName521 = "countNotBDOMemberByAssociatioId";
 
-		_methodParameterTypes517 = new String[] {
+		_methodParameterTypes521 = new String[] {
 				"java.lang.String", "java.lang.String", "long"
 			};
 
-		_methodName518 = "findAssociatedShooterOrganization";
+		_methodName522 = "findAssociatedShooterOrganization";
 
-		_methodParameterTypes518 = new String[] {
+		_methodParameterTypes522 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"long", "int", "int"
 			};
 
-		_methodName519 = "countAssociatedShooterOrganization";
+		_methodName523 = "countAssociatedShooterOrganization";
 
-		_methodParameterTypes519 = new String[] {
+		_methodParameterTypes523 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"long"
 			};
 
-		_methodName520 = "findByESFFederalRole";
+		_methodName524 = "findByESFFederalRole";
 
-		_methodParameterTypes520 = new String[] { "long" };
+		_methodParameterTypes524 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -831,40 +831,40 @@ public class ESFUserLocalServiceClpInvoker {
 			return ESFUserLocalServiceUtil.updateESFUser((it.ethica.esf.model.ESFUser)arguments[0]);
 		}
 
-		if (_methodName404.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes404, parameterTypes)) {
+		if (_methodName408.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes408, parameterTypes)) {
 			return ESFUserLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName405.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes405, parameterTypes)) {
+		if (_methodName409.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes409, parameterTypes)) {
 			ESFUserLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName410.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes410, parameterTypes)) {
+		if (_methodName414.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes414, parameterTypes)) {
 			return ESFUserLocalServiceUtil.getESFUsersByDeparture(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName411.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes411, parameterTypes)) {
+		if (_methodName415.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes415, parameterTypes)) {
 			return ESFUserLocalServiceUtil.getESFUsersByCodeCode((java.lang.String)arguments[0]);
 		}
 
-		if (_methodName412.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes412, parameterTypes)) {
+		if (_methodName416.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes416, parameterTypes)) {
 			return ESFUserLocalServiceUtil.getESFUserByUserCode(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName413.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes413, parameterTypes)) {
+		if (_methodName417.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes417, parameterTypes)) {
 			return ESFUserLocalServiceUtil.getESFUserByCodeUser2(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName414.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes414, parameterTypes)) {
+		if (_methodName418.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes418, parameterTypes)) {
 			return ESFUserLocalServiceUtil.getESFUserByFirstName_LastName_FiscalCode_NotPartecipants(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(java.lang.String)arguments[3],
@@ -872,8 +872,8 @@ public class ESFUserLocalServiceClpInvoker {
 				((Long)arguments[5]).longValue());
 		}
 
-		if (_methodName415.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes415, parameterTypes)) {
+		if (_methodName419.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes419, parameterTypes)) {
 			return ESFUserLocalServiceUtil.getESFUserByFirstName_LastName_FiscalCode_NotPartecipants(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(java.lang.String)arguments[3],
@@ -883,8 +883,8 @@ public class ESFUserLocalServiceClpInvoker {
 				((Integer)arguments[7]).intValue());
 		}
 
-		if (_methodName416.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes416, parameterTypes)) {
+		if (_methodName420.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes420, parameterTypes)) {
 			return ESFUserLocalServiceUtil.getESFUserByFirstName_LastName_FiscalCode((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Integer)arguments[3]).intValue(),
@@ -893,27 +893,27 @@ public class ESFUserLocalServiceClpInvoker {
 				((Integer)arguments[6]).intValue());
 		}
 
-		if (_methodName417.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes417, parameterTypes)) {
+		if (_methodName421.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes421, parameterTypes)) {
 			return ESFUserLocalServiceUtil.getESFUserByFiscalCode((java.lang.String)arguments[0]);
 		}
 
-		if (_methodName418.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes418, parameterTypes)) {
+		if (_methodName422.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes422, parameterTypes)) {
 			return ESFUserLocalServiceUtil.getAllUserByLikeF_L((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Integer)arguments[3]).intValue(),
 				((Integer)arguments[4]).intValue());
 		}
 
-		if (_methodName419.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes419, parameterTypes)) {
+		if (_methodName423.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes423, parameterTypes)) {
 			return ESFUserLocalServiceUtil.countAllUserByLikeF_L((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2]);
 		}
 
-		if (_methodName420.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes420, parameterTypes)) {
+		if (_methodName424.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes424, parameterTypes)) {
 			return ESFUserLocalServiceUtil.getAllUserByLikeF_L_S((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Integer)arguments[3]).intValue(),
@@ -921,15 +921,15 @@ public class ESFUserLocalServiceClpInvoker {
 				((Integer)arguments[5]).intValue());
 		}
 
-		if (_methodName421.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes421, parameterTypes)) {
+		if (_methodName425.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes425, parameterTypes)) {
 			return ESFUserLocalServiceUtil.getAllUserByLikeF_L_S((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Integer)arguments[3]).intValue());
 		}
 
-		if (_methodName422.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes422, parameterTypes)) {
+		if (_methodName426.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes426, parameterTypes)) {
 			return ESFUserLocalServiceUtil.getAllUserByLikeF_C_S((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Integer)arguments[3]).intValue(),
@@ -938,16 +938,16 @@ public class ESFUserLocalServiceClpInvoker {
 				((Integer)arguments[6]).intValue());
 		}
 
-		if (_methodName423.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes423, parameterTypes)) {
+		if (_methodName427.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes427, parameterTypes)) {
 			return ESFUserLocalServiceUtil.getAllUserByLikeF_C_S((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Integer)arguments[3]).intValue(),
 				((Long)arguments[4]).longValue());
 		}
 
-		if (_methodName424.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes424, parameterTypes)) {
+		if (_methodName428.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes428, parameterTypes)) {
 			return ESFUserLocalServiceUtil.getAllShooterByLikeF_C_S((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Long)arguments[3]).longValue(),
@@ -955,47 +955,47 @@ public class ESFUserLocalServiceClpInvoker {
 				((Integer)arguments[5]).intValue());
 		}
 
-		if (_methodName425.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes425, parameterTypes)) {
+		if (_methodName429.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes429, parameterTypes)) {
 			return ESFUserLocalServiceUtil.getAllShooterByLikeF_C_S((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Long)arguments[3]).longValue());
 		}
 
-		if (_methodName426.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes426, parameterTypes)) {
+		if (_methodName430.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes430, parameterTypes)) {
 			return ESFUserLocalServiceUtil.getAllEsfUserByState(((Integer)arguments[0]).intValue());
 		}
 
-		if (_methodName427.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes427, parameterTypes)) {
+		if (_methodName431.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes431, parameterTypes)) {
 			return ESFUserLocalServiceUtil.getAllEsfUserByState(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName428.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes428, parameterTypes)) {
+		if (_methodName432.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes432, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findUserByRoleT_N_S((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1],
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName429.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes429, parameterTypes)) {
+		if (_methodName433.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes433, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findAllShooters(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
-		if (_methodName430.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes430, parameterTypes)) {
+		if (_methodName434.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes434, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findAllShooters(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName431.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes431, parameterTypes)) {
+		if (_methodName435.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes435, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findAllShooters(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue(),
@@ -1003,20 +1003,20 @@ public class ESFUserLocalServiceClpInvoker {
 				((Integer)arguments[4]).intValue());
 		}
 
-		if (_methodName432.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes432, parameterTypes)) {
+		if (_methodName436.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes436, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findRoledUserOrganization(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName433.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes433, parameterTypes)) {
+		if (_methodName437.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes437, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findRoledUserOrganization(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName434.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes434, parameterTypes)) {
+		if (_methodName438.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes438, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findAllShootersByLeafOrgAssigned(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Long)arguments[2]).longValue(),
@@ -1025,8 +1025,8 @@ public class ESFUserLocalServiceClpInvoker {
 				((Integer)arguments[5]).intValue());
 		}
 
-		if (_methodName435.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes435, parameterTypes)) {
+		if (_methodName439.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes439, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findAllShootersByLeafOrgAssignedName((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(),
@@ -1037,8 +1037,8 @@ public class ESFUserLocalServiceClpInvoker {
 				((Integer)arguments[7]).intValue());
 		}
 
-		if (_methodName436.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes436, parameterTypes)) {
+		if (_methodName440.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes440, parameterTypes)) {
 			return ESFUserLocalServiceUtil.countAllShootersByLeafOrgAssignedName((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(),
@@ -1047,23 +1047,23 @@ public class ESFUserLocalServiceClpInvoker {
 				((Integer)arguments[5]).intValue());
 		}
 
-		if (_methodName437.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes437, parameterTypes)) {
+		if (_methodName441.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes441, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findAllShootersByLeafOrgAssigned(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Long)arguments[2]).longValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
-		if (_methodName438.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes438, parameterTypes)) {
+		if (_methodName442.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes442, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findAllShootersByLeafOrg(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName439.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes439, parameterTypes)) {
+		if (_methodName443.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes443, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findAllShootersByLeafOrg(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue(),
@@ -1071,13 +1071,13 @@ public class ESFUserLocalServiceClpInvoker {
 				((Integer)arguments[4]).intValue());
 		}
 
-		if (_methodName440.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes440, parameterTypes)) {
+		if (_methodName444.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes444, parameterTypes)) {
 			return ESFUserLocalServiceUtil.finNationalDelegationESFUsersByMatchId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName441.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes441, parameterTypes)) {
+		if (_methodName445.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes445, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findAllStaff((java.lang.Long)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(java.lang.String)arguments[3],
@@ -1087,8 +1087,8 @@ public class ESFUserLocalServiceClpInvoker {
 				((Integer)arguments[7]).intValue());
 		}
 
-		if (_methodName442.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes442, parameterTypes)) {
+		if (_methodName446.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes446, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findAllStaffNamed((java.lang.Long)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(java.lang.String)arguments[3],
@@ -1098,130 +1098,130 @@ public class ESFUserLocalServiceClpInvoker {
 				((Integer)arguments[7]).intValue());
 		}
 
-		if (_methodName443.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes443, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findStaffNamed(((Long)arguments[0]).longValue(),
-				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
-				(java.lang.String)arguments[3]);
-		}
-
-		if (_methodName444.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes444, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findStaffNamed(((Long)arguments[0]).longValue(),
-				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
-				(java.lang.String)arguments[3],
-				((Integer)arguments[4]).intValue(),
-				((Integer)arguments[5]).intValue());
-		}
-
-		if (_methodName445.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes445, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findStaffNamedNational(((Long)arguments[0]).longValue(),
-				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
-				(java.lang.String)arguments[3]);
-		}
-
-		if (_methodName446.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes446, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findStaffNamedNational(((Long)arguments[0]).longValue(),
-				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
-				(java.lang.String)arguments[3],
-				((Integer)arguments[4]).intValue(),
-				((Integer)arguments[5]).intValue());
-		}
-
 		if (_methodName447.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes447, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findStaff(((Long)arguments[0]).longValue());
+			return ESFUserLocalServiceUtil.findStaffNamed(((Long)arguments[0]).longValue(),
+				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
+				(java.lang.String)arguments[3]);
 		}
 
 		if (_methodName448.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes448, parameterTypes)) {
+			return ESFUserLocalServiceUtil.findStaffNamed(((Long)arguments[0]).longValue(),
+				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
+				(java.lang.String)arguments[3],
+				((Integer)arguments[4]).intValue(),
+				((Integer)arguments[5]).intValue());
+		}
+
+		if (_methodName449.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes449, parameterTypes)) {
+			return ESFUserLocalServiceUtil.findStaffNamedNational(((Long)arguments[0]).longValue(),
+				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
+				(java.lang.String)arguments[3]);
+		}
+
+		if (_methodName450.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes450, parameterTypes)) {
+			return ESFUserLocalServiceUtil.findStaffNamedNational(((Long)arguments[0]).longValue(),
+				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
+				(java.lang.String)arguments[3],
+				((Integer)arguments[4]).intValue(),
+				((Integer)arguments[5]).intValue());
+		}
+
+		if (_methodName451.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes451, parameterTypes)) {
+			return ESFUserLocalServiceUtil.findStaff(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName452.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes452, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findStaff(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName449.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes449, parameterTypes)) {
-			return ESFUserLocalServiceUtil.finNationalDelegationESFUsersByMatchId(((Long)arguments[0]).longValue(),
-				((Integer)arguments[1]).intValue(),
-				((Integer)arguments[2]).intValue());
-		}
-
-		if (_methodName450.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes450, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findNationalDelegationStaffESFUsersByMatchId(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName451.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes451, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findNationalDelegationStaffESFUsersByMatchId(((Long)arguments[0]).longValue(),
-				((Integer)arguments[1]).intValue(),
-				((Integer)arguments[2]).intValue());
-		}
-
-		if (_methodName452.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes452, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findNationalDelegationsESFUsersByMatchId(((Long)arguments[0]).longValue());
-		}
-
 		if (_methodName453.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes453, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findNationalDelegationsESFUsersByMatchId(((Long)arguments[0]).longValue(),
+			return ESFUserLocalServiceUtil.finNationalDelegationESFUsersByMatchId(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
 		if (_methodName454.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes454, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findNationalDelegationsESFUsersByMatchId_PartecipantTypeId(((Long)arguments[0]).longValue(),
-				((Long)arguments[1]).longValue());
+			return ESFUserLocalServiceUtil.findNationalDelegationStaffESFUsersByMatchId(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName455.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes455, parameterTypes)) {
+			return ESFUserLocalServiceUtil.findNationalDelegationStaffESFUsersByMatchId(((Long)arguments[0]).longValue(),
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue());
+		}
+
+		if (_methodName456.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes456, parameterTypes)) {
+			return ESFUserLocalServiceUtil.findNationalDelegationsESFUsersByMatchId(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName457.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes457, parameterTypes)) {
+			return ESFUserLocalServiceUtil.findNationalDelegationsESFUsersByMatchId(((Long)arguments[0]).longValue(),
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue());
+		}
+
+		if (_methodName458.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes458, parameterTypes)) {
+			return ESFUserLocalServiceUtil.findNationalDelegationsESFUsersByMatchId_PartecipantTypeId(((Long)arguments[0]).longValue(),
+				((Long)arguments[1]).longValue());
+		}
+
+		if (_methodName459.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes459, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findNationalDelegationsESFUsersByMatchId_PartecipantTypeId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
-		if (_methodName456.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes456, parameterTypes)) {
+		if (_methodName460.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes460, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findNationalShooters();
 		}
 
-		if (_methodName457.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes457, parameterTypes)) {
+		if (_methodName461.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes461, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findNationalShooters(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
-		if (_methodName458.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes458, parameterTypes)) {
+		if (_methodName462.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes462, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findNationalPartecipantShooters(((Long)arguments[0]).longValue(),
 				((Boolean)arguments[1]).booleanValue());
 		}
 
-		if (_methodName459.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes459, parameterTypes)) {
+		if (_methodName463.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes463, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findNationalPartecipantShooters(((Long)arguments[0]).longValue(),
 				((Boolean)arguments[1]).booleanValue(),
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
-		if (_methodName460.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes460, parameterTypes)) {
+		if (_methodName464.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes464, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findPartecipantShooters(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue(),
 				((Long)arguments[2]).longValue(),
 				((Boolean)arguments[3]).booleanValue());
 		}
 
-		if (_methodName461.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes461, parameterTypes)) {
+		if (_methodName465.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes465, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findPartecipantShooters(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue(),
 				((Long)arguments[2]).longValue(),
@@ -1230,45 +1230,15 @@ public class ESFUserLocalServiceClpInvoker {
 				((Integer)arguments[5]).intValue());
 		}
 
-		if (_methodName462.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes462, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findNationalPartecipantCoaches(((Long)arguments[0]).longValue(),
-				((Boolean)arguments[1]).booleanValue());
-		}
-
-		if (_methodName463.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes463, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findNationalPartecipantCoaches(((Long)arguments[0]).longValue(),
-				((Boolean)arguments[1]).booleanValue(),
-				((Integer)arguments[2]).intValue(),
-				((Integer)arguments[3]).intValue());
-		}
-
-		if (_methodName464.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes464, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findPartecipantCoaches(((Integer)arguments[0]).intValue(),
-				((Long)arguments[1]).longValue(),
-				((Boolean)arguments[2]).booleanValue());
-		}
-
-		if (_methodName465.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes465, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findPartecipantCoaches(((Integer)arguments[0]).intValue(),
-				((Long)arguments[1]).longValue(),
-				((Boolean)arguments[2]).booleanValue(),
-				((Integer)arguments[3]).intValue(),
-				((Integer)arguments[4]).intValue());
-		}
-
 		if (_methodName466.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes466, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findNationalPartecipantReferees(((Long)arguments[0]).longValue(),
+			return ESFUserLocalServiceUtil.findNationalPartecipantCoaches(((Long)arguments[0]).longValue(),
 				((Boolean)arguments[1]).booleanValue());
 		}
 
 		if (_methodName467.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes467, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findNationalPartecipantReferees(((Long)arguments[0]).longValue(),
+			return ESFUserLocalServiceUtil.findNationalPartecipantCoaches(((Long)arguments[0]).longValue(),
 				((Boolean)arguments[1]).booleanValue(),
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
@@ -1276,29 +1246,29 @@ public class ESFUserLocalServiceClpInvoker {
 
 		if (_methodName468.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes468, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findPartecipantReferees(((Integer)arguments[0]).intValue(),
+			return ESFUserLocalServiceUtil.findPartecipantCoaches(((Integer)arguments[0]).intValue(),
+				((Long)arguments[1]).longValue(),
+				((Boolean)arguments[2]).booleanValue());
+		}
+
+		if (_methodName469.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes469, parameterTypes)) {
+			return ESFUserLocalServiceUtil.findPartecipantCoaches(((Integer)arguments[0]).intValue(),
 				((Long)arguments[1]).longValue(),
 				((Boolean)arguments[2]).booleanValue(),
 				((Integer)arguments[3]).intValue(),
 				((Integer)arguments[4]).intValue());
 		}
 
-		if (_methodName469.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes469, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findPartecipantReferees(((Integer)arguments[0]).intValue(),
-				((Long)arguments[1]).longValue(),
-				((Boolean)arguments[2]).booleanValue());
-		}
-
 		if (_methodName470.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes470, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findNationalPartecipantDoctor(((Long)arguments[0]).longValue(),
+			return ESFUserLocalServiceUtil.findNationalPartecipantReferees(((Long)arguments[0]).longValue(),
 				((Boolean)arguments[1]).booleanValue());
 		}
 
 		if (_methodName471.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes471, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findNationalPartecipantDoctor(((Long)arguments[0]).longValue(),
+			return ESFUserLocalServiceUtil.findNationalPartecipantReferees(((Long)arguments[0]).longValue(),
 				((Boolean)arguments[1]).booleanValue(),
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
@@ -1306,13 +1276,43 @@ public class ESFUserLocalServiceClpInvoker {
 
 		if (_methodName472.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes472, parameterTypes)) {
+			return ESFUserLocalServiceUtil.findPartecipantReferees(((Integer)arguments[0]).intValue(),
+				((Long)arguments[1]).longValue(),
+				((Boolean)arguments[2]).booleanValue(),
+				((Integer)arguments[3]).intValue(),
+				((Integer)arguments[4]).intValue());
+		}
+
+		if (_methodName473.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes473, parameterTypes)) {
+			return ESFUserLocalServiceUtil.findPartecipantReferees(((Integer)arguments[0]).intValue(),
+				((Long)arguments[1]).longValue(),
+				((Boolean)arguments[2]).booleanValue());
+		}
+
+		if (_methodName474.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes474, parameterTypes)) {
+			return ESFUserLocalServiceUtil.findNationalPartecipantDoctor(((Long)arguments[0]).longValue(),
+				((Boolean)arguments[1]).booleanValue());
+		}
+
+		if (_methodName475.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes475, parameterTypes)) {
+			return ESFUserLocalServiceUtil.findNationalPartecipantDoctor(((Long)arguments[0]).longValue(),
+				((Boolean)arguments[1]).booleanValue(),
+				((Integer)arguments[2]).intValue(),
+				((Integer)arguments[3]).intValue());
+		}
+
+		if (_methodName476.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes476, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findPartecipantDoctor(((Integer)arguments[0]).intValue(),
 				((Long)arguments[1]).longValue(),
 				((Boolean)arguments[2]).booleanValue());
 		}
 
-		if (_methodName473.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes473, parameterTypes)) {
+		if (_methodName477.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes477, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findPartecipantDoctor(((Integer)arguments[0]).intValue(),
 				((Long)arguments[1]).longValue(),
 				((Boolean)arguments[2]).booleanValue(),
@@ -1320,8 +1320,8 @@ public class ESFUserLocalServiceClpInvoker {
 				((Integer)arguments[4]).intValue());
 		}
 
-		if (_methodName476.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes476, parameterTypes)) {
+		if (_methodName480.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes480, parameterTypes)) {
 			return ESFUserLocalServiceUtil.addESFUser(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(java.lang.String)arguments[3], (java.lang.String)arguments[4],
@@ -1341,8 +1341,8 @@ public class ESFUserLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[19]);
 		}
 
-		if (_methodName477.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes477, parameterTypes)) {
+		if (_methodName481.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes481, parameterTypes)) {
 			return ESFUserLocalServiceUtil.addESFUserInOrganization(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(java.lang.String)arguments[3],
@@ -1363,8 +1363,8 @@ public class ESFUserLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[20]);
 		}
 
-		if (_methodName478.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes478, parameterTypes)) {
+		if (_methodName482.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes482, parameterTypes)) {
 			return ESFUserLocalServiceUtil.addESFUserInOrganization(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(java.lang.String)arguments[3],
@@ -1385,15 +1385,15 @@ public class ESFUserLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[20]);
 		}
 
-		if (_methodName479.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes479, parameterTypes)) {
+		if (_methodName483.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes483, parameterTypes)) {
 			return ESFUserLocalServiceUtil.deleteESFUser(((Long)arguments[0]).longValue(),
 				(java.util.List<it.ethica.esf.model.ESFAddress>)arguments[1],
 				(com.liferay.portal.service.ServiceContext)arguments[2]);
 		}
 
-		if (_methodName480.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes480, parameterTypes)) {
+		if (_methodName484.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes484, parameterTypes)) {
 			return ESFUserLocalServiceUtil.updateESFUser(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
@@ -1415,8 +1415,8 @@ public class ESFUserLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[21]);
 		}
 
-		if (_methodName481.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes481, parameterTypes)) {
+		if (_methodName485.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes485, parameterTypes)) {
 			return ESFUserLocalServiceUtil.addESFShooter(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(java.lang.String)arguments[3], (java.lang.String)arguments[4],
@@ -1449,8 +1449,8 @@ public class ESFUserLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[33]);
 		}
 
-		if (_methodName482.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes482, parameterTypes)) {
+		if (_methodName486.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes486, parameterTypes)) {
 			return ESFUserLocalServiceUtil.updateESFShooter(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
@@ -1486,8 +1486,8 @@ public class ESFUserLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[36]);
 		}
 
-		if (_methodName483.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes483, parameterTypes)) {
+		if (_methodName487.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes487, parameterTypes)) {
 			ESFUserLocalServiceUtil.updateESFUserToESFShooter(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(it.ethica.esf.model.ESFCard)arguments[2],
@@ -1497,60 +1497,60 @@ public class ESFUserLocalServiceClpInvoker {
 			return null;
 		}
 
-		if (_methodName484.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes484, parameterTypes)) {
+		if (_methodName488.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes488, parameterTypes)) {
 			ESFUserLocalServiceUtil.addESFUserToESFShooter(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 
 			return null;
 		}
 
-		if (_methodName486.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes486, parameterTypes)) {
-			return ESFUserLocalServiceUtil.countByESFUserRole(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName487.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes487, parameterTypes)) {
-			return ESFUserLocalServiceUtil.getESFUserRoles(((Long)arguments[0]).longValue(),
-				((Boolean)arguments[1]).booleanValue());
-		}
-
-		if (_methodName488.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes488, parameterTypes)) {
-			return ESFUserLocalServiceUtil.getActiveESFUserRoles(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName489.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes489, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findAllUser();
-		}
-
 		if (_methodName490.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes490, parameterTypes)) {
-			return ESFUserLocalServiceUtil.checkEmailAddress((java.lang.String)arguments[0],
-				(com.liferay.portal.service.ServiceContext)arguments[1]);
+			return ESFUserLocalServiceUtil.countByESFUserRole(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName491.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes491, parameterTypes)) {
-			return ESFUserLocalServiceUtil.checkScreenName((java.lang.String)arguments[0],
-				(com.liferay.portal.service.ServiceContext)arguments[1]);
+			return ESFUserLocalServiceUtil.getESFUserRoles(((Long)arguments[0]).longValue(),
+				((Boolean)arguments[1]).booleanValue());
 		}
 
 		if (_methodName492.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes492, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findAllUserByAgeOnlyPeople();
+			return ESFUserLocalServiceUtil.getActiveESFUserRoles(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName493.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes493, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findAllUserByRolenoNull(((Long)arguments[0]).longValue(),
-				((Long)arguments[1]).longValue());
+			return ESFUserLocalServiceUtil.findAllUser();
 		}
 
 		if (_methodName494.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes494, parameterTypes)) {
+			return ESFUserLocalServiceUtil.checkEmailAddress((java.lang.String)arguments[0],
+				(com.liferay.portal.service.ServiceContext)arguments[1]);
+		}
+
+		if (_methodName495.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes495, parameterTypes)) {
+			return ESFUserLocalServiceUtil.checkScreenName((java.lang.String)arguments[0],
+				(com.liferay.portal.service.ServiceContext)arguments[1]);
+		}
+
+		if (_methodName496.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes496, parameterTypes)) {
+			return ESFUserLocalServiceUtil.findAllUserByAgeOnlyPeople();
+		}
+
+		if (_methodName497.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes497, parameterTypes)) {
+			return ESFUserLocalServiceUtil.findAllUserByRolenoNull(((Long)arguments[0]).longValue(),
+				((Long)arguments[1]).longValue());
+		}
+
+		if (_methodName498.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes498, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findShooterRoleAssignedName((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(),
@@ -1559,16 +1559,16 @@ public class ESFUserLocalServiceClpInvoker {
 				((Integer)arguments[5]).intValue());
 		}
 
-		if (_methodName495.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes495, parameterTypes)) {
+		if (_methodName499.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes499, parameterTypes)) {
 			return ESFUserLocalServiceUtil.countShooterRoleAssignedName((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(),
 				((Long)arguments[3]).longValue());
 		}
 
-		if (_methodName496.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes496, parameterTypes)) {
+		if (_methodName500.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes500, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findStaffMatch((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Long)arguments[3]).longValue(),
@@ -1577,49 +1577,17 @@ public class ESFUserLocalServiceClpInvoker {
 				((Integer)arguments[6]).intValue());
 		}
 
-		if (_methodName497.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes497, parameterTypes)) {
+		if (_methodName501.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes501, parameterTypes)) {
 			return ESFUserLocalServiceUtil.countStaffMatch((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Long)arguments[3]).longValue(),
 				((Long)arguments[4]).longValue());
 		}
 
-		if (_methodName498.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes498, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findShooterNotAssociated((java.lang.String)arguments[0],
-				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
-				((Long)arguments[3]).longValue(),
-				((Integer)arguments[4]).intValue(),
-				((Integer)arguments[5]).intValue());
-		}
-
-		if (_methodName499.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes499, parameterTypes)) {
-			return ESFUserLocalServiceUtil.countNotNationalShooterBySPT((java.lang.String)arguments[0],
-				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
-				((Long)arguments[3]).longValue());
-		}
-
-		if (_methodName500.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes500, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findALLShooterNotAssociated((java.lang.String)arguments[0],
-				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
-				((Long)arguments[3]).longValue(),
-				((Integer)arguments[4]).intValue(),
-				((Integer)arguments[5]).intValue());
-		}
-
-		if (_methodName501.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes501, parameterTypes)) {
-			return ESFUserLocalServiceUtil.countALLNotNationalShooterBySPT((java.lang.String)arguments[0],
-				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
-				((Long)arguments[3]).longValue());
-		}
-
 		if (_methodName502.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes502, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findStaffNormalMatch((java.lang.String)arguments[0],
+			return ESFUserLocalServiceUtil.findShooterNotAssociated((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Long)arguments[3]).longValue(),
 				((Integer)arguments[4]).intValue(),
@@ -1628,31 +1596,63 @@ public class ESFUserLocalServiceClpInvoker {
 
 		if (_methodName503.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes503, parameterTypes)) {
-			return ESFUserLocalServiceUtil.countStaffNormalMatch((java.lang.String)arguments[0],
+			return ESFUserLocalServiceUtil.countNotNationalShooterBySPT((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Long)arguments[3]).longValue());
 		}
 
 		if (_methodName504.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes504, parameterTypes)) {
-			return ESFUserLocalServiceUtil.countRenwalUser((java.lang.String)arguments[0],
-				(java.lang.String)arguments[1], ((Long)arguments[2]).longValue());
+			return ESFUserLocalServiceUtil.findALLShooterNotAssociated((java.lang.String)arguments[0],
+				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
+				((Long)arguments[3]).longValue(),
+				((Integer)arguments[4]).intValue(),
+				((Integer)arguments[5]).intValue());
 		}
 
 		if (_methodName505.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes505, parameterTypes)) {
-			return ESFUserLocalServiceUtil.countNewUser((java.lang.String)arguments[0],
-				(java.lang.String)arguments[1], ((Long)arguments[2]).longValue());
+			return ESFUserLocalServiceUtil.countALLNotNationalShooterBySPT((java.lang.String)arguments[0],
+				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
+				((Long)arguments[3]).longValue());
 		}
 
 		if (_methodName506.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes506, parameterTypes)) {
-			return ESFUserLocalServiceUtil.findByKeyword((java.lang.String)arguments[0],
-				(java.lang.String)arguments[1]);
+			return ESFUserLocalServiceUtil.findStaffNormalMatch((java.lang.String)arguments[0],
+				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
+				((Long)arguments[3]).longValue(),
+				((Integer)arguments[4]).intValue(),
+				((Integer)arguments[5]).intValue());
 		}
 
 		if (_methodName507.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes507, parameterTypes)) {
+			return ESFUserLocalServiceUtil.countStaffNormalMatch((java.lang.String)arguments[0],
+				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
+				((Long)arguments[3]).longValue());
+		}
+
+		if (_methodName508.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes508, parameterTypes)) {
+			return ESFUserLocalServiceUtil.countRenwalUser((java.lang.String)arguments[0],
+				(java.lang.String)arguments[1], ((Long)arguments[2]).longValue());
+		}
+
+		if (_methodName509.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes509, parameterTypes)) {
+			return ESFUserLocalServiceUtil.countNewUser((java.lang.String)arguments[0],
+				(java.lang.String)arguments[1], ((Long)arguments[2]).longValue());
+		}
+
+		if (_methodName510.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes510, parameterTypes)) {
+			return ESFUserLocalServiceUtil.findByKeyword((java.lang.String)arguments[0],
+				(java.lang.String)arguments[1]);
+		}
+
+		if (_methodName511.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes511, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findShooterByAss((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Long)arguments[3]).longValue(),
@@ -1660,15 +1660,15 @@ public class ESFUserLocalServiceClpInvoker {
 				((Integer)arguments[5]).intValue());
 		}
 
-		if (_methodName508.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes508, parameterTypes)) {
+		if (_methodName512.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes512, parameterTypes)) {
 			return ESFUserLocalServiceUtil.countShooterByAss((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Long)arguments[3]).longValue());
 		}
 
-		if (_methodName509.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes509, parameterTypes)) {
+		if (_methodName513.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes513, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findShooterByAssAndNoAss((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Long)arguments[3]).longValue(),
@@ -1676,15 +1676,15 @@ public class ESFUserLocalServiceClpInvoker {
 				((Integer)arguments[5]).intValue());
 		}
 
-		if (_methodName510.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes510, parameterTypes)) {
+		if (_methodName514.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes514, parameterTypes)) {
 			return ESFUserLocalServiceUtil.countShooterByAssAndNoAss((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Long)arguments[3]).longValue());
 		}
 
-		if (_methodName511.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes511, parameterTypes)) {
+		if (_methodName515.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes515, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findDirectorByMatch((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(),
@@ -1693,35 +1693,35 @@ public class ESFUserLocalServiceClpInvoker {
 				((Integer)arguments[5]).intValue());
 		}
 
-		if (_methodName512.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes512, parameterTypes)) {
+		if (_methodName516.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes516, parameterTypes)) {
 			return ESFUserLocalServiceUtil.countDirectorByMatch((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(),
 				((Long)arguments[3]).longValue());
 		}
 
-		if (_methodName513.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes513, parameterTypes)) {
+		if (_methodName517.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes517, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findNewYouthShooter(((Integer)arguments[0]).intValue());
 		}
 
-		if (_methodName514.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes514, parameterTypes)) {
+		if (_methodName518.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes518, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findYouthByCategory(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
-		if (_methodName515.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes515, parameterTypes)) {
+		if (_methodName519.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes519, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findYouthByCategoryTotal(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
-		if (_methodName516.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes516, parameterTypes)) {
+		if (_methodName520.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes520, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findNotBDOMemberByAssociatioId((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(),
@@ -1729,14 +1729,14 @@ public class ESFUserLocalServiceClpInvoker {
 				((Integer)arguments[4]).intValue());
 		}
 
-		if (_methodName517.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes517, parameterTypes)) {
+		if (_methodName521.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes521, parameterTypes)) {
 			return ESFUserLocalServiceUtil.countNotBDOMemberByAssociatioId((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], ((Long)arguments[2]).longValue());
 		}
 
-		if (_methodName518.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes518, parameterTypes)) {
+		if (_methodName522.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes522, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findAssociatedShooterOrganization((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Long)arguments[3]).longValue(),
@@ -1744,15 +1744,15 @@ public class ESFUserLocalServiceClpInvoker {
 				((Integer)arguments[5]).intValue());
 		}
 
-		if (_methodName519.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes519, parameterTypes)) {
+		if (_methodName523.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes523, parameterTypes)) {
 			return ESFUserLocalServiceUtil.countAssociatedShooterOrganization((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Long)arguments[3]).longValue());
 		}
 
-		if (_methodName520.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes520, parameterTypes)) {
+		if (_methodName524.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes524, parameterTypes)) {
 			return ESFUserLocalServiceUtil.findByESFFederalRole(((Long)arguments[0]).longValue());
 		}
 
@@ -1791,18 +1791,10 @@ public class ESFUserLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName404;
-	private String[] _methodParameterTypes404;
-	private String _methodName405;
-	private String[] _methodParameterTypes405;
-	private String _methodName410;
-	private String[] _methodParameterTypes410;
-	private String _methodName411;
-	private String[] _methodParameterTypes411;
-	private String _methodName412;
-	private String[] _methodParameterTypes412;
-	private String _methodName413;
-	private String[] _methodParameterTypes413;
+	private String _methodName408;
+	private String[] _methodParameterTypes408;
+	private String _methodName409;
+	private String[] _methodParameterTypes409;
 	private String _methodName414;
 	private String[] _methodParameterTypes414;
 	private String _methodName415;
@@ -1923,14 +1915,14 @@ public class ESFUserLocalServiceClpInvoker {
 	private String[] _methodParameterTypes472;
 	private String _methodName473;
 	private String[] _methodParameterTypes473;
+	private String _methodName474;
+	private String[] _methodParameterTypes474;
+	private String _methodName475;
+	private String[] _methodParameterTypes475;
 	private String _methodName476;
 	private String[] _methodParameterTypes476;
 	private String _methodName477;
 	private String[] _methodParameterTypes477;
-	private String _methodName478;
-	private String[] _methodParameterTypes478;
-	private String _methodName479;
-	private String[] _methodParameterTypes479;
 	private String _methodName480;
 	private String[] _methodParameterTypes480;
 	private String _methodName481;
@@ -1941,14 +1933,14 @@ public class ESFUserLocalServiceClpInvoker {
 	private String[] _methodParameterTypes483;
 	private String _methodName484;
 	private String[] _methodParameterTypes484;
+	private String _methodName485;
+	private String[] _methodParameterTypes485;
 	private String _methodName486;
 	private String[] _methodParameterTypes486;
 	private String _methodName487;
 	private String[] _methodParameterTypes487;
 	private String _methodName488;
 	private String[] _methodParameterTypes488;
-	private String _methodName489;
-	private String[] _methodParameterTypes489;
 	private String _methodName490;
 	private String[] _methodParameterTypes490;
 	private String _methodName491;
@@ -2011,4 +2003,12 @@ public class ESFUserLocalServiceClpInvoker {
 	private String[] _methodParameterTypes519;
 	private String _methodName520;
 	private String[] _methodParameterTypes520;
+	private String _methodName521;
+	private String[] _methodParameterTypes521;
+	private String _methodName522;
+	private String[] _methodParameterTypes522;
+	private String _methodName523;
+	private String[] _methodParameterTypes523;
+	private String _methodName524;
+	private String[] _methodParameterTypes524;
 }
