@@ -121,12 +121,12 @@ public class ESFFederalRoleLocalServiceImpl
 			pk.setEsfFederalRoleId(esfFederalRoleId);
 			pk.setEsfUserId(esfUserId);
 			pk.setStartDate(startDate);
-			User user = UserLocalServiceUtil.fetchUser(esfUserId);
+//			User user = UserLocalServiceUtil.fetchUser(esfUserId);
 //			ESFOrganization esfOrganization = ESFOrganizationLocalServiceUtil.fetchESFOrganization(user.getOrganizationId());
 			
 			ESFUserESFFederalRole association = ESFUserESFFederalRoleLocalServiceUtil.fetchESFUserESFFederalRole(pk);
 			if(association != null){
-				return;
+				throw new SystemException("Associazione già esistente");
 			}else{
 				association = ESFUserESFFederalRoleLocalServiceUtil.createESFUserESFFederalRole(pk);
 				association.setActive(Boolean.TRUE);
