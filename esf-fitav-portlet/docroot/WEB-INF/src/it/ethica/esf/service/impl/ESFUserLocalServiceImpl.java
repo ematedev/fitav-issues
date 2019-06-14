@@ -608,6 +608,18 @@ public class ESFUserLocalServiceImpl extends ESFUserLocalServiceBaseImpl {
 		return esfUsers;
 	}
 
+	public List<ESFUser> getShooterByStateAndOrganization(int state, long organizationId) {
+		List<ESFUser> esfUsers = new ArrayList<ESFUser>();
+		try {
+			int start = 0;
+			int end = esfUserPersistence.countAll();
+			esfUsers = ESFUserFinderUtil.findShooter(organizationId, state, start, end);
+			return esfUsers;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return esfUsers;
+	}
 
 	public List<ESFUser> getAllShooterByLikeF_C_S(
 			String firstName, String lastName, String cardCode,	long organizationId, int start, int end) {
@@ -3890,7 +3902,7 @@ public class ESFUserLocalServiceImpl extends ESFUserLocalServiceBaseImpl {
 		tot = (int) ESFUserFinderUtil.countNotNationalShooterBySPT( name, lastName, cardCode, sportTypeId);
 		return tot ;
 	}
-	//ricerca i tiratori non associati per l aspecialità olimpica
+	//ricerca i tiratori non associati per l aspecialitï¿½ olimpica
 	
 	public List<ESFUser> findALLShooterNotAssociated(String name, String lastName, String cardCode,
 		long sportTypeId, int start, int end)
@@ -4121,7 +4133,7 @@ public class ESFUserLocalServiceImpl extends ESFUserLocalServiceBaseImpl {
 	
 	/*
 	 * 
-	 * ricerca titori associati per nome, cognome, tessera e id società
+	 * ricerca titori associati per nome, cognome, tessera e id societï¿½
 	 */
 	
 	public List<ESFUser> findAssociatedShooterOrganization(String firstName, String lastName, String card ,long associationId, int start, int end)
