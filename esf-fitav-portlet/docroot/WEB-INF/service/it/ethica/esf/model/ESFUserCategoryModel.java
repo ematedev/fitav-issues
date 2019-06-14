@@ -312,19 +312,19 @@ public interface ESFUserCategoryModel extends BaseModel<ESFUserCategory>,
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFUserCategory esfUserCategory);
+	public int compareTo(ESFUserCategory esfUserCategory);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFUserCategory> toCacheModel();
+	public CacheModel<ESFUserCategory> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFUserCategory toEscapedModel();
+	public ESFUserCategory toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFUserCategory toUnescapedModel();
+	public ESFUserCategory toUnescapedModel();
 
 	@Override
 	public String toString();

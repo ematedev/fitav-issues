@@ -16,7 +16,6 @@ package it.ethica.esf.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -53,7 +52,6 @@ public interface ESFAnnualFreeCardLocalService extends BaseLocalService,
 	* @return the e s f annual free card that was added
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFAnnualFreeCard addESFAnnualFreeCard(
 		it.ethica.esf.model.ESFAnnualFreeCard esfAnnualFreeCard)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -75,7 +73,6 @@ public interface ESFAnnualFreeCardLocalService extends BaseLocalService,
 	* @throws PortalException if a e s f annual free card with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFAnnualFreeCard deleteESFAnnualFreeCard(
 		long annualFreeCardId)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -88,7 +85,6 @@ public interface ESFAnnualFreeCardLocalService extends BaseLocalService,
 	* @return the e s f annual free card that was removed
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFAnnualFreeCard deleteESFAnnualFreeCard(
 		it.ethica.esf.model.ESFAnnualFreeCard esfAnnualFreeCard)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -230,7 +226,6 @@ public interface ESFAnnualFreeCardLocalService extends BaseLocalService,
 	* @return the e s f annual free card that was updated
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFAnnualFreeCard updateESFAnnualFreeCard(
 		it.ethica.esf.model.ESFAnnualFreeCard esfAnnualFreeCard)
 		throws com.liferay.portal.kernel.exception.SystemException;

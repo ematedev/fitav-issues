@@ -555,10 +555,6 @@ public class ESFGunTypeClp extends BaseModelImpl<ESFGunType>
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -666,5 +662,4 @@ public class ESFGunTypeClp extends BaseModelImpl<ESFGunType>
 	private String _description;
 	private boolean _isCatridgeProductor;
 	private BaseModel<?> _esfGunTypeRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

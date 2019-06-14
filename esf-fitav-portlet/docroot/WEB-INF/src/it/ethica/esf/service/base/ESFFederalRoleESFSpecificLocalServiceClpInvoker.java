@@ -114,21 +114,21 @@ public class ESFFederalRoleESFSpecificLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFFederalRoleESFSpecific"
 			};
 
-		_methodName388 = "getBeanIdentifier";
+		_methodName392 = "getBeanIdentifier";
 
-		_methodParameterTypes388 = new String[] {  };
+		_methodParameterTypes392 = new String[] {  };
 
-		_methodName389 = "setBeanIdentifier";
+		_methodName393 = "setBeanIdentifier";
 
-		_methodParameterTypes389 = new String[] { "java.lang.String" };
+		_methodParameterTypes393 = new String[] { "java.lang.String" };
 
-		_methodName394 = "findByESFFederalRoleId";
+		_methodName398 = "findByESFFederalRoleId";
 
-		_methodParameterTypes394 = new String[] { "long" };
+		_methodParameterTypes398 = new String[] { "long" };
 
-		_methodName395 = "findBySpecificId";
+		_methodName399 = "findBySpecificId";
 
-		_methodParameterTypes395 = new String[] { "long" };
+		_methodParameterTypes399 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -220,25 +220,25 @@ public class ESFFederalRoleESFSpecificLocalServiceClpInvoker {
 			return ESFFederalRoleESFSpecificLocalServiceUtil.updateESFFederalRoleESFSpecific((it.ethica.esf.model.ESFFederalRoleESFSpecific)arguments[0]);
 		}
 
-		if (_methodName388.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
+		if (_methodName392.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFFederalRoleESFSpecificLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName389.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes389, parameterTypes)) {
+		if (_methodName393.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
 			ESFFederalRoleESFSpecificLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName394.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
+		if (_methodName398.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
 			return ESFFederalRoleESFSpecificLocalServiceUtil.findByESFFederalRoleId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName395.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
+		if (_methodName399.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes399, parameterTypes)) {
 			return ESFFederalRoleESFSpecificLocalServiceUtil.findBySpecificId(((Long)arguments[0]).longValue());
 		}
 
@@ -277,12 +277,12 @@ public class ESFFederalRoleESFSpecificLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName388;
-	private String[] _methodParameterTypes388;
-	private String _methodName389;
-	private String[] _methodParameterTypes389;
-	private String _methodName394;
-	private String[] _methodParameterTypes394;
-	private String _methodName395;
-	private String[] _methodParameterTypes395;
+	private String _methodName392;
+	private String[] _methodParameterTypes392;
+	private String _methodName393;
+	private String[] _methodParameterTypes393;
+	private String _methodName398;
+	private String[] _methodParameterTypes398;
+	private String _methodName399;
+	private String[] _methodParameterTypes399;
 }

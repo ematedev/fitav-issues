@@ -106,45 +106,45 @@ public class ESFDescriptionLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFDescription"
 			};
 
-		_methodName388 = "getBeanIdentifier";
+		_methodName392 = "getBeanIdentifier";
 
-		_methodParameterTypes388 = new String[] {  };
+		_methodParameterTypes392 = new String[] {  };
 
-		_methodName389 = "setBeanIdentifier";
+		_methodName393 = "setBeanIdentifier";
 
-		_methodParameterTypes389 = new String[] { "java.lang.String" };
+		_methodParameterTypes393 = new String[] { "java.lang.String" };
 
-		_methodName394 = "findAll";
+		_methodName398 = "findAll";
 
-		_methodParameterTypes394 = new String[] {  };
+		_methodParameterTypes398 = new String[] {  };
 
-		_methodName395 = "findAllByNational";
+		_methodName399 = "findAllByNational";
 
-		_methodParameterTypes395 = new String[] { "boolean" };
+		_methodParameterTypes399 = new String[] { "boolean" };
 
-		_methodName396 = "addEsfDescription";
+		_methodName400 = "addEsfDescription";
 
-		_methodParameterTypes396 = new String[] {
+		_methodParameterTypes400 = new String[] {
 				"java.lang.String", "boolean",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName397 = "updateEsfDescription";
+		_methodName401 = "updateEsfDescription";
 
-		_methodParameterTypes397 = new String[] {
+		_methodParameterTypes401 = new String[] {
 				"long", "java.lang.String", "boolean",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName398 = "deleteEsfDescription";
+		_methodName402 = "deleteEsfDescription";
 
-		_methodParameterTypes398 = new String[] {
+		_methodParameterTypes402 = new String[] {
 				"long", "javax.portlet.ActionRequest"
 			};
 
-		_methodName399 = "getESFDescriptionsByMatchUser";
+		_methodName403 = "getESFDescriptionsByMatchUser";
 
-		_methodParameterTypes399 = new String[] { "java.util.List" };
+		_methodParameterTypes403 = new String[] { "java.util.List" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -236,51 +236,51 @@ public class ESFDescriptionLocalServiceClpInvoker {
 			return ESFDescriptionLocalServiceUtil.updateESFDescription((it.ethica.esf.model.ESFDescription)arguments[0]);
 		}
 
-		if (_methodName388.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
+		if (_methodName392.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFDescriptionLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName389.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes389, parameterTypes)) {
+		if (_methodName393.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
 			ESFDescriptionLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName394.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
+		if (_methodName398.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
 			return ESFDescriptionLocalServiceUtil.findAll();
 		}
 
-		if (_methodName395.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
+		if (_methodName399.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes399, parameterTypes)) {
 			return ESFDescriptionLocalServiceUtil.findAllByNational(((Boolean)arguments[0]).booleanValue());
 		}
 
-		if (_methodName396.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
+		if (_methodName400.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes400, parameterTypes)) {
 			return ESFDescriptionLocalServiceUtil.addEsfDescription((java.lang.String)arguments[0],
 				((Boolean)arguments[1]).booleanValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[2]);
 		}
 
-		if (_methodName397.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
+		if (_methodName401.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes401, parameterTypes)) {
 			return ESFDescriptionLocalServiceUtil.updateEsfDescription(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1],
 				((Boolean)arguments[2]).booleanValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[3]);
 		}
 
-		if (_methodName398.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
+		if (_methodName402.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes402, parameterTypes)) {
 			return ESFDescriptionLocalServiceUtil.deleteEsfDescription(((Long)arguments[0]).longValue(),
 				(javax.portlet.ActionRequest)arguments[1]);
 		}
 
-		if (_methodName399.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes399, parameterTypes)) {
+		if (_methodName403.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes403, parameterTypes)) {
 			return ESFDescriptionLocalServiceUtil.getESFDescriptionsByMatchUser((java.util.List<it.ethica.esf.model.ESFNationalMatchResult>)arguments[0]);
 		}
 
@@ -319,20 +319,20 @@ public class ESFDescriptionLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName388;
-	private String[] _methodParameterTypes388;
-	private String _methodName389;
-	private String[] _methodParameterTypes389;
-	private String _methodName394;
-	private String[] _methodParameterTypes394;
-	private String _methodName395;
-	private String[] _methodParameterTypes395;
-	private String _methodName396;
-	private String[] _methodParameterTypes396;
-	private String _methodName397;
-	private String[] _methodParameterTypes397;
+	private String _methodName392;
+	private String[] _methodParameterTypes392;
+	private String _methodName393;
+	private String[] _methodParameterTypes393;
 	private String _methodName398;
 	private String[] _methodParameterTypes398;
 	private String _methodName399;
 	private String[] _methodParameterTypes399;
+	private String _methodName400;
+	private String[] _methodParameterTypes400;
+	private String _methodName401;
+	private String[] _methodParameterTypes401;
+	private String _methodName402;
+	private String[] _methodParameterTypes402;
+	private String _methodName403;
+	private String[] _methodParameterTypes403;
 }

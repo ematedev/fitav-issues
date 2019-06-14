@@ -116,83 +116,83 @@ public class ESFGunKindLocalServiceClpInvoker {
 
 		_methodParameterTypes19 = new String[] { "it.ethica.esf.model.ESFGunKind" };
 
-		_methodName392 = "getBeanIdentifier";
+		_methodName396 = "getBeanIdentifier";
 
-		_methodParameterTypes392 = new String[] {  };
+		_methodParameterTypes396 = new String[] {  };
 
-		_methodName393 = "setBeanIdentifier";
+		_methodName397 = "setBeanIdentifier";
 
-		_methodParameterTypes393 = new String[] { "java.lang.String" };
+		_methodParameterTypes397 = new String[] { "java.lang.String" };
 
-		_methodName398 = "getESFGunKindsByLikeN_D_M";
+		_methodName402 = "getESFGunKindsByLikeN_D_M";
 
-		_methodParameterTypes398 = new String[] {
+		_methodParameterTypes402 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"long"
 			};
 
-		_methodName399 = "getESFGunKindsByLikeN_D_M";
+		_methodName403 = "getESFGunKindsByLikeN_D_M";
 
-		_methodParameterTypes399 = new String[] {
+		_methodParameterTypes403 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"long", "int", "int"
 			};
 
-		_methodName400 = "getESFGunKinds";
+		_methodName404 = "getESFGunKinds";
 
-		_methodParameterTypes400 = new String[] {  };
+		_methodParameterTypes404 = new String[] {  };
 
-		_methodName401 = "getESFGunKinds";
-
-		_methodParameterTypes401 = new String[] { "int", "int" };
-
-		_methodName402 = "getESFGunKindsByESFGunType";
-
-		_methodParameterTypes402 = new String[] { "long" };
-
-		_methodName403 = "getESFGunKindsById";
-
-		_methodParameterTypes403 = new String[] { "long" };
-
-		_methodName404 = "getESFGunKindsByESFGunType";
-
-		_methodParameterTypes404 = new String[] { "long", "int", "int" };
-
-		_methodName405 = "getESFRifle";
+		_methodName405 = "getESFGunKinds";
 
 		_methodParameterTypes405 = new String[] { "int", "int" };
 
-		_methodName406 = "countESFRifle";
+		_methodName406 = "getESFGunKindsByESFGunType";
 
-		_methodParameterTypes406 = new String[] {  };
+		_methodParameterTypes406 = new String[] { "long" };
 
-		_methodName407 = "getESFGunKindCountByESFGunType";
+		_methodName407 = "getESFGunKindsById";
 
 		_methodParameterTypes407 = new String[] { "long" };
 
-		_methodName408 = "addESFGunKind";
+		_methodName408 = "getESFGunKindsByESFGunType";
 
-		_methodParameterTypes408 = new String[] {
+		_methodParameterTypes408 = new String[] { "long", "int", "int" };
+
+		_methodName409 = "getESFRifle";
+
+		_methodParameterTypes409 = new String[] { "int", "int" };
+
+		_methodName410 = "countESFRifle";
+
+		_methodParameterTypes410 = new String[] {  };
+
+		_methodName411 = "getESFGunKindCountByESFGunType";
+
+		_methodParameterTypes411 = new String[] { "long" };
+
+		_methodName412 = "addESFGunKind";
+
+		_methodParameterTypes412 = new String[] {
 				"long", "java.lang.String", "java.lang.String", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName409 = "updateESFGunKind";
+		_methodName413 = "updateESFGunKind";
 
-		_methodParameterTypes409 = new String[] {
+		_methodParameterTypes413 = new String[] {
 				"long", "long", "java.lang.String", "java.lang.String", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName410 = "deleteESFGunKind";
+		_methodName414 = "deleteESFGunKind";
 
-		_methodParameterTypes410 = new String[] {
+		_methodParameterTypes414 = new String[] {
 				"long", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName411 = "checkNome";
+		_methodName415 = "checkNome";
 
-		_methodParameterTypes411 = new String[] {
+		_methodParameterTypes415 = new String[] {
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 	}
@@ -310,27 +310,27 @@ public class ESFGunKindLocalServiceClpInvoker {
 			return ESFGunKindLocalServiceUtil.updateESFGunKind((it.ethica.esf.model.ESFGunKind)arguments[0]);
 		}
 
-		if (_methodName392.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
+		if (_methodName396.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
 			return ESFGunKindLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName393.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
+		if (_methodName397.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
 			ESFGunKindLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName398.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
+		if (_methodName402.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes402, parameterTypes)) {
 			return ESFGunKindLocalServiceUtil.getESFGunKindsByLikeN_D_M((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Long)arguments[3]).longValue());
 		}
 
-		if (_methodName399.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes399, parameterTypes)) {
+		if (_methodName403.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes403, parameterTypes)) {
 			return ESFGunKindLocalServiceUtil.getESFGunKindsByLikeN_D_M((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Long)arguments[3]).longValue(),
@@ -338,60 +338,60 @@ public class ESFGunKindLocalServiceClpInvoker {
 				((Integer)arguments[5]).intValue());
 		}
 
-		if (_methodName400.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes400, parameterTypes)) {
-			return ESFGunKindLocalServiceUtil.getESFGunKinds();
-		}
-
-		if (_methodName401.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes401, parameterTypes)) {
-			return ESFGunKindLocalServiceUtil.getESFGunKinds(((Integer)arguments[0]).intValue(),
-				((Integer)arguments[1]).intValue());
-		}
-
-		if (_methodName402.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes402, parameterTypes)) {
-			return ESFGunKindLocalServiceUtil.getESFGunKindsByESFGunType(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName403.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes403, parameterTypes)) {
-			return ESFGunKindLocalServiceUtil.getESFGunKindsById(((Long)arguments[0]).longValue());
-		}
-
 		if (_methodName404.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes404, parameterTypes)) {
-			return ESFGunKindLocalServiceUtil.getESFGunKindsByESFGunType(((Long)arguments[0]).longValue(),
-				((Integer)arguments[1]).intValue(),
-				((Integer)arguments[2]).intValue());
+			return ESFGunKindLocalServiceUtil.getESFGunKinds();
 		}
 
 		if (_methodName405.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes405, parameterTypes)) {
-			return ESFGunKindLocalServiceUtil.getESFRifle(((Integer)arguments[0]).intValue(),
+			return ESFGunKindLocalServiceUtil.getESFGunKinds(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
 		if (_methodName406.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes406, parameterTypes)) {
-			return ESFGunKindLocalServiceUtil.countESFRifle();
+			return ESFGunKindLocalServiceUtil.getESFGunKindsByESFGunType(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName407.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes407, parameterTypes)) {
-			return ESFGunKindLocalServiceUtil.getESFGunKindCountByESFGunType(((Long)arguments[0]).longValue());
+			return ESFGunKindLocalServiceUtil.getESFGunKindsById(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName408.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes408, parameterTypes)) {
+			return ESFGunKindLocalServiceUtil.getESFGunKindsByESFGunType(((Long)arguments[0]).longValue(),
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue());
+		}
+
+		if (_methodName409.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes409, parameterTypes)) {
+			return ESFGunKindLocalServiceUtil.getESFRifle(((Integer)arguments[0]).intValue(),
+				((Integer)arguments[1]).intValue());
+		}
+
+		if (_methodName410.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes410, parameterTypes)) {
+			return ESFGunKindLocalServiceUtil.countESFRifle();
+		}
+
+		if (_methodName411.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes411, parameterTypes)) {
+			return ESFGunKindLocalServiceUtil.getESFGunKindCountByESFGunType(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName412.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes412, parameterTypes)) {
 			return ESFGunKindLocalServiceUtil.addESFGunKind(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Long)arguments[3]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[4]);
 		}
 
-		if (_methodName409.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes409, parameterTypes)) {
+		if (_methodName413.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes413, parameterTypes)) {
 			return ESFGunKindLocalServiceUtil.updateESFGunKind(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
@@ -399,14 +399,14 @@ public class ESFGunKindLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[5]);
 		}
 
-		if (_methodName410.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes410, parameterTypes)) {
+		if (_methodName414.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes414, parameterTypes)) {
 			return ESFGunKindLocalServiceUtil.deleteESFGunKind(((Long)arguments[0]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
 
-		if (_methodName411.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes411, parameterTypes)) {
+		if (_methodName415.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes415, parameterTypes)) {
 			return ESFGunKindLocalServiceUtil.checkNome((java.lang.String)arguments[0],
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
@@ -454,18 +454,10 @@ public class ESFGunKindLocalServiceClpInvoker {
 	private String[] _methodParameterTypes18;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
-	private String _methodName392;
-	private String[] _methodParameterTypes392;
-	private String _methodName393;
-	private String[] _methodParameterTypes393;
-	private String _methodName398;
-	private String[] _methodParameterTypes398;
-	private String _methodName399;
-	private String[] _methodParameterTypes399;
-	private String _methodName400;
-	private String[] _methodParameterTypes400;
-	private String _methodName401;
-	private String[] _methodParameterTypes401;
+	private String _methodName396;
+	private String[] _methodParameterTypes396;
+	private String _methodName397;
+	private String[] _methodParameterTypes397;
 	private String _methodName402;
 	private String[] _methodParameterTypes402;
 	private String _methodName403;
@@ -486,4 +478,12 @@ public class ESFGunKindLocalServiceClpInvoker {
 	private String[] _methodParameterTypes410;
 	private String _methodName411;
 	private String[] _methodParameterTypes411;
+	private String _methodName412;
+	private String[] _methodParameterTypes412;
+	private String _methodName413;
+	private String[] _methodParameterTypes413;
+	private String _methodName414;
+	private String[] _methodParameterTypes414;
+	private String _methodName415;
+	private String[] _methodParameterTypes415;
 }

@@ -21,7 +21,6 @@ import java.io.Serializable;
 
 /**
  * @author Ethica
- * @generated
  */
 public class ESFFieldESFSportTypePK implements Comparable<ESFFieldESFSportTypePK>,
 	Serializable {

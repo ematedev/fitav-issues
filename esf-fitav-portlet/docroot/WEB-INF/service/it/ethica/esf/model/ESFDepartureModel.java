@@ -453,19 +453,19 @@ public interface ESFDepartureModel extends BaseModel<ESFDeparture>, GroupedModel
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFDeparture esfDeparture);
+	public int compareTo(ESFDeparture esfDeparture);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFDeparture> toCacheModel();
+	public CacheModel<ESFDeparture> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFDeparture toEscapedModel();
+	public ESFDeparture toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFDeparture toUnescapedModel();
+	public ESFDeparture toUnescapedModel();
 
 	@Override
 	public String toString();

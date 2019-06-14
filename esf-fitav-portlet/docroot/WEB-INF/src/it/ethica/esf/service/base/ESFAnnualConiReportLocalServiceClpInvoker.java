@@ -106,17 +106,17 @@ public class ESFAnnualConiReportLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFAnnualConiReport"
 			};
 
-		_methodName388 = "getBeanIdentifier";
+		_methodName392 = "getBeanIdentifier";
 
-		_methodParameterTypes388 = new String[] {  };
+		_methodParameterTypes392 = new String[] {  };
 
-		_methodName389 = "setBeanIdentifier";
+		_methodName393 = "setBeanIdentifier";
 
-		_methodParameterTypes389 = new String[] { "java.lang.String" };
+		_methodParameterTypes393 = new String[] { "java.lang.String" };
 
-		_methodName394 = "findAffiliationByYear";
+		_methodName398 = "findAffiliationByYear";
 
-		_methodParameterTypes394 = new String[] { "long", "int" };
+		_methodParameterTypes398 = new String[] { "long", "int" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -208,20 +208,20 @@ public class ESFAnnualConiReportLocalServiceClpInvoker {
 			return ESFAnnualConiReportLocalServiceUtil.updateESFAnnualConiReport((it.ethica.esf.model.ESFAnnualConiReport)arguments[0]);
 		}
 
-		if (_methodName388.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
+		if (_methodName392.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFAnnualConiReportLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName389.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes389, parameterTypes)) {
+		if (_methodName393.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
 			ESFAnnualConiReportLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName394.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
+		if (_methodName398.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
 			return ESFAnnualConiReportLocalServiceUtil.findAffiliationByYear(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue());
 		}
@@ -261,10 +261,10 @@ public class ESFAnnualConiReportLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName388;
-	private String[] _methodParameterTypes388;
-	private String _methodName389;
-	private String[] _methodParameterTypes389;
-	private String _methodName394;
-	private String[] _methodParameterTypes394;
+	private String _methodName392;
+	private String[] _methodParameterTypes392;
+	private String _methodName393;
+	private String[] _methodParameterTypes393;
+	private String _methodName398;
+	private String[] _methodParameterTypes398;
 }

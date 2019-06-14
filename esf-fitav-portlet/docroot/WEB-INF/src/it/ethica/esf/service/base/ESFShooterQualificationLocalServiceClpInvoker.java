@@ -122,53 +122,53 @@ public class ESFShooterQualificationLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFShooterQualification"
 			};
 
-		_methodName392 = "getBeanIdentifier";
+		_methodName396 = "getBeanIdentifier";
 
-		_methodParameterTypes392 = new String[] {  };
+		_methodParameterTypes396 = new String[] {  };
 
-		_methodName393 = "setBeanIdentifier";
+		_methodName397 = "setBeanIdentifier";
 
-		_methodParameterTypes393 = new String[] { "java.lang.String" };
+		_methodParameterTypes397 = new String[] { "java.lang.String" };
 
-		_methodName398 = "getESFShooterQualifications";
+		_methodName402 = "getESFShooterQualifications";
 
-		_methodParameterTypes398 = new String[] {  };
+		_methodParameterTypes402 = new String[] {  };
 
-		_methodName399 = "getESFShooterQualifications";
+		_methodName403 = "getESFShooterQualifications";
 
-		_methodParameterTypes399 = new String[] { "int", "int" };
+		_methodParameterTypes403 = new String[] { "int", "int" };
 
-		_methodName400 = "getESFShooterCategories";
+		_methodName404 = "getESFShooterCategories";
 
-		_methodParameterTypes400 = new String[] { "long" };
+		_methodParameterTypes404 = new String[] { "long" };
 
-		_methodName401 = "findByMatchId";
+		_methodName405 = "findByMatchId";
 
-		_methodParameterTypes401 = new String[] { "long" };
+		_methodParameterTypes405 = new String[] { "long" };
 
-		_methodName402 = "addESFShooterQualification";
+		_methodName406 = "addESFShooterQualification";
 
-		_methodParameterTypes402 = new String[] {
+		_methodParameterTypes406 = new String[] {
 				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName403 = "updateESFShooterQualification";
+		_methodName407 = "updateESFShooterQualification";
 
-		_methodParameterTypes403 = new String[] {
+		_methodParameterTypes407 = new String[] {
 				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName404 = "deleteESFShooterQualification";
+		_methodName408 = "deleteESFShooterQualification";
 
-		_methodParameterTypes404 = new String[] {
+		_methodParameterTypes408 = new String[] {
 				"long", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName405 = "findIDQualificationByCode";
+		_methodName409 = "findIDQualificationByCode";
 
-		_methodParameterTypes405 = new String[] { "java.lang.String" };
+		_methodParameterTypes409 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -284,63 +284,63 @@ public class ESFShooterQualificationLocalServiceClpInvoker {
 			return ESFShooterQualificationLocalServiceUtil.updateESFShooterQualification((it.ethica.esf.model.ESFShooterQualification)arguments[0]);
 		}
 
-		if (_methodName392.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
+		if (_methodName396.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
 			return ESFShooterQualificationLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName393.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
+		if (_methodName397.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
 			ESFShooterQualificationLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName398.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
+		if (_methodName402.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes402, parameterTypes)) {
 			return ESFShooterQualificationLocalServiceUtil.getESFShooterQualifications();
 		}
 
-		if (_methodName399.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes399, parameterTypes)) {
+		if (_methodName403.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes403, parameterTypes)) {
 			return ESFShooterQualificationLocalServiceUtil.getESFShooterQualifications(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
-		if (_methodName400.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes400, parameterTypes)) {
+		if (_methodName404.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes404, parameterTypes)) {
 			return ESFShooterQualificationLocalServiceUtil.getESFShooterCategories(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName401.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes401, parameterTypes)) {
+		if (_methodName405.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes405, parameterTypes)) {
 			return ESFShooterQualificationLocalServiceUtil.findByMatchId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName402.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes402, parameterTypes)) {
+		if (_methodName406.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes406, parameterTypes)) {
 			return ESFShooterQualificationLocalServiceUtil.addESFShooterQualification(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(java.lang.String)arguments[3],
 				(com.liferay.portal.service.ServiceContext)arguments[4]);
 		}
 
-		if (_methodName403.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes403, parameterTypes)) {
+		if (_methodName407.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes407, parameterTypes)) {
 			return ESFShooterQualificationLocalServiceUtil.updateESFShooterQualification(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(java.lang.String)arguments[3],
 				(com.liferay.portal.service.ServiceContext)arguments[4]);
 		}
 
-		if (_methodName404.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes404, parameterTypes)) {
+		if (_methodName408.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes408, parameterTypes)) {
 			return ESFShooterQualificationLocalServiceUtil.deleteESFShooterQualification(((Long)arguments[0]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
 
-		if (_methodName405.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes405, parameterTypes)) {
+		if (_methodName409.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes409, parameterTypes)) {
 			return ESFShooterQualificationLocalServiceUtil.findIDQualificationByCode((java.lang.String)arguments[0]);
 		}
 
@@ -387,18 +387,10 @@ public class ESFShooterQualificationLocalServiceClpInvoker {
 	private String[] _methodParameterTypes18;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
-	private String _methodName392;
-	private String[] _methodParameterTypes392;
-	private String _methodName393;
-	private String[] _methodParameterTypes393;
-	private String _methodName398;
-	private String[] _methodParameterTypes398;
-	private String _methodName399;
-	private String[] _methodParameterTypes399;
-	private String _methodName400;
-	private String[] _methodParameterTypes400;
-	private String _methodName401;
-	private String[] _methodParameterTypes401;
+	private String _methodName396;
+	private String[] _methodParameterTypes396;
+	private String _methodName397;
+	private String[] _methodParameterTypes397;
 	private String _methodName402;
 	private String[] _methodParameterTypes402;
 	private String _methodName403;
@@ -407,4 +399,12 @@ public class ESFShooterQualificationLocalServiceClpInvoker {
 	private String[] _methodParameterTypes404;
 	private String _methodName405;
 	private String[] _methodParameterTypes405;
+	private String _methodName406;
+	private String[] _methodParameterTypes406;
+	private String _methodName407;
+	private String[] _methodParameterTypes407;
+	private String _methodName408;
+	private String[] _methodParameterTypes408;
+	private String _methodName409;
+	private String[] _methodParameterTypes409;
 }

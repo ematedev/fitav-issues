@@ -636,10 +636,6 @@ public class ESFPhoneClp extends BaseModelImpl<ESFPhone> implements ESFPhone {
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -683,5 +679,4 @@ public class ESFPhoneClp extends BaseModelImpl<ESFPhone> implements ESFPhone {
 	private long _esfPhoneId;
 	private int _listTypeId;
 	private BaseModel<?> _esfPhoneRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

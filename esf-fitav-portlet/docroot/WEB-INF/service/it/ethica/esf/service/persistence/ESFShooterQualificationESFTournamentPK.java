@@ -21,7 +21,6 @@ import java.io.Serializable;
 
 /**
  * @author Ethica
- * @generated
  */
 public class ESFShooterQualificationESFTournamentPK implements Comparable<ESFShooterQualificationESFTournamentPK>,
 	Serializable {

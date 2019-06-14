@@ -221,20 +221,19 @@ public interface VW_ESFIncarichiFederaliModel extends BaseModel<VW_ESFIncarichiF
 	public Object clone();
 
 	@Override
-	public int compareTo(
-		it.ethica.esf.model.VW_ESFIncarichiFederali vw_esfIncarichiFederali);
+	public int compareTo(VW_ESFIncarichiFederali vw_esfIncarichiFederali);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.VW_ESFIncarichiFederali> toCacheModel();
+	public CacheModel<VW_ESFIncarichiFederali> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.VW_ESFIncarichiFederali toEscapedModel();
+	public VW_ESFIncarichiFederali toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.VW_ESFIncarichiFederali toUnescapedModel();
+	public VW_ESFIncarichiFederali toUnescapedModel();
 
 	@Override
 	public String toString();

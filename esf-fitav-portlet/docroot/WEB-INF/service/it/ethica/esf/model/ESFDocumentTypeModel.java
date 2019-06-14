@@ -167,19 +167,19 @@ public interface ESFDocumentTypeModel extends BaseModel<ESFDocumentType> {
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFDocumentType esfDocumentType);
+	public int compareTo(ESFDocumentType esfDocumentType);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFDocumentType> toCacheModel();
+	public CacheModel<ESFDocumentType> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFDocumentType toEscapedModel();
+	public ESFDocumentType toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFDocumentType toUnescapedModel();
+	public ESFDocumentType toUnescapedModel();
 
 	@Override
 	public String toString();

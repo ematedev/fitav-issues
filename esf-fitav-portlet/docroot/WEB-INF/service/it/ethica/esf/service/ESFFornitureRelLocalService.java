@@ -16,7 +16,6 @@ package it.ethica.esf.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -53,7 +52,6 @@ public interface ESFFornitureRelLocalService extends BaseLocalService,
 	* @return the e s f forniture rel that was added
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFFornitureRel addESFFornitureRel(
 		it.ethica.esf.model.ESFFornitureRel esfFornitureRel)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -75,7 +73,6 @@ public interface ESFFornitureRelLocalService extends BaseLocalService,
 	* @throws PortalException if a e s f forniture rel with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFFornitureRel deleteESFFornitureRel(
 		it.ethica.esf.service.persistence.ESFFornitureRelPK esfFornitureRelPK)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -88,7 +85,6 @@ public interface ESFFornitureRelLocalService extends BaseLocalService,
 	* @return the e s f forniture rel that was removed
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFFornitureRel deleteESFFornitureRel(
 		it.ethica.esf.model.ESFFornitureRel esfFornitureRel)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -230,7 +226,6 @@ public interface ESFFornitureRelLocalService extends BaseLocalService,
 	* @return the e s f forniture rel that was updated
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFFornitureRel updateESFFornitureRel(
 		it.ethica.esf.model.ESFFornitureRel esfFornitureRel)
 		throws com.liferay.portal.kernel.exception.SystemException;

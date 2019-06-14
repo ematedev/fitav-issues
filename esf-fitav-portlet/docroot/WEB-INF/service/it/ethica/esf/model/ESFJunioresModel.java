@@ -153,19 +153,19 @@ public interface ESFJunioresModel extends BaseModel<ESFJuniores> {
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFJuniores esfJuniores);
+	public int compareTo(ESFJuniores esfJuniores);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFJuniores> toCacheModel();
+	public CacheModel<ESFJuniores> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFJuniores toEscapedModel();
+	public ESFJuniores toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFJuniores toUnescapedModel();
+	public ESFJuniores toUnescapedModel();
 
 	@Override
 	public String toString();

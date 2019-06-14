@@ -352,10 +352,6 @@ public class ESFDocumentTypeClp extends BaseModelImpl<ESFDocumentType>
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -420,5 +416,4 @@ public class ESFDocumentTypeClp extends BaseModelImpl<ESFDocumentType>
 	private String _description;
 	private int _expirationMonthsNotice;
 	private BaseModel<?> _esfDocumentTypeRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

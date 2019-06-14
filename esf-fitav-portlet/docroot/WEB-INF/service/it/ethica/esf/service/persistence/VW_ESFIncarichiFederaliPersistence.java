@@ -159,8 +159,8 @@ public interface VW_ESFIncarichiFederaliPersistence extends BasePersistence<VW_E
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.VW_ESFIncarichiFederali[] findBylistaIncarichi_PrevAndNext(
-		VW_ESFIncarichiFederaliPK vw_esfIncarichiFederaliPK, boolean active_,
-		long esfUserId,
+		it.ethica.esf.service.persistence.VW_ESFIncarichiFederaliPK vw_esfIncarichiFederaliPK,
+		boolean active_, long esfUserId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchVW_ESFIncarichiFederaliException;
@@ -209,7 +209,7 @@ public interface VW_ESFIncarichiFederaliPersistence extends BasePersistence<VW_E
 	* @return the new v w_ e s f incarichi federali
 	*/
 	public it.ethica.esf.model.VW_ESFIncarichiFederali create(
-		VW_ESFIncarichiFederaliPK vw_esfIncarichiFederaliPK);
+		it.ethica.esf.service.persistence.VW_ESFIncarichiFederaliPK vw_esfIncarichiFederaliPK);
 
 	/**
 	* Removes the v w_ e s f incarichi federali with the primary key from the database. Also notifies the appropriate model listeners.
@@ -220,7 +220,7 @@ public interface VW_ESFIncarichiFederaliPersistence extends BasePersistence<VW_E
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.VW_ESFIncarichiFederali remove(
-		VW_ESFIncarichiFederaliPK vw_esfIncarichiFederaliPK)
+		it.ethica.esf.service.persistence.VW_ESFIncarichiFederaliPK vw_esfIncarichiFederaliPK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchVW_ESFIncarichiFederaliException;
 
@@ -237,7 +237,7 @@ public interface VW_ESFIncarichiFederaliPersistence extends BasePersistence<VW_E
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.VW_ESFIncarichiFederali findByPrimaryKey(
-		VW_ESFIncarichiFederaliPK vw_esfIncarichiFederaliPK)
+		it.ethica.esf.service.persistence.VW_ESFIncarichiFederaliPK vw_esfIncarichiFederaliPK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchVW_ESFIncarichiFederaliException;
 
@@ -249,7 +249,7 @@ public interface VW_ESFIncarichiFederaliPersistence extends BasePersistence<VW_E
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.VW_ESFIncarichiFederali fetchByPrimaryKey(
-		VW_ESFIncarichiFederaliPK vw_esfIncarichiFederaliPK)
+		it.ethica.esf.service.persistence.VW_ESFIncarichiFederaliPK vw_esfIncarichiFederaliPK)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**

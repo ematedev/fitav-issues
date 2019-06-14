@@ -24,24 +24,24 @@ import java.util.Arrays;
  */
 public class ESFFederalRoleESFSpecificServiceClpInvoker {
 	public ESFFederalRoleESFSpecificServiceClpInvoker() {
-		_methodName372 = "getBeanIdentifier";
+		_methodName376 = "getBeanIdentifier";
 
-		_methodParameterTypes372 = new String[] {  };
+		_methodParameterTypes376 = new String[] {  };
 
-		_methodName373 = "setBeanIdentifier";
+		_methodName377 = "setBeanIdentifier";
 
-		_methodParameterTypes373 = new String[] { "java.lang.String" };
+		_methodParameterTypes377 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
 		Object[] arguments) throws Throwable {
-		if (_methodName372.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes372, parameterTypes)) {
+		if (_methodName376.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes376, parameterTypes)) {
 			return ESFFederalRoleESFSpecificServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName373.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes373, parameterTypes)) {
+		if (_methodName377.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes377, parameterTypes)) {
 			ESFFederalRoleESFSpecificServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
@@ -50,8 +50,8 @@ public class ESFFederalRoleESFSpecificServiceClpInvoker {
 		throw new UnsupportedOperationException();
 	}
 
-	private String _methodName372;
-	private String[] _methodParameterTypes372;
-	private String _methodName373;
-	private String[] _methodParameterTypes373;
+	private String _methodName376;
+	private String[] _methodParameterTypes376;
+	private String _methodName377;
+	private String[] _methodParameterTypes377;
 }

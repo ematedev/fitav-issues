@@ -896,10 +896,6 @@ public class ESFTournamentClp extends BaseModelImpl<ESFTournament>
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1077,5 +1073,4 @@ public class ESFTournamentClp extends BaseModelImpl<ESFTournament>
 	private Date _createDate;
 	private Date _modifiedDate;
 	private BaseModel<?> _esfTournamentRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

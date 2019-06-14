@@ -160,8 +160,8 @@ public interface ESFProvincePersistence extends BasePersistence<ESFProvince> {
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFProvince[] findByC_R_PrevAndNext(
-		ESFProvincePK esfProvincePK, java.lang.String idRegion,
-		java.lang.String idCountry,
+		it.ethica.esf.service.persistence.ESFProvincePK esfProvincePK,
+		java.lang.String idRegion, java.lang.String idCountry,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchProvinceException;
@@ -310,8 +310,8 @@ public interface ESFProvincePersistence extends BasePersistence<ESFProvince> {
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFProvince[] findByCountryProvinceName_PrevAndNext(
-		ESFProvincePK esfProvincePK, java.lang.String idCountry,
-		java.lang.String name,
+		it.ethica.esf.service.persistence.ESFProvincePK esfProvincePK,
+		java.lang.String idCountry, java.lang.String name,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchProvinceException;
@@ -453,7 +453,8 @@ public interface ESFProvincePersistence extends BasePersistence<ESFProvince> {
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFProvince[] findByProvinceId_PrevAndNext(
-		ESFProvincePK esfProvincePK, java.lang.String idProvince,
+		it.ethica.esf.service.persistence.ESFProvincePK esfProvincePK,
+		java.lang.String idProvince,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchProvinceException;
@@ -498,7 +499,8 @@ public interface ESFProvincePersistence extends BasePersistence<ESFProvince> {
 	* @param esfProvincePK the primary key for the new e s f province
 	* @return the new e s f province
 	*/
-	public it.ethica.esf.model.ESFProvince create(ESFProvincePK esfProvincePK);
+	public it.ethica.esf.model.ESFProvince create(
+		it.ethica.esf.service.persistence.ESFProvincePK esfProvincePK);
 
 	/**
 	* Removes the e s f province with the primary key from the database. Also notifies the appropriate model listeners.
@@ -508,7 +510,8 @@ public interface ESFProvincePersistence extends BasePersistence<ESFProvince> {
 	* @throws it.ethica.esf.NoSuchProvinceException if a e s f province with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public it.ethica.esf.model.ESFProvince remove(ESFProvincePK esfProvincePK)
+	public it.ethica.esf.model.ESFProvince remove(
+		it.ethica.esf.service.persistence.ESFProvincePK esfProvincePK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchProvinceException;
 
@@ -525,7 +528,7 @@ public interface ESFProvincePersistence extends BasePersistence<ESFProvince> {
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFProvince findByPrimaryKey(
-		ESFProvincePK esfProvincePK)
+		it.ethica.esf.service.persistence.ESFProvincePK esfProvincePK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchProvinceException;
 
@@ -537,7 +540,7 @@ public interface ESFProvincePersistence extends BasePersistence<ESFProvince> {
 	* @throws SystemException if a system exception occurred
 	*/
 	public it.ethica.esf.model.ESFProvince fetchByPrimaryKey(
-		ESFProvincePK esfProvincePK)
+		it.ethica.esf.service.persistence.ESFProvincePK esfProvincePK)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**

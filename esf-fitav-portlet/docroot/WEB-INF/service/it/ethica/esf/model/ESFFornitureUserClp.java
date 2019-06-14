@@ -349,10 +349,6 @@ public class ESFFornitureUserClp extends BaseModelImpl<ESFFornitureUser>
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -417,5 +413,4 @@ public class ESFFornitureUserClp extends BaseModelImpl<ESFFornitureUser>
 	private Date _esfDateAssign;
 	private long _esfFornitureUserID;
 	private BaseModel<?> _esfFornitureUserRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

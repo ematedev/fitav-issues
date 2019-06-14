@@ -838,10 +838,6 @@ public class ESFRenewalClp extends BaseModelImpl<ESFRenewal>
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1012,5 +1008,4 @@ public class ESFRenewalClp extends BaseModelImpl<ESFRenewal>
 	private long _renewalFatherId;
 	private boolean _affiliates;
 	private BaseModel<?> _esfRenewalRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

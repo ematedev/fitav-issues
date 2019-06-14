@@ -122,64 +122,64 @@ public class ESFPartecipantLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFPartecipant"
 			};
 
-		_methodName402 = "getBeanIdentifier";
+		_methodName406 = "getBeanIdentifier";
 
-		_methodParameterTypes402 = new String[] {  };
+		_methodParameterTypes406 = new String[] {  };
 
-		_methodName403 = "setBeanIdentifier";
+		_methodName407 = "setBeanIdentifier";
 
-		_methodParameterTypes403 = new String[] { "java.lang.String" };
+		_methodParameterTypes407 = new String[] { "java.lang.String" };
 
-		_methodName408 = "getESFPartecipantByESFMatchId_ESFUserId";
+		_methodName412 = "getESFPartecipantByESFMatchId_ESFUserId";
 
-		_methodParameterTypes408 = new String[] { "long", "long" };
+		_methodParameterTypes412 = new String[] { "long", "long" };
 
-		_methodName409 = "getESFPartecipantsByESFMatchId";
-
-		_methodParameterTypes409 = new String[] { "long" };
-
-		_methodName410 = "getESFPartecipantsByESFMatchId";
-
-		_methodParameterTypes410 = new String[] { "long", "int", "int" };
-
-		_methodName411 = "findPartecipants";
-
-		_methodParameterTypes411 = new String[] {
-				"long", "java.lang.Object[][]", "long"
-			};
-
-		_methodName412 = "findbyUserId";
-
-		_methodParameterTypes412 = new String[] { "long" };
-
-		_methodName413 = "findPartecipantsByMatch";
+		_methodName413 = "getESFPartecipantsByESFMatchId";
 
 		_methodParameterTypes413 = new String[] { "long" };
 
-		_methodName414 = "findPartecipantsByTournament";
+		_methodName414 = "getESFPartecipantsByESFMatchId";
 
-		_methodParameterTypes414 = new String[] { "long" };
+		_methodParameterTypes414 = new String[] { "long", "int", "int" };
 
-		_methodName415 = "getPartecipantByU_M_T";
+		_methodName415 = "findPartecipants";
 
-		_methodParameterTypes415 = new String[] { "long", "long", "long" };
+		_methodParameterTypes415 = new String[] {
+				"long", "java.lang.Object[][]", "long"
+			};
 
-		_methodName416 = "addESFPartecipant";
+		_methodName416 = "findbyUserId";
 
-		_methodParameterTypes416 = new String[] {
+		_methodParameterTypes416 = new String[] { "long" };
+
+		_methodName417 = "findPartecipantsByMatch";
+
+		_methodParameterTypes417 = new String[] { "long" };
+
+		_methodName418 = "findPartecipantsByTournament";
+
+		_methodParameterTypes418 = new String[] { "long" };
+
+		_methodName419 = "getPartecipantByU_M_T";
+
+		_methodParameterTypes419 = new String[] { "long", "long", "long" };
+
+		_methodName420 = "addESFPartecipant";
+
+		_methodParameterTypes420 = new String[] {
 				"long", "long", "long", "long", "long", "long", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName417 = "deleteESFPartecipant";
+		_methodName421 = "deleteESFPartecipant";
 
-		_methodParameterTypes417 = new String[] {
+		_methodParameterTypes421 = new String[] {
 				"long", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName418 = "updateESFPartecipant";
+		_methodName422 = "updateESFPartecipant";
 
-		_methodParameterTypes418 = new String[] {
+		_methodParameterTypes422 = new String[] {
 				"long", "long", "long", "long", "long", "long", "long", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
@@ -298,67 +298,67 @@ public class ESFPartecipantLocalServiceClpInvoker {
 			return ESFPartecipantLocalServiceUtil.updateESFPartecipant((it.ethica.esf.model.ESFPartecipant)arguments[0]);
 		}
 
-		if (_methodName402.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes402, parameterTypes)) {
+		if (_methodName406.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes406, parameterTypes)) {
 			return ESFPartecipantLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName403.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes403, parameterTypes)) {
+		if (_methodName407.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes407, parameterTypes)) {
 			ESFPartecipantLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName408.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes408, parameterTypes)) {
+		if (_methodName412.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes412, parameterTypes)) {
 			return ESFPartecipantLocalServiceUtil.getESFPartecipantByESFMatchId_ESFUserId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName409.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes409, parameterTypes)) {
+		if (_methodName413.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes413, parameterTypes)) {
 			return ESFPartecipantLocalServiceUtil.getESFPartecipantsByESFMatchId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName410.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes410, parameterTypes)) {
+		if (_methodName414.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes414, parameterTypes)) {
 			return ESFPartecipantLocalServiceUtil.getESFPartecipantsByESFMatchId(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName411.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes411, parameterTypes)) {
+		if (_methodName415.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes415, parameterTypes)) {
 			return ESFPartecipantLocalServiceUtil.findPartecipants(((Long)arguments[0]).longValue(),
 				(java.lang.Object[])arguments[1],
 				((Long)arguments[2]).longValue());
 		}
 
-		if (_methodName412.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes412, parameterTypes)) {
+		if (_methodName416.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes416, parameterTypes)) {
 			return ESFPartecipantLocalServiceUtil.findbyUserId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName413.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes413, parameterTypes)) {
+		if (_methodName417.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes417, parameterTypes)) {
 			return ESFPartecipantLocalServiceUtil.findPartecipantsByMatch(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName414.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes414, parameterTypes)) {
+		if (_methodName418.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes418, parameterTypes)) {
 			return ESFPartecipantLocalServiceUtil.findPartecipantsByTournament(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName415.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes415, parameterTypes)) {
+		if (_methodName419.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes419, parameterTypes)) {
 			return ESFPartecipantLocalServiceUtil.getPartecipantByU_M_T(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue());
 		}
 
-		if (_methodName416.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes416, parameterTypes)) {
+		if (_methodName420.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes420, parameterTypes)) {
 			return ESFPartecipantLocalServiceUtil.addESFPartecipant(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -369,14 +369,14 @@ public class ESFPartecipantLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[7]);
 		}
 
-		if (_methodName417.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes417, parameterTypes)) {
+		if (_methodName421.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes421, parameterTypes)) {
 			return ESFPartecipantLocalServiceUtil.deleteESFPartecipant(((Long)arguments[0]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
 
-		if (_methodName418.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes418, parameterTypes)) {
+		if (_methodName422.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes422, parameterTypes)) {
 			return ESFPartecipantLocalServiceUtil.updateESFPartecipant(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -431,18 +431,10 @@ public class ESFPartecipantLocalServiceClpInvoker {
 	private String[] _methodParameterTypes18;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
-	private String _methodName402;
-	private String[] _methodParameterTypes402;
-	private String _methodName403;
-	private String[] _methodParameterTypes403;
-	private String _methodName408;
-	private String[] _methodParameterTypes408;
-	private String _methodName409;
-	private String[] _methodParameterTypes409;
-	private String _methodName410;
-	private String[] _methodParameterTypes410;
-	private String _methodName411;
-	private String[] _methodParameterTypes411;
+	private String _methodName406;
+	private String[] _methodParameterTypes406;
+	private String _methodName407;
+	private String[] _methodParameterTypes407;
 	private String _methodName412;
 	private String[] _methodParameterTypes412;
 	private String _methodName413;
@@ -457,4 +449,12 @@ public class ESFPartecipantLocalServiceClpInvoker {
 	private String[] _methodParameterTypes417;
 	private String _methodName418;
 	private String[] _methodParameterTypes418;
+	private String _methodName419;
+	private String[] _methodParameterTypes419;
+	private String _methodName420;
+	private String[] _methodParameterTypes420;
+	private String _methodName421;
+	private String[] _methodParameterTypes421;
+	private String _methodName422;
+	private String[] _methodParameterTypes422;
 }

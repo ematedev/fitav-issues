@@ -16,7 +16,6 @@ package it.ethica.esf.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -53,7 +52,6 @@ public interface ESFInstructsShootingDirectorLocalService
 	* @return the e s f instructs shooting director that was added
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFInstructsShootingDirector addESFInstructsShootingDirector(
 		it.ethica.esf.model.ESFInstructsShootingDirector esfInstructsShootingDirector)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -75,7 +73,6 @@ public interface ESFInstructsShootingDirectorLocalService
 	* @throws PortalException if a e s f instructs shooting director with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFInstructsShootingDirector deleteESFInstructsShootingDirector(
 		long esfInstructsShootingDirectorId)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -88,7 +85,6 @@ public interface ESFInstructsShootingDirectorLocalService
 	* @return the e s f instructs shooting director that was removed
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFInstructsShootingDirector deleteESFInstructsShootingDirector(
 		it.ethica.esf.model.ESFInstructsShootingDirector esfInstructsShootingDirector)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -230,7 +226,6 @@ public interface ESFInstructsShootingDirectorLocalService
 	* @return the e s f instructs shooting director that was updated
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFInstructsShootingDirector updateESFInstructsShootingDirector(
 		it.ethica.esf.model.ESFInstructsShootingDirector esfInstructsShootingDirector)
 		throws com.liferay.portal.kernel.exception.SystemException;

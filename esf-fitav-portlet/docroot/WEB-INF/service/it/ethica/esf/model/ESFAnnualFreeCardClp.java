@@ -552,10 +552,6 @@ public class ESFAnnualFreeCardClp extends BaseModelImpl<ESFAnnualFreeCard>
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -663,5 +659,4 @@ public class ESFAnnualFreeCardClp extends BaseModelImpl<ESFAnnualFreeCard>
 	private String _assCode;
 	private String _assName;
 	private BaseModel<?> _esfAnnualFreeCardRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }
