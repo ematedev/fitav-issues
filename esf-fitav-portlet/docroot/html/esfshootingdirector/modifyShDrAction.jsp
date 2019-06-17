@@ -1,14 +1,17 @@
+<%@page import="it.ethica.esf.model.VW_NomineDirettoriTiro"%>
 <%@page import="com.liferay.portal.kernel.util.WebKeys"%>
 <%@page import="com.liferay.portal.kernel.dao.search.ResultRow"%>
 <%@include file="init.jsp"%>
 
 <%
 
-ResultRow row =
-	(ResultRow) request.getAttribute(WebKeys.SEARCH_CONTAINER_RESULT_ROW);
+ResultRow row = (ResultRow) request.getAttribute(WebKeys.SEARCH_CONTAINER_RESULT_ROW);
 
-ESFShootingDirector shDr = ( ESFShootingDirector) row.getObject();
+VW_NomineDirettoriTiro direttore = (VW_NomineDirettoriTiro)row.getObject();
+
+//Da implementare l'user id sulla vista
 long esfUserId = shDr.getEsfUserId();
+
 %>
 <liferay-ui:icon-menu>
 

@@ -12,37 +12,51 @@
 <%@page import="it.ethica.esf.service.ESFSuspensiveCodeLocalServiceUtil"%>
 <%@page import="it.ethica.esf.model.ESFSuspensiveCode"%>
 <%@include file="init.jsp"%>
-<%
-String userName  ="";
 
+<%
+
+
+String userName  =""; 
 long esfUserId = ParamUtil.getLong(request, "esfUserId");
 long esfSuspensionId = ParamUtil.getLong(request, "esfSuspensionId");
 ESFUser userRaised = new ESFUserImpl();
 
+//Se il tiratore ha un id valido...
 if(0 < esfUserId){
+	//Prendo l'istanza corrispondente
 	userRaised = ESFUserLocalServiceUtil.fetchESFUser(esfUserId);
-	userName = userRaised.getFirstName() + " " + userRaised.getLastName();
-	
+	//Prendo nome e cognome
+	userName = userRaised.getFirstName() + " " + userRaised.getLastName(); 
 }
 
+//Inizializzazione variabili
 List<ESFSuspensiveCode> suspensiveCodes = new ArrayList<ESFSuspensiveCode>();
 List<ESFInstructsShootingDirector> insShDrs = new ArrayList<ESFInstructsShootingDirector>();
 List<ESFMatchType> matchTypes = new ArrayList<ESFMatchType>();
 
+//Trova tutte le sospensioni
 suspensiveCodes = ESFSuspensiveCodeLocalServiceUtil.findAll(QueryUtil.ALL_POS, QueryUtil.ALL_POS);
+
+//Trova tutti gli incarichi
 insShDrs = ESFInstructsShootingDirectorLocalServiceUtil.findAll(QueryUtil.ALL_POS, QueryUtil.ALL_POS);
+
+//Trova tutti i tipi di gare
 matchTypes = ESFMatchTypeLocalServiceUtil.findAll();
 
-
+//Definisci il formato della data
 SimpleDateFormat format1 = new SimpleDateFormat("MM/dd/yyyy");
+
+//Prendi un oggetto calendar e ricava il data di oggi
 Calendar calendar = CalendarFactoryUtil.getCalendar();
 calendar.setTime(new Date());
 String	startDate = calendar.toString() ;
 String endDate = calendar.toString();
 
 %>
+
 <h3>Aggiunta sospensione per tiratore <%= userName%></h3>
 
+<!-- Definisce l'azione di aggiornamento della sospensione -->
 <portlet:actionURL name="updateSuspensive" var="updateSuspensiveURL">
 	<portlet:param name="esfUserId"
 		value="<%=String.valueOf(esfUserId)%>" />
@@ -52,6 +66,7 @@ String endDate = calendar.toString();
 		value='<%=templatePath + "shootingDirectorInfo.jsp"%>'/>
 </portlet:actionURL>
 
+<!-- Definisce il form per  -->
 <aui:form action="<%=updateSuspensiveURL%>" name="<portlet:namespace />fm" >
 		<div>
 			<aui:select name="suspensiveCode" label="suspensionCode" inlineField="true">
