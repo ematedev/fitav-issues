@@ -578,10 +578,6 @@ public class VW_ESFListaIncarichiClp extends BaseModelImpl<VW_ESFListaIncarichi>
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return getPrimaryKey().hashCode();
@@ -689,5 +685,4 @@ public class VW_ESFListaIncarichiClp extends BaseModelImpl<VW_ESFListaIncarichi>
 	private String _lastName;
 	private String _firstName;
 	private BaseModel<?> _vw_esfListaIncarichiRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

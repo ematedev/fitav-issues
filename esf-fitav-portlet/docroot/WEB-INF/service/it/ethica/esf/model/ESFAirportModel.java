@@ -153,19 +153,19 @@ public interface ESFAirportModel extends BaseModel<ESFAirport> {
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFAirport esfAirport);
+	public int compareTo(ESFAirport esfAirport);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFAirport> toCacheModel();
+	public CacheModel<ESFAirport> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFAirport toEscapedModel();
+	public ESFAirport toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFAirport toUnescapedModel();
+	public ESFAirport toUnescapedModel();
 
 	@Override
 	public String toString();

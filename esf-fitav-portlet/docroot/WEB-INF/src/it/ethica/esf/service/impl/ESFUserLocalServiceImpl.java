@@ -20,12 +20,18 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import org.apache.xmlbeans.impl.xb.xsdschema.Public;
+
 import com.liferay.portal.NoSuchUserException;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
 import com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil;
 import com.liferay.portal.kernel.dao.orm.OrderFactoryUtil;
 import com.liferay.portal.kernel.dao.orm.PropertyFactoryUtil;
+import com.liferay.portal.kernel.dao.orm.QueryPos;
 import com.liferay.portal.kernel.dao.orm.QueryUtil;
+import com.liferay.portal.kernel.dao.orm.SQLQuery;
+import com.liferay.portal.kernel.dao.orm.Session;
+import com.liferay.portal.kernel.dao.orm.SessionFactory;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.log.Log;
@@ -42,6 +48,8 @@ import com.liferay.portal.service.ContactLocalServiceUtil;
 import com.liferay.portal.service.PhoneLocalServiceUtil;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portal.service.UserLocalServiceUtil;
+import com.liferay.util.dao.orm.CustomSQLUtil;
+import com.sun.org.apache.bcel.internal.generic.ReturnInstruction;
 
 import it.ethica.esf.ESFUserPortalUserException;
 import it.ethica.esf.NoSuchCardException;
@@ -59,6 +67,7 @@ import it.ethica.esf.model.ESFUser;
 import it.ethica.esf.model.ESFUserESFFederalRole;
 import it.ethica.esf.model.ESFUserESFUserRole;
 import it.ethica.esf.model.ESFUserRole;
+import it.ethica.esf.model.impl.ESFUserImpl;
 import it.ethica.esf.service.ESFAddressLocalServiceUtil;
 import it.ethica.esf.service.ESFCardLocalServiceUtil;
 import it.ethica.esf.service.ESFDepartureLocalServiceUtil;
@@ -72,7 +81,10 @@ import it.ethica.esf.service.ESFUserESFUserRoleLocalServiceUtil;
 import it.ethica.esf.service.ESFUserLocalServiceUtil;
 import it.ethica.esf.service.ESFUserRoleLocalServiceUtil;
 import it.ethica.esf.service.base.ESFUserLocalServiceBaseImpl;
+import it.ethica.esf.service.persistence.ESFUserFinderImpl;
 import it.ethica.esf.service.persistence.ESFUserFinderUtil;
+import it.ethica.esf.service.persistence.ESFUserPersistence;
+import com.liferay.portal.service.persistence.impl.BasePersistenceImpl;
 import it.ethica.esf.util.ESFKeys;
 import it.ethica.esf.util.ESFKeys.ESFUserRoleType;
 
@@ -94,6 +106,15 @@ public class ESFUserLocalServiceImpl extends ESFUserLocalServiceBaseImpl {
 	private static Log _log =
 		LogFactoryUtil.getLog(ESFUserLocalServiceImpl.class);
 
+	public List<Object[]> findTiratoriTesserati(int inizio, int fine) { 
+		ESFUserPersistence persistence = getESFUserPersistence();
+		Session session = persistence.openSession(); 
+		String sql = CustomSQLUtil.get(ESFUserFinderImpl.FIND_TIRATORI_TESSERATI); 
+		SQLQuery q = session.createSQLQuery(sql); 
+		q.setCacheable(false);    
+		return (List<Object[]>)q.list();
+	}
+	
 	public List<ESFUser> getESFUsersByDeparture(long esfDepartureId) {
 
 		List<ESFUser> esfUsers = new ArrayList<ESFUser>();

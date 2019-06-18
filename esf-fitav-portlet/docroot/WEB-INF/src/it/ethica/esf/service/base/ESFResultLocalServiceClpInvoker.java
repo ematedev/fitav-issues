@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /**
  * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
  *
@@ -101,127 +100,65 @@ public class ESFResultLocalServiceClpInvoker {
 
 		_methodParameterTypes15 = new String[] { "it.ethica.esf.model.ESFResult" };
 
-<<<<<<< HEAD
-		_methodName384 = "getBeanIdentifier";
+		_methodName394 = "getBeanIdentifier";
 
-		_methodParameterTypes384 = new String[] {  };
+		_methodParameterTypes394 = new String[] {  };
 
-		_methodName385 = "setBeanIdentifier";
+		_methodName395 = "setBeanIdentifier";
 
-		_methodParameterTypes385 = new String[] { "java.lang.String" };
+		_methodParameterTypes395 = new String[] { "java.lang.String" };
 
-		_methodName390 = "inserted";
+		_methodName400 = "inserted";
 
-		_methodParameterTypes390 = new String[] { "long" };
+		_methodParameterTypes400 = new String[] { "long" };
 
-		_methodName391 = "findByESFMatchid";
+		_methodName401 = "findByESFMatchid";
 
-		_methodParameterTypes391 = new String[] { "long" };
+		_methodParameterTypes401 = new String[] { "long" };
 
-		_methodName392 = "findByESFShooterId";
+		_methodName402 = "findByESFShooterId";
 
-		_methodParameterTypes392 = new String[] { "long" };
+		_methodParameterTypes402 = new String[] { "long" };
 
-		_methodName393 = "findByESFMId_UId_STId";
+		_methodName403 = "findByESFMId_UId_STId";
 
-		_methodParameterTypes393 = new String[] { "long", "long", "long" };
+		_methodParameterTypes403 = new String[] { "long", "long", "long" };
 
-		_methodName394 = "findESFMId_UId_STId_Single";
+		_methodName404 = "findESFMId_UId_STId_Single";
 
-		_methodParameterTypes394 = new String[] { "long", "long", "long" };
+		_methodParameterTypes404 = new String[] { "long", "long", "long" };
 
-		_methodName395 = "findByESFMId_STId_SQId";
+		_methodName405 = "findByESFMId_STId_SQId";
 
-		_methodParameterTypes395 = new String[] { "long", "long", "long" };
+		_methodParameterTypes405 = new String[] { "long", "long", "long" };
 
-		_methodName396 = "findByESFMId_STId_SQId_TEAM";
+		_methodName406 = "findByESFMId_STId_SQId_TEAM";
 
-		_methodParameterTypes396 = new String[] { "long", "long", "long" };
+		_methodParameterTypes406 = new String[] { "long", "long", "long" };
 
-		_methodName397 = "findByESFMId_STId_SQId_Single";
+		_methodName407 = "findByESFMId_STId_SQId_Single";
 
-		_methodParameterTypes397 = new String[] { "long", "long", "long" };
+		_methodParameterTypes407 = new String[] { "long", "long", "long" };
 
-		_methodName398 = "findDescRanking";
+		_methodName408 = "findDescRanking";
 
-		_methodParameterTypes398 = new String[] { "long" };
+		_methodParameterTypes408 = new String[] { "long" };
 
-		_methodName399 = "findByESFMatchidDescRanking";
+		_methodName409 = "findByESFMatchidDescRanking";
 
-		_methodParameterTypes399 = new String[] { "long", "java.lang.String" };
+		_methodParameterTypes409 = new String[] { "long", "java.lang.String" };
 
-		_methodName400 = "getESFResultByESFMatchId_ESFUserId_SportTypeId";
+		_methodName410 = "getESFResultByESFMatchId_ESFUserId_SportTypeId";
 
-		_methodParameterTypes400 = new String[] { "long", "long", "long" };
+		_methodParameterTypes410 = new String[] { "long", "long", "long" };
 
-		_methodName401 = "getESFResultByESFMatchId_ESFUserId_SportTypeId_Sigle";
+		_methodName411 = "getESFResultByESFMatchId_ESFUserId_SportTypeId_Sigle";
 
-		_methodParameterTypes401 = new String[] { "long", "long", "long" };
+		_methodParameterTypes411 = new String[] { "long", "long", "long" };
 
-		_methodName402 = "getESFResultByESFMatchId_ESFUserId_SportTypeId_QualificationId_Team";
+		_methodName412 = "getESFResultByESFMatchId_ESFUserId_SportTypeId_QualificationId_Team";
 
-		_methodParameterTypes402 = new String[] { "long", "long", "long", "long" };
-=======
-		_methodName376 = "getBeanIdentifier";
-
-		_methodParameterTypes376 = new String[] {  };
-
-		_methodName377 = "setBeanIdentifier";
-
-		_methodParameterTypes377 = new String[] { "java.lang.String" };
-
-		_methodName382 = "inserted";
-
-		_methodParameterTypes382 = new String[] { "long" };
-
-		_methodName383 = "findByESFMatchid";
-
-		_methodParameterTypes383 = new String[] { "long" };
-
-		_methodName384 = "findByESFShooterId";
-
-		_methodParameterTypes384 = new String[] { "long" };
-
-		_methodName385 = "findByESFMId_UId_STId";
-
-		_methodParameterTypes385 = new String[] { "long", "long", "long" };
-
-		_methodName386 = "findESFMId_UId_STId_Single";
-
-		_methodParameterTypes386 = new String[] { "long", "long", "long" };
-
-		_methodName387 = "findByESFMId_STId_SQId";
-
-		_methodParameterTypes387 = new String[] { "long", "long", "long" };
-
-		_methodName388 = "findByESFMId_STId_SQId_TEAM";
-
-		_methodParameterTypes388 = new String[] { "long", "long", "long" };
-
-		_methodName389 = "findByESFMId_STId_SQId_Single";
-
-		_methodParameterTypes389 = new String[] { "long", "long", "long" };
-
-		_methodName390 = "findDescRanking";
-
-		_methodParameterTypes390 = new String[] { "long" };
-
-		_methodName391 = "findByESFMatchidDescRanking";
-
-		_methodParameterTypes391 = new String[] { "long", "java.lang.String" };
-
-		_methodName392 = "getESFResultByESFMatchId_ESFUserId_SportTypeId";
-
-		_methodParameterTypes392 = new String[] { "long", "long", "long" };
-
-		_methodName393 = "getESFResultByESFMatchId_ESFUserId_SportTypeId_Sigle";
-
-		_methodParameterTypes393 = new String[] { "long", "long", "long" };
-
-		_methodName394 = "getESFResultByESFMatchId_ESFUserId_SportTypeId_QualificationId_Team";
-
-		_methodParameterTypes394 = new String[] { "long", "long", "long", "long" };
->>>>>>> anomalia-id16
+		_methodParameterTypes412 = new String[] { "long", "long", "long", "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -313,170 +250,95 @@ public class ESFResultLocalServiceClpInvoker {
 			return ESFResultLocalServiceUtil.updateESFResult((it.ethica.esf.model.ESFResult)arguments[0]);
 		}
 
-<<<<<<< HEAD
-		if (_methodName384.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
+		if (_methodName394.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
 			return ESFResultLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName385.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
-=======
-		if (_methodName376.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes376, parameterTypes)) {
-			return ESFResultLocalServiceUtil.getBeanIdentifier();
-		}
-
-		if (_methodName377.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes377, parameterTypes)) {
->>>>>>> anomalia-id16
+		if (_methodName395.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
 			ESFResultLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-<<<<<<< HEAD
-		if (_methodName390.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
+		if (_methodName400.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes400, parameterTypes)) {
 			return ESFResultLocalServiceUtil.inserted(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName391.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
+		if (_methodName401.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes401, parameterTypes)) {
 			return ESFResultLocalServiceUtil.findByESFMatchid(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName392.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
+		if (_methodName402.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes402, parameterTypes)) {
 			return ESFResultLocalServiceUtil.findByESFShooterId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName393.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
-=======
-		if (_methodName382.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes382, parameterTypes)) {
-			return ESFResultLocalServiceUtil.inserted(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName383.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes383, parameterTypes)) {
-			return ESFResultLocalServiceUtil.findByESFMatchid(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName384.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
-			return ESFResultLocalServiceUtil.findByESFShooterId(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName385.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
->>>>>>> anomalia-id16
+		if (_methodName403.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes403, parameterTypes)) {
 			return ESFResultLocalServiceUtil.findByESFMId_UId_STId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue());
 		}
 
-<<<<<<< HEAD
-		if (_methodName394.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
-=======
-		if (_methodName386.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
->>>>>>> anomalia-id16
+		if (_methodName404.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes404, parameterTypes)) {
 			return ESFResultLocalServiceUtil.findESFMId_UId_STId_Single(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue());
 		}
 
-<<<<<<< HEAD
-		if (_methodName395.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
-=======
-		if (_methodName387.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
->>>>>>> anomalia-id16
+		if (_methodName405.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes405, parameterTypes)) {
 			return ESFResultLocalServiceUtil.findByESFMId_STId_SQId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue());
 		}
 
-<<<<<<< HEAD
-		if (_methodName396.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
-=======
-		if (_methodName388.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
->>>>>>> anomalia-id16
+		if (_methodName406.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes406, parameterTypes)) {
 			return ESFResultLocalServiceUtil.findByESFMId_STId_SQId_TEAM(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue());
 		}
 
-<<<<<<< HEAD
-		if (_methodName397.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
-=======
-		if (_methodName389.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes389, parameterTypes)) {
->>>>>>> anomalia-id16
+		if (_methodName407.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes407, parameterTypes)) {
 			return ESFResultLocalServiceUtil.findByESFMId_STId_SQId_Single(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue());
 		}
 
-<<<<<<< HEAD
-		if (_methodName398.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
+		if (_methodName408.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes408, parameterTypes)) {
 			return ESFResultLocalServiceUtil.findDescRanking(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName399.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes399, parameterTypes)) {
-=======
-		if (_methodName390.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
-			return ESFResultLocalServiceUtil.findDescRanking(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName391.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
->>>>>>> anomalia-id16
+		if (_methodName409.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes409, parameterTypes)) {
 			return ESFResultLocalServiceUtil.findByESFMatchidDescRanking(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1]);
 		}
 
-<<<<<<< HEAD
-		if (_methodName400.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes400, parameterTypes)) {
-=======
-		if (_methodName392.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
->>>>>>> anomalia-id16
+		if (_methodName410.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes410, parameterTypes)) {
 			return ESFResultLocalServiceUtil.getESFResultByESFMatchId_ESFUserId_SportTypeId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue());
 		}
 
-<<<<<<< HEAD
-		if (_methodName401.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes401, parameterTypes)) {
-=======
-		if (_methodName393.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
->>>>>>> anomalia-id16
+		if (_methodName411.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes411, parameterTypes)) {
 			return ESFResultLocalServiceUtil.getESFResultByESFMatchId_ESFUserId_SportTypeId_Sigle(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue());
 		}
 
-<<<<<<< HEAD
-		if (_methodName402.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes402, parameterTypes)) {
-=======
-		if (_methodName394.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
->>>>>>> anomalia-id16
+		if (_methodName412.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes412, parameterTypes)) {
 			return ESFResultLocalServiceUtil.getESFResultByESFMatchId_ESFUserId_SportTypeId_QualificationId_Team(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -518,473 +380,34 @@ public class ESFResultLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-<<<<<<< HEAD
-=======
-	private String _methodName376;
-	private String[] _methodParameterTypes376;
-	private String _methodName377;
-	private String[] _methodParameterTypes377;
-	private String _methodName382;
-	private String[] _methodParameterTypes382;
-	private String _methodName383;
-	private String[] _methodParameterTypes383;
->>>>>>> anomalia-id16
-	private String _methodName384;
-	private String[] _methodParameterTypes384;
-	private String _methodName385;
-	private String[] _methodParameterTypes385;
-<<<<<<< HEAD
-=======
-	private String _methodName386;
-	private String[] _methodParameterTypes386;
-	private String _methodName387;
-	private String[] _methodParameterTypes387;
-	private String _methodName388;
-	private String[] _methodParameterTypes388;
-	private String _methodName389;
-	private String[] _methodParameterTypes389;
->>>>>>> anomalia-id16
-	private String _methodName390;
-	private String[] _methodParameterTypes390;
-	private String _methodName391;
-	private String[] _methodParameterTypes391;
-	private String _methodName392;
-	private String[] _methodParameterTypes392;
-	private String _methodName393;
-	private String[] _methodParameterTypes393;
 	private String _methodName394;
 	private String[] _methodParameterTypes394;
-<<<<<<< HEAD
 	private String _methodName395;
 	private String[] _methodParameterTypes395;
-	private String _methodName396;
-	private String[] _methodParameterTypes396;
-	private String _methodName397;
-	private String[] _methodParameterTypes397;
-	private String _methodName398;
-	private String[] _methodParameterTypes398;
-	private String _methodName399;
-	private String[] _methodParameterTypes399;
 	private String _methodName400;
 	private String[] _methodParameterTypes400;
 	private String _methodName401;
 	private String[] _methodParameterTypes401;
 	private String _methodName402;
 	private String[] _methodParameterTypes402;
-=======
->>>>>>> anomalia-id16
-=======
-/**
- * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
- *
- * This library is free software; you can redistribute it and/or modify it under
- * the terms of the GNU Lesser General Public License as published by the Free
- * Software Foundation; either version 2.1 of the License, or (at your option)
- * any later version.
- *
- * This library is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
- * details.
- */
-
-package it.ethica.esf.service.base;
-
-import it.ethica.esf.service.ESFResultLocalServiceUtil;
-
-import java.util.Arrays;
-
-/**
- * @author Ethica
- * @generated
- */
-public class ESFResultLocalServiceClpInvoker {
-	public ESFResultLocalServiceClpInvoker() {
-		_methodName0 = "addESFResult";
-
-		_methodParameterTypes0 = new String[] { "it.ethica.esf.model.ESFResult" };
-
-		_methodName1 = "createESFResult";
-
-		_methodParameterTypes1 = new String[] { "long" };
-
-		_methodName2 = "deleteESFResult";
-
-		_methodParameterTypes2 = new String[] { "long" };
-
-		_methodName3 = "deleteESFResult";
-
-		_methodParameterTypes3 = new String[] { "it.ethica.esf.model.ESFResult" };
-
-		_methodName4 = "dynamicQuery";
-
-		_methodParameterTypes4 = new String[] {  };
-
-		_methodName5 = "dynamicQuery";
-
-		_methodParameterTypes5 = new String[] {
-				"com.liferay.portal.kernel.dao.orm.DynamicQuery"
-			};
-
-		_methodName6 = "dynamicQuery";
-
-		_methodParameterTypes6 = new String[] {
-				"com.liferay.portal.kernel.dao.orm.DynamicQuery", "int", "int"
-			};
-
-		_methodName7 = "dynamicQuery";
-
-		_methodParameterTypes7 = new String[] {
-				"com.liferay.portal.kernel.dao.orm.DynamicQuery", "int", "int",
-				"com.liferay.portal.kernel.util.OrderByComparator"
-			};
-
-		_methodName8 = "dynamicQueryCount";
-
-		_methodParameterTypes8 = new String[] {
-				"com.liferay.portal.kernel.dao.orm.DynamicQuery"
-			};
-
-		_methodName9 = "dynamicQueryCount";
-
-		_methodParameterTypes9 = new String[] {
-				"com.liferay.portal.kernel.dao.orm.DynamicQuery",
-				"com.liferay.portal.kernel.dao.orm.Projection"
-			};
-
-		_methodName10 = "fetchESFResult";
-
-		_methodParameterTypes10 = new String[] { "long" };
-
-		_methodName11 = "getESFResult";
-
-		_methodParameterTypes11 = new String[] { "long" };
-
-		_methodName12 = "getPersistedModel";
-
-		_methodParameterTypes12 = new String[] { "java.io.Serializable" };
-
-		_methodName13 = "getESFResults";
-
-		_methodParameterTypes13 = new String[] { "int", "int" };
-
-		_methodName14 = "getESFResultsCount";
-
-		_methodParameterTypes14 = new String[] {  };
-
-		_methodName15 = "updateESFResult";
-
-		_methodParameterTypes15 = new String[] { "it.ethica.esf.model.ESFResult" };
-
-		_methodName384 = "getBeanIdentifier";
-
-		_methodParameterTypes384 = new String[] {  };
-
-		_methodName385 = "setBeanIdentifier";
-
-		_methodParameterTypes385 = new String[] { "java.lang.String" };
-
-		_methodName390 = "inserted";
-
-		_methodParameterTypes390 = new String[] { "long" };
-
-		_methodName391 = "findByESFMatchid";
-
-		_methodParameterTypes391 = new String[] { "long" };
-
-		_methodName392 = "findByESFShooterId";
-
-		_methodParameterTypes392 = new String[] { "long" };
-
-		_methodName393 = "findByESFMId_UId_STId";
-
-		_methodParameterTypes393 = new String[] { "long", "long", "long" };
-
-		_methodName394 = "findESFMId_UId_STId_Single";
-
-		_methodParameterTypes394 = new String[] { "long", "long", "long" };
-
-		_methodName395 = "findByESFMId_STId_SQId";
-
-		_methodParameterTypes395 = new String[] { "long", "long", "long" };
-
-		_methodName396 = "findByESFMId_STId_SQId_TEAM";
-
-		_methodParameterTypes396 = new String[] { "long", "long", "long" };
-
-		_methodName397 = "findByESFMId_STId_SQId_Single";
-
-		_methodParameterTypes397 = new String[] { "long", "long", "long" };
-
-		_methodName398 = "findDescRanking";
-
-		_methodParameterTypes398 = new String[] { "long" };
-
-		_methodName399 = "findByESFMatchidDescRanking";
-
-		_methodParameterTypes399 = new String[] { "long", "java.lang.String" };
-
-		_methodName400 = "getESFResultByESFMatchId_ESFUserId_SportTypeId";
-
-		_methodParameterTypes400 = new String[] { "long", "long", "long" };
-
-		_methodName401 = "getESFResultByESFMatchId_ESFUserId_SportTypeId_Sigle";
-
-		_methodParameterTypes401 = new String[] { "long", "long", "long" };
-
-		_methodName402 = "getESFResultByESFMatchId_ESFUserId_SportTypeId_QualificationId_Team";
-
-		_methodParameterTypes402 = new String[] { "long", "long", "long", "long" };
-	}
-
-	public Object invokeMethod(String name, String[] parameterTypes,
-		Object[] arguments) throws Throwable {
-		if (_methodName0.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes0, parameterTypes)) {
-			return ESFResultLocalServiceUtil.addESFResult((it.ethica.esf.model.ESFResult)arguments[0]);
-		}
-
-		if (_methodName1.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes1, parameterTypes)) {
-			return ESFResultLocalServiceUtil.createESFResult(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName2.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes2, parameterTypes)) {
-			return ESFResultLocalServiceUtil.deleteESFResult(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName3.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes3, parameterTypes)) {
-			return ESFResultLocalServiceUtil.deleteESFResult((it.ethica.esf.model.ESFResult)arguments[0]);
-		}
-
-		if (_methodName4.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes4, parameterTypes)) {
-			return ESFResultLocalServiceUtil.dynamicQuery();
-		}
-
-		if (_methodName5.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes5, parameterTypes)) {
-			return ESFResultLocalServiceUtil.dynamicQuery((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0]);
-		}
-
-		if (_methodName6.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes6, parameterTypes)) {
-			return ESFResultLocalServiceUtil.dynamicQuery((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0],
-				((Integer)arguments[1]).intValue(),
-				((Integer)arguments[2]).intValue());
-		}
-
-		if (_methodName7.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes7, parameterTypes)) {
-			return ESFResultLocalServiceUtil.dynamicQuery((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0],
-				((Integer)arguments[1]).intValue(),
-				((Integer)arguments[2]).intValue(),
-				(com.liferay.portal.kernel.util.OrderByComparator)arguments[3]);
-		}
-
-		if (_methodName8.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes8, parameterTypes)) {
-			return ESFResultLocalServiceUtil.dynamicQueryCount((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0]);
-		}
-
-		if (_methodName9.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes9, parameterTypes)) {
-			return ESFResultLocalServiceUtil.dynamicQueryCount((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0],
-				(com.liferay.portal.kernel.dao.orm.Projection)arguments[1]);
-		}
-
-		if (_methodName10.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes10, parameterTypes)) {
-			return ESFResultLocalServiceUtil.fetchESFResult(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName11.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes11, parameterTypes)) {
-			return ESFResultLocalServiceUtil.getESFResult(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName12.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes12, parameterTypes)) {
-			return ESFResultLocalServiceUtil.getPersistedModel((java.io.Serializable)arguments[0]);
-		}
-
-		if (_methodName13.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes13, parameterTypes)) {
-			return ESFResultLocalServiceUtil.getESFResults(((Integer)arguments[0]).intValue(),
-				((Integer)arguments[1]).intValue());
-		}
-
-		if (_methodName14.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes14, parameterTypes)) {
-			return ESFResultLocalServiceUtil.getESFResultsCount();
-		}
-
-		if (_methodName15.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes15, parameterTypes)) {
-			return ESFResultLocalServiceUtil.updateESFResult((it.ethica.esf.model.ESFResult)arguments[0]);
-		}
-
-		if (_methodName384.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes384, parameterTypes)) {
-			return ESFResultLocalServiceUtil.getBeanIdentifier();
-		}
-
-		if (_methodName385.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes385, parameterTypes)) {
-			ESFResultLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
-
-			return null;
-		}
-
-		if (_methodName390.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
-			return ESFResultLocalServiceUtil.inserted(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName391.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
-			return ESFResultLocalServiceUtil.findByESFMatchid(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName392.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
-			return ESFResultLocalServiceUtil.findByESFShooterId(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName393.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
-			return ESFResultLocalServiceUtil.findByESFMId_UId_STId(((Long)arguments[0]).longValue(),
-				((Long)arguments[1]).longValue(),
-				((Long)arguments[2]).longValue());
-		}
-
-		if (_methodName394.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
-			return ESFResultLocalServiceUtil.findESFMId_UId_STId_Single(((Long)arguments[0]).longValue(),
-				((Long)arguments[1]).longValue(),
-				((Long)arguments[2]).longValue());
-		}
-
-		if (_methodName395.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
-			return ESFResultLocalServiceUtil.findByESFMId_STId_SQId(((Long)arguments[0]).longValue(),
-				((Long)arguments[1]).longValue(),
-				((Long)arguments[2]).longValue());
-		}
-
-		if (_methodName396.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
-			return ESFResultLocalServiceUtil.findByESFMId_STId_SQId_TEAM(((Long)arguments[0]).longValue(),
-				((Long)arguments[1]).longValue(),
-				((Long)arguments[2]).longValue());
-		}
-
-		if (_methodName397.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
-			return ESFResultLocalServiceUtil.findByESFMId_STId_SQId_Single(((Long)arguments[0]).longValue(),
-				((Long)arguments[1]).longValue(),
-				((Long)arguments[2]).longValue());
-		}
-
-		if (_methodName398.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
-			return ESFResultLocalServiceUtil.findDescRanking(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName399.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes399, parameterTypes)) {
-			return ESFResultLocalServiceUtil.findByESFMatchidDescRanking(((Long)arguments[0]).longValue(),
-				(java.lang.String)arguments[1]);
-		}
-
-		if (_methodName400.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes400, parameterTypes)) {
-			return ESFResultLocalServiceUtil.getESFResultByESFMatchId_ESFUserId_SportTypeId(((Long)arguments[0]).longValue(),
-				((Long)arguments[1]).longValue(),
-				((Long)arguments[2]).longValue());
-		}
-
-		if (_methodName401.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes401, parameterTypes)) {
-			return ESFResultLocalServiceUtil.getESFResultByESFMatchId_ESFUserId_SportTypeId_Sigle(((Long)arguments[0]).longValue(),
-				((Long)arguments[1]).longValue(),
-				((Long)arguments[2]).longValue());
-		}
-
-		if (_methodName402.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes402, parameterTypes)) {
-			return ESFResultLocalServiceUtil.getESFResultByESFMatchId_ESFUserId_SportTypeId_QualificationId_Team(((Long)arguments[0]).longValue(),
-				((Long)arguments[1]).longValue(),
-				((Long)arguments[2]).longValue(),
-				((Long)arguments[3]).longValue());
-		}
-
-		throw new UnsupportedOperationException();
-	}
-
-	private String _methodName0;
-	private String[] _methodParameterTypes0;
-	private String _methodName1;
-	private String[] _methodParameterTypes1;
-	private String _methodName2;
-	private String[] _methodParameterTypes2;
-	private String _methodName3;
-	private String[] _methodParameterTypes3;
-	private String _methodName4;
-	private String[] _methodParameterTypes4;
-	private String _methodName5;
-	private String[] _methodParameterTypes5;
-	private String _methodName6;
-	private String[] _methodParameterTypes6;
-	private String _methodName7;
-	private String[] _methodParameterTypes7;
-	private String _methodName8;
-	private String[] _methodParameterTypes8;
-	private String _methodName9;
-	private String[] _methodParameterTypes9;
-	private String _methodName10;
-	private String[] _methodParameterTypes10;
-	private String _methodName11;
-	private String[] _methodParameterTypes11;
-	private String _methodName12;
-	private String[] _methodParameterTypes12;
-	private String _methodName13;
-	private String[] _methodParameterTypes13;
-	private String _methodName14;
-	private String[] _methodParameterTypes14;
-	private String _methodName15;
-	private String[] _methodParameterTypes15;
-	private String _methodName384;
-	private String[] _methodParameterTypes384;
-	private String _methodName385;
-	private String[] _methodParameterTypes385;
-	private String _methodName390;
-	private String[] _methodParameterTypes390;
-	private String _methodName391;
-	private String[] _methodParameterTypes391;
-	private String _methodName392;
-	private String[] _methodParameterTypes392;
-	private String _methodName393;
-	private String[] _methodParameterTypes393;
-	private String _methodName394;
-	private String[] _methodParameterTypes394;
-	private String _methodName395;
-	private String[] _methodParameterTypes395;
-	private String _methodName396;
-	private String[] _methodParameterTypes396;
-	private String _methodName397;
-	private String[] _methodParameterTypes397;
-	private String _methodName398;
-	private String[] _methodParameterTypes398;
-	private String _methodName399;
-	private String[] _methodParameterTypes399;
-	private String _methodName400;
-	private String[] _methodParameterTypes400;
-	private String _methodName401;
-	private String[] _methodParameterTypes401;
-	private String _methodName402;
-	private String[] _methodParameterTypes402;
->>>>>>> 4e2f23245d33f5cc80bffcdd36acf34e75accc38
+	private String _methodName403;
+	private String[] _methodParameterTypes403;
+	private String _methodName404;
+	private String[] _methodParameterTypes404;
+	private String _methodName405;
+	private String[] _methodParameterTypes405;
+	private String _methodName406;
+	private String[] _methodParameterTypes406;
+	private String _methodName407;
+	private String[] _methodParameterTypes407;
+	private String _methodName408;
+	private String[] _methodParameterTypes408;
+	private String _methodName409;
+	private String[] _methodParameterTypes409;
+	private String _methodName410;
+	private String[] _methodParameterTypes410;
+	private String _methodName411;
+	private String[] _methodParameterTypes411;
+	private String _methodName412;
+	private String[] _methodParameterTypes412;
 }

@@ -285,20 +285,19 @@ public interface ESFAnnualFreeCardModel extends AuditedModel,
 	public Object clone();
 
 	@Override
-	public int compareTo(
-		it.ethica.esf.model.ESFAnnualFreeCard esfAnnualFreeCard);
+	public int compareTo(ESFAnnualFreeCard esfAnnualFreeCard);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFAnnualFreeCard> toCacheModel();
+	public CacheModel<ESFAnnualFreeCard> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFAnnualFreeCard toEscapedModel();
+	public ESFAnnualFreeCard toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFAnnualFreeCard toUnescapedModel();
+	public ESFAnnualFreeCard toUnescapedModel();
 
 	@Override
 	public String toString();

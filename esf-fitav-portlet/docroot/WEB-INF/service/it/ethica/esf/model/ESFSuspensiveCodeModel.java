@@ -138,20 +138,19 @@ public interface ESFSuspensiveCodeModel extends BaseModel<ESFSuspensiveCode> {
 	public Object clone();
 
 	@Override
-	public int compareTo(
-		it.ethica.esf.model.ESFSuspensiveCode esfSuspensiveCode);
+	public int compareTo(ESFSuspensiveCode esfSuspensiveCode);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFSuspensiveCode> toCacheModel();
+	public CacheModel<ESFSuspensiveCode> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFSuspensiveCode toEscapedModel();
+	public ESFSuspensiveCode toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFSuspensiveCode toUnescapedModel();
+	public ESFSuspensiveCode toUnescapedModel();
 
 	@Override
 	public String toString();

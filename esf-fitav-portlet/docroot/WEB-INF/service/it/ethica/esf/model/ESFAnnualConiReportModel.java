@@ -135,20 +135,19 @@ public interface ESFAnnualConiReportModel extends BaseModel<ESFAnnualConiReport>
 	public Object clone();
 
 	@Override
-	public int compareTo(
-		it.ethica.esf.model.ESFAnnualConiReport esfAnnualConiReport);
+	public int compareTo(ESFAnnualConiReport esfAnnualConiReport);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFAnnualConiReport> toCacheModel();
+	public CacheModel<ESFAnnualConiReport> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFAnnualConiReport toEscapedModel();
+	public ESFAnnualConiReport toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFAnnualConiReport toUnescapedModel();
+	public ESFAnnualConiReport toUnescapedModel();
 
 	@Override
 	public String toString();

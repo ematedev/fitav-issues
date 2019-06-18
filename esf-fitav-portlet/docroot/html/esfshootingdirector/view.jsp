@@ -1,3 +1,4 @@
+<%@page import="java.util.Date"%>
 <%@page import="it.ethica.esf.model.VW_NomineDirettoriTiro"%>
 <%@include file="init.jsp"%>
 <%@page import="com.liferay.portal.kernel.util.ListUtil"%>
@@ -9,7 +10,14 @@
 
 <%
 
-Object listaNomineDirettoriObject = request.getAttribute("listaTiratori");
+//Inizializzazione della lista di tutte le regioni
+List<ESFRegion> regioni = ESFRegionLocalServiceUtil.getESFRegions(QueryUtil.ALL_POS, QueryUtil.ALL_POS);
+//Inizializzazione della lista di tutti i Direttori di Tiro
+List<ESFShootingDirectorQualification> qualificheDirettori = ESFShootingDirectorQualificationLocalServiceUtil.getESFShootingDirectorQualifications(QueryUtil.ALL_POS, QueryUtil.ALL_POS);
+//Inizializzazione della lista di tutti i tipi di sport
+List<ESFSportType> specialita = ESFSportTypeLocalServiceUtil.getAllESFSportTypes();
+
+Object listaNomineDirettoriObject = request.getAttribute("listaNomine");
 List<VW_NomineDirettoriTiro> listaNomineDirettori = new ArrayList<VW_NomineDirettoriTiro>();
 
 if(listaNomineDirettoriObject != null) { 
@@ -27,22 +35,12 @@ iteratorActionUrl.setParameter("regionId", ParamUtil.getString(request, "regionI
 iteratorActionUrl.setParameter("qualifica", ParamUtil.getString(request, "qualifica"));
 iteratorActionUrl.setParameter("specialita", ParamUtil.getString(request, "specialita"));
 
-
-
-
-// Inizializzazione della lista di tutte le regioni
-List<ESFRegion> regioni = ESFRegionLocalServiceUtil.getESFRegions(QueryUtil.ALL_POS, QueryUtil.ALL_POS);
-// Inizializzazione della lista di tutti i Direttori di Tiro
-List<ESFShootingDirectorQualification> qualificheDirettori = ESFShootingDirectorQualificationLocalServiceUtil.getESFShootingDirectorQualifications(QueryUtil.ALL_POS, QueryUtil.ALL_POS);
-// Inizializzazione della lista di tutti i tipi di sport
-List<ESFSportType> specialita = ESFSportTypeLocalServiceUtil.getAllESFSportTypes();
- 
-
 %>
 <!-- Gestione dei messaggi di errore -->
 <liferay-ui:error key="error-delete-shDr" message="error-delete-shDr" />
 <liferay-ui:error key="error-deleteSospensive" message="error-deleteSospensive" />
 <liferay-ui:error key="error-updateSuspensive" message="error-updateSuspensive" />
+<liferay-ui:error key="error-ricerca" message="E' occorso un errore durante la ricerca" />
 
 <!-- Definisce il bottone "Aggiungi direttore di tiro" -->
 <aui:button-row cssClass="esfshooter-admin-buttons">
@@ -56,7 +54,7 @@ List<ESFSportType> specialita = ESFSportTypeLocalServiceUtil.getAllESFSportTypes
 <portlet:actionURL var="searchUrl" name="cercaNomineDirettoriTiro"></portlet:actionURL>
 
 <!-- Definisce il form per la ricerca fra i membri tesserati -->	
-<aui:form action="<%=searchUrl%>" method="POST" name="fm"> 
+<aui:form action="<%= searchUrl %>" method="POST" name="fm"> 
 
 	<!-- Struttura del form di ricerca -->
 	<div class="search-form">
@@ -84,7 +82,7 @@ List<ESFSportType> specialita = ESFSportTypeLocalServiceUtil.getAllESFSportTypes
 			</aui:select>
 				
 			<!-- ComboBox Qualifica -->
-			<aui:select  name="qualifica" inlineField="<%=true%>" label="qualification" >
+			<aui:select  name="qualifica" inlineField="<%=true%>"  label="qualification" >
 				<aui:option value="0"  label="-"></aui:option>
 				<!-- Ciclo for che riempie le opzioni della ComboBox qualifiche -->
 				<%for(ESFShootingDirectorQualification s : qualificheDirettori){%>
@@ -107,6 +105,9 @@ List<ESFSportType> specialita = ESFSportTypeLocalServiceUtil.getAllESFSportTypes
 	</div>
 </aui:form>
 
+<!-- Valori hidden che servono a prendere i campi della select -->
+<aui:input name="qualifiche" type="hidden"/>
+<aui:input name="spec" type="hidden"/>
 
 
 <!-- Definisce la tabella dove vengono visualizzati i membri -->
@@ -118,8 +119,8 @@ List<ESFSportType> specialita = ESFSportTypeLocalServiceUtil.getAllESFSportTypes
 		pageContext.setAttribute("total", listaNomineDirettori.size()); 
 	%> 
 	</liferay-ui:search-container-results>
-		<!-- Definisce la struttura di una riga della tabella NB: si fa un foreach su results con "shDt" come variabile assegnata a ogni ciclo -->
-		<liferay-ui:search-container-row className="it.ethica.esf.model.VW_NomineDirettoriTiro" modelVar="direttore">
+	<!-- Definisce la struttura di una riga della tabella NB: si fa un foreach su results con "shDt" come variabile assegnata a ogni ciclo -->
+	<liferay-ui:search-container-row className="it.ethica.esf.model.VW_NomineDirettoriTiro" modelVar="direttore">
 		
 		<%
 			String nome = direttore.getNome();
@@ -127,20 +128,21 @@ List<ESFSportType> specialita = ESFSportTypeLocalServiceUtil.getAllESFSportTypes
 			String codRegione = direttore.getRegione();
 			String qualifica = direttore.getQualifica();
 			String codTessera = direttore.getCodiceTessera();
-			String specialita = direttore.getSpecialita(); 
+			String spec = direttore.getSpecialita(); 
 			Date dataAssegnazione = direttore.getDataAssegnazione(); 
+			
 		%>
 		
 		<!-- Vengono definite le colonne della tabella e le variabili ad esse collegate -->
-		<liferay-ui:search-container-column-text name="name" value="<%= String.format("%s %s", nome, cognome) %>" />
+		<liferay-ui:search-container-column-text name="name" value='<%= String.format("%s %s", nome, cognome) %>' />
 		<liferay-ui:search-container-column-text name="card" value="<%= codTessera %>"/>
 		<liferay-ui:search-container-column-text name="region-code" value="<%= codRegione %>" />
 		<liferay-ui:search-container-column-text name="qualification" value="<%= qualifica %>" />
-		<liferay-ui:search-container-column-text name="sport-type" value="<%= specialita %>" />
+		<liferay-ui:search-container-column-text name="sport-type" value="<%= spec %>" />
 		<liferay-ui:search-container-column-text name="esf-date-assign" value="<%= dataAssegnazione.toString() %>" />
-		<liferay-ui:search-container-column-jsp
-				path='<%=templatePath + "modifyShDrAction.jsp"%>' align="right" /> 
-		</liferay-ui:search-container-row>
+		<liferay-ui:search-container-column-jsp path='<%=templatePath + "modifyShDrAction.jsp"%>' align="right" /> 
+	</liferay-ui:search-container-row>
 	<!-- Iteratore che si preoccupa di stampare i risultati nella pagina JSP -->
 	<liferay-ui:search-iterator />
 </liferay-ui:search-container>
+

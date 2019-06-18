@@ -21,7 +21,6 @@ import java.io.Serializable;
 
 /**
  * @author Ethica
- * @generated
  */
 public class ESFRegionPK implements Comparable<ESFRegionPK>, Serializable {
 	public String idRegion;

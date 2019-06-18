@@ -1914,6 +1914,21 @@
 			<transient name="userUuid" />
 		</attributes>
 	</mapped-superclass>
+	<mapped-superclass class="it.ethica.esf.model.impl.VM_TiratoriTesseratiModelImpl">
+		<id-class class="it.ethica.esf.service.persistence.VM_TiratoriTesseratiPK" />
+		<attributes>
+			<id name="userId" />
+			<id name="CodiceTessera" />
+			<id name="CodiceOrganizzazione" />
+			<id name="Nome" />
+			<id name="Cognome" />
+			<id name="Email" />
+			<basic name="CF" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
 	<mapped-superclass class="it.ethica.esf.model.impl.VW_DatiDrettoreTiroModelImpl">
 		<id-class class="it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPK" />
 		<attributes>
@@ -1921,24 +1936,6 @@
 			<id name="Nome" />
 			<id name="Cognome" />
 			<id name="CodiceRegione" />
-			<transient name="modelAttributes" />
-			<transient name="primaryKey" />
-			<transient name="primaryKeyObj" />
-		</attributes>
-	</mapped-superclass>
-	<mapped-superclass class="it.ethica.esf.model.impl.VW_ESFIncarichiFederaliModelImpl">
-		<id-class class="it.ethica.esf.service.persistence.VW_ESFIncarichiFederaliPK" />
-		<attributes>
-			<id name="esfUserId" />
-			<id name="esfFederalRoleId" />
-			<id name="startDate" />
-			<id name="endDate">
-				<temporal>TIMESTAMP</temporal>
-			</id>
-			<id name="active_" />
-			<basic name="code_" />
-			<basic name="description" />
-			<transient name="esfUserUuid" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />
@@ -1963,6 +1960,25 @@
 				<temporal>TIMESTAMP</temporal>
 			</basic>
 			<transient name="esfUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="it.ethica.esf.model.impl.VW_NomineDirettoriTiroModelImpl">
+		<id-class class="it.ethica.esf.service.persistence.VW_NomineDirettoriTiroPK" />
+		<attributes>
+			<id name="UserId" />
+			<id name="IdDirettoreTiro" />
+			<id name="Nome" />
+			<id name="Cognome" />
+			<id name="CodiceTessera" />
+			<id name="Regione" />
+			<id name="Qualifica" />
+			<id name="Specialita" />
+			<id name="DataAssegnazione">
+				<temporal>TIMESTAMP</temporal>
+			</id>
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />
@@ -2329,16 +2345,20 @@
 			<transient name="title" />
 		</attributes>
 	</entity>
+	<entity class="it.ethica.esf.model.impl.VM_TiratoriTesseratiImpl" name="VM_TiratoriTesserati">
+		<table name="vm_tiratoritesserati" />
+		<attributes />
+	</entity>
 	<entity class="it.ethica.esf.model.impl.VW_DatiDrettoreTiroImpl" name="VW_DatiDrettoreTiro">
 		<table name="vw_datidirettoretiro" />
 		<attributes />
 	</entity>
-	<entity class="it.ethica.esf.model.impl.VW_ESFIncarichiFederaliImpl" name="VW_ESFIncarichiFederali">
-		<table name="VW_ESFIncarichiFederali" />
-		<attributes />
-	</entity>
 	<entity class="it.ethica.esf.model.impl.VW_ESFListaIncarichiImpl" name="VW_ESFListaIncarichi">
 		<table name="VW_ESFListaIncarichi" />
+		<attributes />
+	</entity>
+	<entity class="it.ethica.esf.model.impl.VW_NomineDirettoriTiroImpl" name="VW_NomineDirettoriTiro">
+		<table name="vw_nominedirettoritiro" />
 		<attributes />
 	</entity>
 </entity-mappings>

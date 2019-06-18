@@ -259,19 +259,19 @@ public interface ESFUnitserviceModel extends BaseModel<ESFUnitservice>,
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFUnitservice esfUnitservice);
+	public int compareTo(ESFUnitservice esfUnitservice);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFUnitservice> toCacheModel();
+	public CacheModel<ESFUnitservice> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFUnitservice toEscapedModel();
+	public ESFUnitservice toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFUnitservice toUnescapedModel();
+	public ESFUnitservice toUnescapedModel();
 
 	@Override
 	public String toString();

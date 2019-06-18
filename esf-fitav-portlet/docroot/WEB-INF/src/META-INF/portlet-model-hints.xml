@@ -1062,20 +1062,20 @@
 		<field name="isOrgAdmin" type="boolean" />
 		<field name="isEditable" type="boolean" />
 	</model>
+	<model name="it.ethica.esf.model.VM_TiratoriTesserati">
+		<field name="userId" type="int" />
+		<field name="CodiceTessera" type="String" />
+		<field name="CodiceOrganizzazione" type="String" />
+		<field name="Nome" type="String" />
+		<field name="Cognome" type="String" />
+		<field name="Email" type="String" />
+		<field name="CF" type="String" />
+	</model>
 	<model name="it.ethica.esf.model.VW_DatiDrettoreTiro">
 		<field name="esfShootingDirectorId" type="long" />
 		<field name="Nome" type="String" />
 		<field name="Cognome" type="String" />
 		<field name="CodiceRegione" type="String" />
-	</model>
-	<model name="it.ethica.esf.model.VW_ESFIncarichiFederali">
-		<field name="esfUserId" type="long" />
-		<field name="esfFederalRoleId" type="long" />
-		<field name="code_" type="String" />
-		<field name="description" type="String" />
-		<field name="startDate" type="long" />
-		<field name="endDate" type="Date" />
-		<field name="active_" type="boolean" />
 	</model>
 	<model name="it.ethica.esf.model.VW_ESFListaIncarichi">
 		<field name="AnniPrecedenti" type="int" />
@@ -1089,5 +1089,16 @@
 		<field name="esfOrganizationId" type="long" />
 		<field name="lastName" type="String" />
 		<field name="firstName" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.VW_NomineDirettoriTiro">
+		<field name="UserId" type="int" />
+		<field name="IdDirettoreTiro" type="int" />
+		<field name="Nome" type="String" />
+		<field name="Cognome" type="String" />
+		<field name="CodiceTessera" type="String" />
+		<field name="Regione" type="String" />
+		<field name="Qualifica" type="String" />
+		<field name="Specialita" type="String" />
+		<field name="DataAssegnazione" type="Date" />
 	</model>
 </model-hints>

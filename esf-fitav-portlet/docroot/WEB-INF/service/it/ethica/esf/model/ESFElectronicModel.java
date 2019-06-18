@@ -138,19 +138,19 @@ public interface ESFElectronicModel extends BaseModel<ESFElectronic> {
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFElectronic esfElectronic);
+	public int compareTo(ESFElectronic esfElectronic);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFElectronic> toCacheModel();
+	public CacheModel<ESFElectronic> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFElectronic toEscapedModel();
+	public ESFElectronic toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFElectronic toUnescapedModel();
+	public ESFElectronic toUnescapedModel();
 
 	@Override
 	public String toString();

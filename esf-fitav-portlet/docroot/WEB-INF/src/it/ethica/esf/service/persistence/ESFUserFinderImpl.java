@@ -49,6 +49,8 @@ public class ESFUserFinderImpl extends BasePersistenceImpl<ESFUser>
 			qPos.add("%"+orgId+"%");
 			qPos.add(state);
 			qPos.add(cardCode+"%");
+			getDialect();
+			QueryUtil.list(q, getDialect(), begin, end);
 			List<ESFUser> u= (List<ESFUser>) QueryUtil.list(q, getDialect(), begin, end);
 			if(u==null){
 				u = new ArrayList<ESFUser>();
@@ -78,7 +80,7 @@ public class ESFUserFinderImpl extends BasePersistenceImpl<ESFUser>
 			try {
 				session = openSession();
 
-				String sql = CustomSQLUtil.get(FIND_ALL_SHOOTER);
+				String sql = CustomSQLUtil.get(FIND_ALL_SHOOTER); 
 				SQLQuery q = session.createSQLQuery(sql);
 				q.setCacheable(false);
 				q.addEntity("ESFUser", ESFUserImpl.class);
@@ -88,7 +90,7 @@ public class ESFUserFinderImpl extends BasePersistenceImpl<ESFUser>
 				qPos.add(firstName+"%");
 				qPos.add("%"+orgId+"%");
 				qPos.add(cardCode+"%");
-
+				getDialect();
 				List<ESFUser> u= (List<ESFUser>) QueryUtil.list(q, getDialect(), begin, end);
 				if(u==null){
 					u = new ArrayList<ESFUser>();
@@ -1303,6 +1305,7 @@ public class ESFUserFinderImpl extends BasePersistenceImpl<ESFUser>
 	//////////////////////////////////////////////////////////
 	
 	public static final String FIND_SHOOTER = ESFUserFinder.class.getName() +".findShooter";
+	public static final String FIND_TIRATORI_TESSERATI = ESFUserFinder.class.getName() +".findTiratoriTesserati";
 	public static final String FIND_ALL_SHOOTER = ESFUserFinder.class.getName() +".findAllShooter";
 	public static final String FIND_SHOOTER_FISCALCODE = ESFUserFinder.class.getName() +".findShooterFiscalCode";
 	public static final String FIND_SHOOTER_ROLE = ESFUserFinder.class.getName() +".findShooterRole";

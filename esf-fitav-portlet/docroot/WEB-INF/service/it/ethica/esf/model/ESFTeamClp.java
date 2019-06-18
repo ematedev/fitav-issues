@@ -282,10 +282,6 @@ public class ESFTeamClp extends BaseModelImpl<ESFTeam> implements ESFTeam {
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -336,5 +332,4 @@ public class ESFTeamClp extends BaseModelImpl<ESFTeam> implements ESFTeam {
 	private long _esfTournamentId;
 	private String _name;
 	private BaseModel<?> _esfTeamRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

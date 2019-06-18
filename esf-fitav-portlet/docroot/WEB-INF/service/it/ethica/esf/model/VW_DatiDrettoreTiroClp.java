@@ -317,10 +317,6 @@ public class VW_DatiDrettoreTiroClp extends BaseModelImpl<VW_DatiDrettoreTiro>
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return getPrimaryKey().hashCode();
@@ -378,5 +374,4 @@ public class VW_DatiDrettoreTiroClp extends BaseModelImpl<VW_DatiDrettoreTiro>
 	private String _Cognome;
 	private String _CodiceRegione;
 	private BaseModel<?> _vw_DatiDrettoreTiroRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

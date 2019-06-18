@@ -271,6 +271,11 @@ public class ESFUserLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static java.util.List<java.lang.Object[]> findTiratoriTesserati(
+		int inizio, int fine) {
+		return getService().findTiratoriTesserati(inizio, fine);
+	}
+
 	public static java.util.List<it.ethica.esf.model.ESFUser> getESFUsersByDeparture(
 		long esfDepartureId) {
 		return getService().getESFUsersByDeparture(esfDepartureId);

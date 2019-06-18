@@ -710,10 +710,6 @@ public class ESFDocumentClp extends BaseModelImpl<ESFDocument>
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -857,5 +853,4 @@ public class ESFDocumentClp extends BaseModelImpl<ESFDocument>
 	private long _esfPublicAuthorityId;
 	private String _path;
 	private BaseModel<?> _esfDocumentRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

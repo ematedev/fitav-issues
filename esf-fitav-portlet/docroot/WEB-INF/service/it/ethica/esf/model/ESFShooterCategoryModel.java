@@ -289,20 +289,19 @@ public interface ESFShooterCategoryModel extends BaseModel<ESFShooterCategory>,
 	public Object clone();
 
 	@Override
-	public int compareTo(
-		it.ethica.esf.model.ESFShooterCategory esfShooterCategory);
+	public int compareTo(ESFShooterCategory esfShooterCategory);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFShooterCategory> toCacheModel();
+	public CacheModel<ESFShooterCategory> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFShooterCategory toEscapedModel();
+	public ESFShooterCategory toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFShooterCategory toUnescapedModel();
+	public ESFShooterCategory toUnescapedModel();
 
 	@Override
 	public String toString();

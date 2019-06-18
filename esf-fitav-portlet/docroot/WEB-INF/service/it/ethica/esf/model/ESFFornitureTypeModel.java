@@ -259,19 +259,19 @@ public interface ESFFornitureTypeModel extends BaseModel<ESFFornitureType>,
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFFornitureType esfFornitureType);
+	public int compareTo(ESFFornitureType esfFornitureType);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFFornitureType> toCacheModel();
+	public CacheModel<ESFFornitureType> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFFornitureType toEscapedModel();
+	public ESFFornitureType toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFFornitureType toUnescapedModel();
+	public ESFFornitureType toUnescapedModel();
 
 	@Override
 	public String toString();

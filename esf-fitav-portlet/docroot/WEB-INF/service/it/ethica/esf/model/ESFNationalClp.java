@@ -750,10 +750,6 @@ public class ESFNationalClp extends BaseModelImpl<ESFNational>
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -904,5 +900,4 @@ public class ESFNationalClp extends BaseModelImpl<ESFNational>
 	private String _deliberate;
 	private Date _deliberateDate;
 	private BaseModel<?> _esfNationalRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

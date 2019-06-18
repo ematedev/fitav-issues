@@ -81,9 +81,10 @@
 	<import class="it.ethica.esf.model.ESFUserESFFederalRole" />
 	<import class="it.ethica.esf.model.ESFUserESFUserRole" />
 	<import class="it.ethica.esf.model.ESFUserRole" />
+	<import class="it.ethica.esf.model.VM_TiratoriTesserati" />
 	<import class="it.ethica.esf.model.VW_DatiDrettoreTiro" />
-	<import class="it.ethica.esf.model.VW_ESFIncarichiFederali" />
 	<import class="it.ethica.esf.model.VW_ESFListaIncarichi" />
+	<import class="it.ethica.esf.model.VW_NomineDirettoriTiro" />
 	<class name="it.ethica.esf.model.impl.ESFAddressImpl" table="ESFAddress">
 		<cache usage="read-write" />
 		<id name="esfAddressId" type="long">
@@ -1348,6 +1349,18 @@
 		<property name="isOrgAdmin" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
 		<property name="isEditable" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
 	</class>
+	<class name="it.ethica.esf.model.impl.VM_TiratoriTesseratiImpl" table="vm_tiratoritesserati">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.VM_TiratoriTesseratiPK">
+			<key-property name="userId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="CodiceTessera" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="CodiceOrganizzazione" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="Nome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="Cognome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="Email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		</composite-id>
+		<property name="CF" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
 	<class name="it.ethica.esf.model.impl.VW_DatiDrettoreTiroImpl" table="vw_datidirettoretiro">
 		<cache usage="read-write" />
 		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPK">
@@ -1356,18 +1369,6 @@
 			<key-property name="Cognome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 			<key-property name="CodiceRegione" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		</composite-id>
-	</class>
-	<class name="it.ethica.esf.model.impl.VW_ESFIncarichiFederaliImpl" table="VW_ESFIncarichiFederali">
-		<cache usage="read-write" />
-		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.VW_ESFIncarichiFederaliPK">
-			<key-property name="esfUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
-			<key-property name="esfFederalRoleId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
-			<key-property name="startDate" type="com.liferay.portal.dao.orm.hibernate.LongType" />
-			<key-property name="endDate" type="org.hibernate.type.TimestampType" />
-			<key-property name="active_" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
-		</composite-id>
-		<property name="code_" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.VW_ESFListaIncarichiImpl" table="VW_ESFListaIncarichi">
 		<cache usage="read-write" />
@@ -1384,5 +1385,19 @@
 			<key-property name="firstName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		</composite-id>
 		<property name="endDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.VW_NomineDirettoriTiroImpl" table="vw_nominedirettoritiro">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.VW_NomineDirettoriTiroPK">
+			<key-property name="UserId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="IdDirettoreTiro" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="Nome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="Cognome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="CodiceTessera" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="Regione" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="Qualifica" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="Specialita" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="DataAssegnazione" type="org.hibernate.type.TimestampType" />
+		</composite-id>
 	</class>
 </hibernate-mapping>

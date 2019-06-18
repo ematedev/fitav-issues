@@ -108,356 +108,347 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 
 		_methodParameterTypes17 = new String[] { "java.lang.String" };
 
-		_methodName19 = "getESFUsersByDeparture";
+		_methodName19 = "findTiratoriTesserati";
 
-		_methodParameterTypes19 = new String[] { "long" };
+		_methodParameterTypes19 = new String[] { "int", "int" };
 
-		_methodName20 = "getESFUsersByCodeCode";
+		_methodName20 = "getESFUsersByDeparture";
 
-		_methodParameterTypes20 = new String[] { "java.lang.String" };
+		_methodParameterTypes20 = new String[] { "long" };
 
-		_methodName21 = "getESFUserByUserCode";
+		_methodName21 = "getESFUsersByCodeCode";
 
-		_methodParameterTypes21 = new String[] { "long" };
+		_methodParameterTypes21 = new String[] { "java.lang.String" };
 
-		_methodName22 = "getESFUserByCodeUser2";
+		_methodName22 = "getESFUserByUserCode";
 
 		_methodParameterTypes22 = new String[] { "long" };
 
-		_methodName23 = "getESFUserByFirstName_LastName_FiscalCode_NotPartecipants";
+		_methodName23 = "getESFUserByCodeUser2";
 
-		_methodParameterTypes23 = new String[] {
-				"long", "java.lang.String", "java.lang.String",
-				"java.lang.String", "int", "long"
-			};
+		_methodParameterTypes23 = new String[] { "long" };
 
 		_methodName24 = "getESFUserByFirstName_LastName_FiscalCode_NotPartecipants";
 
 		_methodParameterTypes24 = new String[] {
 				"long", "java.lang.String", "java.lang.String",
+				"java.lang.String", "int", "long"
+			};
+
+		_methodName25 = "getESFUserByFirstName_LastName_FiscalCode_NotPartecipants";
+
+		_methodParameterTypes25 = new String[] {
+				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "int", "long", "int", "int"
 			};
 
-		_methodName25 = "getESFUserByFirstName_LastName_FiscalCode";
+		_methodName26 = "getESFUserByFirstName_LastName_FiscalCode";
 
-		_methodParameterTypes25 = new String[] {
+		_methodParameterTypes26 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"int", "long", "int", "int"
 			};
 
-		_methodName26 = "getESFUserByFiscalCode";
+		_methodName27 = "getESFUserByFiscalCode";
 
-		_methodParameterTypes26 = new String[] { "java.lang.String" };
+		_methodParameterTypes27 = new String[] { "java.lang.String" };
 
-		_methodName27 = "getAllUserByLikeF_L";
+		_methodName28 = "getAllUserByLikeF_L";
 
-		_methodParameterTypes27 = new String[] {
+		_methodParameterTypes28 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"int", "int"
 			};
 
-		_methodName28 = "countAllUserByLikeF_L";
-
-		_methodParameterTypes28 = new String[] {
-				"java.lang.String", "java.lang.String", "java.lang.String"
-			};
-
-		_methodName29 = "getAllUserByLikeF_L_S";
+		_methodName29 = "countAllUserByLikeF_L";
 
 		_methodParameterTypes29 = new String[] {
-				"java.lang.String", "java.lang.String", "java.lang.String",
-				"int", "int", "int"
+				"java.lang.String", "java.lang.String", "java.lang.String"
 			};
 
 		_methodName30 = "getAllUserByLikeF_L_S";
 
 		_methodParameterTypes30 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
-				"int"
+				"int", "int", "int"
 			};
 
-		_methodName31 = "getAllUserByLikeF_C_S";
+		_methodName31 = "getAllUserByLikeF_L_S";
 
 		_methodParameterTypes31 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
-				"int", "long", "int", "int"
+				"int"
 			};
 
 		_methodName32 = "getAllUserByLikeF_C_S";
 
 		_methodParameterTypes32 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
-				"int", "long"
+				"int", "long", "int", "int"
 			};
 
-		_methodName33 = "getAllShooterByLikeF_C_S";
+		_methodName33 = "getAllUserByLikeF_C_S";
 
 		_methodParameterTypes33 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
-				"long", "int", "int"
+				"int", "long"
 			};
 
 		_methodName34 = "getAllShooterByLikeF_C_S";
 
 		_methodParameterTypes34 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
+				"long", "int", "int"
+			};
+
+		_methodName35 = "getAllShooterByLikeF_C_S";
+
+		_methodParameterTypes35 = new String[] {
+				"java.lang.String", "java.lang.String", "java.lang.String",
 				"long"
 			};
 
-		_methodName35 = "getAllEsfUserByState";
-
-		_methodParameterTypes35 = new String[] { "int" };
-
 		_methodName36 = "getAllEsfUserByState";
 
-		_methodParameterTypes36 = new String[] { "int", "int", "int" };
+		_methodParameterTypes36 = new String[] { "int" };
 
-		_methodName37 = "findUserByRoleT_N_S";
+		_methodName37 = "getAllEsfUserByState";
 
-		_methodParameterTypes37 = new String[] {
+		_methodParameterTypes37 = new String[] { "int", "int", "int" };
+
+		_methodName38 = "findUserByRoleT_N_S";
+
+		_methodParameterTypes38 = new String[] {
 				"java.lang.String", "java.lang.String", "int"
 			};
 
-		_methodName38 = "findAllShooters";
-
-		_methodParameterTypes38 = new String[] { "int", "int" };
-
 		_methodName39 = "findAllShooters";
 
-		_methodParameterTypes39 = new String[] { "long", "int", "int" };
+		_methodParameterTypes39 = new String[] { "int", "int" };
 
 		_methodName40 = "findAllShooters";
 
-		_methodParameterTypes40 = new String[] {
+		_methodParameterTypes40 = new String[] { "long", "int", "int" };
+
+		_methodName41 = "findAllShooters";
+
+		_methodParameterTypes41 = new String[] {
 				"long", "int", "int", "int", "int"
 			};
 
-		_methodName41 = "findRoledUserOrganization";
-
-		_methodParameterTypes41 = new String[] { "long" };
-
 		_methodName42 = "findRoledUserOrganization";
 
-		_methodParameterTypes42 = new String[] { "long", "int", "int" };
+		_methodParameterTypes42 = new String[] { "long" };
 
-		_methodName43 = "findAllShootersByLeafOrgAssigned";
+		_methodName43 = "findRoledUserOrganization";
 
-		_methodParameterTypes43 = new String[] {
+		_methodParameterTypes43 = new String[] { "long", "int", "int" };
+
+		_methodName44 = "findAllShootersByLeafOrgAssigned";
+
+		_methodParameterTypes44 = new String[] {
 				"long", "int", "long", "int", "int", "int"
 			};
 
-		_methodName44 = "findAllShootersByLeafOrgAssignedName";
+		_methodName45 = "findAllShootersByLeafOrgAssignedName";
 
-		_methodParameterTypes44 = new String[] {
+		_methodParameterTypes45 = new String[] {
 				"java.lang.String", "java.lang.String", "long", "int", "long",
 				"int", "int", "int"
 			};
 
-		_methodName45 = "countAllShootersByLeafOrgAssignedName";
+		_methodName46 = "countAllShootersByLeafOrgAssignedName";
 
-		_methodParameterTypes45 = new String[] {
+		_methodParameterTypes46 = new String[] {
 				"java.lang.String", "java.lang.String", "long", "int", "long",
 				"int"
 			};
 
-		_methodName46 = "findAllShootersByLeafOrgAssigned";
+		_methodName47 = "findAllShootersByLeafOrgAssigned";
 
-		_methodParameterTypes46 = new String[] { "long", "int", "long", "int" };
-
-		_methodName47 = "findAllShootersByLeafOrg";
-
-		_methodParameterTypes47 = new String[] { "long", "int", "int" };
+		_methodParameterTypes47 = new String[] { "long", "int", "long", "int" };
 
 		_methodName48 = "findAllShootersByLeafOrg";
 
-		_methodParameterTypes48 = new String[] {
+		_methodParameterTypes48 = new String[] { "long", "int", "int" };
+
+		_methodName49 = "findAllShootersByLeafOrg";
+
+		_methodParameterTypes49 = new String[] {
 				"long", "int", "int", "int", "int"
 			};
 
-		_methodName49 = "finNationalDelegationESFUsersByMatchId";
+		_methodName50 = "finNationalDelegationESFUsersByMatchId";
 
-		_methodParameterTypes49 = new String[] { "long" };
+		_methodParameterTypes50 = new String[] { "long" };
 
-		_methodName50 = "findAllStaff";
-
-		_methodParameterTypes50 = new String[] {
-				"java.lang.Long", "java.lang.String", "java.lang.String",
-				"java.lang.String", "int", "java.lang.Long", "int", "int"
-			};
-
-		_methodName51 = "findAllStaffNamed";
+		_methodName51 = "findAllStaff";
 
 		_methodParameterTypes51 = new String[] {
 				"java.lang.Long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "int", "java.lang.Long", "int", "int"
 			};
 
-		_methodName52 = "findStaffNamed";
+		_methodName52 = "findAllStaffNamed";
 
 		_methodParameterTypes52 = new String[] {
-				"long", "java.lang.String", "java.lang.String",
-				"java.lang.String"
+				"java.lang.Long", "java.lang.String", "java.lang.String",
+				"java.lang.String", "int", "java.lang.Long", "int", "int"
 			};
 
 		_methodName53 = "findStaffNamed";
 
 		_methodParameterTypes53 = new String[] {
 				"long", "java.lang.String", "java.lang.String",
-				"java.lang.String", "int", "int"
+				"java.lang.String"
 			};
 
-		_methodName54 = "findStaffNamedNational";
+		_methodName54 = "findStaffNamed";
 
 		_methodParameterTypes54 = new String[] {
 				"long", "java.lang.String", "java.lang.String",
-				"java.lang.String"
+				"java.lang.String", "int", "int"
 			};
 
 		_methodName55 = "findStaffNamedNational";
 
 		_methodParameterTypes55 = new String[] {
 				"long", "java.lang.String", "java.lang.String",
+				"java.lang.String"
+			};
+
+		_methodName56 = "findStaffNamedNational";
+
+		_methodParameterTypes56 = new String[] {
+				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "int", "int"
 			};
 
-		_methodName56 = "findStaff";
-
-		_methodParameterTypes56 = new String[] { "long" };
-
 		_methodName57 = "findStaff";
 
-		_methodParameterTypes57 = new String[] { "long", "int", "int" };
+		_methodParameterTypes57 = new String[] { "long" };
 
-		_methodName58 = "finNationalDelegationESFUsersByMatchId";
+		_methodName58 = "findStaff";
 
 		_methodParameterTypes58 = new String[] { "long", "int", "int" };
 
-		_methodName59 = "findNationalDelegationStaffESFUsersByMatchId";
+		_methodName59 = "finNationalDelegationESFUsersByMatchId";
 
-		_methodParameterTypes59 = new String[] { "long" };
+		_methodParameterTypes59 = new String[] { "long", "int", "int" };
 
 		_methodName60 = "findNationalDelegationStaffESFUsersByMatchId";
 
-		_methodParameterTypes60 = new String[] { "long", "int", "int" };
+		_methodParameterTypes60 = new String[] { "long" };
 
-		_methodName61 = "findNationalDelegationsESFUsersByMatchId";
+		_methodName61 = "findNationalDelegationStaffESFUsersByMatchId";
 
-		_methodParameterTypes61 = new String[] { "long" };
+		_methodParameterTypes61 = new String[] { "long", "int", "int" };
 
 		_methodName62 = "findNationalDelegationsESFUsersByMatchId";
 
-		_methodParameterTypes62 = new String[] { "long", "int", "int" };
+		_methodParameterTypes62 = new String[] { "long" };
 
-		_methodName63 = "findNationalDelegationsESFUsersByMatchId_PartecipantTypeId";
+		_methodName63 = "findNationalDelegationsESFUsersByMatchId";
 
-		_methodParameterTypes63 = new String[] { "long", "long" };
+		_methodParameterTypes63 = new String[] { "long", "int", "int" };
 
 		_methodName64 = "findNationalDelegationsESFUsersByMatchId_PartecipantTypeId";
 
-		_methodParameterTypes64 = new String[] { "long", "long", "int", "int" };
+		_methodParameterTypes64 = new String[] { "long", "long" };
 
-		_methodName65 = "findNationalShooters";
+		_methodName65 = "findNationalDelegationsESFUsersByMatchId_PartecipantTypeId";
 
-		_methodParameterTypes65 = new String[] {  };
+		_methodParameterTypes65 = new String[] { "long", "long", "int", "int" };
 
 		_methodName66 = "findNationalShooters";
 
-		_methodParameterTypes66 = new String[] { "int", "int" };
+		_methodParameterTypes66 = new String[] {  };
 
-		_methodName67 = "findNationalPartecipantShooters";
+		_methodName67 = "findNationalShooters";
 
-		_methodParameterTypes67 = new String[] { "long", "boolean" };
+		_methodParameterTypes67 = new String[] { "int", "int" };
 
 		_methodName68 = "findNationalPartecipantShooters";
 
-		_methodParameterTypes68 = new String[] { "long", "boolean", "int", "int" };
+		_methodParameterTypes68 = new String[] { "long", "boolean" };
 
-		_methodName69 = "findPartecipantShooters";
+		_methodName69 = "findNationalPartecipantShooters";
 
-		_methodParameterTypes69 = new String[] { "int", "int", "long", "boolean" };
+		_methodParameterTypes69 = new String[] { "long", "boolean", "int", "int" };
 
 		_methodName70 = "findPartecipantShooters";
 
-		_methodParameterTypes70 = new String[] {
+		_methodParameterTypes70 = new String[] { "int", "int", "long", "boolean" };
+
+		_methodName71 = "findPartecipantShooters";
+
+		_methodParameterTypes71 = new String[] {
 				"int", "int", "long", "boolean", "int", "int"
 			};
 
-		_methodName71 = "findNationalPartecipantCoaches";
-
-		_methodParameterTypes71 = new String[] { "long", "boolean" };
-
 		_methodName72 = "findNationalPartecipantCoaches";
 
-		_methodParameterTypes72 = new String[] { "long", "boolean", "int", "int" };
+		_methodParameterTypes72 = new String[] { "long", "boolean" };
 
-		_methodName73 = "findPartecipantCoaches";
+		_methodName73 = "findNationalPartecipantCoaches";
 
-		_methodParameterTypes73 = new String[] { "int", "long", "boolean" };
+		_methodParameterTypes73 = new String[] { "long", "boolean", "int", "int" };
 
 		_methodName74 = "findPartecipantCoaches";
 
-		_methodParameterTypes74 = new String[] {
+		_methodParameterTypes74 = new String[] { "int", "long", "boolean" };
+
+		_methodName75 = "findPartecipantCoaches";
+
+		_methodParameterTypes75 = new String[] {
 				"int", "long", "boolean", "int", "int"
 			};
-
-		_methodName75 = "findNationalPartecipantReferees";
-
-		_methodParameterTypes75 = new String[] { "long", "boolean" };
 
 		_methodName76 = "findNationalPartecipantReferees";
 
-		_methodParameterTypes76 = new String[] { "long", "boolean", "int", "int" };
+		_methodParameterTypes76 = new String[] { "long", "boolean" };
 
-		_methodName77 = "findPartecipantReferees";
+		_methodName77 = "findNationalPartecipantReferees";
 
-		_methodParameterTypes77 = new String[] {
-				"int", "long", "boolean", "int", "int"
-			};
+		_methodParameterTypes77 = new String[] { "long", "boolean", "int", "int" };
 
 		_methodName78 = "findPartecipantReferees";
 
-		_methodParameterTypes78 = new String[] { "int", "long", "boolean" };
-
-		_methodName79 = "findNationalPartecipantDoctor";
-
-		_methodParameterTypes79 = new String[] { "long", "boolean" };
-
-		_methodName80 = "findNationalPartecipantDoctor";
-
-		_methodParameterTypes80 = new String[] { "long", "boolean", "int", "int" };
-
-		_methodName81 = "findPartecipantDoctor";
-
-		_methodParameterTypes81 = new String[] { "int", "long", "boolean" };
-
-		_methodName82 = "findPartecipantDoctor";
-
-		_methodParameterTypes82 = new String[] {
+		_methodParameterTypes78 = new String[] {
 				"int", "long", "boolean", "int", "int"
 			};
 
-		_methodName83 = "addESFUser";
+		_methodName79 = "findPartecipantReferees";
+
+		_methodParameterTypes79 = new String[] { "int", "long", "boolean" };
+
+		_methodName80 = "findNationalPartecipantDoctor";
+
+		_methodParameterTypes80 = new String[] { "long", "boolean" };
+
+		_methodName81 = "findNationalPartecipantDoctor";
+
+		_methodParameterTypes81 = new String[] { "long", "boolean", "int", "int" };
+
+		_methodName82 = "findPartecipantDoctor";
+
+		_methodParameterTypes82 = new String[] { "int", "long", "boolean" };
+
+		_methodName83 = "findPartecipantDoctor";
 
 		_methodParameterTypes83 = new String[] {
+				"int", "long", "boolean", "int", "int"
+			};
+
+		_methodName84 = "addESFUser";
+
+		_methodParameterTypes84 = new String[] {
 				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "int", "int", "int", "boolean",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "it.ethica.esf.model.ESFEntityState",
 				"java.util.List", "java.util.List", "java.lang.String",
-				"com.liferay.portal.service.ServiceContext"
-			};
-
-		_methodName84 = "addESFUserInOrganization";
-
-		_methodParameterTypes84 = new String[] {
-				"long", "java.lang.String", "java.lang.String",
-				"java.lang.String", "long", "java.util.Locale",
-				"java.lang.String", "java.lang.String", "java.lang.String",
-				"int", "int", "boolean", "int", "int", "int", "java.lang.String",
-				"it.ethica.esf.model.ESFAddress",
-				"it.ethica.esf.model.ESFEntityState", "java.util.List",
-				"com.liferay.portal.service.ServiceContext",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
@@ -468,21 +459,34 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 				"java.lang.String", "long", "java.util.Locale",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"int", "int", "boolean", "int", "int", "int", "java.lang.String",
+				"it.ethica.esf.model.ESFAddress",
+				"it.ethica.esf.model.ESFEntityState", "java.util.List",
+				"com.liferay.portal.service.ServiceContext",
+				"com.liferay.portal.service.ServiceContext"
+			};
+
+		_methodName86 = "addESFUserInOrganization";
+
+		_methodParameterTypes86 = new String[] {
+				"long", "java.lang.String", "java.lang.String",
+				"java.lang.String", "long", "java.util.Locale",
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"int", "int", "boolean", "int", "int", "int", "java.lang.String",
 				"it.ethica.esf.model.ESFAddress", "long", "java.util.List",
 				"com.liferay.portal.service.ServiceContext",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName86 = "deleteESFUser";
+		_methodName87 = "deleteESFUser";
 
-		_methodParameterTypes86 = new String[] {
+		_methodParameterTypes87 = new String[] {
 				"long", "java.util.List",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName87 = "updateESFUser";
+		_methodName88 = "updateESFUser";
 
-		_methodParameterTypes87 = new String[] {
+		_methodParameterTypes88 = new String[] {
 				"long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "int", "int", "int", "boolean", "boolean",
@@ -492,9 +496,9 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName88 = "addESFShooter";
+		_methodName89 = "addESFShooter";
 
-		_methodParameterTypes88 = new String[] {
+		_methodParameterTypes89 = new String[] {
 				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "int", "int", "int", "java.lang.String",
@@ -508,9 +512,9 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 				"long", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName89 = "updateESFShooter";
+		_methodName90 = "updateESFShooter";
 
-		_methodParameterTypes89 = new String[] {
+		_methodParameterTypes90 = new String[] {
 				"long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "int", "int", "int", "java.lang.String",
@@ -524,222 +528,222 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 				"boolean", "long", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName90 = "updateESFUserToESFShooter";
+		_methodName91 = "updateESFUserToESFShooter";
 
-		_methodParameterTypes90 = new String[] {
+		_methodParameterTypes91 = new String[] {
 				"long", "long", "it.ethica.esf.model.ESFCard", "java.util.List",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName91 = "addESFUserToESFShooter";
+		_methodName92 = "addESFUserToESFShooter";
 
-		_methodParameterTypes91 = new String[] { "long", "long" };
+		_methodParameterTypes92 = new String[] { "long", "long" };
 
-		_methodName92 = "countByESFUserRole";
+		_methodName93 = "countByESFUserRole";
 
-		_methodParameterTypes92 = new String[] { "long" };
+		_methodParameterTypes93 = new String[] { "long" };
 
-		_methodName93 = "getESFUserRoles";
+		_methodName94 = "getESFUserRoles";
 
-		_methodParameterTypes93 = new String[] { "long", "boolean" };
+		_methodParameterTypes94 = new String[] { "long", "boolean" };
 
-		_methodName94 = "getActiveESFUserRoles";
+		_methodName95 = "getActiveESFUserRoles";
 
-		_methodParameterTypes94 = new String[] { "long" };
+		_methodParameterTypes95 = new String[] { "long" };
 
-		_methodName95 = "findAllUser";
+		_methodName96 = "findAllUser";
 
-		_methodParameterTypes95 = new String[] {  };
+		_methodParameterTypes96 = new String[] {  };
 
-		_methodName96 = "checkEmailAddress";
-
-		_methodParameterTypes96 = new String[] {
-				"java.lang.String", "com.liferay.portal.service.ServiceContext"
-			};
-
-		_methodName97 = "checkScreenName";
+		_methodName97 = "checkEmailAddress";
 
 		_methodParameterTypes97 = new String[] {
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName98 = "findAllUserByAgeOnlyPeople";
+		_methodName98 = "checkScreenName";
 
-		_methodParameterTypes98 = new String[] {  };
+		_methodParameterTypes98 = new String[] {
+				"java.lang.String", "com.liferay.portal.service.ServiceContext"
+			};
 
-		_methodName99 = "findAllUserByRolenoNull";
+		_methodName99 = "findAllUserByAgeOnlyPeople";
 
-		_methodParameterTypes99 = new String[] { "long", "long" };
+		_methodParameterTypes99 = new String[] {  };
 
-		_methodName100 = "findShooterRoleAssignedName";
+		_methodName100 = "findAllUserByRolenoNull";
 
-		_methodParameterTypes100 = new String[] {
+		_methodParameterTypes100 = new String[] { "long", "long" };
+
+		_methodName101 = "findShooterRoleAssignedName";
+
+		_methodParameterTypes101 = new String[] {
 				"java.lang.String", "java.lang.String", "long", "long", "int",
 				"int"
 			};
 
-		_methodName101 = "countShooterRoleAssignedName";
+		_methodName102 = "countShooterRoleAssignedName";
 
-		_methodParameterTypes101 = new String[] {
+		_methodParameterTypes102 = new String[] {
 				"java.lang.String", "java.lang.String", "long", "long"
 			};
 
-		_methodName102 = "findStaffMatch";
+		_methodName103 = "findStaffMatch";
 
-		_methodParameterTypes102 = new String[] {
+		_methodParameterTypes103 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"long", "long", "int", "int"
 			};
 
-		_methodName103 = "countStaffMatch";
+		_methodName104 = "countStaffMatch";
 
-		_methodParameterTypes103 = new String[] {
+		_methodParameterTypes104 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"long", "long"
 			};
 
-		_methodName104 = "findShooterNotAssociated";
-
-		_methodParameterTypes104 = new String[] {
-				"java.lang.String", "java.lang.String", "java.lang.String",
-				"long", "int", "int"
-			};
-
-		_methodName105 = "countNotNationalShooterBySPT";
+		_methodName105 = "findShooterNotAssociated";
 
 		_methodParameterTypes105 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
-				"long"
+				"long", "int", "int"
 			};
 
-		_methodName106 = "findALLShooterNotAssociated";
+		_methodName106 = "countNotNationalShooterBySPT";
 
 		_methodParameterTypes106 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
-				"long", "int", "int"
+				"long"
 			};
 
-		_methodName107 = "countALLNotNationalShooterBySPT";
+		_methodName107 = "findALLShooterNotAssociated";
 
 		_methodParameterTypes107 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
+				"long", "int", "int"
+			};
+
+		_methodName108 = "countALLNotNationalShooterBySPT";
+
+		_methodParameterTypes108 = new String[] {
+				"java.lang.String", "java.lang.String", "java.lang.String",
 				"long"
 			};
 
-		_methodName108 = "findStaffNormalMatch";
+		_methodName109 = "findStaffNormalMatch";
 
-		_methodParameterTypes108 = new String[] {
+		_methodParameterTypes109 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"long", "int", "int"
 			};
 
-		_methodName109 = "countStaffNormalMatch";
+		_methodName110 = "countStaffNormalMatch";
 
-		_methodParameterTypes109 = new String[] {
+		_methodParameterTypes110 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"long"
 			};
 
-		_methodName110 = "countRenwalUser";
-
-		_methodParameterTypes110 = new String[] {
-				"java.lang.String", "java.lang.String", "long"
-			};
-
-		_methodName111 = "countNewUser";
+		_methodName111 = "countRenwalUser";
 
 		_methodParameterTypes111 = new String[] {
 				"java.lang.String", "java.lang.String", "long"
 			};
 
-		_methodName112 = "findByKeyword";
+		_methodName112 = "countNewUser";
 
 		_methodParameterTypes112 = new String[] {
+				"java.lang.String", "java.lang.String", "long"
+			};
+
+		_methodName113 = "findByKeyword";
+
+		_methodParameterTypes113 = new String[] {
 				"java.lang.String", "java.lang.String"
 			};
 
-		_methodName113 = "findShooterByAss";
-
-		_methodParameterTypes113 = new String[] {
-				"java.lang.String", "java.lang.String", "java.lang.String",
-				"long", "int", "int"
-			};
-
-		_methodName114 = "countShooterByAss";
+		_methodName114 = "findShooterByAss";
 
 		_methodParameterTypes114 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
+				"long", "int", "int"
+			};
+
+		_methodName115 = "countShooterByAss";
+
+		_methodParameterTypes115 = new String[] {
+				"java.lang.String", "java.lang.String", "java.lang.String",
 				"long"
 			};
 
-		_methodName115 = "findShooterByAssAndNoAss";
+		_methodName116 = "findShooterByAssAndNoAss";
 
-		_methodParameterTypes115 = new String[] {
+		_methodParameterTypes116 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"long", "int", "int"
 			};
 
-		_methodName116 = "countShooterByAssAndNoAss";
+		_methodName117 = "countShooterByAssAndNoAss";
 
-		_methodParameterTypes116 = new String[] {
+		_methodParameterTypes117 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"long"
 			};
 
-		_methodName117 = "findDirectorByMatch";
+		_methodName118 = "findDirectorByMatch";
 
-		_methodParameterTypes117 = new String[] {
+		_methodParameterTypes118 = new String[] {
 				"java.lang.String", "java.lang.String", "long", "long", "int",
 				"int"
 			};
 
-		_methodName118 = "countDirectorByMatch";
+		_methodName119 = "countDirectorByMatch";
 
-		_methodParameterTypes118 = new String[] {
+		_methodParameterTypes119 = new String[] {
 				"java.lang.String", "java.lang.String", "long", "long"
 			};
 
-		_methodName119 = "findNewYouthShooter";
+		_methodName120 = "findNewYouthShooter";
 
-		_methodParameterTypes119 = new String[] { "int" };
+		_methodParameterTypes120 = new String[] { "int" };
 
-		_methodName120 = "findYouthByCategory";
+		_methodName121 = "findYouthByCategory";
 
-		_methodParameterTypes120 = new String[] { "long", "int", "int", "int" };
+		_methodParameterTypes121 = new String[] { "long", "int", "int", "int" };
 
-		_methodName121 = "findYouthByCategoryTotal";
+		_methodName122 = "findYouthByCategoryTotal";
 
-		_methodParameterTypes121 = new String[] { "long", "int" };
+		_methodParameterTypes122 = new String[] { "long", "int" };
 
-		_methodName122 = "findNotBDOMemberByAssociatioId";
+		_methodName123 = "findNotBDOMemberByAssociatioId";
 
-		_methodParameterTypes122 = new String[] {
+		_methodParameterTypes123 = new String[] {
 				"java.lang.String", "java.lang.String", "long", "int", "int"
 			};
 
-		_methodName123 = "countNotBDOMemberByAssociatioId";
+		_methodName124 = "countNotBDOMemberByAssociatioId";
 
-		_methodParameterTypes123 = new String[] {
+		_methodParameterTypes124 = new String[] {
 				"java.lang.String", "java.lang.String", "long"
 			};
 
-		_methodName124 = "findAssociatedShooterOrganization";
+		_methodName125 = "findAssociatedShooterOrganization";
 
-		_methodParameterTypes124 = new String[] {
+		_methodParameterTypes125 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"long", "int", "int"
 			};
 
-		_methodName125 = "countAssociatedShooterOrganization";
+		_methodName126 = "countAssociatedShooterOrganization";
 
-		_methodParameterTypes125 = new String[] {
+		_methodParameterTypes126 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"long"
 			};
 
-		_methodName126 = "findByESFFederalRole";
+		_methodName127 = "findByESFFederalRole";
 
-		_methodParameterTypes126 = new String[] { "long" };
+		_methodParameterTypes127 = new String[] { "long" };
 	}
 
 	@Override
@@ -1288,13 +1292,37 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 	}
 
 	@Override
+	public java.util.List<java.lang.Object[]> findTiratoriTesserati(
+		int inizio, int fine) {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName19,
+					_methodParameterTypes19, new Object[] { inizio, fine });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<java.lang.Object[]>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
 	public java.util.List<it.ethica.esf.model.ESFUser> getESFUsersByDeparture(
 		long esfDepartureId) {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName19,
-					_methodParameterTypes19, new Object[] { esfDepartureId });
+			returnObj = _invokableLocalService.invokeMethod(_methodName20,
+					_methodParameterTypes20, new Object[] { esfDepartureId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -1317,8 +1345,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName20,
-					_methodParameterTypes20,
+			returnObj = _invokableLocalService.invokeMethod(_methodName21,
+					_methodParameterTypes21,
 					new Object[] { ClpSerializer.translateInput(code) });
 		}
 		catch (Throwable t) {
@@ -1338,39 +1366,6 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 
 	@Override
 	public it.ethica.esf.model.ESFUser getESFUserByUserCode(long userCode)
-		throws com.liferay.portal.kernel.exception.SystemException,
-			it.ethica.esf.NoSuchUserException {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName21,
-					_methodParameterTypes21, new Object[] { userCode });
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
-				throw (com.liferay.portal.kernel.exception.SystemException)t;
-			}
-
-			if (t instanceof it.ethica.esf.NoSuchUserException) {
-				throw (it.ethica.esf.NoSuchUserException)t;
-			}
-
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
-			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (it.ethica.esf.model.ESFUser)ClpSerializer.translateOutput(returnObj);
-	}
-
-	@Override
-	public it.ethica.esf.model.ESFUser getESFUserByCodeUser2(long userCode)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchUserException {
 		Object returnObj = null;
@@ -1403,6 +1398,39 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 	}
 
 	@Override
+	public it.ethica.esf.model.ESFUser getESFUserByCodeUser2(long userCode)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			it.ethica.esf.NoSuchUserException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName23,
+					_methodParameterTypes23, new Object[] { userCode });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof it.ethica.esf.NoSuchUserException) {
+				throw (it.ethica.esf.NoSuchUserException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (it.ethica.esf.model.ESFUser)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
 	public java.util.List<it.ethica.esf.model.ESFUser> getESFUserByFirstName_LastName_FiscalCode_NotPartecipants(
 		long esfMatchId, java.lang.String firstName, java.lang.String lastName,
 		java.lang.String fiscalCode, int state, long organizationId)
@@ -1410,8 +1438,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName23,
-					_methodParameterTypes23,
+			returnObj = _invokableLocalService.invokeMethod(_methodName24,
+					_methodParameterTypes24,
 					new Object[] {
 						esfMatchId,
 						
@@ -1453,8 +1481,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName24,
-					_methodParameterTypes24,
+			returnObj = _invokableLocalService.invokeMethod(_methodName25,
+					_methodParameterTypes25,
 					new Object[] {
 						esfMatchId,
 						
@@ -1496,8 +1524,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName25,
-					_methodParameterTypes25,
+			returnObj = _invokableLocalService.invokeMethod(_methodName26,
+					_methodParameterTypes26,
 					new Object[] {
 						ClpSerializer.translateInput(firstName),
 						
@@ -1535,8 +1563,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName26,
-					_methodParameterTypes26,
+			returnObj = _invokableLocalService.invokeMethod(_methodName27,
+					_methodParameterTypes27,
 					new Object[] { ClpSerializer.translateInput(fiscalCode) });
 		}
 		catch (Throwable t) {
@@ -1561,8 +1589,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName27,
-					_methodParameterTypes27,
+			returnObj = _invokableLocalService.invokeMethod(_methodName28,
+					_methodParameterTypes28,
 					new Object[] {
 						ClpSerializer.translateInput(firstName),
 						
@@ -1596,8 +1624,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName28,
-					_methodParameterTypes28,
+			returnObj = _invokableLocalService.invokeMethod(_methodName29,
+					_methodParameterTypes29,
 					new Object[] {
 						ClpSerializer.translateInput(firstName),
 						
@@ -1628,8 +1656,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName29,
-					_methodParameterTypes29,
+			returnObj = _invokableLocalService.invokeMethod(_methodName30,
+					_methodParameterTypes30,
 					new Object[] {
 						ClpSerializer.translateInput(firstName),
 						
@@ -1666,8 +1694,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName30,
-					_methodParameterTypes30,
+			returnObj = _invokableLocalService.invokeMethod(_methodName31,
+					_methodParameterTypes31,
 					new Object[] {
 						ClpSerializer.translateInput(firstName),
 						
@@ -1701,8 +1729,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName31,
-					_methodParameterTypes31,
+			returnObj = _invokableLocalService.invokeMethod(_methodName32,
+					_methodParameterTypes32,
 					new Object[] {
 						ClpSerializer.translateInput(firstName),
 						
@@ -1741,8 +1769,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName32,
-					_methodParameterTypes32,
+			returnObj = _invokableLocalService.invokeMethod(_methodName33,
+					_methodParameterTypes33,
 					new Object[] {
 						ClpSerializer.translateInput(firstName),
 						
@@ -1777,8 +1805,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName33,
-					_methodParameterTypes33,
+			returnObj = _invokableLocalService.invokeMethod(_methodName34,
+					_methodParameterTypes34,
 					new Object[] {
 						ClpSerializer.translateInput(firstName),
 						
@@ -1815,8 +1843,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName34,
-					_methodParameterTypes34,
+			returnObj = _invokableLocalService.invokeMethod(_methodName35,
+					_methodParameterTypes35,
 					new Object[] {
 						ClpSerializer.translateInput(firstName),
 						
@@ -1848,8 +1876,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName35,
-					_methodParameterTypes35, new Object[] { state });
+			returnObj = _invokableLocalService.invokeMethod(_methodName36,
+					_methodParameterTypes36, new Object[] { state });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -1872,8 +1900,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName36,
-					_methodParameterTypes36, new Object[] { state, start, end });
+			returnObj = _invokableLocalService.invokeMethod(_methodName37,
+					_methodParameterTypes37, new Object[] { state, start, end });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -1898,8 +1926,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName37,
-					_methodParameterTypes37,
+			returnObj = _invokableLocalService.invokeMethod(_methodName38,
+					_methodParameterTypes38,
 					new Object[] {
 						ClpSerializer.translateInput(title),
 						
@@ -1937,8 +1965,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName38,
-					_methodParameterTypes38,
+			returnObj = _invokableLocalService.invokeMethod(_methodName39,
+					_methodParameterTypes39,
 					new Object[] { stateCard, stateUser });
 		}
 		catch (Throwable t) {
@@ -1962,8 +1990,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName39,
-					_methodParameterTypes39,
+			returnObj = _invokableLocalService.invokeMethod(_methodName40,
+					_methodParameterTypes40,
 					new Object[] { organizationId, stateCard, stateUser });
 		}
 		catch (Throwable t) {
@@ -1987,8 +2015,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName40,
-					_methodParameterTypes40,
+			returnObj = _invokableLocalService.invokeMethod(_methodName41,
+					_methodParameterTypes41,
 					new Object[] {
 						organizationId,
 						
@@ -2023,8 +2051,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName41,
-					_methodParameterTypes41, new Object[] { organizationId });
+			returnObj = _invokableLocalService.invokeMethod(_methodName42,
+					_methodParameterTypes42, new Object[] { organizationId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -2052,8 +2080,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName42,
-					_methodParameterTypes42,
+			returnObj = _invokableLocalService.invokeMethod(_methodName43,
+					_methodParameterTypes43,
 					new Object[] { organizationId, start, end });
 		}
 		catch (Throwable t) {
@@ -2082,8 +2110,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName43,
-					_methodParameterTypes43,
+			returnObj = _invokableLocalService.invokeMethod(_methodName44,
+					_methodParameterTypes44,
 					new Object[] {
 						organizationId,
 						
@@ -2120,8 +2148,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName44,
-					_methodParameterTypes44,
+			returnObj = _invokableLocalService.invokeMethod(_methodName45,
+					_methodParameterTypes45,
 					new Object[] {
 						ClpSerializer.translateInput(name),
 						
@@ -2162,8 +2190,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName45,
-					_methodParameterTypes45,
+			returnObj = _invokableLocalService.invokeMethod(_methodName46,
+					_methodParameterTypes46,
 					new Object[] {
 						ClpSerializer.translateInput(name),
 						
@@ -2199,8 +2227,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName46,
-					_methodParameterTypes46,
+			returnObj = _invokableLocalService.invokeMethod(_methodName47,
+					_methodParameterTypes47,
 					new Object[] {
 						organizationId,
 						
@@ -2232,8 +2260,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName47,
-					_methodParameterTypes47,
+			returnObj = _invokableLocalService.invokeMethod(_methodName48,
+					_methodParameterTypes48,
 					new Object[] { organizationId, stateCard, stateUser });
 		}
 		catch (Throwable t) {
@@ -2257,8 +2285,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName48,
-					_methodParameterTypes48,
+			returnObj = _invokableLocalService.invokeMethod(_methodName49,
+					_methodParameterTypes49,
 					new Object[] {
 						organizationId,
 						
@@ -2292,8 +2320,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName49,
-					_methodParameterTypes49, new Object[] { esfMatchId });
+			returnObj = _invokableLocalService.invokeMethod(_methodName50,
+					_methodParameterTypes50, new Object[] { esfMatchId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -2312,54 +2340,6 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 
 	@Override
 	public java.util.List<it.ethica.esf.model.ESFUser> findAllStaff(
-		java.lang.Long esfMatchId, java.lang.String firstName,
-		java.lang.String lastName, java.lang.String fiscalCode, int state,
-		java.lang.Long organizationId, int start, int end)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName50,
-					_methodParameterTypes50,
-					new Object[] {
-						ClpSerializer.translateInput(esfMatchId),
-						
-					ClpSerializer.translateInput(firstName),
-						
-					ClpSerializer.translateInput(lastName),
-						
-					ClpSerializer.translateInput(fiscalCode),
-						
-					state,
-						
-					ClpSerializer.translateInput(organizationId),
-						
-					start,
-						
-					end
-					});
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
-				throw (com.liferay.portal.kernel.exception.SystemException)t;
-			}
-
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
-			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (java.util.List<it.ethica.esf.model.ESFUser>)ClpSerializer.translateOutput(returnObj);
-	}
-
-	@Override
-	public java.util.List<it.ethica.esf.model.ESFUser> findAllStaffNamed(
 		java.lang.Long esfMatchId, java.lang.String firstName,
 		java.lang.String lastName, java.lang.String fiscalCode, int state,
 		java.lang.Long organizationId, int start, int end)
@@ -2407,6 +2387,54 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 	}
 
 	@Override
+	public java.util.List<it.ethica.esf.model.ESFUser> findAllStaffNamed(
+		java.lang.Long esfMatchId, java.lang.String firstName,
+		java.lang.String lastName, java.lang.String fiscalCode, int state,
+		java.lang.Long organizationId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName52,
+					_methodParameterTypes52,
+					new Object[] {
+						ClpSerializer.translateInput(esfMatchId),
+						
+					ClpSerializer.translateInput(firstName),
+						
+					ClpSerializer.translateInput(lastName),
+						
+					ClpSerializer.translateInput(fiscalCode),
+						
+					state,
+						
+					ClpSerializer.translateInput(organizationId),
+						
+					start,
+						
+					end
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<it.ethica.esf.model.ESFUser>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
 	public java.util.List<it.ethica.esf.model.ESFUser> findStaffNamed(
 		long esfMatchId, java.lang.String firstName, java.lang.String lastName,
 		java.lang.String fiscalCode)
@@ -2415,8 +2443,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName52,
-					_methodParameterTypes52,
+			returnObj = _invokableLocalService.invokeMethod(_methodName53,
+					_methodParameterTypes53,
 					new Object[] {
 						esfMatchId,
 						
@@ -2459,8 +2487,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName53,
-					_methodParameterTypes53,
+			returnObj = _invokableLocalService.invokeMethod(_methodName54,
+					_methodParameterTypes54,
 					new Object[] {
 						esfMatchId,
 						
@@ -2507,8 +2535,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName54,
-					_methodParameterTypes54,
+			returnObj = _invokableLocalService.invokeMethod(_methodName55,
+					_methodParameterTypes55,
 					new Object[] {
 						esfMatchId,
 						
@@ -2551,8 +2579,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName55,
-					_methodParameterTypes55,
+			returnObj = _invokableLocalService.invokeMethod(_methodName56,
+					_methodParameterTypes56,
 					new Object[] {
 						esfMatchId,
 						
@@ -2597,8 +2625,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName56,
-					_methodParameterTypes56, new Object[] { esfMatchId });
+			returnObj = _invokableLocalService.invokeMethod(_methodName57,
+					_methodParameterTypes57, new Object[] { esfMatchId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -2626,8 +2654,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName57,
-					_methodParameterTypes57,
+			returnObj = _invokableLocalService.invokeMethod(_methodName58,
+					_methodParameterTypes58,
 					new Object[] { esfMatchId, start, end });
 		}
 		catch (Throwable t) {
@@ -2655,8 +2683,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName58,
-					_methodParameterTypes58,
+			returnObj = _invokableLocalService.invokeMethod(_methodName59,
+					_methodParameterTypes59,
 					new Object[] { esfMatchId, start, end });
 		}
 		catch (Throwable t) {
@@ -2677,35 +2705,35 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 	@Override
 	public java.util.List<it.ethica.esf.model.ESFUser> findNationalDelegationStaffESFUsersByMatchId(
 		long esfMatchId) {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName59,
-					_methodParameterTypes59, new Object[] { esfMatchId });
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
-			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (java.util.List<it.ethica.esf.model.ESFUser>)ClpSerializer.translateOutput(returnObj);
-	}
-
-	@Override
-	public java.util.List<it.ethica.esf.model.ESFUser> findNationalDelegationStaffESFUsersByMatchId(
-		long esfMatchId, int start, int end) {
 		Object returnObj = null;
 
 		try {
 			returnObj = _invokableLocalService.invokeMethod(_methodName60,
-					_methodParameterTypes60,
+					_methodParameterTypes60, new Object[] { esfMatchId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<it.ethica.esf.model.ESFUser>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public java.util.List<it.ethica.esf.model.ESFUser> findNationalDelegationStaffESFUsersByMatchId(
+		long esfMatchId, int start, int end) {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName61,
+					_methodParameterTypes61,
 					new Object[] { esfMatchId, start, end });
 		}
 		catch (Throwable t) {
@@ -2729,8 +2757,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName61,
-					_methodParameterTypes61, new Object[] { esfMatchId });
+			returnObj = _invokableLocalService.invokeMethod(_methodName62,
+					_methodParameterTypes62, new Object[] { esfMatchId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -2753,8 +2781,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName62,
-					_methodParameterTypes62,
+			returnObj = _invokableLocalService.invokeMethod(_methodName63,
+					_methodParameterTypes63,
 					new Object[] { esfMatchId, start, end });
 		}
 		catch (Throwable t) {
@@ -2778,8 +2806,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName63,
-					_methodParameterTypes63,
+			returnObj = _invokableLocalService.invokeMethod(_methodName64,
+					_methodParameterTypes64,
 					new Object[] { esfMatchId, esfPartecipantTypeId });
 		}
 		catch (Throwable t) {
@@ -2803,8 +2831,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName64,
-					_methodParameterTypes64,
+			returnObj = _invokableLocalService.invokeMethod(_methodName65,
+					_methodParameterTypes65,
 					new Object[] { esfMatchId, esfPartecipantTypeId, start, end });
 		}
 		catch (Throwable t) {
@@ -2827,8 +2855,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName65,
-					_methodParameterTypes65, new Object[] {  });
+			returnObj = _invokableLocalService.invokeMethod(_methodName66,
+					_methodParameterTypes66, new Object[] {  });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -2851,8 +2879,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName66,
-					_methodParameterTypes66, new Object[] { start, end });
+			returnObj = _invokableLocalService.invokeMethod(_methodName67,
+					_methodParameterTypes67, new Object[] { start, end });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -2876,8 +2904,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName67,
-					_methodParameterTypes67,
+			returnObj = _invokableLocalService.invokeMethod(_methodName68,
+					_methodParameterTypes68,
 					new Object[] { idMatch, isPartecipant });
 		}
 		catch (Throwable t) {
@@ -2906,8 +2934,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName68,
-					_methodParameterTypes68,
+			returnObj = _invokableLocalService.invokeMethod(_methodName69,
+					_methodParameterTypes69,
 					new Object[] { idMatch, isPartecipant, start, end });
 		}
 		catch (Throwable t) {
@@ -2936,8 +2964,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName69,
-					_methodParameterTypes69,
+			returnObj = _invokableLocalService.invokeMethod(_methodName70,
+					_methodParameterTypes70,
 					new Object[] { stateCard, stateUser, idMatch, isPartecipant });
 		}
 		catch (Throwable t) {
@@ -2967,8 +2995,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName70,
-					_methodParameterTypes70,
+			returnObj = _invokableLocalService.invokeMethod(_methodName71,
+					_methodParameterTypes71,
 					new Object[] {
 						stateCard,
 						
@@ -3010,8 +3038,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName71,
-					_methodParameterTypes71,
+			returnObj = _invokableLocalService.invokeMethod(_methodName72,
+					_methodParameterTypes72,
 					new Object[] { idMatch, isPartecipant });
 		}
 		catch (Throwable t) {
@@ -3045,8 +3073,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName72,
-					_methodParameterTypes72,
+			returnObj = _invokableLocalService.invokeMethod(_methodName73,
+					_methodParameterTypes73,
 					new Object[] { idMatch, isPartecipant, start, end });
 		}
 		catch (Throwable t) {
@@ -3075,41 +3103,6 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 	@Override
 	public java.util.List<it.ethica.esf.model.ESFUser> findPartecipantCoaches(
 		int stateUser, long idMatch, boolean isPartecipant)
-		throws com.liferay.portal.kernel.exception.SystemException,
-			it.ethica.esf.NoSuchUserESFUserRoleException {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName73,
-					_methodParameterTypes73,
-					new Object[] { stateUser, idMatch, isPartecipant });
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
-				throw (com.liferay.portal.kernel.exception.SystemException)t;
-			}
-
-			if (t instanceof it.ethica.esf.NoSuchUserESFUserRoleException) {
-				throw (it.ethica.esf.NoSuchUserESFUserRoleException)t;
-			}
-
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
-			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (java.util.List<it.ethica.esf.model.ESFUser>)ClpSerializer.translateOutput(returnObj);
-	}
-
-	@Override
-	public java.util.List<it.ethica.esf.model.ESFUser> findPartecipantCoaches(
-		int stateUser, long idMatch, boolean isPartecipant, int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchUserESFUserRoleException {
 		Object returnObj = null;
@@ -3117,7 +3110,7 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		try {
 			returnObj = _invokableLocalService.invokeMethod(_methodName74,
 					_methodParameterTypes74,
-					new Object[] { stateUser, idMatch, isPartecipant, start, end });
+					new Object[] { stateUser, idMatch, isPartecipant });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -3143,8 +3136,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 	}
 
 	@Override
-	public java.util.List<it.ethica.esf.model.ESFUser> findNationalPartecipantReferees(
-		long idMatch, boolean isPartecipant)
+	public java.util.List<it.ethica.esf.model.ESFUser> findPartecipantCoaches(
+		int stateUser, long idMatch, boolean isPartecipant, int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchUserESFUserRoleException {
 		Object returnObj = null;
@@ -3152,6 +3145,41 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		try {
 			returnObj = _invokableLocalService.invokeMethod(_methodName75,
 					_methodParameterTypes75,
+					new Object[] { stateUser, idMatch, isPartecipant, start, end });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof it.ethica.esf.NoSuchUserESFUserRoleException) {
+				throw (it.ethica.esf.NoSuchUserESFUserRoleException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<it.ethica.esf.model.ESFUser>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public java.util.List<it.ethica.esf.model.ESFUser> findNationalPartecipantReferees(
+		long idMatch, boolean isPartecipant)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			it.ethica.esf.NoSuchUserESFUserRoleException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName76,
+					_methodParameterTypes76,
 					new Object[] { idMatch, isPartecipant });
 		}
 		catch (Throwable t) {
@@ -3185,8 +3213,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName76,
-					_methodParameterTypes76,
+			returnObj = _invokableLocalService.invokeMethod(_methodName77,
+					_methodParameterTypes77,
 					new Object[] { idMatch, isPartecipant, start, end });
 		}
 		catch (Throwable t) {
@@ -3220,8 +3248,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName77,
-					_methodParameterTypes77,
+			returnObj = _invokableLocalService.invokeMethod(_methodName78,
+					_methodParameterTypes78,
 					new Object[] { stateUser, idMatch, isPartecipant, start, end });
 		}
 		catch (Throwable t) {
@@ -3255,8 +3283,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName78,
-					_methodParameterTypes78,
+			returnObj = _invokableLocalService.invokeMethod(_methodName79,
+					_methodParameterTypes79,
 					new Object[] { stateUser, idMatch, isPartecipant });
 		}
 		catch (Throwable t) {
@@ -3290,8 +3318,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName79,
-					_methodParameterTypes79,
+			returnObj = _invokableLocalService.invokeMethod(_methodName80,
+					_methodParameterTypes80,
 					new Object[] { idMatch, isPartecipant });
 		}
 		catch (Throwable t) {
@@ -3325,8 +3353,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName80,
-					_methodParameterTypes80,
+			returnObj = _invokableLocalService.invokeMethod(_methodName81,
+					_methodParameterTypes81,
 					new Object[] { idMatch, isPartecipant, start, end });
 		}
 		catch (Throwable t) {
@@ -3360,8 +3388,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName81,
-					_methodParameterTypes81,
+			returnObj = _invokableLocalService.invokeMethod(_methodName82,
+					_methodParameterTypes82,
 					new Object[] { stateUser, idMatch, isPartecipant });
 		}
 		catch (Throwable t) {
@@ -3395,8 +3423,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName82,
-					_methodParameterTypes82,
+			returnObj = _invokableLocalService.invokeMethod(_methodName83,
+					_methodParameterTypes83,
 					new Object[] { stateUser, idMatch, isPartecipant, start, end });
 		}
 		catch (Throwable t) {
@@ -3440,8 +3468,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName83,
-					_methodParameterTypes83,
+			returnObj = _invokableLocalService.invokeMethod(_methodName84,
+					_methodParameterTypes84,
 					new Object[] {
 						operatorId,
 						
@@ -3525,8 +3553,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName84,
-					_methodParameterTypes84,
+			returnObj = _invokableLocalService.invokeMethod(_methodName85,
+					_methodParameterTypes85,
 					new Object[] {
 						userId,
 						
@@ -3611,8 +3639,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName85,
-					_methodParameterTypes85,
+			returnObj = _invokableLocalService.invokeMethod(_methodName86,
+					_methodParameterTypes86,
 					new Object[] {
 						userId,
 						
@@ -3689,8 +3717,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName86,
-					_methodParameterTypes86,
+			returnObj = _invokableLocalService.invokeMethod(_methodName87,
+					_methodParameterTypes87,
 					new Object[] {
 						esfUserId,
 						
@@ -3740,8 +3768,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName87,
-					_methodParameterTypes87,
+			returnObj = _invokableLocalService.invokeMethod(_methodName88,
+					_methodParameterTypes88,
 					new Object[] {
 						operatorId,
 						
@@ -3835,8 +3863,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName88,
-					_methodParameterTypes88,
+			returnObj = _invokableLocalService.invokeMethod(_methodName89,
+					_methodParameterTypes89,
 					new Object[] {
 						operatorId,
 						
@@ -3955,8 +3983,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName89,
-					_methodParameterTypes89,
+			returnObj = _invokableLocalService.invokeMethod(_methodName90,
+					_methodParameterTypes90,
 					new Object[] {
 						operatorId,
 						
@@ -4064,8 +4092,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		try {
-			_invokableLocalService.invokeMethod(_methodName90,
-				_methodParameterTypes90,
+			_invokableLocalService.invokeMethod(_methodName91,
+				_methodParameterTypes91,
 				new Object[] {
 					userId,
 					
@@ -4104,8 +4132,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchCardException {
 		try {
-			_invokableLocalService.invokeMethod(_methodName91,
-				_methodParameterTypes91, new Object[] { esfUserId, esfCardId });
+			_invokableLocalService.invokeMethod(_methodName92,
+				_methodParameterTypes92, new Object[] { esfUserId, esfCardId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -4135,8 +4163,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName92,
-					_methodParameterTypes92, new Object[] { esfUserRoleId });
+			returnObj = _invokableLocalService.invokeMethod(_methodName93,
+					_methodParameterTypes93, new Object[] { esfUserRoleId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -4169,8 +4197,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName93,
-					_methodParameterTypes93, new Object[] { esfUserId, active });
+			returnObj = _invokableLocalService.invokeMethod(_methodName94,
+					_methodParameterTypes94, new Object[] { esfUserId, active });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -4203,8 +4231,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName94,
-					_methodParameterTypes94, new Object[] { esfUserId });
+			returnObj = _invokableLocalService.invokeMethod(_methodName95,
+					_methodParameterTypes95, new Object[] { esfUserId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -4235,8 +4263,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName95,
-					_methodParameterTypes95, new Object[] {  });
+			returnObj = _invokableLocalService.invokeMethod(_methodName96,
+					_methodParameterTypes96, new Object[] {  });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -4266,8 +4294,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName96,
-					_methodParameterTypes96,
+			returnObj = _invokableLocalService.invokeMethod(_methodName97,
+					_methodParameterTypes97,
 					new Object[] {
 						ClpSerializer.translateInput(emailAddress),
 						
@@ -4306,8 +4334,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName97,
-					_methodParameterTypes97,
+			returnObj = _invokableLocalService.invokeMethod(_methodName98,
+					_methodParameterTypes98,
 					new Object[] {
 						ClpSerializer.translateInput(screenName),
 						
@@ -4344,8 +4372,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName98,
-					_methodParameterTypes98, new Object[] {  });
+			returnObj = _invokableLocalService.invokeMethod(_methodName99,
+					_methodParameterTypes99, new Object[] {  });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -4378,8 +4406,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName99,
-					_methodParameterTypes99,
+			returnObj = _invokableLocalService.invokeMethod(_methodName100,
+					_methodParameterTypes100,
 					new Object[] { roleId, organizationId });
 		}
 		catch (Throwable t) {
@@ -4414,8 +4442,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName100,
-					_methodParameterTypes100,
+			returnObj = _invokableLocalService.invokeMethod(_methodName101,
+					_methodParameterTypes101,
 					new Object[] {
 						ClpSerializer.translateInput(name),
 						
@@ -4461,8 +4489,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName101,
-					_methodParameterTypes101,
+			returnObj = _invokableLocalService.invokeMethod(_methodName102,
+					_methodParameterTypes102,
 					new Object[] {
 						ClpSerializer.translateInput(name),
 						
@@ -4506,8 +4534,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName102,
-					_methodParameterTypes102,
+			returnObj = _invokableLocalService.invokeMethod(_methodName103,
+					_methodParameterTypes103,
 					new Object[] {
 						ClpSerializer.translateInput(name),
 						
@@ -4556,8 +4584,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName103,
-					_methodParameterTypes103,
+			returnObj = _invokableLocalService.invokeMethod(_methodName104,
+					_methodParameterTypes104,
 					new Object[] {
 						ClpSerializer.translateInput(name),
 						
@@ -4602,8 +4630,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName104,
-					_methodParameterTypes104,
+			returnObj = _invokableLocalService.invokeMethod(_methodName105,
+					_methodParameterTypes105,
 					new Object[] {
 						ClpSerializer.translateInput(name),
 						
@@ -4649,8 +4677,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName105,
-					_methodParameterTypes105,
+			returnObj = _invokableLocalService.invokeMethod(_methodName106,
+					_methodParameterTypes106,
 					new Object[] {
 						ClpSerializer.translateInput(name),
 						
@@ -4693,8 +4721,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName106,
-					_methodParameterTypes106,
+			returnObj = _invokableLocalService.invokeMethod(_methodName107,
+					_methodParameterTypes107,
 					new Object[] {
 						ClpSerializer.translateInput(name),
 						
@@ -4740,8 +4768,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName107,
-					_methodParameterTypes107,
+			returnObj = _invokableLocalService.invokeMethod(_methodName108,
+					_methodParameterTypes108,
 					new Object[] {
 						ClpSerializer.translateInput(name),
 						
@@ -4784,8 +4812,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName108,
-					_methodParameterTypes108,
+			returnObj = _invokableLocalService.invokeMethod(_methodName109,
+					_methodParameterTypes109,
 					new Object[] {
 						ClpSerializer.translateInput(name),
 						
@@ -4831,8 +4859,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName109,
-					_methodParameterTypes109,
+			returnObj = _invokableLocalService.invokeMethod(_methodName110,
+					_methodParameterTypes110,
 					new Object[] {
 						ClpSerializer.translateInput(name),
 						
@@ -4874,8 +4902,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName110,
-					_methodParameterTypes110,
+			returnObj = _invokableLocalService.invokeMethod(_methodName111,
+					_methodParameterTypes111,
 					new Object[] {
 						ClpSerializer.translateInput(thisYear),
 						
@@ -4915,8 +4943,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName111,
-					_methodParameterTypes111,
+			returnObj = _invokableLocalService.invokeMethod(_methodName112,
+					_methodParameterTypes112,
 					new Object[] {
 						ClpSerializer.translateInput(endDate),
 						
@@ -4956,8 +4984,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName112,
-					_methodParameterTypes112,
+			returnObj = _invokableLocalService.invokeMethod(_methodName113,
+					_methodParameterTypes113,
 					new Object[] {
 						ClpSerializer.translateInput(keyword),
 						
@@ -4996,8 +5024,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName113,
-					_methodParameterTypes113,
+			returnObj = _invokableLocalService.invokeMethod(_methodName114,
+					_methodParameterTypes114,
 					new Object[] {
 						ClpSerializer.translateInput(firstName),
 						
@@ -5043,8 +5071,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName114,
-					_methodParameterTypes114,
+			returnObj = _invokableLocalService.invokeMethod(_methodName115,
+					_methodParameterTypes115,
 					new Object[] {
 						ClpSerializer.translateInput(firstName),
 						
@@ -5087,8 +5115,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName115,
-					_methodParameterTypes115,
+			returnObj = _invokableLocalService.invokeMethod(_methodName116,
+					_methodParameterTypes116,
 					new Object[] {
 						ClpSerializer.translateInput(firstName),
 						
@@ -5134,8 +5162,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName116,
-					_methodParameterTypes116,
+			returnObj = _invokableLocalService.invokeMethod(_methodName117,
+					_methodParameterTypes117,
 					new Object[] {
 						ClpSerializer.translateInput(firstName),
 						
@@ -5178,8 +5206,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName117,
-					_methodParameterTypes117,
+			returnObj = _invokableLocalService.invokeMethod(_methodName118,
+					_methodParameterTypes118,
 					new Object[] {
 						ClpSerializer.translateInput(firstName),
 						
@@ -5226,8 +5254,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName118,
-					_methodParameterTypes118,
+			returnObj = _invokableLocalService.invokeMethod(_methodName119,
+					_methodParameterTypes119,
 					new Object[] {
 						ClpSerializer.translateInput(firstName),
 						
@@ -5269,8 +5297,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName119,
-					_methodParameterTypes119, new Object[] { year });
+			returnObj = _invokableLocalService.invokeMethod(_methodName120,
+					_methodParameterTypes120, new Object[] { year });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -5303,8 +5331,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName120,
-					_methodParameterTypes120,
+			returnObj = _invokableLocalService.invokeMethod(_methodName121,
+					_methodParameterTypes121,
 					new Object[] { categoryId, year, start, end });
 		}
 		catch (Throwable t) {
@@ -5337,8 +5365,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName121,
-					_methodParameterTypes121, new Object[] { categoryId, year });
+			returnObj = _invokableLocalService.invokeMethod(_methodName122,
+					_methodParameterTypes122, new Object[] { categoryId, year });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -5372,8 +5400,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName122,
-					_methodParameterTypes122,
+			returnObj = _invokableLocalService.invokeMethod(_methodName123,
+					_methodParameterTypes123,
 					new Object[] {
 						ClpSerializer.translateInput(lastName),
 						
@@ -5417,8 +5445,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName123,
-					_methodParameterTypes123,
+			returnObj = _invokableLocalService.invokeMethod(_methodName124,
+					_methodParameterTypes124,
 					new Object[] {
 						ClpSerializer.translateInput(lastName),
 						
@@ -5459,8 +5487,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName124,
-					_methodParameterTypes124,
+			returnObj = _invokableLocalService.invokeMethod(_methodName125,
+					_methodParameterTypes125,
 					new Object[] {
 						ClpSerializer.translateInput(firstName),
 						
@@ -5506,8 +5534,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName125,
-					_methodParameterTypes125,
+			returnObj = _invokableLocalService.invokeMethod(_methodName126,
+					_methodParameterTypes126,
 					new Object[] {
 						ClpSerializer.translateInput(firstName),
 						
@@ -5549,8 +5577,8 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName126,
-					_methodParameterTypes126, new Object[] { esfFederalRoleId });
+			returnObj = _invokableLocalService.invokeMethod(_methodName127,
+					_methodParameterTypes127, new Object[] { esfFederalRoleId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -5828,4 +5856,6 @@ public class ESFUserLocalServiceClp implements ESFUserLocalService {
 	private String[] _methodParameterTypes125;
 	private String _methodName126;
 	private String[] _methodParameterTypes126;
+	private String _methodName127;
+	private String[] _methodParameterTypes127;
 }

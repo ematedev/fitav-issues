@@ -2590,6 +2590,26 @@
             <finder-column name="esfShootingDirectorId" comparator="="></finder-column>
         </finder>
     </entity>
+    <entity name="VM_TiratoriTesserati" table="vm_tiratoritesserati" remote-service="false" local-service="true">
+        <column name="userId" primary="true" type="int"></column>
+        <column name="CodiceTessera" primary="true" type="String"></column>
+        <column name="CodiceOrganizzazione" primary="true" type="String"></column>
+        <column name="Nome" primary="true" type="String"></column>
+        <column name="Cognome" primary="true" type="String"></column>
+        <column name="Email" primary="true" type="String"></column>
+        <column name="CF" primary="false" type="String"></column>
+    </entity>
+    <entity name="VW_NomineDirettoriTiro" table="vw_nominedirettoritiro" local-service="true" remote-service="false">
+        <column name="UserId" type="int" primary="true"></column>
+        <column name="IdDirettoreTiro" type="int" primary="true"></column>
+        <column name="Nome" type="String" primary="true"></column>
+        <column name="Cognome" type="String" primary="true"></column>
+        <column name="CodiceTessera" type="String" primary="true"></column>
+        <column name="Regione" type="String" primary="true"></column>
+        <column name="Qualifica" type="String" primary="true"></column>
+        <column name="Specialita" type="String" primary="true"></column>
+        <column name="DataAssegnazione" type="Date" primary="true"></column>
+    </entity>
 	
 	<exceptions>
 		<exception>ESFAddressLatitude</exception>

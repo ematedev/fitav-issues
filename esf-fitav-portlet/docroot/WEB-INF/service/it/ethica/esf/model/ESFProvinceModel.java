@@ -156,19 +156,19 @@ public interface ESFProvinceModel extends BaseModel<ESFProvince> {
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFProvince esfProvince);
+	public int compareTo(ESFProvince esfProvince);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFProvince> toCacheModel();
+	public CacheModel<ESFProvince> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFProvince toEscapedModel();
+	public ESFProvince toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFProvince toUnescapedModel();
+	public ESFProvince toUnescapedModel();
 
 	@Override
 	public String toString();

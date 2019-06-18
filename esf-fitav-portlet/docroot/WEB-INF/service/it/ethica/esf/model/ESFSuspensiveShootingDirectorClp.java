@@ -960,10 +960,6 @@ public class ESFSuspensiveShootingDirectorClp extends BaseModelImpl<ESFSuspensiv
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1155,5 +1151,4 @@ public class ESFSuspensiveShootingDirectorClp extends BaseModelImpl<ESFSuspensiv
 	private long _Tipo_Gara10_noUtil;
 	private Date _esfVariationData;
 	private BaseModel<?> _esfSuspensiveShootingDirectorRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

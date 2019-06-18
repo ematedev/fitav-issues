@@ -257,19 +257,19 @@ public interface ESFConfigurationModel extends BaseModel<ESFConfiguration>,
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFConfiguration esfConfiguration);
+	public int compareTo(ESFConfiguration esfConfiguration);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFConfiguration> toCacheModel();
+	public CacheModel<ESFConfiguration> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFConfiguration toEscapedModel();
+	public ESFConfiguration toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFConfiguration toUnescapedModel();
+	public ESFConfiguration toUnescapedModel();
 
 	@Override
 	public String toString();

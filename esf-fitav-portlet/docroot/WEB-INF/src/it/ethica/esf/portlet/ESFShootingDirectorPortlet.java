@@ -4,22 +4,33 @@ import it.ethica.esf.model.ESFAddress;
 import it.ethica.esf.model.ESFMatch;
 import it.ethica.esf.model.ESFNationalDelegation;
 import it.ethica.esf.model.ESFPartecipant;
+import it.ethica.esf.model.ESFRegion;
 import it.ethica.esf.model.ESFShootingDirector;
+import it.ethica.esf.model.ESFShootingDirectorQualification;
+import it.ethica.esf.model.ESFSportType;
 import it.ethica.esf.model.ESFSuspensiveShootingDirector;
 import it.ethica.esf.model.ESFUser;
 import it.ethica.esf.model.VM_TiratoriTesserati;
+import it.ethica.esf.model.VW_DatiDrettoreTiro;
+import it.ethica.esf.model.VW_NomineDirettoriTiro;
 import it.ethica.esf.model.impl.ESFMatchImpl;
 import it.ethica.esf.model.impl.ESFNationalDelegationImpl;
 import it.ethica.esf.model.impl.ESFShootingDirectorImpl;
 import it.ethica.esf.model.impl.ESFSuspensiveShootingDirectorImpl;
 import it.ethica.esf.model.impl.ESFUserImpl;
+import it.ethica.esf.model.impl.VW_DatiDrettoreTiroImpl;
+import it.ethica.esf.model.impl.VW_NomineDirettoriTiroImpl;
 import it.ethica.esf.service.ESFAddressLocalServiceUtil;
 import it.ethica.esf.service.ESFMatchLocalServiceUtil;
 import it.ethica.esf.service.ESFNationalDelegationLocalServiceUtil;
+import it.ethica.esf.service.ESFRegionLocalServiceUtil;
 import it.ethica.esf.service.ESFShootingDirectorLocalServiceUtil;
+import it.ethica.esf.service.ESFShootingDirectorQualificationLocalServiceUtil;
+import it.ethica.esf.service.ESFSportTypeLocalServiceUtil;
 import it.ethica.esf.service.ESFSuspensiveShootingDirectorLocalServiceUtil;
 import it.ethica.esf.service.ESFUserLocalServiceUtil;
 import it.ethica.esf.service.VM_TiratoriTesseratiLocalServiceUtil;
+import it.ethica.esf.service.VW_DatiDrettoreTiroLocalServiceUtil;
 import it.ethica.esf.util.ManageDate;
 
 import java.io.IOException;
@@ -27,6 +38,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -60,11 +72,95 @@ import com.liferay.portal.service.ServiceContextFactory;
 import com.liferay.portal.theme.ThemeDisplay;
 import com.liferay.portal.util.PortalUtil;
 import com.liferay.util.bridges.mvc.MVCPortlet;
+import com.microsoft.schemas.office.office.PreferrelativeAttribute;
 
 
 public class ESFShootingDirectorPortlet extends MVCPortlet{
 	
+	/**
+	 * Action che ritorna alla jsp la lista delle nomine dei direttori di tiro 
+	 * @param request
+	 * @param response
+	 */
+	@ProcessAction(name="cercaNomineDirettoriTiro")
+	public void cercaNomineDirettoriTiro(ActionRequest request, ActionResponse response) {
 		
+		//Prendo quello che mi serve dalla jsp
+		String cognome = ParamUtil.getString(request, "lastname", "");
+		String nome = ParamUtil.getString(request, "firstname", "");
+		String tessera = ParamUtil.getString(request, "card", "");
+		String regione = ParamUtil.getString(request, "regionId", "");
+		Long idQualifica = ParamUtil.getLong(request, "qualifica", 0);
+		Long idSpecialita = ParamUtil.getLong(request, "specialita", 0);
+		int delta = ParamUtil.getInteger(request, "delta", 0);
+		int paginaRicercaCorrente = ParamUtil.getInteger(request, "cur", 0); 
+		
+		//DA CANCELLARE
+		System.out.printf("[%s]\n", cognome);
+		System.out.printf("[%s]\n", nome);
+		System.out.printf("[%s]\n", tessera);
+		System.out.printf("[%s]\n", regione);
+		System.out.printf("[%s]\n", idQualifica);
+		System.out.printf("[%s]\n", idSpecialita);
+		System.out.printf("[%s]\n", delta);
+		System.out.printf("[%s]\n", paginaRicercaCorrente);
+		
+		try {
+			
+			//Inizializzo la lista
+			List<VW_NomineDirettoriTiro> listaNomine = new ArrayList<>();
+		
+			//Creo la DynamicQuery e effettuo i controlli sulle variabili
+			DynamicQuery dq = DynamicQueryFactoryUtil.forClass(VW_NomineDirettoriTiro.class, "Direttori", PortletClassLoaderUtil.getClassLoader());
+			
+			//Restringo la ricerca se vengono valorizzati i campi
+			if(!cognome.isEmpty()) { dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.Cognome", cognome)); }
+			if(!nome.isEmpty()) { dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.Nome", nome)); } 
+			if(!tessera.isEmpty()) { dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.CodiceTessera", tessera)); }
+			if(!regione.isEmpty()) { dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.Regione", regione)); }
+			if(idQualifica != 0) { 
+				ESFShootingDirectorQualification qualificaDirettore = 
+						ESFShootingDirectorQualificationLocalServiceUtil.getESFShootingDirectorQualification(idQualifica);
+				String qualifica = qualificaDirettore.getEsfShootingDirectorQualificationDesc();
+				dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.Qualifica", qualifica)); 
+			}
+			if(idSpecialita != 0) { 
+				ESFSportType tipoSport = ESFSportTypeLocalServiceUtil.getESFSportType(idSpecialita);
+				String specialita = tipoSport.getName();
+				dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.Specialita", specialita));  
+			}
+		
+			//Eseguo la query
+			listaNomine = VW_DatiDrettoreTiroLocalServiceUtil.dynamicQuery(dq);
+			listaNomine = ListUtil.sort(listaNomine, new CompareByDate());
+			//Valorizzo i campi e ritorno alla pagina 
+			request.setAttribute("listaNomine", listaNomine);
+			
+			//Se c'è bisogno valorizzare i campi del search container
+			if(delta != 0) { response.setRenderParameter("delta", String.valueOf(delta)); }
+			if(paginaRicercaCorrente != 0) { response.setRenderParameter("cur", String.valueOf(paginaRicercaCorrente)); }
+			
+		} catch (Exception e) {
+			
+			//Mando un messaggio di errore alla jsp
+			SessionErrors.add(request, "error-ricerca");
+			SessionMessages.add(request, PortalUtil.getPortletId(request) + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
+			
+		} finally {
+			
+			//Qualunque cosa succeda ritorna alla pagina chiamante con questi campi valorizzati
+			response.setRenderParameter("jspPage", "/html/esfshootingdirector/view.jsp");
+			response.setRenderParameter("lastname", cognome);
+			response.setRenderParameter("firstname", nome);
+			response.setRenderParameter("card", tessera);
+			response.setRenderParameter("regionId", regione);
+			response.setRenderParameter("qualifica", String.valueOf(idQualifica));
+			response.setRenderParameter("specialita", String.valueOf(idSpecialita)); 
+			
+		}
+	}
+	
+	
 	/**
 	 * Action che ritorna alla jsp la lista dei tiratori tesserati 
 	 * @param request
@@ -638,6 +734,22 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 
 		response.setRenderParameter("esfUserId", String.valueOf(esfUserId));
 		response.setRenderParameter("mvcPath", "/html/esfshootingdirector/convocations.jsp");
+		
+	}
+	
+	
+	/**
+	 * Classe con interfaccia comparator per il sort di liste di tipo 
+	 * VW_NomineDirettoriTiro per data
+	 * @author fitav
+	 *
+	 */
+	private class CompareByDate implements Comparator<VW_NomineDirettoriTiro> {
+
+		@Override
+		public int compare(VW_NomineDirettoriTiro o1, VW_NomineDirettoriTiro o2) {
+			return o1.getDataAssegnazione().compareTo(o2.getDataAssegnazione());
+		}
 		
 	}
 	

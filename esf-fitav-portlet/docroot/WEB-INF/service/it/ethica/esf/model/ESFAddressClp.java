@@ -1093,10 +1093,6 @@ public class ESFAddressClp extends BaseModelImpl<ESFAddress>
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1210,5 +1206,4 @@ public class ESFAddressClp extends BaseModelImpl<ESFAddress>
 	private boolean _isNotNational;
 	private int _listTypeId;
 	private BaseModel<?> _esfAddressRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }
