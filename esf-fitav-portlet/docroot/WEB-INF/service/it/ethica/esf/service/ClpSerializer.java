@@ -76,7 +76,6 @@ import it.ethica.esf.model.ESFPartecipantTypeClp;
 import it.ethica.esf.model.ESFPhoneClp;
 import it.ethica.esf.model.ESFProvinceClp;
 import it.ethica.esf.model.ESFPublicAuthorityClp;
-import it.ethica.esf.model.ESFRadunoAzzurriClp;
 import it.ethica.esf.model.ESFRadunoClp;
 import it.ethica.esf.model.ESFRadunoFilesClp;
 import it.ethica.esf.model.ESFRadunoSottotipiRadunoClp;
@@ -110,6 +109,7 @@ import it.ethica.esf.model.ESFUserESFFederalRoleClp;
 import it.ethica.esf.model.ESFUserESFUserRoleClp;
 import it.ethica.esf.model.ESFUserRoleClp;
 import it.ethica.esf.model.ESFgunUserClp;
+import it.ethica.esf.model.VW_AzzurriClp;
 import it.ethica.esf.model.VW_DatiDrettoreTiroClp;
 import it.ethica.esf.model.VW_ESFListaIncarichiClp;
 
@@ -404,10 +404,6 @@ public class ClpSerializer {
 			return translateInputESFRaduno(oldModel);
 		}
 
-		if (oldModelClassName.equals(ESFRadunoAzzurriClp.class.getName())) {
-			return translateInputESFRadunoAzzurri(oldModel);
-		}
-
 		if (oldModelClassName.equals(ESFRadunoFilesClp.class.getName())) {
 			return translateInputESFRadunoFiles(oldModel);
 		}
@@ -538,6 +534,10 @@ public class ClpSerializer {
 
 		if (oldModelClassName.equals(ESFUserRoleClp.class.getName())) {
 			return translateInputESFUserRole(oldModel);
+		}
+
+		if (oldModelClassName.equals(VW_AzzurriClp.class.getName())) {
+			return translateInputVW_Azzurri(oldModel);
 		}
 
 		if (oldModelClassName.equals(VW_DatiDrettoreTiroClp.class.getName())) {
@@ -1102,16 +1102,6 @@ public class ClpSerializer {
 		return newModel;
 	}
 
-	public static Object translateInputESFRadunoAzzurri(BaseModel<?> oldModel) {
-		ESFRadunoAzzurriClp oldClpModel = (ESFRadunoAzzurriClp)oldModel;
-
-		BaseModel<?> newModel = oldClpModel.getESFRadunoAzzurriRemoteModel();
-
-		newModel.setModelAttributes(oldClpModel.getModelAttributes());
-
-		return newModel;
-	}
-
 	public static Object translateInputESFRadunoFiles(BaseModel<?> oldModel) {
 		ESFRadunoFilesClp oldClpModel = (ESFRadunoFilesClp)oldModel;
 
@@ -1433,6 +1423,16 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+	public static Object translateInputVW_Azzurri(BaseModel<?> oldModel) {
+		VW_AzzurriClp oldClpModel = (VW_AzzurriClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getVW_AzzurriRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
 	public static Object translateInputVW_DatiDrettoreTiro(
 		BaseModel<?> oldModel) {
 		VW_DatiDrettoreTiroClp oldClpModel = (VW_DatiDrettoreTiroClp)oldModel;
@@ -1715,11 +1715,6 @@ public class ClpSerializer {
 		}
 
 		if (oldModelClassName.equals(
-					"it.ethica.esf.model.impl.ESFRadunoAzzurriImpl")) {
-			return translateOutputESFRadunoAzzurri(oldModel);
-		}
-
-		if (oldModelClassName.equals(
 					"it.ethica.esf.model.impl.ESFRadunoFilesImpl")) {
 			return translateOutputESFRadunoFiles(oldModel);
 		}
@@ -1864,6 +1859,10 @@ public class ClpSerializer {
 
 		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFUserRoleImpl")) {
 			return translateOutputESFUserRole(oldModel);
+		}
+
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.VW_AzzurriImpl")) {
+			return translateOutputVW_Azzurri(oldModel);
 		}
 
 		if (oldModelClassName.equals(
@@ -2236,10 +2235,6 @@ public class ClpSerializer {
 			return new it.ethica.esf.NoSuchRadunoException();
 		}
 
-		if (className.equals("it.ethica.esf.NoSuchRadunoAzzurriException")) {
-			return new it.ethica.esf.NoSuchRadunoAzzurriException();
-		}
-
 		if (className.equals("it.ethica.esf.NoSuchRadunoFilesException")) {
 			return new it.ethica.esf.NoSuchRadunoFilesException();
 		}
@@ -2371,6 +2366,10 @@ public class ClpSerializer {
 
 		if (className.equals("it.ethica.esf.NoSuchUserRoleException")) {
 			return new it.ethica.esf.NoSuchUserRoleException();
+		}
+
+		if (className.equals("it.ethica.esf.NoSuchVW_AzzurriException")) {
+			return new it.ethica.esf.NoSuchVW_AzzurriException();
 		}
 
 		if (className.equals("it.ethica.esf.NoSuchVW_DatiDrettoreTiroException")) {
@@ -2927,16 +2926,6 @@ public class ClpSerializer {
 		return newModel;
 	}
 
-	public static Object translateOutputESFRadunoAzzurri(BaseModel<?> oldModel) {
-		ESFRadunoAzzurriClp newModel = new ESFRadunoAzzurriClp();
-
-		newModel.setModelAttributes(oldModel.getModelAttributes());
-
-		newModel.setESFRadunoAzzurriRemoteModel(oldModel);
-
-		return newModel;
-	}
-
 	public static Object translateOutputESFRadunoFiles(BaseModel<?> oldModel) {
 		ESFRadunoFilesClp newModel = new ESFRadunoFilesClp();
 
@@ -3257,6 +3246,16 @@ public class ClpSerializer {
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
 		newModel.setESFUserRoleRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputVW_Azzurri(BaseModel<?> oldModel) {
+		VW_AzzurriClp newModel = new VW_AzzurriClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setVW_AzzurriRemoteModel(oldModel);
 
 		return newModel;
 	}

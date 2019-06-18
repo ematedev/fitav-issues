@@ -2623,13 +2623,17 @@
             <finder-column name="id_esf_raduno"></finder-column>
         </finder>
     </entity>
-    <entity name="ESFRadunoAzzurri" local-service="true" remote-service="false">
-        <column name="id_esf_raduno_azzurri" type="long" primary="true" id-type="identity"></column>
-        <column name="id_esf_raduno" type="long" primary="true"></column>
-        <column name="esf_national_id" type="long"></column>
-        <finder name="findByRaduno" return-type="Collection">
-            <finder-column name="id_esf_raduno"></finder-column>
-        </finder>
+    <entity name="VW_Azzurri" local-service="true" remote-service="false" table="vw_azzurri">
+        <column name="esfNationalId" type="long" primary="true"></column>
+        <column name="userId" type="long" primary="true"></column>
+        <column name="userName" type="String"></column>
+        <column name="esfUserId" type="long" primary="true"></column>
+        <column name="esfSportTypeId" type="long"></column>
+        <column name="startDate" type="Date"></column>
+        <column name="endDate" type="Date"></column>
+        <column name="name" type="String"></column>
+        <column name="description" type="String"></column>
+        <column name="invitato" type="int"></column>
     </entity>
 	
 	<exceptions>

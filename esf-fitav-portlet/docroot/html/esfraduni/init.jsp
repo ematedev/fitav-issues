@@ -7,7 +7,7 @@
 <%@page import="it.ethica.esf.service.ESFOrganizationLocalServiceUtil"%>
 <%@page import="it.ethica.esf.service.ESFRadunoAzzurriLocalServiceUtil"%>
 <%@page import="it.ethica.esf.service.ESFSportTypeLocalServiceUtil"%>
-<%@page import="it.ethica.esf.service.ESFNationalLocalServiceUtil"%>
+<%@page import="it.ethica.esf.service.VW_AzzurriLocalServiceUtil"%>
 <%@page import="it.ethica.esf.model.ESFRadunoTipo"%>
 <%@page import="it.ethica.esf.util.DateUtilFormatter"%>
 <%@page import="it.ethica.esf.model.ESFRaduno"%>
@@ -17,7 +17,7 @@
 <%@page import="it.ethica.esf.model.ESFRadunoAzzurri"%>
 <%@page import="it.ethica.esf.model.ESFOrganization"%>
 <%@page import="it.ethica.esf.model.ESFSportType"%>
-<%@page import="it.ethica.esf.model.ESFNational"%>
+<%@page import="it.ethica.esf.model.VW_Azzurri"%>
 <%@page import="it.ethica.esf.util.ManageDate"%>
 
 

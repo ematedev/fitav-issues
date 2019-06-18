@@ -1270,6 +1270,34 @@ create table esforganization (
 	type_ INTEGER
 );
 
+create table vw_azzuri (
+	esfNationalId LONG not null,
+	userId LONG not null,
+	userName VARCHAR(75) null,
+	esfUserId LONG not null,
+	esfSportTypeId LONG,
+	startDate DATE null,
+	endDate DATE null,
+	name VARCHAR(75) null,
+	description VARCHAR(75) null,
+	invitato INTEGER,
+	primary key (esfNationalId, userId, esfUserId)
+);
+
+create table vw_azzurri (
+	esfNationalId LONG not null,
+	userId LONG not null,
+	userName VARCHAR(75) null,
+	esfUserId LONG not null,
+	esfSportTypeId LONG,
+	startDate DATE null,
+	endDate DATE null,
+	name VARCHAR(75) null,
+	description VARCHAR(75) null,
+	invitato INTEGER,
+	primary key (esfNationalId, userId, esfUserId)
+);
+
 create table vw_datidirettoretiro (
 	esfShootingDirectorId LONG not null,
 	Nome VARCHAR(75) not null,

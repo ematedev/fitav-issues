@@ -53,6 +53,7 @@ import it.ethica.esf.model.ESFRadunoSottotipiRaduno;
 import it.ethica.esf.model.ESFRadunoSottotipo;
 import it.ethica.esf.model.ESFRadunoTipo;
 import it.ethica.esf.model.ESFSportType;
+import it.ethica.esf.model.VW_Azzurri;
 import it.ethica.esf.model.impl.ESFRadunoFilesImpl;
 import it.ethica.esf.model.impl.ESFRadunoImpl;
 import it.ethica.esf.service.ESFNationalLocalServiceUtil;
@@ -63,6 +64,7 @@ import it.ethica.esf.service.ESFRadunoSottotipiRadunoLocalServiceUtil;
 import it.ethica.esf.service.ESFRadunoTipoLocalServiceUtil;
 import it.ethica.esf.service.ESFSportTypeLocalServiceUtil;
 import it.ethica.esf.util.DateUtilFormatter;
+import it.ethica.esf.util.MissingDateException;
 
 /**
  * Portlet implementation class ESFRaduni
@@ -182,40 +184,90 @@ public class ESFRaduni extends MVCPortlet {
 		String code = ParamUtil.getString(request, "code");
 		String name = ParamUtil.getString(request, "name","");
 		Date startDate = ParamUtil.getDate(request, "startDate", DateUtilFormatter.getDefaultFormatter(), null);
-		long esfSportType = ParamUtil.getLong(request, "esfSportType");
+		long esfSportType = ParamUtil.getLong(request, "esfSportType",0);
+		long esfListaInvitati = ParamUtil.getLong(request, "esfListaInvitati",0);
+		int delta = ParamUtil.getInteger(request, "delta",0);
+		int cur = ParamUtil.getInteger(request, "cur",0);
 		
-		String delta = ParamUtil.getString(request, "delta");
-		String cur = ParamUtil.getString(request, "cur");
+		
+		
+		System.out.println("[" + id_esf_raduno + "]");
+		System.out.println("[" + code + "]");
+		System.out.println("[" + name + "]");
+		System.out.println("[" + startDate + "]");
+		System.out.println("[" + esfSportType + "]");
+		System.out.println("[" + esfListaInvitati + "]");
+		System.out.println("delta : [" + delta + "]");
+		System.out.println("cur : [" + cur + "]");
 		
 		try {
-			List<ESFNational> listaNazionali = new ArrayList<ESFNational>();
+			List<VW_Azzurri> listaNazionali = new ArrayList<VW_Azzurri>();
 			// CREO la DynamicQuery aggiungendo condizioni a seconda se i campi sono vuoti o sono valorizzati
-			DynamicQuery dq = DynamicQueryFactoryUtil.forClass(ESFNational.class, "Azzurri", PortletClassLoaderUtil.getClassLoader());
+//			DynamicQuery dq = DynamicQueryFactoryUtil.forClass(ESFNational.class, "Azzurri", PortletClassLoaderUtil.getClassLoader());
+//			if (!name.isEmpty())
+//				dq.add(RestrictionsFactoryUtil.like("Azzurri.userName", "%" + name + "%"));
+//			
+//			if(startDate != null)
+//				dq.add(RestrictionsFactoryUtil.ge("Azzurri.startDate", startDate));
+//				
+//			if(esfSportType!=0)
+//				dq.add(RestrictionsFactoryUtil.eq("Azzurri.esfSportTypeId", esfSportType));
+//			listaNazionali = ESFNationalLocalServiceUtil.dynamicQuery(dq);
+//			
+//			for (ESFNational nazionale : listaNazionali){
+//				System.out.println("[NOME: " + nazionale.getUserName() + " ]");
+//			}
+			
+			DynamicQuery dq = DynamicQueryFactoryUtil.forClass(VW_Azzurri.class, "Azzurri", PortletClassLoaderUtil.getClassLoader());
 			if (!name.isEmpty())
-				dq.add(RestrictionsFactoryUtil.like("Azzurri.userName", name));
+				dq.add(RestrictionsFactoryUtil.like("Azzurri.userName", "%" + name + "%"));
 			
 			if(startDate != null)
-				dq.add(RestrictionsFactoryUtil.ge("Azzurri.userstartDate", startDate));
+				dq.add(RestrictionsFactoryUtil.ge("Azzurri.startDate", startDate));
 				
 			if(esfSportType!=0)
 				dq.add(RestrictionsFactoryUtil.eq("Azzurri.esfSportTypeId", esfSportType));
 			listaNazionali = ESFNationalLocalServiceUtil.dynamicQuery(dq);
 			
-			for (ESFNational nazionale : listaNazionali){
-				System.out.println("[NOME: " + nazionale.getUserName() + " ]");
+			if(esfListaInvitati != 0){
+				if (esfListaInvitati == 1)
+					dq.add(RestrictionsFactoryUtil.eq("Azzurri.invitato", 1));
+				else
+					dq.add(RestrictionsFactoryUtil.eq("Azzurri.invitato", 0));
 			}
 			
+			
+			for (VW_Azzurri azzurro : listaNazionali){
+				System.out.println("[ID: " + azzurro.getEsfUserId() + " - NOME: " + azzurro.getUserName() + " ]");
+			}
+			
+			
+			
+			String msg = "La ricerca ha prodotto '" + listaNazionali.size()  + "' risultati!";
+			SessionMessages.add(request, "addSuccess");
+			request.setAttribute("successMessage", msg);
+
 			
 			String goToURL = "/html/esfraduni/managementAzzurri.jsp";
 			request.setAttribute("listaNazionali", listaNazionali);
 			response.setRenderParameter("id_esf_raduno", String.valueOf(id_esf_raduno));
 			response.setRenderParameter("code", code);
-			if (!delta.isEmpty())
-				response.setRenderParameter("delta", delta);
-			if(!cur.isEmpty())
-				response.setRenderParameter("cur", cur);
+			response.setRenderParameter("name", name);
+			if(startDate != null)
+				response.setRenderParameter("startDate",  DateUtilFormatter.formatDate(startDate));
+			response.setRenderParameter("esfSportType", String.valueOf(esfSportType));
+			response.setRenderParameter("esfListaInvitati", String.valueOf(esfListaInvitati));
+
+			response.setRenderParameter("esfSportType", String.valueOf(esfSportType));
+			if (delta != 0)
+				response.setRenderParameter("delta", String.valueOf(delta));
+			if(cur != 0)
+				response.setRenderParameter("cur", String.valueOf(cur));
 			response.setRenderParameter("jspPage", goToURL);
 		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (MissingDateException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -223,6 +275,25 @@ public class ESFRaduni extends MVCPortlet {
 		
 		
 	}
+	
+	
+	@ProcessAction(name="salvaAzzurriRaduno")
+	public void salvaAzzurriRaduno(ActionRequest request, ActionResponse response) {
+		System.out.println("################# SALVA AZZURRI RADUNO #####################");
+		
+		long id_esf_raduno = ParamUtil.getLong(request, "id_esf_raduno");
+		String code = ParamUtil.getString(request, "code");
+
+		String[] parametri = ParamUtil.getParameterValues(request, "invitato", new String[0]);
+		
+		for(String param : parametri){
+			System.out.println(param);
+		}
+		System.out.println("[" + id_esf_raduno + "]");
+		System.out.println("[" + code + "]");		
+		
+	}
+	
 	
 	
 //

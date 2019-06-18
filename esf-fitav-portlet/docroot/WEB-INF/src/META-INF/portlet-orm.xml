@@ -1263,17 +1263,6 @@
 			<transient name="primaryKeyObj" />
 		</attributes>
 	</mapped-superclass>
-	<mapped-superclass class="it.ethica.esf.model.impl.ESFRadunoAzzurriModelImpl">
-		<id-class class="it.ethica.esf.service.persistence.ESFRadunoAzzurriPK" />
-		<attributes>
-			<id name="id_esf_raduno_azzurri" />
-			<id name="id_esf_raduno" />
-			<basic name="esf_national_id" />
-			<transient name="modelAttributes" />
-			<transient name="primaryKey" />
-			<transient name="primaryKeyObj" />
-		</attributes>
-	</mapped-superclass>
 	<mapped-superclass class="it.ethica.esf.model.impl.ESFRadunoFilesModelImpl">
 		<attributes>
 			<id name="id_esf_raduno_files" />
@@ -1986,6 +1975,30 @@
 			<transient name="userUuid" />
 		</attributes>
 	</mapped-superclass>
+	<mapped-superclass class="it.ethica.esf.model.impl.VW_AzzurriModelImpl">
+		<id-class class="it.ethica.esf.service.persistence.VW_AzzurriPK" />
+		<attributes>
+			<id name="esfNationalId" />
+			<id name="userId" />
+			<id name="esfUserId" />
+			<basic name="userName" />
+			<basic name="esfSportTypeId" />
+			<basic name="startDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="endDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="name" />
+			<basic name="description" />
+			<basic name="invitato" />
+			<transient name="esfUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
 	<mapped-superclass class="it.ethica.esf.model.impl.VW_DatiDrettoreTiroModelImpl">
 		<id-class class="it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPK" />
 		<attributes>
@@ -2275,10 +2288,6 @@
 		<table name="ESFRaduno" />
 		<attributes />
 	</entity>
-	<entity class="it.ethica.esf.model.impl.ESFRadunoAzzurriImpl" name="ESFRadunoAzzurri">
-		<table name="ESFRadunoAzzurri" />
-		<attributes />
-	</entity>
 	<entity class="it.ethica.esf.model.impl.ESFRadunoFilesImpl" name="ESFRadunoFiles">
 		<table name="ESFRadunoFiles" />
 		<attributes />
@@ -2406,6 +2415,10 @@
 			<transient name="name" />
 			<transient name="title" />
 		</attributes>
+	</entity>
+	<entity class="it.ethica.esf.model.impl.VW_AzzurriImpl" name="VW_Azzurri">
+		<table name="vw_azzurri" />
+		<attributes />
 	</entity>
 	<entity class="it.ethica.esf.model.impl.VW_DatiDrettoreTiroImpl" name="VW_DatiDrettoreTiro">
 		<table name="vw_datidirettoretiro" />

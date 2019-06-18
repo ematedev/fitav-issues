@@ -91,7 +91,6 @@ import it.ethica.esf.service.persistence.ESFPartecipantTypePersistence;
 import it.ethica.esf.service.persistence.ESFPhonePersistence;
 import it.ethica.esf.service.persistence.ESFProvincePersistence;
 import it.ethica.esf.service.persistence.ESFPublicAuthorityPersistence;
-import it.ethica.esf.service.persistence.ESFRadunoAzzurriPersistence;
 import it.ethica.esf.service.persistence.ESFRadunoFilesPersistence;
 import it.ethica.esf.service.persistence.ESFRadunoPersistence;
 import it.ethica.esf.service.persistence.ESFRadunoSottotipiRadunoPersistence;
@@ -132,6 +131,7 @@ import it.ethica.esf.service.persistence.ESFUserPersistence;
 import it.ethica.esf.service.persistence.ESFUserRolePersistence;
 import it.ethica.esf.service.persistence.ESFgunUserFinder;
 import it.ethica.esf.service.persistence.ESFgunUserPersistence;
+import it.ethica.esf.service.persistence.VW_AzzurriPersistence;
 import it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPersistence;
 import it.ethica.esf.service.persistence.VW_ESFListaIncarichiPersistence;
 
@@ -2537,44 +2537,6 @@ public abstract class ESFNationalMatchResultLocalServiceBaseImpl
 	}
 
 	/**
-	 * Returns the e s f raduno azzurri local service.
-	 *
-	 * @return the e s f raduno azzurri local service
-	 */
-	public it.ethica.esf.service.ESFRadunoAzzurriLocalService getESFRadunoAzzurriLocalService() {
-		return esfRadunoAzzurriLocalService;
-	}
-
-	/**
-	 * Sets the e s f raduno azzurri local service.
-	 *
-	 * @param esfRadunoAzzurriLocalService the e s f raduno azzurri local service
-	 */
-	public void setESFRadunoAzzurriLocalService(
-		it.ethica.esf.service.ESFRadunoAzzurriLocalService esfRadunoAzzurriLocalService) {
-		this.esfRadunoAzzurriLocalService = esfRadunoAzzurriLocalService;
-	}
-
-	/**
-	 * Returns the e s f raduno azzurri persistence.
-	 *
-	 * @return the e s f raduno azzurri persistence
-	 */
-	public ESFRadunoAzzurriPersistence getESFRadunoAzzurriPersistence() {
-		return esfRadunoAzzurriPersistence;
-	}
-
-	/**
-	 * Sets the e s f raduno azzurri persistence.
-	 *
-	 * @param esfRadunoAzzurriPersistence the e s f raduno azzurri persistence
-	 */
-	public void setESFRadunoAzzurriPersistence(
-		ESFRadunoAzzurriPersistence esfRadunoAzzurriPersistence) {
-		this.esfRadunoAzzurriPersistence = esfRadunoAzzurriPersistence;
-	}
-
-	/**
 	 * Returns the e s f raduno files local service.
 	 *
 	 * @return the e s f raduno files local service
@@ -3862,6 +3824,44 @@ public abstract class ESFNationalMatchResultLocalServiceBaseImpl
 	}
 
 	/**
+	 * Returns the v w_ azzurri local service.
+	 *
+	 * @return the v w_ azzurri local service
+	 */
+	public it.ethica.esf.service.VW_AzzurriLocalService getVW_AzzurriLocalService() {
+		return vw_AzzurriLocalService;
+	}
+
+	/**
+	 * Sets the v w_ azzurri local service.
+	 *
+	 * @param vw_AzzurriLocalService the v w_ azzurri local service
+	 */
+	public void setVW_AzzurriLocalService(
+		it.ethica.esf.service.VW_AzzurriLocalService vw_AzzurriLocalService) {
+		this.vw_AzzurriLocalService = vw_AzzurriLocalService;
+	}
+
+	/**
+	 * Returns the v w_ azzurri persistence.
+	 *
+	 * @return the v w_ azzurri persistence
+	 */
+	public VW_AzzurriPersistence getVW_AzzurriPersistence() {
+		return vw_AzzurriPersistence;
+	}
+
+	/**
+	 * Sets the v w_ azzurri persistence.
+	 *
+	 * @param vw_AzzurriPersistence the v w_ azzurri persistence
+	 */
+	public void setVW_AzzurriPersistence(
+		VW_AzzurriPersistence vw_AzzurriPersistence) {
+		this.vw_AzzurriPersistence = vw_AzzurriPersistence;
+	}
+
+	/**
 	 * Returns the v w_ dati drettore tiro local service.
 	 *
 	 * @return the v w_ dati drettore tiro local service
@@ -4341,10 +4341,6 @@ public abstract class ESFNationalMatchResultLocalServiceBaseImpl
 	protected it.ethica.esf.service.ESFRadunoLocalService esfRadunoLocalService;
 	@BeanReference(type = ESFRadunoPersistence.class)
 	protected ESFRadunoPersistence esfRadunoPersistence;
-	@BeanReference(type = it.ethica.esf.service.ESFRadunoAzzurriLocalService.class)
-	protected it.ethica.esf.service.ESFRadunoAzzurriLocalService esfRadunoAzzurriLocalService;
-	@BeanReference(type = ESFRadunoAzzurriPersistence.class)
-	protected ESFRadunoAzzurriPersistence esfRadunoAzzurriPersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFRadunoFilesLocalService.class)
 	protected it.ethica.esf.service.ESFRadunoFilesLocalService esfRadunoFilesLocalService;
 	@BeanReference(type = ESFRadunoFilesPersistence.class)
@@ -4481,6 +4477,10 @@ public abstract class ESFNationalMatchResultLocalServiceBaseImpl
 	protected it.ethica.esf.service.ESFUserRoleLocalService esfUserRoleLocalService;
 	@BeanReference(type = ESFUserRolePersistence.class)
 	protected ESFUserRolePersistence esfUserRolePersistence;
+	@BeanReference(type = it.ethica.esf.service.VW_AzzurriLocalService.class)
+	protected it.ethica.esf.service.VW_AzzurriLocalService vw_AzzurriLocalService;
+	@BeanReference(type = VW_AzzurriPersistence.class)
+	protected VW_AzzurriPersistence vw_AzzurriPersistence;
 	@BeanReference(type = it.ethica.esf.service.VW_DatiDrettoreTiroLocalService.class)
 	protected it.ethica.esf.service.VW_DatiDrettoreTiroLocalService vw_DatiDrettoreTiroLocalService;
 	@BeanReference(type = VW_DatiDrettoreTiroPersistence.class)
