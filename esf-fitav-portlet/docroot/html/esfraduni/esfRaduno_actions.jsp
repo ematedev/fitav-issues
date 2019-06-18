@@ -18,7 +18,7 @@
 
 <portlet:renderURL var="editAzzurriURL">
 	<portlet:param name="id_esf_raduno" value="<%= String.valueOf(raduno.getId_esf_raduno()) %>"/>	
-	<portportlet:actionURLlet:param name="code" value="<%= raduno.getCodice() %>"/>	
+	<portlet:param name="code" value="<%= raduno.getCodice() %>"/>	
 	<portlet:param name="mvcPath" value="/html/esfraduni/managementAzzurri.jsp" />	
 </portlet:renderURL>
 

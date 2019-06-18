@@ -59,7 +59,7 @@
 
 <portlet:actionURL var="salvaAzzurriRadunoURL" name="salvaAzzurriRaduno">
 	<portlet:param name="id_esf_raduno" value="<%= String.valueOf(id_esf_raduno) %>"/>	
-	<portlet:param name="codice" value="<%= codice %>"/>	
+	<portlet:param name="code" value="<%= codice %>"/>	
 </portlet:actionURL>
 
 
@@ -71,20 +71,7 @@
 
 <liferay-ui:success key="addSuccess" message="${successMessage}" />
 
-<%-- 
-<b>AZZURRI ASSOCIATI <%=nFiles %></b>
-
-<portlet:actionURL var="associaAzzurroURL" name="associaAzzurro" />
-<portlet:actionURL var="backURL" name="backToSearch" />
-
-<liferay-ui:search-container delta="10" emptyResultsMessage="no-result" total="<%=nFiles%>" iteratorURL="<%=AzzurriViewURL%>" >
-	<liferay-ui:search-container-results  results="<%=listaRadunoAzzurri%>"  />
-		<liferay-ui:search-container-row className="it.ethica.esf.model.ESFRadunoAzzurri" modelVar="radunoAzzurri">
-		</liferay-ui:search-container-row>
-	<liferay-ui:search-iterator />
-</liferay-ui:search-container>	
- --%>
-<b>RICERCA AZZURRI</b>
+<b>RICERCA AZZURRI ASSOCIATI AL RADUNO CON CODICE <%=codice %></b>
 
 <aui:form action="<%=searchAzzurriURL%>" method="POST">
 
@@ -150,7 +137,7 @@
 		checked = "checked=\"true\"";
 %>					
 			<liferay-ui:search-container-column-text name="invitato">
-				<input name="invitato" id="<%=azzurro.getUserId()%>" type="checkbox" <%=checked%> />
+				<input name="<portlet:namespace/>invitato" id="<%=azzurro.getUserId()%>" type="checkbox" <%=checked%> />
 			</liferay-ui:search-container-column-text>
 		</liferay-ui:search-container-row>
 	<liferay-ui:search-iterator />

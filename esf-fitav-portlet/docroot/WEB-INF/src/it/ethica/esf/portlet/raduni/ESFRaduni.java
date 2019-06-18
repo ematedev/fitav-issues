@@ -285,12 +285,14 @@ public class ESFRaduni extends MVCPortlet {
 		String code = ParamUtil.getString(request, "code");
 
 		String[] parametri = ParamUtil.getParameterValues(request, "invitato", new String[0]);
+		String invitato = ParamUtil.getString(request, "invitato");
 		
 		for(String param : parametri){
 			System.out.println(param);
 		}
 		System.out.println("[" + id_esf_raduno + "]");
 		System.out.println("[" + code + "]");		
+		System.out.println("[" + invitato + "]");		
 		
 	}
 	
