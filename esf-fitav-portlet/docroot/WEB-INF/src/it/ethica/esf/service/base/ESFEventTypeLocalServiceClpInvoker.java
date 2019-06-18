@@ -102,7 +102,6 @@ public class ESFEventTypeLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFEventType"
 			};
 
-<<<<<<< HEAD
 		_methodName392 = "getBeanIdentifier";
 
 		_methodParameterTypes392 = new String[] {  };
@@ -118,37 +117,14 @@ public class ESFEventTypeLocalServiceClpInvoker {
 		_methodName399 = "addEsfEventType";
 
 		_methodParameterTypes399 = new String[] {
-=======
-		_methodName386 = "getBeanIdentifier";
-
-		_methodParameterTypes386 = new String[] {  };
-
-		_methodName387 = "setBeanIdentifier";
-
-		_methodParameterTypes387 = new String[] { "java.lang.String" };
-
-		_methodName392 = "findAll";
-
-		_methodParameterTypes392 = new String[] {  };
-
-		_methodName393 = "addEsfEventType";
-
-		_methodParameterTypes393 = new String[] {
->>>>>>> origin/ID32
 				"long", "long", "java.lang.String", "long", "java.util.Date",
 				"java.lang.String", "java.lang.String",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-<<<<<<< HEAD
 		_methodName400 = "updateEsfEventType";
 
 		_methodParameterTypes400 = new String[] {
-=======
-		_methodName394 = "updateEsfEventType";
-
-		_methodParameterTypes394 = new String[] {
->>>>>>> origin/ID32
 				"long", "long", "long", "java.lang.String", "long",
 				"java.util.Date", "java.lang.String", "java.lang.String",
 				"com.liferay.portal.service.ServiceContext"
@@ -244,7 +220,6 @@ public class ESFEventTypeLocalServiceClpInvoker {
 			return ESFEventTypeLocalServiceUtil.updateESFEventType((it.ethica.esf.model.ESFEventType)arguments[0]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName392.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFEventTypeLocalServiceUtil.getBeanIdentifier();
@@ -252,21 +227,11 @@ public class ESFEventTypeLocalServiceClpInvoker {
 
 		if (_methodName393.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
-=======
-		if (_methodName386.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
-			return ESFEventTypeLocalServiceUtil.getBeanIdentifier();
-		}
-
-		if (_methodName387.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
->>>>>>> origin/ID32
 			ESFEventTypeLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-<<<<<<< HEAD
 		if (_methodName398.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
 			return ESFEventTypeLocalServiceUtil.findAll();
@@ -274,15 +239,6 @@ public class ESFEventTypeLocalServiceClpInvoker {
 
 		if (_methodName399.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes399, parameterTypes)) {
-=======
-		if (_methodName392.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
-			return ESFEventTypeLocalServiceUtil.findAll();
-		}
-
-		if (_methodName393.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFEventTypeLocalServiceUtil.addEsfEventType(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2],
@@ -291,13 +247,8 @@ public class ESFEventTypeLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[7]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName400.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes400, parameterTypes)) {
-=======
-		if (_methodName394.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFEventTypeLocalServiceUtil.updateEsfEventType(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -342,26 +293,14 @@ public class ESFEventTypeLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-<<<<<<< HEAD
-=======
-	private String _methodName386;
-	private String[] _methodParameterTypes386;
-	private String _methodName387;
-	private String[] _methodParameterTypes387;
->>>>>>> origin/ID32
 	private String _methodName392;
 	private String[] _methodParameterTypes392;
 	private String _methodName393;
 	private String[] _methodParameterTypes393;
-<<<<<<< HEAD
 	private String _methodName398;
 	private String[] _methodParameterTypes398;
 	private String _methodName399;
 	private String[] _methodParameterTypes399;
 	private String _methodName400;
 	private String[] _methodParameterTypes400;
-=======
-	private String _methodName394;
-	private String[] _methodParameterTypes394;
->>>>>>> origin/ID32
 }

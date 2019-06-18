@@ -108,7 +108,6 @@ public class ESFRegionLocalServiceClpInvoker {
 
 		_methodParameterTypes15 = new String[] { "it.ethica.esf.model.ESFRegion" };
 
-<<<<<<< HEAD
 		_methodName392 = "getBeanIdentifier";
 
 		_methodParameterTypes392 = new String[] {  };
@@ -124,23 +123,6 @@ public class ESFRegionLocalServiceClpInvoker {
 		_methodName399 = "getAllRegionByCountryId";
 
 		_methodParameterTypes399 = new String[] { "java.lang.String" };
-=======
-		_methodName386 = "getBeanIdentifier";
-
-		_methodParameterTypes386 = new String[] {  };
-
-		_methodName387 = "setBeanIdentifier";
-
-		_methodParameterTypes387 = new String[] { "java.lang.String" };
-
-		_methodName392 = "getByRegionId";
-
-		_methodParameterTypes392 = new String[] { "java.lang.String" };
-
-		_methodName393 = "getAllRegionByCountryId";
-
-		_methodParameterTypes393 = new String[] { "java.lang.String" };
->>>>>>> origin/ID32
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -232,7 +214,6 @@ public class ESFRegionLocalServiceClpInvoker {
 			return ESFRegionLocalServiceUtil.updateESFRegion((it.ethica.esf.model.ESFRegion)arguments[0]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName392.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFRegionLocalServiceUtil.getBeanIdentifier();
@@ -240,21 +221,11 @@ public class ESFRegionLocalServiceClpInvoker {
 
 		if (_methodName393.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
-=======
-		if (_methodName386.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
-			return ESFRegionLocalServiceUtil.getBeanIdentifier();
-		}
-
-		if (_methodName387.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
->>>>>>> origin/ID32
 			ESFRegionLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-<<<<<<< HEAD
 		if (_methodName398.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
 			return ESFRegionLocalServiceUtil.getByRegionId((java.lang.String)arguments[0]);
@@ -262,15 +233,6 @@ public class ESFRegionLocalServiceClpInvoker {
 
 		if (_methodName399.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes399, parameterTypes)) {
-=======
-		if (_methodName392.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
-			return ESFRegionLocalServiceUtil.getByRegionId((java.lang.String)arguments[0]);
-		}
-
-		if (_methodName393.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFRegionLocalServiceUtil.getAllRegionByCountryId((java.lang.String)arguments[0]);
 		}
 
@@ -309,22 +271,12 @@ public class ESFRegionLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-<<<<<<< HEAD
-=======
-	private String _methodName386;
-	private String[] _methodParameterTypes386;
-	private String _methodName387;
-	private String[] _methodParameterTypes387;
->>>>>>> origin/ID32
 	private String _methodName392;
 	private String[] _methodParameterTypes392;
 	private String _methodName393;
 	private String[] _methodParameterTypes393;
-<<<<<<< HEAD
 	private String _methodName398;
 	private String[] _methodParameterTypes398;
 	private String _methodName399;
 	private String[] _methodParameterTypes399;
-=======
->>>>>>> origin/ID32
 }

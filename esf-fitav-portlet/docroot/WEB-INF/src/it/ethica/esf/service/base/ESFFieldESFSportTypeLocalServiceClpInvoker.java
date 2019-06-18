@@ -114,7 +114,6 @@ public class ESFFieldESFSportTypeLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFFieldESFSportType"
 			};
 
-<<<<<<< HEAD
 		_methodName392 = "getBeanIdentifier";
 
 		_methodParameterTypes392 = new String[] {  };
@@ -126,19 +125,6 @@ public class ESFFieldESFSportTypeLocalServiceClpInvoker {
 		_methodName398 = "findByesfFieldId";
 
 		_methodParameterTypes398 = new String[] { "long" };
-=======
-		_methodName386 = "getBeanIdentifier";
-
-		_methodParameterTypes386 = new String[] {  };
-
-		_methodName387 = "setBeanIdentifier";
-
-		_methodParameterTypes387 = new String[] { "java.lang.String" };
-
-		_methodName392 = "findByesfFieldId";
-
-		_methodParameterTypes392 = new String[] { "long" };
->>>>>>> origin/ID32
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -230,7 +216,6 @@ public class ESFFieldESFSportTypeLocalServiceClpInvoker {
 			return ESFFieldESFSportTypeLocalServiceUtil.updateESFFieldESFSportType((it.ethica.esf.model.ESFFieldESFSportType)arguments[0]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName392.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFFieldESFSportTypeLocalServiceUtil.getBeanIdentifier();
@@ -238,27 +223,13 @@ public class ESFFieldESFSportTypeLocalServiceClpInvoker {
 
 		if (_methodName393.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
-=======
-		if (_methodName386.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
-			return ESFFieldESFSportTypeLocalServiceUtil.getBeanIdentifier();
-		}
-
-		if (_methodName387.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
->>>>>>> origin/ID32
 			ESFFieldESFSportTypeLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-<<<<<<< HEAD
 		if (_methodName398.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
-=======
-		if (_methodName392.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFFieldESFSportTypeLocalServiceUtil.findByesfFieldId(((Long)arguments[0]).longValue());
 		}
 
@@ -297,19 +268,10 @@ public class ESFFieldESFSportTypeLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-<<<<<<< HEAD
 	private String _methodName392;
 	private String[] _methodParameterTypes392;
 	private String _methodName393;
 	private String[] _methodParameterTypes393;
 	private String _methodName398;
 	private String[] _methodParameterTypes398;
-=======
-	private String _methodName386;
-	private String[] _methodParameterTypes386;
-	private String _methodName387;
-	private String[] _methodParameterTypes387;
-	private String _methodName392;
-	private String[] _methodParameterTypes392;
->>>>>>> origin/ID32
 }

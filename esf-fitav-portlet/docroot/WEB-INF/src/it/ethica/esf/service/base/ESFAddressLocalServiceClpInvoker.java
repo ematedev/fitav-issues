@@ -108,7 +108,6 @@ public class ESFAddressLocalServiceClpInvoker {
 
 		_methodParameterTypes17 = new String[] { "it.ethica.esf.model.ESFAddress" };
 
-<<<<<<< HEAD
 		_methodName410 = "getBeanIdentifier";
 
 		_methodParameterTypes410 = new String[] {  };
@@ -188,100 +187,13 @@ public class ESFAddressLocalServiceClpInvoker {
 		_methodName430 = "findByC_R_P";
 
 		_methodParameterTypes430 = new String[] {
-=======
-		_methodName404 = "getBeanIdentifier";
-
-		_methodParameterTypes404 = new String[] {  };
-
-		_methodName405 = "setBeanIdentifier";
-
-		_methodParameterTypes405 = new String[] { "java.lang.String" };
-
-		_methodName410 = "newESFAddress";
-
-		_methodParameterTypes410 = new String[] {  };
-
-		_methodName411 = "findByL_L";
-
-		_methodParameterTypes411 = new String[] { "double", "double" };
-
-		_methodName412 = "getESFAddresses";
-
-		_methodParameterTypes412 = new String[] {
-				"long", "java.lang.String", "long"
-			};
-
-		_methodName413 = "getNameRegion";
-
-		_methodParameterTypes413 = new String[] { "java.lang.String" };
-
-		_methodName414 = "getNameProvince";
-
-		_methodParameterTypes414 = new String[] {
-				"java.lang.String", "java.lang.String"
-			};
-
-		_methodName415 = "getNameCity";
-
-		_methodParameterTypes415 = new String[] {
-				"java.lang.String", "java.lang.String", "long"
-			};
-
-		_methodName416 = "findAllCountry";
-
-		_methodParameterTypes416 = new String[] {  };
-
-		_methodName417 = "findAllCountry";
-
-		_methodParameterTypes417 = new String[] { "int", "int" };
-
-		_methodName418 = "findAllRegions";
-
-		_methodParameterTypes418 = new String[] {  };
-
-		_methodName419 = "findByCountry";
-
-		_methodParameterTypes419 = new String[] { "java.lang.String" };
-
-		_methodName420 = "findByCountry";
-
-		_methodParameterTypes420 = new String[] { "java.lang.String", "int", "int" };
-
-		_methodName421 = "findByC_R";
-
-		_methodParameterTypes421 = new String[] {
-				"java.lang.String", "java.lang.String"
-			};
-
-		_methodName422 = "findByC_R";
-
-		_methodParameterTypes422 = new String[] {
-				"java.lang.String", "java.lang.String", "int", "int"
-			};
-
-		_methodName423 = "findByC_R_P";
-
-		_methodParameterTypes423 = new String[] {
-				"java.lang.String", "java.lang.String", "java.lang.String"
-			};
-
-		_methodName424 = "findByC_R_P";
-
-		_methodParameterTypes424 = new String[] {
->>>>>>> origin/ID32
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"int", "int"
 			};
 
-<<<<<<< HEAD
 		_methodName431 = "addESFAddress";
 
 		_methodParameterTypes431 = new String[] {
-=======
-		_methodName425 = "addESFAddress";
-
-		_methodParameterTypes425 = new String[] {
->>>>>>> origin/ID32
 				"long", "double", "java.lang.String", "java.lang.String",
 				"java.lang.String", "long", "double", "java.lang.String", "int",
 				"java.lang.String", "long", "java.lang.String",
@@ -290,15 +202,9 @@ public class ESFAddressLocalServiceClpInvoker {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-<<<<<<< HEAD
 		_methodName432 = "updateESFAddress";
 
 		_methodParameterTypes432 = new String[] {
-=======
-		_methodName426 = "updateESFAddress";
-
-		_methodParameterTypes426 = new String[] {
->>>>>>> origin/ID32
 				"long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "long", "double", "double",
 				"java.lang.String", "int", "java.lang.String", "long",
@@ -307,15 +213,9 @@ public class ESFAddressLocalServiceClpInvoker {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-<<<<<<< HEAD
 		_methodName433 = "deleteESFAddress";
 
 		_methodParameterTypes433 = new String[] {
-=======
-		_methodName427 = "deleteESFAddress";
-
-		_methodParameterTypes427 = new String[] {
->>>>>>> origin/ID32
 				"long", "com.liferay.portal.service.ServiceContext"
 			};
 	}
@@ -421,7 +321,6 @@ public class ESFAddressLocalServiceClpInvoker {
 			return ESFAddressLocalServiceUtil.updateESFAddress((it.ethica.esf.model.ESFAddress)arguments[0]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName410.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes410, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.getBeanIdentifier();
@@ -429,21 +328,11 @@ public class ESFAddressLocalServiceClpInvoker {
 
 		if (_methodName411.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes411, parameterTypes)) {
-=======
-		if (_methodName404.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes404, parameterTypes)) {
-			return ESFAddressLocalServiceUtil.getBeanIdentifier();
-		}
-
-		if (_methodName405.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes405, parameterTypes)) {
->>>>>>> origin/ID32
 			ESFAddressLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-<<<<<<< HEAD
 		if (_methodName416.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes416, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.newESFAddress();
@@ -451,31 +340,16 @@ public class ESFAddressLocalServiceClpInvoker {
 
 		if (_methodName417.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes417, parameterTypes)) {
-=======
-		if (_methodName410.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes410, parameterTypes)) {
-			return ESFAddressLocalServiceUtil.newESFAddress();
-		}
-
-		if (_methodName411.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes411, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFAddressLocalServiceUtil.findByL_L(((Double)arguments[0]).doubleValue(),
 				((Double)arguments[1]).doubleValue());
 		}
 
-<<<<<<< HEAD
 		if (_methodName418.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes418, parameterTypes)) {
-=======
-		if (_methodName412.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes412, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFAddressLocalServiceUtil.getESFAddresses(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], ((Long)arguments[2]).longValue());
 		}
 
-<<<<<<< HEAD
 		if (_methodName419.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes419, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.getNameRegion((java.lang.String)arguments[0]);
@@ -483,31 +357,16 @@ public class ESFAddressLocalServiceClpInvoker {
 
 		if (_methodName420.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes420, parameterTypes)) {
-=======
-		if (_methodName413.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes413, parameterTypes)) {
-			return ESFAddressLocalServiceUtil.getNameRegion((java.lang.String)arguments[0]);
-		}
-
-		if (_methodName414.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes414, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFAddressLocalServiceUtil.getNameProvince((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName421.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes421, parameterTypes)) {
-=======
-		if (_methodName415.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes415, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFAddressLocalServiceUtil.getNameCity((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], ((Long)arguments[2]).longValue());
 		}
 
-<<<<<<< HEAD
 		if (_methodName422.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes422, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.findAllCountry();
@@ -515,20 +374,10 @@ public class ESFAddressLocalServiceClpInvoker {
 
 		if (_methodName423.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes423, parameterTypes)) {
-=======
-		if (_methodName416.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes416, parameterTypes)) {
-			return ESFAddressLocalServiceUtil.findAllCountry();
-		}
-
-		if (_methodName417.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes417, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFAddressLocalServiceUtil.findAllCountry(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
-<<<<<<< HEAD
 		if (_methodName424.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes424, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.findAllRegions();
@@ -541,80 +390,41 @@ public class ESFAddressLocalServiceClpInvoker {
 
 		if (_methodName426.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes426, parameterTypes)) {
-=======
-		if (_methodName418.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes418, parameterTypes)) {
-			return ESFAddressLocalServiceUtil.findAllRegions();
-		}
-
-		if (_methodName419.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes419, parameterTypes)) {
-			return ESFAddressLocalServiceUtil.findByCountry((java.lang.String)arguments[0]);
-		}
-
-		if (_methodName420.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes420, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFAddressLocalServiceUtil.findByCountry((java.lang.String)arguments[0],
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-<<<<<<< HEAD
 		if (_methodName427.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes427, parameterTypes)) {
-=======
-		if (_methodName421.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes421, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFAddressLocalServiceUtil.findByC_R((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName428.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes428, parameterTypes)) {
-=======
-		if (_methodName422.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes422, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFAddressLocalServiceUtil.findByC_R((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1],
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
-<<<<<<< HEAD
 		if (_methodName429.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes429, parameterTypes)) {
-=======
-		if (_methodName423.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes423, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFAddressLocalServiceUtil.findByC_R_P((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName430.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes430, parameterTypes)) {
-=======
-		if (_methodName424.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes424, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFAddressLocalServiceUtil.findByC_R_P((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Integer)arguments[3]).intValue(),
 				((Integer)arguments[4]).intValue());
 		}
 
-<<<<<<< HEAD
 		if (_methodName431.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes431, parameterTypes)) {
-=======
-		if (_methodName425.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes425, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFAddressLocalServiceUtil.addESFAddress(((Long)arguments[0]).longValue(),
 				((Double)arguments[1]).doubleValue(),
 				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
@@ -636,13 +446,8 @@ public class ESFAddressLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[19]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName432.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes432, parameterTypes)) {
-=======
-		if (_methodName426.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes426, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFAddressLocalServiceUtil.updateESFAddress(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
@@ -665,13 +470,8 @@ public class ESFAddressLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[20]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName433.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes433, parameterTypes)) {
-=======
-		if (_methodName427.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes427, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFAddressLocalServiceUtil.deleteESFAddress(((Long)arguments[0]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
@@ -715,13 +515,6 @@ public class ESFAddressLocalServiceClpInvoker {
 	private String[] _methodParameterTypes16;
 	private String _methodName17;
 	private String[] _methodParameterTypes17;
-<<<<<<< HEAD
-=======
-	private String _methodName404;
-	private String[] _methodParameterTypes404;
-	private String _methodName405;
-	private String[] _methodParameterTypes405;
->>>>>>> origin/ID32
 	private String _methodName410;
 	private String[] _methodParameterTypes410;
 	private String _methodName411;
@@ -750,7 +543,6 @@ public class ESFAddressLocalServiceClpInvoker {
 	private String[] _methodParameterTypes426;
 	private String _methodName427;
 	private String[] _methodParameterTypes427;
-<<<<<<< HEAD
 	private String _methodName428;
 	private String[] _methodParameterTypes428;
 	private String _methodName429;
@@ -763,6 +555,4 @@ public class ESFAddressLocalServiceClpInvoker {
 	private String[] _methodParameterTypes432;
 	private String _methodName433;
 	private String[] _methodParameterTypes433;
-=======
->>>>>>> origin/ID32
 }

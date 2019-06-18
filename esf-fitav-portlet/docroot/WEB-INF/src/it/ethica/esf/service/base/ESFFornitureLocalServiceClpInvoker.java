@@ -118,7 +118,6 @@ public class ESFFornitureLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFForniture"
 			};
 
-<<<<<<< HEAD
 		_methodName406 = "getBeanIdentifier";
 
 		_methodParameterTypes406 = new String[] {  };
@@ -154,71 +153,22 @@ public class ESFFornitureLocalServiceClpInvoker {
 		_methodName418 = "addESFForniture";
 
 		_methodParameterTypes418 = new String[] {
-=======
-		_methodName400 = "getBeanIdentifier";
-
-		_methodParameterTypes400 = new String[] {  };
-
-		_methodName401 = "setBeanIdentifier";
-
-		_methodParameterTypes401 = new String[] { "java.lang.String" };
-
-		_methodName406 = "getAllESFFornitures";
-
-		_methodParameterTypes406 = new String[] {  };
-
-		_methodName407 = "getAllESFFornitures";
-
-		_methodParameterTypes407 = new String[] { "int", "int" };
-
-		_methodName408 = "getAllESFFornitures";
-
-		_methodParameterTypes408 = new String[] { "long" };
-
-		_methodName409 = "getAllESFFornitures";
-
-		_methodParameterTypes409 = new String[] { "long", "int", "int" };
-
-		_methodName410 = "findAllESFFornituresByType";
-
-		_methodParameterTypes410 = new String[] { "long" };
-
-		_methodName411 = "countByGroupId";
-
-		_methodParameterTypes411 = new String[] { "long" };
-
-		_methodName412 = "addESFForniture";
-
-		_methodParameterTypes412 = new String[] {
->>>>>>> origin/ID32
 				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "long", "long", "java.util.Date",
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 
-<<<<<<< HEAD
 		_methodName419 = "updateESFForniture";
 
 		_methodParameterTypes419 = new String[] {
-=======
-		_methodName413 = "updateESFForniture";
-
-		_methodParameterTypes413 = new String[] {
->>>>>>> origin/ID32
 				"long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "long", "long", "java.util.Date",
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 
-<<<<<<< HEAD
 		_methodName420 = "deleteESFForniture";
 
 		_methodParameterTypes420 = new String[] {
-=======
-		_methodName414 = "deleteESFForniture";
-
-		_methodParameterTypes414 = new String[] {
->>>>>>> origin/ID32
 				"long", "com.liferay.portal.service.ServiceContext"
 			};
 	}
@@ -336,7 +286,6 @@ public class ESFFornitureLocalServiceClpInvoker {
 			return ESFFornitureLocalServiceUtil.updateESFForniture((it.ethica.esf.model.ESFForniture)arguments[0]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName406.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes406, parameterTypes)) {
 			return ESFFornitureLocalServiceUtil.getBeanIdentifier();
@@ -344,21 +293,11 @@ public class ESFFornitureLocalServiceClpInvoker {
 
 		if (_methodName407.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes407, parameterTypes)) {
-=======
-		if (_methodName400.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes400, parameterTypes)) {
-			return ESFFornitureLocalServiceUtil.getBeanIdentifier();
-		}
-
-		if (_methodName401.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes401, parameterTypes)) {
->>>>>>> origin/ID32
 			ESFFornitureLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-<<<<<<< HEAD
 		if (_methodName412.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes412, parameterTypes)) {
 			return ESFFornitureLocalServiceUtil.getAllESFFornitures();
@@ -366,20 +305,10 @@ public class ESFFornitureLocalServiceClpInvoker {
 
 		if (_methodName413.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes413, parameterTypes)) {
-=======
-		if (_methodName406.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes406, parameterTypes)) {
-			return ESFFornitureLocalServiceUtil.getAllESFFornitures();
-		}
-
-		if (_methodName407.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes407, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFFornitureLocalServiceUtil.getAllESFFornitures(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
-<<<<<<< HEAD
 		if (_methodName414.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes414, parameterTypes)) {
 			return ESFFornitureLocalServiceUtil.getAllESFFornitures(((Long)arguments[0]).longValue());
@@ -387,21 +316,11 @@ public class ESFFornitureLocalServiceClpInvoker {
 
 		if (_methodName415.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes415, parameterTypes)) {
-=======
-		if (_methodName408.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes408, parameterTypes)) {
-			return ESFFornitureLocalServiceUtil.getAllESFFornitures(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName409.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes409, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFFornitureLocalServiceUtil.getAllESFFornitures(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-<<<<<<< HEAD
 		if (_methodName416.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes416, parameterTypes)) {
 			return ESFFornitureLocalServiceUtil.findAllESFFornituresByType(((Long)arguments[0]).longValue());
@@ -414,20 +333,6 @@ public class ESFFornitureLocalServiceClpInvoker {
 
 		if (_methodName418.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes418, parameterTypes)) {
-=======
-		if (_methodName410.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes410, parameterTypes)) {
-			return ESFFornitureLocalServiceUtil.findAllESFFornituresByType(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName411.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes411, parameterTypes)) {
-			return ESFFornitureLocalServiceUtil.countByGroupId(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName412.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes412, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFFornitureLocalServiceUtil.addESFForniture(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(java.lang.String)arguments[3],
@@ -437,13 +342,8 @@ public class ESFFornitureLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[8]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName419.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes419, parameterTypes)) {
-=======
-		if (_methodName413.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes413, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFFornitureLocalServiceUtil.updateESFForniture(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
@@ -454,13 +354,8 @@ public class ESFFornitureLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[9]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName420.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes420, parameterTypes)) {
-=======
-		if (_methodName414.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes414, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFFornitureLocalServiceUtil.deleteESFForniture(((Long)arguments[0]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
@@ -508,13 +403,6 @@ public class ESFFornitureLocalServiceClpInvoker {
 	private String[] _methodParameterTypes18;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
-<<<<<<< HEAD
-=======
-	private String _methodName400;
-	private String[] _methodParameterTypes400;
-	private String _methodName401;
-	private String[] _methodParameterTypes401;
->>>>>>> origin/ID32
 	private String _methodName406;
 	private String[] _methodParameterTypes406;
 	private String _methodName407;
@@ -525,7 +413,6 @@ public class ESFFornitureLocalServiceClpInvoker {
 	private String[] _methodParameterTypes413;
 	private String _methodName414;
 	private String[] _methodParameterTypes414;
-<<<<<<< HEAD
 	private String _methodName415;
 	private String[] _methodParameterTypes415;
 	private String _methodName416;
@@ -538,6 +425,4 @@ public class ESFFornitureLocalServiceClpInvoker {
 	private String[] _methodParameterTypes419;
 	private String _methodName420;
 	private String[] _methodParameterTypes420;
-=======
->>>>>>> origin/ID32
 }

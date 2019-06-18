@@ -2335,6 +2335,10 @@
 		<table name="vw_datidirettoretiro" />
 		<attributes />
 	</entity>
+	<entity class="it.ethica.esf.model.impl.VW_ESFIncarichiFederaliImpl" name="VW_ESFIncarichiFederali">
+		<table name="VW_ESFIncarichiFederali" />
+		<attributes />
+	</entity>
 	<entity class="it.ethica.esf.model.impl.VW_ESFListaIncarichiImpl" name="VW_ESFListaIncarichi">
 		<table name="VW_ESFListaIncarichi" />
 		<attributes />

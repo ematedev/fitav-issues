@@ -114,7 +114,6 @@ public class ESFUserESFUserRoleLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFUserESFUserRole"
 			};
 
-<<<<<<< HEAD
 		_methodName392 = "getBeanIdentifier";
 
 		_methodParameterTypes392 = new String[] {  };
@@ -166,63 +165,13 @@ public class ESFUserESFUserRoleLocalServiceClpInvoker {
 		_methodParameterTypes407 = new String[] { "long", "int", "int" };
 
 		_methodName408 = "getESFUserESFUserRoleAllStaff";
-=======
-		_methodName386 = "getBeanIdentifier";
-
-		_methodParameterTypes386 = new String[] {  };
-
-		_methodName387 = "setBeanIdentifier";
-
-		_methodParameterTypes387 = new String[] { "java.lang.String" };
-
-		_methodName392 = "findESFUserESFRolesByEsfUserRoleId";
-
-		_methodParameterTypes392 = new String[] { "long" };
-
-		_methodName393 = "findESFUserESFRolesByEsfOrganizzationId";
-
-		_methodParameterTypes393 = new String[] { "long" };
-
-		_methodName394 = "findESFUserESFRolesAll";
-
-		_methodParameterTypes394 = new String[] {  };
-
-		_methodName395 = "findESFUserESFRoleByPrimaryKey";
-
-		_methodParameterTypes395 = new String[] {
-				"long", "long", "long", "java.util.Date"
-			};
-
-		_methodName396 = "findESFUserESFRoleByU_R_O";
-
-		_methodParameterTypes396 = new String[] { "long", "long", "long" };
-
-		_methodName397 = "findESFUserESFRoleByO_R";
-
-		_methodParameterTypes397 = new String[] { "long", "long" };
-
-		_methodName398 = "getAllESFUserESFUserRoleByESFUserId";
-
-		_methodParameterTypes398 = new String[] { "long", "int", "int" };
-
-		_methodName399 = "getESFUserESFUserRoleByESFUserId_ED";
-
-		_methodParameterTypes399 = new String[] { "long" };
-
-		_methodName400 = "getESFUserESFUserRoleByOrganizationId";
->>>>>>> origin/ID32
 
 		_methodParameterTypes408 = new String[] { "long" };
 
-<<<<<<< HEAD
 		_methodName409 = "getESFUserESFUserRoleAllStaff";
-=======
-		_methodName401 = "getESFUserESFUserRoleByOrganizationId";
->>>>>>> origin/ID32
 
 		_methodParameterTypes409 = new String[] { "long", "int", "int" };
 
-<<<<<<< HEAD
 		_methodName410 = "getESFUserESFUserRoleAllNationalStaff";
 
 		_methodParameterTypes410 = new String[] { "long", "int", "int" };
@@ -232,29 +181,13 @@ public class ESFUserESFUserRoleLocalServiceClpInvoker {
 		_methodParameterTypes411 = new String[] { "long" };
 
 		_methodName412 = "getESFUserESFUserRoleStaff";
-=======
-		_methodName402 = "getESFUserESFUserRoleAllStaff";
-
-		_methodParameterTypes402 = new String[] { "long" };
-
-		_methodName403 = "getESFUserESFUserRoleAllStaff";
-
-		_methodParameterTypes403 = new String[] { "long", "int", "int" };
-
-		_methodName404 = "getESFUserESFUserRoleAllNationalStaff";
->>>>>>> origin/ID32
 
 		_methodParameterTypes412 = new String[] { "long", "int", "int" };
 
-<<<<<<< HEAD
 		_methodName413 = "getESFUserESFUserRoleStaff";
-=======
-		_methodName405 = "getESFUserESFUserRoleAllNationalStaff";
->>>>>>> origin/ID32
 
 		_methodParameterTypes413 = new String[] { "long" };
 
-<<<<<<< HEAD
 		_methodName414 = "getAllESFUserESFUserRoleCountByESFUserId";
 
 		_methodParameterTypes414 = new String[] { "long" };
@@ -274,40 +207,10 @@ public class ESFUserESFUserRoleLocalServiceClpInvoker {
 		_methodName417 = "updateESFUserESFRole";
 
 		_methodParameterTypes417 = new String[] {
-=======
-		_methodName406 = "getESFUserESFUserRoleStaff";
-
-		_methodParameterTypes406 = new String[] { "long", "int", "int" };
-
-		_methodName407 = "getESFUserESFUserRoleStaff";
-
-		_methodParameterTypes407 = new String[] { "long" };
-
-		_methodName408 = "getAllESFUserESFUserRoleCountByESFUserId";
-
-		_methodParameterTypes408 = new String[] { "long" };
-
-		_methodName409 = "addESFUserESFRole";
-
-		_methodParameterTypes409 = new String[] {
-				"long", "long", "long", "java.util.Date"
-			};
-
-		_methodName410 = "addESFUserESFRoleMigr";
-
-		_methodParameterTypes410 = new String[] {
-				"long", "long", "long", "java.util.Date", "java.util.Date"
-			};
-
-		_methodName411 = "updateESFUserESFRole";
-
-		_methodParameterTypes411 = new String[] {
->>>>>>> origin/ID32
 				"long", "long", "long", "java.util.Date",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-<<<<<<< HEAD
 		_methodName418 = "getESFUSerRoleByR_ED";
 
 		_methodParameterTypes418 = new String[] { "long" };
@@ -327,27 +230,6 @@ public class ESFUserESFUserRoleLocalServiceClpInvoker {
 		_methodName422 = "findESFUserESFRoleByO_R_D_NOL";
 
 		_methodParameterTypes422 = new String[] { "long", "long", "java.sql.Date" };
-=======
-		_methodName412 = "getESFUSerRoleByR_ED";
-
-		_methodParameterTypes412 = new String[] { "long" };
-
-		_methodName413 = "findbyBDOUserRolenoEnd";
-
-		_methodParameterTypes413 = new String[] { "long", "long" };
-
-		_methodName414 = "findbyBDORole";
-
-		_methodParameterTypes414 = new String[] { "long" };
-
-		_methodName415 = "findStaffRole";
-
-		_methodParameterTypes415 = new String[] { "long" };
-
-		_methodName416 = "findESFUserESFRoleByO_R_D_NOL";
-
-		_methodParameterTypes416 = new String[] { "long", "long", "java.sql.Date" };
->>>>>>> origin/ID32
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -439,7 +321,6 @@ public class ESFUserESFUserRoleLocalServiceClpInvoker {
 			return ESFUserESFUserRoleLocalServiceUtil.updateESFUserESFUserRole((it.ethica.esf.model.ESFUserESFUserRole)arguments[0]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName392.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFUserESFUserRoleLocalServiceUtil.getBeanIdentifier();
@@ -447,21 +328,11 @@ public class ESFUserESFUserRoleLocalServiceClpInvoker {
 
 		if (_methodName393.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
-=======
-		if (_methodName386.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
-			return ESFUserESFUserRoleLocalServiceUtil.getBeanIdentifier();
-		}
-
-		if (_methodName387.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
->>>>>>> origin/ID32
 			ESFUserESFUserRoleLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-<<<<<<< HEAD
 		if (_methodName398.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
 			return ESFUserESFUserRoleLocalServiceUtil.findESFUserESFRolesByEsfUserRoleId(((Long)arguments[0]).longValue());
@@ -529,68 +400,10 @@ public class ESFUserESFUserRoleLocalServiceClpInvoker {
 		if (_methodName409.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes409, parameterTypes)) {
 			return ESFUserESFUserRoleLocalServiceUtil.getESFUserESFUserRoleAllStaff(((Long)arguments[0]).longValue(),
-=======
-		if (_methodName392.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
-			return ESFUserESFUserRoleLocalServiceUtil.findESFUserESFRolesByEsfUserRoleId(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName393.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
-			return ESFUserESFUserRoleLocalServiceUtil.findESFUserESFRolesByEsfOrganizzationId(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName394.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
-			return ESFUserESFUserRoleLocalServiceUtil.findESFUserESFRolesAll();
-		}
-
-		if (_methodName395.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
-			return ESFUserESFUserRoleLocalServiceUtil.findESFUserESFRoleByPrimaryKey(((Long)arguments[0]).longValue(),
-				((Long)arguments[1]).longValue(),
-				((Long)arguments[2]).longValue(), (java.util.Date)arguments[3]);
-		}
-
-		if (_methodName396.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
-			return ESFUserESFUserRoleLocalServiceUtil.findESFUserESFRoleByU_R_O(((Long)arguments[0]).longValue(),
-				((Long)arguments[1]).longValue(),
-				((Long)arguments[2]).longValue());
-		}
-
-		if (_methodName397.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
-			return ESFUserESFUserRoleLocalServiceUtil.findESFUserESFRoleByO_R(((Long)arguments[0]).longValue(),
-				((Long)arguments[1]).longValue());
-		}
-
-		if (_methodName398.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
-			return ESFUserESFUserRoleLocalServiceUtil.getAllESFUserESFUserRoleByESFUserId(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName399.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes399, parameterTypes)) {
-			return ESFUserESFUserRoleLocalServiceUtil.getESFUserESFUserRoleByESFUserId_ED(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName400.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes400, parameterTypes)) {
-			return ESFUserESFUserRoleLocalServiceUtil.getESFUserESFUserRoleByOrganizationId(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName401.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes401, parameterTypes)) {
-			return ESFUserESFUserRoleLocalServiceUtil.getESFUserESFUserRoleByOrganizationId(((Long)arguments[0]).longValue(),
->>>>>>> origin/ID32
-				((Integer)arguments[1]).intValue(),
-				((Integer)arguments[2]).intValue());
-		}
-
-<<<<<<< HEAD
 		if (_methodName410.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes410, parameterTypes)) {
 			return ESFUserESFUserRoleLocalServiceUtil.getESFUserESFUserRoleAllNationalStaff(((Long)arguments[0]).longValue(),
@@ -606,28 +419,10 @@ public class ESFUserESFUserRoleLocalServiceClpInvoker {
 		if (_methodName412.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes412, parameterTypes)) {
 			return ESFUserESFUserRoleLocalServiceUtil.getESFUserESFUserRoleStaff(((Long)arguments[0]).longValue(),
-=======
-		if (_methodName402.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes402, parameterTypes)) {
-			return ESFUserESFUserRoleLocalServiceUtil.getESFUserESFUserRoleAllStaff(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName403.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes403, parameterTypes)) {
-			return ESFUserESFUserRoleLocalServiceUtil.getESFUserESFUserRoleAllStaff(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName404.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes404, parameterTypes)) {
-			return ESFUserESFUserRoleLocalServiceUtil.getESFUserESFUserRoleAllNationalStaff(((Long)arguments[0]).longValue(),
->>>>>>> origin/ID32
-				((Integer)arguments[1]).intValue(),
-				((Integer)arguments[2]).intValue());
-		}
-
-<<<<<<< HEAD
 		if (_methodName413.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes413, parameterTypes)) {
 			return ESFUserESFUserRoleLocalServiceUtil.getESFUserESFUserRoleStaff(((Long)arguments[0]).longValue());
@@ -640,64 +435,27 @@ public class ESFUserESFUserRoleLocalServiceClpInvoker {
 
 		if (_methodName415.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes415, parameterTypes)) {
-=======
-		if (_methodName405.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes405, parameterTypes)) {
-			return ESFUserESFUserRoleLocalServiceUtil.getESFUserESFUserRoleAllNationalStaff(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName406.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes406, parameterTypes)) {
-			return ESFUserESFUserRoleLocalServiceUtil.getESFUserESFUserRoleStaff(((Long)arguments[0]).longValue(),
-				((Integer)arguments[1]).intValue(),
-				((Integer)arguments[2]).intValue());
-		}
-
-		if (_methodName407.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes407, parameterTypes)) {
-			return ESFUserESFUserRoleLocalServiceUtil.getESFUserESFUserRoleStaff(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName408.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes408, parameterTypes)) {
-			return ESFUserESFUserRoleLocalServiceUtil.getAllESFUserESFUserRoleCountByESFUserId(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName409.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes409, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFUserESFUserRoleLocalServiceUtil.addESFUserESFRole(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(), (java.util.Date)arguments[3]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName416.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes416, parameterTypes)) {
-=======
-		if (_methodName410.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes410, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFUserESFUserRoleLocalServiceUtil.addESFUserESFRoleMigr(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(), (java.util.Date)arguments[3],
 				(java.util.Date)arguments[4]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName417.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes417, parameterTypes)) {
-=======
-		if (_methodName411.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes411, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFUserESFUserRoleLocalServiceUtil.updateESFUserESFRole(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(), (java.util.Date)arguments[3],
 				(com.liferay.portal.service.ServiceContext)arguments[4]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName418.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes418, parameterTypes)) {
 			return ESFUserESFUserRoleLocalServiceUtil.getESFUSerRoleByR_ED(((Long)arguments[0]).longValue());
@@ -705,20 +463,10 @@ public class ESFUserESFUserRoleLocalServiceClpInvoker {
 
 		if (_methodName419.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes419, parameterTypes)) {
-=======
-		if (_methodName412.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes412, parameterTypes)) {
-			return ESFUserESFUserRoleLocalServiceUtil.getESFUSerRoleByR_ED(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName413.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes413, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFUserESFUserRoleLocalServiceUtil.findbyBDOUserRolenoEnd(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
 
-<<<<<<< HEAD
 		if (_methodName420.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes420, parameterTypes)) {
 			return ESFUserESFUserRoleLocalServiceUtil.findbyBDORole(((Long)arguments[0]).longValue());
@@ -731,20 +479,6 @@ public class ESFUserESFUserRoleLocalServiceClpInvoker {
 
 		if (_methodName422.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes422, parameterTypes)) {
-=======
-		if (_methodName414.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes414, parameterTypes)) {
-			return ESFUserESFUserRoleLocalServiceUtil.findbyBDORole(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName415.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes415, parameterTypes)) {
-			return ESFUserESFUserRoleLocalServiceUtil.findStaffRole(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName416.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes416, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFUserESFUserRoleLocalServiceUtil.findESFUserESFRoleByO_R_D_NOL(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(), (java.sql.Date)arguments[2]);
 		}
@@ -784,13 +518,6 @@ public class ESFUserESFUserRoleLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-<<<<<<< HEAD
-=======
-	private String _methodName386;
-	private String[] _methodParameterTypes386;
-	private String _methodName387;
-	private String[] _methodParameterTypes387;
->>>>>>> origin/ID32
 	private String _methodName392;
 	private String[] _methodParameterTypes392;
 	private String _methodName393;
@@ -833,7 +560,6 @@ public class ESFUserESFUserRoleLocalServiceClpInvoker {
 	private String[] _methodParameterTypes415;
 	private String _methodName416;
 	private String[] _methodParameterTypes416;
-<<<<<<< HEAD
 	private String _methodName417;
 	private String[] _methodParameterTypes417;
 	private String _methodName418;
@@ -846,6 +572,4 @@ public class ESFUserESFUserRoleLocalServiceClpInvoker {
 	private String[] _methodParameterTypes421;
 	private String _methodName422;
 	private String[] _methodParameterTypes422;
-=======
->>>>>>> origin/ID32
 }

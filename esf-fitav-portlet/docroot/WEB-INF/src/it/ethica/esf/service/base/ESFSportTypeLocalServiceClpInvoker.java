@@ -118,7 +118,6 @@ public class ESFSportTypeLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFSportType"
 			};
 
-<<<<<<< HEAD
 		_methodName396 = "getBeanIdentifier";
 
 		_methodParameterTypes396 = new String[] {  };
@@ -170,79 +169,19 @@ public class ESFSportTypeLocalServiceClpInvoker {
 		_methodName412 = "addESFSportType";
 
 		_methodParameterTypes412 = new String[] {
-=======
-		_methodName390 = "getBeanIdentifier";
-
-		_methodParameterTypes390 = new String[] {  };
-
-		_methodName391 = "setBeanIdentifier";
-
-		_methodParameterTypes391 = new String[] { "java.lang.String" };
-
-		_methodName396 = "getNational";
-
-		_methodParameterTypes396 = new String[] { "boolean" };
-
-		_methodName397 = "getisOlimpic";
-
-		_methodParameterTypes397 = new String[] { "boolean" };
-
-		_methodName398 = "getAllESFSportTypes";
-
-		_methodParameterTypes398 = new String[] {  };
-
-		_methodName399 = "getAllESFSportTypes";
-
-		_methodParameterTypes399 = new String[] { "int", "int" };
-
-		_methodName400 = "getESFSportTypes";
-
-		_methodParameterTypes400 = new String[] { "long" };
-
-		_methodName401 = "getESFSportTypesIsChangeCategory";
-
-		_methodParameterTypes401 = new String[] { "boolean" };
-
-		_methodName402 = "getESFSportTypes";
-
-		_methodParameterTypes402 = new String[] { "long", "int", "int" };
-
-		_methodName403 = "countByGroupId";
-
-		_methodParameterTypes403 = new String[] { "long" };
-
-		_methodName404 = "findByESFFieldId";
-
-		_methodParameterTypes404 = new String[] { "long" };
-
-		_methodName405 = "findESFSportTypeByName";
-
-		_methodParameterTypes405 = new String[] { "java.lang.String" };
-
-		_methodName406 = "addESFSportType";
-
-		_methodParameterTypes406 = new String[] {
->>>>>>> origin/ID32
 				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "boolean", "boolean", "boolean",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-<<<<<<< HEAD
 		_methodName413 = "updateESFSportType";
 
 		_methodParameterTypes413 = new String[] {
-=======
-		_methodName407 = "updateESFSportType";
-
-		_methodParameterTypes407 = new String[] {
->>>>>>> origin/ID32
 				"long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "boolean", "boolean", "boolean",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-<<<<<<< HEAD
 		_methodName414 = "deleteESFSportType";
 
 		_methodParameterTypes414 = new String[] {
@@ -260,25 +199,6 @@ public class ESFSportTypeLocalServiceClpInvoker {
 		_methodName418 = "findIDSportByCode";
 
 		_methodParameterTypes418 = new String[] { "java.lang.String" };
-=======
-		_methodName408 = "deleteESFSportType";
-
-		_methodParameterTypes408 = new String[] {
-				"long", "com.liferay.portal.service.ServiceContext"
-			};
-
-		_methodName410 = "findIDSportByName";
-
-		_methodParameterTypes410 = new String[] {  };
-
-		_methodName411 = "findIDSportByName";
-
-		_methodParameterTypes411 = new String[] { "java.lang.String" };
-
-		_methodName412 = "findIDSportByCode";
-
-		_methodParameterTypes412 = new String[] { "java.lang.String" };
->>>>>>> origin/ID32
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -394,7 +314,6 @@ public class ESFSportTypeLocalServiceClpInvoker {
 			return ESFSportTypeLocalServiceUtil.updateESFSportType((it.ethica.esf.model.ESFSportType)arguments[0]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName396.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
 			return ESFSportTypeLocalServiceUtil.getBeanIdentifier();
@@ -402,21 +321,11 @@ public class ESFSportTypeLocalServiceClpInvoker {
 
 		if (_methodName397.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
-=======
-		if (_methodName390.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes390, parameterTypes)) {
-			return ESFSportTypeLocalServiceUtil.getBeanIdentifier();
-		}
-
-		if (_methodName391.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes391, parameterTypes)) {
->>>>>>> origin/ID32
 			ESFSportTypeLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-<<<<<<< HEAD
 		if (_methodName402.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes402, parameterTypes)) {
 			return ESFSportTypeLocalServiceUtil.getNational(((Boolean)arguments[0]).booleanValue());
@@ -472,63 +381,6 @@ public class ESFSportTypeLocalServiceClpInvoker {
 
 		if (_methodName412.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes412, parameterTypes)) {
-=======
-		if (_methodName396.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
-			return ESFSportTypeLocalServiceUtil.getNational(((Boolean)arguments[0]).booleanValue());
-		}
-
-		if (_methodName397.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
-			return ESFSportTypeLocalServiceUtil.getisOlimpic(((Boolean)arguments[0]).booleanValue());
-		}
-
-		if (_methodName398.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
-			return ESFSportTypeLocalServiceUtil.getAllESFSportTypes();
-		}
-
-		if (_methodName399.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes399, parameterTypes)) {
-			return ESFSportTypeLocalServiceUtil.getAllESFSportTypes(((Integer)arguments[0]).intValue(),
-				((Integer)arguments[1]).intValue());
-		}
-
-		if (_methodName400.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes400, parameterTypes)) {
-			return ESFSportTypeLocalServiceUtil.getESFSportTypes(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName401.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes401, parameterTypes)) {
-			return ESFSportTypeLocalServiceUtil.getESFSportTypesIsChangeCategory(((Boolean)arguments[0]).booleanValue());
-		}
-
-		if (_methodName402.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes402, parameterTypes)) {
-			return ESFSportTypeLocalServiceUtil.getESFSportTypes(((Long)arguments[0]).longValue(),
-				((Integer)arguments[1]).intValue(),
-				((Integer)arguments[2]).intValue());
-		}
-
-		if (_methodName403.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes403, parameterTypes)) {
-			return ESFSportTypeLocalServiceUtil.countByGroupId(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName404.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes404, parameterTypes)) {
-			return ESFSportTypeLocalServiceUtil.findByESFFieldId(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName405.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes405, parameterTypes)) {
-			return ESFSportTypeLocalServiceUtil.findESFSportTypeByName((java.lang.String)arguments[0]);
-		}
-
-		if (_methodName406.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes406, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFSportTypeLocalServiceUtil.addESFSportType(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(java.lang.String)arguments[3],
@@ -538,13 +390,8 @@ public class ESFSportTypeLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[7]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName413.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes413, parameterTypes)) {
-=======
-		if (_methodName407.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes407, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFSportTypeLocalServiceUtil.updateESFSportType(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
@@ -555,18 +402,12 @@ public class ESFSportTypeLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[8]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName414.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes414, parameterTypes)) {
-=======
-		if (_methodName408.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes408, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFSportTypeLocalServiceUtil.deleteESFSportType(((Long)arguments[0]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName416.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes416, parameterTypes)) {
 			return ESFSportTypeLocalServiceUtil.findIDSportByName();
@@ -579,20 +420,6 @@ public class ESFSportTypeLocalServiceClpInvoker {
 
 		if (_methodName418.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes418, parameterTypes)) {
-=======
-		if (_methodName410.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes410, parameterTypes)) {
-			return ESFSportTypeLocalServiceUtil.findIDSportByName();
-		}
-
-		if (_methodName411.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes411, parameterTypes)) {
-			return ESFSportTypeLocalServiceUtil.findIDSportByName((java.lang.String)arguments[0]);
-		}
-
-		if (_methodName412.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes412, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFSportTypeLocalServiceUtil.findIDSportByCode((java.lang.String)arguments[0]);
 		}
 
@@ -639,13 +466,6 @@ public class ESFSportTypeLocalServiceClpInvoker {
 	private String[] _methodParameterTypes18;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
-<<<<<<< HEAD
-=======
-	private String _methodName390;
-	private String[] _methodParameterTypes390;
-	private String _methodName391;
-	private String[] _methodParameterTypes391;
->>>>>>> origin/ID32
 	private String _methodName396;
 	private String[] _methodParameterTypes396;
 	private String _methodName397;
@@ -664,13 +484,14 @@ public class ESFSportTypeLocalServiceClpInvoker {
 	private String[] _methodParameterTypes407;
 	private String _methodName408;
 	private String[] _methodParameterTypes408;
+	private String _methodName409;
+	private String[] _methodParameterTypes409;
 	private String _methodName410;
 	private String[] _methodParameterTypes410;
 	private String _methodName411;
 	private String[] _methodParameterTypes411;
 	private String _methodName412;
 	private String[] _methodParameterTypes412;
-<<<<<<< HEAD
 	private String _methodName413;
 	private String[] _methodParameterTypes413;
 	private String _methodName414;
@@ -681,6 +502,4 @@ public class ESFSportTypeLocalServiceClpInvoker {
 	private String[] _methodParameterTypes417;
 	private String _methodName418;
 	private String[] _methodParameterTypes418;
-=======
->>>>>>> origin/ID32
 }

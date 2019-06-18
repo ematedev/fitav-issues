@@ -100,7 +100,6 @@ public class ESFCodeOrgLocalServiceClpInvoker {
 
 		_methodParameterTypes15 = new String[] { "it.ethica.esf.model.ESFCodeOrg" };
 
-<<<<<<< HEAD
 		_methodName392 = "getBeanIdentifier";
 
 		_methodParameterTypes392 = new String[] {  };
@@ -124,31 +123,6 @@ public class ESFCodeOrgLocalServiceClpInvoker {
 		_methodName400 = "updateESFCode";
 
 		_methodParameterTypes400 = new String[] { "long", "long" };
-=======
-		_methodName386 = "getBeanIdentifier";
-
-		_methodParameterTypes386 = new String[] {  };
-
-		_methodName387 = "setBeanIdentifier";
-
-		_methodParameterTypes387 = new String[] { "java.lang.String" };
-
-		_methodName392 = "findESFCodeOrgByN_C";
-
-		_methodParameterTypes392 = new String[] {
-				"java.lang.String", "java.lang.String"
-			};
-
-		_methodName393 = "addESFCode";
-
-		_methodParameterTypes393 = new String[] {
-				"java.lang.String", "java.lang.String", "long"
-			};
-
-		_methodName394 = "updateESFCode";
-
-		_methodParameterTypes394 = new String[] { "long", "long" };
->>>>>>> origin/ID32
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -240,7 +214,6 @@ public class ESFCodeOrgLocalServiceClpInvoker {
 			return ESFCodeOrgLocalServiceUtil.updateESFCodeOrg((it.ethica.esf.model.ESFCodeOrg)arguments[0]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName392.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFCodeOrgLocalServiceUtil.getBeanIdentifier();
@@ -248,49 +221,25 @@ public class ESFCodeOrgLocalServiceClpInvoker {
 
 		if (_methodName393.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
-=======
-		if (_methodName386.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
-			return ESFCodeOrgLocalServiceUtil.getBeanIdentifier();
-		}
-
-		if (_methodName387.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
->>>>>>> origin/ID32
 			ESFCodeOrgLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-<<<<<<< HEAD
 		if (_methodName398.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
-=======
-		if (_methodName392.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFCodeOrgLocalServiceUtil.findESFCodeOrgByN_C((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1]);
 		}
 
-<<<<<<< HEAD
 		if (_methodName399.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes399, parameterTypes)) {
-=======
-		if (_methodName393.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFCodeOrgLocalServiceUtil.addESFCode((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], ((Long)arguments[2]).longValue());
 		}
 
-<<<<<<< HEAD
 		if (_methodName400.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes400, parameterTypes)) {
-=======
-		if (_methodName394.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
->>>>>>> origin/ID32
 			return ESFCodeOrgLocalServiceUtil.updateESFCode(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
@@ -330,26 +279,14 @@ public class ESFCodeOrgLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-<<<<<<< HEAD
-=======
-	private String _methodName386;
-	private String[] _methodParameterTypes386;
-	private String _methodName387;
-	private String[] _methodParameterTypes387;
->>>>>>> origin/ID32
 	private String _methodName392;
 	private String[] _methodParameterTypes392;
 	private String _methodName393;
 	private String[] _methodParameterTypes393;
-<<<<<<< HEAD
 	private String _methodName398;
 	private String[] _methodParameterTypes398;
 	private String _methodName399;
 	private String[] _methodParameterTypes399;
 	private String _methodName400;
 	private String[] _methodParameterTypes400;
-=======
-	private String _methodName394;
-	private String[] _methodParameterTypes394;
->>>>>>> origin/ID32
 }
