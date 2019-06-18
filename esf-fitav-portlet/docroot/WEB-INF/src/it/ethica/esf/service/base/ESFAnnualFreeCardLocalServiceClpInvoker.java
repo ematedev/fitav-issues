@@ -106,6 +106,7 @@ public class ESFAnnualFreeCardLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFAnnualFreeCard"
 			};
 
+<<<<<<< HEAD
 		_methodName392 = "getBeanIdentifier";
 
 		_methodParameterTypes392 = new String[] {  };
@@ -113,6 +114,15 @@ public class ESFAnnualFreeCardLocalServiceClpInvoker {
 		_methodName393 = "setBeanIdentifier";
 
 		_methodParameterTypes393 = new String[] { "java.lang.String" };
+=======
+		_methodName386 = "getBeanIdentifier";
+
+		_methodParameterTypes386 = new String[] {  };
+
+		_methodName387 = "setBeanIdentifier";
+
+		_methodParameterTypes387 = new String[] { "java.lang.String" };
+>>>>>>> origin/ID32
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -204,6 +214,7 @@ public class ESFAnnualFreeCardLocalServiceClpInvoker {
 			return ESFAnnualFreeCardLocalServiceUtil.updateESFAnnualFreeCard((it.ethica.esf.model.ESFAnnualFreeCard)arguments[0]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName392.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFAnnualFreeCardLocalServiceUtil.getBeanIdentifier();
@@ -211,6 +222,15 @@ public class ESFAnnualFreeCardLocalServiceClpInvoker {
 
 		if (_methodName393.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
+=======
+		if (_methodName386.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
+			return ESFAnnualFreeCardLocalServiceUtil.getBeanIdentifier();
+		}
+
+		if (_methodName387.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
+>>>>>>> origin/ID32
 			ESFAnnualFreeCardLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
@@ -251,8 +271,15 @@ public class ESFAnnualFreeCardLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
+<<<<<<< HEAD
 	private String _methodName392;
 	private String[] _methodParameterTypes392;
 	private String _methodName393;
 	private String[] _methodParameterTypes393;
+=======
+	private String _methodName386;
+	private String[] _methodParameterTypes386;
+	private String _methodName387;
+	private String[] _methodParameterTypes387;
+>>>>>>> origin/ID32
 }

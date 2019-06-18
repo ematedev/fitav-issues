@@ -112,6 +112,9 @@
 
 %>
 
+
+
+
 <portlet:resourceURL var="resourceURL" escapeXml="false" />
 
 <portlet:renderURL var="chooseAssociationURL"
@@ -131,6 +134,11 @@
 </portlet:renderURL>
 
 <portlet:actionURL name="updateESFMatch" var="editESFMatchURL" />
+
+
+
+
+
 
 <aui:form action="<%=editESFMatchURL%>" name="fm">
 

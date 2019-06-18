@@ -100,6 +100,7 @@ public class ESFBrandLocalServiceClpInvoker {
 
 		_methodParameterTypes15 = new String[] { "it.ethica.esf.model.ESFBrand" };
 
+<<<<<<< HEAD
 		_methodName392 = "getBeanIdentifier";
 
 		_methodParameterTypes392 = new String[] {  };
@@ -115,20 +116,49 @@ public class ESFBrandLocalServiceClpInvoker {
 		_methodName399 = "addEsfBrand";
 
 		_methodParameterTypes399 = new String[] {
+=======
+		_methodName386 = "getBeanIdentifier";
+
+		_methodParameterTypes386 = new String[] {  };
+
+		_methodName387 = "setBeanIdentifier";
+
+		_methodParameterTypes387 = new String[] { "java.lang.String" };
+
+		_methodName392 = "findAll";
+
+		_methodParameterTypes392 = new String[] {  };
+
+		_methodName393 = "addEsfBrand";
+
+		_methodParameterTypes393 = new String[] {
+>>>>>>> origin/ID32
 				"java.lang.String", "java.lang.String",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
+<<<<<<< HEAD
 		_methodName400 = "updateEsfBrand";
 
 		_methodParameterTypes400 = new String[] {
+=======
+		_methodName394 = "updateEsfBrand";
+
+		_methodParameterTypes394 = new String[] {
+>>>>>>> origin/ID32
 				"long", "java.lang.String", "java.lang.String",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
+<<<<<<< HEAD
 		_methodName401 = "deleteEsfBrand";
 
 		_methodParameterTypes401 = new String[] {
+=======
+		_methodName395 = "deleteEsfBrand";
+
+		_methodParameterTypes395 = new String[] {
+>>>>>>> origin/ID32
 				"long", "com.liferay.portal.service.ServiceContext"
 			};
 	}
@@ -222,6 +252,7 @@ public class ESFBrandLocalServiceClpInvoker {
 			return ESFBrandLocalServiceUtil.updateESFBrand((it.ethica.esf.model.ESFBrand)arguments[0]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName392.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFBrandLocalServiceUtil.getBeanIdentifier();
@@ -229,11 +260,21 @@ public class ESFBrandLocalServiceClpInvoker {
 
 		if (_methodName393.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
+=======
+		if (_methodName386.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
+			return ESFBrandLocalServiceUtil.getBeanIdentifier();
+		}
+
+		if (_methodName387.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
+>>>>>>> origin/ID32
 			ESFBrandLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
+<<<<<<< HEAD
 		if (_methodName398.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
 			return ESFBrandLocalServiceUtil.findAll();
@@ -241,20 +282,39 @@ public class ESFBrandLocalServiceClpInvoker {
 
 		if (_methodName399.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes399, parameterTypes)) {
+=======
+		if (_methodName392.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
+			return ESFBrandLocalServiceUtil.findAll();
+		}
+
+		if (_methodName393.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFBrandLocalServiceUtil.addEsfBrand((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1],
 				(com.liferay.portal.service.ServiceContext)arguments[2]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName400.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes400, parameterTypes)) {
+=======
+		if (_methodName394.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFBrandLocalServiceUtil.updateEsfBrand(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(com.liferay.portal.service.ServiceContext)arguments[3]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName401.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes401, parameterTypes)) {
+=======
+		if (_methodName395.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFBrandLocalServiceUtil.deleteEsfBrand(((Long)arguments[0]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
@@ -294,10 +354,18 @@ public class ESFBrandLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
+<<<<<<< HEAD
+=======
+	private String _methodName386;
+	private String[] _methodParameterTypes386;
+	private String _methodName387;
+	private String[] _methodParameterTypes387;
+>>>>>>> origin/ID32
 	private String _methodName392;
 	private String[] _methodParameterTypes392;
 	private String _methodName393;
 	private String[] _methodParameterTypes393;
+<<<<<<< HEAD
 	private String _methodName398;
 	private String[] _methodParameterTypes398;
 	private String _methodName399;
@@ -306,4 +374,10 @@ public class ESFBrandLocalServiceClpInvoker {
 	private String[] _methodParameterTypes400;
 	private String _methodName401;
 	private String[] _methodParameterTypes401;
+=======
+	private String _methodName394;
+	private String[] _methodParameterTypes394;
+	private String _methodName395;
+	private String[] _methodParameterTypes395;
+>>>>>>> origin/ID32
 }

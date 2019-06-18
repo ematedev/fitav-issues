@@ -106,6 +106,7 @@ public class ESFFieldESFElectronicLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFFieldESFElectronic"
 			};
 
+<<<<<<< HEAD
 		_methodName392 = "getBeanIdentifier";
 
 		_methodParameterTypes392 = new String[] {  };
@@ -133,20 +134,61 @@ public class ESFFieldESFElectronicLocalServiceClpInvoker {
 		_methodName402 = "addESFFieldESFElectronic";
 
 		_methodParameterTypes402 = new String[] {
+=======
+		_methodName386 = "getBeanIdentifier";
+
+		_methodParameterTypes386 = new String[] {  };
+
+		_methodName387 = "setBeanIdentifier";
+
+		_methodParameterTypes387 = new String[] { "java.lang.String" };
+
+		_methodName392 = "findByFieldId";
+
+		_methodParameterTypes392 = new String[] { "long" };
+
+		_methodName393 = "findByBrandId";
+
+		_methodParameterTypes393 = new String[] { "long" };
+
+		_methodName394 = "findByFieldIdBrandIdElectronicId";
+
+		_methodParameterTypes394 = new String[] { "long", "long", "long" };
+
+		_methodName395 = "findByElectronicId";
+
+		_methodParameterTypes395 = new String[] { "long" };
+
+		_methodName396 = "addESFFieldESFElectronic";
+
+		_methodParameterTypes396 = new String[] {
+>>>>>>> origin/ID32
 				"long", "long", "long", "java.lang.String",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
+<<<<<<< HEAD
 		_methodName403 = "updateESFFieldESFElectronic";
 
 		_methodParameterTypes403 = new String[] {
+=======
+		_methodName397 = "updateESFFieldESFElectronic";
+
+		_methodParameterTypes397 = new String[] {
+>>>>>>> origin/ID32
 				"long", "long", "long", "long", "java.lang.String",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
+<<<<<<< HEAD
 		_methodName404 = "deleteESFFieldESFElectronic";
 
 		_methodParameterTypes404 = new String[] {
+=======
+		_methodName398 = "deleteESFFieldESFElectronic";
+
+		_methodParameterTypes398 = new String[] {
+>>>>>>> origin/ID32
 				"long", "com.liferay.portal.service.ServiceContext"
 			};
 	}
@@ -240,6 +282,7 @@ public class ESFFieldESFElectronicLocalServiceClpInvoker {
 			return ESFFieldESFElectronicLocalServiceUtil.updateESFFieldESFElectronic((it.ethica.esf.model.ESFFieldESFElectronic)arguments[0]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName392.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFFieldESFElectronicLocalServiceUtil.getBeanIdentifier();
@@ -247,11 +290,21 @@ public class ESFFieldESFElectronicLocalServiceClpInvoker {
 
 		if (_methodName393.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
+=======
+		if (_methodName386.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
+			return ESFFieldESFElectronicLocalServiceUtil.getBeanIdentifier();
+		}
+
+		if (_methodName387.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
+>>>>>>> origin/ID32
 			ESFFieldESFElectronicLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
+<<<<<<< HEAD
 		if (_methodName398.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
 			return ESFFieldESFElectronicLocalServiceUtil.findByFieldId(((Long)arguments[0]).longValue());
@@ -264,11 +317,26 @@ public class ESFFieldESFElectronicLocalServiceClpInvoker {
 
 		if (_methodName400.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes400, parameterTypes)) {
+=======
+		if (_methodName392.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
+			return ESFFieldESFElectronicLocalServiceUtil.findByFieldId(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName393.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
+			return ESFFieldESFElectronicLocalServiceUtil.findByBrandId(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName394.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFFieldESFElectronicLocalServiceUtil.findByFieldIdBrandIdElectronicId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName401.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes401, parameterTypes)) {
 			return ESFFieldESFElectronicLocalServiceUtil.findByElectronicId(((Long)arguments[0]).longValue());
@@ -276,6 +344,15 @@ public class ESFFieldESFElectronicLocalServiceClpInvoker {
 
 		if (_methodName402.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes402, parameterTypes)) {
+=======
+		if (_methodName395.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
+			return ESFFieldESFElectronicLocalServiceUtil.findByElectronicId(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName396.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFFieldESFElectronicLocalServiceUtil.addESFFieldESFElectronic(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -283,8 +360,13 @@ public class ESFFieldESFElectronicLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[4]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName403.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes403, parameterTypes)) {
+=======
+		if (_methodName397.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFFieldESFElectronicLocalServiceUtil.updateESFFieldESFElectronic(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -293,8 +375,13 @@ public class ESFFieldESFElectronicLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[5]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName404.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes404, parameterTypes)) {
+=======
+		if (_methodName398.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFFieldESFElectronicLocalServiceUtil.deleteESFFieldESFElectronic(((Long)arguments[0]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
@@ -334,10 +421,18 @@ public class ESFFieldESFElectronicLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
+<<<<<<< HEAD
+=======
+	private String _methodName386;
+	private String[] _methodParameterTypes386;
+	private String _methodName387;
+	private String[] _methodParameterTypes387;
+>>>>>>> origin/ID32
 	private String _methodName392;
 	private String[] _methodParameterTypes392;
 	private String _methodName393;
 	private String[] _methodParameterTypes393;
+<<<<<<< HEAD
 	private String _methodName398;
 	private String[] _methodParameterTypes398;
 	private String _methodName399;
@@ -352,4 +447,16 @@ public class ESFFieldESFElectronicLocalServiceClpInvoker {
 	private String[] _methodParameterTypes403;
 	private String _methodName404;
 	private String[] _methodParameterTypes404;
+=======
+	private String _methodName394;
+	private String[] _methodParameterTypes394;
+	private String _methodName395;
+	private String[] _methodParameterTypes395;
+	private String _methodName396;
+	private String[] _methodParameterTypes396;
+	private String _methodName397;
+	private String[] _methodParameterTypes397;
+	private String _methodName398;
+	private String[] _methodParameterTypes398;
+>>>>>>> origin/ID32
 }

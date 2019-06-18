@@ -114,6 +114,7 @@ public class ESFOrganizationLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFOrganization"
 			};
 
+<<<<<<< HEAD
 		_methodName410 = "getBeanIdentifier";
 
 		_methodParameterTypes410 = new String[] {  };
@@ -125,6 +126,19 @@ public class ESFOrganizationLocalServiceClpInvoker {
 		_methodName416 = "addESFOrganization";
 
 		_methodParameterTypes416 = new String[] {
+=======
+		_methodName404 = "getBeanIdentifier";
+
+		_methodParameterTypes404 = new String[] {  };
+
+		_methodName405 = "setBeanIdentifier";
+
+		_methodParameterTypes405 = new String[] { "java.lang.String" };
+
+		_methodName410 = "addESFOrganization";
+
+		_methodParameterTypes410 = new String[] {
+>>>>>>> origin/ID32
 				"long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.util.Date", "java.util.Date",
@@ -138,9 +152,15 @@ public class ESFOrganizationLocalServiceClpInvoker {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
+<<<<<<< HEAD
 		_methodName417 = "addESFOrganization";
 
 		_methodParameterTypes417 = new String[] {
+=======
+		_methodName411 = "addESFOrganization";
+
+		_methodParameterTypes411 = new String[] {
+>>>>>>> origin/ID32
 				"long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.util.Date", "java.util.Date", "java.util.Date",
@@ -153,9 +173,15 @@ public class ESFOrganizationLocalServiceClpInvoker {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
+<<<<<<< HEAD
 		_methodName418 = "updateESFOrganization";
 
 		_methodParameterTypes418 = new String[] {
+=======
+		_methodName412 = "updateESFOrganization";
+
+		_methodParameterTypes412 = new String[] {
+>>>>>>> origin/ID32
 				"long", "long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.util.Date", "java.util.Date",
@@ -168,9 +194,15 @@ public class ESFOrganizationLocalServiceClpInvoker {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
+<<<<<<< HEAD
 		_methodName419 = "updateESFOrganization";
 
 		_methodParameterTypes419 = new String[] {
+=======
+		_methodName413 = "updateESFOrganization";
+
+		_methodParameterTypes413 = new String[] {
+>>>>>>> origin/ID32
 				"long", "long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.util.Date", "java.util.Date", "java.util.Date",
@@ -182,6 +214,7 @@ public class ESFOrganizationLocalServiceClpInvoker {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
+<<<<<<< HEAD
 		_methodName420 = "findByGroupId";
 
 		_methodParameterTypes420 = new String[] { "long" };
@@ -225,10 +258,56 @@ public class ESFOrganizationLocalServiceClpInvoker {
 		_methodName429 = "findESFOrganizationsByT_C_N";
 
 		_methodParameterTypes429 = new String[] {
+=======
+		_methodName414 = "findByGroupId";
+
+		_methodParameterTypes414 = new String[] { "long" };
+
+		_methodName415 = "getByProvinceCode";
+
+		_methodParameterTypes415 = new String[] { "java.lang.String" };
+
+		_methodName416 = "findByGroupId";
+
+		_methodParameterTypes416 = new String[] { "long", "int", "int" };
+
+		_methodName417 = "findByCode";
+
+		_methodParameterTypes417 = new String[] { "java.lang.String" };
+
+		_methodName418 = "getRealOwner";
+
+		_methodParameterTypes418 = new String[] { "long", "long" };
+
+		_methodName419 = "findAllESFOrganizations";
+
+		_methodParameterTypes419 = new String[] { "long", "int" };
+
+		_methodName420 = "findESFOrganizationsByCode";
+
+		_methodParameterTypes420 = new String[] { "java.lang.String" };
+
+		_methodName421 = "findESFOrganizationsByT_C";
+
+		_methodParameterTypes421 = new String[] {
+				"long", "java.lang.String", "int"
+			};
+
+		_methodName422 = "findESFOrganizationsByT_C";
+
+		_methodParameterTypes422 = new String[] {
+				"long", "java.lang.String", "int", "int", "int"
+			};
+
+		_methodName423 = "findESFOrganizationsByT_C_N";
+
+		_methodParameterTypes423 = new String[] {
+>>>>>>> origin/ID32
 				"long", "java.lang.String", "java.lang.String", "int", "int",
 				"int"
 			};
 
+<<<<<<< HEAD
 		_methodName430 = "findESFOrganizationsByT_C_N";
 
 		_methodParameterTypes430 = new String[] {
@@ -268,10 +347,52 @@ public class ESFOrganizationLocalServiceClpInvoker {
 		_methodName437 = "findESFOrganizationsByO_T_C_N";
 
 		_methodParameterTypes437 = new String[] {
+=======
+		_methodName424 = "findESFOrganizationsByT_C_N";
+
+		_methodParameterTypes424 = new String[] {
+				"long", "java.lang.String", "java.lang.String", "int"
+			};
+
+		_methodName425 = "findESFOrganizationsByT_C";
+
+		_methodParameterTypes425 = new String[] { "long", "int" };
+
+		_methodName426 = "findESFOrganizationsByT_C";
+
+		_methodParameterTypes426 = new String[] { "long", "int", "int", "int" };
+
+		_methodName427 = "findESFOrganizationsByCode";
+
+		_methodParameterTypes427 = new String[] {
+				"long", "java.lang.String", "int"
+			};
+
+		_methodName428 = "findESFOrganizationsByCode";
+
+		_methodParameterTypes428 = new String[] {
+				"long", "java.lang.String", "int", "int", "int"
+			};
+
+		_methodName429 = "findESFOrganizationsByO_T";
+
+		_methodParameterTypes429 = new String[] { "long", "long" };
+
+		_methodName430 = "findESFOrganizationsByO_T_C_N";
+
+		_methodParameterTypes430 = new String[] {
+				"long", "long", "java.lang.String", "java.lang.String"
+			};
+
+		_methodName431 = "findESFOrganizationsByO_T_C_N";
+
+		_methodParameterTypes431 = new String[] {
+>>>>>>> origin/ID32
 				"long", "long", "java.lang.String", "java.lang.String", "int",
 				"int"
 			};
 
+<<<<<<< HEAD
 		_methodName438 = "getOrganizzationLeafByLikeN_C";
 
 		_methodParameterTypes438 = new String[] {
@@ -281,10 +402,22 @@ public class ESFOrganizationLocalServiceClpInvoker {
 		_methodName439 = "getOrganizzationLeafByLikeN_C";
 
 		_methodParameterTypes439 = new String[] {
+=======
+		_methodName432 = "getOrganizzationLeafByLikeN_C";
+
+		_methodParameterTypes432 = new String[] {
+				"java.lang.String", "java.lang.String", "long", "long"
+			};
+
+		_methodName433 = "getOrganizzationLeafByLikeN_C";
+
+		_methodParameterTypes433 = new String[] {
+>>>>>>> origin/ID32
 				"java.lang.String", "java.lang.String", "long", "long", "int",
 				"int"
 			};
 
+<<<<<<< HEAD
 		_methodName440 = "findAllLeafOrganizations";
 
 		_methodParameterTypes440 = new String[] { "long" };
@@ -394,17 +527,135 @@ public class ESFOrganizationLocalServiceClpInvoker {
 		_methodName467 = "findByT_C_N";
 
 		_methodParameterTypes467 = new String[] {
+=======
+		_methodName434 = "findAllLeafOrganizations";
+
+		_methodParameterTypes434 = new String[] { "long" };
+
+		_methodName435 = "findAllLeafOrganizations";
+
+		_methodParameterTypes435 = new String[] {
+				"long", "java.lang.String", "java.lang.String"
+			};
+
+		_methodName436 = "findAllOrganizationsIncrements";
+
+		_methodParameterTypes436 = new String[] {
+				"java.lang.String", "java.lang.String", "int", "int"
+			};
+
+		_methodName437 = "findAllOrganizationsIncrements";
+
+		_methodParameterTypes437 = new String[] {
+				"java.lang.String", "java.lang.String"
+			};
+
+		_methodName438 = "findAllLeafOrganizations";
+
+		_methodParameterTypes438 = new String[] { "long", "int", "int" };
+
+		_methodName439 = "findAllLeafOrganizations";
+
+		_methodParameterTypes439 = new String[] {
+				"long", "java.lang.String", "java.lang.String", "int", "int"
+			};
+
+		_methodName440 = "findAllLeafOrganizations";
+
+		_methodParameterTypes440 = new String[] { "long", "int" };
+
+		_methodName441 = "findAllLeafOrganizations";
+
+		_methodParameterTypes441 = new String[] { "long", "int", "int", "int" };
+
+		_methodName442 = "findAllChildOrganizations";
+
+		_methodParameterTypes442 = new String[] { "long" };
+
+		_methodName443 = "findAllChildOrganizations";
+
+		_methodParameterTypes443 = new String[] { "long", "int", "int" };
+
+		_methodName444 = "findAllChildOrganizations";
+
+		_methodParameterTypes444 = new String[] { "long", "int" };
+
+		_methodName445 = "findAllChildOrganizations";
+
+		_methodParameterTypes445 = new String[] { "long", "int", "int", "int" };
+
+		_methodName446 = "findByPaymentYear";
+
+		_methodParameterTypes446 = new String[] { "int", "int", "int" };
+
+		_methodName447 = "countByPaymentYear";
+
+		_methodParameterTypes447 = new String[] { "int" };
+
+		_methodName448 = "getAllEsfOrganizationByState";
+
+		_methodParameterTypes448 = new String[] { "int" };
+
+		_methodName449 = "getAllEsfOrganizationByState";
+
+		_methodParameterTypes449 = new String[] { "int", "int", "int" };
+
+		_methodName450 = "getAllEsfOrganizationDisabled";
+
+		_methodParameterTypes450 = new String[] {
+				"java.lang.String", "java.lang.String"
+			};
+
+		_methodName451 = "getAllEsfOrganizationDisabledStartEnd";
+
+		_methodParameterTypes451 = new String[] {
+				"java.lang.String", "java.lang.String", "int", "int"
+			};
+
+		_methodName452 = "deleteESFOrganization";
+
+		_methodParameterTypes452 = new String[] {
+				"long", "com.liferay.portal.service.ServiceContext"
+			};
+
+		_methodName453 = "updateESFOrganitazionESFCard";
+
+		_methodParameterTypes453 = new String[] { "long", "long" };
+
+		_methodName454 = "updateOnlyESFOrganitazionState";
+
+		_methodParameterTypes454 = new String[] {
+				"long", "com.liferay.portal.service.ServiceContext"
+			};
+
+		_methodName460 = "getNameT";
+
+		_methodParameterTypes460 = new String[] {
+				"it.ethica.esf.model.ESFOrganization"
+			};
+
+		_methodName461 = "findByT_C_N";
+
+		_methodParameterTypes461 = new String[] {
+>>>>>>> origin/ID32
 				"java.lang.Long", "java.lang.String", "java.lang.String",
 				"java.lang.Long", "int", "int"
 			};
 
+<<<<<<< HEAD
 		_methodName468 = "countByT_C_N";
 
 		_methodParameterTypes468 = new String[] {
+=======
+		_methodName462 = "countByT_C_N";
+
+		_methodParameterTypes462 = new String[] {
+>>>>>>> origin/ID32
 				"java.lang.Long", "java.lang.String", "java.lang.String",
 				"java.lang.Long"
 			};
 
+<<<<<<< HEAD
 		_methodName469 = "findAllAffilationConiReportAndArmy";
 
 		_methodParameterTypes469 = new String[] {  };
@@ -416,6 +667,19 @@ public class ESFOrganizationLocalServiceClpInvoker {
 		_methodName471 = "findByType";
 
 		_methodParameterTypes471 = new String[] { "int", "int", "int" };
+=======
+		_methodName463 = "findAllAffilationConiReportAndArmy";
+
+		_methodParameterTypes463 = new String[] {  };
+
+		_methodName464 = "findNewAffilationConiReportAndArmy";
+
+		_methodParameterTypes464 = new String[] { "int" };
+
+		_methodName465 = "findByType";
+
+		_methodParameterTypes465 = new String[] { "int", "int", "int" };
+>>>>>>> origin/ID32
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -519,6 +783,7 @@ public class ESFOrganizationLocalServiceClpInvoker {
 			return ESFOrganizationLocalServiceUtil.updateESFOrganization((it.ethica.esf.model.ESFOrganization)arguments[0]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName410.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes410, parameterTypes)) {
 			return ESFOrganizationLocalServiceUtil.getBeanIdentifier();
@@ -526,13 +791,27 @@ public class ESFOrganizationLocalServiceClpInvoker {
 
 		if (_methodName411.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes411, parameterTypes)) {
+=======
+		if (_methodName404.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes404, parameterTypes)) {
+			return ESFOrganizationLocalServiceUtil.getBeanIdentifier();
+		}
+
+		if (_methodName405.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes405, parameterTypes)) {
+>>>>>>> origin/ID32
 			ESFOrganizationLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
+<<<<<<< HEAD
 		if (_methodName416.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes416, parameterTypes)) {
+=======
+		if (_methodName410.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes410, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.addESFOrganization(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
@@ -565,8 +844,13 @@ public class ESFOrganizationLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[34]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName417.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes417, parameterTypes)) {
+=======
+		if (_methodName411.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes411, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.addESFOrganization(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
@@ -596,8 +880,13 @@ public class ESFOrganizationLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[31]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName418.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes418, parameterTypes)) {
+=======
+		if (_methodName412.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes412, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.updateESFOrganization(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -629,8 +918,13 @@ public class ESFOrganizationLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[33]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName419.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes419, parameterTypes)) {
+=======
+		if (_methodName413.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes413, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.updateESFOrganization(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -659,6 +953,7 @@ public class ESFOrganizationLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[30]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName420.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes420, parameterTypes)) {
 			return ESFOrganizationLocalServiceUtil.findByGroupId(((Long)arguments[0]).longValue());
@@ -671,11 +966,26 @@ public class ESFOrganizationLocalServiceClpInvoker {
 
 		if (_methodName422.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes422, parameterTypes)) {
+=======
+		if (_methodName414.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes414, parameterTypes)) {
+			return ESFOrganizationLocalServiceUtil.findByGroupId(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName415.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes415, parameterTypes)) {
+			return ESFOrganizationLocalServiceUtil.getByProvinceCode((java.lang.String)arguments[0]);
+		}
+
+		if (_methodName416.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes416, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findByGroupId(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName423.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes423, parameterTypes)) {
 			return ESFOrganizationLocalServiceUtil.findByCode((java.lang.String)arguments[0]);
@@ -683,16 +993,31 @@ public class ESFOrganizationLocalServiceClpInvoker {
 
 		if (_methodName424.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes424, parameterTypes)) {
+=======
+		if (_methodName417.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes417, parameterTypes)) {
+			return ESFOrganizationLocalServiceUtil.findByCode((java.lang.String)arguments[0]);
+		}
+
+		if (_methodName418.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes418, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.getRealOwner(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName425.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes425, parameterTypes)) {
+=======
+		if (_methodName419.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes419, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findAllESFOrganizations(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName426.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes426, parameterTypes)) {
 			return ESFOrganizationLocalServiceUtil.findESFOrganizationsByCode((java.lang.String)arguments[0]);
@@ -700,13 +1025,27 @@ public class ESFOrganizationLocalServiceClpInvoker {
 
 		if (_methodName427.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes427, parameterTypes)) {
+=======
+		if (_methodName420.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes420, parameterTypes)) {
+			return ESFOrganizationLocalServiceUtil.findESFOrganizationsByCode((java.lang.String)arguments[0]);
+		}
+
+		if (_methodName421.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes421, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findESFOrganizationsByT_C(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1],
 				((Integer)arguments[2]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName428.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes428, parameterTypes)) {
+=======
+		if (_methodName422.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes422, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findESFOrganizationsByT_C(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1],
 				((Integer)arguments[2]).intValue(),
@@ -714,8 +1053,13 @@ public class ESFOrganizationLocalServiceClpInvoker {
 				((Integer)arguments[4]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName429.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes429, parameterTypes)) {
+=======
+		if (_methodName423.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes423, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findESFOrganizationsByT_C_N(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Integer)arguments[3]).intValue(),
@@ -723,36 +1067,61 @@ public class ESFOrganizationLocalServiceClpInvoker {
 				((Integer)arguments[5]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName430.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes430, parameterTypes)) {
+=======
+		if (_methodName424.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes424, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findESFOrganizationsByT_C_N(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Integer)arguments[3]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName431.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes431, parameterTypes)) {
+=======
+		if (_methodName425.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes425, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findESFOrganizationsByT_C(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName432.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes432, parameterTypes)) {
+=======
+		if (_methodName426.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes426, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findESFOrganizationsByT_C(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName433.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes433, parameterTypes)) {
+=======
+		if (_methodName427.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes427, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findESFOrganizationsByCode(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1],
 				((Integer)arguments[2]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName434.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes434, parameterTypes)) {
+=======
+		if (_methodName428.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes428, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findESFOrganizationsByCode(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1],
 				((Integer)arguments[2]).intValue(),
@@ -760,21 +1129,36 @@ public class ESFOrganizationLocalServiceClpInvoker {
 				((Integer)arguments[4]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName435.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes435, parameterTypes)) {
+=======
+		if (_methodName429.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes429, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findESFOrganizationsByO_T(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName436.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes436, parameterTypes)) {
+=======
+		if (_methodName430.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes430, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findESFOrganizationsByO_T_C_N(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2], (java.lang.String)arguments[3]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName437.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes437, parameterTypes)) {
+=======
+		if (_methodName431.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes431, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findESFOrganizationsByO_T_C_N(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
@@ -782,16 +1166,26 @@ public class ESFOrganizationLocalServiceClpInvoker {
 				((Integer)arguments[5]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName438.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes438, parameterTypes)) {
+=======
+		if (_methodName432.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes432, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.getOrganizzationLeafByLikeN_C((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(),
 				((Long)arguments[3]).longValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName439.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes439, parameterTypes)) {
+=======
+		if (_methodName433.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes433, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.getOrganizzationLeafByLikeN_C((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(),
@@ -800,6 +1194,7 @@ public class ESFOrganizationLocalServiceClpInvoker {
 				((Integer)arguments[5]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName440.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes440, parameterTypes)) {
 			return ESFOrganizationLocalServiceUtil.findAllLeafOrganizations(((Long)arguments[0]).longValue());
@@ -807,53 +1202,93 @@ public class ESFOrganizationLocalServiceClpInvoker {
 
 		if (_methodName441.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes441, parameterTypes)) {
+=======
+		if (_methodName434.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes434, parameterTypes)) {
+			return ESFOrganizationLocalServiceUtil.findAllLeafOrganizations(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName435.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes435, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findAllLeafOrganizations(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName442.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes442, parameterTypes)) {
+=======
+		if (_methodName436.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes436, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findAllOrganizationsIncrements((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1],
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName443.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes443, parameterTypes)) {
+=======
+		if (_methodName437.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes437, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findAllOrganizationsIncrements((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName444.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes444, parameterTypes)) {
+=======
+		if (_methodName438.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes438, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findAllLeafOrganizations(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName445.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes445, parameterTypes)) {
+=======
+		if (_methodName439.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes439, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findAllLeafOrganizations(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Integer)arguments[3]).intValue(),
 				((Integer)arguments[4]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName446.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes446, parameterTypes)) {
+=======
+		if (_methodName440.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes440, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findAllLeafOrganizations(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName447.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes447, parameterTypes)) {
+=======
+		if (_methodName441.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes441, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findAllLeafOrganizations(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName448.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes448, parameterTypes)) {
 			return ESFOrganizationLocalServiceUtil.findAllChildOrganizations(((Long)arguments[0]).longValue());
@@ -861,32 +1296,57 @@ public class ESFOrganizationLocalServiceClpInvoker {
 
 		if (_methodName449.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes449, parameterTypes)) {
+=======
+		if (_methodName442.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes442, parameterTypes)) {
+			return ESFOrganizationLocalServiceUtil.findAllChildOrganizations(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName443.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes443, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findAllChildOrganizations(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName450.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes450, parameterTypes)) {
+=======
+		if (_methodName444.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes444, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findAllChildOrganizations(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName451.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes451, parameterTypes)) {
+=======
+		if (_methodName445.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes445, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findAllChildOrganizations(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName452.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes452, parameterTypes)) {
+=======
+		if (_methodName446.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes446, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findByPaymentYear(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName453.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes453, parameterTypes)) {
 			return ESFOrganizationLocalServiceUtil.countByPaymentYear(((Integer)arguments[0]).intValue());
@@ -899,47 +1359,87 @@ public class ESFOrganizationLocalServiceClpInvoker {
 
 		if (_methodName455.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes455, parameterTypes)) {
+=======
+		if (_methodName447.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes447, parameterTypes)) {
+			return ESFOrganizationLocalServiceUtil.countByPaymentYear(((Integer)arguments[0]).intValue());
+		}
+
+		if (_methodName448.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes448, parameterTypes)) {
+			return ESFOrganizationLocalServiceUtil.getAllEsfOrganizationByState(((Integer)arguments[0]).intValue());
+		}
+
+		if (_methodName449.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes449, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.getAllEsfOrganizationByState(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName456.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes456, parameterTypes)) {
+=======
+		if (_methodName450.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes450, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.getAllEsfOrganizationDisabled((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName457.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes457, parameterTypes)) {
+=======
+		if (_methodName451.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes451, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.getAllEsfOrganizationDisabledStartEnd((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1],
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName458.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes458, parameterTypes)) {
+=======
+		if (_methodName452.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes452, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.deleteESFOrganization(((Long)arguments[0]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName459.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes459, parameterTypes)) {
+=======
+		if (_methodName453.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes453, parameterTypes)) {
+>>>>>>> origin/ID32
 			ESFOrganizationLocalServiceUtil.updateESFOrganitazionESFCard(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 
 			return null;
 		}
 
+<<<<<<< HEAD
 		if (_methodName460.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes460, parameterTypes)) {
+=======
+		if (_methodName454.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes454, parameterTypes)) {
+>>>>>>> origin/ID32
 			ESFOrganizationLocalServiceUtil.updateOnlyESFOrganitazionState(((Long)arguments[0]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 
 			return null;
 		}
 
+<<<<<<< HEAD
 		if (_methodName466.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes466, parameterTypes)) {
 			return ESFOrganizationLocalServiceUtil.getNameT((it.ethica.esf.model.ESFOrganization)arguments[0]);
@@ -947,6 +1447,15 @@ public class ESFOrganizationLocalServiceClpInvoker {
 
 		if (_methodName467.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes467, parameterTypes)) {
+=======
+		if (_methodName460.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes460, parameterTypes)) {
+			return ESFOrganizationLocalServiceUtil.getNameT((it.ethica.esf.model.ESFOrganization)arguments[0]);
+		}
+
+		if (_methodName461.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes461, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findByT_C_N((java.lang.Long)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(java.lang.Long)arguments[3],
@@ -954,13 +1463,19 @@ public class ESFOrganizationLocalServiceClpInvoker {
 				((Integer)arguments[5]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName468.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes468, parameterTypes)) {
+=======
+		if (_methodName462.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes462, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.countByT_C_N((java.lang.Long)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				(java.lang.Long)arguments[3]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName469.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes469, parameterTypes)) {
 			return ESFOrganizationLocalServiceUtil.findAllAffilationConiReportAndArmy();
@@ -973,6 +1488,20 @@ public class ESFOrganizationLocalServiceClpInvoker {
 
 		if (_methodName471.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes471, parameterTypes)) {
+=======
+		if (_methodName463.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes463, parameterTypes)) {
+			return ESFOrganizationLocalServiceUtil.findAllAffilationConiReportAndArmy();
+		}
+
+		if (_methodName464.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes464, parameterTypes)) {
+			return ESFOrganizationLocalServiceUtil.findNewAffilationConiReportAndArmy(((Integer)arguments[0]).intValue());
+		}
+
+		if (_methodName465.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes465, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFOrganizationLocalServiceUtil.findByType(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
@@ -1017,6 +1546,13 @@ public class ESFOrganizationLocalServiceClpInvoker {
 	private String[] _methodParameterTypes16;
 	private String _methodName17;
 	private String[] _methodParameterTypes17;
+<<<<<<< HEAD
+=======
+	private String _methodName404;
+	private String[] _methodParameterTypes404;
+	private String _methodName405;
+	private String[] _methodParameterTypes405;
+>>>>>>> origin/ID32
 	private String _methodName410;
 	private String[] _methodParameterTypes410;
 	private String _methodName411;
@@ -1099,6 +1635,7 @@ public class ESFOrganizationLocalServiceClpInvoker {
 	private String[] _methodParameterTypes453;
 	private String _methodName454;
 	private String[] _methodParameterTypes454;
+<<<<<<< HEAD
 	private String _methodName455;
 	private String[] _methodParameterTypes455;
 	private String _methodName456;
@@ -1123,4 +1660,18 @@ public class ESFOrganizationLocalServiceClpInvoker {
 	private String[] _methodParameterTypes470;
 	private String _methodName471;
 	private String[] _methodParameterTypes471;
+=======
+	private String _methodName460;
+	private String[] _methodParameterTypes460;
+	private String _methodName461;
+	private String[] _methodParameterTypes461;
+	private String _methodName462;
+	private String[] _methodParameterTypes462;
+	private String _methodName463;
+	private String[] _methodParameterTypes463;
+	private String _methodName464;
+	private String[] _methodParameterTypes464;
+	private String _methodName465;
+	private String[] _methodParameterTypes465;
+>>>>>>> origin/ID32
 }

@@ -105,7 +105,6 @@ import it.ethica.esf.model.ESFUserESFUserRoleClp;
 import it.ethica.esf.model.ESFUserRoleClp;
 import it.ethica.esf.model.ESFgunUserClp;
 import it.ethica.esf.model.VW_DatiDrettoreTiroClp;
-import it.ethica.esf.model.VW_ESFIncarichiFederaliClp;
 import it.ethica.esf.model.VW_ESFListaIncarichiClp;
 
 import java.io.ObjectInputStream;
@@ -512,10 +511,6 @@ public class ClpSerializer {
 
 		if (oldModelClassName.equals(VW_DatiDrettoreTiroClp.class.getName())) {
 			return translateInputVW_DatiDrettoreTiro(oldModel);
-		}
-
-		if (oldModelClassName.equals(VW_ESFIncarichiFederaliClp.class.getName())) {
-			return translateInputVW_ESFIncarichiFederali(oldModel);
 		}
 
 		if (oldModelClassName.equals(VW_ESFListaIncarichiClp.class.getName())) {
@@ -1357,17 +1352,6 @@ public class ClpSerializer {
 		return newModel;
 	}
 
-	public static Object translateInputVW_ESFIncarichiFederali(
-		BaseModel<?> oldModel) {
-		VW_ESFIncarichiFederaliClp oldClpModel = (VW_ESFIncarichiFederaliClp)oldModel;
-
-		BaseModel<?> newModel = oldClpModel.getVW_ESFIncarichiFederaliRemoteModel();
-
-		newModel.setModelAttributes(oldClpModel.getModelAttributes());
-
-		return newModel;
-	}
-
 	public static Object translateInputVW_ESFListaIncarichi(
 		BaseModel<?> oldModel) {
 		VW_ESFListaIncarichiClp oldClpModel = (VW_ESFListaIncarichiClp)oldModel;
@@ -1460,11 +1444,19 @@ public class ClpSerializer {
 					"it.ethica.esf.model.impl.ESFDescriptionImpl")) {
 			return translateOutputESFDescription(oldModel);
 		}
+<<<<<<< HEAD
 
 		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFDocumentImpl")) {
 			return translateOutputESFDocument(oldModel);
 		}
 
+=======
+
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFDocumentImpl")) {
+			return translateOutputESFDocument(oldModel);
+		}
+
+>>>>>>> origin/ID32
 		if (oldModelClassName.equals(
 					"it.ethica.esf.model.impl.ESFDocumentTypeImpl")) {
 			return translateOutputESFDocumentType(oldModel);
@@ -1508,6 +1500,7 @@ public class ClpSerializer {
 					"it.ethica.esf.model.impl.ESFFieldESFSportTypeImpl")) {
 			return translateOutputESFFieldESFSportType(oldModel);
 		}
+<<<<<<< HEAD
 
 		if (oldModelClassName.equals(
 					"it.ethica.esf.model.impl.ESFFornitureImpl")) {
@@ -1769,12 +1762,273 @@ public class ClpSerializer {
 		if (oldModelClassName.equals(
 					"it.ethica.esf.model.impl.VW_ESFIncarichiFederaliImpl")) {
 			return translateOutputVW_ESFIncarichiFederali(oldModel);
+=======
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFFornitureImpl")) {
+			return translateOutputESFForniture(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFFornitureRelImpl")) {
+			return translateOutputESFFornitureRel(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFFornitureTypeImpl")) {
+			return translateOutputESFFornitureType(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFFornitureUserImpl")) {
+			return translateOutputESFFornitureUser(oldModel);
+		}
+
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFGunImpl")) {
+			return translateOutputESFGun(oldModel);
+		}
+
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFGunKindImpl")) {
+			return translateOutputESFGunKind(oldModel);
+		}
+
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFGunTypeImpl")) {
+			return translateOutputESFGunType(oldModel);
+		}
+
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFgunUserImpl")) {
+			return translateOutputESFgunUser(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFHistoricalAssociationImpl")) {
+			return translateOutputESFHistoricalAssociation(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFInstructsShootingDirectorImpl")) {
+			return translateOutputESFInstructsShootingDirector(oldModel);
+		}
+
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFJobImpl")) {
+			return translateOutputESFJob(oldModel);
+		}
+
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFJunioresImpl")) {
+			return translateOutputESFJuniores(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFLentFieldImpl")) {
+			return translateOutputESFLentField(oldModel);
+		}
+
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFMatchImpl")) {
+			return translateOutputESFMatch(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFMatchResultImpl")) {
+			return translateOutputESFMatchResult(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFMatchTypeImpl")) {
+			return translateOutputESFMatchType(oldModel);
+		}
+
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFNationalImpl")) {
+			return translateOutputESFNational(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFNationalDelegationImpl")) {
+			return translateOutputESFNationalDelegation(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFNationalMatchResultImpl")) {
+			return translateOutputESFNationalMatchResult(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFOrganizationImpl")) {
+			return translateOutputESFOrganization(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFOrganizationUnitserviceImpl")) {
+			return translateOutputESFOrganizationUnitservice(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFPartecipantImpl")) {
+			return translateOutputESFPartecipant(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFPartecipantInfoImpl")) {
+			return translateOutputESFPartecipantInfo(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFPartecipantTypeImpl")) {
+			return translateOutputESFPartecipantType(oldModel);
+		}
+
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFPhoneImpl")) {
+			return translateOutputESFPhone(oldModel);
+		}
+
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFProvinceImpl")) {
+			return translateOutputESFProvince(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFPublicAuthorityImpl")) {
+			return translateOutputESFPublicAuthority(oldModel);
+		}
+
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFRegionImpl")) {
+			return translateOutputESFRegion(oldModel);
+		}
+
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFRenewalImpl")) {
+			return translateOutputESFRenewal(oldModel);
+		}
+
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFResultImpl")) {
+			return translateOutputESFResult(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFShooterAffiliationChronoImpl")) {
+			return translateOutputESFShooterAffiliationChrono(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFShooterCategoryImpl")) {
+			return translateOutputESFShooterCategory(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFShooterCategoryESFMatchImpl")) {
+			return translateOutputESFShooterCategoryESFMatch(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFShooterCategoryESFTournamentImpl")) {
+			return translateOutputESFShooterCategoryESFTournament(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFShooterQualificationImpl")) {
+			return translateOutputESFShooterQualification(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFShooterQualificationESFMatchImpl")) {
+			return translateOutputESFShooterQualificationESFMatch(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFShooterQualificationESFTournamentImpl")) {
+			return translateOutputESFShooterQualificationESFTournament(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFShootingDirectorImpl")) {
+			return translateOutputESFShootingDirector(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFShootingDirectorQualificationImpl")) {
+			return translateOutputESFShootingDirectorQualification(oldModel);
+		}
+
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFSpecificImpl")) {
+			return translateOutputESFSpecific(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFSportTypeImpl")) {
+			return translateOutputESFSportType(oldModel);
+		}
+
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFStateImpl")) {
+			return translateOutputESFState(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFStateAssEntityImpl")) {
+			return translateOutputESFStateAssEntity(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFSuspensiveCodeImpl")) {
+			return translateOutputESFSuspensiveCode(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFSuspensiveShootingDirectorImpl")) {
+			return translateOutputESFSuspensiveShootingDirector(oldModel);
+		}
+
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFTeamImpl")) {
+			return translateOutputESFTeam(oldModel);
+>>>>>>> origin/ID32
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFTournamentImpl")) {
+			return translateOutputESFTournament(oldModel);
+		}
+<<<<<<< HEAD
+=======
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFTransitionImpl")) {
+			return translateOutputESFTransition(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFUnitserviceImpl")) {
+			return translateOutputESFUnitservice(oldModel);
+		}
+
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFUserImpl")) {
+			return translateOutputESFUser(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFUserCategoryImpl")) {
+			return translateOutputESFUserCategory(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFUserESFFederalRoleImpl")) {
+			return translateOutputESFUserESFFederalRole(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFUserESFUserRoleImpl")) {
+			return translateOutputESFUserESFUserRole(oldModel);
+		}
+
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFUserRoleImpl")) {
+			return translateOutputESFUserRole(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.VW_DatiDrettoreTiroImpl")) {
+			return translateOutputVW_DatiDrettoreTiro(oldModel);
 		}
 
 		if (oldModelClassName.equals(
 					"it.ethica.esf.model.impl.VW_ESFListaIncarichiImpl")) {
 			return translateOutputVW_ESFListaIncarichi(oldModel);
 		}
+>>>>>>> origin/ID32
 
 		return oldModel;
 	}
@@ -2250,11 +2504,6 @@ public class ClpSerializer {
 
 		if (className.equals("it.ethica.esf.NoSuchVW_DatiDrettoreTiroException")) {
 			return new it.ethica.esf.NoSuchVW_DatiDrettoreTiroException();
-		}
-
-		if (className.equals(
-					"it.ethica.esf.NoSuchVW_ESFIncarichiFederaliException")) {
-			return new it.ethica.esf.NoSuchVW_ESFIncarichiFederaliException();
 		}
 
 		if (className.equals(
@@ -3086,17 +3335,6 @@ public class ClpSerializer {
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
 		newModel.setVW_DatiDrettoreTiroRemoteModel(oldModel);
-
-		return newModel;
-	}
-
-	public static Object translateOutputVW_ESFIncarichiFederali(
-		BaseModel<?> oldModel) {
-		VW_ESFIncarichiFederaliClp newModel = new VW_ESFIncarichiFederaliClp();
-
-		newModel.setModelAttributes(oldModel.getModelAttributes());
-
-		newModel.setVW_ESFIncarichiFederaliRemoteModel(oldModel);
 
 		return newModel;
 	}

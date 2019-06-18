@@ -100,6 +100,7 @@ public class ESFCategoryLocalServiceClpInvoker {
 
 		_methodParameterTypes15 = new String[] { "it.ethica.esf.model.ESFCategory" };
 
+<<<<<<< HEAD
 		_methodName392 = "getBeanIdentifier";
 
 		_methodParameterTypes392 = new String[] {  };
@@ -121,6 +122,29 @@ public class ESFCategoryLocalServiceClpInvoker {
 		_methodName400 = "updateESFCategory";
 
 		_methodParameterTypes400 = new String[] {
+=======
+		_methodName386 = "getBeanIdentifier";
+
+		_methodParameterTypes386 = new String[] {  };
+
+		_methodName387 = "setBeanIdentifier";
+
+		_methodParameterTypes387 = new String[] { "java.lang.String" };
+
+		_methodName392 = "findMapLongIdCategory";
+
+		_methodParameterTypes392 = new String[] {  };
+
+		_methodName393 = "addESFCategory";
+
+		_methodParameterTypes393 = new String[] {
+				"java.lang.String", "java.lang.String"
+			};
+
+		_methodName394 = "updateESFCategory";
+
+		_methodParameterTypes394 = new String[] {
+>>>>>>> origin/ID32
 				"long", "java.lang.String", "java.lang.String"
 			};
 	}
@@ -214,6 +238,7 @@ public class ESFCategoryLocalServiceClpInvoker {
 			return ESFCategoryLocalServiceUtil.updateESFCategory((it.ethica.esf.model.ESFCategory)arguments[0]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName392.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFCategoryLocalServiceUtil.getBeanIdentifier();
@@ -221,11 +246,21 @@ public class ESFCategoryLocalServiceClpInvoker {
 
 		if (_methodName393.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
+=======
+		if (_methodName386.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
+			return ESFCategoryLocalServiceUtil.getBeanIdentifier();
+		}
+
+		if (_methodName387.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
+>>>>>>> origin/ID32
 			ESFCategoryLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
+<<<<<<< HEAD
 		if (_methodName398.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
 			return ESFCategoryLocalServiceUtil.findMapLongIdCategory();
@@ -233,12 +268,26 @@ public class ESFCategoryLocalServiceClpInvoker {
 
 		if (_methodName399.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes399, parameterTypes)) {
+=======
+		if (_methodName392.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
+			return ESFCategoryLocalServiceUtil.findMapLongIdCategory();
+		}
+
+		if (_methodName393.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFCategoryLocalServiceUtil.addESFCategory((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName400.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes400, parameterTypes)) {
+=======
+		if (_methodName394.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFCategoryLocalServiceUtil.updateESFCategory(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2]);
 		}
@@ -278,14 +327,26 @@ public class ESFCategoryLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
+<<<<<<< HEAD
+=======
+	private String _methodName386;
+	private String[] _methodParameterTypes386;
+	private String _methodName387;
+	private String[] _methodParameterTypes387;
+>>>>>>> origin/ID32
 	private String _methodName392;
 	private String[] _methodParameterTypes392;
 	private String _methodName393;
 	private String[] _methodParameterTypes393;
+<<<<<<< HEAD
 	private String _methodName398;
 	private String[] _methodParameterTypes398;
 	private String _methodName399;
 	private String[] _methodParameterTypes399;
 	private String _methodName400;
 	private String[] _methodParameterTypes400;
+=======
+	private String _methodName394;
+	private String[] _methodParameterTypes394;
+>>>>>>> origin/ID32
 }

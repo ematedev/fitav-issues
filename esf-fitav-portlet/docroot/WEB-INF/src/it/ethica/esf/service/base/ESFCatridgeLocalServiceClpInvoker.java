@@ -100,6 +100,7 @@ public class ESFCatridgeLocalServiceClpInvoker {
 
 		_methodParameterTypes15 = new String[] { "it.ethica.esf.model.ESFCatridge" };
 
+<<<<<<< HEAD
 		_methodName392 = "getBeanIdentifier";
 
 		_methodParameterTypes392 = new String[] {  };
@@ -135,17 +136,61 @@ public class ESFCatridgeLocalServiceClpInvoker {
 		_methodName404 = "addESFCatridge";
 
 		_methodParameterTypes404 = new String[] {
+=======
+		_methodName386 = "getBeanIdentifier";
+
+		_methodParameterTypes386 = new String[] {  };
+
+		_methodName387 = "setBeanIdentifier";
+
+		_methodParameterTypes387 = new String[] { "java.lang.String" };
+
+		_methodName392 = "getESFCatridgesByUserId";
+
+		_methodParameterTypes392 = new String[] { "long" };
+
+		_methodName393 = "getESFCatridgesByUserId";
+
+		_methodParameterTypes393 = new String[] { "long", "int", "int" };
+
+		_methodName394 = "getESFCatridgesByType";
+
+		_methodParameterTypes394 = new String[] { "long", "int", "int" };
+
+		_methodName395 = "countESFCatridgesByType";
+
+		_methodParameterTypes395 = new String[] { "long" };
+
+		_methodName396 = "getESFCatridges";
+
+		_methodParameterTypes396 = new String[] {  };
+
+		_methodName397 = "getESFCatridges";
+
+		_methodParameterTypes397 = new String[] { "int", "int" };
+
+		_methodName398 = "addESFCatridge";
+
+		_methodParameterTypes398 = new String[] {
+>>>>>>> origin/ID32
 				"long", "long", "long", "java.lang.String", "long",
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 
+<<<<<<< HEAD
 		_methodName405 = "updateESFCatridge";
 
 		_methodParameterTypes405 = new String[] {
+=======
+		_methodName399 = "updateESFCatridge";
+
+		_methodParameterTypes399 = new String[] {
+>>>>>>> origin/ID32
 				"long", "long", "long", "long", "java.lang.String", "long",
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 
+<<<<<<< HEAD
 		_methodName406 = "deleteESFCatridge";
 
 		_methodParameterTypes406 = new String[] {
@@ -155,6 +200,17 @@ public class ESFCatridgeLocalServiceClpInvoker {
 		_methodName407 = "getNameM";
 
 		_methodParameterTypes407 = new String[] {
+=======
+		_methodName400 = "deleteESFCatridge";
+
+		_methodParameterTypes400 = new String[] {
+				"long", "com.liferay.portal.service.ServiceContext"
+			};
+
+		_methodName401 = "getNameM";
+
+		_methodParameterTypes401 = new String[] {
+>>>>>>> origin/ID32
 				"it.ethica.esf.model.ESFCatridge"
 			};
 	}
@@ -248,6 +304,7 @@ public class ESFCatridgeLocalServiceClpInvoker {
 			return ESFCatridgeLocalServiceUtil.updateESFCatridge((it.ethica.esf.model.ESFCatridge)arguments[0]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName392.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFCatridgeLocalServiceUtil.getBeanIdentifier();
@@ -255,11 +312,21 @@ public class ESFCatridgeLocalServiceClpInvoker {
 
 		if (_methodName393.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
+=======
+		if (_methodName386.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
+			return ESFCatridgeLocalServiceUtil.getBeanIdentifier();
+		}
+
+		if (_methodName387.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
+>>>>>>> origin/ID32
 			ESFCatridgeLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
+<<<<<<< HEAD
 		if (_methodName398.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
 			return ESFCatridgeLocalServiceUtil.getESFCatridgesByUserId(((Long)arguments[0]).longValue());
@@ -267,18 +334,33 @@ public class ESFCatridgeLocalServiceClpInvoker {
 
 		if (_methodName399.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes399, parameterTypes)) {
+=======
+		if (_methodName392.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
+			return ESFCatridgeLocalServiceUtil.getESFCatridgesByUserId(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName393.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFCatridgeLocalServiceUtil.getESFCatridgesByUserId(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName400.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes400, parameterTypes)) {
+=======
+		if (_methodName394.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFCatridgeLocalServiceUtil.getESFCatridgesByType(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName401.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes401, parameterTypes)) {
 			return ESFCatridgeLocalServiceUtil.countESFCatridgesByType(((Long)arguments[0]).longValue());
@@ -291,12 +373,31 @@ public class ESFCatridgeLocalServiceClpInvoker {
 
 		if (_methodName403.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes403, parameterTypes)) {
+=======
+		if (_methodName395.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
+			return ESFCatridgeLocalServiceUtil.countESFCatridgesByType(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName396.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
+			return ESFCatridgeLocalServiceUtil.getESFCatridges();
+		}
+
+		if (_methodName397.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFCatridgeLocalServiceUtil.getESFCatridges(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
+<<<<<<< HEAD
 		if (_methodName404.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes404, parameterTypes)) {
+=======
+		if (_methodName398.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFCatridgeLocalServiceUtil.addESFCatridge(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -306,8 +407,13 @@ public class ESFCatridgeLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[6]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName405.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes405, parameterTypes)) {
+=======
+		if (_methodName399.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes399, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFCatridgeLocalServiceUtil.updateESFCatridge(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -318,14 +424,24 @@ public class ESFCatridgeLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[7]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName406.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes406, parameterTypes)) {
+=======
+		if (_methodName400.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes400, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFCatridgeLocalServiceUtil.deleteESFCatridge(((Long)arguments[0]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName407.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes407, parameterTypes)) {
+=======
+		if (_methodName401.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes401, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFCatridgeLocalServiceUtil.getNameM((it.ethica.esf.model.ESFCatridge)arguments[0]);
 		}
 
@@ -364,6 +480,13 @@ public class ESFCatridgeLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
+<<<<<<< HEAD
+=======
+	private String _methodName386;
+	private String[] _methodParameterTypes386;
+	private String _methodName387;
+	private String[] _methodParameterTypes387;
+>>>>>>> origin/ID32
 	private String _methodName392;
 	private String[] _methodParameterTypes392;
 	private String _methodName393;
@@ -376,6 +499,7 @@ public class ESFCatridgeLocalServiceClpInvoker {
 	private String[] _methodParameterTypes400;
 	private String _methodName401;
 	private String[] _methodParameterTypes401;
+<<<<<<< HEAD
 	private String _methodName402;
 	private String[] _methodParameterTypes402;
 	private String _methodName403;
@@ -388,4 +512,6 @@ public class ESFCatridgeLocalServiceClpInvoker {
 	private String[] _methodParameterTypes406;
 	private String _methodName407;
 	private String[] _methodParameterTypes407;
+=======
+>>>>>>> origin/ID32
 }

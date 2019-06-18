@@ -114,6 +114,7 @@ public class ESFFornitureRelLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFFornitureRel"
 			};
 
+<<<<<<< HEAD
 		_methodName402 = "getBeanIdentifier";
 
 		_methodParameterTypes402 = new String[] {  };
@@ -121,6 +122,15 @@ public class ESFFornitureRelLocalServiceClpInvoker {
 		_methodName403 = "setBeanIdentifier";
 
 		_methodParameterTypes403 = new String[] { "java.lang.String" };
+=======
+		_methodName396 = "getBeanIdentifier";
+
+		_methodParameterTypes396 = new String[] {  };
+
+		_methodName397 = "setBeanIdentifier";
+
+		_methodParameterTypes397 = new String[] { "java.lang.String" };
+>>>>>>> origin/ID32
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -212,6 +222,7 @@ public class ESFFornitureRelLocalServiceClpInvoker {
 			return ESFFornitureRelLocalServiceUtil.updateESFFornitureRel((it.ethica.esf.model.ESFFornitureRel)arguments[0]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName402.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes402, parameterTypes)) {
 			return ESFFornitureRelLocalServiceUtil.getBeanIdentifier();
@@ -219,6 +230,15 @@ public class ESFFornitureRelLocalServiceClpInvoker {
 
 		if (_methodName403.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes403, parameterTypes)) {
+=======
+		if (_methodName396.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
+			return ESFFornitureRelLocalServiceUtil.getBeanIdentifier();
+		}
+
+		if (_methodName397.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
+>>>>>>> origin/ID32
 			ESFFornitureRelLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
@@ -259,8 +279,15 @@ public class ESFFornitureRelLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
+<<<<<<< HEAD
 	private String _methodName402;
 	private String[] _methodParameterTypes402;
 	private String _methodName403;
 	private String[] _methodParameterTypes403;
+=======
+	private String _methodName396;
+	private String[] _methodParameterTypes396;
+	private String _methodName397;
+	private String[] _methodParameterTypes397;
+>>>>>>> origin/ID32
 }

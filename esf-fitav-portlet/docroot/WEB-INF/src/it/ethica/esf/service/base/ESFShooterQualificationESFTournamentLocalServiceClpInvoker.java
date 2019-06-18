@@ -122,6 +122,7 @@ public class ESFShooterQualificationESFTournamentLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFShooterQualificationESFTournament"
 			};
 
+<<<<<<< HEAD
 		_methodName394 = "getBeanIdentifier";
 
 		_methodParameterTypes394 = new String[] {  };
@@ -129,6 +130,15 @@ public class ESFShooterQualificationESFTournamentLocalServiceClpInvoker {
 		_methodName395 = "setBeanIdentifier";
 
 		_methodParameterTypes395 = new String[] { "java.lang.String" };
+=======
+		_methodName388 = "getBeanIdentifier";
+
+		_methodParameterTypes388 = new String[] {  };
+
+		_methodName389 = "setBeanIdentifier";
+
+		_methodParameterTypes389 = new String[] { "java.lang.String" };
+>>>>>>> origin/ID32
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -232,6 +242,7 @@ public class ESFShooterQualificationESFTournamentLocalServiceClpInvoker {
 			return ESFShooterQualificationESFTournamentLocalServiceUtil.updateESFShooterQualificationESFTournament((it.ethica.esf.model.ESFShooterQualificationESFTournament)arguments[0]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName394.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
 			return ESFShooterQualificationESFTournamentLocalServiceUtil.getBeanIdentifier();
@@ -239,6 +250,15 @@ public class ESFShooterQualificationESFTournamentLocalServiceClpInvoker {
 
 		if (_methodName395.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
+=======
+		if (_methodName388.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes388, parameterTypes)) {
+			return ESFShooterQualificationESFTournamentLocalServiceUtil.getBeanIdentifier();
+		}
+
+		if (_methodName389.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes389, parameterTypes)) {
+>>>>>>> origin/ID32
 			ESFShooterQualificationESFTournamentLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
@@ -283,8 +303,15 @@ public class ESFShooterQualificationESFTournamentLocalServiceClpInvoker {
 	private String[] _methodParameterTypes16;
 	private String _methodName17;
 	private String[] _methodParameterTypes17;
+<<<<<<< HEAD
 	private String _methodName394;
 	private String[] _methodParameterTypes394;
 	private String _methodName395;
 	private String[] _methodParameterTypes395;
+=======
+	private String _methodName388;
+	private String[] _methodParameterTypes388;
+	private String _methodName389;
+	private String[] _methodParameterTypes389;
+>>>>>>> origin/ID32
 }

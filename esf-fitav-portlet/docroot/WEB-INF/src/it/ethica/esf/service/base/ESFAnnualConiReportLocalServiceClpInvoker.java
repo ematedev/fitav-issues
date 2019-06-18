@@ -106,6 +106,7 @@ public class ESFAnnualConiReportLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFAnnualConiReport"
 			};
 
+<<<<<<< HEAD
 		_methodName392 = "getBeanIdentifier";
 
 		_methodParameterTypes392 = new String[] {  };
@@ -117,6 +118,19 @@ public class ESFAnnualConiReportLocalServiceClpInvoker {
 		_methodName398 = "findAffiliationByYear";
 
 		_methodParameterTypes398 = new String[] { "long", "int" };
+=======
+		_methodName386 = "getBeanIdentifier";
+
+		_methodParameterTypes386 = new String[] {  };
+
+		_methodName387 = "setBeanIdentifier";
+
+		_methodParameterTypes387 = new String[] { "java.lang.String" };
+
+		_methodName392 = "findAffiliationByYear";
+
+		_methodParameterTypes392 = new String[] { "long", "int" };
+>>>>>>> origin/ID32
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -208,6 +222,7 @@ public class ESFAnnualConiReportLocalServiceClpInvoker {
 			return ESFAnnualConiReportLocalServiceUtil.updateESFAnnualConiReport((it.ethica.esf.model.ESFAnnualConiReport)arguments[0]);
 		}
 
+<<<<<<< HEAD
 		if (_methodName392.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
 			return ESFAnnualConiReportLocalServiceUtil.getBeanIdentifier();
@@ -215,13 +230,27 @@ public class ESFAnnualConiReportLocalServiceClpInvoker {
 
 		if (_methodName393.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes393, parameterTypes)) {
+=======
+		if (_methodName386.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes386, parameterTypes)) {
+			return ESFAnnualConiReportLocalServiceUtil.getBeanIdentifier();
+		}
+
+		if (_methodName387.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes387, parameterTypes)) {
+>>>>>>> origin/ID32
 			ESFAnnualConiReportLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
+<<<<<<< HEAD
 		if (_methodName398.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes398, parameterTypes)) {
+=======
+		if (_methodName392.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes392, parameterTypes)) {
+>>>>>>> origin/ID32
 			return ESFAnnualConiReportLocalServiceUtil.findAffiliationByYear(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue());
 		}
@@ -261,10 +290,19 @@ public class ESFAnnualConiReportLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
+<<<<<<< HEAD
 	private String _methodName392;
 	private String[] _methodParameterTypes392;
 	private String _methodName393;
 	private String[] _methodParameterTypes393;
 	private String _methodName398;
 	private String[] _methodParameterTypes398;
+=======
+	private String _methodName386;
+	private String[] _methodParameterTypes386;
+	private String _methodName387;
+	private String[] _methodParameterTypes387;
+	private String _methodName392;
+	private String[] _methodParameterTypes392;
+>>>>>>> origin/ID32
 }
