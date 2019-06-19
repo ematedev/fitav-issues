@@ -1749,10 +1749,6 @@
 			<value>/html/esfshootingdirector/view.jsp</value>
 		</init-param>
 		<init-param>
-        	<name>add-process-action-success-action</name>
-        	<value>false</value>
-    	</init-param>
-		<init-param>
 		<name>template-path</name>
 			<value>/html/esfshootingdirector/</value>
 		</init-param>

@@ -244,9 +244,6 @@ public interface ESFUserLocalService extends BaseLocalService,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
 
-	public java.util.List<java.lang.Object[]> findTiratoriTesserati(
-		int inizio, int fine);
-
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List<it.ethica.esf.model.ESFUser> getESFUsersByDeparture(
 		long esfDepartureId);

@@ -9,10 +9,10 @@ ResultRow row = (ResultRow) request.getAttribute(WebKeys.SEARCH_CONTAINER_RESULT
 
 VW_NomineDirettoriTiro direttore = (VW_NomineDirettoriTiro)row.getObject();
 
+//Da implementare l'user id sulla vista
 long esfUserId = direttore.getUserId();
 
 %>
-
 <liferay-ui:icon-menu>
 
 	<portlet:renderURL var="editURL">
@@ -35,7 +35,7 @@ long esfUserId = direttore.getUserId();
 	
 	<portlet:actionURL name="deleteESFShdr" var="deleteURL">
 			<portlet:param name="shDrId"
-				value="<%=String.valueOf(direttore.getIdDirettoreTiro())%>" />
+				value="<%=String.valueOf(direttore.getIdDirettoreTiro()) %>" />
 	</portlet:actionURL>
 		
 	<liferay-ui:icon-delete url="<%=deleteURL.toString()%>" confirmation="delete_confirm"/>

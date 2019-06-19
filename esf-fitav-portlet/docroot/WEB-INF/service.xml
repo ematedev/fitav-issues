@@ -2609,6 +2609,9 @@
         <column name="Qualifica" type="String" primary="true"></column>
         <column name="Specialita" type="String" primary="true"></column>
         <column name="DataAssegnazione" type="Date" primary="true"></column>
+        <order>
+            <order-column name="Nome" case-sensitive="false" order-by="desc"></order-column>
+        </order>
     </entity>
 	
 	<exceptions>

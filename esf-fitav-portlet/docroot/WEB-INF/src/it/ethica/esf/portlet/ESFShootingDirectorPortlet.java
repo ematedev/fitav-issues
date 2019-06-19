@@ -38,8 +38,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
+import java.util.Enumeration;
 import java.util.List;
 
 import javax.portlet.ActionRequest;
@@ -49,6 +51,10 @@ import javax.portlet.ProcessAction;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 
+import org.apache.commons.beanutils.BeanComparator;
+import org.apache.commons.beanutils.BeanUtils;
+
+import com.itextpdf.text.pdf.parser.RegionTextRenderFilter;
 import com.liferay.counter.service.CounterLocalServiceUtil;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
 import com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil;
@@ -71,6 +77,7 @@ import com.liferay.portal.service.ServiceContext;
 import com.liferay.portal.service.ServiceContextFactory;
 import com.liferay.portal.theme.ThemeDisplay;
 import com.liferay.portal.util.PortalUtil;
+import com.liferay.util.BeanParamUtil;
 import com.liferay.util.bridges.mvc.MVCPortlet;
 import com.microsoft.schemas.office.office.PreferrelativeAttribute;
 
@@ -89,21 +96,21 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 		String cognome = ParamUtil.getString(request, "lastname", "");
 		String nome = ParamUtil.getString(request, "firstname", "");
 		String tessera = ParamUtil.getString(request, "card", "");
-		String regione = ParamUtil.getString(request, "regionId", "");
+		String regione = ParamUtil.getString(request, "regionId");
 		Long idQualifica = ParamUtil.getLong(request, "qualifica", 0);
 		Long idSpecialita = ParamUtil.getLong(request, "specialita", 0);
 		int delta = ParamUtil.getInteger(request, "delta", 0);
 		int paginaRicercaCorrente = ParamUtil.getInteger(request, "cur", 0); 
 		
 		//DA CANCELLARE
-		System.out.printf("[%s]\n", cognome);
-		System.out.printf("[%s]\n", nome);
-		System.out.printf("[%s]\n", tessera);
-		System.out.printf("[%s]\n", regione);
-		System.out.printf("[%s]\n", idQualifica);
-		System.out.printf("[%s]\n", idSpecialita);
-		System.out.printf("[%s]\n", delta);
-		System.out.printf("[%s]\n", paginaRicercaCorrente);
+		System.out.printf("Cognome: [%s]\n", cognome);
+		System.out.printf("Nome: [%s]\n", nome);
+		System.out.printf("Tessera: [%s]\n", tessera);
+		System.out.printf("Regione: [%s]\n", regione);
+		System.out.printf("IdQualifica: [%s]\n", idQualifica);
+		System.out.printf("IdSpecialista: [%s]\n", idSpecialita);
+		System.out.printf("Delta: [%s]\n", delta);
+		System.out.printf("Pagina corrente: [%s]\n", paginaRicercaCorrente);
 		
 		try {
 			
@@ -114,27 +121,53 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 			DynamicQuery dq = DynamicQueryFactoryUtil.forClass(VW_NomineDirettoriTiro.class, "Direttori", PortletClassLoaderUtil.getClassLoader());
 			
 			//Restringo la ricerca se vengono valorizzati i campi
-			if(!cognome.isEmpty()) { dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.Cognome", cognome)); }
-			if(!nome.isEmpty()) { dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.Nome", nome)); } 
-			if(!tessera.isEmpty()) { dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.CodiceTessera", tessera)); }
-			if(!regione.isEmpty()) { dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.Regione", regione)); }
+			if(!cognome.isEmpty()) { 
+				dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.Cognome", cognome)); 
+				System.out.println("Entrato in cognome");
+			}
+			if(!nome.isEmpty()) { 
+				dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.Nome", nome)); 
+				System.out.println("Entrato in nome");
+			} 
+			if(!tessera.isEmpty()) { 
+				dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.CodiceTessera", tessera)); 
+				System.out.println("Entrato in tessera");
+			} 
+			if(!regione.equals("0")) { 
+				dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.Regione", regione)); 
+				System.out.println("Entrato in regione");
+			}
 			if(idQualifica != 0) { 
 				ESFShootingDirectorQualification qualificaDirettore = 
 						ESFShootingDirectorQualificationLocalServiceUtil.getESFShootingDirectorQualification(idQualifica);
 				String qualifica = qualificaDirettore.getEsfShootingDirectorQualificationDesc();
 				dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.Qualifica", qualifica)); 
+			
+				//DA LEVARE
+				System.out.printf("Qualifica nome: [%s]\n", qualifica);
 			}
 			if(idSpecialita != 0) { 
 				ESFSportType tipoSport = ESFSportTypeLocalServiceUtil.getESFSportType(idSpecialita);
 				String specialita = tipoSport.getName();
-				dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.Specialita", specialita));  
+				dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.Specialita", specialita)); 
+				
+				//DA LEVARE
+				System.out.printf("Specialita nome: [%s]\n", specialita);
 			}
 		
 			//Eseguo la query
-			listaNomine = VW_DatiDrettoreTiroLocalServiceUtil.dynamicQuery(dq);
-			listaNomine = ListUtil.sort(listaNomine, new CompareByDate());
+			listaNomine = VW_DatiDrettoreTiroLocalServiceUtil.dynamicQuery(dq); 
+			
+			//Ordino la lista
+			List<VW_NomineDirettoriTiro> listaModificabile = new ArrayList<>(listaNomine);
+			Collections.sort(listaModificabile, new CompareByData());
+			
 			//Valorizzo i campi e ritorno alla pagina 
-			request.setAttribute("listaNomine", listaNomine);
+			request.setAttribute("listaNomine", listaModificabile);  
+			
+			//DA CANCELLARE
+			System.out.printf("Elementi nella lista: [%s]\n", listaNomine.size());
+			System.out.printf("Elementi nella lista modificabile: [%s]\n", listaModificabile.size());
 			
 			//Se c'è bisogno valorizzare i campi del search container
 			if(delta != 0) { response.setRenderParameter("delta", String.valueOf(delta)); }
@@ -734,22 +767,6 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 
 		response.setRenderParameter("esfUserId", String.valueOf(esfUserId));
 		response.setRenderParameter("mvcPath", "/html/esfshootingdirector/convocations.jsp");
-		
-	}
-	
-	
-	/**
-	 * Classe con interfaccia comparator per il sort di liste di tipo 
-	 * VW_NomineDirettoriTiro per data
-	 * @author fitav
-	 *
-	 */
-	private class CompareByDate implements Comparator<VW_NomineDirettoriTiro> {
-
-		@Override
-		public int compare(VW_NomineDirettoriTiro o1, VW_NomineDirettoriTiro o2) {
-			return o1.getDataAssegnazione().compareTo(o2.getDataAssegnazione());
-		}
 		
 	}
 	

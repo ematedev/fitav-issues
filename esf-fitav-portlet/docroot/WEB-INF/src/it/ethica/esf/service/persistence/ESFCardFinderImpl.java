@@ -363,7 +363,6 @@ public class ESFCardFinderImpl extends BasePersistenceImpl<ESFCard> implements E
 	public static final String FIND_CARD_FREE = ESFCardFinder.class.getName() + ".findCardByOrganizationIdFree";
 	public static final String FIND_FREE_CARD = ESFCardFinder.class.getName() + ".findFreeCards";
 	public static final String FIND_ACTUAL_USER_CARDS = ESFCardFinder.class.getName() + ".findActualUserCards";
-	//public static final String FIND_ACTUAL_USER_CARDS = ESFCardFinder.class.getName() + ".findTiratoriTesserati";
 	public static final String FIND_CARDS_BY_ORG_ID = ESFCardFinder.class.getName() + ".findCardByOrgId";
 	public static final String FIND_SHOOTER_BY_CARD_ACTIVE_IN_MATCH = ESFCardFinder.class.getName() + ".findShooterByCardActiveInMatch";
 }

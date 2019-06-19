@@ -1284,14 +1284,3 @@ create table vw_nominedirettoritiro (
 	DataAssegnazione DATE not null,
 	primary key (UserId, IdDirettoreTiro, Nome, Cognome, CodiceTessera, Regione, Qualifica, Specialita, DataAssegnazione)
 );
-
-create table vw_tiratoritesserati (
-	UserId INTEGER not null,
-	CodiceTessera VARCHAR(75) not null,
-	CodiceOrganizzazione VARCHAR(75) not null,
-	Nome VARCHAR(75) not null,
-	Cognome VARCHAR(75) not null,
-	Email VARCHAR(75) not null,
-	CF VARCHAR(75) not null,
-	primary key (UserId, CodiceTessera, CodiceOrganizzazione, Nome, Cognome, Email, CF)
-);

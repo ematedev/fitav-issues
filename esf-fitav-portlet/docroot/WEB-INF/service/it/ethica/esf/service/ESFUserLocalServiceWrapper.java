@@ -280,12 +280,6 @@ public class ESFUserLocalServiceWrapper implements ESFUserLocalService,
 	}
 
 	@Override
-	public java.util.List<java.lang.Object[]> findTiratoriTesserati(
-		int inizio, int fine) {
-		return _esfUserLocalService.findTiratoriTesserati(inizio, fine);
-	}
-
-	@Override
 	public java.util.List<it.ethica.esf.model.ESFUser> getESFUsersByDeparture(
 		long esfDepartureId) {
 		return _esfUserLocalService.getESFUsersByDeparture(esfDepartureId);

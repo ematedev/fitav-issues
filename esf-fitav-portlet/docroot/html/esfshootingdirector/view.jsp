@@ -1,3 +1,5 @@
+<%@page import="it.ethica.esf.util.DateUtilFormatter"%>
+<%@page import="it.ethica.esf.portlet.CompareByData"%>
 <%@page import="java.util.Date"%>
 <%@page import="it.ethica.esf.model.VW_NomineDirettoriTiro"%>
 <%@include file="init.jsp"%>
@@ -114,7 +116,8 @@ iteratorActionUrl.setParameter("specialita", ParamUtil.getString(request, "speci
 <liferay-ui:search-container emptyResultsMessage="no-result" delta="20" total= "<%= 0 %>" iteratorURL = "<%=iteratorActionUrl%>">
 	<!-- Definisce il contenitore dei risultati della chiamata al DB -->
 	<liferay-ui:search-container-results>
-	<%
+	<%  
+		
 		pageContext.setAttribute("results", ListUtil.subList(listaNomineDirettori, searchContainer.getStart(), searchContainer.getEnd()));
 		pageContext.setAttribute("total", listaNomineDirettori.size()); 
 	%> 
@@ -130,6 +133,7 @@ iteratorActionUrl.setParameter("specialita", ParamUtil.getString(request, "speci
 			String codTessera = direttore.getCodiceTessera();
 			String spec = direttore.getSpecialita(); 
 			Date dataAssegnazione = direttore.getDataAssegnazione(); 
+			String dataFormattata = DateUtilFormatter.formatDate(dataAssegnazione);
 			
 		%>
 		
@@ -139,7 +143,7 @@ iteratorActionUrl.setParameter("specialita", ParamUtil.getString(request, "speci
 		<liferay-ui:search-container-column-text name="region-code" value="<%= codRegione %>" />
 		<liferay-ui:search-container-column-text name="qualification" value="<%= qualifica %>" />
 		<liferay-ui:search-container-column-text name="sport-type" value="<%= spec %>" />
-		<liferay-ui:search-container-column-text name="esf-date-assign" value="<%= dataAssegnazione.toString() %>" />
+		<liferay-ui:search-container-column-text name="esf-date-assign" value="<%= dataFormattata %>" />
 		<liferay-ui:search-container-column-jsp path='<%=templatePath + "modifyShDrAction.jsp"%>' align="right" /> 
 	</liferay-ui:search-container-row>
 	<!-- Iteratore che si preoccupa di stampare i risultati nella pagina JSP -->
