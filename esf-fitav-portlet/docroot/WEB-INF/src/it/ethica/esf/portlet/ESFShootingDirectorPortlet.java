@@ -102,8 +102,10 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 		int delta = ParamUtil.getInteger(request, "delta", 0);
 		int paginaRicercaCorrente = ParamUtil.getInteger(request, "cur", 0); 
 		
+		
 		//DA CANCELLARE
 		System.out.printf("Cognome: [%s]\n", cognome);
+		_log.debug(String.format("CognomeLog: [%s]\n", cognome));
 		System.out.printf("Nome: [%s]\n", nome);
 		System.out.printf("Tessera: [%s]\n", tessera);
 		System.out.printf("Regione: [%s]\n", regione);
