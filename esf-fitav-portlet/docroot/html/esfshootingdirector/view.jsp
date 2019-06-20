@@ -1,3 +1,4 @@
+<%@page import="it.ethica.esf.service.VW_NomineDirettoriTiroLocalServiceUtil"%>
 <%@page import="it.ethica.esf.util.DateUtilFormatter"%>
 <%@page import="it.ethica.esf.portlet.CompareByData"%>
 <%@page import="java.util.Date"%>
@@ -21,6 +22,12 @@ List<ESFSportType> specialita = ESFSportTypeLocalServiceUtil.getAllESFSportTypes
 
 Object listaNomineDirettoriObject = request.getAttribute("listaNomine");
 List<VW_NomineDirettoriTiro> listaNomineDirettori = new ArrayList<VW_NomineDirettoriTiro>();
+Object direttoreNominatoId = request.getAttribute("IdDirettoreAssegnato");  
+//successMessage e errorMessage
+
+if(direttoreNominatoId != null) {
+	listaNomineDirettori.add(VW_NomineDirettoriTiroLocalServiceUtil.findByIdDirettore(Integer.parseInt(String.valueOf(direttoreNominatoId))).get(0));
+}
 
 if(listaNomineDirettoriObject != null) { 
 	listaNomineDirettori = (List<VW_NomineDirettoriTiro>)listaNomineDirettoriObject;
@@ -39,9 +46,7 @@ iteratorActionUrl.setParameter("specialita", ParamUtil.getString(request, "speci
 
 %>
 <!-- Gestione dei messaggi di errore -->
-<liferay-ui:error key="error-delete-shDr" message="error-delete-shDr" />
-<liferay-ui:error key="error-deleteSospensive" message="error-deleteSospensive" />
-<liferay-ui:error key="error-updateSuspensive" message="error-updateSuspensive" />
+<liferay-ui:success key="success-message" message="${successMessage}"/> 
 <liferay-ui:error key="error-ricerca" message="E' occorso un errore durante la ricerca" />
 
 <!-- Definisce il bottone "Aggiungi direttore di tiro" -->
@@ -138,7 +143,7 @@ iteratorActionUrl.setParameter("specialita", ParamUtil.getString(request, "speci
 		%>
 		
 		<!-- Vengono definite le colonne della tabella e le variabili ad esse collegate -->
-		<liferay-ui:search-container-column-text name="name" value='<%= String.format("%s %s", nome, cognome) %>' />
+		<liferay-ui:search-container-column-text name="name" value='<%= String.format("%s %s", cognome, nome) %>' />
 		<liferay-ui:search-container-column-text name="card" value="<%= codTessera %>"/>
 		<liferay-ui:search-container-column-text name="region-code" value="<%= codRegione %>" />
 		<liferay-ui:search-container-column-text name="qualification" value="<%= qualifica %>" />

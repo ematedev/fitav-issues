@@ -2612,6 +2612,9 @@
         <order>
             <order-column name="Nome" case-sensitive="false" order-by="desc"></order-column>
         </order>
+        <finder name="IdDirettore" return-type="Collection">
+            <finder-column name="IdDirettoreTiro"></finder-column>
+        </finder>
     </entity>
 	
 	<exceptions>

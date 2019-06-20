@@ -370,3 +370,5 @@ create index IX_ED8BB4AF on VW_ESFListaIncarichi (esfOrganizationId);
 create index IX_19A88904 on esforganization (type_);
 
 create index IX_7ED85A60 on vw_datidirettoretiro (esfShootingDirectorId);
+
+create index IX_A055F35D on vw_nominedirettoritiro (IdDirettoreTiro);

@@ -31,6 +31,8 @@ import it.ethica.esf.service.ESFSuspensiveShootingDirectorLocalServiceUtil;
 import it.ethica.esf.service.ESFUserLocalServiceUtil;
 import it.ethica.esf.service.VM_TiratoriTesseratiLocalServiceUtil;
 import it.ethica.esf.service.VW_DatiDrettoreTiroLocalServiceUtil;
+import it.ethica.esf.service.VW_NomineDirettoriTiroLocalServiceUtil;
+import it.ethica.esf.service.persistence.VW_NomineDirettoriTiroPK;
 import it.ethica.esf.util.ManageDate;
 
 import java.io.IOException;
@@ -53,6 +55,7 @@ import javax.portlet.RenderResponse;
 
 import org.apache.commons.beanutils.BeanComparator;
 import org.apache.commons.beanutils.BeanUtils;
+import org.apache.log4j.rolling.SizeBasedTriggeringPolicy;
 
 import com.itextpdf.text.pdf.parser.RegionTextRenderFilter;
 import com.liferay.counter.service.CounterLocalServiceUtil;
@@ -79,6 +82,7 @@ import com.liferay.portal.theme.ThemeDisplay;
 import com.liferay.portal.util.PortalUtil;
 import com.liferay.util.BeanParamUtil;
 import com.liferay.util.bridges.mvc.MVCPortlet;
+import com.lowagie.toolbox.arguments.StringArgument;
 import com.microsoft.schemas.office.office.PreferrelativeAttribute;
 
 
@@ -162,12 +166,17 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 			//Ordino la lista
 			List<VW_NomineDirettoriTiro> listaModificabile = new ArrayList<>(listaNomine);
 			Collections.sort(listaModificabile, new CompareByData());
+			int elementiTrovati = listaNomine.size();
 			
 			//Valorizzo i campi e ritorno alla pagina 
-			request.setAttribute("listaNomine", listaModificabile);  
+			request.setAttribute("listaNomine", listaModificabile);
+			String messaggio = String.format("La ricerca ha prodotto %s risultati", elementiTrovati);
+			_log.debug(messaggio);
+			SessionMessages.add(request, "success-message"); 
+			request.setAttribute("successMessage", messaggio);
 			
 			//DA CANCELLARE
-			_log.debug(String.format("Elementi nella lista: [%s]\n", listaNomine.size()));
+			_log.debug(String.format("Elementi nella lista: [%s]\n", elementiTrovati));
 			_log.debug(String.format("Elementi nella lista modificabile: [%s]\n", listaModificabile.size()));
 			
 			//Se c'è bisogno valorizzare i campi del search container
@@ -178,11 +187,11 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 			
 			//Mando un messaggio di errore alla jsp
 			SessionErrors.add(request, "error-ricerca");
-			SessionMessages.add(request, PortalUtil.getPortletId(request) + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
 			
 		} finally {
 			
 			//Qualunque cosa succeda ritorna alla pagina chiamante con questi campi valorizzati
+			SessionMessages.add(request, PortalUtil.getPortletId(request) + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
 			response.setRenderParameter("jspPage", "/html/esfshootingdirector/view.jsp");
 			response.setRenderParameter("lastname", cognome);
 			response.setRenderParameter("firstname", nome);
@@ -227,8 +236,12 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 			//Eseguo la query
 			listaTiratori = VM_TiratoriTesseratiLocalServiceUtil.dynamicQuery(dq);
 			
+			//Ordino la lista
+			List<VM_TiratoriTesserati> listaModificabile = new ArrayList<>(listaTiratori);
+			Collections.sort(listaModificabile, new CompareByNomeCognome());
+			
 			//Valorizzo i campi e ritorno alla pagina 
-			request.setAttribute("listaTiratori", listaTiratori);
+			request.setAttribute("listaTiratori", listaModificabile);
 			
 			//Se c'è bisogno valorizzare i campi del search container
 			if(delta != 0) { response.setRenderParameter("delta", String.valueOf(delta)); }
@@ -239,11 +252,11 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 			
 			//Mando un messaggio di errore alla jsp
 			SessionErrors.add(request, "error-ricerca");
-			SessionMessages.add(request, PortalUtil.getPortletId(request) + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
 			
 		} finally {
 			
 			//Qualunque cosa succeda ritorna alla pagina chiamante con questi campi valorizzati
+			SessionMessages.add(request, PortalUtil.getPortletId(request) + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
 			response.setRenderParameter("jspPage", "/html/esfshootingdirector/newShootingDirector.jsp");
 			response.setRenderParameter("lastname", cognome);
 			response.setRenderParameter("firstname", nome);
@@ -368,6 +381,14 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 		
 		//Torna alla pagina principale
 		actionResponse.setRenderParameter("mvcPath", "/html/esfshootingdirector/view.jsp");
+		actionRequest.setAttribute("IdDirettoreAssegnato", String.valueOf(esfshDtId));
+		
+		//Messaggio di successo
+		String messaggio = "La nomina è stata aggiunta con successo";
+		SessionMessages.add(actionRequest, PortalUtil.getPortletId(actionRequest) + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
+		SessionMessages.add(actionRequest, "success-message");
+		actionRequest.setAttribute("successMessage", messaggio);
+		
 	}
 	
 	/**
