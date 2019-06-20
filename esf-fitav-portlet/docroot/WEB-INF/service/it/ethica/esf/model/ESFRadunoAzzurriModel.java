@@ -87,18 +87,18 @@ public interface ESFRadunoAzzurriModel extends BaseModel<ESFRadunoAzzurri> {
 	public void setId_esf_raduno(long id_esf_raduno);
 
 	/**
-	 * Returns the esf_national_id of this e s f raduno azzurri.
+	 * Returns the esf national ID of this e s f raduno azzurri.
 	 *
-	 * @return the esf_national_id of this e s f raduno azzurri
+	 * @return the esf national ID of this e s f raduno azzurri
 	 */
-	public long getEsf_national_id();
+	public long getEsfNationalId();
 
 	/**
-	 * Sets the esf_national_id of this e s f raduno azzurri.
+	 * Sets the esf national ID of this e s f raduno azzurri.
 	 *
-	 * @param esf_national_id the esf_national_id of this e s f raduno azzurri
+	 * @param esfNationalId the esf national ID of this e s f raduno azzurri
 	 */
-	public void setEsf_national_id(long esf_national_id);
+	public void setEsfNationalId(long esfNationalId);
 
 	@Override
 	public boolean isNew();

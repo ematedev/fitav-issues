@@ -33,7 +33,7 @@ public class ESFRadunoAzzurriSoap implements Serializable {
 
 		soapModel.setId_esf_raduno_azzurri(model.getId_esf_raduno_azzurri());
 		soapModel.setId_esf_raduno(model.getId_esf_raduno());
-		soapModel.setEsf_national_id(model.getEsf_national_id());
+		soapModel.setEsfNationalId(model.getEsfNationalId());
 
 		return soapModel;
 	}
@@ -81,12 +81,14 @@ public class ESFRadunoAzzurriSoap implements Serializable {
 	}
 
 	public ESFRadunoAzzurriPK getPrimaryKey() {
-		return new ESFRadunoAzzurriPK(_id_esf_raduno_azzurri, _id_esf_raduno);
+		return new ESFRadunoAzzurriPK(_id_esf_raduno_azzurri, _id_esf_raduno,
+			_esfNationalId);
 	}
 
 	public void setPrimaryKey(ESFRadunoAzzurriPK pk) {
 		setId_esf_raduno_azzurri(pk.id_esf_raduno_azzurri);
 		setId_esf_raduno(pk.id_esf_raduno);
+		setEsfNationalId(pk.esfNationalId);
 	}
 
 	public long getId_esf_raduno_azzurri() {
@@ -105,15 +107,15 @@ public class ESFRadunoAzzurriSoap implements Serializable {
 		_id_esf_raduno = id_esf_raduno;
 	}
 
-	public long getEsf_national_id() {
-		return _esf_national_id;
+	public long getEsfNationalId() {
+		return _esfNationalId;
 	}
 
-	public void setEsf_national_id(long esf_national_id) {
-		_esf_national_id = esf_national_id;
+	public void setEsfNationalId(long esfNationalId) {
+		_esfNationalId = esfNationalId;
 	}
 
 	private long _id_esf_raduno_azzurri;
 	private long _id_esf_raduno;
-	private long _esf_national_id;
+	private long _esfNationalId;
 }

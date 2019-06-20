@@ -26,13 +26,16 @@ public class ESFRadunoAzzurriPK implements Comparable<ESFRadunoAzzurriPK>,
 	Serializable {
 	public long id_esf_raduno_azzurri;
 	public long id_esf_raduno;
+	public long esfNationalId;
 
 	public ESFRadunoAzzurriPK() {
 	}
 
-	public ESFRadunoAzzurriPK(long id_esf_raduno_azzurri, long id_esf_raduno) {
+	public ESFRadunoAzzurriPK(long id_esf_raduno_azzurri, long id_esf_raduno,
+		long esfNationalId) {
 		this.id_esf_raduno_azzurri = id_esf_raduno_azzurri;
 		this.id_esf_raduno = id_esf_raduno;
+		this.esfNationalId = esfNationalId;
 	}
 
 	public long getId_esf_raduno_azzurri() {
@@ -49,6 +52,14 @@ public class ESFRadunoAzzurriPK implements Comparable<ESFRadunoAzzurriPK>,
 
 	public void setId_esf_raduno(long id_esf_raduno) {
 		this.id_esf_raduno = id_esf_raduno;
+	}
+
+	public long getEsfNationalId() {
+		return esfNationalId;
+	}
+
+	public void setEsfNationalId(long esfNationalId) {
+		this.esfNationalId = esfNationalId;
 	}
 
 	@Override
@@ -87,6 +98,20 @@ public class ESFRadunoAzzurriPK implements Comparable<ESFRadunoAzzurriPK>,
 			return value;
 		}
 
+		if (esfNationalId < pk.esfNationalId) {
+			value = -1;
+		}
+		else if (esfNationalId > pk.esfNationalId) {
+			value = 1;
+		}
+		else {
+			value = 0;
+		}
+
+		if (value != 0) {
+			return value;
+		}
+
 		return 0;
 	}
 
@@ -103,7 +128,8 @@ public class ESFRadunoAzzurriPK implements Comparable<ESFRadunoAzzurriPK>,
 		ESFRadunoAzzurriPK pk = (ESFRadunoAzzurriPK)obj;
 
 		if ((id_esf_raduno_azzurri == pk.id_esf_raduno_azzurri) &&
-				(id_esf_raduno == pk.id_esf_raduno)) {
+				(id_esf_raduno == pk.id_esf_raduno) &&
+				(esfNationalId == pk.esfNationalId)) {
 			return true;
 		}
 		else {
@@ -114,12 +140,12 @@ public class ESFRadunoAzzurriPK implements Comparable<ESFRadunoAzzurriPK>,
 	@Override
 	public int hashCode() {
 		return (String.valueOf(id_esf_raduno_azzurri) +
-		String.valueOf(id_esf_raduno)).hashCode();
+		String.valueOf(id_esf_raduno) + String.valueOf(esfNationalId)).hashCode();
 	}
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(10);
+		StringBundler sb = new StringBundler(15);
 
 		sb.append(StringPool.OPEN_CURLY_BRACE);
 
@@ -132,6 +158,12 @@ public class ESFRadunoAzzurriPK implements Comparable<ESFRadunoAzzurriPK>,
 		sb.append("id_esf_raduno");
 		sb.append(StringPool.EQUAL);
 		sb.append(id_esf_raduno);
+
+		sb.append(StringPool.COMMA);
+		sb.append(StringPool.SPACE);
+		sb.append("esfNationalId");
+		sb.append(StringPool.EQUAL);
+		sb.append(esfNationalId);
 
 		sb.append(StringPool.CLOSE_CURLY_BRACE);
 

@@ -41,8 +41,8 @@ public class ESFRadunoAzzurriCacheModel implements CacheModel<ESFRadunoAzzurri>,
 		sb.append(id_esf_raduno_azzurri);
 		sb.append(", id_esf_raduno=");
 		sb.append(id_esf_raduno);
-		sb.append(", esf_national_id=");
-		sb.append(esf_national_id);
+		sb.append(", esfNationalId=");
+		sb.append(esfNationalId);
 		sb.append("}");
 
 		return sb.toString();
@@ -54,7 +54,7 @@ public class ESFRadunoAzzurriCacheModel implements CacheModel<ESFRadunoAzzurri>,
 
 		esfRadunoAzzurriImpl.setId_esf_raduno_azzurri(id_esf_raduno_azzurri);
 		esfRadunoAzzurriImpl.setId_esf_raduno(id_esf_raduno);
-		esfRadunoAzzurriImpl.setEsf_national_id(esf_national_id);
+		esfRadunoAzzurriImpl.setEsfNationalId(esfNationalId);
 
 		esfRadunoAzzurriImpl.resetOriginalValues();
 
@@ -65,7 +65,7 @@ public class ESFRadunoAzzurriCacheModel implements CacheModel<ESFRadunoAzzurri>,
 	public void readExternal(ObjectInput objectInput) throws IOException {
 		id_esf_raduno_azzurri = objectInput.readLong();
 		id_esf_raduno = objectInput.readLong();
-		esf_national_id = objectInput.readLong();
+		esfNationalId = objectInput.readLong();
 	}
 
 	@Override
@@ -73,10 +73,10 @@ public class ESFRadunoAzzurriCacheModel implements CacheModel<ESFRadunoAzzurri>,
 		throws IOException {
 		objectOutput.writeLong(id_esf_raduno_azzurri);
 		objectOutput.writeLong(id_esf_raduno);
-		objectOutput.writeLong(esf_national_id);
+		objectOutput.writeLong(esfNationalId);
 	}
 
 	public long id_esf_raduno_azzurri;
 	public long id_esf_raduno;
-	public long esf_national_id;
+	public long esfNationalId;
 }

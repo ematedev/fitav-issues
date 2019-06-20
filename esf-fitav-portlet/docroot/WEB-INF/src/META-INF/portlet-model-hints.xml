@@ -699,6 +699,11 @@
 		<field name="id_associazione_ospitante" type="long" />
 		<field name="altra_sede_ospitante" type="String" />
 	</model>
+	<model name="it.ethica.esf.model.ESFRadunoAzzurri">
+		<field name="id_esf_raduno_azzurri" type="long" />
+		<field name="id_esf_raduno" type="long" />
+		<field name="esfNationalId" type="long" />
+	</model>
 	<model name="it.ethica.esf.model.ESFRadunoFiles">
 		<field name="id_esf_raduno_files" type="long" />
 		<field name="id_esf_raduno" type="long" />
@@ -1096,13 +1101,13 @@
 		<field name="esfNationalId" type="long" />
 		<field name="userId" type="long" />
 		<field name="userName" type="String" />
-		<field name="esfUserId" type="long" />
-		<field name="esfSportTypeId" type="long" />
 		<field name="startDate" type="Date" />
 		<field name="endDate" type="Date" />
+		<field name="esfSportTypeId" type="long" />
 		<field name="name" type="String" />
 		<field name="description" type="String" />
-		<field name="invitato" type="int" />
+		<field name="invitato" type="long" />
+		<field name="id_esf_raduno" type="long" />
 	</model>
 	<model name="it.ethica.esf.model.VW_DatiDrettoreTiro">
 		<field name="esfShootingDirectorId" type="long" />

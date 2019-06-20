@@ -3,10 +3,13 @@
 <%@ include file="init.jsp"%>
 
 <%
+	
 	String id_esf_raduno = ParamUtil.getString(request, "id_esf_raduno");
 	String codice = ParamUtil.getString(request, "code");
 	String name = ParamUtil.getString(request, "name");
 	String namespace = renderResponse.getNamespace();
+	String idColl = "";
+	
 	
 	long esfSportType = ParamUtil.getLong(request, "esfSportType",0);
 	String dataInizio = ParamUtil.getString(request, "startDate");
@@ -121,23 +124,34 @@
 
 <aui:form method="POST" action="<%=salvaAzzurriRadunoURL%>">
 <liferay-ui:search-container delta="5" emptyResultsMessage="no-result" total="<%=nNazionali%>" iteratorURL="<%=AzzurriViewURL%>" >
+<%
+	List<VW_Azzurri> sottoListaNazionali = ListUtil.subList(listaNazionali, searchContainer.getStart(), searchContainer.getEnd());
+	request.setAttribute("sottoListaNazionali", sottoListaNazionali);
+	int contatore=0;
+
+%>
 	<liferay-ui:search-container-results  
-		results="<%=ListUtil.subList(listaNazionali, searchContainer.getStart(), searchContainer.getEnd())%>"  />
+		results="<%=sottoListaNazionali%>"  />
 		<liferay-ui:search-container-row className="it.ethica.esf.model.VW_Azzurri" modelVar="azzurro">
+<%
+			String startDate = DateUtilFormatter.formatDate(azzurro.getStartDate());
+			String endFine = DateUtilFormatter.formatDate(azzurro.getEndDate());
+			idColl += azzurro.getEsfNationalId() +"|";
+%>
 			<liferay-ui:search-container-column-text name="name"
 					value="<%=Validator.isNotNull(azzurro.getUserName()) ? azzurro.getUserName() : StringPool.BLANK%>" />
 			<liferay-ui:search-container-column-text name="codice"
 					value="<%=Validator.isNotNull(azzurro.getEsfNationalId()) ? String.valueOf(azzurro.getEsfNationalId()) : StringPool.BLANK%>" />
-			<liferay-ui:search-container-column-text name="chissa"
-					value="<%=String.valueOf(azzurro.getInvitato())%>" />
+			<liferay-ui:search-container-column-text name="start-date" value="<%=startDate%>" />					
+			<liferay-ui:search-container-column-text name="end-date" value="<%=endFine%>" />					
 <%
-	String nome = namespace + "invitato_";// + String.valueOf(azzurro.getInvitato());
 	String checked = "";
+	//String valore = azzurro.getEsfNationalId();
 	if(azzurro.getInvitato()!=0)
 		checked = "checked=\"true\"";
 %>					
 			<liferay-ui:search-container-column-text name="invitato">
-				<input name="<portlet:namespace/>invitato" id="<%=azzurro.getUserId()%>" type="checkbox" <%=checked%> />
+				<input name="<portlet:namespace/>invitato" value="<%=azzurro.getEsfNationalId()%>" type="checkbox" <%=checked%> />
 			</liferay-ui:search-container-column-text>
 		</liferay-ui:search-container-row>
 	<liferay-ui:search-iterator />
@@ -147,6 +161,8 @@
 	if(nNazionali != 0){
 %>
 	<b><%=nNazionali %></b>
+	<aui:input type="hidden" name="idListaMostrataAzzurri" value="<%=idColl %>" />
+	
 	<aui:button-row>
 		<aui:button type="cancel" id='<%=namespace + "check_all"%>' value="select all" />
 		<aui:button type="cancel" id='<%=namespace + "uncheck_all"%>' value="unselect all"/>
@@ -158,18 +174,17 @@
 	<aui:script use="aui-base,node,aui-io-request,liferay-util-list-fields">
 		A.one('#<portlet:namespace/>check_all').on('click', function(event){
 			A.all('input[type=checkbox]').each(function(item, index, list) {
-				var checked = item.attr('checked'); 
-				if (!checked)
-					item.setAttribute('checked', 'true');	
+				item.setAttribute('checked', true);	
 			});
 		});
 		
 		A.one('#<portlet:namespace/>uncheck_all').on('click', function(event){
 			//alert("UNCHECK ALL");
 			A.all('input[type=checkbox]').each(function(item, index, list) {
-				var checked = item.attr('checked'); 
-				if (checked)
-					item.removeAttribute('checked');
+				var checked = item.attr('checked');
+				//console.log(index +">>>>>>>>>>>>>>>" + checked); 
+				item.removeAttribute('checked');
+				item.set('checked', false);	
 				});
 		});
 		

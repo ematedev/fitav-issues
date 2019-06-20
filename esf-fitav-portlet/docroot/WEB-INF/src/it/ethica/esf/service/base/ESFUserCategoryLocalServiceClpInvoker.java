@@ -106,64 +106,64 @@ public class ESFUserCategoryLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFUserCategory"
 			};
 
-		_methodName404 = "getBeanIdentifier";
+		_methodName408 = "getBeanIdentifier";
 
-		_methodParameterTypes404 = new String[] {  };
+		_methodParameterTypes408 = new String[] {  };
 
-		_methodName405 = "setBeanIdentifier";
+		_methodName409 = "setBeanIdentifier";
 
-		_methodParameterTypes405 = new String[] { "java.lang.String" };
+		_methodParameterTypes409 = new String[] { "java.lang.String" };
 
-		_methodName410 = "allESFUserCategoryByActualYear";
+		_methodName414 = "allESFUserCategoryByActualYear";
 
-		_methodParameterTypes410 = new String[] { "int" };
+		_methodParameterTypes414 = new String[] { "int" };
 
-		_methodName411 = "allESFUserCategoryByIdUtente";
+		_methodName415 = "allESFUserCategoryByIdUtente";
 
-		_methodParameterTypes411 = new String[] { "long" };
+		_methodParameterTypes415 = new String[] { "long" };
 
-		_methodName412 = "findUserFO";
+		_methodName416 = "findUserFO";
 
-		_methodParameterTypes412 = new String[] { "long" };
+		_methodParameterTypes416 = new String[] { "long" };
 
-		_methodName413 = "findUserByS_ED";
+		_methodName417 = "findUserByS_ED";
 
-		_methodParameterTypes413 = new String[] { "long", "int" };
+		_methodParameterTypes417 = new String[] { "long", "int" };
 
-		_methodName414 = "fetchUserByS_ED_UI";
+		_methodName418 = "fetchUserByS_ED_UI";
 
-		_methodParameterTypes414 = new String[] {
+		_methodParameterTypes418 = new String[] {
 				"long", "long", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName415 = "addEsfUserCategory";
+		_methodName419 = "addEsfUserCategory";
 
-		_methodParameterTypes415 = new String[] {
+		_methodParameterTypes419 = new String[] {
 				"long", "long", "long", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName416 = "updateEsfUserCategory";
+		_methodName420 = "updateEsfUserCategory";
 
-		_methodParameterTypes416 = new String[] {
+		_methodParameterTypes420 = new String[] {
 				"long", "long", "long", "long", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName417 = "addEsfUserCategory";
+		_methodName421 = "addEsfUserCategory";
 
-		_methodParameterTypes417 = new String[] {
+		_methodParameterTypes421 = new String[] {
 				"long", "long", "long", "int", "com.liferay.portal.model.User",
 				"long", "long", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName418 = "findByU_C_S";
+		_methodName422 = "findByU_C_S";
 
-		_methodParameterTypes418 = new String[] { "long", "long", "long" };
+		_methodParameterTypes422 = new String[] { "long", "long", "long" };
 
-		_methodName419 = "findYouthNotPromoved";
+		_methodName423 = "findYouthNotPromoved";
 
-		_methodParameterTypes419 = new String[] { "int" };
+		_methodParameterTypes423 = new String[] { "int" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -255,48 +255,48 @@ public class ESFUserCategoryLocalServiceClpInvoker {
 			return ESFUserCategoryLocalServiceUtil.updateESFUserCategory((it.ethica.esf.model.ESFUserCategory)arguments[0]);
 		}
 
-		if (_methodName404.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes404, parameterTypes)) {
+		if (_methodName408.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes408, parameterTypes)) {
 			return ESFUserCategoryLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName405.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes405, parameterTypes)) {
+		if (_methodName409.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes409, parameterTypes)) {
 			ESFUserCategoryLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName410.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes410, parameterTypes)) {
+		if (_methodName414.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes414, parameterTypes)) {
 			return ESFUserCategoryLocalServiceUtil.allESFUserCategoryByActualYear(((Integer)arguments[0]).intValue());
 		}
 
-		if (_methodName411.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes411, parameterTypes)) {
+		if (_methodName415.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes415, parameterTypes)) {
 			return ESFUserCategoryLocalServiceUtil.allESFUserCategoryByIdUtente(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName412.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes412, parameterTypes)) {
+		if (_methodName416.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes416, parameterTypes)) {
 			return ESFUserCategoryLocalServiceUtil.findUserFO(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName413.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes413, parameterTypes)) {
+		if (_methodName417.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes417, parameterTypes)) {
 			return ESFUserCategoryLocalServiceUtil.findUserByS_ED(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
-		if (_methodName414.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes414, parameterTypes)) {
+		if (_methodName418.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes418, parameterTypes)) {
 			return ESFUserCategoryLocalServiceUtil.fetchUserByS_ED_UI(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[2]);
 		}
 
-		if (_methodName415.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes415, parameterTypes)) {
+		if (_methodName419.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes419, parameterTypes)) {
 			return ESFUserCategoryLocalServiceUtil.addEsfUserCategory(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -304,8 +304,8 @@ public class ESFUserCategoryLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[4]);
 		}
 
-		if (_methodName416.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes416, parameterTypes)) {
+		if (_methodName420.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes420, parameterTypes)) {
 			return ESFUserCategoryLocalServiceUtil.updateEsfUserCategory(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -314,8 +314,8 @@ public class ESFUserCategoryLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[5]);
 		}
 
-		if (_methodName417.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes417, parameterTypes)) {
+		if (_methodName421.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes421, parameterTypes)) {
 			return ESFUserCategoryLocalServiceUtil.addEsfUserCategory(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -326,15 +326,15 @@ public class ESFUserCategoryLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[7]);
 		}
 
-		if (_methodName418.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes418, parameterTypes)) {
+		if (_methodName422.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes422, parameterTypes)) {
 			return ESFUserCategoryLocalServiceUtil.findByU_C_S(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue());
 		}
 
-		if (_methodName419.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes419, parameterTypes)) {
+		if (_methodName423.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes423, parameterTypes)) {
 			return ESFUserCategoryLocalServiceUtil.findYouthNotPromoved(((Integer)arguments[0]).intValue());
 		}
 
@@ -373,18 +373,10 @@ public class ESFUserCategoryLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName404;
-	private String[] _methodParameterTypes404;
-	private String _methodName405;
-	private String[] _methodParameterTypes405;
-	private String _methodName410;
-	private String[] _methodParameterTypes410;
-	private String _methodName411;
-	private String[] _methodParameterTypes411;
-	private String _methodName412;
-	private String[] _methodParameterTypes412;
-	private String _methodName413;
-	private String[] _methodParameterTypes413;
+	private String _methodName408;
+	private String[] _methodParameterTypes408;
+	private String _methodName409;
+	private String[] _methodParameterTypes409;
 	private String _methodName414;
 	private String[] _methodParameterTypes414;
 	private String _methodName415;
@@ -397,4 +389,12 @@ public class ESFUserCategoryLocalServiceClpInvoker {
 	private String[] _methodParameterTypes418;
 	private String _methodName419;
 	private String[] _methodParameterTypes419;
+	private String _methodName420;
+	private String[] _methodParameterTypes420;
+	private String _methodName421;
+	private String[] _methodParameterTypes421;
+	private String _methodName422;
+	private String[] _methodParameterTypes422;
+	private String _methodName423;
+	private String[] _methodParameterTypes423;
 }

@@ -52,13 +52,13 @@ public class VW_AzzurriWrapper implements VW_Azzurri, ModelWrapper<VW_Azzurri> {
 		attributes.put("esfNationalId", getEsfNationalId());
 		attributes.put("userId", getUserId());
 		attributes.put("userName", getUserName());
-		attributes.put("esfUserId", getEsfUserId());
-		attributes.put("esfSportTypeId", getEsfSportTypeId());
 		attributes.put("startDate", getStartDate());
 		attributes.put("endDate", getEndDate());
+		attributes.put("esfSportTypeId", getEsfSportTypeId());
 		attributes.put("name", getName());
 		attributes.put("description", getDescription());
 		attributes.put("invitato", getInvitato());
+		attributes.put("id_esf_raduno", getId_esf_raduno());
 
 		return attributes;
 	}
@@ -83,18 +83,6 @@ public class VW_AzzurriWrapper implements VW_Azzurri, ModelWrapper<VW_Azzurri> {
 			setUserName(userName);
 		}
 
-		Long esfUserId = (Long)attributes.get("esfUserId");
-
-		if (esfUserId != null) {
-			setEsfUserId(esfUserId);
-		}
-
-		Long esfSportTypeId = (Long)attributes.get("esfSportTypeId");
-
-		if (esfSportTypeId != null) {
-			setEsfSportTypeId(esfSportTypeId);
-		}
-
 		Date startDate = (Date)attributes.get("startDate");
 
 		if (startDate != null) {
@@ -105,6 +93,12 @@ public class VW_AzzurriWrapper implements VW_Azzurri, ModelWrapper<VW_Azzurri> {
 
 		if (endDate != null) {
 			setEndDate(endDate);
+		}
+
+		Long esfSportTypeId = (Long)attributes.get("esfSportTypeId");
+
+		if (esfSportTypeId != null) {
+			setEsfSportTypeId(esfSportTypeId);
 		}
 
 		String name = (String)attributes.get("name");
@@ -119,10 +113,16 @@ public class VW_AzzurriWrapper implements VW_Azzurri, ModelWrapper<VW_Azzurri> {
 			setDescription(description);
 		}
 
-		Integer invitato = (Integer)attributes.get("invitato");
+		Long invitato = (Long)attributes.get("invitato");
 
 		if (invitato != null) {
 			setInvitato(invitato);
+		}
+
+		Long id_esf_raduno = (Long)attributes.get("id_esf_raduno");
+
+		if (id_esf_raduno != null) {
+			setId_esf_raduno(id_esf_raduno);
 		}
 	}
 
@@ -230,68 +230,6 @@ public class VW_AzzurriWrapper implements VW_Azzurri, ModelWrapper<VW_Azzurri> {
 	}
 
 	/**
-	* Returns the esf user ID of this v w_ azzurri.
-	*
-	* @return the esf user ID of this v w_ azzurri
-	*/
-	@Override
-	public long getEsfUserId() {
-		return _vw_Azzurri.getEsfUserId();
-	}
-
-	/**
-	* Sets the esf user ID of this v w_ azzurri.
-	*
-	* @param esfUserId the esf user ID of this v w_ azzurri
-	*/
-	@Override
-	public void setEsfUserId(long esfUserId) {
-		_vw_Azzurri.setEsfUserId(esfUserId);
-	}
-
-	/**
-	* Returns the esf user uuid of this v w_ azzurri.
-	*
-	* @return the esf user uuid of this v w_ azzurri
-	* @throws SystemException if a system exception occurred
-	*/
-	@Override
-	public java.lang.String getEsfUserUuid()
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return _vw_Azzurri.getEsfUserUuid();
-	}
-
-	/**
-	* Sets the esf user uuid of this v w_ azzurri.
-	*
-	* @param esfUserUuid the esf user uuid of this v w_ azzurri
-	*/
-	@Override
-	public void setEsfUserUuid(java.lang.String esfUserUuid) {
-		_vw_Azzurri.setEsfUserUuid(esfUserUuid);
-	}
-
-	/**
-	* Returns the esf sport type ID of this v w_ azzurri.
-	*
-	* @return the esf sport type ID of this v w_ azzurri
-	*/
-	@Override
-	public long getEsfSportTypeId() {
-		return _vw_Azzurri.getEsfSportTypeId();
-	}
-
-	/**
-	* Sets the esf sport type ID of this v w_ azzurri.
-	*
-	* @param esfSportTypeId the esf sport type ID of this v w_ azzurri
-	*/
-	@Override
-	public void setEsfSportTypeId(long esfSportTypeId) {
-		_vw_Azzurri.setEsfSportTypeId(esfSportTypeId);
-	}
-
-	/**
 	* Returns the start date of this v w_ azzurri.
 	*
 	* @return the start date of this v w_ azzurri
@@ -329,6 +267,26 @@ public class VW_AzzurriWrapper implements VW_Azzurri, ModelWrapper<VW_Azzurri> {
 	@Override
 	public void setEndDate(java.util.Date endDate) {
 		_vw_Azzurri.setEndDate(endDate);
+	}
+
+	/**
+	* Returns the esf sport type ID of this v w_ azzurri.
+	*
+	* @return the esf sport type ID of this v w_ azzurri
+	*/
+	@Override
+	public long getEsfSportTypeId() {
+		return _vw_Azzurri.getEsfSportTypeId();
+	}
+
+	/**
+	* Sets the esf sport type ID of this v w_ azzurri.
+	*
+	* @param esfSportTypeId the esf sport type ID of this v w_ azzurri
+	*/
+	@Override
+	public void setEsfSportTypeId(long esfSportTypeId) {
+		_vw_Azzurri.setEsfSportTypeId(esfSportTypeId);
 	}
 
 	/**
@@ -377,7 +335,7 @@ public class VW_AzzurriWrapper implements VW_Azzurri, ModelWrapper<VW_Azzurri> {
 	* @return the invitato of this v w_ azzurri
 	*/
 	@Override
-	public int getInvitato() {
+	public long getInvitato() {
 		return _vw_Azzurri.getInvitato();
 	}
 
@@ -387,8 +345,28 @@ public class VW_AzzurriWrapper implements VW_Azzurri, ModelWrapper<VW_Azzurri> {
 	* @param invitato the invitato of this v w_ azzurri
 	*/
 	@Override
-	public void setInvitato(int invitato) {
+	public void setInvitato(long invitato) {
 		_vw_Azzurri.setInvitato(invitato);
+	}
+
+	/**
+	* Returns the id_esf_raduno of this v w_ azzurri.
+	*
+	* @return the id_esf_raduno of this v w_ azzurri
+	*/
+	@Override
+	public long getId_esf_raduno() {
+		return _vw_Azzurri.getId_esf_raduno();
+	}
+
+	/**
+	* Sets the id_esf_raduno of this v w_ azzurri.
+	*
+	* @param id_esf_raduno the id_esf_raduno of this v w_ azzurri
+	*/
+	@Override
+	public void setId_esf_raduno(long id_esf_raduno) {
+		_vw_Azzurri.setId_esf_raduno(id_esf_raduno);
 	}
 
 	@Override

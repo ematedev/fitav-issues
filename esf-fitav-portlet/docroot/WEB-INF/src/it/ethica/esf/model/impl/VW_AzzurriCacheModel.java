@@ -46,20 +46,20 @@ public class VW_AzzurriCacheModel implements CacheModel<VW_Azzurri>,
 		sb.append(userId);
 		sb.append(", userName=");
 		sb.append(userName);
-		sb.append(", esfUserId=");
-		sb.append(esfUserId);
-		sb.append(", esfSportTypeId=");
-		sb.append(esfSportTypeId);
 		sb.append(", startDate=");
 		sb.append(startDate);
 		sb.append(", endDate=");
 		sb.append(endDate);
+		sb.append(", esfSportTypeId=");
+		sb.append(esfSportTypeId);
 		sb.append(", name=");
 		sb.append(name);
 		sb.append(", description=");
 		sb.append(description);
 		sb.append(", invitato=");
 		sb.append(invitato);
+		sb.append(", id_esf_raduno=");
+		sb.append(id_esf_raduno);
 		sb.append("}");
 
 		return sb.toString();
@@ -79,9 +79,6 @@ public class VW_AzzurriCacheModel implements CacheModel<VW_Azzurri>,
 			vw_AzzurriImpl.setUserName(userName);
 		}
 
-		vw_AzzurriImpl.setEsfUserId(esfUserId);
-		vw_AzzurriImpl.setEsfSportTypeId(esfSportTypeId);
-
 		if (startDate == Long.MIN_VALUE) {
 			vw_AzzurriImpl.setStartDate(null);
 		}
@@ -95,6 +92,8 @@ public class VW_AzzurriCacheModel implements CacheModel<VW_Azzurri>,
 		else {
 			vw_AzzurriImpl.setEndDate(new Date(endDate));
 		}
+
+		vw_AzzurriImpl.setEsfSportTypeId(esfSportTypeId);
 
 		if (name == null) {
 			vw_AzzurriImpl.setName(StringPool.BLANK);
@@ -111,6 +110,7 @@ public class VW_AzzurriCacheModel implements CacheModel<VW_Azzurri>,
 		}
 
 		vw_AzzurriImpl.setInvitato(invitato);
+		vw_AzzurriImpl.setId_esf_raduno(id_esf_raduno);
 
 		vw_AzzurriImpl.resetOriginalValues();
 
@@ -122,13 +122,13 @@ public class VW_AzzurriCacheModel implements CacheModel<VW_Azzurri>,
 		esfNationalId = objectInput.readLong();
 		userId = objectInput.readLong();
 		userName = objectInput.readUTF();
-		esfUserId = objectInput.readLong();
-		esfSportTypeId = objectInput.readLong();
 		startDate = objectInput.readLong();
 		endDate = objectInput.readLong();
+		esfSportTypeId = objectInput.readLong();
 		name = objectInput.readUTF();
 		description = objectInput.readUTF();
-		invitato = objectInput.readInt();
+		invitato = objectInput.readLong();
+		id_esf_raduno = objectInput.readLong();
 	}
 
 	@Override
@@ -144,10 +144,9 @@ public class VW_AzzurriCacheModel implements CacheModel<VW_Azzurri>,
 			objectOutput.writeUTF(userName);
 		}
 
-		objectOutput.writeLong(esfUserId);
-		objectOutput.writeLong(esfSportTypeId);
 		objectOutput.writeLong(startDate);
 		objectOutput.writeLong(endDate);
+		objectOutput.writeLong(esfSportTypeId);
 
 		if (name == null) {
 			objectOutput.writeUTF(StringPool.BLANK);
@@ -163,17 +162,18 @@ public class VW_AzzurriCacheModel implements CacheModel<VW_Azzurri>,
 			objectOutput.writeUTF(description);
 		}
 
-		objectOutput.writeInt(invitato);
+		objectOutput.writeLong(invitato);
+		objectOutput.writeLong(id_esf_raduno);
 	}
 
 	public long esfNationalId;
 	public long userId;
 	public String userName;
-	public long esfUserId;
-	public long esfSportTypeId;
 	public long startDate;
 	public long endDate;
+	public long esfSportTypeId;
 	public String name;
 	public String description;
-	public int invitato;
+	public long invitato;
+	public long id_esf_raduno;
 }

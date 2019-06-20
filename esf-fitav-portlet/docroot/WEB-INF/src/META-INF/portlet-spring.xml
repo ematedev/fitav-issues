@@ -115,6 +115,8 @@
 	<bean id="it.ethica.esf.service.persistence.ESFPublicAuthorityPersistence" class="it.ethica.esf.service.persistence.ESFPublicAuthorityPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFRadunoLocalService" class="it.ethica.esf.service.impl.ESFRadunoLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFRadunoPersistence" class="it.ethica.esf.service.persistence.ESFRadunoPersistenceImpl" parent="basePersistence" />
+	<bean id="it.ethica.esf.service.ESFRadunoAzzurriLocalService" class="it.ethica.esf.service.impl.ESFRadunoAzzurriLocalServiceImpl" />
+	<bean id="it.ethica.esf.service.persistence.ESFRadunoAzzurriPersistence" class="it.ethica.esf.service.persistence.ESFRadunoAzzurriPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFRadunoFilesLocalService" class="it.ethica.esf.service.impl.ESFRadunoFilesLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFRadunoFilesPersistence" class="it.ethica.esf.service.persistence.ESFRadunoFilesPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFRadunoSottotipiRadunoLocalService" class="it.ethica.esf.service.impl.ESFRadunoSottotipiRadunoLocalServiceImpl" />

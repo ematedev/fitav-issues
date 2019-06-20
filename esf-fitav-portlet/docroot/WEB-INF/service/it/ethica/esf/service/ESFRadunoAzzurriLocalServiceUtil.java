@@ -275,6 +275,15 @@ public class ESFRadunoAzzurriLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static void associaAzzurri(long id_esf_raduno,
+		java.util.List<java.lang.String> listaChecked,
+		java.util.List<java.lang.String> listaUnchecked)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			it.ethica.esf.NoSuchRadunoAzzurriException,
+			java.lang.NumberFormatException {
+		getService().associaAzzurri(id_esf_raduno, listaChecked, listaUnchecked);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

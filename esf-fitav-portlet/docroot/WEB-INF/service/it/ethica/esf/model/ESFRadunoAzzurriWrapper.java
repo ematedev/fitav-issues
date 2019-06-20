@@ -51,7 +51,7 @@ public class ESFRadunoAzzurriWrapper implements ESFRadunoAzzurri,
 
 		attributes.put("id_esf_raduno_azzurri", getId_esf_raduno_azzurri());
 		attributes.put("id_esf_raduno", getId_esf_raduno());
-		attributes.put("esf_national_id", getEsf_national_id());
+		attributes.put("esfNationalId", getEsfNationalId());
 
 		return attributes;
 	}
@@ -71,10 +71,10 @@ public class ESFRadunoAzzurriWrapper implements ESFRadunoAzzurri,
 			setId_esf_raduno(id_esf_raduno);
 		}
 
-		Long esf_national_id = (Long)attributes.get("esf_national_id");
+		Long esfNationalId = (Long)attributes.get("esfNationalId");
 
-		if (esf_national_id != null) {
-			setEsf_national_id(esf_national_id);
+		if (esfNationalId != null) {
+			setEsfNationalId(esfNationalId);
 		}
 	}
 
@@ -140,23 +140,23 @@ public class ESFRadunoAzzurriWrapper implements ESFRadunoAzzurri,
 	}
 
 	/**
-	* Returns the esf_national_id of this e s f raduno azzurri.
+	* Returns the esf national ID of this e s f raduno azzurri.
 	*
-	* @return the esf_national_id of this e s f raduno azzurri
+	* @return the esf national ID of this e s f raduno azzurri
 	*/
 	@Override
-	public long getEsf_national_id() {
-		return _esfRadunoAzzurri.getEsf_national_id();
+	public long getEsfNationalId() {
+		return _esfRadunoAzzurri.getEsfNationalId();
 	}
 
 	/**
-	* Sets the esf_national_id of this e s f raduno azzurri.
+	* Sets the esf national ID of this e s f raduno azzurri.
 	*
-	* @param esf_national_id the esf_national_id of this e s f raduno azzurri
+	* @param esfNationalId the esf national ID of this e s f raduno azzurri
 	*/
 	@Override
-	public void setEsf_national_id(long esf_national_id) {
-		_esfRadunoAzzurri.setEsf_national_id(esf_national_id);
+	public void setEsfNationalId(long esfNationalId) {
+		_esfRadunoAzzurri.setEsfNationalId(esfNationalId);
 	}
 
 	@Override
@@ -223,7 +223,7 @@ public class ESFRadunoAzzurriWrapper implements ESFRadunoAzzurri,
 	}
 
 	@Override
-	public int compareTo(ESFRadunoAzzurri esfRadunoAzzurri) {
+	public int compareTo(it.ethica.esf.model.ESFRadunoAzzurri esfRadunoAzzurri) {
 		return _esfRadunoAzzurri.compareTo(esfRadunoAzzurri);
 	}
 
@@ -233,17 +233,17 @@ public class ESFRadunoAzzurriWrapper implements ESFRadunoAzzurri,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<ESFRadunoAzzurri> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<it.ethica.esf.model.ESFRadunoAzzurri> toCacheModel() {
 		return _esfRadunoAzzurri.toCacheModel();
 	}
 
 	@Override
-	public ESFRadunoAzzurri toEscapedModel() {
+	public it.ethica.esf.model.ESFRadunoAzzurri toEscapedModel() {
 		return new ESFRadunoAzzurriWrapper(_esfRadunoAzzurri.toEscapedModel());
 	}
 
 	@Override
-	public ESFRadunoAzzurri toUnescapedModel() {
+	public it.ethica.esf.model.ESFRadunoAzzurri toUnescapedModel() {
 		return new ESFRadunoAzzurriWrapper(_esfRadunoAzzurri.toUnescapedModel());
 	}
 

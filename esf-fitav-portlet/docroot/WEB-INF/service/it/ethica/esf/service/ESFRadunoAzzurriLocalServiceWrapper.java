@@ -289,6 +289,17 @@ public class ESFRadunoAzzurriLocalServiceWrapper
 			arguments);
 	}
 
+	@Override
+	public void associaAzzurri(long id_esf_raduno,
+		java.util.List<java.lang.String> listaChecked,
+		java.util.List<java.lang.String> listaUnchecked)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			it.ethica.esf.NoSuchRadunoAzzurriException,
+			java.lang.NumberFormatException {
+		_esfRadunoAzzurriLocalService.associaAzzurri(id_esf_raduno,
+			listaChecked, listaUnchecked);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

@@ -114,17 +114,17 @@ public class VW_ESFListaIncarichiLocalServiceClpInvoker {
 				"it.ethica.esf.model.VW_ESFListaIncarichi"
 			};
 
-		_methodName404 = "getBeanIdentifier";
+		_methodName408 = "getBeanIdentifier";
 
-		_methodParameterTypes404 = new String[] {  };
+		_methodParameterTypes408 = new String[] {  };
 
-		_methodName405 = "setBeanIdentifier";
+		_methodName409 = "setBeanIdentifier";
 
-		_methodParameterTypes405 = new String[] { "java.lang.String" };
+		_methodParameterTypes409 = new String[] { "java.lang.String" };
 
-		_methodName410 = "findByorganizzazione";
+		_methodName414 = "findByorganizzazione";
 
-		_methodParameterTypes410 = new String[] { "long" };
+		_methodParameterTypes414 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -216,20 +216,20 @@ public class VW_ESFListaIncarichiLocalServiceClpInvoker {
 			return VW_ESFListaIncarichiLocalServiceUtil.updateVW_ESFListaIncarichi((it.ethica.esf.model.VW_ESFListaIncarichi)arguments[0]);
 		}
 
-		if (_methodName404.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes404, parameterTypes)) {
+		if (_methodName408.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes408, parameterTypes)) {
 			return VW_ESFListaIncarichiLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName405.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes405, parameterTypes)) {
+		if (_methodName409.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes409, parameterTypes)) {
 			VW_ESFListaIncarichiLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName410.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes410, parameterTypes)) {
+		if (_methodName414.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes414, parameterTypes)) {
 			return VW_ESFListaIncarichiLocalServiceUtil.findByorganizzazione(((Long)arguments[0]).longValue());
 		}
 
@@ -268,10 +268,10 @@ public class VW_ESFListaIncarichiLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName404;
-	private String[] _methodParameterTypes404;
-	private String _methodName405;
-	private String[] _methodParameterTypes405;
-	private String _methodName410;
-	private String[] _methodParameterTypes410;
+	private String _methodName408;
+	private String[] _methodParameterTypes408;
+	private String _methodName409;
+	private String[] _methodParameterTypes409;
+	private String _methodName414;
+	private String[] _methodParameterTypes414;
 }

@@ -52,18 +52,21 @@ public class ESFRadunoAzzurriClp extends BaseModelImpl<ESFRadunoAzzurri>
 
 	@Override
 	public ESFRadunoAzzurriPK getPrimaryKey() {
-		return new ESFRadunoAzzurriPK(_id_esf_raduno_azzurri, _id_esf_raduno);
+		return new ESFRadunoAzzurriPK(_id_esf_raduno_azzurri, _id_esf_raduno,
+			_esfNationalId);
 	}
 
 	@Override
 	public void setPrimaryKey(ESFRadunoAzzurriPK primaryKey) {
 		setId_esf_raduno_azzurri(primaryKey.id_esf_raduno_azzurri);
 		setId_esf_raduno(primaryKey.id_esf_raduno);
+		setEsfNationalId(primaryKey.esfNationalId);
 	}
 
 	@Override
 	public Serializable getPrimaryKeyObj() {
-		return new ESFRadunoAzzurriPK(_id_esf_raduno_azzurri, _id_esf_raduno);
+		return new ESFRadunoAzzurriPK(_id_esf_raduno_azzurri, _id_esf_raduno,
+			_esfNationalId);
 	}
 
 	@Override
@@ -77,7 +80,7 @@ public class ESFRadunoAzzurriClp extends BaseModelImpl<ESFRadunoAzzurri>
 
 		attributes.put("id_esf_raduno_azzurri", getId_esf_raduno_azzurri());
 		attributes.put("id_esf_raduno", getId_esf_raduno());
-		attributes.put("esf_national_id", getEsf_national_id());
+		attributes.put("esfNationalId", getEsfNationalId());
 
 		return attributes;
 	}
@@ -97,10 +100,10 @@ public class ESFRadunoAzzurriClp extends BaseModelImpl<ESFRadunoAzzurri>
 			setId_esf_raduno(id_esf_raduno);
 		}
 
-		Long esf_national_id = (Long)attributes.get("esf_national_id");
+		Long esfNationalId = (Long)attributes.get("esfNationalId");
 
-		if (esf_national_id != null) {
-			setEsf_national_id(esf_national_id);
+		if (esfNationalId != null) {
+			setEsfNationalId(esfNationalId);
 		}
 	}
 
@@ -153,21 +156,21 @@ public class ESFRadunoAzzurriClp extends BaseModelImpl<ESFRadunoAzzurri>
 	}
 
 	@Override
-	public long getEsf_national_id() {
-		return _esf_national_id;
+	public long getEsfNationalId() {
+		return _esfNationalId;
 	}
 
 	@Override
-	public void setEsf_national_id(long esf_national_id) {
-		_esf_national_id = esf_national_id;
+	public void setEsfNationalId(long esfNationalId) {
+		_esfNationalId = esfNationalId;
 
 		if (_esfRadunoAzzurriRemoteModel != null) {
 			try {
 				Class<?> clazz = _esfRadunoAzzurriRemoteModel.getClass();
 
-				Method method = clazz.getMethod("setEsf_national_id", long.class);
+				Method method = clazz.getMethod("setEsfNationalId", long.class);
 
-				method.invoke(_esfRadunoAzzurriRemoteModel, esf_national_id);
+				method.invoke(_esfRadunoAzzurriRemoteModel, esfNationalId);
 			}
 			catch (Exception e) {
 				throw new UnsupportedOperationException(e);
@@ -248,7 +251,7 @@ public class ESFRadunoAzzurriClp extends BaseModelImpl<ESFRadunoAzzurri>
 
 		clone.setId_esf_raduno_azzurri(getId_esf_raduno_azzurri());
 		clone.setId_esf_raduno(getId_esf_raduno());
-		clone.setEsf_national_id(getEsf_national_id());
+		clone.setEsfNationalId(getEsfNationalId());
 
 		return clone;
 	}
@@ -295,8 +298,8 @@ public class ESFRadunoAzzurriClp extends BaseModelImpl<ESFRadunoAzzurri>
 		sb.append(getId_esf_raduno_azzurri());
 		sb.append(", id_esf_raduno=");
 		sb.append(getId_esf_raduno());
-		sb.append(", esf_national_id=");
-		sb.append(getEsf_national_id());
+		sb.append(", esfNationalId=");
+		sb.append(getEsfNationalId());
 		sb.append("}");
 
 		return sb.toString();
@@ -319,8 +322,8 @@ public class ESFRadunoAzzurriClp extends BaseModelImpl<ESFRadunoAzzurri>
 		sb.append(getId_esf_raduno());
 		sb.append("]]></column-value></column>");
 		sb.append(
-			"<column><column-name>esf_national_id</column-name><column-value><![CDATA[");
-		sb.append(getEsf_national_id());
+			"<column><column-name>esfNationalId</column-name><column-value><![CDATA[");
+		sb.append(getEsfNationalId());
 		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
@@ -330,6 +333,6 @@ public class ESFRadunoAzzurriClp extends BaseModelImpl<ESFRadunoAzzurri>
 
 	private long _id_esf_raduno_azzurri;
 	private long _id_esf_raduno;
-	private long _esf_national_id;
+	private long _esfNationalId;
 	private BaseModel<?> _esfRadunoAzzurriRemoteModel;
 }

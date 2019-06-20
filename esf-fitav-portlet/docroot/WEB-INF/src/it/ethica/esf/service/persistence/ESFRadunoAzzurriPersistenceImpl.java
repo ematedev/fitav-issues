@@ -84,135 +84,111 @@ public class ESFRadunoAzzurriPersistenceImpl extends BasePersistenceImpl<ESFRadu
 	public static final FinderPath FINDER_PATH_COUNT_ALL = new FinderPath(ESFRadunoAzzurriModelImpl.ENTITY_CACHE_ENABLED,
 			ESFRadunoAzzurriModelImpl.FINDER_CACHE_ENABLED, Long.class,
 			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countAll", new String[0]);
-	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_FINDBYRADUNO =
-		new FinderPath(ESFRadunoAzzurriModelImpl.ENTITY_CACHE_ENABLED,
+	public static final FinderPath FINDER_PATH_FETCH_BY_FINDRADUNOAZZURRI = new FinderPath(ESFRadunoAzzurriModelImpl.ENTITY_CACHE_ENABLED,
 			ESFRadunoAzzurriModelImpl.FINDER_CACHE_ENABLED,
-			ESFRadunoAzzurriImpl.class, FINDER_CLASS_NAME_LIST_WITH_PAGINATION,
-			"findByfindByRaduno",
-			new String[] {
-				Long.class.getName(),
-				
-			Integer.class.getName(), Integer.class.getName(),
-				OrderByComparator.class.getName()
-			});
-	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_FINDBYRADUNO =
-		new FinderPath(ESFRadunoAzzurriModelImpl.ENTITY_CACHE_ENABLED,
-			ESFRadunoAzzurriModelImpl.FINDER_CACHE_ENABLED,
-			ESFRadunoAzzurriImpl.class,
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByfindByRaduno",
-			new String[] { Long.class.getName() },
-			ESFRadunoAzzurriModelImpl.ID_ESF_RADUNO_COLUMN_BITMASK);
-	public static final FinderPath FINDER_PATH_COUNT_BY_FINDBYRADUNO = new FinderPath(ESFRadunoAzzurriModelImpl.ENTITY_CACHE_ENABLED,
+			ESFRadunoAzzurriImpl.class, FINDER_CLASS_NAME_ENTITY,
+			"fetchByfindRadunoAzzurri",
+			new String[] { Long.class.getName(), Long.class.getName() },
+			ESFRadunoAzzurriModelImpl.ID_ESF_RADUNO_COLUMN_BITMASK |
+			ESFRadunoAzzurriModelImpl.ESFNATIONALID_COLUMN_BITMASK);
+	public static final FinderPath FINDER_PATH_COUNT_BY_FINDRADUNOAZZURRI = new FinderPath(ESFRadunoAzzurriModelImpl.ENTITY_CACHE_ENABLED,
 			ESFRadunoAzzurriModelImpl.FINDER_CACHE_ENABLED, Long.class,
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByfindByRaduno",
-			new String[] { Long.class.getName() });
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION,
+			"countByfindRadunoAzzurri",
+			new String[] { Long.class.getName(), Long.class.getName() });
 
 	/**
-	 * Returns all the e s f raduno azzurris where id_esf_raduno = &#63;.
+	 * Returns the e s f raduno azzurri where id_esf_raduno = &#63; and esfNationalId = &#63; or throws a {@link it.ethica.esf.NoSuchRadunoAzzurriException} if it could not be found.
 	 *
 	 * @param id_esf_raduno the id_esf_raduno
-	 * @return the matching e s f raduno azzurris
+	 * @param esfNationalId the esf national ID
+	 * @return the matching e s f raduno azzurri
+	 * @throws it.ethica.esf.NoSuchRadunoAzzurriException if a matching e s f raduno azzurri could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<ESFRadunoAzzurri> findByfindByRaduno(long id_esf_raduno)
-		throws SystemException {
-		return findByfindByRaduno(id_esf_raduno, QueryUtil.ALL_POS,
-			QueryUtil.ALL_POS, null);
+	public ESFRadunoAzzurri findByfindRadunoAzzurri(long id_esf_raduno,
+		long esfNationalId)
+		throws NoSuchRadunoAzzurriException, SystemException {
+		ESFRadunoAzzurri esfRadunoAzzurri = fetchByfindRadunoAzzurri(id_esf_raduno,
+				esfNationalId);
+
+		if (esfRadunoAzzurri == null) {
+			StringBundler msg = new StringBundler(6);
+
+			msg.append(_NO_SUCH_ENTITY_WITH_KEY);
+
+			msg.append("id_esf_raduno=");
+			msg.append(id_esf_raduno);
+
+			msg.append(", esfNationalId=");
+			msg.append(esfNationalId);
+
+			msg.append(StringPool.CLOSE_CURLY_BRACE);
+
+			if (_log.isWarnEnabled()) {
+				_log.warn(msg.toString());
+			}
+
+			throw new NoSuchRadunoAzzurriException(msg.toString());
+		}
+
+		return esfRadunoAzzurri;
 	}
 
 	/**
-	 * Returns a range of all the e s f raduno azzurris where id_esf_raduno = &#63;.
-	 *
-	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link it.ethica.esf.model.impl.ESFRadunoAzzurriModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
-	 * </p>
+	 * Returns the e s f raduno azzurri where id_esf_raduno = &#63; and esfNationalId = &#63; or returns <code>null</code> if it could not be found. Uses the finder cache.
 	 *
 	 * @param id_esf_raduno the id_esf_raduno
-	 * @param start the lower bound of the range of e s f raduno azzurris
-	 * @param end the upper bound of the range of e s f raduno azzurris (not inclusive)
-	 * @return the range of matching e s f raduno azzurris
+	 * @param esfNationalId the esf national ID
+	 * @return the matching e s f raduno azzurri, or <code>null</code> if a matching e s f raduno azzurri could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<ESFRadunoAzzurri> findByfindByRaduno(long id_esf_raduno,
-		int start, int end) throws SystemException {
-		return findByfindByRaduno(id_esf_raduno, start, end, null);
+	public ESFRadunoAzzurri fetchByfindRadunoAzzurri(long id_esf_raduno,
+		long esfNationalId) throws SystemException {
+		return fetchByfindRadunoAzzurri(id_esf_raduno, esfNationalId, true);
 	}
 
 	/**
-	 * Returns an ordered range of all the e s f raduno azzurris where id_esf_raduno = &#63;.
-	 *
-	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link it.ethica.esf.model.impl.ESFRadunoAzzurriModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
-	 * </p>
+	 * Returns the e s f raduno azzurri where id_esf_raduno = &#63; and esfNationalId = &#63; or returns <code>null</code> if it could not be found, optionally using the finder cache.
 	 *
 	 * @param id_esf_raduno the id_esf_raduno
-	 * @param start the lower bound of the range of e s f raduno azzurris
-	 * @param end the upper bound of the range of e s f raduno azzurris (not inclusive)
-	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
-	 * @return the ordered range of matching e s f raduno azzurris
+	 * @param esfNationalId the esf national ID
+	 * @param retrieveFromCache whether to use the finder cache
+	 * @return the matching e s f raduno azzurri, or <code>null</code> if a matching e s f raduno azzurri could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<ESFRadunoAzzurri> findByfindByRaduno(long id_esf_raduno,
-		int start, int end, OrderByComparator orderByComparator)
+	public ESFRadunoAzzurri fetchByfindRadunoAzzurri(long id_esf_raduno,
+		long esfNationalId, boolean retrieveFromCache)
 		throws SystemException {
-		boolean pagination = true;
-		FinderPath finderPath = null;
-		Object[] finderArgs = null;
+		Object[] finderArgs = new Object[] { id_esf_raduno, esfNationalId };
 
-		if ((start == QueryUtil.ALL_POS) && (end == QueryUtil.ALL_POS) &&
-				(orderByComparator == null)) {
-			pagination = false;
-			finderPath = FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_FINDBYRADUNO;
-			finderArgs = new Object[] { id_esf_raduno };
-		}
-		else {
-			finderPath = FINDER_PATH_WITH_PAGINATION_FIND_BY_FINDBYRADUNO;
-			finderArgs = new Object[] {
-					id_esf_raduno,
-					
-					start, end, orderByComparator
-				};
+		Object result = null;
+
+		if (retrieveFromCache) {
+			result = FinderCacheUtil.getResult(FINDER_PATH_FETCH_BY_FINDRADUNOAZZURRI,
+					finderArgs, this);
 		}
 
-		List<ESFRadunoAzzurri> list = (List<ESFRadunoAzzurri>)FinderCacheUtil.getResult(finderPath,
-				finderArgs, this);
+		if (result instanceof ESFRadunoAzzurri) {
+			ESFRadunoAzzurri esfRadunoAzzurri = (ESFRadunoAzzurri)result;
 
-		if ((list != null) && !list.isEmpty()) {
-			for (ESFRadunoAzzurri esfRadunoAzzurri : list) {
-				if ((id_esf_raduno != esfRadunoAzzurri.getId_esf_raduno())) {
-					list = null;
-
-					break;
-				}
+			if ((id_esf_raduno != esfRadunoAzzurri.getId_esf_raduno()) ||
+					(esfNationalId != esfRadunoAzzurri.getEsfNationalId())) {
+				result = null;
 			}
 		}
 
-		if (list == null) {
-			StringBundler query = null;
-
-			if (orderByComparator != null) {
-				query = new StringBundler(3 +
-						(orderByComparator.getOrderByFields().length * 3));
-			}
-			else {
-				query = new StringBundler(3);
-			}
+		if (result == null) {
+			StringBundler query = new StringBundler(4);
 
 			query.append(_SQL_SELECT_ESFRADUNOAZZURRI_WHERE);
 
-			query.append(_FINDER_COLUMN_FINDBYRADUNO_ID_ESF_RADUNO_2);
+			query.append(_FINDER_COLUMN_FINDRADUNOAZZURRI_ID_ESF_RADUNO_2);
 
-			if (orderByComparator != null) {
-				appendOrderByComparator(query, _ORDER_BY_ENTITY_ALIAS,
-					orderByComparator);
-			}
-			else
-			 if (pagination) {
-				query.append(ESFRadunoAzzurriModelImpl.ORDER_BY_JPQL);
-			}
+			query.append(_FINDER_COLUMN_FINDRADUNOAZZURRI_ESFNATIONALID_2);
 
 			String sql = query.toString();
 
@@ -227,25 +203,38 @@ public class ESFRadunoAzzurriPersistenceImpl extends BasePersistenceImpl<ESFRadu
 
 				qPos.add(id_esf_raduno);
 
-				if (!pagination) {
-					list = (List<ESFRadunoAzzurri>)QueryUtil.list(q,
-							getDialect(), start, end, false);
+				qPos.add(esfNationalId);
 
-					Collections.sort(list);
+				List<ESFRadunoAzzurri> list = q.list();
 
-					list = new UnmodifiableList<ESFRadunoAzzurri>(list);
+				if (list.isEmpty()) {
+					FinderCacheUtil.putResult(FINDER_PATH_FETCH_BY_FINDRADUNOAZZURRI,
+						finderArgs, list);
 				}
 				else {
-					list = (List<ESFRadunoAzzurri>)QueryUtil.list(q,
-							getDialect(), start, end);
+					if ((list.size() > 1) && _log.isWarnEnabled()) {
+						_log.warn(
+							"ESFRadunoAzzurriPersistenceImpl.fetchByfindRadunoAzzurri(long, long, boolean) with parameters (" +
+							StringUtil.merge(finderArgs) +
+							") yields a result set with more than 1 result. This violates the logical unique restriction. There is no order guarantee on which result is returned by this finder.");
+					}
+
+					ESFRadunoAzzurri esfRadunoAzzurri = list.get(0);
+
+					result = esfRadunoAzzurri;
+
+					cacheResult(esfRadunoAzzurri);
+
+					if ((esfRadunoAzzurri.getId_esf_raduno() != id_esf_raduno) ||
+							(esfRadunoAzzurri.getEsfNationalId() != esfNationalId)) {
+						FinderCacheUtil.putResult(FINDER_PATH_FETCH_BY_FINDRADUNOAZZURRI,
+							finderArgs, esfRadunoAzzurri);
+					}
 				}
-
-				cacheResult(list);
-
-				FinderCacheUtil.putResult(finderPath, finderArgs, list);
 			}
 			catch (Exception e) {
-				FinderCacheUtil.removeResult(finderPath, finderArgs);
+				FinderCacheUtil.removeResult(FINDER_PATH_FETCH_BY_FINDRADUNOAZZURRI,
+					finderArgs);
 
 				throw processException(e);
 			}
@@ -254,306 +243,58 @@ public class ESFRadunoAzzurriPersistenceImpl extends BasePersistenceImpl<ESFRadu
 			}
 		}
 
-		return list;
-	}
-
-	/**
-	 * Returns the first e s f raduno azzurri in the ordered set where id_esf_raduno = &#63;.
-	 *
-	 * @param id_esf_raduno the id_esf_raduno
-	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
-	 * @return the first matching e s f raduno azzurri
-	 * @throws it.ethica.esf.NoSuchRadunoAzzurriException if a matching e s f raduno azzurri could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	@Override
-	public ESFRadunoAzzurri findByfindByRaduno_First(long id_esf_raduno,
-		OrderByComparator orderByComparator)
-		throws NoSuchRadunoAzzurriException, SystemException {
-		ESFRadunoAzzurri esfRadunoAzzurri = fetchByfindByRaduno_First(id_esf_raduno,
-				orderByComparator);
-
-		if (esfRadunoAzzurri != null) {
-			return esfRadunoAzzurri;
-		}
-
-		StringBundler msg = new StringBundler(4);
-
-		msg.append(_NO_SUCH_ENTITY_WITH_KEY);
-
-		msg.append("id_esf_raduno=");
-		msg.append(id_esf_raduno);
-
-		msg.append(StringPool.CLOSE_CURLY_BRACE);
-
-		throw new NoSuchRadunoAzzurriException(msg.toString());
-	}
-
-	/**
-	 * Returns the first e s f raduno azzurri in the ordered set where id_esf_raduno = &#63;.
-	 *
-	 * @param id_esf_raduno the id_esf_raduno
-	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
-	 * @return the first matching e s f raduno azzurri, or <code>null</code> if a matching e s f raduno azzurri could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	@Override
-	public ESFRadunoAzzurri fetchByfindByRaduno_First(long id_esf_raduno,
-		OrderByComparator orderByComparator) throws SystemException {
-		List<ESFRadunoAzzurri> list = findByfindByRaduno(id_esf_raduno, 0, 1,
-				orderByComparator);
-
-		if (!list.isEmpty()) {
-			return list.get(0);
-		}
-
-		return null;
-	}
-
-	/**
-	 * Returns the last e s f raduno azzurri in the ordered set where id_esf_raduno = &#63;.
-	 *
-	 * @param id_esf_raduno the id_esf_raduno
-	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
-	 * @return the last matching e s f raduno azzurri
-	 * @throws it.ethica.esf.NoSuchRadunoAzzurriException if a matching e s f raduno azzurri could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	@Override
-	public ESFRadunoAzzurri findByfindByRaduno_Last(long id_esf_raduno,
-		OrderByComparator orderByComparator)
-		throws NoSuchRadunoAzzurriException, SystemException {
-		ESFRadunoAzzurri esfRadunoAzzurri = fetchByfindByRaduno_Last(id_esf_raduno,
-				orderByComparator);
-
-		if (esfRadunoAzzurri != null) {
-			return esfRadunoAzzurri;
-		}
-
-		StringBundler msg = new StringBundler(4);
-
-		msg.append(_NO_SUCH_ENTITY_WITH_KEY);
-
-		msg.append("id_esf_raduno=");
-		msg.append(id_esf_raduno);
-
-		msg.append(StringPool.CLOSE_CURLY_BRACE);
-
-		throw new NoSuchRadunoAzzurriException(msg.toString());
-	}
-
-	/**
-	 * Returns the last e s f raduno azzurri in the ordered set where id_esf_raduno = &#63;.
-	 *
-	 * @param id_esf_raduno the id_esf_raduno
-	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
-	 * @return the last matching e s f raduno azzurri, or <code>null</code> if a matching e s f raduno azzurri could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	@Override
-	public ESFRadunoAzzurri fetchByfindByRaduno_Last(long id_esf_raduno,
-		OrderByComparator orderByComparator) throws SystemException {
-		int count = countByfindByRaduno(id_esf_raduno);
-
-		if (count == 0) {
+		if (result instanceof List<?>) {
 			return null;
 		}
-
-		List<ESFRadunoAzzurri> list = findByfindByRaduno(id_esf_raduno,
-				count - 1, count, orderByComparator);
-
-		if (!list.isEmpty()) {
-			return list.get(0);
+		else {
+			return (ESFRadunoAzzurri)result;
 		}
-
-		return null;
 	}
 
 	/**
-	 * Returns the e s f raduno azzurris before and after the current e s f raduno azzurri in the ordered set where id_esf_raduno = &#63;.
+	 * Removes the e s f raduno azzurri where id_esf_raduno = &#63; and esfNationalId = &#63; from the database.
 	 *
-	 * @param esfRadunoAzzurriPK the primary key of the current e s f raduno azzurri
 	 * @param id_esf_raduno the id_esf_raduno
-	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
-	 * @return the previous, current, and next e s f raduno azzurri
-	 * @throws it.ethica.esf.NoSuchRadunoAzzurriException if a e s f raduno azzurri with the primary key could not be found
+	 * @param esfNationalId the esf national ID
+	 * @return the e s f raduno azzurri that was removed
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public ESFRadunoAzzurri[] findByfindByRaduno_PrevAndNext(
-		ESFRadunoAzzurriPK esfRadunoAzzurriPK, long id_esf_raduno,
-		OrderByComparator orderByComparator)
+	public ESFRadunoAzzurri removeByfindRadunoAzzurri(long id_esf_raduno,
+		long esfNationalId)
 		throws NoSuchRadunoAzzurriException, SystemException {
-		ESFRadunoAzzurri esfRadunoAzzurri = findByPrimaryKey(esfRadunoAzzurriPK);
+		ESFRadunoAzzurri esfRadunoAzzurri = findByfindRadunoAzzurri(id_esf_raduno,
+				esfNationalId);
 
-		Session session = null;
-
-		try {
-			session = openSession();
-
-			ESFRadunoAzzurri[] array = new ESFRadunoAzzurriImpl[3];
-
-			array[0] = getByfindByRaduno_PrevAndNext(session, esfRadunoAzzurri,
-					id_esf_raduno, orderByComparator, true);
-
-			array[1] = esfRadunoAzzurri;
-
-			array[2] = getByfindByRaduno_PrevAndNext(session, esfRadunoAzzurri,
-					id_esf_raduno, orderByComparator, false);
-
-			return array;
-		}
-		catch (Exception e) {
-			throw processException(e);
-		}
-		finally {
-			closeSession(session);
-		}
-	}
-
-	protected ESFRadunoAzzurri getByfindByRaduno_PrevAndNext(Session session,
-		ESFRadunoAzzurri esfRadunoAzzurri, long id_esf_raduno,
-		OrderByComparator orderByComparator, boolean previous) {
-		StringBundler query = null;
-
-		if (orderByComparator != null) {
-			query = new StringBundler(6 +
-					(orderByComparator.getOrderByFields().length * 6));
-		}
-		else {
-			query = new StringBundler(3);
-		}
-
-		query.append(_SQL_SELECT_ESFRADUNOAZZURRI_WHERE);
-
-		query.append(_FINDER_COLUMN_FINDBYRADUNO_ID_ESF_RADUNO_2);
-
-		if (orderByComparator != null) {
-			String[] orderByConditionFields = orderByComparator.getOrderByConditionFields();
-
-			if (orderByConditionFields.length > 0) {
-				query.append(WHERE_AND);
-			}
-
-			for (int i = 0; i < orderByConditionFields.length; i++) {
-				query.append(_ORDER_BY_ENTITY_ALIAS);
-				query.append(orderByConditionFields[i]);
-
-				if ((i + 1) < orderByConditionFields.length) {
-					if (orderByComparator.isAscending() ^ previous) {
-						query.append(WHERE_GREATER_THAN_HAS_NEXT);
-					}
-					else {
-						query.append(WHERE_LESSER_THAN_HAS_NEXT);
-					}
-				}
-				else {
-					if (orderByComparator.isAscending() ^ previous) {
-						query.append(WHERE_GREATER_THAN);
-					}
-					else {
-						query.append(WHERE_LESSER_THAN);
-					}
-				}
-			}
-
-			query.append(ORDER_BY_CLAUSE);
-
-			String[] orderByFields = orderByComparator.getOrderByFields();
-
-			for (int i = 0; i < orderByFields.length; i++) {
-				query.append(_ORDER_BY_ENTITY_ALIAS);
-				query.append(orderByFields[i]);
-
-				if ((i + 1) < orderByFields.length) {
-					if (orderByComparator.isAscending() ^ previous) {
-						query.append(ORDER_BY_ASC_HAS_NEXT);
-					}
-					else {
-						query.append(ORDER_BY_DESC_HAS_NEXT);
-					}
-				}
-				else {
-					if (orderByComparator.isAscending() ^ previous) {
-						query.append(ORDER_BY_ASC);
-					}
-					else {
-						query.append(ORDER_BY_DESC);
-					}
-				}
-			}
-		}
-		else {
-			query.append(ESFRadunoAzzurriModelImpl.ORDER_BY_JPQL);
-		}
-
-		String sql = query.toString();
-
-		Query q = session.createQuery(sql);
-
-		q.setFirstResult(0);
-		q.setMaxResults(2);
-
-		QueryPos qPos = QueryPos.getInstance(q);
-
-		qPos.add(id_esf_raduno);
-
-		if (orderByComparator != null) {
-			Object[] values = orderByComparator.getOrderByConditionValues(esfRadunoAzzurri);
-
-			for (Object value : values) {
-				qPos.add(value);
-			}
-		}
-
-		List<ESFRadunoAzzurri> list = q.list();
-
-		if (list.size() == 2) {
-			return list.get(1);
-		}
-		else {
-			return null;
-		}
+		return remove(esfRadunoAzzurri);
 	}
 
 	/**
-	 * Removes all the e s f raduno azzurris where id_esf_raduno = &#63; from the database.
+	 * Returns the number of e s f raduno azzurris where id_esf_raduno = &#63; and esfNationalId = &#63;.
 	 *
 	 * @param id_esf_raduno the id_esf_raduno
-	 * @throws SystemException if a system exception occurred
-	 */
-	@Override
-	public void removeByfindByRaduno(long id_esf_raduno)
-		throws SystemException {
-		for (ESFRadunoAzzurri esfRadunoAzzurri : findByfindByRaduno(
-				id_esf_raduno, QueryUtil.ALL_POS, QueryUtil.ALL_POS, null)) {
-			remove(esfRadunoAzzurri);
-		}
-	}
-
-	/**
-	 * Returns the number of e s f raduno azzurris where id_esf_raduno = &#63;.
-	 *
-	 * @param id_esf_raduno the id_esf_raduno
+	 * @param esfNationalId the esf national ID
 	 * @return the number of matching e s f raduno azzurris
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public int countByfindByRaduno(long id_esf_raduno)
+	public int countByfindRadunoAzzurri(long id_esf_raduno, long esfNationalId)
 		throws SystemException {
-		FinderPath finderPath = FINDER_PATH_COUNT_BY_FINDBYRADUNO;
+		FinderPath finderPath = FINDER_PATH_COUNT_BY_FINDRADUNOAZZURRI;
 
-		Object[] finderArgs = new Object[] { id_esf_raduno };
+		Object[] finderArgs = new Object[] { id_esf_raduno, esfNationalId };
 
 		Long count = (Long)FinderCacheUtil.getResult(finderPath, finderArgs,
 				this);
 
 		if (count == null) {
-			StringBundler query = new StringBundler(2);
+			StringBundler query = new StringBundler(3);
 
 			query.append(_SQL_COUNT_ESFRADUNOAZZURRI_WHERE);
 
-			query.append(_FINDER_COLUMN_FINDBYRADUNO_ID_ESF_RADUNO_2);
+			query.append(_FINDER_COLUMN_FINDRADUNOAZZURRI_ID_ESF_RADUNO_2);
+
+			query.append(_FINDER_COLUMN_FINDRADUNOAZZURRI_ESFNATIONALID_2);
 
 			String sql = query.toString();
 
@@ -567,6 +308,8 @@ public class ESFRadunoAzzurriPersistenceImpl extends BasePersistenceImpl<ESFRadu
 				QueryPos qPos = QueryPos.getInstance(q);
 
 				qPos.add(id_esf_raduno);
+
+				qPos.add(esfNationalId);
 
 				count = (Long)q.uniqueResult();
 
@@ -585,7 +328,10 @@ public class ESFRadunoAzzurriPersistenceImpl extends BasePersistenceImpl<ESFRadu
 		return count.intValue();
 	}
 
-	private static final String _FINDER_COLUMN_FINDBYRADUNO_ID_ESF_RADUNO_2 = "esfRadunoAzzurri.id.id_esf_raduno = ?";
+	private static final String _FINDER_COLUMN_FINDRADUNOAZZURRI_ID_ESF_RADUNO_2 =
+		"esfRadunoAzzurri.id.id_esf_raduno = ? AND ";
+	private static final String _FINDER_COLUMN_FINDRADUNOAZZURRI_ESFNATIONALID_2 =
+		"esfRadunoAzzurri.id.esfNationalId = ?";
 
 	public ESFRadunoAzzurriPersistenceImpl() {
 		setModelClass(ESFRadunoAzzurri.class);
@@ -601,6 +347,12 @@ public class ESFRadunoAzzurriPersistenceImpl extends BasePersistenceImpl<ESFRadu
 		EntityCacheUtil.putResult(ESFRadunoAzzurriModelImpl.ENTITY_CACHE_ENABLED,
 			ESFRadunoAzzurriImpl.class, esfRadunoAzzurri.getPrimaryKey(),
 			esfRadunoAzzurri);
+
+		FinderCacheUtil.putResult(FINDER_PATH_FETCH_BY_FINDRADUNOAZZURRI,
+			new Object[] {
+				esfRadunoAzzurri.getId_esf_raduno(),
+				esfRadunoAzzurri.getEsfNationalId()
+			}, esfRadunoAzzurri);
 
 		esfRadunoAzzurri.resetOriginalValues();
 	}
@@ -659,6 +411,8 @@ public class ESFRadunoAzzurriPersistenceImpl extends BasePersistenceImpl<ESFRadu
 
 		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITH_PAGINATION);
 		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);
+
+		clearUniqueFindersCache(esfRadunoAzzurri);
 	}
 
 	@Override
@@ -669,6 +423,65 @@ public class ESFRadunoAzzurriPersistenceImpl extends BasePersistenceImpl<ESFRadu
 		for (ESFRadunoAzzurri esfRadunoAzzurri : esfRadunoAzzurris) {
 			EntityCacheUtil.removeResult(ESFRadunoAzzurriModelImpl.ENTITY_CACHE_ENABLED,
 				ESFRadunoAzzurriImpl.class, esfRadunoAzzurri.getPrimaryKey());
+
+			clearUniqueFindersCache(esfRadunoAzzurri);
+		}
+	}
+
+	protected void cacheUniqueFindersCache(ESFRadunoAzzurri esfRadunoAzzurri) {
+		if (esfRadunoAzzurri.isNew()) {
+			Object[] args = new Object[] {
+					esfRadunoAzzurri.getId_esf_raduno(),
+					esfRadunoAzzurri.getEsfNationalId()
+				};
+
+			FinderCacheUtil.putResult(FINDER_PATH_COUNT_BY_FINDRADUNOAZZURRI,
+				args, Long.valueOf(1));
+			FinderCacheUtil.putResult(FINDER_PATH_FETCH_BY_FINDRADUNOAZZURRI,
+				args, esfRadunoAzzurri);
+		}
+		else {
+			ESFRadunoAzzurriModelImpl esfRadunoAzzurriModelImpl = (ESFRadunoAzzurriModelImpl)esfRadunoAzzurri;
+
+			if ((esfRadunoAzzurriModelImpl.getColumnBitmask() &
+					FINDER_PATH_FETCH_BY_FINDRADUNOAZZURRI.getColumnBitmask()) != 0) {
+				Object[] args = new Object[] {
+						esfRadunoAzzurri.getId_esf_raduno(),
+						esfRadunoAzzurri.getEsfNationalId()
+					};
+
+				FinderCacheUtil.putResult(FINDER_PATH_COUNT_BY_FINDRADUNOAZZURRI,
+					args, Long.valueOf(1));
+				FinderCacheUtil.putResult(FINDER_PATH_FETCH_BY_FINDRADUNOAZZURRI,
+					args, esfRadunoAzzurri);
+			}
+		}
+	}
+
+	protected void clearUniqueFindersCache(ESFRadunoAzzurri esfRadunoAzzurri) {
+		ESFRadunoAzzurriModelImpl esfRadunoAzzurriModelImpl = (ESFRadunoAzzurriModelImpl)esfRadunoAzzurri;
+
+		Object[] args = new Object[] {
+				esfRadunoAzzurri.getId_esf_raduno(),
+				esfRadunoAzzurri.getEsfNationalId()
+			};
+
+		FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_FINDRADUNOAZZURRI,
+			args);
+		FinderCacheUtil.removeResult(FINDER_PATH_FETCH_BY_FINDRADUNOAZZURRI,
+			args);
+
+		if ((esfRadunoAzzurriModelImpl.getColumnBitmask() &
+				FINDER_PATH_FETCH_BY_FINDRADUNOAZZURRI.getColumnBitmask()) != 0) {
+			args = new Object[] {
+					esfRadunoAzzurriModelImpl.getOriginalId_esf_raduno(),
+					esfRadunoAzzurriModelImpl.getOriginalEsfNationalId()
+				};
+
+			FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_FINDRADUNOAZZURRI,
+				args);
+			FinderCacheUtil.removeResult(FINDER_PATH_FETCH_BY_FINDRADUNOAZZURRI,
+				args);
 		}
 	}
 
@@ -784,8 +597,6 @@ public class ESFRadunoAzzurriPersistenceImpl extends BasePersistenceImpl<ESFRadu
 
 		boolean isNew = esfRadunoAzzurri.isNew();
 
-		ESFRadunoAzzurriModelImpl esfRadunoAzzurriModelImpl = (ESFRadunoAzzurriModelImpl)esfRadunoAzzurri;
-
 		Session session = null;
 
 		try {
@@ -813,30 +624,12 @@ public class ESFRadunoAzzurriPersistenceImpl extends BasePersistenceImpl<ESFRadu
 			FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);
 		}
 
-		else {
-			if ((esfRadunoAzzurriModelImpl.getColumnBitmask() &
-					FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_FINDBYRADUNO.getColumnBitmask()) != 0) {
-				Object[] args = new Object[] {
-						esfRadunoAzzurriModelImpl.getOriginalId_esf_raduno()
-					};
-
-				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_FINDBYRADUNO,
-					args);
-				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_FINDBYRADUNO,
-					args);
-
-				args = new Object[] { esfRadunoAzzurriModelImpl.getId_esf_raduno() };
-
-				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_FINDBYRADUNO,
-					args);
-				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_FINDBYRADUNO,
-					args);
-			}
-		}
-
 		EntityCacheUtil.putResult(ESFRadunoAzzurriModelImpl.ENTITY_CACHE_ENABLED,
 			ESFRadunoAzzurriImpl.class, esfRadunoAzzurri.getPrimaryKey(),
 			esfRadunoAzzurri);
+
+		clearUniqueFindersCache(esfRadunoAzzurri);
+		cacheUniqueFindersCache(esfRadunoAzzurri);
 
 		return esfRadunoAzzurri;
 	}
@@ -854,7 +647,7 @@ public class ESFRadunoAzzurriPersistenceImpl extends BasePersistenceImpl<ESFRadu
 
 		esfRadunoAzzurriImpl.setId_esf_raduno_azzurri(esfRadunoAzzurri.getId_esf_raduno_azzurri());
 		esfRadunoAzzurriImpl.setId_esf_raduno(esfRadunoAzzurri.getId_esf_raduno());
-		esfRadunoAzzurriImpl.setEsf_national_id(esfRadunoAzzurri.getEsf_national_id());
+		esfRadunoAzzurriImpl.setEsfNationalId(esfRadunoAzzurri.getEsfNationalId());
 
 		return esfRadunoAzzurriImpl;
 	}

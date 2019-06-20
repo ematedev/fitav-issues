@@ -121,49 +121,6 @@ public interface VW_AzzurriModel extends BaseModel<VW_Azzurri> {
 	public void setUserName(String userName);
 
 	/**
-	 * Returns the esf user ID of this v w_ azzurri.
-	 *
-	 * @return the esf user ID of this v w_ azzurri
-	 */
-	public long getEsfUserId();
-
-	/**
-	 * Sets the esf user ID of this v w_ azzurri.
-	 *
-	 * @param esfUserId the esf user ID of this v w_ azzurri
-	 */
-	public void setEsfUserId(long esfUserId);
-
-	/**
-	 * Returns the esf user uuid of this v w_ azzurri.
-	 *
-	 * @return the esf user uuid of this v w_ azzurri
-	 * @throws SystemException if a system exception occurred
-	 */
-	public String getEsfUserUuid() throws SystemException;
-
-	/**
-	 * Sets the esf user uuid of this v w_ azzurri.
-	 *
-	 * @param esfUserUuid the esf user uuid of this v w_ azzurri
-	 */
-	public void setEsfUserUuid(String esfUserUuid);
-
-	/**
-	 * Returns the esf sport type ID of this v w_ azzurri.
-	 *
-	 * @return the esf sport type ID of this v w_ azzurri
-	 */
-	public long getEsfSportTypeId();
-
-	/**
-	 * Sets the esf sport type ID of this v w_ azzurri.
-	 *
-	 * @param esfSportTypeId the esf sport type ID of this v w_ azzurri
-	 */
-	public void setEsfSportTypeId(long esfSportTypeId);
-
-	/**
 	 * Returns the start date of this v w_ azzurri.
 	 *
 	 * @return the start date of this v w_ azzurri
@@ -190,6 +147,20 @@ public interface VW_AzzurriModel extends BaseModel<VW_Azzurri> {
 	 * @param endDate the end date of this v w_ azzurri
 	 */
 	public void setEndDate(Date endDate);
+
+	/**
+	 * Returns the esf sport type ID of this v w_ azzurri.
+	 *
+	 * @return the esf sport type ID of this v w_ azzurri
+	 */
+	public long getEsfSportTypeId();
+
+	/**
+	 * Sets the esf sport type ID of this v w_ azzurri.
+	 *
+	 * @param esfSportTypeId the esf sport type ID of this v w_ azzurri
+	 */
+	public void setEsfSportTypeId(long esfSportTypeId);
 
 	/**
 	 * Returns the name of this v w_ azzurri.
@@ -226,14 +197,28 @@ public interface VW_AzzurriModel extends BaseModel<VW_Azzurri> {
 	 *
 	 * @return the invitato of this v w_ azzurri
 	 */
-	public int getInvitato();
+	public long getInvitato();
 
 	/**
 	 * Sets the invitato of this v w_ azzurri.
 	 *
 	 * @param invitato the invitato of this v w_ azzurri
 	 */
-	public void setInvitato(int invitato);
+	public void setInvitato(long invitato);
+
+	/**
+	 * Returns the id_esf_raduno of this v w_ azzurri.
+	 *
+	 * @return the id_esf_raduno of this v w_ azzurri
+	 */
+	public long getId_esf_raduno();
+
+	/**
+	 * Sets the id_esf_raduno of this v w_ azzurri.
+	 *
+	 * @param id_esf_raduno the id_esf_raduno of this v w_ azzurri
+	 */
+	public void setId_esf_raduno(long id_esf_raduno);
 
 	@Override
 	public boolean isNew();

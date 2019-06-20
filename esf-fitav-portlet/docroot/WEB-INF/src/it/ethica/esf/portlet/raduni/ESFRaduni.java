@@ -6,7 +6,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,25 +46,31 @@ import com.liferay.portal.kernel.servlet.ServletResponseUtil;
 import com.liferay.portal.kernel.servlet.SessionMessages;
 import com.liferay.portal.kernel.upload.UploadPortletRequest;
 
+import it.ethica.esf.NoSuchRadunoAzzurriException;
 import it.ethica.esf.NoSuchRadunoException;
 import it.ethica.esf.model.ESFNational;
 import it.ethica.esf.model.ESFOrganization;
 import it.ethica.esf.model.ESFRaduno;
+import it.ethica.esf.model.ESFRadunoAzzurri;
 import it.ethica.esf.model.ESFRadunoFiles;
 import it.ethica.esf.model.ESFRadunoSottotipiRaduno;
 import it.ethica.esf.model.ESFRadunoSottotipo;
 import it.ethica.esf.model.ESFRadunoTipo;
 import it.ethica.esf.model.ESFSportType;
 import it.ethica.esf.model.VW_Azzurri;
+import it.ethica.esf.model.impl.ESFRadunoAzzurriImpl;
 import it.ethica.esf.model.impl.ESFRadunoFilesImpl;
 import it.ethica.esf.model.impl.ESFRadunoImpl;
 import it.ethica.esf.service.ESFNationalLocalServiceUtil;
 import it.ethica.esf.service.ESFOrganizationLocalServiceUtil;
+import it.ethica.esf.service.ESFRadunoAzzurriLocalServiceUtil;
 import it.ethica.esf.service.ESFRadunoFilesLocalServiceUtil;
 import it.ethica.esf.service.ESFRadunoLocalServiceUtil;
 import it.ethica.esf.service.ESFRadunoSottotipiRadunoLocalServiceUtil;
 import it.ethica.esf.service.ESFRadunoTipoLocalServiceUtil;
 import it.ethica.esf.service.ESFSportTypeLocalServiceUtil;
+import it.ethica.esf.service.VW_AzzurriLocalService;
+import it.ethica.esf.service.VW_AzzurriLocalServiceUtil;
 import it.ethica.esf.util.DateUtilFormatter;
 import it.ethica.esf.util.MissingDateException;
 
@@ -200,23 +208,9 @@ public class ESFRaduni extends MVCPortlet {
 		System.out.println("delta : [" + delta + "]");
 		System.out.println("cur : [" + cur + "]");
 		
+	
 		try {
-			List<VW_Azzurri> listaNazionali = new ArrayList<VW_Azzurri>();
-			// CREO la DynamicQuery aggiungendo condizioni a seconda se i campi sono vuoti o sono valorizzati
-//			DynamicQuery dq = DynamicQueryFactoryUtil.forClass(ESFNational.class, "Azzurri", PortletClassLoaderUtil.getClassLoader());
-//			if (!name.isEmpty())
-//				dq.add(RestrictionsFactoryUtil.like("Azzurri.userName", "%" + name + "%"));
-//			
-//			if(startDate != null)
-//				dq.add(RestrictionsFactoryUtil.ge("Azzurri.startDate", startDate));
-//				
-//			if(esfSportType!=0)
-//				dq.add(RestrictionsFactoryUtil.eq("Azzurri.esfSportTypeId", esfSportType));
-//			listaNazionali = ESFNationalLocalServiceUtil.dynamicQuery(dq);
-//			
-//			for (ESFNational nazionale : listaNazionali){
-//				System.out.println("[NOME: " + nazionale.getUserName() + " ]");
-//			}
+			List<VW_Azzurri> listaNazionali = new ArrayList<>();
 			
 			DynamicQuery dq = DynamicQueryFactoryUtil.forClass(VW_Azzurri.class, "Azzurri", PortletClassLoaderUtil.getClassLoader());
 			if (!name.isEmpty())
@@ -226,19 +220,21 @@ public class ESFRaduni extends MVCPortlet {
 				dq.add(RestrictionsFactoryUtil.ge("Azzurri.startDate", startDate));
 				
 			if(esfSportType!=0)
-				dq.add(RestrictionsFactoryUtil.eq("Azzurri.esfSportTypeId", esfSportType));
-			listaNazionali = ESFNationalLocalServiceUtil.dynamicQuery(dq);
+				dq.add(RestrictionsFactoryUtil.eq("Azzurri.primaryKey.esfSportTypeId", esfSportType));
 			
 			if(esfListaInvitati != 0){
-				if (esfListaInvitati == 1)
-					dq.add(RestrictionsFactoryUtil.eq("Azzurri.invitato", 1));
-				else
+				//dq.add(RestrictionsFactoryUtil.eq("Azzurri.primaryKey.id_esf_raduno", id_esf_raduno));
+				if (esfListaInvitati == 1){
 					dq.add(RestrictionsFactoryUtil.eq("Azzurri.invitato", 0));
+				}
+				else{
+					dq.add(RestrictionsFactoryUtil.eq("Azzurri.invitato", 1));
+				}
 			}
-			
+			listaNazionali =  VW_AzzurriLocalServiceUtil.dynamicQuery(dq);
 			
 			for (VW_Azzurri azzurro : listaNazionali){
-				System.out.println("[ID: " + azzurro.getEsfUserId() + " - NOME: " + azzurro.getUserName() + " ]");
+				System.out.println("[ID: " + azzurro.getEsfNationalId() + " - NOME: " + azzurro.getUserName() + " ]");
 			}
 			
 			
@@ -277,22 +273,53 @@ public class ESFRaduni extends MVCPortlet {
 	}
 	
 	
+	@SuppressWarnings("unchecked")
 	@ProcessAction(name="salvaAzzurriRaduno")
 	public void salvaAzzurriRaduno(ActionRequest request, ActionResponse response) {
 		System.out.println("################# SALVA AZZURRI RADUNO #####################");
 		
-		long id_esf_raduno = ParamUtil.getLong(request, "id_esf_raduno");
-		String code = ParamUtil.getString(request, "code");
+		try {
+			long id_esf_raduno = ParamUtil.getLong(request, "id_esf_raduno");
+			String code = ParamUtil.getString(request, "code");
 
-		String[] parametri = ParamUtil.getParameterValues(request, "invitato", new String[0]);
-		String invitato = ParamUtil.getString(request, "invitato");
-		
-		for(String param : parametri){
-			System.out.println(param);
+			String[] parametri = ParamUtil.getParameterValues(request, "invitato", new String[0]);
+			System.out.println("[LISTA COMPLETA " + ParamUtil.getString(request, "idListaMostrataAzzurri") + "]");
+
+			String delimiter = "\\|";
+			String[] ListaIdAzzurri = ParamUtil.getString(request, "idListaMostrataAzzurri").split(delimiter);
+			
+			
+			List<String> listaChecked = new ArrayList<String>(Arrays.asList(parametri));
+			List<String> listaUnchecked = new ArrayList<>();
+			
+			for(String elemento : ListaIdAzzurri){
+				
+				if(listaChecked.indexOf(elemento) == -1){
+					listaUnchecked.add(elemento);
+				}
+				System.out.println("[LISTA COMPLETA ID: " + elemento + "]");
+			}
+			
+			for(String elemento : listaChecked){
+				System.out.println("[LISTA CHECKED ID: " + elemento + "]");
+			}
+			for(String elemento : listaUnchecked){
+				System.out.println("[LISTA UNCHECKED ID: " + elemento + "]");
+			}
+			System.out.println("[" + id_esf_raduno + "]");
+			System.out.println("[" + code + "]");
+
+			ESFRadunoAzzurriLocalServiceUtil.associaAzzurri(id_esf_raduno, listaChecked, listaUnchecked);
+		} catch (NoSuchRadunoAzzurriException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		System.out.println("[" + id_esf_raduno + "]");
-		System.out.println("[" + code + "]");		
-		System.out.println("[" + invitato + "]");		
 		
 	}
 	
@@ -554,8 +581,9 @@ public class ESFRaduni extends MVCPortlet {
 				listaSottoTipiDisponibili.add(new KeyValuePair(entry.getKey(), entry.getValue()));
 			}
 			
-			ESFOrganization associazione = ESFOrganizationLocalServiceUtil.getESFOrganization(esfAssociationId);
-			
+			ESFOrganization associazione = null;
+			if(esfAssociationId!=0)
+				associazione = ESFOrganizationLocalServiceUtil.getESFOrganization(esfAssociationId);
 			
 			request.setAttribute("associazione", associazione);
 			request.setAttribute("listaSottoTipiDisponibili", listaSottoTipiDisponibili);

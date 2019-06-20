@@ -123,6 +123,12 @@ public class ESFRadunoAzzurriLocalServiceClp
 		_methodName17 = "setBeanIdentifier";
 
 		_methodParameterTypes17 = new String[] { "java.lang.String" };
+
+		_methodName19 = "associaAzzurri";
+
+		_methodParameterTypes19 = new String[] {
+				"long", "java.util.List", "java.util.List"
+			};
 	}
 
 	@Override
@@ -690,6 +696,49 @@ public class ESFRadunoAzzurriLocalServiceClp
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
+	public void associaAzzurri(long id_esf_raduno,
+		java.util.List<java.lang.String> listaChecked,
+		java.util.List<java.lang.String> listaUnchecked)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			it.ethica.esf.NoSuchRadunoAzzurriException,
+			java.lang.NumberFormatException {
+		try {
+			_invokableLocalService.invokeMethod(_methodName19,
+				_methodParameterTypes19,
+				new Object[] {
+					id_esf_raduno,
+					
+				ClpSerializer.translateInput(listaChecked),
+					
+				ClpSerializer.translateInput(listaUnchecked)
+				});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof it.ethica.esf.NoSuchRadunoAzzurriException) {
+				throw (it.ethica.esf.NoSuchRadunoAzzurriException)t;
+			}
+
+			if (t instanceof java.lang.NumberFormatException) {
+				throw (java.lang.NumberFormatException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+	}
+
 	private InvokableLocalService _invokableLocalService;
 	private String _methodName0;
 	private String[] _methodParameterTypes0;
@@ -727,4 +776,6 @@ public class ESFRadunoAzzurriLocalServiceClp
 	private String[] _methodParameterTypes16;
 	private String _methodName17;
 	private String[] _methodParameterTypes17;
+	private String _methodName19;
+	private String[] _methodParameterTypes19;
 }

@@ -54,19 +54,22 @@ public class VW_AzzurriClp extends BaseModelImpl<VW_Azzurri>
 
 	@Override
 	public VW_AzzurriPK getPrimaryKey() {
-		return new VW_AzzurriPK(_esfNationalId, _userId, _esfUserId);
+		return new VW_AzzurriPK(_esfNationalId, _userId, _esfSportTypeId,
+			_id_esf_raduno);
 	}
 
 	@Override
 	public void setPrimaryKey(VW_AzzurriPK primaryKey) {
 		setEsfNationalId(primaryKey.esfNationalId);
 		setUserId(primaryKey.userId);
-		setEsfUserId(primaryKey.esfUserId);
+		setEsfSportTypeId(primaryKey.esfSportTypeId);
+		setId_esf_raduno(primaryKey.id_esf_raduno);
 	}
 
 	@Override
 	public Serializable getPrimaryKeyObj() {
-		return new VW_AzzurriPK(_esfNationalId, _userId, _esfUserId);
+		return new VW_AzzurriPK(_esfNationalId, _userId, _esfSportTypeId,
+			_id_esf_raduno);
 	}
 
 	@Override
@@ -81,13 +84,13 @@ public class VW_AzzurriClp extends BaseModelImpl<VW_Azzurri>
 		attributes.put("esfNationalId", getEsfNationalId());
 		attributes.put("userId", getUserId());
 		attributes.put("userName", getUserName());
-		attributes.put("esfUserId", getEsfUserId());
-		attributes.put("esfSportTypeId", getEsfSportTypeId());
 		attributes.put("startDate", getStartDate());
 		attributes.put("endDate", getEndDate());
+		attributes.put("esfSportTypeId", getEsfSportTypeId());
 		attributes.put("name", getName());
 		attributes.put("description", getDescription());
 		attributes.put("invitato", getInvitato());
+		attributes.put("id_esf_raduno", getId_esf_raduno());
 
 		return attributes;
 	}
@@ -112,18 +115,6 @@ public class VW_AzzurriClp extends BaseModelImpl<VW_Azzurri>
 			setUserName(userName);
 		}
 
-		Long esfUserId = (Long)attributes.get("esfUserId");
-
-		if (esfUserId != null) {
-			setEsfUserId(esfUserId);
-		}
-
-		Long esfSportTypeId = (Long)attributes.get("esfSportTypeId");
-
-		if (esfSportTypeId != null) {
-			setEsfSportTypeId(esfSportTypeId);
-		}
-
 		Date startDate = (Date)attributes.get("startDate");
 
 		if (startDate != null) {
@@ -134,6 +125,12 @@ public class VW_AzzurriClp extends BaseModelImpl<VW_Azzurri>
 
 		if (endDate != null) {
 			setEndDate(endDate);
+		}
+
+		Long esfSportTypeId = (Long)attributes.get("esfSportTypeId");
+
+		if (esfSportTypeId != null) {
+			setEsfSportTypeId(esfSportTypeId);
 		}
 
 		String name = (String)attributes.get("name");
@@ -148,10 +145,16 @@ public class VW_AzzurriClp extends BaseModelImpl<VW_Azzurri>
 			setDescription(description);
 		}
 
-		Integer invitato = (Integer)attributes.get("invitato");
+		Long invitato = (Long)attributes.get("invitato");
 
 		if (invitato != null) {
 			setInvitato(invitato);
+		}
+
+		Long id_esf_raduno = (Long)attributes.get("id_esf_raduno");
+
+		if (id_esf_raduno != null) {
+			setId_esf_raduno(id_esf_raduno);
 		}
 	}
 
@@ -235,62 +238,6 @@ public class VW_AzzurriClp extends BaseModelImpl<VW_Azzurri>
 	}
 
 	@Override
-	public long getEsfUserId() {
-		return _esfUserId;
-	}
-
-	@Override
-	public void setEsfUserId(long esfUserId) {
-		_esfUserId = esfUserId;
-
-		if (_vw_AzzurriRemoteModel != null) {
-			try {
-				Class<?> clazz = _vw_AzzurriRemoteModel.getClass();
-
-				Method method = clazz.getMethod("setEsfUserId", long.class);
-
-				method.invoke(_vw_AzzurriRemoteModel, esfUserId);
-			}
-			catch (Exception e) {
-				throw new UnsupportedOperationException(e);
-			}
-		}
-	}
-
-	@Override
-	public String getEsfUserUuid() throws SystemException {
-		return PortalUtil.getUserValue(getEsfUserId(), "uuid", _esfUserUuid);
-	}
-
-	@Override
-	public void setEsfUserUuid(String esfUserUuid) {
-		_esfUserUuid = esfUserUuid;
-	}
-
-	@Override
-	public long getEsfSportTypeId() {
-		return _esfSportTypeId;
-	}
-
-	@Override
-	public void setEsfSportTypeId(long esfSportTypeId) {
-		_esfSportTypeId = esfSportTypeId;
-
-		if (_vw_AzzurriRemoteModel != null) {
-			try {
-				Class<?> clazz = _vw_AzzurriRemoteModel.getClass();
-
-				Method method = clazz.getMethod("setEsfSportTypeId", long.class);
-
-				method.invoke(_vw_AzzurriRemoteModel, esfSportTypeId);
-			}
-			catch (Exception e) {
-				throw new UnsupportedOperationException(e);
-			}
-		}
-	}
-
-	@Override
 	public Date getStartDate() {
 		return _startDate;
 	}
@@ -329,6 +276,29 @@ public class VW_AzzurriClp extends BaseModelImpl<VW_Azzurri>
 				Method method = clazz.getMethod("setEndDate", Date.class);
 
 				method.invoke(_vw_AzzurriRemoteModel, endDate);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public long getEsfSportTypeId() {
+		return _esfSportTypeId;
+	}
+
+	@Override
+	public void setEsfSportTypeId(long esfSportTypeId) {
+		_esfSportTypeId = esfSportTypeId;
+
+		if (_vw_AzzurriRemoteModel != null) {
+			try {
+				Class<?> clazz = _vw_AzzurriRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setEsfSportTypeId", long.class);
+
+				method.invoke(_vw_AzzurriRemoteModel, esfSportTypeId);
 			}
 			catch (Exception e) {
 				throw new UnsupportedOperationException(e);
@@ -383,21 +353,44 @@ public class VW_AzzurriClp extends BaseModelImpl<VW_Azzurri>
 	}
 
 	@Override
-	public int getInvitato() {
+	public long getInvitato() {
 		return _invitato;
 	}
 
 	@Override
-	public void setInvitato(int invitato) {
+	public void setInvitato(long invitato) {
 		_invitato = invitato;
 
 		if (_vw_AzzurriRemoteModel != null) {
 			try {
 				Class<?> clazz = _vw_AzzurriRemoteModel.getClass();
 
-				Method method = clazz.getMethod("setInvitato", int.class);
+				Method method = clazz.getMethod("setInvitato", long.class);
 
 				method.invoke(_vw_AzzurriRemoteModel, invitato);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public long getId_esf_raduno() {
+		return _id_esf_raduno;
+	}
+
+	@Override
+	public void setId_esf_raduno(long id_esf_raduno) {
+		_id_esf_raduno = id_esf_raduno;
+
+		if (_vw_AzzurriRemoteModel != null) {
+			try {
+				Class<?> clazz = _vw_AzzurriRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setId_esf_raduno", long.class);
+
+				method.invoke(_vw_AzzurriRemoteModel, id_esf_raduno);
 			}
 			catch (Exception e) {
 				throw new UnsupportedOperationException(e);
@@ -477,13 +470,13 @@ public class VW_AzzurriClp extends BaseModelImpl<VW_Azzurri>
 		clone.setEsfNationalId(getEsfNationalId());
 		clone.setUserId(getUserId());
 		clone.setUserName(getUserName());
-		clone.setEsfUserId(getEsfUserId());
-		clone.setEsfSportTypeId(getEsfSportTypeId());
 		clone.setStartDate(getStartDate());
 		clone.setEndDate(getEndDate());
+		clone.setEsfSportTypeId(getEsfSportTypeId());
 		clone.setName(getName());
 		clone.setDescription(getDescription());
 		clone.setInvitato(getInvitato());
+		clone.setId_esf_raduno(getId_esf_raduno());
 
 		return clone;
 	}
@@ -532,20 +525,20 @@ public class VW_AzzurriClp extends BaseModelImpl<VW_Azzurri>
 		sb.append(getUserId());
 		sb.append(", userName=");
 		sb.append(getUserName());
-		sb.append(", esfUserId=");
-		sb.append(getEsfUserId());
-		sb.append(", esfSportTypeId=");
-		sb.append(getEsfSportTypeId());
 		sb.append(", startDate=");
 		sb.append(getStartDate());
 		sb.append(", endDate=");
 		sb.append(getEndDate());
+		sb.append(", esfSportTypeId=");
+		sb.append(getEsfSportTypeId());
 		sb.append(", name=");
 		sb.append(getName());
 		sb.append(", description=");
 		sb.append(getDescription());
 		sb.append(", invitato=");
 		sb.append(getInvitato());
+		sb.append(", id_esf_raduno=");
+		sb.append(getId_esf_raduno());
 		sb.append("}");
 
 		return sb.toString();
@@ -572,20 +565,16 @@ public class VW_AzzurriClp extends BaseModelImpl<VW_Azzurri>
 		sb.append(getUserName());
 		sb.append("]]></column-value></column>");
 		sb.append(
-			"<column><column-name>esfUserId</column-name><column-value><![CDATA[");
-		sb.append(getEsfUserId());
-		sb.append("]]></column-value></column>");
-		sb.append(
-			"<column><column-name>esfSportTypeId</column-name><column-value><![CDATA[");
-		sb.append(getEsfSportTypeId());
-		sb.append("]]></column-value></column>");
-		sb.append(
 			"<column><column-name>startDate</column-name><column-value><![CDATA[");
 		sb.append(getStartDate());
 		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>endDate</column-name><column-value><![CDATA[");
 		sb.append(getEndDate());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>esfSportTypeId</column-name><column-value><![CDATA[");
+		sb.append(getEsfSportTypeId());
 		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>name</column-name><column-value><![CDATA[");
@@ -599,6 +588,10 @@ public class VW_AzzurriClp extends BaseModelImpl<VW_Azzurri>
 			"<column><column-name>invitato</column-name><column-value><![CDATA[");
 		sb.append(getInvitato());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>id_esf_raduno</column-name><column-value><![CDATA[");
+		sb.append(getId_esf_raduno());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -609,13 +602,12 @@ public class VW_AzzurriClp extends BaseModelImpl<VW_Azzurri>
 	private long _userId;
 	private String _userUuid;
 	private String _userName;
-	private long _esfUserId;
-	private String _esfUserUuid;
-	private long _esfSportTypeId;
 	private Date _startDate;
 	private Date _endDate;
+	private long _esfSportTypeId;
 	private String _name;
 	private String _description;
-	private int _invitato;
+	private long _invitato;
+	private long _id_esf_raduno;
 	private BaseModel<?> _vw_AzzurriRemoteModel;
 }

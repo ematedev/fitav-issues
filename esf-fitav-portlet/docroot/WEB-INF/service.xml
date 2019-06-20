@@ -2598,6 +2598,15 @@
         <column name="id_associazione_ospitante" type="long"></column>
         <column name="altra_sede_ospitante" type="String"></column>
     </entity>
+    <entity local-service="true" name="ESFRadunoAzzurri" remote-service="false">
+        <column name="id_esf_raduno_azzurri" primary="true" type="long"></column>
+        <column name="id_esf_raduno" primary="true" type="long"></column>
+        <column name="esfNationalId" primary="true" type="long"></column>
+        <finder name="findRadunoAzzurri" return-type="ESFRadunoAzzurri">
+            <finder-column name="id_esf_raduno"></finder-column>
+            <finder-column name="esfNationalId"></finder-column>
+        </finder>
+    </entity>
     <entity local-service="true" name="ESFRadunoTipo" remote-service="false">
         <column id-type="identity" name="id_esf_raduno_tipo" primary="true" type="long"></column>
         <column name="descrizione" type="String"></column>
@@ -2627,13 +2636,13 @@
         <column name="esfNationalId" type="long" primary="true"></column>
         <column name="userId" type="long" primary="true"></column>
         <column name="userName" type="String"></column>
-        <column name="esfUserId" type="long" primary="true"></column>
-        <column name="esfSportTypeId" type="long"></column>
         <column name="startDate" type="Date"></column>
         <column name="endDate" type="Date"></column>
+        <column name="esfSportTypeId" type="long" primary="true"></column>
         <column name="name" type="String"></column>
         <column name="description" type="String"></column>
-        <column name="invitato" type="int"></column>
+        <column name="invitato" type="long"></column>
+        <column name="id_esf_raduno" type="long" primary="true"></column>
     </entity>
 	
 	<exceptions>

@@ -749,10 +749,10 @@ create table ESFRaduno (
 );
 
 create table ESFRadunoAzzurri (
-	id_esf_raduno_azzurri LONG not null IDENTITY,
+	id_esf_raduno_azzurri LONG not null,
 	id_esf_raduno LONG not null,
-	esf_national_id LONG,
-	primary key (id_esf_raduno_azzurri, id_esf_raduno)
+	esfNationalId LONG not null,
+	primary key (id_esf_raduno_azzurri, id_esf_raduno, esfNationalId)
 );
 
 create table ESFRadunoFiles (
@@ -1207,6 +1207,21 @@ create table ESFgunUser (
 	esfCaliber VARCHAR(75) null
 );
 
+create table VW_Azzurri (
+	esfNationalId LONG not null,
+	userId LONG not null,
+	userName VARCHAR(75) null,
+	startDate DATE null,
+	endDate DATE null,
+	esfSportTypeId DOUBLE not null,
+	name VARCHAR(75) null,
+	description VARCHAR(75) null,
+	invitato INTEGER not null,
+	id_esf_raduno LONG,
+	esf_national_id LONG,
+	primary key (esfNationalId, userId, esfSportTypeId, invitato)
+);
+
 create table VW_ESFListaIncarichi (
 	AnniPrecedenti INTEGER not null,
 	AnnoFineIncarico INTEGER not null,
@@ -1288,14 +1303,14 @@ create table vw_azzurri (
 	esfNationalId LONG not null,
 	userId LONG not null,
 	userName VARCHAR(75) null,
-	esfUserId LONG not null,
-	esfSportTypeId LONG,
 	startDate DATE null,
 	endDate DATE null,
+	esfSportTypeId LONG not null,
 	name VARCHAR(75) null,
 	description VARCHAR(75) null,
-	invitato INTEGER,
-	primary key (esfNationalId, userId, esfUserId)
+	invitato LONG,
+	id_esf_raduno LONG not null,
+	primary key (esfNationalId, userId, esfSportTypeId, id_esf_raduno)
 );
 
 create table vw_datidirettoretiro (

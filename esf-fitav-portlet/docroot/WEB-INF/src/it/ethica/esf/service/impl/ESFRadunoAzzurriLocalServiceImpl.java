@@ -14,6 +14,15 @@
 
 package it.ethica.esf.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.liferay.portal.kernel.exception.SystemException;
+
+import it.ethica.esf.NoSuchRadunoAzzurriException;
+import it.ethica.esf.model.ESFRadunoAzzurri;
+import it.ethica.esf.model.impl.ESFRadunoAzzurriImpl;
+import it.ethica.esf.service.ESFRadunoAzzurriLocalServiceUtil;
 import it.ethica.esf.service.base.ESFRadunoAzzurriLocalServiceBaseImpl;
 
 /**
@@ -37,4 +46,48 @@ public class ESFRadunoAzzurriLocalServiceImpl
 	 *
 	 * Never reference this interface directly. Always use {@link it.ethica.esf.service.ESFRadunoAzzurriLocalServiceUtil} to access the e s f raduno azzurri local service.
 	 */
+	
+	public void associaAzzurri(long id_esf_raduno, List<String> listaChecked, List<String> listaUnchecked) throws SystemException, NumberFormatException{
+		
+		if(id_esf_raduno == 0)
+			return;
+		
+		if(listaChecked == null)
+			return;
+		
+		if(listaUnchecked == null)
+			return;
+		
+		for(String idUnchecked : listaUnchecked){
+			
+			long esfNationalId = Long.valueOf(idUnchecked);
+			try {
+				esfRadunoAzzurriPersistence.removeByfindRadunoAzzurri(id_esf_raduno, esfNationalId);
+			} catch (NoSuchRadunoAzzurriException e) {
+				// TODO Auto-generated catch block
+				System.out.println("CANCELLO LA RIGA n. " + idUnchecked);
+				//e.printStackTrace();
+			}
+		}
+		
+		for(String idChecked : listaChecked){
+			long esfNationalId = Long.valueOf(idChecked);
+			
+			//ESFRadunoAzzurri raFetched;
+			try {
+				esfRadunoAzzurriPersistence.findByfindRadunoAzzurri(id_esf_raduno, esfNationalId);
+			} catch (NoSuchRadunoAzzurriException e) {
+				// TODO Auto-generated catch block
+				//e.printStackTrace();
+				ESFRadunoAzzurri raNew = new ESFRadunoAzzurriImpl();
+				raNew.setId_esf_raduno(id_esf_raduno);
+				raNew.setEsfNationalId(esfNationalId);
+				
+				this.addESFRadunoAzzurri(raNew);
+				System.out.println("INSERISCO LA RIGA n. " + esfNationalId);
+			}
+			
+		}		
+	}
+	
 }

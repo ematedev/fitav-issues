@@ -25,15 +25,18 @@ import java.io.Serializable;
 public class VW_AzzurriPK implements Comparable<VW_AzzurriPK>, Serializable {
 	public long esfNationalId;
 	public long userId;
-	public long esfUserId;
+	public long esfSportTypeId;
+	public long id_esf_raduno;
 
 	public VW_AzzurriPK() {
 	}
 
-	public VW_AzzurriPK(long esfNationalId, long userId, long esfUserId) {
+	public VW_AzzurriPK(long esfNationalId, long userId, long esfSportTypeId,
+		long id_esf_raduno) {
 		this.esfNationalId = esfNationalId;
 		this.userId = userId;
-		this.esfUserId = esfUserId;
+		this.esfSportTypeId = esfSportTypeId;
+		this.id_esf_raduno = id_esf_raduno;
 	}
 
 	public long getEsfNationalId() {
@@ -52,12 +55,20 @@ public class VW_AzzurriPK implements Comparable<VW_AzzurriPK>, Serializable {
 		this.userId = userId;
 	}
 
-	public long getEsfUserId() {
-		return esfUserId;
+	public long getEsfSportTypeId() {
+		return esfSportTypeId;
 	}
 
-	public void setEsfUserId(long esfUserId) {
-		this.esfUserId = esfUserId;
+	public void setEsfSportTypeId(long esfSportTypeId) {
+		this.esfSportTypeId = esfSportTypeId;
+	}
+
+	public long getId_esf_raduno() {
+		return id_esf_raduno;
+	}
+
+	public void setId_esf_raduno(long id_esf_raduno) {
+		this.id_esf_raduno = id_esf_raduno;
 	}
 
 	@Override
@@ -96,10 +107,24 @@ public class VW_AzzurriPK implements Comparable<VW_AzzurriPK>, Serializable {
 			return value;
 		}
 
-		if (esfUserId < pk.esfUserId) {
+		if (esfSportTypeId < pk.esfSportTypeId) {
 			value = -1;
 		}
-		else if (esfUserId > pk.esfUserId) {
+		else if (esfSportTypeId > pk.esfSportTypeId) {
+			value = 1;
+		}
+		else {
+			value = 0;
+		}
+
+		if (value != 0) {
+			return value;
+		}
+
+		if (id_esf_raduno < pk.id_esf_raduno) {
+			value = -1;
+		}
+		else if (id_esf_raduno > pk.id_esf_raduno) {
 			value = 1;
 		}
 		else {
@@ -126,7 +151,8 @@ public class VW_AzzurriPK implements Comparable<VW_AzzurriPK>, Serializable {
 		VW_AzzurriPK pk = (VW_AzzurriPK)obj;
 
 		if ((esfNationalId == pk.esfNationalId) && (userId == pk.userId) &&
-				(esfUserId == pk.esfUserId)) {
+				(esfSportTypeId == pk.esfSportTypeId) &&
+				(id_esf_raduno == pk.id_esf_raduno)) {
 			return true;
 		}
 		else {
@@ -137,12 +163,12 @@ public class VW_AzzurriPK implements Comparable<VW_AzzurriPK>, Serializable {
 	@Override
 	public int hashCode() {
 		return (String.valueOf(esfNationalId) + String.valueOf(userId) +
-		String.valueOf(esfUserId)).hashCode();
+		String.valueOf(esfSportTypeId) + String.valueOf(id_esf_raduno)).hashCode();
 	}
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(15);
+		StringBundler sb = new StringBundler(20);
 
 		sb.append(StringPool.OPEN_CURLY_BRACE);
 
@@ -158,9 +184,15 @@ public class VW_AzzurriPK implements Comparable<VW_AzzurriPK>, Serializable {
 
 		sb.append(StringPool.COMMA);
 		sb.append(StringPool.SPACE);
-		sb.append("esfUserId");
+		sb.append("esfSportTypeId");
 		sb.append(StringPool.EQUAL);
-		sb.append(esfUserId);
+		sb.append(esfSportTypeId);
+
+		sb.append(StringPool.COMMA);
+		sb.append(StringPool.SPACE);
+		sb.append("id_esf_raduno");
+		sb.append(StringPool.EQUAL);
+		sb.append(id_esf_raduno);
 
 		sb.append(StringPool.CLOSE_CURLY_BRACE);
 

@@ -227,7 +227,9 @@ create index IX_B354063A on ESFProvince (idRegion, idCountry);
 create index IX_1FED4786 on ESFRaduno (codice);
 create index IX_C8556021 on ESFRaduno (codice, data_inizio, tipo_raduno);
 
+create index IX_96378273 on ESFRadunoAzzurri (esfNationalId);
 create index IX_CC0BF1BA on ESFRadunoAzzurri (id_esf_raduno);
+create index IX_41BCE87B on ESFRadunoAzzurri (id_esf_raduno, esfNationalId);
 
 create index IX_E7450A38 on ESFRadunoFiles (id_esf_raduno);
 
@@ -374,5 +376,7 @@ create index IX_D710E7DC on ESFgunUser (type_);
 create index IX_ED8BB4AF on VW_ESFListaIncarichi (esfOrganizationId);
 
 create index IX_19A88904 on esforganization (type_);
+
+create index IX_9881681F on vw_azzurri (id_esf_raduno);
 
 create index IX_7ED85A60 on vw_datidirettoretiro (esfShootingDirectorId);

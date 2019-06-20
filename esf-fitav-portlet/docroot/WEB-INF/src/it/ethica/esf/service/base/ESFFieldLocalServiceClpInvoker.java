@@ -116,112 +116,112 @@ public class ESFFieldLocalServiceClpInvoker {
 
 		_methodParameterTypes19 = new String[] { "it.ethica.esf.model.ESFField" };
 
-		_methodName418 = "getBeanIdentifier";
+		_methodName422 = "getBeanIdentifier";
 
-		_methodParameterTypes418 = new String[] {  };
+		_methodParameterTypes422 = new String[] {  };
 
-		_methodName419 = "setBeanIdentifier";
+		_methodName423 = "setBeanIdentifier";
 
-		_methodParameterTypes419 = new String[] { "java.lang.String" };
+		_methodParameterTypes423 = new String[] { "java.lang.String" };
 
-		_methodName424 = "getESFFields";
-
-		_methodParameterTypes424 = new String[] { "long" };
-
-		_methodName425 = "getESFFields";
-
-		_methodParameterTypes425 = new String[] { "long", "int", "int" };
-
-		_methodName426 = "getEsfFieldByState";
-
-		_methodParameterTypes426 = new String[] { "int" };
-
-		_methodName427 = "getEsfFieldByState";
-
-		_methodParameterTypes427 = new String[] { "int", "int", "int" };
-
-		_methodName428 = "countByGroupId";
+		_methodName428 = "getESFFields";
 
 		_methodParameterTypes428 = new String[] { "long" };
 
-		_methodName429 = "countByESFOrganization";
+		_methodName429 = "getESFFields";
 
-		_methodParameterTypes429 = new String[] { "long" };
+		_methodParameterTypes429 = new String[] { "long", "int", "int" };
 
-		_methodName430 = "findByRealOwner";
+		_methodName430 = "getEsfFieldByState";
 
-		_methodParameterTypes430 = new String[] { "long", "long" };
+		_methodParameterTypes430 = new String[] { "int" };
 
-		_methodName431 = "findByRealOwner";
+		_methodName431 = "getEsfFieldByState";
 
-		_methodParameterTypes431 = new String[] { "long", "long", "int", "int" };
+		_methodParameterTypes431 = new String[] { "int", "int", "int" };
 
-		_methodName432 = "findByESFOrganization";
+		_methodName432 = "countByGroupId";
 
-		_methodParameterTypes432 = new String[] { "long", "int" };
+		_methodParameterTypes432 = new String[] { "long" };
 
-		_methodName433 = "findByESFOrganization";
+		_methodName433 = "countByESFOrganization";
 
 		_methodParameterTypes433 = new String[] { "long" };
 
-		_methodName434 = "findByESFOrganization";
+		_methodName434 = "findByRealOwner";
 
-		_methodParameterTypes434 = new String[] { "long", "int", "int" };
+		_methodParameterTypes434 = new String[] { "long", "long" };
 
-		_methodName435 = "findByESFOrganization";
+		_methodName435 = "findByRealOwner";
 
-		_methodParameterTypes435 = new String[] { "long", "int", "int", "int" };
+		_methodParameterTypes435 = new String[] { "long", "long", "int", "int" };
 
-		_methodName436 = "findESFFieldESFSportTypeByField";
+		_methodName436 = "findByESFOrganization";
 
-		_methodParameterTypes436 = new String[] { "long" };
+		_methodParameterTypes436 = new String[] { "long", "int" };
 
-		_methodName437 = "findByESFSportTypeId";
+		_methodName437 = "findByESFOrganization";
 
 		_methodParameterTypes437 = new String[] { "long" };
 
-		_methodName438 = "addESFField";
+		_methodName438 = "findByESFOrganization";
 
-		_methodParameterTypes438 = new String[] {
+		_methodParameterTypes438 = new String[] { "long", "int", "int" };
+
+		_methodName439 = "findByESFOrganization";
+
+		_methodParameterTypes439 = new String[] { "long", "int", "int", "int" };
+
+		_methodName440 = "findESFFieldESFSportTypeByField";
+
+		_methodParameterTypes440 = new String[] { "long" };
+
+		_methodName441 = "findByESFSportTypeId";
+
+		_methodParameterTypes441 = new String[] { "long" };
+
+		_methodName442 = "addESFField";
+
+		_methodParameterTypes442 = new String[] {
 				"long", "java.lang.String", "long", "long", "long", "long[][]",
 				"java.lang.String", "long", "boolean", "boolean", "boolean",
 				"boolean", "boolean", "java.util.List",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName439 = "addESFField";
+		_methodName443 = "addESFField";
 
-		_methodParameterTypes439 = new String[] {
+		_methodParameterTypes443 = new String[] {
 				"long", "java.lang.String", "long", "long", "long[][]",
 				"it.ethica.esf.model.ESFEntityState", "java.lang.String", "long",
 				"boolean", "boolean", "boolean", "boolean", "boolean",
 				"java.util.List", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName440 = "updateESFField";
+		_methodName444 = "updateESFField";
 
-		_methodParameterTypes440 = new String[] {
+		_methodParameterTypes444 = new String[] {
 				"long", "long", "java.lang.String", "long", "long", "long[][]",
 				"it.ethica.esf.model.ESFEntityState", "java.lang.String", "long",
 				"boolean", "boolean", "boolean", "boolean", "boolean",
 				"java.util.List", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName441 = "deleteESFField";
+		_methodName445 = "deleteESFField";
 
-		_methodParameterTypes441 = new String[] {
+		_methodParameterTypes445 = new String[] {
 				"long", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName442 = "giveWayESFField";
+		_methodName446 = "giveWayESFField";
 
-		_methodParameterTypes442 = new String[] {
+		_methodParameterTypes446 = new String[] {
 				"long", "long", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName443 = "returnESFField";
+		_methodName447 = "returnESFField";
 
-		_methodParameterTypes443 = new String[] {
+		_methodParameterTypes447 = new String[] {
 				"long", "long", "com.liferay.portal.service.ServiceContext"
 			};
 	}
@@ -339,104 +339,104 @@ public class ESFFieldLocalServiceClpInvoker {
 			return ESFFieldLocalServiceUtil.updateESFField((it.ethica.esf.model.ESFField)arguments[0]);
 		}
 
-		if (_methodName418.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes418, parameterTypes)) {
+		if (_methodName422.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes422, parameterTypes)) {
 			return ESFFieldLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName419.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes419, parameterTypes)) {
+		if (_methodName423.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes423, parameterTypes)) {
 			ESFFieldLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName424.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes424, parameterTypes)) {
+		if (_methodName428.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes428, parameterTypes)) {
 			return ESFFieldLocalServiceUtil.getESFFields(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName425.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes425, parameterTypes)) {
+		if (_methodName429.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes429, parameterTypes)) {
 			return ESFFieldLocalServiceUtil.getESFFields(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName426.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes426, parameterTypes)) {
+		if (_methodName430.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes430, parameterTypes)) {
 			return ESFFieldLocalServiceUtil.getEsfFieldByState(((Integer)arguments[0]).intValue());
 		}
 
-		if (_methodName427.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes427, parameterTypes)) {
+		if (_methodName431.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes431, parameterTypes)) {
 			return ESFFieldLocalServiceUtil.getEsfFieldByState(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName428.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes428, parameterTypes)) {
+		if (_methodName432.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes432, parameterTypes)) {
 			return ESFFieldLocalServiceUtil.countByGroupId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName429.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes429, parameterTypes)) {
+		if (_methodName433.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes433, parameterTypes)) {
 			return ESFFieldLocalServiceUtil.countByESFOrganization(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName430.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes430, parameterTypes)) {
+		if (_methodName434.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes434, parameterTypes)) {
 			return ESFFieldLocalServiceUtil.findByRealOwner(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName431.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes431, parameterTypes)) {
+		if (_methodName435.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes435, parameterTypes)) {
 			return ESFFieldLocalServiceUtil.findByRealOwner(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
-		if (_methodName432.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes432, parameterTypes)) {
+		if (_methodName436.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes436, parameterTypes)) {
 			return ESFFieldLocalServiceUtil.findByESFOrganization(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
-		if (_methodName433.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes433, parameterTypes)) {
+		if (_methodName437.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes437, parameterTypes)) {
 			return ESFFieldLocalServiceUtil.findByESFOrganization(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName434.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes434, parameterTypes)) {
+		if (_methodName438.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes438, parameterTypes)) {
 			return ESFFieldLocalServiceUtil.findByESFOrganization(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName435.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes435, parameterTypes)) {
+		if (_methodName439.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes439, parameterTypes)) {
 			return ESFFieldLocalServiceUtil.findByESFOrganization(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
-		if (_methodName436.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes436, parameterTypes)) {
+		if (_methodName440.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes440, parameterTypes)) {
 			return ESFFieldLocalServiceUtil.findESFFieldESFSportTypeByField(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName437.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes437, parameterTypes)) {
+		if (_methodName441.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes441, parameterTypes)) {
 			return ESFFieldLocalServiceUtil.findByESFSportTypeId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName438.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes438, parameterTypes)) {
+		if (_methodName442.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes442, parameterTypes)) {
 			return ESFFieldLocalServiceUtil.addESFField(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(),
@@ -453,8 +453,8 @@ public class ESFFieldLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[14]);
 		}
 
-		if (_methodName439.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes439, parameterTypes)) {
+		if (_methodName443.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes443, parameterTypes)) {
 			return ESFFieldLocalServiceUtil.addESFField(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(),
@@ -471,8 +471,8 @@ public class ESFFieldLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[14]);
 		}
 
-		if (_methodName440.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes440, parameterTypes)) {
+		if (_methodName444.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes444, parameterTypes)) {
 			return ESFFieldLocalServiceUtil.updateESFField(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2],
@@ -490,21 +490,21 @@ public class ESFFieldLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[15]);
 		}
 
-		if (_methodName441.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes441, parameterTypes)) {
+		if (_methodName445.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes445, parameterTypes)) {
 			return ESFFieldLocalServiceUtil.deleteESFField(((Long)arguments[0]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
 
-		if (_methodName442.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes442, parameterTypes)) {
+		if (_methodName446.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes446, parameterTypes)) {
 			return ESFFieldLocalServiceUtil.giveWayESFField(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[2]);
 		}
 
-		if (_methodName443.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes443, parameterTypes)) {
+		if (_methodName447.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes447, parameterTypes)) {
 			return ESFFieldLocalServiceUtil.returnESFField(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[2]);
@@ -553,18 +553,10 @@ public class ESFFieldLocalServiceClpInvoker {
 	private String[] _methodParameterTypes18;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
-	private String _methodName418;
-	private String[] _methodParameterTypes418;
-	private String _methodName419;
-	private String[] _methodParameterTypes419;
-	private String _methodName424;
-	private String[] _methodParameterTypes424;
-	private String _methodName425;
-	private String[] _methodParameterTypes425;
-	private String _methodName426;
-	private String[] _methodParameterTypes426;
-	private String _methodName427;
-	private String[] _methodParameterTypes427;
+	private String _methodName422;
+	private String[] _methodParameterTypes422;
+	private String _methodName423;
+	private String[] _methodParameterTypes423;
 	private String _methodName428;
 	private String[] _methodParameterTypes428;
 	private String _methodName429;
@@ -597,4 +589,12 @@ public class ESFFieldLocalServiceClpInvoker {
 	private String[] _methodParameterTypes442;
 	private String _methodName443;
 	private String[] _methodParameterTypes443;
+	private String _methodName444;
+	private String[] _methodParameterTypes444;
+	private String _methodName445;
+	private String[] _methodParameterTypes445;
+	private String _methodName446;
+	private String[] _methodParameterTypes446;
+	private String _methodName447;
+	private String[] _methodParameterTypes447;
 }

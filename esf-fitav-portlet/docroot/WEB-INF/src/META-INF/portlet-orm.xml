@@ -1263,6 +1263,17 @@
 			<transient name="primaryKeyObj" />
 		</attributes>
 	</mapped-superclass>
+	<mapped-superclass class="it.ethica.esf.model.impl.ESFRadunoAzzurriModelImpl">
+		<id-class class="it.ethica.esf.service.persistence.ESFRadunoAzzurriPK" />
+		<attributes>
+			<id name="id_esf_raduno_azzurri" />
+			<id name="id_esf_raduno" />
+			<id name="esfNationalId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
 	<mapped-superclass class="it.ethica.esf.model.impl.ESFRadunoFilesModelImpl">
 		<attributes>
 			<id name="id_esf_raduno_files" />
@@ -1980,9 +1991,9 @@
 		<attributes>
 			<id name="esfNationalId" />
 			<id name="userId" />
-			<id name="esfUserId" />
+			<id name="esfSportTypeId" />
+			<id name="id_esf_raduno" />
 			<basic name="userName" />
-			<basic name="esfSportTypeId" />
 			<basic name="startDate">
 				<temporal>TIMESTAMP</temporal>
 			</basic>
@@ -1992,7 +2003,6 @@
 			<basic name="name" />
 			<basic name="description" />
 			<basic name="invitato" />
-			<transient name="esfUserUuid" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />
@@ -2286,6 +2296,10 @@
 	</entity>
 	<entity class="it.ethica.esf.model.impl.ESFRadunoImpl" name="ESFRaduno">
 		<table name="ESFRaduno" />
+		<attributes />
+	</entity>
+	<entity class="it.ethica.esf.model.impl.ESFRadunoAzzurriImpl" name="ESFRadunoAzzurri">
+		<table name="ESFRadunoAzzurri" />
 		<attributes />
 	</entity>
 	<entity class="it.ethica.esf.model.impl.ESFRadunoFilesImpl" name="ESFRadunoFiles">

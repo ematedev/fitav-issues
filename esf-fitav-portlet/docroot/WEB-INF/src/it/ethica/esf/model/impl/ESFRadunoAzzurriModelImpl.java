@@ -56,12 +56,12 @@ public class ESFRadunoAzzurriModelImpl extends BaseModelImpl<ESFRadunoAzzurri>
 	public static final Object[][] TABLE_COLUMNS = {
 			{ "id_esf_raduno_azzurri", Types.BIGINT },
 			{ "id_esf_raduno", Types.BIGINT },
-			{ "esf_national_id", Types.BIGINT }
+			{ "esfNationalId", Types.BIGINT }
 		};
-	public static final String TABLE_SQL_CREATE = "create table ESFRadunoAzzurri (id_esf_raduno_azzurri LONG not null IDENTITY,id_esf_raduno LONG not null,esf_national_id LONG,primary key (id_esf_raduno_azzurri, id_esf_raduno))";
+	public static final String TABLE_SQL_CREATE = "create table ESFRadunoAzzurri (id_esf_raduno_azzurri LONG not null,id_esf_raduno LONG not null,esfNationalId LONG not null,primary key (id_esf_raduno_azzurri, id_esf_raduno, esfNationalId))";
 	public static final String TABLE_SQL_DROP = "drop table ESFRadunoAzzurri";
-	public static final String ORDER_BY_JPQL = " ORDER BY esfRadunoAzzurri.id.id_esf_raduno_azzurri ASC, esfRadunoAzzurri.id.id_esf_raduno ASC";
-	public static final String ORDER_BY_SQL = " ORDER BY ESFRadunoAzzurri.id_esf_raduno_azzurri ASC, ESFRadunoAzzurri.id_esf_raduno ASC";
+	public static final String ORDER_BY_JPQL = " ORDER BY esfRadunoAzzurri.id.id_esf_raduno_azzurri ASC, esfRadunoAzzurri.id.id_esf_raduno ASC, esfRadunoAzzurri.id.esfNationalId ASC";
+	public static final String ORDER_BY_SQL = " ORDER BY ESFRadunoAzzurri.id_esf_raduno_azzurri ASC, ESFRadunoAzzurri.id_esf_raduno ASC, ESFRadunoAzzurri.esfNationalId ASC";
 	public static final String DATA_SOURCE = "liferayDataSource";
 	public static final String SESSION_FACTORY = "liferaySessionFactory";
 	public static final String TX_MANAGER = "liferayTransactionManager";
@@ -74,8 +74,9 @@ public class ESFRadunoAzzurriModelImpl extends BaseModelImpl<ESFRadunoAzzurri>
 	public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.column.bitmask.enabled.it.ethica.esf.model.ESFRadunoAzzurri"),
 			true);
-	public static long ID_ESF_RADUNO_COLUMN_BITMASK = 1L;
-	public static long ID_ESF_RADUNO_AZZURRI_COLUMN_BITMASK = 2L;
+	public static long ESFNATIONALID_COLUMN_BITMASK = 1L;
+	public static long ID_ESF_RADUNO_COLUMN_BITMASK = 2L;
+	public static long ID_ESF_RADUNO_AZZURRI_COLUMN_BITMASK = 4L;
 	public static final long LOCK_EXPIRATION_TIME = GetterUtil.getLong(com.liferay.util.service.ServiceProps.get(
 				"lock.expiration.time.it.ethica.esf.model.ESFRadunoAzzurri"));
 
@@ -84,18 +85,21 @@ public class ESFRadunoAzzurriModelImpl extends BaseModelImpl<ESFRadunoAzzurri>
 
 	@Override
 	public ESFRadunoAzzurriPK getPrimaryKey() {
-		return new ESFRadunoAzzurriPK(_id_esf_raduno_azzurri, _id_esf_raduno);
+		return new ESFRadunoAzzurriPK(_id_esf_raduno_azzurri, _id_esf_raduno,
+			_esfNationalId);
 	}
 
 	@Override
 	public void setPrimaryKey(ESFRadunoAzzurriPK primaryKey) {
 		setId_esf_raduno_azzurri(primaryKey.id_esf_raduno_azzurri);
 		setId_esf_raduno(primaryKey.id_esf_raduno);
+		setEsfNationalId(primaryKey.esfNationalId);
 	}
 
 	@Override
 	public Serializable getPrimaryKeyObj() {
-		return new ESFRadunoAzzurriPK(_id_esf_raduno_azzurri, _id_esf_raduno);
+		return new ESFRadunoAzzurriPK(_id_esf_raduno_azzurri, _id_esf_raduno,
+			_esfNationalId);
 	}
 
 	@Override
@@ -119,7 +123,7 @@ public class ESFRadunoAzzurriModelImpl extends BaseModelImpl<ESFRadunoAzzurri>
 
 		attributes.put("id_esf_raduno_azzurri", getId_esf_raduno_azzurri());
 		attributes.put("id_esf_raduno", getId_esf_raduno());
-		attributes.put("esf_national_id", getEsf_national_id());
+		attributes.put("esfNationalId", getEsfNationalId());
 
 		return attributes;
 	}
@@ -139,10 +143,10 @@ public class ESFRadunoAzzurriModelImpl extends BaseModelImpl<ESFRadunoAzzurri>
 			setId_esf_raduno(id_esf_raduno);
 		}
 
-		Long esf_national_id = (Long)attributes.get("esf_national_id");
+		Long esfNationalId = (Long)attributes.get("esfNationalId");
 
-		if (esf_national_id != null) {
-			setEsf_national_id(esf_national_id);
+		if (esfNationalId != null) {
+			setEsfNationalId(esfNationalId);
 		}
 	}
 
@@ -179,13 +183,25 @@ public class ESFRadunoAzzurriModelImpl extends BaseModelImpl<ESFRadunoAzzurri>
 	}
 
 	@Override
-	public long getEsf_national_id() {
-		return _esf_national_id;
+	public long getEsfNationalId() {
+		return _esfNationalId;
 	}
 
 	@Override
-	public void setEsf_national_id(long esf_national_id) {
-		_esf_national_id = esf_national_id;
+	public void setEsfNationalId(long esfNationalId) {
+		_columnBitmask |= ESFNATIONALID_COLUMN_BITMASK;
+
+		if (!_setOriginalEsfNationalId) {
+			_setOriginalEsfNationalId = true;
+
+			_originalEsfNationalId = _esfNationalId;
+		}
+
+		_esfNationalId = esfNationalId;
+	}
+
+	public long getOriginalEsfNationalId() {
+		return _originalEsfNationalId;
 	}
 
 	public long getColumnBitmask() {
@@ -208,7 +224,7 @@ public class ESFRadunoAzzurriModelImpl extends BaseModelImpl<ESFRadunoAzzurri>
 
 		esfRadunoAzzurriImpl.setId_esf_raduno_azzurri(getId_esf_raduno_azzurri());
 		esfRadunoAzzurriImpl.setId_esf_raduno(getId_esf_raduno());
-		esfRadunoAzzurriImpl.setEsf_national_id(getEsf_national_id());
+		esfRadunoAzzurriImpl.setEsfNationalId(getEsfNationalId());
 
 		esfRadunoAzzurriImpl.resetOriginalValues();
 
@@ -257,6 +273,10 @@ public class ESFRadunoAzzurriModelImpl extends BaseModelImpl<ESFRadunoAzzurri>
 
 		esfRadunoAzzurriModelImpl._setOriginalId_esf_raduno = false;
 
+		esfRadunoAzzurriModelImpl._originalEsfNationalId = esfRadunoAzzurriModelImpl._esfNationalId;
+
+		esfRadunoAzzurriModelImpl._setOriginalEsfNationalId = false;
+
 		esfRadunoAzzurriModelImpl._columnBitmask = 0;
 	}
 
@@ -268,7 +288,7 @@ public class ESFRadunoAzzurriModelImpl extends BaseModelImpl<ESFRadunoAzzurri>
 
 		esfRadunoAzzurriCacheModel.id_esf_raduno = getId_esf_raduno();
 
-		esfRadunoAzzurriCacheModel.esf_national_id = getEsf_national_id();
+		esfRadunoAzzurriCacheModel.esfNationalId = getEsfNationalId();
 
 		return esfRadunoAzzurriCacheModel;
 	}
@@ -281,8 +301,8 @@ public class ESFRadunoAzzurriModelImpl extends BaseModelImpl<ESFRadunoAzzurri>
 		sb.append(getId_esf_raduno_azzurri());
 		sb.append(", id_esf_raduno=");
 		sb.append(getId_esf_raduno());
-		sb.append(", esf_national_id=");
-		sb.append(getEsf_national_id());
+		sb.append(", esfNationalId=");
+		sb.append(getEsfNationalId());
 		sb.append("}");
 
 		return sb.toString();
@@ -305,8 +325,8 @@ public class ESFRadunoAzzurriModelImpl extends BaseModelImpl<ESFRadunoAzzurri>
 		sb.append(getId_esf_raduno());
 		sb.append("]]></column-value></column>");
 		sb.append(
-			"<column><column-name>esf_national_id</column-name><column-value><![CDATA[");
-		sb.append(getEsf_national_id());
+			"<column><column-name>esfNationalId</column-name><column-value><![CDATA[");
+		sb.append(getEsfNationalId());
 		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
@@ -322,7 +342,9 @@ public class ESFRadunoAzzurriModelImpl extends BaseModelImpl<ESFRadunoAzzurri>
 	private long _id_esf_raduno;
 	private long _originalId_esf_raduno;
 	private boolean _setOriginalId_esf_raduno;
-	private long _esf_national_id;
+	private long _esfNationalId;
+	private long _originalEsfNationalId;
+	private boolean _setOriginalEsfNationalId;
 	private long _columnBitmask;
 	private ESFRadunoAzzurri _escapedModel;
 }
