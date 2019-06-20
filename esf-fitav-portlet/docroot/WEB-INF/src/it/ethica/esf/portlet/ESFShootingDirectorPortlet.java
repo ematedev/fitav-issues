@@ -104,15 +104,14 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 		
 		
 		//DA CANCELLARE
-		System.out.printf("Cognome: [%s]\n", cognome);
-		_log.debug(String.format("CognomeLog: [%s]\n", cognome));
-		System.out.printf("Nome: [%s]\n", nome);
-		System.out.printf("Tessera: [%s]\n", tessera);
-		System.out.printf("Regione: [%s]\n", regione);
-		System.out.printf("IdQualifica: [%s]\n", idQualifica);
-		System.out.printf("IdSpecialista: [%s]\n", idSpecialita);
-		System.out.printf("Delta: [%s]\n", delta);
-		System.out.printf("Pagina corrente: [%s]\n", paginaRicercaCorrente);
+		_log.debug(String.format("Cognome: [%s]\n", cognome)); 
+		_log.debug(String.format("Nome: [%s]\n", nome));
+		_log.debug(String.format("Tessera: [%s]\n", tessera));
+		_log.debug(String.format("Regione: [%s]\n", regione));
+		_log.debug(String.format("IdQualifica: [%s]\n", idQualifica));
+		_log.debug(String.format("IdSpecialista: [%s]\n", idSpecialita));
+		_log.debug(String.format("Delta: [%s]\n", delta));
+		_log.debug(String.format("Pagina corrente: [%s]\n", paginaRicercaCorrente));
 		
 		try {
 			
@@ -125,19 +124,19 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 			//Restringo la ricerca se vengono valorizzati i campi
 			if(!cognome.isEmpty()) { 
 				dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.Cognome", cognome)); 
-				System.out.println("Entrato in cognome");
+				_log.debug("Entrato in cognome");
 			}
 			if(!nome.isEmpty()) { 
 				dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.Nome", nome)); 
-				System.out.println("Entrato in nome");
+				_log.debug("Entrato in nome");
 			} 
 			if(!tessera.isEmpty()) { 
 				dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.CodiceTessera", tessera)); 
-				System.out.println("Entrato in tessera");
+				_log.debug("Entrato in tessera");
 			} 
 			if(!regione.equals("0")) { 
 				dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.Regione", regione)); 
-				System.out.println("Entrato in regione");
+				_log.debug("Entrato in regione");
 			}
 			if(idQualifica != 0) { 
 				ESFShootingDirectorQualification qualificaDirettore = 
@@ -146,7 +145,7 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 				dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.Qualifica", qualifica)); 
 			
 				//DA LEVARE
-				System.out.printf("Qualifica nome: [%s]\n", qualifica);
+				_log.debug(String.format("Qualifica nome: [%s]\n", qualifica));
 			}
 			if(idSpecialita != 0) { 
 				ESFSportType tipoSport = ESFSportTypeLocalServiceUtil.getESFSportType(idSpecialita);
@@ -154,7 +153,7 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 				dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.Specialita", specialita)); 
 				
 				//DA LEVARE
-				System.out.printf("Specialita nome: [%s]\n", specialita);
+				_log.debug(String.format("Specialita nome: [%s]\n", specialita));
 			}
 		
 			//Eseguo la query
@@ -168,8 +167,8 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 			request.setAttribute("listaNomine", listaModificabile);  
 			
 			//DA CANCELLARE
-			System.out.printf("Elementi nella lista: [%s]\n", listaNomine.size());
-			System.out.printf("Elementi nella lista modificabile: [%s]\n", listaModificabile.size());
+			_log.debug(String.format("Elementi nella lista: [%s]\n", listaNomine.size()));
+			_log.debug(String.format("Elementi nella lista modificabile: [%s]\n", listaModificabile.size()));
 			
 			//Se c'è bisogno valorizzare i campi del search container
 			if(delta != 0) { response.setRenderParameter("delta", String.valueOf(delta)); }
