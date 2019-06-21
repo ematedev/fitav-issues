@@ -47,6 +47,15 @@ public class ESFRadunoAzzurriLocalServiceImpl
 	 * Never reference this interface directly. Always use {@link it.ethica.esf.service.ESFRadunoAzzurriLocalServiceUtil} to access the e s f raduno azzurri local service.
 	 */
 	
+	
+	public List<ESFRadunoAzzurri> findById(long id_esf_raduno) throws SystemException{
+		List<ESFRadunoAzzurri> listaRadunoAzzurri = null;
+		
+		listaRadunoAzzurri = esfRadunoAzzurriPersistence.findByfindByIdRaduno(id_esf_raduno);
+		
+		return listaRadunoAzzurri;
+	}
+	
 	public void associaAzzurri(long id_esf_raduno, List<String> listaChecked, List<String> listaUnchecked) throws SystemException, NumberFormatException{
 		
 		if(id_esf_raduno == 0)

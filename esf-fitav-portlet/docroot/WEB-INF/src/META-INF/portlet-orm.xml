@@ -1990,9 +1990,7 @@
 		<id-class class="it.ethica.esf.service.persistence.VW_AzzurriPK" />
 		<attributes>
 			<id name="esfNationalId" />
-			<id name="userId" />
 			<id name="esfSportTypeId" />
-			<id name="id_esf_raduno" />
 			<basic name="userName" />
 			<basic name="startDate">
 				<temporal>TIMESTAMP</temporal>
@@ -2006,7 +2004,6 @@
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />
-			<transient name="userUuid" />
 		</attributes>
 	</mapped-superclass>
 	<mapped-superclass class="it.ethica.esf.model.impl.VW_DatiDrettoreTiroModelImpl">

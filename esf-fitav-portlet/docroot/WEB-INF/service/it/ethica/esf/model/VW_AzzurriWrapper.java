@@ -50,7 +50,6 @@ public class VW_AzzurriWrapper implements VW_Azzurri, ModelWrapper<VW_Azzurri> {
 		Map<String, Object> attributes = new HashMap<String, Object>();
 
 		attributes.put("esfNationalId", getEsfNationalId());
-		attributes.put("userId", getUserId());
 		attributes.put("userName", getUserName());
 		attributes.put("startDate", getStartDate());
 		attributes.put("endDate", getEndDate());
@@ -58,7 +57,6 @@ public class VW_AzzurriWrapper implements VW_Azzurri, ModelWrapper<VW_Azzurri> {
 		attributes.put("name", getName());
 		attributes.put("description", getDescription());
 		attributes.put("invitato", getInvitato());
-		attributes.put("id_esf_raduno", getId_esf_raduno());
 
 		return attributes;
 	}
@@ -69,12 +67,6 @@ public class VW_AzzurriWrapper implements VW_Azzurri, ModelWrapper<VW_Azzurri> {
 
 		if (esfNationalId != null) {
 			setEsfNationalId(esfNationalId);
-		}
-
-		Long userId = (Long)attributes.get("userId");
-
-		if (userId != null) {
-			setUserId(userId);
 		}
 
 		String userName = (String)attributes.get("userName");
@@ -118,12 +110,6 @@ public class VW_AzzurriWrapper implements VW_Azzurri, ModelWrapper<VW_Azzurri> {
 		if (invitato != null) {
 			setInvitato(invitato);
 		}
-
-		Long id_esf_raduno = (Long)attributes.get("id_esf_raduno");
-
-		if (id_esf_raduno != null) {
-			setId_esf_raduno(id_esf_raduno);
-		}
 	}
 
 	/**
@@ -165,48 +151,6 @@ public class VW_AzzurriWrapper implements VW_Azzurri, ModelWrapper<VW_Azzurri> {
 	@Override
 	public void setEsfNationalId(long esfNationalId) {
 		_vw_Azzurri.setEsfNationalId(esfNationalId);
-	}
-
-	/**
-	* Returns the user ID of this v w_ azzurri.
-	*
-	* @return the user ID of this v w_ azzurri
-	*/
-	@Override
-	public long getUserId() {
-		return _vw_Azzurri.getUserId();
-	}
-
-	/**
-	* Sets the user ID of this v w_ azzurri.
-	*
-	* @param userId the user ID of this v w_ azzurri
-	*/
-	@Override
-	public void setUserId(long userId) {
-		_vw_Azzurri.setUserId(userId);
-	}
-
-	/**
-	* Returns the user uuid of this v w_ azzurri.
-	*
-	* @return the user uuid of this v w_ azzurri
-	* @throws SystemException if a system exception occurred
-	*/
-	@Override
-	public java.lang.String getUserUuid()
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return _vw_Azzurri.getUserUuid();
-	}
-
-	/**
-	* Sets the user uuid of this v w_ azzurri.
-	*
-	* @param userUuid the user uuid of this v w_ azzurri
-	*/
-	@Override
-	public void setUserUuid(java.lang.String userUuid) {
-		_vw_Azzurri.setUserUuid(userUuid);
 	}
 
 	/**
@@ -347,26 +291,6 @@ public class VW_AzzurriWrapper implements VW_Azzurri, ModelWrapper<VW_Azzurri> {
 	@Override
 	public void setInvitato(long invitato) {
 		_vw_Azzurri.setInvitato(invitato);
-	}
-
-	/**
-	* Returns the id_esf_raduno of this v w_ azzurri.
-	*
-	* @return the id_esf_raduno of this v w_ azzurri
-	*/
-	@Override
-	public long getId_esf_raduno() {
-		return _vw_Azzurri.getId_esf_raduno();
-	}
-
-	/**
-	* Sets the id_esf_raduno of this v w_ azzurri.
-	*
-	* @param id_esf_raduno the id_esf_raduno of this v w_ azzurri
-	*/
-	@Override
-	public void setId_esf_raduno(long id_esf_raduno) {
-		_vw_Azzurri.setId_esf_raduno(id_esf_raduno);
 	}
 
 	@Override

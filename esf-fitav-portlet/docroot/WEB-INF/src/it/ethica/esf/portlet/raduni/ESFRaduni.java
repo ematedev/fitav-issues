@@ -26,6 +26,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.io.FileUtils;
 import org.apache.el.util.Validation;
 
+import com.itextpdf.text.pdf.hyphenation.TernaryTree.Iterator;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
 import com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil;
 import com.liferay.portal.kernel.dao.orm.RestrictionsFactoryUtil;
@@ -210,8 +211,23 @@ public class ESFRaduni extends MVCPortlet {
 		
 	
 		try {
-			List<VW_Azzurri> listaNazionali = new ArrayList<>();
+			// CREO LA LISTA DEGLI AZZURRI
+			//List<VW_Azzurri> listaAzzurri = new ArrayList<VW_Azzurri>();
 			
+			// PRENDO LA LISTA DEGLI INVITATI
+			List<ESFRadunoAzzurri> listaInvitatiRaduno = ESFRadunoAzzurriLocalServiceUtil.findById(id_esf_raduno);
+			
+			// CREO UNA HASH MAP PERCHE' COSI' HO A DISPOSIZIONE LA FUNZIONE DI RICERCA ALL'INTERNO DELLA MAPPA
+			
+			List<Long> listaIdInvitati = new ArrayList<>(); 
+			
+			// TRASFERISCO I VALORI NELLA HASHMAP
+			for(ESFRadunoAzzurri ra : listaInvitatiRaduno){
+				//System.out.println("[INSERISCO: " + ra.getEsfNationalId() + "]");
+				listaIdInvitati.add(ra.getEsfNationalId());
+			}
+			
+			// CREO LA DYNAMIC QUERY E INSERISCO LE CONDIZIONI
 			DynamicQuery dq = DynamicQueryFactoryUtil.forClass(VW_Azzurri.class, "Azzurri", PortletClassLoaderUtil.getClassLoader());
 			if (!name.isEmpty())
 				dq.add(RestrictionsFactoryUtil.like("Azzurri.userName", "%" + name + "%"));
@@ -222,30 +238,46 @@ public class ESFRaduni extends MVCPortlet {
 			if(esfSportType!=0)
 				dq.add(RestrictionsFactoryUtil.eq("Azzurri.primaryKey.esfSportTypeId", esfSportType));
 			
-			if(esfListaInvitati != 0){
-				//dq.add(RestrictionsFactoryUtil.eq("Azzurri.primaryKey.id_esf_raduno", id_esf_raduno));
-				if (esfListaInvitati == 1){
-					dq.add(RestrictionsFactoryUtil.eq("Azzurri.invitato", 0));
+			
+			// VALORIZZO LA LISTA DEI NAZIONALI CON LE CONDIZIONI DELLA QUERY
+			//List<VW_Azzurri> listaAzzurri = new ArrayList<>(VW_AzzurriLocalServiceUtil.dynamicQuery(dq));
+			List<VW_Azzurri> listaAzzurri = new ArrayList<>();
+			List<VW_Azzurri> listaAzzurriCompleta = VW_AzzurriLocalServiceUtil.dynamicQuery(dq);
+			
+			// METTO A 1 INVITATO CONFRONTANDOLO CON LA LISTA INVITATI AL RADUNO RIEMPITA SOPRA
+			int contatore = 0;
+			while(contatore < listaAzzurriCompleta.size()){
+				VW_Azzurri current = listaAzzurriCompleta.get(contatore);
+				
+				if(listaIdInvitati.contains(current.getEsfNationalId())){
+					current.setInvitato(1);
+					//System.out.println("[ID: " + listaAzzurri.get(contatore).getEsfNationalId() + " - NOME: " + listaAzzurri.get(contatore).getUserName() + " - invitato]" + listaAzzurri.get(contatore).getInvitato());
+					//System.out.println("[INSERISCO 1: " + listaAzzurri.get(contatore).getEsfNationalId() + "]");
 				}
-				else{
-					dq.add(RestrictionsFactoryUtil.eq("Azzurri.invitato", 1));
+				
+				// INSERISCO TUTTI, INVITATI E NON INVITATI
+				if(esfListaInvitati==0)
+					listaAzzurri.add(current);
+				// INSERISCO SOLO GLI INVITATI
+				else if (esfListaInvitati==2){
+					if(current.getInvitato()==1){
+						listaAzzurri.add(current);
+						}
+				} 
+				// INSERISCO SOLO I NON INVITATI
+				else if(current.getInvitato()==0){
+					listaAzzurri.add(current);					
 				}
-			}
-			listaNazionali =  VW_AzzurriLocalServiceUtil.dynamicQuery(dq);
-			
-			for (VW_Azzurri azzurro : listaNazionali){
-				System.out.println("[ID: " + azzurro.getEsfNationalId() + " - NOME: " + azzurro.getUserName() + " ]");
+				contatore++;
 			}
 			
 			
-			
-			String msg = "La ricerca ha prodotto '" + listaNazionali.size()  + "' risultati!";
+			String msg = "La ricerca ha prodotto '" + listaAzzurri.size()  + "' risultati!";
 			SessionMessages.add(request, "addSuccess");
 			request.setAttribute("successMessage", msg);
-
 			
 			String goToURL = "/html/esfraduni/managementAzzurri.jsp";
-			request.setAttribute("listaNazionali", listaNazionali);
+			request.setAttribute("listaNazionali", listaAzzurri);
 			response.setRenderParameter("id_esf_raduno", String.valueOf(id_esf_raduno));
 			response.setRenderParameter("code", code);
 			response.setRenderParameter("name", name);
@@ -310,9 +342,6 @@ public class ESFRaduni extends MVCPortlet {
 			System.out.println("[" + code + "]");
 
 			ESFRadunoAzzurriLocalServiceUtil.associaAzzurri(id_esf_raduno, listaChecked, listaUnchecked);
-		} catch (NoSuchRadunoAzzurriException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -450,7 +479,7 @@ public class ESFRaduni extends MVCPortlet {
 		try {
 			String successMessage = "";
 			
-			ESFRaduno esfSalvato = ESFRadunoLocalServiceUtil.aggiornaRaduno(esfRaduno, valoriSottoTipiScelti);
+			ESFRadunoLocalServiceUtil.aggiornaRaduno(esfRaduno, valoriSottoTipiScelti);
 			
 			successMessage = "Il Raduno con codice " + esfRaduno.getCodice() + " è stato modificato con successo!";
 			SessionMessages.add(request, "addSuccess");

@@ -15,14 +15,12 @@
 package it.ethica.esf.model.impl;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
-import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.model.impl.BaseModelImpl;
-import com.liferay.portal.util.PortalUtil;
 
 import it.ethica.esf.model.VW_Azzurri;
 import it.ethica.esf.model.VW_AzzurriModel;
@@ -59,20 +57,18 @@ public class VW_AzzurriModelImpl extends BaseModelImpl<VW_Azzurri>
 	public static final String TABLE_NAME = "vw_azzurri";
 	public static final Object[][] TABLE_COLUMNS = {
 			{ "esfNationalId", Types.BIGINT },
-			{ "userId", Types.BIGINT },
 			{ "userName", Types.VARCHAR },
 			{ "startDate", Types.TIMESTAMP },
 			{ "endDate", Types.TIMESTAMP },
 			{ "esfSportTypeId", Types.BIGINT },
 			{ "name", Types.VARCHAR },
 			{ "description", Types.VARCHAR },
-			{ "invitato", Types.BIGINT },
-			{ "id_esf_raduno", Types.BIGINT }
+			{ "invitato", Types.BIGINT }
 		};
-	public static final String TABLE_SQL_CREATE = "create table vw_azzurri (esfNationalId LONG not null,userId LONG not null,userName VARCHAR(75) null,startDate DATE null,endDate DATE null,esfSportTypeId LONG not null,name VARCHAR(75) null,description VARCHAR(75) null,invitato LONG,id_esf_raduno LONG not null,primary key (esfNationalId, userId, esfSportTypeId, id_esf_raduno))";
+	public static final String TABLE_SQL_CREATE = "create table vw_azzurri (esfNationalId LONG not null,userName VARCHAR(75) null,startDate DATE null,endDate DATE null,esfSportTypeId LONG not null,name VARCHAR(75) null,description VARCHAR(75) null,invitato LONG,primary key (esfNationalId, esfSportTypeId))";
 	public static final String TABLE_SQL_DROP = "drop table vw_azzurri";
-	public static final String ORDER_BY_JPQL = " ORDER BY vw_Azzurri.id.esfNationalId ASC, vw_Azzurri.id.userId ASC, vw_Azzurri.id.esfSportTypeId ASC, vw_Azzurri.id.id_esf_raduno ASC";
-	public static final String ORDER_BY_SQL = " ORDER BY vw_azzurri.esfNationalId ASC, vw_azzurri.userId ASC, vw_azzurri.esfSportTypeId ASC, vw_azzurri.id_esf_raduno ASC";
+	public static final String ORDER_BY_JPQL = " ORDER BY vw_Azzurri.id.esfNationalId ASC, vw_Azzurri.id.esfSportTypeId ASC";
+	public static final String ORDER_BY_SQL = " ORDER BY vw_azzurri.esfNationalId ASC, vw_azzurri.esfSportTypeId ASC";
 	public static final String DATA_SOURCE = "liferayDataSource";
 	public static final String SESSION_FACTORY = "liferaySessionFactory";
 	public static final String TX_MANAGER = "liferayTransactionManager";
@@ -91,22 +87,18 @@ public class VW_AzzurriModelImpl extends BaseModelImpl<VW_Azzurri>
 
 	@Override
 	public VW_AzzurriPK getPrimaryKey() {
-		return new VW_AzzurriPK(_esfNationalId, _userId, _esfSportTypeId,
-			_id_esf_raduno);
+		return new VW_AzzurriPK(_esfNationalId, _esfSportTypeId);
 	}
 
 	@Override
 	public void setPrimaryKey(VW_AzzurriPK primaryKey) {
 		setEsfNationalId(primaryKey.esfNationalId);
-		setUserId(primaryKey.userId);
 		setEsfSportTypeId(primaryKey.esfSportTypeId);
-		setId_esf_raduno(primaryKey.id_esf_raduno);
 	}
 
 	@Override
 	public Serializable getPrimaryKeyObj() {
-		return new VW_AzzurriPK(_esfNationalId, _userId, _esfSportTypeId,
-			_id_esf_raduno);
+		return new VW_AzzurriPK(_esfNationalId, _esfSportTypeId);
 	}
 
 	@Override
@@ -129,7 +121,6 @@ public class VW_AzzurriModelImpl extends BaseModelImpl<VW_Azzurri>
 		Map<String, Object> attributes = new HashMap<String, Object>();
 
 		attributes.put("esfNationalId", getEsfNationalId());
-		attributes.put("userId", getUserId());
 		attributes.put("userName", getUserName());
 		attributes.put("startDate", getStartDate());
 		attributes.put("endDate", getEndDate());
@@ -137,7 +128,6 @@ public class VW_AzzurriModelImpl extends BaseModelImpl<VW_Azzurri>
 		attributes.put("name", getName());
 		attributes.put("description", getDescription());
 		attributes.put("invitato", getInvitato());
-		attributes.put("id_esf_raduno", getId_esf_raduno());
 
 		return attributes;
 	}
@@ -148,12 +138,6 @@ public class VW_AzzurriModelImpl extends BaseModelImpl<VW_Azzurri>
 
 		if (esfNationalId != null) {
 			setEsfNationalId(esfNationalId);
-		}
-
-		Long userId = (Long)attributes.get("userId");
-
-		if (userId != null) {
-			setUserId(userId);
 		}
 
 		String userName = (String)attributes.get("userName");
@@ -197,12 +181,6 @@ public class VW_AzzurriModelImpl extends BaseModelImpl<VW_Azzurri>
 		if (invitato != null) {
 			setInvitato(invitato);
 		}
-
-		Long id_esf_raduno = (Long)attributes.get("id_esf_raduno");
-
-		if (id_esf_raduno != null) {
-			setId_esf_raduno(id_esf_raduno);
-		}
 	}
 
 	@Override
@@ -213,26 +191,6 @@ public class VW_AzzurriModelImpl extends BaseModelImpl<VW_Azzurri>
 	@Override
 	public void setEsfNationalId(long esfNationalId) {
 		_esfNationalId = esfNationalId;
-	}
-
-	@Override
-	public long getUserId() {
-		return _userId;
-	}
-
-	@Override
-	public void setUserId(long userId) {
-		_userId = userId;
-	}
-
-	@Override
-	public String getUserUuid() throws SystemException {
-		return PortalUtil.getUserValue(getUserId(), "uuid", _userUuid);
-	}
-
-	@Override
-	public void setUserUuid(String userUuid) {
-		_userUuid = userUuid;
 	}
 
 	@Override
@@ -321,16 +279,6 @@ public class VW_AzzurriModelImpl extends BaseModelImpl<VW_Azzurri>
 	}
 
 	@Override
-	public long getId_esf_raduno() {
-		return _id_esf_raduno;
-	}
-
-	@Override
-	public void setId_esf_raduno(long id_esf_raduno) {
-		_id_esf_raduno = id_esf_raduno;
-	}
-
-	@Override
 	public VW_Azzurri toEscapedModel() {
 		if (_escapedModel == null) {
 			_escapedModel = (VW_Azzurri)ProxyUtil.newProxyInstance(_classLoader,
@@ -345,7 +293,6 @@ public class VW_AzzurriModelImpl extends BaseModelImpl<VW_Azzurri>
 		VW_AzzurriImpl vw_AzzurriImpl = new VW_AzzurriImpl();
 
 		vw_AzzurriImpl.setEsfNationalId(getEsfNationalId());
-		vw_AzzurriImpl.setUserId(getUserId());
 		vw_AzzurriImpl.setUserName(getUserName());
 		vw_AzzurriImpl.setStartDate(getStartDate());
 		vw_AzzurriImpl.setEndDate(getEndDate());
@@ -353,7 +300,6 @@ public class VW_AzzurriModelImpl extends BaseModelImpl<VW_Azzurri>
 		vw_AzzurriImpl.setName(getName());
 		vw_AzzurriImpl.setDescription(getDescription());
 		vw_AzzurriImpl.setInvitato(getInvitato());
-		vw_AzzurriImpl.setId_esf_raduno(getId_esf_raduno());
 
 		vw_AzzurriImpl.resetOriginalValues();
 
@@ -404,8 +350,6 @@ public class VW_AzzurriModelImpl extends BaseModelImpl<VW_Azzurri>
 
 		vw_AzzurriCacheModel.esfNationalId = getEsfNationalId();
 
-		vw_AzzurriCacheModel.userId = getUserId();
-
 		vw_AzzurriCacheModel.userName = getUserName();
 
 		String userName = vw_AzzurriCacheModel.userName;
@@ -452,19 +396,15 @@ public class VW_AzzurriModelImpl extends BaseModelImpl<VW_Azzurri>
 
 		vw_AzzurriCacheModel.invitato = getInvitato();
 
-		vw_AzzurriCacheModel.id_esf_raduno = getId_esf_raduno();
-
 		return vw_AzzurriCacheModel;
 	}
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(21);
+		StringBundler sb = new StringBundler(17);
 
 		sb.append("{esfNationalId=");
 		sb.append(getEsfNationalId());
-		sb.append(", userId=");
-		sb.append(getUserId());
 		sb.append(", userName=");
 		sb.append(getUserName());
 		sb.append(", startDate=");
@@ -479,8 +419,6 @@ public class VW_AzzurriModelImpl extends BaseModelImpl<VW_Azzurri>
 		sb.append(getDescription());
 		sb.append(", invitato=");
 		sb.append(getInvitato());
-		sb.append(", id_esf_raduno=");
-		sb.append(getId_esf_raduno());
 		sb.append("}");
 
 		return sb.toString();
@@ -488,7 +426,7 @@ public class VW_AzzurriModelImpl extends BaseModelImpl<VW_Azzurri>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(34);
+		StringBundler sb = new StringBundler(28);
 
 		sb.append("<model><model-name>");
 		sb.append("it.ethica.esf.model.VW_Azzurri");
@@ -497,10 +435,6 @@ public class VW_AzzurriModelImpl extends BaseModelImpl<VW_Azzurri>
 		sb.append(
 			"<column><column-name>esfNationalId</column-name><column-value><![CDATA[");
 		sb.append(getEsfNationalId());
-		sb.append("]]></column-value></column>");
-		sb.append(
-			"<column><column-name>userId</column-name><column-value><![CDATA[");
-		sb.append(getUserId());
 		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>userName</column-name><column-value><![CDATA[");
@@ -530,10 +464,6 @@ public class VW_AzzurriModelImpl extends BaseModelImpl<VW_Azzurri>
 			"<column><column-name>invitato</column-name><column-value><![CDATA[");
 		sb.append(getInvitato());
 		sb.append("]]></column-value></column>");
-		sb.append(
-			"<column><column-name>id_esf_raduno</column-name><column-value><![CDATA[");
-		sb.append(getId_esf_raduno());
-		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -545,8 +475,6 @@ public class VW_AzzurriModelImpl extends BaseModelImpl<VW_Azzurri>
 			VW_Azzurri.class
 		};
 	private long _esfNationalId;
-	private long _userId;
-	private String _userUuid;
 	private String _userName;
 	private Date _startDate;
 	private Date _endDate;
@@ -554,6 +482,5 @@ public class VW_AzzurriModelImpl extends BaseModelImpl<VW_Azzurri>
 	private String _name;
 	private String _description;
 	private long _invitato;
-	private long _id_esf_raduno;
 	private VW_Azzurri _escapedModel;
 }

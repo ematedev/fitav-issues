@@ -33,7 +33,6 @@ public class VW_AzzurriSoap implements Serializable {
 		VW_AzzurriSoap soapModel = new VW_AzzurriSoap();
 
 		soapModel.setEsfNationalId(model.getEsfNationalId());
-		soapModel.setUserId(model.getUserId());
 		soapModel.setUserName(model.getUserName());
 		soapModel.setStartDate(model.getStartDate());
 		soapModel.setEndDate(model.getEndDate());
@@ -41,7 +40,6 @@ public class VW_AzzurriSoap implements Serializable {
 		soapModel.setName(model.getName());
 		soapModel.setDescription(model.getDescription());
 		soapModel.setInvitato(model.getInvitato());
-		soapModel.setId_esf_raduno(model.getId_esf_raduno());
 
 		return soapModel;
 	}
@@ -87,15 +85,12 @@ public class VW_AzzurriSoap implements Serializable {
 	}
 
 	public VW_AzzurriPK getPrimaryKey() {
-		return new VW_AzzurriPK(_esfNationalId, _userId, _esfSportTypeId,
-			_id_esf_raduno);
+		return new VW_AzzurriPK(_esfNationalId, _esfSportTypeId);
 	}
 
 	public void setPrimaryKey(VW_AzzurriPK pk) {
 		setEsfNationalId(pk.esfNationalId);
-		setUserId(pk.userId);
 		setEsfSportTypeId(pk.esfSportTypeId);
-		setId_esf_raduno(pk.id_esf_raduno);
 	}
 
 	public long getEsfNationalId() {
@@ -104,14 +99,6 @@ public class VW_AzzurriSoap implements Serializable {
 
 	public void setEsfNationalId(long esfNationalId) {
 		_esfNationalId = esfNationalId;
-	}
-
-	public long getUserId() {
-		return _userId;
-	}
-
-	public void setUserId(long userId) {
-		_userId = userId;
 	}
 
 	public String getUserName() {
@@ -170,16 +157,7 @@ public class VW_AzzurriSoap implements Serializable {
 		_invitato = invitato;
 	}
 
-	public long getId_esf_raduno() {
-		return _id_esf_raduno;
-	}
-
-	public void setId_esf_raduno(long id_esf_raduno) {
-		_id_esf_raduno = id_esf_raduno;
-	}
-
 	private long _esfNationalId;
-	private long _userId;
 	private String _userName;
 	private Date _startDate;
 	private Date _endDate;
@@ -187,5 +165,4 @@ public class VW_AzzurriSoap implements Serializable {
 	private String _name;
 	private String _description;
 	private long _invitato;
-	private long _id_esf_raduno;
 }

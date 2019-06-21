@@ -15,7 +15,6 @@
 package it.ethica.esf.model;
 
 import com.liferay.portal.kernel.bean.AutoEscape;
-import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
@@ -75,35 +74,6 @@ public interface VW_AzzurriModel extends BaseModel<VW_Azzurri> {
 	 * @param esfNationalId the esf national ID of this v w_ azzurri
 	 */
 	public void setEsfNationalId(long esfNationalId);
-
-	/**
-	 * Returns the user ID of this v w_ azzurri.
-	 *
-	 * @return the user ID of this v w_ azzurri
-	 */
-	public long getUserId();
-
-	/**
-	 * Sets the user ID of this v w_ azzurri.
-	 *
-	 * @param userId the user ID of this v w_ azzurri
-	 */
-	public void setUserId(long userId);
-
-	/**
-	 * Returns the user uuid of this v w_ azzurri.
-	 *
-	 * @return the user uuid of this v w_ azzurri
-	 * @throws SystemException if a system exception occurred
-	 */
-	public String getUserUuid() throws SystemException;
-
-	/**
-	 * Sets the user uuid of this v w_ azzurri.
-	 *
-	 * @param userUuid the user uuid of this v w_ azzurri
-	 */
-	public void setUserUuid(String userUuid);
 
 	/**
 	 * Returns the user name of this v w_ azzurri.
@@ -205,20 +175,6 @@ public interface VW_AzzurriModel extends BaseModel<VW_Azzurri> {
 	 * @param invitato the invitato of this v w_ azzurri
 	 */
 	public void setInvitato(long invitato);
-
-	/**
-	 * Returns the id_esf_raduno of this v w_ azzurri.
-	 *
-	 * @return the id_esf_raduno of this v w_ azzurri
-	 */
-	public long getId_esf_raduno();
-
-	/**
-	 * Sets the id_esf_raduno of this v w_ azzurri.
-	 *
-	 * @param id_esf_raduno the id_esf_raduno of this v w_ azzurri
-	 */
-	public void setId_esf_raduno(long id_esf_raduno);
 
 	@Override
 	public boolean isNew();

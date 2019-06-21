@@ -124,9 +124,13 @@ public class ESFRadunoAzzurriLocalServiceClp
 
 		_methodParameterTypes17 = new String[] { "java.lang.String" };
 
-		_methodName19 = "associaAzzurri";
+		_methodName19 = "findById";
 
-		_methodParameterTypes19 = new String[] {
+		_methodParameterTypes19 = new String[] { "long" };
+
+		_methodName20 = "associaAzzurri";
+
+		_methodParameterTypes20 = new String[] {
 				"long", "java.util.List", "java.util.List"
 			};
 	}
@@ -697,15 +701,43 @@ public class ESFRadunoAzzurriLocalServiceClp
 	}
 
 	@Override
+	public java.util.List<it.ethica.esf.model.ESFRadunoAzzurri> findById(
+		long id_esf_raduno)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName19,
+					_methodParameterTypes19, new Object[] { id_esf_raduno });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<it.ethica.esf.model.ESFRadunoAzzurri>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
 	public void associaAzzurri(long id_esf_raduno,
 		java.util.List<java.lang.String> listaChecked,
 		java.util.List<java.lang.String> listaUnchecked)
 		throws com.liferay.portal.kernel.exception.SystemException,
-			it.ethica.esf.NoSuchRadunoAzzurriException,
 			java.lang.NumberFormatException {
 		try {
-			_invokableLocalService.invokeMethod(_methodName19,
-				_methodParameterTypes19,
+			_invokableLocalService.invokeMethod(_methodName20,
+				_methodParameterTypes20,
 				new Object[] {
 					id_esf_raduno,
 					
@@ -719,10 +751,6 @@ public class ESFRadunoAzzurriLocalServiceClp
 
 			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
 				throw (com.liferay.portal.kernel.exception.SystemException)t;
-			}
-
-			if (t instanceof it.ethica.esf.NoSuchRadunoAzzurriException) {
-				throw (it.ethica.esf.NoSuchRadunoAzzurriException)t;
 			}
 
 			if (t instanceof java.lang.NumberFormatException) {
@@ -778,4 +806,6 @@ public class ESFRadunoAzzurriLocalServiceClp
 	private String[] _methodParameterTypes17;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
+	private String _methodName20;
+	private String[] _methodParameterTypes20;
 }

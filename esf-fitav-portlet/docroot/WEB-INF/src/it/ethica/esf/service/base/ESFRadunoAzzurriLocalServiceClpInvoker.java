@@ -122,9 +122,13 @@ public class ESFRadunoAzzurriLocalServiceClpInvoker {
 
 		_methodParameterTypes409 = new String[] { "java.lang.String" };
 
-		_methodName414 = "associaAzzurri";
+		_methodName414 = "findById";
 
-		_methodParameterTypes414 = new String[] {
+		_methodParameterTypes414 = new String[] { "long" };
+
+		_methodName415 = "associaAzzurri";
+
+		_methodParameterTypes415 = new String[] {
 				"long", "java.util.List", "java.util.List"
 			};
 	}
@@ -232,6 +236,11 @@ public class ESFRadunoAzzurriLocalServiceClpInvoker {
 
 		if (_methodName414.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes414, parameterTypes)) {
+			return ESFRadunoAzzurriLocalServiceUtil.findById(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName415.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes415, parameterTypes)) {
 			ESFRadunoAzzurriLocalServiceUtil.associaAzzurri(((Long)arguments[0]).longValue(),
 				(java.util.List<java.lang.String>)arguments[1],
 				(java.util.List<java.lang.String>)arguments[2]);
@@ -280,4 +289,6 @@ public class ESFRadunoAzzurriLocalServiceClpInvoker {
 	private String[] _methodParameterTypes409;
 	private String _methodName414;
 	private String[] _methodParameterTypes414;
+	private String _methodName415;
+	private String[] _methodParameterTypes415;
 }

@@ -1415,9 +1415,7 @@
 		<cache usage="read-write" />
 		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.VW_AzzurriPK">
 			<key-property name="esfNationalId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
-			<key-property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 			<key-property name="esfSportTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
-			<key-property name="id_esf_raduno" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		</composite-id>
 		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="startDate" type="org.hibernate.type.TimestampType" />

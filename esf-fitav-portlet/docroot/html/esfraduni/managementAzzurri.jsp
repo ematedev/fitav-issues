@@ -144,6 +144,7 @@
 					value="<%=Validator.isNotNull(azzurro.getEsfNationalId()) ? String.valueOf(azzurro.getEsfNationalId()) : StringPool.BLANK%>" />
 			<liferay-ui:search-container-column-text name="start-date" value="<%=startDate%>" />					
 			<liferay-ui:search-container-column-text name="end-date" value="<%=endFine%>" />					
+			<liferay-ui:search-container-column-text name="gnocco" value="<%=String.valueOf(azzurro.getInvitato())%>" />					
 <%
 	String checked = "";
 	//String valore = azzurro.getEsfNationalId();
@@ -174,7 +175,7 @@
 	<aui:script use="aui-base,node,aui-io-request,liferay-util-list-fields">
 		A.one('#<portlet:namespace/>check_all').on('click', function(event){
 			A.all('input[type=checkbox]').each(function(item, index, list) {
-				item.setAttribute('checked', true);	
+				item.set('checked', true);	
 			});
 		});
 		

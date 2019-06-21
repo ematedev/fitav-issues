@@ -1301,7 +1301,6 @@ create table vw_azzuri (
 
 create table vw_azzurri (
 	esfNationalId LONG not null,
-	userId LONG not null,
 	userName VARCHAR(75) null,
 	startDate DATE null,
 	endDate DATE null,
@@ -1309,8 +1308,7 @@ create table vw_azzurri (
 	name VARCHAR(75) null,
 	description VARCHAR(75) null,
 	invitato LONG,
-	id_esf_raduno LONG not null,
-	primary key (esfNationalId, userId, esfSportTypeId, id_esf_raduno)
+	primary key (esfNationalId, esfSportTypeId)
 );
 
 create table vw_datidirettoretiro (

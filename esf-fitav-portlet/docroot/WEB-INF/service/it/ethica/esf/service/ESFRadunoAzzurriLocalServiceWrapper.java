@@ -290,11 +290,17 @@ public class ESFRadunoAzzurriLocalServiceWrapper
 	}
 
 	@Override
+	public java.util.List<it.ethica.esf.model.ESFRadunoAzzurri> findById(
+		long id_esf_raduno)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _esfRadunoAzzurriLocalService.findById(id_esf_raduno);
+	}
+
+	@Override
 	public void associaAzzurri(long id_esf_raduno,
 		java.util.List<java.lang.String> listaChecked,
 		java.util.List<java.lang.String> listaUnchecked)
 		throws com.liferay.portal.kernel.exception.SystemException,
-			it.ethica.esf.NoSuchRadunoAzzurriException,
 			java.lang.NumberFormatException {
 		_esfRadunoAzzurriLocalService.associaAzzurri(id_esf_raduno,
 			listaChecked, listaUnchecked);

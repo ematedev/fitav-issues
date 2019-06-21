@@ -38,12 +38,10 @@ public class VW_AzzurriCacheModel implements CacheModel<VW_Azzurri>,
 	Externalizable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(21);
+		StringBundler sb = new StringBundler(17);
 
 		sb.append("{esfNationalId=");
 		sb.append(esfNationalId);
-		sb.append(", userId=");
-		sb.append(userId);
 		sb.append(", userName=");
 		sb.append(userName);
 		sb.append(", startDate=");
@@ -58,8 +56,6 @@ public class VW_AzzurriCacheModel implements CacheModel<VW_Azzurri>,
 		sb.append(description);
 		sb.append(", invitato=");
 		sb.append(invitato);
-		sb.append(", id_esf_raduno=");
-		sb.append(id_esf_raduno);
 		sb.append("}");
 
 		return sb.toString();
@@ -70,7 +66,6 @@ public class VW_AzzurriCacheModel implements CacheModel<VW_Azzurri>,
 		VW_AzzurriImpl vw_AzzurriImpl = new VW_AzzurriImpl();
 
 		vw_AzzurriImpl.setEsfNationalId(esfNationalId);
-		vw_AzzurriImpl.setUserId(userId);
 
 		if (userName == null) {
 			vw_AzzurriImpl.setUserName(StringPool.BLANK);
@@ -110,7 +105,6 @@ public class VW_AzzurriCacheModel implements CacheModel<VW_Azzurri>,
 		}
 
 		vw_AzzurriImpl.setInvitato(invitato);
-		vw_AzzurriImpl.setId_esf_raduno(id_esf_raduno);
 
 		vw_AzzurriImpl.resetOriginalValues();
 
@@ -120,7 +114,6 @@ public class VW_AzzurriCacheModel implements CacheModel<VW_Azzurri>,
 	@Override
 	public void readExternal(ObjectInput objectInput) throws IOException {
 		esfNationalId = objectInput.readLong();
-		userId = objectInput.readLong();
 		userName = objectInput.readUTF();
 		startDate = objectInput.readLong();
 		endDate = objectInput.readLong();
@@ -128,14 +121,12 @@ public class VW_AzzurriCacheModel implements CacheModel<VW_Azzurri>,
 		name = objectInput.readUTF();
 		description = objectInput.readUTF();
 		invitato = objectInput.readLong();
-		id_esf_raduno = objectInput.readLong();
 	}
 
 	@Override
 	public void writeExternal(ObjectOutput objectOutput)
 		throws IOException {
 		objectOutput.writeLong(esfNationalId);
-		objectOutput.writeLong(userId);
 
 		if (userName == null) {
 			objectOutput.writeUTF(StringPool.BLANK);
@@ -163,11 +154,9 @@ public class VW_AzzurriCacheModel implements CacheModel<VW_Azzurri>,
 		}
 
 		objectOutput.writeLong(invitato);
-		objectOutput.writeLong(id_esf_raduno);
 	}
 
 	public long esfNationalId;
-	public long userId;
 	public String userName;
 	public long startDate;
 	public long endDate;
@@ -175,5 +164,4 @@ public class VW_AzzurriCacheModel implements CacheModel<VW_Azzurri>,
 	public String name;
 	public String description;
 	public long invitato;
-	public long id_esf_raduno;
 }

@@ -319,7 +319,6 @@ public class VW_AzzurriPersistenceImpl extends BasePersistenceImpl<VW_Azzurri>
 		vw_AzzurriImpl.setPrimaryKey(vw_Azzurri.getPrimaryKey());
 
 		vw_AzzurriImpl.setEsfNationalId(vw_Azzurri.getEsfNationalId());
-		vw_AzzurriImpl.setUserId(vw_Azzurri.getUserId());
 		vw_AzzurriImpl.setUserName(vw_Azzurri.getUserName());
 		vw_AzzurriImpl.setStartDate(vw_Azzurri.getStartDate());
 		vw_AzzurriImpl.setEndDate(vw_Azzurri.getEndDate());
@@ -327,7 +326,6 @@ public class VW_AzzurriPersistenceImpl extends BasePersistenceImpl<VW_Azzurri>
 		vw_AzzurriImpl.setName(vw_Azzurri.getName());
 		vw_AzzurriImpl.setDescription(vw_Azzurri.getDescription());
 		vw_AzzurriImpl.setInvitato(vw_Azzurri.getInvitato());
-		vw_AzzurriImpl.setId_esf_raduno(vw_Azzurri.getId_esf_raduno());
 
 		return vw_AzzurriImpl;
 	}

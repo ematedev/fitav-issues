@@ -2606,6 +2606,9 @@
             <finder-column name="id_esf_raduno"></finder-column>
             <finder-column name="esfNationalId"></finder-column>
         </finder>
+        <finder name="findByIdRaduno" return-type="Collection">
+            <finder-column name="id_esf_raduno"></finder-column>
+        </finder>
     </entity>
     <entity local-service="true" name="ESFRadunoTipo" remote-service="false">
         <column id-type="identity" name="id_esf_raduno_tipo" primary="true" type="long"></column>
@@ -2634,7 +2637,6 @@
     </entity>
     <entity name="VW_Azzurri" local-service="true" remote-service="false" table="vw_azzurri">
         <column name="esfNationalId" type="long" primary="true"></column>
-        <column name="userId" type="long" primary="true"></column>
         <column name="userName" type="String"></column>
         <column name="startDate" type="Date"></column>
         <column name="endDate" type="Date"></column>
@@ -2642,7 +2644,6 @@
         <column name="name" type="String"></column>
         <column name="description" type="String"></column>
         <column name="invitato" type="long"></column>
-        <column name="id_esf_raduno" type="long" primary="true"></column>
     </entity>
 	
 	<exceptions>

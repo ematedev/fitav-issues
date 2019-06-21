@@ -249,10 +249,13 @@ public interface ESFRadunoAzzurriLocalService extends BaseLocalService,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
 
+	public java.util.List<it.ethica.esf.model.ESFRadunoAzzurri> findById(
+		long id_esf_raduno)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
 	public void associaAzzurri(long id_esf_raduno,
 		java.util.List<java.lang.String> listaChecked,
 		java.util.List<java.lang.String> listaUnchecked)
 		throws com.liferay.portal.kernel.exception.SystemException,
-			it.ethica.esf.NoSuchRadunoAzzurriException,
 			java.lang.NumberFormatException;
 }
