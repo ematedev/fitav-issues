@@ -202,15 +202,14 @@
 								: ""%>' />	
 				<%
 				String description = "";
-				boolean hasResult = ESFResultLocalServiceUtil.inserted(esfMatch.getEsfMatchId());
+// 				boolean hasResult = ESFResultLocalServiceUtil.inserted(esfMatch.getEsfMatchId());
 				if(Validator.isNotNull(esfMatch) && Validator.isNotNull(esfMatch.getDescription()) && (esfMatch.getDescription() != 0)){
 					description = ESFDescriptionLocalServiceUtil.fetchESFDescription(
 								esfMatch.getDescription()).getName();
 				}
 
 				%>
-				<liferay-ui:search-container-column-text name="hasResult"
-					value='<%= String.valueOf(hasResult) %>' />
+			
 
 				<liferay-ui:search-container-column-text name="description"
 					value='<%= description%>' />
