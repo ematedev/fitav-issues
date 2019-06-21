@@ -86,16 +86,16 @@ sportTypes = ESFSportTypeLocalServiceUtil.getAllESFSportTypes();
 	<div class="btn-field-align"> 
 		
 		<!-- Campo di testo Qualifica -->
-		<aui:select  name="shDtId" inlineField="<%=true%>" label="qualification" >
-			<aui:option value="0" label="-"></aui:option>
+		<aui:select  name="shDtId" inlineField="<%=true%>" label="qualification" required="true" >
+			<aui:option value="0" label="-" selected="true" disabled="true"></aui:option>
 			<!-- Riempie con le qualifiche la combobox -->
 			<%for(ESFShootingDirectorQualification s : shDts){%>
 				<aui:option value="<%=s.getEsfShootingDirectorQualificationId()%>"  label="<%=s.getEsfShootingDirectorQualificationDesc()%>"></aui:option>
 			<%}%>
 		</aui:select>
 		<!-- Campo di testo Specialità -->
-		<aui:select  name="stId" inlineField="<%=true%>" label="sport-type" >
-			<aui:option value="0"  label="-"></aui:option>
+		<aui:select  name="stId" inlineField="<%=true%>" label="sport-type" required="true" >
+			<aui:option value="0"  label="-" selected="true" disabled="true"></aui:option>
 			<!-- Riempie con le specialità la combobox -->
 			<%for(ESFSportType st : sportTypes){%>
 				<aui:option value="<%=st.getEsfSportTypeId()%>"  label="<%=st.getName()%>"></aui:option>
@@ -177,6 +177,7 @@ sportTypes = ESFSportTypeLocalServiceUtil.getAllESFSportTypes();
 			}
 			
 		%>
+		<liferay-ui:search-container-row-parameter name="tableType" value="info" />
 		<!-- Definizione delle colonne -->
 		<liferay-ui:search-container-column-text name="name" value="<%=name %>" />
 		<liferay-ui:search-container-column-text name="card" value="<%=cardCode %>"/>
@@ -184,12 +185,8 @@ sportTypes = ESFSportTypeLocalServiceUtil.getAllESFSportTypes();
 		<liferay-ui:search-container-column-text name="qualification" value="<%=qualification %>" />
 		<liferay-ui:search-container-column-text name="sport-type" value="<%=stName %>" />
 		<liferay-ui:search-container-column-text name="esf-date-assign" value="<%=sdf.format(shDt.getEsfStartData()) %>" />
-		<liferay-ui:search-container-column-text name = "delete" >
-			<aui:form action = "<%=deleteURL%>">
-				<aui:input name="shDrId" value="<%=String.valueOf(shDt.getEsfShootingDirectorId()) %>" type="hidden"></aui:input>
-				<aui:button type = "delete" value = "delete" align="right"  confirmation="delete_confirm"></aui:button>
-			</aui:form> 
-		</liferay-ui:search-container-column-text>
+		<liferay-ui:search-container-column-jsp
+				path='<%=templatePath + "modifyShootingDirectorInfoAction.jsp"%>' align="right" />
 
 	</liferay-ui:search-container-row>
 	<!-- Iteratore che si preoccupa di stampare i risultati nella pagina JSP -->

@@ -141,7 +141,7 @@ iteratorActionUrl.setParameter("specialita", ParamUtil.getString(request, "speci
 			String dataFormattata = DateUtilFormatter.formatDate(dataAssegnazione);
 			
 		%>
-		
+		<liferay-ui:search-container-row-parameter name="tableType" value="view"/>
 		<!-- Vengono definite le colonne della tabella e le variabili ad esse collegate -->
 		<liferay-ui:search-container-column-text name="name" value='<%= String.format("%s %s", cognome, nome) %>' />
 		<liferay-ui:search-container-column-text name="card" value="<%= codTessera %>"/>
@@ -149,7 +149,7 @@ iteratorActionUrl.setParameter("specialita", ParamUtil.getString(request, "speci
 		<liferay-ui:search-container-column-text name="qualification" value="<%= qualifica %>" />
 		<liferay-ui:search-container-column-text name="sport-type" value="<%= spec %>" />
 		<liferay-ui:search-container-column-text name="esf-date-assign" value="<%= dataFormattata %>" />
-		<liferay-ui:search-container-column-jsp path='<%=templatePath + "modifyShDrAction.jsp"%>' align="right" /> 
+		<liferay-ui:search-container-column-jsp path='<%=templatePath + "modifyShootingDirectorInfoAction.jsp"%>' align="right" /> 
 	</liferay-ui:search-container-row>
 	<!-- Iteratore che si preoccupa di stampare i risultati nella pagina JSP -->
 	<liferay-ui:search-iterator />

@@ -25,6 +25,18 @@
 	long esfUserId = ParamUtil.getLong(request, "esfUserId");
 	String currDate = "";
 	String shDrName = "";
+	String tableType = ParamUtil.getString(request, "tableType", "view");
+	String backPage = null;
+	
+	if("view".equals(tableType)){
+		backPage = "view.jsp";
+	}else if("newView".equals(tableType)){
+		backPage = "newShootingDirector.jsp";
+	}else if("info".equals(tableType)){
+		backPage = "shootingDirectorInfo.jsp";
+	}else{
+		backPage = "view.jsp";
+	}
 	ESFUser shDr = ESFUserLocalServiceUtil.fetchESFUser(esfUserId);
 
 	// Ottieni Id assegnazione dal parametro ricevuto
@@ -34,12 +46,8 @@
 	ESFShootingDirector assegnazioneDirettoreDiTiro = ESFShootingDirectorLocalServiceUtil
 			.fetchESFShootingDirector(idAssegnazioneDirettoreDiTiro);
 
-	String qualifica = ESFShootingDirectorQualificationLocalServiceUtil
-			.fetchESFShootingDirectorQualification(
-					assegnazioneDirettoreDiTiro.getShootingDirectorQualificationId())
-			.getEsfShootingDirectorQualificationDesc();
-	String sportTypeName = ESFSportTypeLocalServiceUtil
-			.fetchESFSportType(assegnazioneDirettoreDiTiro.getSportTypeId()).getName();
+	String qualifica = "";
+	String sportTypeName = "";
 	List<ESFCard> cardstest = new ArrayList<ESFCard>();
 	String cardCode = "";
 	try {
@@ -65,12 +73,13 @@
 		sportTypeName = ESFSportTypeLocalServiceUtil
 				.fetchESFSportType(assegnazioneDirettoreDiTiro.getSportTypeId()).getName();
 	}
+	
 %>
 
 <portlet:renderURL var="backURL">
-	<portlet:param name="mvcPath" value='<%=templatePath + "view.jsp"%>' />
+	<portlet:param name="mvcPath" value='<%=templatePath + backPage %>' />
+	<portlet:param name="esfUserId" value="<%= String.valueOf(esfUserId)%>" />
 </portlet:renderURL>
-
 
 <portlet:actionURL name="updateShooterDirector"
 	var="updateShooterDirectorURL">
@@ -78,14 +87,14 @@
 		value="<%=sdf.format(assegnazioneDirettoreDiTiro.getEsfStartData())%>" />
 	<portlet:param name="esfShootingDirectorId"
 		value="<%=String.valueOf(idAssegnazioneDirettoreDiTiro)%>" />
-	<portlet:param name="mvcPath"
-		value='<%=templatePath + "view.jsp"%>' />
-
+	<portlet:param name="mvcPath" value='<%=templatePath + backPage%>' />
+	<portlet:param name="mvcPathErr" value='<%=templatePath + "edit_shootingDirectorInfo.jsp"%>' />
+	<portlet:param name="esfUserId" value="<%= String.valueOf(esfUserId)%>" />
 </portlet:actionURL>
 
-<aui:form action="<%=updateShooterDirectorURL%>"
-	name="<portlet:namespace />fm">
+<liferay-ui:error key="error-shooting-director-update" message="error-shooting-director-update" />
 
+<aui:form action="<%=updateShooterDirectorURL%>" name="<portlet:namespace />fm">
 		<aui:fieldset>
 		<% String startDate = DateUtilFormatter.formatDate( DateUtilFormatter.DEFAULT_DATE_FORMAT_ENG, assegnazioneDirettoreDiTiro.getEsfStartData() ); %>
 		<aui:script>
@@ -101,18 +110,14 @@
 	<aui:input name="name" value="<%=shDr.getFirstName()%>" readonly="true"/>
 	<aui:input name="Cognome" value="<%=shDr.getLastName()%>" readonly="true"/>
 	<aui:input name="card" value="<%=cardCode%>" readonly="true"/>
-	<aui:input name="region-code"
-		value="<%=assegnazioneDirettoreDiTiro.getRegionId()%>" readonly="true"/>
+	<aui:input name="region-code" value="<%=assegnazioneDirettoreDiTiro.getRegionId()%>" readonly="true"/>
 	<aui:input name="qualification" value="<%=qualifica%>" readonly="true"/>
 	<aui:input name="sport-type" value="<%=sportTypeName%>" readonly="true"/>
 	<aui:input type="text" name="startDate">
 		<aui:validator name="required" />
 	</aui:input>
 
-
-	<aui:button type="submit" onClick='<%=updateShooterDirectorURL.toString() %>'
-		value="Edit" inlineField="true" />
-
+	<aui:button type="submit" value="Edit" inlineField="true" />
 
 	<aui:button onClick='<%=backURL.toString() %>' value="back"
 		inlineField="true" />

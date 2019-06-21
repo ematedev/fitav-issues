@@ -33,7 +33,9 @@ import it.ethica.esf.service.VM_TiratoriTesseratiLocalServiceUtil;
 import it.ethica.esf.service.VW_DatiDrettoreTiroLocalServiceUtil;
 import it.ethica.esf.service.VW_NomineDirettoriTiroLocalServiceUtil;
 import it.ethica.esf.service.persistence.VW_NomineDirettoriTiroPK;
+import it.ethica.esf.util.DateUtilFormatter;
 import it.ethica.esf.util.ManageDate;
+import it.ethica.esf.util.MissingDateException;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -87,6 +89,35 @@ import com.microsoft.schemas.office.office.PreferrelativeAttribute;
 
 
 public class ESFShootingDirectorPortlet extends MVCPortlet{
+	
+	public void updateShooterDirector(ActionRequest actionRequest, ActionResponse actionResponse) {
+		long esfShootingDirectorId = ParamUtil.getLong(actionRequest, "esfShootingDirectorId");
+		Date startDate = null;
+		ESFShootingDirector director = null;
+		String backPage = null;
+		String sStartDate = ParamUtil.getString(actionRequest, "startDate");
+		try {
+			startDate = DateUtilFormatter.parseDate(sStartDate);
+			director = ESFShootingDirectorLocalServiceUtil.fetchESFShootingDirector(esfShootingDirectorId);
+			director.setEsfStartData(startDate);
+			ESFShootingDirectorLocalServiceUtil.updateESFShootingDirector(director);
+		} catch (SystemException e) {
+			_log.error("Errore durante l'aggiornamento del direttore di tiro ["+esfShootingDirectorId+"]", e);
+			SessionErrors.add(actionRequest, "error-shooting-director-update");
+			backPage = ParamUtil.getString(actionRequest, "mvcPathErr");
+			actionResponse.setRenderParameter("mvcPath", backPage);
+		} catch (MissingDateException e) {
+			_log.error("Errore durante l'aggiornamento del direttore di tiro ["+esfShootingDirectorId+"]", e);
+			SessionErrors.add(actionRequest, "error-shooting-director-update");
+			backPage = ParamUtil.getString(actionRequest, "mvcPathErr");
+			actionResponse.setRenderParameter("mvcPath", backPage);
+		} catch (ParseException e) {
+			_log.error("Errore durante l'aggiornamento del direttore di tiro ["+esfShootingDirectorId+"]", e);
+			SessionErrors.add(actionRequest, "error-shooting-director-update");
+			backPage = ParamUtil.getString(actionRequest, "mvcPathErr");
+			actionResponse.setRenderParameter("mvcPath", backPage);
+		}
+	}
 	
 	/**
 	 * Action che ritorna alla jsp la lista delle nomine dei direttori di tiro 
