@@ -1610,7 +1610,7 @@
 		<column name="esfPartecipantTypeId" primary="true" type="long"></column>
 		<column name="name" type="String"></column>
 	</entity>
-	<entity name="ESFStateAssEntity" remote-service="false">
+	<entity name="ESFStateAssEntity" remote-service="false" local-service="true">
 		<column name="esfStateId" primary="true" type="long"></column>
 		<column name="className" primary="true" type="String"></column>
 		<finder name="ClassName" return-type="Collection">
