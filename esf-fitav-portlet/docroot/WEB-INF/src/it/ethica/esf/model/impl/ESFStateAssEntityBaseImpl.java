@@ -14,7 +14,10 @@
 
 package it.ethica.esf.model.impl;
 
+import com.liferay.portal.kernel.exception.SystemException;
+
 import it.ethica.esf.model.ESFStateAssEntity;
+import it.ethica.esf.service.ESFStateAssEntityLocalServiceUtil;
 
 /**
  * The extended model base implementation for the ESFStateAssEntity service. Represents a row in the &quot;ESFStateAssEntity&quot; database table, with each column mapped to a property of this class.
@@ -35,4 +38,13 @@ public abstract class ESFStateAssEntityBaseImpl
 	 *
 	 * Never modify or reference this class directly. All methods that expect a e s f state ass entity model instance should use the {@link ESFStateAssEntity} interface instead.
 	 */
+	@Override
+	public void persist() throws SystemException {
+		if (this.isNew()) {
+			ESFStateAssEntityLocalServiceUtil.addESFStateAssEntity(this);
+		}
+		else {
+			ESFStateAssEntityLocalServiceUtil.updateESFStateAssEntity(this);
+		}
+	}
 }

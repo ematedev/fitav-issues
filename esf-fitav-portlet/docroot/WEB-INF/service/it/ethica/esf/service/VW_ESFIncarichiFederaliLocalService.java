@@ -16,7 +16,6 @@ package it.ethica.esf.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -53,7 +52,6 @@ public interface VW_ESFIncarichiFederaliLocalService extends BaseLocalService,
 	* @return the v w_ e s f incarichi federali that was added
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.VW_ESFIncarichiFederali addVW_ESFIncarichiFederali(
 		it.ethica.esf.model.VW_ESFIncarichiFederali vw_esfIncarichiFederali)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -75,7 +73,6 @@ public interface VW_ESFIncarichiFederaliLocalService extends BaseLocalService,
 	* @throws PortalException if a v w_ e s f incarichi federali with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.VW_ESFIncarichiFederali deleteVW_ESFIncarichiFederali(
 		it.ethica.esf.service.persistence.VW_ESFIncarichiFederaliPK vw_esfIncarichiFederaliPK)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -88,7 +85,6 @@ public interface VW_ESFIncarichiFederaliLocalService extends BaseLocalService,
 	* @return the v w_ e s f incarichi federali that was removed
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.VW_ESFIncarichiFederali deleteVW_ESFIncarichiFederali(
 		it.ethica.esf.model.VW_ESFIncarichiFederali vw_esfIncarichiFederali)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -230,7 +226,6 @@ public interface VW_ESFIncarichiFederaliLocalService extends BaseLocalService,
 	* @return the v w_ e s f incarichi federali that was updated
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.VW_ESFIncarichiFederali updateVW_ESFIncarichiFederali(
 		it.ethica.esf.model.VW_ESFIncarichiFederali vw_esfIncarichiFederali)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -254,7 +249,6 @@ public interface VW_ESFIncarichiFederaliLocalService extends BaseLocalService,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
 
-	@com.liferay.portal.kernel.transaction.Transactional
 	public java.util.List<it.ethica.esf.model.VW_ESFIncarichiFederali> findBylistaIncarichi(
 		long esfUserId, boolean attivo)
 		throws com.liferay.portal.kernel.exception.SystemException;

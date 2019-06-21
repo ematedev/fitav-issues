@@ -16,7 +16,6 @@ package it.ethica.esf.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -53,7 +52,6 @@ public interface ESFProvinceLocalService extends BaseLocalService,
 	* @return the e s f province that was added
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFProvince addESFProvince(
 		it.ethica.esf.model.ESFProvince esfProvince)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -75,7 +73,6 @@ public interface ESFProvinceLocalService extends BaseLocalService,
 	* @throws PortalException if a e s f province with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFProvince deleteESFProvince(
 		it.ethica.esf.service.persistence.ESFProvincePK esfProvincePK)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -88,7 +85,6 @@ public interface ESFProvinceLocalService extends BaseLocalService,
 	* @return the e s f province that was removed
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFProvince deleteESFProvince(
 		it.ethica.esf.model.ESFProvince esfProvince)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -230,7 +226,6 @@ public interface ESFProvinceLocalService extends BaseLocalService,
 	* @return the e s f province that was updated
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFProvince updateESFProvince(
 		it.ethica.esf.model.ESFProvince esfProvince)
 		throws com.liferay.portal.kernel.exception.SystemException;

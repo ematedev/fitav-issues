@@ -274,19 +274,19 @@ public interface ESFAddressModel extends BaseModel<ESFAddress> {
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFAddress esfAddress);
+	public int compareTo(ESFAddress esfAddress);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFAddress> toCacheModel();
+	public CacheModel<ESFAddress> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFAddress toEscapedModel();
+	public ESFAddress toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFAddress toUnescapedModel();
+	public ESFAddress toUnescapedModel();
 
 	@Override
 	public String toString();

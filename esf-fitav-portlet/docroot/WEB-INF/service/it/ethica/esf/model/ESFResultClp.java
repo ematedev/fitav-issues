@@ -2294,10 +2294,6 @@ public class ESFResultClp extends BaseModelImpl<ESFResult> implements ESFResult 
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -2791,5 +2787,4 @@ public class ESFResultClp extends BaseModelImpl<ESFResult> implements ESFResult 
 	private long _shooterCode;
 	private long _shooterQualification;
 	private BaseModel<?> _esfResultRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

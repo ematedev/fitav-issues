@@ -1414,10 +1414,6 @@ public class ESFMatchClp extends BaseModelImpl<ESFMatch> implements ESFMatch {
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1707,5 +1703,4 @@ public class ESFMatchClp extends BaseModelImpl<ESFMatch> implements ESFMatch {
 	private int _matchYear;
 	private int _matchYearSeq;
 	private BaseModel<?> _esfMatchRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

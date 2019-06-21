@@ -24,56 +24,24 @@ import java.util.Arrays;
  */
 public class ESFSpecificServiceClpInvoker {
 	public ESFSpecificServiceClpInvoker() {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 4e2f23245d33f5cc80bffcdd36acf34e75accc38
-		_methodName368 = "getBeanIdentifier";
+		_methodName376 = "getBeanIdentifier";
 
-		_methodParameterTypes368 = new String[] {  };
+		_methodParameterTypes376 = new String[] {  };
 
-		_methodName369 = "setBeanIdentifier";
+		_methodName377 = "setBeanIdentifier";
 
-		_methodParameterTypes369 = new String[] { "java.lang.String" };
-<<<<<<< HEAD
-=======
-		_methodName360 = "getBeanIdentifier";
-
-		_methodParameterTypes360 = new String[] {  };
-
-		_methodName361 = "setBeanIdentifier";
-
-		_methodParameterTypes361 = new String[] { "java.lang.String" };
->>>>>>> anomalia-id16
-=======
->>>>>>> 4e2f23245d33f5cc80bffcdd36acf34e75accc38
+		_methodParameterTypes377 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
 		Object[] arguments) throws Throwable {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 4e2f23245d33f5cc80bffcdd36acf34e75accc38
-		if (_methodName368.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes368, parameterTypes)) {
+		if (_methodName376.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes376, parameterTypes)) {
 			return ESFSpecificServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName369.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes369, parameterTypes)) {
-<<<<<<< HEAD
-=======
-		if (_methodName360.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes360, parameterTypes)) {
-			return ESFSpecificServiceUtil.getBeanIdentifier();
-		}
-
-		if (_methodName361.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes361, parameterTypes)) {
->>>>>>> anomalia-id16
-=======
->>>>>>> 4e2f23245d33f5cc80bffcdd36acf34e75accc38
+		if (_methodName377.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes377, parameterTypes)) {
 			ESFSpecificServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
@@ -82,21 +50,8 @@ public class ESFSpecificServiceClpInvoker {
 		throw new UnsupportedOperationException();
 	}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 4e2f23245d33f5cc80bffcdd36acf34e75accc38
-	private String _methodName368;
-	private String[] _methodParameterTypes368;
-	private String _methodName369;
-	private String[] _methodParameterTypes369;
-<<<<<<< HEAD
-=======
-	private String _methodName360;
-	private String[] _methodParameterTypes360;
-	private String _methodName361;
-	private String[] _methodParameterTypes361;
->>>>>>> anomalia-id16
-=======
->>>>>>> 4e2f23245d33f5cc80bffcdd36acf34e75accc38
+	private String _methodName376;
+	private String[] _methodParameterTypes376;
+	private String _methodName377;
+	private String[] _methodParameterTypes377;
 }

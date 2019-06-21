@@ -304,19 +304,19 @@ public interface ESFgunUserModel extends BaseModel<ESFgunUser> {
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFgunUser esFgunUser);
+	public int compareTo(ESFgunUser esFgunUser);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFgunUser> toCacheModel();
+	public CacheModel<ESFgunUser> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFgunUser toEscapedModel();
+	public ESFgunUser toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFgunUser toUnescapedModel();
+	public ESFgunUser toUnescapedModel();
 
 	@Override
 	public String toString();

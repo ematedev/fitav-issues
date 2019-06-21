@@ -321,12 +321,12 @@
 			checked="<%=esfMatch == null ? true : esfMatch.isIsDraft()%>" />
 
 		<aui:input name="numDisk">
-			<aui:validator name="digits"></aui:validator>
+			<aui:validator name="digits" errorMessage="must-be-number"></aui:validator>
 			<aui:validator name="min">0</aui:validator>
 		</aui:input>
 		
-		<aui:input leable="num-disk-team" name="numDiskTeam">
-			<aui:validator name="digits"></aui:validator>
+		<aui:input lable="num-disk-team" name="numDiskTeam">
+			<aui:validator name="digits" errorMessage="must-be-number"></aui:validator>
 			<aui:validator name="min">0</aui:validator>
 		</aui:input>
 
@@ -369,7 +369,7 @@
 		 %>
 </div>	
 		<aui:input id="numFields" name="numFields">
-			<aui:validator name="digits"></aui:validator>
+			<aui:validator name="digits" errorMessage="must-be-number"></aui:validator>
 			<aui:validator name="min">1</aui:validator>
 		</aui:input>
 

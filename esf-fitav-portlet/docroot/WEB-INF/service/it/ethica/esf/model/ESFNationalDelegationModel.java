@@ -425,20 +425,19 @@ public interface ESFNationalDelegationModel extends BaseModel<ESFNationalDelegat
 	public Object clone();
 
 	@Override
-	public int compareTo(
-		it.ethica.esf.model.ESFNationalDelegation esfNationalDelegation);
+	public int compareTo(ESFNationalDelegation esfNationalDelegation);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFNationalDelegation> toCacheModel();
+	public CacheModel<ESFNationalDelegation> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFNationalDelegation toEscapedModel();
+	public ESFNationalDelegation toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFNationalDelegation toUnescapedModel();
+	public ESFNationalDelegation toUnescapedModel();
 
 	@Override
 	public String toString();

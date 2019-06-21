@@ -260,8 +260,8 @@ public class VW_ESFIncarichiFederaliUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.VW_ESFIncarichiFederali[] findBylistaIncarichi_PrevAndNext(
-		VW_ESFIncarichiFederaliPK vw_esfIncarichiFederaliPK, boolean active_,
-		long esfUserId,
+		it.ethica.esf.service.persistence.VW_ESFIncarichiFederaliPK vw_esfIncarichiFederaliPK,
+		boolean active_, long esfUserId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchVW_ESFIncarichiFederaliException {
@@ -322,7 +322,7 @@ public class VW_ESFIncarichiFederaliUtil {
 	* @return the new v w_ e s f incarichi federali
 	*/
 	public static it.ethica.esf.model.VW_ESFIncarichiFederali create(
-		VW_ESFIncarichiFederaliPK vw_esfIncarichiFederaliPK) {
+		it.ethica.esf.service.persistence.VW_ESFIncarichiFederaliPK vw_esfIncarichiFederaliPK) {
 		return getPersistence().create(vw_esfIncarichiFederaliPK);
 	}
 
@@ -335,7 +335,7 @@ public class VW_ESFIncarichiFederaliUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.VW_ESFIncarichiFederali remove(
-		VW_ESFIncarichiFederaliPK vw_esfIncarichiFederaliPK)
+		it.ethica.esf.service.persistence.VW_ESFIncarichiFederaliPK vw_esfIncarichiFederaliPK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchVW_ESFIncarichiFederaliException {
 		return getPersistence().remove(vw_esfIncarichiFederaliPK);
@@ -356,7 +356,7 @@ public class VW_ESFIncarichiFederaliUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.VW_ESFIncarichiFederali findByPrimaryKey(
-		VW_ESFIncarichiFederaliPK vw_esfIncarichiFederaliPK)
+		it.ethica.esf.service.persistence.VW_ESFIncarichiFederaliPK vw_esfIncarichiFederaliPK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			it.ethica.esf.NoSuchVW_ESFIncarichiFederaliException {
 		return getPersistence().findByPrimaryKey(vw_esfIncarichiFederaliPK);
@@ -370,7 +370,7 @@ public class VW_ESFIncarichiFederaliUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static it.ethica.esf.model.VW_ESFIncarichiFederali fetchByPrimaryKey(
-		VW_ESFIncarichiFederaliPK vw_esfIncarichiFederaliPK)
+		it.ethica.esf.service.persistence.VW_ESFIncarichiFederaliPK vw_esfIncarichiFederaliPK)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence().fetchByPrimaryKey(vw_esfIncarichiFederaliPK);
 	}

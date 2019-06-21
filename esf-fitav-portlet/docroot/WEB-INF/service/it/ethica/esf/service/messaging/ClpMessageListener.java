@@ -25,7 +25,6 @@ import it.ethica.esf.service.ESFAnnualFreeCardLocalServiceUtil;
 import it.ethica.esf.service.ESFBrandLocalServiceUtil;
 import it.ethica.esf.service.ESFCaneLocalServiceUtil;
 import it.ethica.esf.service.ESFCardLocalServiceUtil;
-import it.ethica.esf.service.ESFCardServiceUtil;
 import it.ethica.esf.service.ESFCategoryLocalServiceUtil;
 import it.ethica.esf.service.ESFCatridgeLocalServiceUtil;
 import it.ethica.esf.service.ESFCityLocalServiceUtil;
@@ -77,14 +76,17 @@ import it.ethica.esf.service.ESFRenewalLocalServiceUtil;
 import it.ethica.esf.service.ESFResultLocalServiceUtil;
 import it.ethica.esf.service.ESFShooterAffiliationChronoLocalServiceUtil;
 import it.ethica.esf.service.ESFShooterCategoryESFMatchLocalServiceUtil;
+import it.ethica.esf.service.ESFShooterCategoryESFTournamentLocalServiceUtil;
 import it.ethica.esf.service.ESFShooterCategoryLocalServiceUtil;
 import it.ethica.esf.service.ESFShooterQualificationESFMatchLocalServiceUtil;
+import it.ethica.esf.service.ESFShooterQualificationESFTournamentLocalServiceUtil;
 import it.ethica.esf.service.ESFShooterQualificationLocalServiceUtil;
 import it.ethica.esf.service.ESFShootingDirectorLocalServiceUtil;
 import it.ethica.esf.service.ESFShootingDirectorQualificationLocalServiceUtil;
 import it.ethica.esf.service.ESFSpecificLocalServiceUtil;
 import it.ethica.esf.service.ESFSpecificServiceUtil;
 import it.ethica.esf.service.ESFSportTypeLocalServiceUtil;
+import it.ethica.esf.service.ESFStateAssEntityLocalServiceUtil;
 import it.ethica.esf.service.ESFStateLocalServiceUtil;
 import it.ethica.esf.service.ESFSuspensiveCodeLocalServiceUtil;
 import it.ethica.esf.service.ESFSuspensiveShootingDirectorLocalServiceUtil;
@@ -132,7 +134,6 @@ public class ClpMessageListener extends BaseMessageListener {
 
 			ESFCardLocalServiceUtil.clearService();
 
-			ESFCardServiceUtil.clearService();
 			ESFCategoryLocalServiceUtil.clearService();
 
 			ESFCatridgeLocalServiceUtil.clearService();
@@ -237,9 +238,13 @@ public class ClpMessageListener extends BaseMessageListener {
 
 			ESFShooterCategoryESFMatchLocalServiceUtil.clearService();
 
+			ESFShooterCategoryESFTournamentLocalServiceUtil.clearService();
+
 			ESFShooterQualificationLocalServiceUtil.clearService();
 
 			ESFShooterQualificationESFMatchLocalServiceUtil.clearService();
+
+			ESFShooterQualificationESFTournamentLocalServiceUtil.clearService();
 
 			ESFShootingDirectorLocalServiceUtil.clearService();
 
@@ -251,6 +256,8 @@ public class ClpMessageListener extends BaseMessageListener {
 			ESFSportTypeLocalServiceUtil.clearService();
 
 			ESFStateLocalServiceUtil.clearService();
+
+			ESFStateAssEntityLocalServiceUtil.clearService();
 
 			ESFSuspensiveCodeLocalServiceUtil.clearService();
 

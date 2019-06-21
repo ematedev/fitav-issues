@@ -138,19 +138,19 @@ public interface ESFStateModel extends BaseModel<ESFState> {
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFState esfState);
+	public int compareTo(ESFState esfState);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFState> toCacheModel();
+	public CacheModel<ESFState> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFState toEscapedModel();
+	public ESFState toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFState toUnescapedModel();
+	public ESFState toUnescapedModel();
 
 	@Override
 	public String toString();

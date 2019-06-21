@@ -16,7 +16,6 @@ package it.ethica.esf.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -53,7 +52,6 @@ public interface ESFgunUserLocalService extends BaseLocalService,
 	* @return the e s fgun user that was added
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFgunUser addESFgunUser(
 		it.ethica.esf.model.ESFgunUser esFgunUser)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -74,7 +72,6 @@ public interface ESFgunUserLocalService extends BaseLocalService,
 	* @throws PortalException if a e s fgun user with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFgunUser deleteESFgunUser(long esfGunUserId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
@@ -86,7 +83,6 @@ public interface ESFgunUserLocalService extends BaseLocalService,
 	* @return the e s fgun user that was removed
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFgunUser deleteESFgunUser(
 		it.ethica.esf.model.ESFgunUser esFgunUser)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -226,7 +222,6 @@ public interface ESFgunUserLocalService extends BaseLocalService,
 	* @return the e s fgun user that was updated
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFgunUser updateESFgunUser(
 		it.ethica.esf.model.ESFgunUser esFgunUser)
 		throws com.liferay.portal.kernel.exception.SystemException;

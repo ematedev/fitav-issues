@@ -138,19 +138,19 @@ public interface ESFBrandModel extends BaseModel<ESFBrand> {
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFBrand esfBrand);
+	public int compareTo(ESFBrand esfBrand);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFBrand> toCacheModel();
+	public CacheModel<ESFBrand> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFBrand toEscapedModel();
+	public ESFBrand toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFBrand toUnescapedModel();
+	public ESFBrand toUnescapedModel();
 
 	@Override
 	public String toString();

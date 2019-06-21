@@ -590,10 +590,6 @@ public class ESFShooterQualificationClp extends BaseModelImpl<ESFShooterQualific
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -708,5 +704,4 @@ public class ESFShooterQualificationClp extends BaseModelImpl<ESFShooterQualific
 	private String _description;
 	private String _code;
 	private BaseModel<?> _esfShooterQualificationRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

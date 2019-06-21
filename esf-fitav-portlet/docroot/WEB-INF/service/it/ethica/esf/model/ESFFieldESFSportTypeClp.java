@@ -446,10 +446,6 @@ public class ESFFieldESFSportTypeClp extends BaseModelImpl<ESFFieldESFSportType>
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return getPrimaryKey().hashCode();
@@ -536,5 +532,4 @@ public class ESFFieldESFSportTypeClp extends BaseModelImpl<ESFFieldESFSportType>
 	private Date _createDate;
 	private Date _modifiedDate;
 	private BaseModel<?> _esfFieldESFSportTypeRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

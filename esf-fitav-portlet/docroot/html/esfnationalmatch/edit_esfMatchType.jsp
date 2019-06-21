@@ -39,7 +39,8 @@
 		
 		<aui:input name="isCategoryQualification" label="isCategoryQualification" type="checkbox"/>
 		
-		<aui:input name="isNational" label="isNational" type="checkbox"/>
+		<aui:input name="isNational" value="true" type="hidden"/>
+		<liferay-ui:message key="isNationalMessage"></liferay-ui:message>
 		
 	</aui:fieldset>
 

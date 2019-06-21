@@ -163,19 +163,19 @@ public interface ESFLentFieldModel extends BaseModel<ESFLentField> {
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFLentField esfLentField);
+	public int compareTo(ESFLentField esfLentField);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFLentField> toCacheModel();
+	public CacheModel<ESFLentField> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFLentField toEscapedModel();
+	public ESFLentField toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFLentField toUnescapedModel();
+	public ESFLentField toUnescapedModel();
 
 	@Override
 	public String toString();

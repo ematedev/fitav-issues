@@ -356,19 +356,19 @@ public interface ESFUserRoleModel extends BaseModel<ESFUserRole>,
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFUserRole esfUserRole);
+	public int compareTo(ESFUserRole esfUserRole);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFUserRole> toCacheModel();
+	public CacheModel<ESFUserRole> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFUserRole toEscapedModel();
+	public ESFUserRole toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFUserRole toUnescapedModel();
+	public ESFUserRole toUnescapedModel();
 
 	@Override
 	public String toString();

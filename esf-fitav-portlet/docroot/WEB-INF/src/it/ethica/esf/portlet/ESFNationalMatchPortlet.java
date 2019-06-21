@@ -4627,23 +4627,25 @@ ServiceContext serviceContext =
 				ParamUtil.getBoolean(request, "isCategoryQualification");
 			boolean isNational = ParamUtil.getBoolean(request, "isNational");
 			
+			ESFMatchType eSFMatchType;
+			
 			if (esfMatchTypeId > 0) {
 
-				ESFMatchTypeLocalServiceUtil.updateEsfMatchType(
+				eSFMatchType = ESFMatchTypeLocalServiceUtil.updateEsfMatchType(
 					esfMatchTypeId, name, isCategoryQualification, isNational,
 					 serviceContext);
 
 			}
 			else {
 
-				ESFMatchTypeLocalServiceUtil.addEsfMatchType(
+				eSFMatchType = ESFMatchTypeLocalServiceUtil.addEsfMatchType(
 					name, isCategoryQualification, isNational,
 					serviceContext);
 			}
 			
 			response.setRenderParameter("mvcPath", templatePath+"new_edit_esfMatch.jsp");
 			response.setRenderParameter("esfMatchId",String.valueOf(esfMatchId) );
-
+			response.setRenderParameter("esfMatchTypeId",String.valueOf(eSFMatchType.getEsfMatchTypeId()) );
 		}
 	
 	public void editESFRifle (ActionRequest request, ActionResponse response)

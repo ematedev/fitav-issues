@@ -35,7 +35,7 @@
 			value='<%= esfDescriptionId %>' />
 			
 		<aui:input name="name"></aui:input>
-
+		
 		<aui:input name="isNational"
 			label="isNational" type="checkbox"
 			value='<%=esfDescription != null

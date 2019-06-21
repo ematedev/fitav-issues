@@ -133,11 +133,13 @@ create index IX_274F5087 on ESFHistoricalAssociation (organizationId);
 
 create index IX_E0024C5F on ESFLentField (esfFieldId, esfEntityStateId);
 
-create unique index IX_C142F0F on ESFMatch (code_);
+create index IX_C142F0F on ESFMatch (code_);
 create index IX_36D02C39 on ESFMatch (description);
 create index IX_99B28E49 on ESFMatch (esfMatchTypeId);
 create index IX_3013E9F1 on ESFMatch (eventType);
 create index IX_6DA4124A on ESFMatch (isChangeCategoryMatch);
+create index IX_9325C91F on ESFMatch (matchYear);
+create index IX_34F70AF0 on ESFMatch (matchYear, matchYearSeq);
 create index IX_C1A2041 on ESFMatch (startDate, esfMatchTypeId, esfAssociationId, description, isNational);
 create index IX_DD551185 on ESFMatch (startDate, isNational, code_);
 create index IX_9C1A31FD on ESFMatch (userId, isNational);

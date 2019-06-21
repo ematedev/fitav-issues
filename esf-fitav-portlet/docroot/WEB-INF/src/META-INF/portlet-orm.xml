@@ -829,6 +829,8 @@
 			<basic name="isChangeCategoryMatch" />
 			<basic name="esfNationalSportTypeId" />
 			<basic name="oldCode" />
+			<basic name="matchYear" />
+			<basic name="matchYearSeq" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />
