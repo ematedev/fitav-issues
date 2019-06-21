@@ -83,9 +83,6 @@ annullaUrl.setParameter("jspPage", "/html/esfshootingdirector/view.jsp");
 			pageContext.setAttribute("total", listaTiratori.size()); 
 		%>
 	</liferay-ui:search-container-results>
-		<liferay-ui:search-container-row-parameter name="tableType" value="newView"/>
-		
-
 	<!-- Definisce la struttura di un elemento -->
 	<liferay-ui:search-container-row className="it.ethica.esf.model.VM_TiratoriTesserati" modelVar="vm_tiratoriTesserati">
 		
@@ -99,7 +96,6 @@ annullaUrl.setParameter("jspPage", "/html/esfshootingdirector/view.jsp");
 			String codOrganizzazione = vm_tiratoriTesserati.getCodiceOrganizzazione();
 			
 		%>
-
 		
 		<liferay-ui:search-container-column-text value='<%= cognome %>' name="last-name" align="Center"/>
 
@@ -118,7 +114,7 @@ annullaUrl.setParameter("jspPage", "/html/esfshootingdirector/view.jsp");
 		<liferay-ui:search-container-column-text value="<%= codOrganizzazione %>" name="orgName" align="Center"/>
 		
 		<!-- Definisce il pulsante visualizza -->
-		<liferay-ui:search-container-column-jsp path='<%=templatePath + "addNewShDtaction.jsp"%>' align="right" />
+		<liferay-ui:search-container-column-jsp path='<%=templatePath + "addNewShDtaction.jsp"%>' align="right"  />
 				
 	</liferay-ui:search-container-row>
 
