@@ -1,5 +1,4 @@
-<%@page import="it.ethica.esf.model.VW_Azzurri"%>
-<%@page import="it.ethica.esf.model.ESFNational"%>
+
 <%@ include file="init.jsp"%>
 
 <%

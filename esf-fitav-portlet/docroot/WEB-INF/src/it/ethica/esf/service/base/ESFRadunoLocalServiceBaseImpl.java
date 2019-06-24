@@ -96,6 +96,7 @@ import it.ethica.esf.service.persistence.ESFRadunoFilesPersistence;
 import it.ethica.esf.service.persistence.ESFRadunoPersistence;
 import it.ethica.esf.service.persistence.ESFRadunoSottotipiRadunoPersistence;
 import it.ethica.esf.service.persistence.ESFRadunoSottotipoPersistence;
+import it.ethica.esf.service.persistence.ESFRadunoStaffPersistence;
 import it.ethica.esf.service.persistence.ESFRadunoTipoPersistence;
 import it.ethica.esf.service.persistence.ESFRegionPersistence;
 import it.ethica.esf.service.persistence.ESFRenewalPersistence;
@@ -132,9 +133,11 @@ import it.ethica.esf.service.persistence.ESFUserPersistence;
 import it.ethica.esf.service.persistence.ESFUserRolePersistence;
 import it.ethica.esf.service.persistence.ESFgunUserFinder;
 import it.ethica.esf.service.persistence.ESFgunUserPersistence;
+import it.ethica.esf.service.persistence.EsfRadunoShootersPersistence;
 import it.ethica.esf.service.persistence.VW_AzzurriPersistence;
 import it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPersistence;
 import it.ethica.esf.service.persistence.VW_ESFListaIncarichiPersistence;
+import it.ethica.esf.service.persistence.VW_StaffPersistence;
 
 import java.io.Serializable;
 
@@ -2609,6 +2612,44 @@ public abstract class ESFRadunoLocalServiceBaseImpl extends BaseLocalServiceImpl
 	}
 
 	/**
+	 * Returns the esf raduno shooters local service.
+	 *
+	 * @return the esf raduno shooters local service
+	 */
+	public it.ethica.esf.service.EsfRadunoShootersLocalService getEsfRadunoShootersLocalService() {
+		return esfRadunoShootersLocalService;
+	}
+
+	/**
+	 * Sets the esf raduno shooters local service.
+	 *
+	 * @param esfRadunoShootersLocalService the esf raduno shooters local service
+	 */
+	public void setEsfRadunoShootersLocalService(
+		it.ethica.esf.service.EsfRadunoShootersLocalService esfRadunoShootersLocalService) {
+		this.esfRadunoShootersLocalService = esfRadunoShootersLocalService;
+	}
+
+	/**
+	 * Returns the esf raduno shooters persistence.
+	 *
+	 * @return the esf raduno shooters persistence
+	 */
+	public EsfRadunoShootersPersistence getEsfRadunoShootersPersistence() {
+		return esfRadunoShootersPersistence;
+	}
+
+	/**
+	 * Sets the esf raduno shooters persistence.
+	 *
+	 * @param esfRadunoShootersPersistence the esf raduno shooters persistence
+	 */
+	public void setEsfRadunoShootersPersistence(
+		EsfRadunoShootersPersistence esfRadunoShootersPersistence) {
+		this.esfRadunoShootersPersistence = esfRadunoShootersPersistence;
+	}
+
+	/**
 	 * Returns the e s f raduno sottotipi raduno local service.
 	 *
 	 * @return the e s f raduno sottotipi raduno local service
@@ -2682,6 +2723,44 @@ public abstract class ESFRadunoLocalServiceBaseImpl extends BaseLocalServiceImpl
 	public void setESFRadunoSottotipoPersistence(
 		ESFRadunoSottotipoPersistence esfRadunoSottotipoPersistence) {
 		this.esfRadunoSottotipoPersistence = esfRadunoSottotipoPersistence;
+	}
+
+	/**
+	 * Returns the e s f raduno staff local service.
+	 *
+	 * @return the e s f raduno staff local service
+	 */
+	public it.ethica.esf.service.ESFRadunoStaffLocalService getESFRadunoStaffLocalService() {
+		return esfRadunoStaffLocalService;
+	}
+
+	/**
+	 * Sets the e s f raduno staff local service.
+	 *
+	 * @param esfRadunoStaffLocalService the e s f raduno staff local service
+	 */
+	public void setESFRadunoStaffLocalService(
+		it.ethica.esf.service.ESFRadunoStaffLocalService esfRadunoStaffLocalService) {
+		this.esfRadunoStaffLocalService = esfRadunoStaffLocalService;
+	}
+
+	/**
+	 * Returns the e s f raduno staff persistence.
+	 *
+	 * @return the e s f raduno staff persistence
+	 */
+	public ESFRadunoStaffPersistence getESFRadunoStaffPersistence() {
+		return esfRadunoStaffPersistence;
+	}
+
+	/**
+	 * Sets the e s f raduno staff persistence.
+	 *
+	 * @param esfRadunoStaffPersistence the e s f raduno staff persistence
+	 */
+	public void setESFRadunoStaffPersistence(
+		ESFRadunoStaffPersistence esfRadunoStaffPersistence) {
+		this.esfRadunoStaffPersistence = esfRadunoStaffPersistence;
 	}
 
 	/**
@@ -3972,6 +4051,43 @@ public abstract class ESFRadunoLocalServiceBaseImpl extends BaseLocalServiceImpl
 	}
 
 	/**
+	 * Returns the v w_ staff local service.
+	 *
+	 * @return the v w_ staff local service
+	 */
+	public it.ethica.esf.service.VW_StaffLocalService getVW_StaffLocalService() {
+		return vw_StaffLocalService;
+	}
+
+	/**
+	 * Sets the v w_ staff local service.
+	 *
+	 * @param vw_StaffLocalService the v w_ staff local service
+	 */
+	public void setVW_StaffLocalService(
+		it.ethica.esf.service.VW_StaffLocalService vw_StaffLocalService) {
+		this.vw_StaffLocalService = vw_StaffLocalService;
+	}
+
+	/**
+	 * Returns the v w_ staff persistence.
+	 *
+	 * @return the v w_ staff persistence
+	 */
+	public VW_StaffPersistence getVW_StaffPersistence() {
+		return vw_StaffPersistence;
+	}
+
+	/**
+	 * Sets the v w_ staff persistence.
+	 *
+	 * @param vw_StaffPersistence the v w_ staff persistence
+	 */
+	public void setVW_StaffPersistence(VW_StaffPersistence vw_StaffPersistence) {
+		this.vw_StaffPersistence = vw_StaffPersistence;
+	}
+
+	/**
 	 * Returns the counter local service.
 	 *
 	 * @return the counter local service
@@ -4383,6 +4499,10 @@ public abstract class ESFRadunoLocalServiceBaseImpl extends BaseLocalServiceImpl
 	protected it.ethica.esf.service.ESFRadunoFilesLocalService esfRadunoFilesLocalService;
 	@BeanReference(type = ESFRadunoFilesPersistence.class)
 	protected ESFRadunoFilesPersistence esfRadunoFilesPersistence;
+	@BeanReference(type = it.ethica.esf.service.EsfRadunoShootersLocalService.class)
+	protected it.ethica.esf.service.EsfRadunoShootersLocalService esfRadunoShootersLocalService;
+	@BeanReference(type = EsfRadunoShootersPersistence.class)
+	protected EsfRadunoShootersPersistence esfRadunoShootersPersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFRadunoSottotipiRadunoLocalService.class)
 	protected it.ethica.esf.service.ESFRadunoSottotipiRadunoLocalService esfRadunoSottotipiRadunoLocalService;
 	@BeanReference(type = ESFRadunoSottotipiRadunoPersistence.class)
@@ -4391,6 +4511,10 @@ public abstract class ESFRadunoLocalServiceBaseImpl extends BaseLocalServiceImpl
 	protected it.ethica.esf.service.ESFRadunoSottotipoLocalService esfRadunoSottotipoLocalService;
 	@BeanReference(type = ESFRadunoSottotipoPersistence.class)
 	protected ESFRadunoSottotipoPersistence esfRadunoSottotipoPersistence;
+	@BeanReference(type = it.ethica.esf.service.ESFRadunoStaffLocalService.class)
+	protected it.ethica.esf.service.ESFRadunoStaffLocalService esfRadunoStaffLocalService;
+	@BeanReference(type = ESFRadunoStaffPersistence.class)
+	protected ESFRadunoStaffPersistence esfRadunoStaffPersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFRadunoTipoLocalService.class)
 	protected it.ethica.esf.service.ESFRadunoTipoLocalService esfRadunoTipoLocalService;
 	@BeanReference(type = ESFRadunoTipoPersistence.class)
@@ -4527,6 +4651,10 @@ public abstract class ESFRadunoLocalServiceBaseImpl extends BaseLocalServiceImpl
 	protected it.ethica.esf.service.VW_ESFListaIncarichiLocalService vw_esfListaIncarichiLocalService;
 	@BeanReference(type = VW_ESFListaIncarichiPersistence.class)
 	protected VW_ESFListaIncarichiPersistence vw_esfListaIncarichiPersistence;
+	@BeanReference(type = it.ethica.esf.service.VW_StaffLocalService.class)
+	protected it.ethica.esf.service.VW_StaffLocalService vw_StaffLocalService;
+	@BeanReference(type = VW_StaffPersistence.class)
+	protected VW_StaffPersistence vw_StaffPersistence;
 	@BeanReference(type = com.liferay.counter.service.CounterLocalService.class)
 	protected com.liferay.counter.service.CounterLocalService counterLocalService;
 	@BeanReference(type = com.liferay.portal.service.ResourceLocalService.class)

@@ -116,224 +116,224 @@ public class ESFCardLocalServiceClpInvoker {
 
 		_methodParameterTypes19 = new String[] { "it.ethica.esf.model.ESFCard" };
 
-		_methodName422 = "getBeanIdentifier";
+		_methodName434 = "getBeanIdentifier";
 
-		_methodParameterTypes422 = new String[] {  };
+		_methodParameterTypes434 = new String[] {  };
 
-		_methodName423 = "setBeanIdentifier";
+		_methodName435 = "setBeanIdentifier";
 
-		_methodParameterTypes423 = new String[] { "java.lang.String" };
+		_methodParameterTypes435 = new String[] { "java.lang.String" };
 
-		_methodName428 = "getEsfCardByEsfUserId";
+		_methodName440 = "getEsfCardByEsfUserId";
 
-		_methodParameterTypes428 = new String[] { "long" };
+		_methodParameterTypes440 = new String[] { "long" };
 
-		_methodName429 = "addESFCard";
+		_methodName441 = "addESFCard";
 
-		_methodParameterTypes429 = new String[] {
+		_methodParameterTypes441 = new String[] {
 				"long", "java.lang.String", "java.lang.String", "long",
 				"it.ethica.esf.model.ESFEntityState", "long", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName430 = "getAllESFCardsByEsfUserId";
+		_methodName442 = "getAllESFCardsByEsfUserId";
 
-		_methodParameterTypes430 = new String[] { "long" };
+		_methodParameterTypes442 = new String[] { "long" };
 
-		_methodName431 = "createMultiESFCard";
+		_methodName443 = "createMultiESFCard";
 
-		_methodParameterTypes431 = new String[] {
+		_methodParameterTypes443 = new String[] {
 				"long", "int", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName432 = "addSelectedCard";
+		_methodName444 = "addSelectedCard";
 
-		_methodParameterTypes432 = new String[] {
+		_methodParameterTypes444 = new String[] {
 				"long", "int", "int", "java.lang.String", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName433 = "findAllESFCardsChildOrg";
+		_methodName445 = "findAllESFCardsChildOrg";
 
-		_methodParameterTypes433 = new String[] { "long" };
+		_methodParameterTypes445 = new String[] { "long" };
 
-		_methodName434 = "findAllESFCardsReg_Prov";
+		_methodName446 = "findAllESFCardsReg_Prov";
 
-		_methodParameterTypes434 = new String[] { "long" };
+		_methodParameterTypes446 = new String[] { "long" };
 
-		_methodName435 = "findAllESFCardsReg_ProvFree";
+		_methodName447 = "findAllESFCardsReg_ProvFree";
 
-		_methodParameterTypes435 = new String[] { "long" };
+		_methodParameterTypes447 = new String[] { "long" };
 
-		_methodName436 = "getAllFreeCard";
+		_methodName448 = "getAllFreeCard";
 
-		_methodParameterTypes436 = new String[] {  };
+		_methodParameterTypes448 = new String[] {  };
 
-		_methodName437 = "findAllFreeCardInt";
+		_methodName449 = "findAllFreeCardInt";
 
-		_methodParameterTypes437 = new String[] {  };
+		_methodParameterTypes449 = new String[] {  };
 
-		_methodName438 = "findAllFreeCards";
+		_methodName450 = "findAllFreeCards";
 
-		_methodParameterTypes438 = new String[] { "int", "int" };
+		_methodParameterTypes450 = new String[] { "int", "int" };
 
-		_methodName439 = "addMultiESFCard";
+		_methodName451 = "addMultiESFCard";
 
-		_methodParameterTypes439 = new String[] {
+		_methodParameterTypes451 = new String[] {
 				"long", "java.lang.String", "long",
 				"it.ethica.esf.model.ESFEntityState", "long", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName440 = "deleteESFCard";
+		_methodName452 = "deleteESFCard";
 
-		_methodParameterTypes440 = new String[] {
+		_methodParameterTypes452 = new String[] {
 				"long", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName441 = "deleteESFCard";
+		_methodName453 = "deleteESFCard";
 
-		_methodParameterTypes441 = new String[] {
+		_methodParameterTypes453 = new String[] {
 				"long[][]", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName442 = "updateESFCard";
+		_methodName454 = "updateESFCard";
 
-		_methodParameterTypes442 = new String[] {
+		_methodParameterTypes454 = new String[] {
 				"long", "long", "java.lang.String", "java.lang.String", "long",
 				"long", "long", "it.ethica.esf.model.ESFEntityState", "boolean",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName443 = "findAllESFCardsByCode_Organization";
+		_methodName455 = "findAllESFCardsByCode_Organization";
 
-		_methodParameterTypes443 = new String[] { "java.lang.String", "long" };
+		_methodParameterTypes455 = new String[] { "java.lang.String", "long" };
 
-		_methodName444 = "findAllESFCardsByC_U_O";
+		_methodName456 = "findAllESFCardsByC_U_O";
 
-		_methodParameterTypes444 = new String[] {
+		_methodParameterTypes456 = new String[] {
 				"java.lang.String", "long", "long"
 			};
 
-		_methodName445 = "findAllESFCardsByState";
+		_methodName457 = "findAllESFCardsByState";
 
-		_methodParameterTypes445 = new String[] { "int" };
+		_methodParameterTypes457 = new String[] { "int" };
 
-		_methodName446 = "findAllESFCardsByState";
+		_methodName458 = "findAllESFCardsByState";
 
-		_methodParameterTypes446 = new String[] { "int", "int", "int" };
+		_methodParameterTypes458 = new String[] { "int", "int", "int" };
 
-		_methodName447 = "findAllByOrganizationId";
+		_methodName459 = "findAllByOrganizationId";
 
-		_methodParameterTypes447 = new String[] { "long", "boolean", "int" };
+		_methodParameterTypes459 = new String[] { "long", "boolean", "int" };
 
-		_methodName448 = "findAllByOrganizationId";
+		_methodName460 = "findAllByOrganizationId";
 
-		_methodParameterTypes448 = new String[] {
+		_methodParameterTypes460 = new String[] {
 				"long", "boolean", "int", "int", "int"
 			};
 
-		_methodName449 = "findAllESFCardsByOrganizationId";
+		_methodName461 = "findAllESFCardsByOrganizationId";
 
-		_methodParameterTypes449 = new String[] { "long", "boolean", "int" };
+		_methodParameterTypes461 = new String[] { "long", "boolean", "int" };
 
-		_methodName450 = "findAllESFCardsByOrganizationId";
+		_methodName462 = "findAllESFCardsByOrganizationId";
 
-		_methodParameterTypes450 = new String[] {
+		_methodParameterTypes462 = new String[] {
 				"long", "boolean", "int", "int", "int"
 			};
 
-		_methodName451 = "findAllESFCardsByRootOrganizationId";
+		_methodName463 = "findAllESFCardsByRootOrganizationId";
 
-		_methodParameterTypes451 = new String[] { "long", "int" };
+		_methodParameterTypes463 = new String[] { "long", "int" };
 
-		_methodName452 = "findAllESFCardsByRootOrganizationId";
+		_methodName464 = "findAllESFCardsByRootOrganizationId";
 
-		_methodParameterTypes452 = new String[] { "long", "int", "int", "int" };
+		_methodParameterTypes464 = new String[] { "long", "int", "int", "int" };
 
-		_methodName453 = "findESFCardByO_C";
+		_methodName465 = "findESFCardByO_C";
 
-		_methodParameterTypes453 = new String[] { "long", "long", "int" };
+		_methodParameterTypes465 = new String[] { "long", "long", "int" };
 
-		_methodName454 = "findAllNotAssignedESFCardsByO_S";
+		_methodName466 = "findAllNotAssignedESFCardsByO_S";
 
-		_methodParameterTypes454 = new String[] { "long", "boolean", "int" };
+		_methodParameterTypes466 = new String[] { "long", "boolean", "int" };
 
-		_methodName455 = "findAllNotAssignedESFCardsByO_S";
+		_methodName467 = "findAllNotAssignedESFCardsByO_S";
 
-		_methodParameterTypes455 = new String[] {
+		_methodParameterTypes467 = new String[] {
 				"long", "boolean", "int", "int", "int"
 			};
 
-		_methodName456 = "findAllNotAssignedESFCardsByO_U_S";
+		_methodName468 = "findAllNotAssignedESFCardsByO_U_S";
 
-		_methodParameterTypes456 = new String[] {
+		_methodParameterTypes468 = new String[] {
 				"long", "long", "boolean", "int", "int", "int"
 			};
 
-		_methodName457 = "findAllNotAssignedESFCardsByO_U_S";
+		_methodName469 = "findAllNotAssignedESFCardsByO_U_S";
 
-		_methodParameterTypes457 = new String[] { "long", "boolean", "long", "int" };
+		_methodParameterTypes469 = new String[] { "long", "boolean", "long", "int" };
 
-		_methodName459 = "findAllESFCardsByU_O_S";
+		_methodName471 = "findAllESFCardsByU_O_S";
 
-		_methodParameterTypes459 = new String[] { "long", "long", "int" };
+		_methodParameterTypes471 = new String[] { "long", "long", "int" };
 
-		_methodName460 = "findAllESFCardsByU_S_Y";
+		_methodName472 = "findAllESFCardsByU_S_Y";
 
-		_methodParameterTypes460 = new String[] { "long", "java.util.Date" };
+		_methodParameterTypes472 = new String[] { "long", "java.util.Date" };
 
-		_methodName461 = "findAllESFCardsByU_S_Y";
+		_methodName473 = "findAllESFCardsByU_S_Y";
 
-		_methodParameterTypes461 = new String[] {
+		_methodParameterTypes473 = new String[] {
 				"long", "java.util.Date", "int", "int"
 			};
 
-		_methodName462 = "findAllESFCardsByU_S";
+		_methodName474 = "findAllESFCardsByU_S";
 
-		_methodParameterTypes462 = new String[] { "long", "int" };
+		_methodParameterTypes474 = new String[] { "long", "int" };
 
-		_methodName463 = "findCardByUser";
+		_methodName475 = "findCardByUser";
 
-		_methodParameterTypes463 = new String[] { "long" };
+		_methodParameterTypes475 = new String[] { "long" };
 
-		_methodName464 = "getAllEsfCardByLikeC";
+		_methodName476 = "getAllEsfCardByLikeC";
 
-		_methodParameterTypes464 = new String[] {
+		_methodParameterTypes476 = new String[] {
 				"java.lang.String", "int", "int", "int"
 			};
 
-		_methodName465 = "getAllEsfCardByLikeC";
+		_methodName477 = "getAllEsfCardByLikeC";
 
-		_methodParameterTypes465 = new String[] { "java.lang.String", "int" };
+		_methodParameterTypes477 = new String[] { "java.lang.String", "int" };
 
-		_methodName466 = "getEsfCardByCode";
+		_methodName478 = "getEsfCardByCode";
 
-		_methodParameterTypes466 = new String[] { "java.lang.String", "int" };
+		_methodParameterTypes478 = new String[] { "java.lang.String", "int" };
 
-		_methodName467 = "checkCode";
+		_methodName479 = "checkCode";
 
-		_methodParameterTypes467 = new String[] {
+		_methodParameterTypes479 = new String[] {
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName469 = "buildCode";
+		_methodName481 = "buildCode";
 
-		_methodParameterTypes469 = new String[] { "java.lang.String", "long" };
+		_methodParameterTypes481 = new String[] { "java.lang.String", "long" };
 
-		_methodName470 = "findActualUserCards";
+		_methodName482 = "findActualUserCards";
 
-		_methodParameterTypes470 = new String[] { "long" };
+		_methodParameterTypes482 = new String[] { "long" };
 
-		_methodName471 = "findShooterByCardActiveInMatch";
+		_methodName483 = "findShooterByCardActiveInMatch";
 
-		_methodParameterTypes471 = new String[] {
+		_methodParameterTypes483 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String"
 			};
 
-		_methodName472 = "addESFCardOldCode";
+		_methodName484 = "addESFCardOldCode";
 
-		_methodParameterTypes472 = new String[] {
+		_methodParameterTypes484 = new String[] {
 				"java.lang.String", "long", "java.lang.String",
 				"java.lang.String", "long", "it.ethica.esf.model.ESFEntityState",
 				"long", "long", "com.liferay.portal.service.ServiceContext"
@@ -453,25 +453,25 @@ public class ESFCardLocalServiceClpInvoker {
 			return ESFCardLocalServiceUtil.updateESFCard((it.ethica.esf.model.ESFCard)arguments[0]);
 		}
 
-		if (_methodName422.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes422, parameterTypes)) {
+		if (_methodName434.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes434, parameterTypes)) {
 			return ESFCardLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName423.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes423, parameterTypes)) {
+		if (_methodName435.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes435, parameterTypes)) {
 			ESFCardLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName428.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes428, parameterTypes)) {
+		if (_methodName440.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes440, parameterTypes)) {
 			return ESFCardLocalServiceUtil.getEsfCardByEsfUserId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName429.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes429, parameterTypes)) {
+		if (_methodName441.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes441, parameterTypes)) {
 			return ESFCardLocalServiceUtil.addESFCard(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Long)arguments[3]).longValue(),
@@ -481,20 +481,20 @@ public class ESFCardLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[7]);
 		}
 
-		if (_methodName430.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes430, parameterTypes)) {
+		if (_methodName442.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes442, parameterTypes)) {
 			return ESFCardLocalServiceUtil.getAllESFCardsByEsfUserId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName431.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes431, parameterTypes)) {
+		if (_methodName443.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes443, parameterTypes)) {
 			return ESFCardLocalServiceUtil.createMultiESFCard(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[2]);
 		}
 
-		if (_methodName432.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes432, parameterTypes)) {
+		if (_methodName444.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes444, parameterTypes)) {
 			return ESFCardLocalServiceUtil.addSelectedCard(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue(),
@@ -503,39 +503,39 @@ public class ESFCardLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[5]);
 		}
 
-		if (_methodName433.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes433, parameterTypes)) {
+		if (_methodName445.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes445, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findAllESFCardsChildOrg(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName434.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes434, parameterTypes)) {
+		if (_methodName446.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes446, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findAllESFCardsReg_Prov(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName435.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes435, parameterTypes)) {
+		if (_methodName447.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes447, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findAllESFCardsReg_ProvFree(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName436.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes436, parameterTypes)) {
+		if (_methodName448.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes448, parameterTypes)) {
 			return ESFCardLocalServiceUtil.getAllFreeCard();
 		}
 
-		if (_methodName437.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes437, parameterTypes)) {
+		if (_methodName449.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes449, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findAllFreeCardInt();
 		}
 
-		if (_methodName438.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes438, parameterTypes)) {
+		if (_methodName450.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes450, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findAllFreeCards(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
-		if (_methodName439.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes439, parameterTypes)) {
+		if (_methodName451.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes451, parameterTypes)) {
 			return ESFCardLocalServiceUtil.addMultiESFCard(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(),
@@ -545,22 +545,22 @@ public class ESFCardLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[6]);
 		}
 
-		if (_methodName440.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes440, parameterTypes)) {
+		if (_methodName452.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes452, parameterTypes)) {
 			return ESFCardLocalServiceUtil.deleteESFCard(((Long)arguments[0]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
 
-		if (_methodName441.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes441, parameterTypes)) {
+		if (_methodName453.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes453, parameterTypes)) {
 			ESFCardLocalServiceUtil.deleteESFCard((long[])arguments[0],
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 
 			return null;
 		}
 
-		if (_methodName442.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes442, parameterTypes)) {
+		if (_methodName454.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes454, parameterTypes)) {
 			return ESFCardLocalServiceUtil.updateESFCard(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
@@ -572,40 +572,40 @@ public class ESFCardLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[9]);
 		}
 
-		if (_methodName443.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes443, parameterTypes)) {
+		if (_methodName455.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes455, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findAllESFCardsByCode_Organization((java.lang.String)arguments[0],
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName444.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes444, parameterTypes)) {
+		if (_methodName456.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes456, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findAllESFCardsByC_U_O((java.lang.String)arguments[0],
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue());
 		}
 
-		if (_methodName445.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes445, parameterTypes)) {
+		if (_methodName457.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes457, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findAllESFCardsByState(((Integer)arguments[0]).intValue());
 		}
 
-		if (_methodName446.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes446, parameterTypes)) {
+		if (_methodName458.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes458, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findAllESFCardsByState(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName447.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes447, parameterTypes)) {
+		if (_methodName459.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes459, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findAllByOrganizationId(((Long)arguments[0]).longValue(),
 				((Boolean)arguments[1]).booleanValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName448.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes448, parameterTypes)) {
+		if (_methodName460.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes460, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findAllByOrganizationId(((Long)arguments[0]).longValue(),
 				((Boolean)arguments[1]).booleanValue(),
 				((Integer)arguments[2]).intValue(),
@@ -613,15 +613,15 @@ public class ESFCardLocalServiceClpInvoker {
 				((Integer)arguments[4]).intValue());
 		}
 
-		if (_methodName449.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes449, parameterTypes)) {
+		if (_methodName461.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes461, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findAllESFCardsByOrganizationId(((Long)arguments[0]).longValue(),
 				((Boolean)arguments[1]).booleanValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName450.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes450, parameterTypes)) {
+		if (_methodName462.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes462, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findAllESFCardsByOrganizationId(((Long)arguments[0]).longValue(),
 				((Boolean)arguments[1]).booleanValue(),
 				((Integer)arguments[2]).intValue(),
@@ -629,36 +629,36 @@ public class ESFCardLocalServiceClpInvoker {
 				((Integer)arguments[4]).intValue());
 		}
 
-		if (_methodName451.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes451, parameterTypes)) {
+		if (_methodName463.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes463, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findAllESFCardsByRootOrganizationId(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
-		if (_methodName452.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes452, parameterTypes)) {
+		if (_methodName464.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes464, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findAllESFCardsByRootOrganizationId(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
-		if (_methodName453.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes453, parameterTypes)) {
+		if (_methodName465.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes465, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findESFCardByO_C(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName454.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes454, parameterTypes)) {
+		if (_methodName466.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes466, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findAllNotAssignedESFCardsByO_S(((Long)arguments[0]).longValue(),
 				((Boolean)arguments[1]).booleanValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName455.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes455, parameterTypes)) {
+		if (_methodName467.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes467, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findAllNotAssignedESFCardsByO_S(((Long)arguments[0]).longValue(),
 				((Boolean)arguments[1]).booleanValue(),
 				((Integer)arguments[2]).intValue(),
@@ -666,8 +666,8 @@ public class ESFCardLocalServiceClpInvoker {
 				((Integer)arguments[4]).intValue());
 		}
 
-		if (_methodName456.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes456, parameterTypes)) {
+		if (_methodName468.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes468, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findAllNotAssignedESFCardsByO_U_S(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Boolean)arguments[2]).booleanValue(),
@@ -676,91 +676,91 @@ public class ESFCardLocalServiceClpInvoker {
 				((Integer)arguments[5]).intValue());
 		}
 
-		if (_methodName457.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes457, parameterTypes)) {
+		if (_methodName469.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes469, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findAllNotAssignedESFCardsByO_U_S(((Long)arguments[0]).longValue(),
 				((Boolean)arguments[1]).booleanValue(),
 				((Long)arguments[2]).longValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
-		if (_methodName459.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes459, parameterTypes)) {
+		if (_methodName471.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes471, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findAllESFCardsByU_O_S(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName460.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes460, parameterTypes)) {
+		if (_methodName472.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes472, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findAllESFCardsByU_S_Y(((Long)arguments[0]).longValue(),
 				(java.util.Date)arguments[1]);
 		}
 
-		if (_methodName461.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes461, parameterTypes)) {
+		if (_methodName473.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes473, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findAllESFCardsByU_S_Y(((Long)arguments[0]).longValue(),
 				(java.util.Date)arguments[1],
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
-		if (_methodName462.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes462, parameterTypes)) {
+		if (_methodName474.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes474, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findAllESFCardsByU_S(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
-		if (_methodName463.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes463, parameterTypes)) {
+		if (_methodName475.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes475, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findCardByUser(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName464.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes464, parameterTypes)) {
+		if (_methodName476.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes476, parameterTypes)) {
 			return ESFCardLocalServiceUtil.getAllEsfCardByLikeC((java.lang.String)arguments[0],
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
-		if (_methodName465.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes465, parameterTypes)) {
+		if (_methodName477.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes477, parameterTypes)) {
 			return ESFCardLocalServiceUtil.getAllEsfCardByLikeC((java.lang.String)arguments[0],
 				((Integer)arguments[1]).intValue());
 		}
 
-		if (_methodName466.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes466, parameterTypes)) {
+		if (_methodName478.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes478, parameterTypes)) {
 			return ESFCardLocalServiceUtil.getEsfCardByCode((java.lang.String)arguments[0],
 				((Integer)arguments[1]).intValue());
 		}
 
-		if (_methodName467.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes467, parameterTypes)) {
+		if (_methodName479.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes479, parameterTypes)) {
 			return ESFCardLocalServiceUtil.checkCode((java.lang.String)arguments[0],
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
 
-		if (_methodName469.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes469, parameterTypes)) {
+		if (_methodName481.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes481, parameterTypes)) {
 			return ESFCardLocalServiceUtil.buildCode((java.lang.String)arguments[0],
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName470.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes470, parameterTypes)) {
+		if (_methodName482.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes482, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findActualUserCards(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName471.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes471, parameterTypes)) {
+		if (_methodName483.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes483, parameterTypes)) {
 			return ESFCardLocalServiceUtil.findShooterByCardActiveInMatch((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2]);
 		}
 
-		if (_methodName472.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes472, parameterTypes)) {
+		if (_methodName484.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes484, parameterTypes)) {
 			return ESFCardLocalServiceUtil.addESFCardOldCode((java.lang.String)arguments[0],
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
@@ -814,34 +814,10 @@ public class ESFCardLocalServiceClpInvoker {
 	private String[] _methodParameterTypes18;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
-	private String _methodName422;
-	private String[] _methodParameterTypes422;
-	private String _methodName423;
-	private String[] _methodParameterTypes423;
-	private String _methodName428;
-	private String[] _methodParameterTypes428;
-	private String _methodName429;
-	private String[] _methodParameterTypes429;
-	private String _methodName430;
-	private String[] _methodParameterTypes430;
-	private String _methodName431;
-	private String[] _methodParameterTypes431;
-	private String _methodName432;
-	private String[] _methodParameterTypes432;
-	private String _methodName433;
-	private String[] _methodParameterTypes433;
 	private String _methodName434;
 	private String[] _methodParameterTypes434;
 	private String _methodName435;
 	private String[] _methodParameterTypes435;
-	private String _methodName436;
-	private String[] _methodParameterTypes436;
-	private String _methodName437;
-	private String[] _methodParameterTypes437;
-	private String _methodName438;
-	private String[] _methodParameterTypes438;
-	private String _methodName439;
-	private String[] _methodParameterTypes439;
 	private String _methodName440;
 	private String[] _methodParameterTypes440;
 	private String _methodName441;
@@ -878,6 +854,8 @@ public class ESFCardLocalServiceClpInvoker {
 	private String[] _methodParameterTypes456;
 	private String _methodName457;
 	private String[] _methodParameterTypes457;
+	private String _methodName458;
+	private String[] _methodParameterTypes458;
 	private String _methodName459;
 	private String[] _methodParameterTypes459;
 	private String _methodName460;
@@ -896,12 +874,34 @@ public class ESFCardLocalServiceClpInvoker {
 	private String[] _methodParameterTypes466;
 	private String _methodName467;
 	private String[] _methodParameterTypes467;
+	private String _methodName468;
+	private String[] _methodParameterTypes468;
 	private String _methodName469;
 	private String[] _methodParameterTypes469;
-	private String _methodName470;
-	private String[] _methodParameterTypes470;
 	private String _methodName471;
 	private String[] _methodParameterTypes471;
 	private String _methodName472;
 	private String[] _methodParameterTypes472;
+	private String _methodName473;
+	private String[] _methodParameterTypes473;
+	private String _methodName474;
+	private String[] _methodParameterTypes474;
+	private String _methodName475;
+	private String[] _methodParameterTypes475;
+	private String _methodName476;
+	private String[] _methodParameterTypes476;
+	private String _methodName477;
+	private String[] _methodParameterTypes477;
+	private String _methodName478;
+	private String[] _methodParameterTypes478;
+	private String _methodName479;
+	private String[] _methodParameterTypes479;
+	private String _methodName481;
+	private String[] _methodParameterTypes481;
+	private String _methodName482;
+	private String[] _methodParameterTypes482;
+	private String _methodName483;
+	private String[] _methodParameterTypes483;
+	private String _methodName484;
+	private String[] _methodParameterTypes484;
 }

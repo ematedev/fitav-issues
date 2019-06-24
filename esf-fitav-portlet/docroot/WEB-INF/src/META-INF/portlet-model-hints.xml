@@ -710,6 +710,11 @@
 		<field name="nome" type="String" />
 		<field name="path" type="String" />
 	</model>
+	<model name="it.ethica.esf.model.EsfRadunoShooters">
+		<field name="id_esf_raduno_shooters" type="long" />
+		<field name="id_esf_raduno" type="long" />
+		<field name="userId" type="long" />
+	</model>
 	<model name="it.ethica.esf.model.ESFRadunoSottotipiRaduno">
 		<field name="id_esf_raduno_sottotipi_raduno" type="long" />
 		<field name="id_esf_raduno" type="long" />
@@ -718,6 +723,11 @@
 	<model name="it.ethica.esf.model.ESFRadunoSottotipo">
 		<field name="id_esf_raduno_sottotipo" type="long" />
 		<field name="descrizione" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.ESFRadunoStaff">
+		<field name="id_esf_raduno_staff" type="long" />
+		<field name="id_esf_raduno" type="long" />
+		<field name="userId" type="long" />
 	</model>
 	<model name="it.ethica.esf.model.ESFRadunoTipo">
 		<field name="id_esf_raduno_tipo" type="long" />
@@ -1125,5 +1135,20 @@
 		<field name="esfOrganizationId" type="long" />
 		<field name="lastName" type="String" />
 		<field name="firstName" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.VW_Staff">
+		<field name="userId" type="long" />
+		<field name="emailAddress" type="String" />
+		<field name="firstName" type="String" />
+		<field name="lastName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="esfStartData" type="Date" />
+		<field name="esfEndData" type="Date" />
+		<field name="regionId" type="String" />
+		<field name="provinceId" type="String" />
+		<field name="esfShootingDirectorQualificationDesc" type="String" />
+		<field name="esfSportTypeId" type="long" />
+		<field name="name" type="String" />
+		<field name="invitato" type="long" />
 	</model>
 </model-hints>

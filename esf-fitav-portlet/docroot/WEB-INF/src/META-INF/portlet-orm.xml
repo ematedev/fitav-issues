@@ -1287,6 +1287,18 @@
 			<transient name="primaryKeyObj" />
 		</attributes>
 	</mapped-superclass>
+	<mapped-superclass class="it.ethica.esf.model.impl.EsfRadunoShootersModelImpl">
+		<id-class class="it.ethica.esf.service.persistence.EsfRadunoShootersPK" />
+		<attributes>
+			<id name="id_esf_raduno_shooters" />
+			<id name="id_esf_raduno" />
+			<id name="userId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
 	<mapped-superclass class="it.ethica.esf.model.impl.ESFRadunoSottotipiRadunoModelImpl">
 		<attributes>
 			<id name="id_esf_raduno_sottotipi_raduno" />
@@ -1304,6 +1316,18 @@
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="it.ethica.esf.model.impl.ESFRadunoStaffModelImpl">
+		<id-class class="it.ethica.esf.service.persistence.ESFRadunoStaffPK" />
+		<attributes>
+			<id name="id_esf_raduno_staff" />
+			<id name="id_esf_raduno" />
+			<id name="userId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
 		</attributes>
 	</mapped-superclass>
 	<mapped-superclass class="it.ethica.esf.model.impl.ESFRadunoTipoModelImpl">
@@ -2042,6 +2066,34 @@
 			<transient name="primaryKeyObj" />
 		</attributes>
 	</mapped-superclass>
+	<mapped-superclass class="it.ethica.esf.model.impl.VW_StaffModelImpl">
+		<id-class class="it.ethica.esf.service.persistence.VW_StaffPK" />
+		<attributes>
+			<id name="userId" />
+			<id name="regionId" />
+			<id name="provinceId" />
+			<id name="esfSportTypeId" />
+			<basic name="emailAddress" />
+			<basic name="firstName" />
+			<basic name="lastName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="esfStartData">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="esfEndData">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="esfShootingDirectorQualificationDesc" />
+			<basic name="name" />
+			<basic name="invitato" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
 	<entity class="it.ethica.esf.model.impl.ESFAddressImpl" name="ESFAddress">
 		<table name="ESFAddress" />
 		<attributes>
@@ -2303,12 +2355,20 @@
 		<table name="ESFRadunoFiles" />
 		<attributes />
 	</entity>
+	<entity class="it.ethica.esf.model.impl.EsfRadunoShootersImpl" name="EsfRadunoShooters">
+		<table name="EsfRadunoShooters" />
+		<attributes />
+	</entity>
 	<entity class="it.ethica.esf.model.impl.ESFRadunoSottotipiRadunoImpl" name="ESFRadunoSottotipiRaduno">
 		<table name="ESFRadunoSottotipiRaduno" />
 		<attributes />
 	</entity>
 	<entity class="it.ethica.esf.model.impl.ESFRadunoSottotipoImpl" name="ESFRadunoSottotipo">
 		<table name="ESFRadunoSottotipo" />
+		<attributes />
+	</entity>
+	<entity class="it.ethica.esf.model.impl.ESFRadunoStaffImpl" name="ESFRadunoStaff">
+		<table name="ESFRadunoStaff" />
 		<attributes />
 	</entity>
 	<entity class="it.ethica.esf.model.impl.ESFRadunoTipoImpl" name="ESFRadunoTipo">
@@ -2437,6 +2497,10 @@
 	</entity>
 	<entity class="it.ethica.esf.model.impl.VW_ESFListaIncarichiImpl" name="VW_ESFListaIncarichi">
 		<table name="VW_ESFListaIncarichi" />
+		<attributes />
+	</entity>
+	<entity class="it.ethica.esf.model.impl.VW_StaffImpl" name="VW_Staff">
+		<table name="vw_staff" />
 		<attributes />
 	</entity>
 </entity-mappings>

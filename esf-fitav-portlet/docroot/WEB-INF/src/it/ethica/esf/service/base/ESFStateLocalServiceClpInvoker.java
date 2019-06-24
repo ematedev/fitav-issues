@@ -100,69 +100,69 @@ public class ESFStateLocalServiceClpInvoker {
 
 		_methodParameterTypes15 = new String[] { "it.ethica.esf.model.ESFState" };
 
-		_methodName414 = "getBeanIdentifier";
+		_methodName426 = "getBeanIdentifier";
 
-		_methodParameterTypes414 = new String[] {  };
+		_methodParameterTypes426 = new String[] {  };
 
-		_methodName415 = "setBeanIdentifier";
+		_methodName427 = "setBeanIdentifier";
 
-		_methodParameterTypes415 = new String[] { "java.lang.String" };
+		_methodParameterTypes427 = new String[] { "java.lang.String" };
 
-		_methodName420 = "findESFStates";
+		_methodName432 = "findESFStates";
 
-		_methodParameterTypes420 = new String[] { "java.lang.String" };
+		_methodParameterTypes432 = new String[] { "java.lang.String" };
 
-		_methodName421 = "findESFStateById";
+		_methodName433 = "findESFStateById";
 
-		_methodParameterTypes421 = new String[] { "long" };
+		_methodParameterTypes433 = new String[] { "long" };
 
-		_methodName422 = "findAllESFStates";
+		_methodName434 = "findAllESFStates";
 
-		_methodParameterTypes422 = new String[] {  };
+		_methodParameterTypes434 = new String[] {  };
 
-		_methodName423 = "getESFStateAssEntitybyId_CN";
+		_methodName435 = "getESFStateAssEntitybyId_CN";
 
-		_methodParameterTypes423 = new String[] { "long", "java.lang.String" };
+		_methodParameterTypes435 = new String[] { "long", "java.lang.String" };
 
-		_methodName424 = "getESFClassNameAssigned";
+		_methodName436 = "getESFClassNameAssigned";
 
-		_methodParameterTypes424 = new String[] { "long" };
+		_methodParameterTypes436 = new String[] { "long" };
 
-		_methodName425 = "getESFClassNameNotAssigned";
+		_methodName437 = "getESFClassNameNotAssigned";
 
-		_methodParameterTypes425 = new String[] { "long" };
+		_methodParameterTypes437 = new String[] { "long" };
 
-		_methodName426 = "addState";
+		_methodName438 = "addState";
 
-		_methodParameterTypes426 = new String[] {
+		_methodParameterTypes438 = new String[] {
 				"java.lang.String", "java.lang.String"
 			};
 
-		_methodName427 = "updateState";
+		_methodName439 = "updateState";
 
-		_methodParameterTypes427 = new String[] {
+		_methodParameterTypes439 = new String[] {
 				"long", "java.lang.String", "java.lang.String"
 			};
 
-		_methodName428 = "deleteState";
+		_methodName440 = "deleteState";
 
-		_methodParameterTypes428 = new String[] { "long" };
+		_methodParameterTypes440 = new String[] { "long" };
 
-		_methodName429 = "addESFStateAssEntity";
+		_methodName441 = "addESFStateAssEntity";
 
-		_methodParameterTypes429 = new String[] { "long", "long" };
+		_methodParameterTypes441 = new String[] { "long", "long" };
 
-		_methodName430 = "deleteESFStateAssEntity";
+		_methodName442 = "deleteESFStateAssEntity";
 
-		_methodParameterTypes430 = new String[] { "long", "long" };
+		_methodParameterTypes442 = new String[] { "long", "long" };
 
-		_methodName431 = "checkName";
+		_methodName443 = "checkName";
 
-		_methodParameterTypes431 = new String[] { "java.lang.String" };
+		_methodParameterTypes443 = new String[] { "java.lang.String" };
 
-		_methodName432 = "isStateAssEntity";
+		_methodName444 = "isStateAssEntity";
 
-		_methodParameterTypes432 = new String[] { "long" };
+		_methodParameterTypes444 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -254,85 +254,85 @@ public class ESFStateLocalServiceClpInvoker {
 			return ESFStateLocalServiceUtil.updateESFState((it.ethica.esf.model.ESFState)arguments[0]);
 		}
 
-		if (_methodName414.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes414, parameterTypes)) {
+		if (_methodName426.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes426, parameterTypes)) {
 			return ESFStateLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName415.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes415, parameterTypes)) {
+		if (_methodName427.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes427, parameterTypes)) {
 			ESFStateLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName420.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes420, parameterTypes)) {
+		if (_methodName432.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes432, parameterTypes)) {
 			return ESFStateLocalServiceUtil.findESFStates((java.lang.String)arguments[0]);
 		}
 
-		if (_methodName421.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes421, parameterTypes)) {
+		if (_methodName433.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes433, parameterTypes)) {
 			return ESFStateLocalServiceUtil.findESFStateById(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName422.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes422, parameterTypes)) {
+		if (_methodName434.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes434, parameterTypes)) {
 			return ESFStateLocalServiceUtil.findAllESFStates();
 		}
 
-		if (_methodName423.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes423, parameterTypes)) {
+		if (_methodName435.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes435, parameterTypes)) {
 			return ESFStateLocalServiceUtil.getESFStateAssEntitybyId_CN(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1]);
 		}
 
-		if (_methodName424.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes424, parameterTypes)) {
+		if (_methodName436.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes436, parameterTypes)) {
 			return ESFStateLocalServiceUtil.getESFClassNameAssigned(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName425.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes425, parameterTypes)) {
+		if (_methodName437.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes437, parameterTypes)) {
 			return ESFStateLocalServiceUtil.getESFClassNameNotAssigned(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName426.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes426, parameterTypes)) {
+		if (_methodName438.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes438, parameterTypes)) {
 			return ESFStateLocalServiceUtil.addState((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1]);
 		}
 
-		if (_methodName427.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes427, parameterTypes)) {
+		if (_methodName439.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes439, parameterTypes)) {
 			return ESFStateLocalServiceUtil.updateState(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2]);
 		}
 
-		if (_methodName428.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes428, parameterTypes)) {
+		if (_methodName440.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes440, parameterTypes)) {
 			return ESFStateLocalServiceUtil.deleteState(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName429.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes429, parameterTypes)) {
+		if (_methodName441.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes441, parameterTypes)) {
 			return ESFStateLocalServiceUtil.addESFStateAssEntity(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName430.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes430, parameterTypes)) {
+		if (_methodName442.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes442, parameterTypes)) {
 			return ESFStateLocalServiceUtil.deleteESFStateAssEntity(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName431.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes431, parameterTypes)) {
+		if (_methodName443.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes443, parameterTypes)) {
 			return ESFStateLocalServiceUtil.checkName((java.lang.String)arguments[0]);
 		}
 
-		if (_methodName432.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes432, parameterTypes)) {
+		if (_methodName444.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes444, parameterTypes)) {
 			return ESFStateLocalServiceUtil.isStateAssEntity(((Long)arguments[0]).longValue());
 		}
 
@@ -371,34 +371,34 @@ public class ESFStateLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName414;
-	private String[] _methodParameterTypes414;
-	private String _methodName415;
-	private String[] _methodParameterTypes415;
-	private String _methodName420;
-	private String[] _methodParameterTypes420;
-	private String _methodName421;
-	private String[] _methodParameterTypes421;
-	private String _methodName422;
-	private String[] _methodParameterTypes422;
-	private String _methodName423;
-	private String[] _methodParameterTypes423;
-	private String _methodName424;
-	private String[] _methodParameterTypes424;
-	private String _methodName425;
-	private String[] _methodParameterTypes425;
 	private String _methodName426;
 	private String[] _methodParameterTypes426;
 	private String _methodName427;
 	private String[] _methodParameterTypes427;
-	private String _methodName428;
-	private String[] _methodParameterTypes428;
-	private String _methodName429;
-	private String[] _methodParameterTypes429;
-	private String _methodName430;
-	private String[] _methodParameterTypes430;
-	private String _methodName431;
-	private String[] _methodParameterTypes431;
 	private String _methodName432;
 	private String[] _methodParameterTypes432;
+	private String _methodName433;
+	private String[] _methodParameterTypes433;
+	private String _methodName434;
+	private String[] _methodParameterTypes434;
+	private String _methodName435;
+	private String[] _methodParameterTypes435;
+	private String _methodName436;
+	private String[] _methodParameterTypes436;
+	private String _methodName437;
+	private String[] _methodParameterTypes437;
+	private String _methodName438;
+	private String[] _methodParameterTypes438;
+	private String _methodName439;
+	private String[] _methodParameterTypes439;
+	private String _methodName440;
+	private String[] _methodParameterTypes440;
+	private String _methodName441;
+	private String[] _methodParameterTypes441;
+	private String _methodName442;
+	private String[] _methodParameterTypes442;
+	private String _methodName443;
+	private String[] _methodParameterTypes443;
+	private String _methodName444;
+	private String[] _methodParameterTypes444;
 }

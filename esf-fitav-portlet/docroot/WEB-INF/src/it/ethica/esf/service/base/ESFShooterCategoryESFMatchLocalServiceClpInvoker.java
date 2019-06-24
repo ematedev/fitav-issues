@@ -130,17 +130,17 @@ public class ESFShooterCategoryESFMatchLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFShooterCategoryESFMatch"
 			};
 
-		_methodName412 = "getBeanIdentifier";
+		_methodName424 = "getBeanIdentifier";
 
-		_methodParameterTypes412 = new String[] {  };
+		_methodParameterTypes424 = new String[] {  };
 
-		_methodName413 = "setBeanIdentifier";
+		_methodName425 = "setBeanIdentifier";
 
-		_methodParameterTypes413 = new String[] { "java.lang.String" };
+		_methodParameterTypes425 = new String[] { "java.lang.String" };
 
-		_methodName418 = "deleteESFShooterCategoryByESFMatchId";
+		_methodName430 = "deleteESFShooterCategoryByESFMatchId";
 
-		_methodParameterTypes418 = new String[] { "long" };
+		_methodParameterTypes430 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -256,20 +256,20 @@ public class ESFShooterCategoryESFMatchLocalServiceClpInvoker {
 			return ESFShooterCategoryESFMatchLocalServiceUtil.updateESFShooterCategoryESFMatch((it.ethica.esf.model.ESFShooterCategoryESFMatch)arguments[0]);
 		}
 
-		if (_methodName412.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes412, parameterTypes)) {
+		if (_methodName424.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes424, parameterTypes)) {
 			return ESFShooterCategoryESFMatchLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName413.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes413, parameterTypes)) {
+		if (_methodName425.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes425, parameterTypes)) {
 			ESFShooterCategoryESFMatchLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName418.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes418, parameterTypes)) {
+		if (_methodName430.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes430, parameterTypes)) {
 			ESFShooterCategoryESFMatchLocalServiceUtil.deleteESFShooterCategoryByESFMatchId(((Long)arguments[0]).longValue());
 
 			return null;
@@ -318,10 +318,10 @@ public class ESFShooterCategoryESFMatchLocalServiceClpInvoker {
 	private String[] _methodParameterTypes18;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
-	private String _methodName412;
-	private String[] _methodParameterTypes412;
-	private String _methodName413;
-	private String[] _methodParameterTypes413;
-	private String _methodName418;
-	private String[] _methodParameterTypes418;
+	private String _methodName424;
+	private String[] _methodParameterTypes424;
+	private String _methodName425;
+	private String[] _methodParameterTypes425;
+	private String _methodName430;
+	private String[] _methodParameterTypes430;
 }

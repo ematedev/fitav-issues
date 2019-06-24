@@ -235,6 +235,9 @@ create index IX_E7450A38 on ESFRadunoFiles (id_esf_raduno);
 
 create index IX_E0B934ED on ESFRadunoSottotipiRaduno (id_esf_raduno);
 
+create index IX_24EFC0EF on ESFRadunoStaff (id_esf_raduno);
+create index IX_AED0BA29 on ESFRadunoStaff (id_esf_raduno, userId);
+
 create index IX_63532879 on ESFRegion (idCountry);
 
 create index IX_38BBCB82 on ESFRenewal (organizationId, isTotal);
@@ -372,6 +375,9 @@ create index IX_8C0C93A0 on ESFgunUser (esfUserId, type_);
 create index IX_10328453 on ESFgunUser (idUser);
 create index IX_7CE3728F on ESFgunUser (idUser, code_);
 create index IX_D710E7DC on ESFgunUser (type_);
+
+create index IX_C26487F6 on EsfRadunoShooters (id_esf_raduno);
+create index IX_D86D8A30 on EsfRadunoShooters (id_esf_raduno, userId);
 
 create index IX_ED8BB4AF on VW_ESFListaIncarichi (esfOrganizationId);
 

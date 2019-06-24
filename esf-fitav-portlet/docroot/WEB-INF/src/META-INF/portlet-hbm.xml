@@ -57,8 +57,10 @@
 	<import class="it.ethica.esf.model.ESFRaduno" />
 	<import class="it.ethica.esf.model.ESFRadunoAzzurri" />
 	<import class="it.ethica.esf.model.ESFRadunoFiles" />
+	<import class="it.ethica.esf.model.EsfRadunoShooters" />
 	<import class="it.ethica.esf.model.ESFRadunoSottotipiRaduno" />
 	<import class="it.ethica.esf.model.ESFRadunoSottotipo" />
+	<import class="it.ethica.esf.model.ESFRadunoStaff" />
 	<import class="it.ethica.esf.model.ESFRadunoTipo" />
 	<import class="it.ethica.esf.model.ESFRegion" />
 	<import class="it.ethica.esf.model.ESFRenewal" />
@@ -90,6 +92,7 @@
 	<import class="it.ethica.esf.model.VW_Azzurri" />
 	<import class="it.ethica.esf.model.VW_DatiDrettoreTiro" />
 	<import class="it.ethica.esf.model.VW_ESFListaIncarichi" />
+	<import class="it.ethica.esf.model.VW_Staff" />
 	<class name="it.ethica.esf.model.impl.ESFAddressImpl" table="ESFAddress">
 		<cache usage="read-write" />
 		<id name="esfAddressId" type="long">
@@ -946,6 +949,14 @@
 		<property name="nome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="path" type="com.liferay.portal.dao.orm.hibernate.StringType" column="path_" />
 	</class>
+	<class name="it.ethica.esf.model.impl.EsfRadunoShootersImpl" table="EsfRadunoShooters">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.EsfRadunoShootersPK">
+			<key-property name="id_esf_raduno_shooters" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="id_esf_raduno" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
+	</class>
 	<class name="it.ethica.esf.model.impl.ESFRadunoSottotipiRadunoImpl" table="ESFRadunoSottotipiRaduno">
 		<cache usage="read-write" />
 		<id name="id_esf_raduno_sottotipi_raduno" type="long">
@@ -960,6 +971,14 @@
 			<generator class="identity" />
 		</id>
 		<property name="descrizione" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFRadunoStaffImpl" table="ESFRadunoStaff">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.ESFRadunoStaffPK">
+			<key-property name="id_esf_raduno_staff" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="id_esf_raduno" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
 	</class>
 	<class name="it.ethica.esf.model.impl.ESFRadunoTipoImpl" table="ESFRadunoTipo">
 		<cache usage="read-write" />
@@ -1448,5 +1467,23 @@
 			<key-property name="firstName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		</composite-id>
 		<property name="endDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.VW_StaffImpl" table="vw_staff">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.VW_StaffPK">
+			<key-property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="regionId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="provinceId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="esfSportTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
+		<property name="emailAddress" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="firstName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="lastName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="esfStartData" type="org.hibernate.type.TimestampType" />
+		<property name="esfEndData" type="org.hibernate.type.TimestampType" />
+		<property name="esfShootingDirectorQualificationDesc" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="invitato" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 	</class>
 </hibernate-mapping>

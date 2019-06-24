@@ -773,6 +773,13 @@ create table ESFRadunoSottotipo (
 	descrizione VARCHAR(75) null
 );
 
+create table ESFRadunoStaff (
+	id_esf_raduno_staff LONG not null,
+	id_esf_raduno LONG not null,
+	userId LONG not null,
+	primary key (id_esf_raduno_staff, id_esf_raduno, userId)
+);
+
 create table ESFRadunoTipo (
 	id_esf_raduno_tipo LONG not null primary key IDENTITY,
 	descrizione VARCHAR(75) null
@@ -1207,6 +1214,13 @@ create table ESFgunUser (
 	esfCaliber VARCHAR(75) null
 );
 
+create table EsfRadunoShooters (
+	id_esf_raduno_shooters LONG not null,
+	id_esf_raduno LONG not null,
+	userId LONG not null,
+	primary key (id_esf_raduno_shooters, id_esf_raduno, userId)
+);
+
 create table VW_Azzurri (
 	esfNationalId LONG not null,
 	userId LONG not null,
@@ -1331,4 +1345,21 @@ create table vw_esflistaincarichi (
 	lastName VARCHAR(75) not null,
 	firstName VARCHAR(75) not null,
 	primary key (AnniPrecedenti, AnnoInizioIncarico, AnnoCorrente, NomeRuolo, endDate, startDate, esfUserId, esfOrganizationId, lastName, firstName)
+);
+
+create table vw_staff (
+	userId LONG not null,
+	emailAddress VARCHAR(75) null,
+	firstName VARCHAR(75) null,
+	lastName VARCHAR(75) null,
+	createDate DATE null,
+	esfStartData DATE null,
+	esfEndData DATE null,
+	regionId VARCHAR(75) not null,
+	provinceId VARCHAR(75) not null,
+	esfShootingDirectorQualificationDesc VARCHAR(75) null,
+	esfSportTypeId LONG not null,
+	name VARCHAR(75) null,
+	invitato LONG,
+	primary key (userId, regionId, provinceId, esfSportTypeId)
 );

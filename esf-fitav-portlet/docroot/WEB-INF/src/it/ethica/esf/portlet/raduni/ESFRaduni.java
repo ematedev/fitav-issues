@@ -29,6 +29,7 @@ import org.apache.el.util.Validation;
 import com.itextpdf.text.pdf.hyphenation.TernaryTree.Iterator;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
 import com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil;
+import com.liferay.portal.kernel.dao.orm.QueryUtil;
 import com.liferay.portal.kernel.dao.orm.RestrictionsFactoryUtil;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
@@ -56,9 +57,11 @@ import it.ethica.esf.model.ESFRadunoAzzurri;
 import it.ethica.esf.model.ESFRadunoFiles;
 import it.ethica.esf.model.ESFRadunoSottotipiRaduno;
 import it.ethica.esf.model.ESFRadunoSottotipo;
+import it.ethica.esf.model.ESFRadunoStaff;
 import it.ethica.esf.model.ESFRadunoTipo;
 import it.ethica.esf.model.ESFSportType;
 import it.ethica.esf.model.VW_Azzurri;
+import it.ethica.esf.model.VW_Staff;
 import it.ethica.esf.model.impl.ESFRadunoAzzurriImpl;
 import it.ethica.esf.model.impl.ESFRadunoFilesImpl;
 import it.ethica.esf.model.impl.ESFRadunoImpl;
@@ -68,10 +71,12 @@ import it.ethica.esf.service.ESFRadunoAzzurriLocalServiceUtil;
 import it.ethica.esf.service.ESFRadunoFilesLocalServiceUtil;
 import it.ethica.esf.service.ESFRadunoLocalServiceUtil;
 import it.ethica.esf.service.ESFRadunoSottotipiRadunoLocalServiceUtil;
+import it.ethica.esf.service.ESFRadunoStaffLocalServiceUtil;
 import it.ethica.esf.service.ESFRadunoTipoLocalServiceUtil;
 import it.ethica.esf.service.ESFSportTypeLocalServiceUtil;
 import it.ethica.esf.service.VW_AzzurriLocalService;
 import it.ethica.esf.service.VW_AzzurriLocalServiceUtil;
+import it.ethica.esf.service.VW_StaffLocalServiceUtil;
 import it.ethica.esf.util.DateUtilFormatter;
 import it.ethica.esf.util.MissingDateException;
 
@@ -198,32 +203,24 @@ public class ESFRaduni extends MVCPortlet {
 		int delta = ParamUtil.getInteger(request, "delta",0);
 		int cur = ParamUtil.getInteger(request, "cur",0);
 		
-		
-		
-		System.out.println("[" + id_esf_raduno + "]");
-		System.out.println("[" + code + "]");
-		System.out.println("[" + name + "]");
-		System.out.println("[" + startDate + "]");
-		System.out.println("[" + esfSportType + "]");
-		System.out.println("[" + esfListaInvitati + "]");
-		System.out.println("delta : [" + delta + "]");
-		System.out.println("cur : [" + cur + "]");
+//		System.out.println("[" + id_esf_raduno + "]");
+//		System.out.println("[" + code + "]");
+//		System.out.println("[" + name + "]");
+//		System.out.println("[" + startDate + "]");
+//		System.out.println("[" + esfSportType + "]");
+//		System.out.println("[" + esfListaInvitati + "]");
+//		System.out.println("delta : [" + delta + "]");
+//		System.out.println("cur : [" + cur + "]");
 		
 	
 		try {
-			// CREO LA LISTA DEGLI AZZURRI
-			//List<VW_Azzurri> listaAzzurri = new ArrayList<VW_Azzurri>();
 			
 			// PRENDO LA LISTA DEGLI INVITATI
 			List<ESFRadunoAzzurri> listaInvitatiRaduno = ESFRadunoAzzurriLocalServiceUtil.findById(id_esf_raduno);
-			
-			// CREO UNA HASH MAP PERCHE' COSI' HO A DISPOSIZIONE LA FUNZIONE DI RICERCA ALL'INTERNO DELLA MAPPA
-			
 			List<Long> listaIdInvitati = new ArrayList<>(); 
 			
-			// TRASFERISCO I VALORI NELLA HASHMAP
+			// TRASFERISCO I VALORI NELLA LISTA DI LONG
 			for(ESFRadunoAzzurri ra : listaInvitatiRaduno){
-				//System.out.println("[INSERISCO: " + ra.getEsfNationalId() + "]");
 				listaIdInvitati.add(ra.getEsfNationalId());
 			}
 			
@@ -241,20 +238,24 @@ public class ESFRaduni extends MVCPortlet {
 			
 			// VALORIZZO LA LISTA DEI NAZIONALI CON LE CONDIZIONI DELLA QUERY
 			//List<VW_Azzurri> listaAzzurri = new ArrayList<>(VW_AzzurriLocalServiceUtil.dynamicQuery(dq));
+			// CREO LA LISTA DEGLI AZZURRI
 			List<VW_Azzurri> listaAzzurri = new ArrayList<>();
+			// PRENDO IL RISULTATO DELLA QUERY
 			List<VW_Azzurri> listaAzzurriCompleta = VW_AzzurriLocalServiceUtil.dynamicQuery(dq);
 			
-			// METTO A 1 INVITATO CONFRONTANDOLO CON LA LISTA INVITATI AL RADUNO RIEMPITA SOPRA
+			// COPIO GLI ELEMENTI NELLA LISTA FINALE
 			int contatore = 0;
 			while(contatore < listaAzzurriCompleta.size()){
 				VW_Azzurri current = listaAzzurriCompleta.get(contatore);
 				
+				// VEDO SE IL TIRATORE E' STATO INVITATO E SETTO LA VARIABILE A 1
 				if(listaIdInvitati.contains(current.getEsfNationalId())){
 					current.setInvitato(1);
 					//System.out.println("[ID: " + listaAzzurri.get(contatore).getEsfNationalId() + " - NOME: " + listaAzzurri.get(contatore).getUserName() + " - invitato]" + listaAzzurri.get(contatore).getInvitato());
 					//System.out.println("[INSERISCO 1: " + listaAzzurri.get(contatore).getEsfNationalId() + "]");
 				}
 				
+				// CONTROLLO IL CAMPO DI RICERCA ---/INVITATI/NON INVITATI
 				// INSERISCO TUTTI, INVITATI E NON INVITATI
 				if(esfListaInvitati==0)
 					listaAzzurri.add(current);
@@ -271,7 +272,7 @@ public class ESFRaduni extends MVCPortlet {
 				contatore++;
 			}
 			
-			
+			// MESSAGGIO
 			String msg = "La ricerca ha prodotto '" + listaAzzurri.size()  + "' risultati!";
 			SessionMessages.add(request, "addSuccess");
 			request.setAttribute("successMessage", msg);
@@ -351,6 +352,138 @@ public class ESFRaduni extends MVCPortlet {
 		}
 		
 	}
+	
+	
+	@SuppressWarnings("unchecked")
+	@ProcessAction(name="ricercaStaff")
+	public void ricercaStaff(ActionRequest request, ActionResponse response) {
+		System.out.println("################# RICERCA STAFF #####################");
+		
+		try {
+			long id_esf_raduno = ParamUtil.getLong(request, "id_esf_raduno");
+			String code = ParamUtil.getString(request, "code");
+			String name = ParamUtil.getString(request, "name","");
+			Date startDate = ParamUtil.getDate(request, "startDate", DateUtilFormatter.getDefaultFormatter(), null);
+			long esfSportType = ParamUtil.getLong(request, "esfSportType",0);
+			String esfShootingDirectorQualification = ParamUtil.getString(request, "esfShootingDirectorQualification");
+			long esfListaInvitati = ParamUtil.getLong(request, "esfListaInvitati",0);
+			int delta = ParamUtil.getInteger(request, "delta",0);
+			int cur = ParamUtil.getInteger(request, "cur",0);
+			String goToURL = ParamUtil.getString(request, "mvcPath");
+
+			System.out.println("id raduno [" + id_esf_raduno + "]");
+			System.out.println("codice [" + code + "]");
+			System.out.println("nome [" + name + "]");
+			System.out.println("data inizio [" + startDate + "]");
+			System.out.println("qualifica [" + esfShootingDirectorQualification + "]");
+			System.out.println("id tipo sport [" + esfSportType + "]");
+			System.out.println("id lista invitati [" + esfListaInvitati + "]");
+			System.out.println("delta [" + delta + "]");
+			System.out.println("cur [" + cur + "]");
+
+			List<ESFRadunoStaff> listaInvitatiStaff = ESFRadunoStaffLocalServiceUtil.findById(id_esf_raduno);
+			List<Long> listaIdInvitati = new ArrayList<>(); 
+			
+			// TRASFERISCO I VALORI NELLA LISTA DI LONG
+			for(ESFRadunoStaff rs : listaInvitatiStaff){
+				listaIdInvitati.add(rs.getUserId());
+			}
+			
+			// CREO LA DYNAMIC QUERY E INSERISCO LE CONDIZIONI
+			DynamicQuery dq = DynamicQueryFactoryUtil.forClass(VW_Staff.class, "Staff", PortletClassLoaderUtil.getClassLoader());
+			if (!name.isEmpty()){
+				System.out.println("Nome [" + name + "]");
+				dq.add(RestrictionsFactoryUtil.like("Staff.firstName", "%" + name + "%"));
+				dq.add(RestrictionsFactoryUtil.like("Staff.lastName", "%" + name + "%"));
+			}
+			if(startDate != null){
+				dq.add(RestrictionsFactoryUtil.ge("Staff.esfStartData", startDate));
+			}
+			
+			if(esfSportType!=0){
+				dq.add(RestrictionsFactoryUtil.eq("Staff.primaryKey.esfSportTypeId", esfSportType));
+			}
+			
+			if(!esfShootingDirectorQualification.isEmpty()){
+				dq.add(RestrictionsFactoryUtil.eq("Staff.esfShootingDirectorQualificationDesc", esfShootingDirectorQualification));
+			}
+			
+			List<VW_Staff> listaStaff = new ArrayList<>();
+			// PRENDO IL RISULTATO DELLA QUERY
+			List<VW_Staff> listaStaffCompleta = VW_StaffLocalServiceUtil.dynamicQuery(dq);
+			
+			for(VW_Staff staff: listaStaffCompleta){
+				System.out.println("[ID: [" + staff.getUserId() + "] - NOME: [" + staff.getFirstName() + "] [" + staff.getLastName() + "]");
+			}
+			
+			// COPIO GLI ELEMENTI NELLA LISTA FINALE
+			int contatore = 0;
+			while(contatore < listaStaffCompleta.size()){
+				VW_Staff current = listaStaffCompleta.get(contatore);
+				
+				
+				
+				// VEDO SE IL TIRATORE E' STATO INVITATO E SETTO LA VARIABILE A 1
+				if(listaIdInvitati.contains(current.getUserId())){
+					current.setInvitato(1);
+				}
+				
+				// CONTROLLO IL CAMPO DI RICERCA ---/INVITATI/NON INVITATI
+				// INSERISCO TUTTI, INVITATI E NON INVITATI
+				if(esfListaInvitati==0)
+					listaStaff.add(current);
+				// INSERISCO SOLO GLI INVITATI
+				else if (esfListaInvitati==2){
+					if(current.getInvitato()==1){
+						listaStaff.add(current);
+						}
+				} 
+				// INSERISCO SOLO I NON INVITATI
+				else if(current.getInvitato()==0){
+					listaStaff.add(current);					
+				}
+				contatore++;
+			}
+			
+			// MESSAGGIO
+			String msg = "La ricerca ha prodotto '" + listaStaff.size()  + "' risultati!";
+			SessionMessages.add(request, "addSuccess");
+			request.setAttribute("successMessage", msg);			
+			
+			request.setAttribute("listaStaff", listaStaff);
+			response.setRenderParameter("id_esf_raduno", String.valueOf(id_esf_raduno));
+			response.setRenderParameter("code", code);
+			response.setRenderParameter("name", name);
+			if(startDate != null)
+				response.setRenderParameter("startDate",  DateUtilFormatter.formatDate(startDate));
+			// TODO Auto-generated catch block
+			response.setRenderParameter("esfShootingDirectorQualification", esfShootingDirectorQualification);
+			response.setRenderParameter("esfSportType", String.valueOf(esfSportType));
+			response.setRenderParameter("esfListaInvitati", String.valueOf(esfListaInvitati));
+
+			response.setRenderParameter("esfSportType", String.valueOf(esfSportType));
+			if (delta != 0)
+				response.setRenderParameter("delta", String.valueOf(delta));
+			if(cur != 0)
+				response.setRenderParameter("cur", String.valueOf(cur));
+			
+			response.setRenderParameter("jspPage", goToURL);
+		} catch (SystemException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (MissingDateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	@ProcessAction(name="salvaStaffRaduno")
+	public void salvaStaffRaduno(ActionRequest request, ActionResponse response) {
+		System.out.println("################# SALVA STAFF RADUNO #####################");
+
+	}
+	
 	
 	
 	

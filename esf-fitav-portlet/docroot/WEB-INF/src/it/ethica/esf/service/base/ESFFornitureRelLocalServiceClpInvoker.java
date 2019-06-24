@@ -114,13 +114,13 @@ public class ESFFornitureRelLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFFornitureRel"
 			};
 
-		_methodName418 = "getBeanIdentifier";
+		_methodName430 = "getBeanIdentifier";
 
-		_methodParameterTypes418 = new String[] {  };
+		_methodParameterTypes430 = new String[] {  };
 
-		_methodName419 = "setBeanIdentifier";
+		_methodName431 = "setBeanIdentifier";
 
-		_methodParameterTypes419 = new String[] { "java.lang.String" };
+		_methodParameterTypes431 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -212,13 +212,13 @@ public class ESFFornitureRelLocalServiceClpInvoker {
 			return ESFFornitureRelLocalServiceUtil.updateESFFornitureRel((it.ethica.esf.model.ESFFornitureRel)arguments[0]);
 		}
 
-		if (_methodName418.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes418, parameterTypes)) {
+		if (_methodName430.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes430, parameterTypes)) {
 			return ESFFornitureRelLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName419.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes419, parameterTypes)) {
+		if (_methodName431.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes431, parameterTypes)) {
 			ESFFornitureRelLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
@@ -259,8 +259,8 @@ public class ESFFornitureRelLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName418;
-	private String[] _methodParameterTypes418;
-	private String _methodName419;
-	private String[] _methodParameterTypes419;
+	private String _methodName430;
+	private String[] _methodParameterTypes430;
+	private String _methodName431;
+	private String[] _methodParameterTypes431;
 }

@@ -119,10 +119,14 @@
 	<bean id="it.ethica.esf.service.persistence.ESFRadunoAzzurriPersistence" class="it.ethica.esf.service.persistence.ESFRadunoAzzurriPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFRadunoFilesLocalService" class="it.ethica.esf.service.impl.ESFRadunoFilesLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFRadunoFilesPersistence" class="it.ethica.esf.service.persistence.ESFRadunoFilesPersistenceImpl" parent="basePersistence" />
+	<bean id="it.ethica.esf.service.EsfRadunoShootersLocalService" class="it.ethica.esf.service.impl.EsfRadunoShootersLocalServiceImpl" />
+	<bean id="it.ethica.esf.service.persistence.EsfRadunoShootersPersistence" class="it.ethica.esf.service.persistence.EsfRadunoShootersPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFRadunoSottotipiRadunoLocalService" class="it.ethica.esf.service.impl.ESFRadunoSottotipiRadunoLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFRadunoSottotipiRadunoPersistence" class="it.ethica.esf.service.persistence.ESFRadunoSottotipiRadunoPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFRadunoSottotipoLocalService" class="it.ethica.esf.service.impl.ESFRadunoSottotipoLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFRadunoSottotipoPersistence" class="it.ethica.esf.service.persistence.ESFRadunoSottotipoPersistenceImpl" parent="basePersistence" />
+	<bean id="it.ethica.esf.service.ESFRadunoStaffLocalService" class="it.ethica.esf.service.impl.ESFRadunoStaffLocalServiceImpl" />
+	<bean id="it.ethica.esf.service.persistence.ESFRadunoStaffPersistence" class="it.ethica.esf.service.persistence.ESFRadunoStaffPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFRadunoTipoLocalService" class="it.ethica.esf.service.impl.ESFRadunoTipoLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFRadunoTipoPersistence" class="it.ethica.esf.service.persistence.ESFRadunoTipoPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFRegionLocalService" class="it.ethica.esf.service.impl.ESFRegionLocalServiceImpl" />
@@ -191,4 +195,6 @@
 	<bean id="it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPersistence" class="it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.VW_ESFListaIncarichiLocalService" class="it.ethica.esf.service.impl.VW_ESFListaIncarichiLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.VW_ESFListaIncarichiPersistence" class="it.ethica.esf.service.persistence.VW_ESFListaIncarichiPersistenceImpl" parent="basePersistence" />
+	<bean id="it.ethica.esf.service.VW_StaffLocalService" class="it.ethica.esf.service.impl.VW_StaffLocalServiceImpl" />
+	<bean id="it.ethica.esf.service.persistence.VW_StaffPersistence" class="it.ethica.esf.service.persistence.VW_StaffPersistenceImpl" parent="basePersistence" />
 </beans>

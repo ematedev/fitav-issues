@@ -122,37 +122,37 @@ public class ESFTournamentLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFTournament"
 			};
 
-		_methodName422 = "getBeanIdentifier";
+		_methodName434 = "getBeanIdentifier";
 
-		_methodParameterTypes422 = new String[] {  };
+		_methodParameterTypes434 = new String[] {  };
 
-		_methodName423 = "setBeanIdentifier";
+		_methodName435 = "setBeanIdentifier";
 
-		_methodParameterTypes423 = new String[] { "java.lang.String" };
+		_methodParameterTypes435 = new String[] { "java.lang.String" };
 
-		_methodName428 = "findESFTournamentsByState";
+		_methodName440 = "findESFTournamentsByState";
 
-		_methodParameterTypes428 = new String[] { "int" };
+		_methodParameterTypes440 = new String[] { "int" };
 
-		_methodName429 = "findESFTournamentsByState";
+		_methodName441 = "findESFTournamentsByState";
 
-		_methodParameterTypes429 = new String[] { "int", "int", "int" };
+		_methodParameterTypes441 = new String[] { "int", "int", "int" };
 
-		_methodName430 = "findESFTournamentsByOrganizationId";
+		_methodName442 = "findESFTournamentsByOrganizationId";
 
-		_methodParameterTypes430 = new String[] {
+		_methodParameterTypes442 = new String[] {
 				"long", "boolean", "int", "boolean"
 			};
 
-		_methodName431 = "findESFTournamentsByOrganizationId";
+		_methodName443 = "findESFTournamentsByOrganizationId";
 
-		_methodParameterTypes431 = new String[] {
+		_methodParameterTypes443 = new String[] {
 				"long", "boolean", "int", "boolean", "int", "int"
 			};
 
-		_methodName432 = "addESFTournament";
+		_methodName444 = "addESFTournament";
 
-		_methodParameterTypes432 = new String[] {
+		_methodParameterTypes444 = new String[] {
 				"long", "long", "java.lang.String", "java.lang.String", "int",
 				"int", "boolean", "boolean", "boolean", "boolean", "boolean",
 				"boolean", "long[][]", "long[][]", "java.util.Date",
@@ -161,15 +161,15 @@ public class ESFTournamentLocalServiceClpInvoker {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName433 = "deleteESFTournament";
+		_methodName445 = "deleteESFTournament";
 
-		_methodParameterTypes433 = new String[] {
+		_methodParameterTypes445 = new String[] {
 				"long", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName434 = "updateESFTournament";
+		_methodName446 = "updateESFTournament";
 
-		_methodParameterTypes434 = new String[] {
+		_methodParameterTypes446 = new String[] {
 				"long", "long", "long", "java.lang.String", "java.lang.String",
 				"int", "int", "boolean", "boolean", "boolean", "boolean",
 				"boolean", "boolean", "long[][]", "long[][]", "java.util.Date",
@@ -292,40 +292,40 @@ public class ESFTournamentLocalServiceClpInvoker {
 			return ESFTournamentLocalServiceUtil.updateESFTournament((it.ethica.esf.model.ESFTournament)arguments[0]);
 		}
 
-		if (_methodName422.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes422, parameterTypes)) {
+		if (_methodName434.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes434, parameterTypes)) {
 			return ESFTournamentLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName423.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes423, parameterTypes)) {
+		if (_methodName435.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes435, parameterTypes)) {
 			ESFTournamentLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName428.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes428, parameterTypes)) {
+		if (_methodName440.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes440, parameterTypes)) {
 			return ESFTournamentLocalServiceUtil.findESFTournamentsByState(((Integer)arguments[0]).intValue());
 		}
 
-		if (_methodName429.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes429, parameterTypes)) {
+		if (_methodName441.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes441, parameterTypes)) {
 			return ESFTournamentLocalServiceUtil.findESFTournamentsByState(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName430.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes430, parameterTypes)) {
+		if (_methodName442.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes442, parameterTypes)) {
 			return ESFTournamentLocalServiceUtil.findESFTournamentsByOrganizationId(((Long)arguments[0]).longValue(),
 				((Boolean)arguments[1]).booleanValue(),
 				((Integer)arguments[2]).intValue(),
 				((Boolean)arguments[3]).booleanValue());
 		}
 
-		if (_methodName431.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes431, parameterTypes)) {
+		if (_methodName443.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes443, parameterTypes)) {
 			return ESFTournamentLocalServiceUtil.findESFTournamentsByOrganizationId(((Long)arguments[0]).longValue(),
 				((Boolean)arguments[1]).booleanValue(),
 				((Integer)arguments[2]).intValue(),
@@ -334,8 +334,8 @@ public class ESFTournamentLocalServiceClpInvoker {
 				((Integer)arguments[5]).intValue());
 		}
 
-		if (_methodName432.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes432, parameterTypes)) {
+		if (_methodName444.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes444, parameterTypes)) {
 			return ESFTournamentLocalServiceUtil.addESFTournament(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
@@ -354,14 +354,14 @@ public class ESFTournamentLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[18]);
 		}
 
-		if (_methodName433.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes433, parameterTypes)) {
+		if (_methodName445.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes445, parameterTypes)) {
 			return ESFTournamentLocalServiceUtil.deleteESFTournament(((Long)arguments[0]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
 
-		if (_methodName434.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes434, parameterTypes)) {
+		if (_methodName446.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes446, parameterTypes)) {
 			return ESFTournamentLocalServiceUtil.updateESFTournament(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -424,22 +424,22 @@ public class ESFTournamentLocalServiceClpInvoker {
 	private String[] _methodParameterTypes18;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
-	private String _methodName422;
-	private String[] _methodParameterTypes422;
-	private String _methodName423;
-	private String[] _methodParameterTypes423;
-	private String _methodName428;
-	private String[] _methodParameterTypes428;
-	private String _methodName429;
-	private String[] _methodParameterTypes429;
-	private String _methodName430;
-	private String[] _methodParameterTypes430;
-	private String _methodName431;
-	private String[] _methodParameterTypes431;
-	private String _methodName432;
-	private String[] _methodParameterTypes432;
-	private String _methodName433;
-	private String[] _methodParameterTypes433;
 	private String _methodName434;
 	private String[] _methodParameterTypes434;
+	private String _methodName435;
+	private String[] _methodParameterTypes435;
+	private String _methodName440;
+	private String[] _methodParameterTypes440;
+	private String _methodName441;
+	private String[] _methodParameterTypes441;
+	private String _methodName442;
+	private String[] _methodParameterTypes442;
+	private String _methodName443;
+	private String[] _methodParameterTypes443;
+	private String _methodName444;
+	private String[] _methodParameterTypes444;
+	private String _methodName445;
+	private String[] _methodParameterTypes445;
+	private String _methodName446;
+	private String[] _methodParameterTypes446;
 }

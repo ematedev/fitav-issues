@@ -106,75 +106,75 @@ public class ESFEntityStateLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFEntityState"
 			};
 
-		_methodName408 = "getBeanIdentifier";
+		_methodName420 = "getBeanIdentifier";
 
-		_methodParameterTypes408 = new String[] {  };
+		_methodParameterTypes420 = new String[] {  };
 
-		_methodName409 = "setBeanIdentifier";
+		_methodName421 = "setBeanIdentifier";
 
-		_methodParameterTypes409 = new String[] { "java.lang.String" };
+		_methodParameterTypes421 = new String[] { "java.lang.String" };
 
-		_methodName414 = "findESFEntityStateByCN";
+		_methodName426 = "findESFEntityStateByCN";
 
-		_methodParameterTypes414 = new String[] { "java.lang.String" };
+		_methodParameterTypes426 = new String[] { "java.lang.String" };
 
-		_methodName415 = "findESFEntityStateByC_PK";
+		_methodName427 = "findESFEntityStateByC_PK";
 
-		_methodParameterTypes415 = new String[] { "java.lang.String", "long" };
+		_methodParameterTypes427 = new String[] { "java.lang.String", "long" };
 
-		_methodName416 = "findESFEntityStateByC_PK_S";
+		_methodName428 = "findESFEntityStateByC_PK_S";
 
-		_methodParameterTypes416 = new String[] {
+		_methodParameterTypes428 = new String[] {
 				"java.lang.String", "long", "long"
 			};
 
-		_methodName417 = "findESFEntityStateByC_S";
+		_methodName429 = "findESFEntityStateByC_S";
 
-		_methodParameterTypes417 = new String[] { "java.lang.String", "long" };
+		_methodParameterTypes429 = new String[] { "java.lang.String", "long" };
 
-		_methodName418 = "findESFEntityStateCName_CPk";
+		_methodName430 = "findESFEntityStateCName_CPk";
 
-		_methodParameterTypes418 = new String[] { "java.lang.String", "long" };
+		_methodParameterTypes430 = new String[] { "java.lang.String", "long" };
 
-		_methodName419 = "findESFEntityStateByC_S";
+		_methodName431 = "findESFEntityStateByC_S";
 
-		_methodParameterTypes419 = new String[] {
+		_methodParameterTypes431 = new String[] {
 				"java.lang.String", "long", "int", "int"
 			};
 
-		_methodName420 = "addEntityState";
+		_methodName432 = "addEntityState";
 
-		_methodParameterTypes420 = new String[] {
+		_methodParameterTypes432 = new String[] {
 				"long", "long", "long", "java.lang.String", "long", "long"
 			};
 
-		_methodName421 = "addEntityState";
+		_methodName433 = "addEntityState";
 
-		_methodParameterTypes421 = new String[] {
+		_methodParameterTypes433 = new String[] {
 				"long", "java.lang.String", "long", "long",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName422 = "addEntityState";
+		_methodName434 = "addEntityState";
 
-		_methodParameterTypes422 = new String[] {
+		_methodParameterTypes434 = new String[] {
 				"long", "java.lang.String", "long", "long", "java.util.Date",
 				"java.util.Date", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName423 = "updateEntityState";
+		_methodName435 = "updateEntityState";
 
-		_methodParameterTypes423 = new String[] {
+		_methodParameterTypes435 = new String[] {
 				"long", "long", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName424 = "findAllESFEntityStateByClassName_ClassPK";
+		_methodName436 = "findAllESFEntityStateByClassName_ClassPK";
 
-		_methodParameterTypes424 = new String[] { "java.lang.String", "long" };
+		_methodParameterTypes436 = new String[] { "java.lang.String", "long" };
 
-		_methodName425 = "findESShooterLastCardActive";
+		_methodName437 = "findESShooterLastCardActive";
 
-		_methodParameterTypes425 = new String[] { "long" };
+		_methodParameterTypes437 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -266,58 +266,58 @@ public class ESFEntityStateLocalServiceClpInvoker {
 			return ESFEntityStateLocalServiceUtil.updateESFEntityState((it.ethica.esf.model.ESFEntityState)arguments[0]);
 		}
 
-		if (_methodName408.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes408, parameterTypes)) {
+		if (_methodName420.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes420, parameterTypes)) {
 			return ESFEntityStateLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName409.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes409, parameterTypes)) {
+		if (_methodName421.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes421, parameterTypes)) {
 			ESFEntityStateLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName414.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes414, parameterTypes)) {
+		if (_methodName426.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes426, parameterTypes)) {
 			return ESFEntityStateLocalServiceUtil.findESFEntityStateByCN((java.lang.String)arguments[0]);
 		}
 
-		if (_methodName415.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes415, parameterTypes)) {
+		if (_methodName427.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes427, parameterTypes)) {
 			return ESFEntityStateLocalServiceUtil.findESFEntityStateByC_PK((java.lang.String)arguments[0],
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName416.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes416, parameterTypes)) {
+		if (_methodName428.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes428, parameterTypes)) {
 			return ESFEntityStateLocalServiceUtil.findESFEntityStateByC_PK_S((java.lang.String)arguments[0],
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue());
 		}
 
-		if (_methodName417.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes417, parameterTypes)) {
+		if (_methodName429.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes429, parameterTypes)) {
 			return ESFEntityStateLocalServiceUtil.findESFEntityStateByC_S((java.lang.String)arguments[0],
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName418.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes418, parameterTypes)) {
+		if (_methodName430.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes430, parameterTypes)) {
 			return ESFEntityStateLocalServiceUtil.findESFEntityStateCName_CPk((java.lang.String)arguments[0],
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName419.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes419, parameterTypes)) {
+		if (_methodName431.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes431, parameterTypes)) {
 			return ESFEntityStateLocalServiceUtil.findESFEntityStateByC_S((java.lang.String)arguments[0],
 				((Long)arguments[1]).longValue(),
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
-		if (_methodName420.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes420, parameterTypes)) {
+		if (_methodName432.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes432, parameterTypes)) {
 			return ESFEntityStateLocalServiceUtil.addEntityState(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -326,8 +326,8 @@ public class ESFEntityStateLocalServiceClpInvoker {
 				((Long)arguments[5]).longValue());
 		}
 
-		if (_methodName421.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes421, parameterTypes)) {
+		if (_methodName433.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes433, parameterTypes)) {
 			return ESFEntityStateLocalServiceUtil.addEntityState(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(),
@@ -335,8 +335,8 @@ public class ESFEntityStateLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[4]);
 		}
 
-		if (_methodName422.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes422, parameterTypes)) {
+		if (_methodName434.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes434, parameterTypes)) {
 			return ESFEntityStateLocalServiceUtil.addEntityState(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(),
@@ -345,21 +345,21 @@ public class ESFEntityStateLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[6]);
 		}
 
-		if (_methodName423.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes423, parameterTypes)) {
+		if (_methodName435.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes435, parameterTypes)) {
 			return ESFEntityStateLocalServiceUtil.updateEntityState(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[2]);
 		}
 
-		if (_methodName424.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes424, parameterTypes)) {
+		if (_methodName436.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes436, parameterTypes)) {
 			return ESFEntityStateLocalServiceUtil.findAllESFEntityStateByClassName_ClassPK((java.lang.String)arguments[0],
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName425.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes425, parameterTypes)) {
+		if (_methodName437.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes437, parameterTypes)) {
 			return ESFEntityStateLocalServiceUtil.findESShooterLastCardActive(((Long)arguments[0]).longValue());
 		}
 
@@ -398,32 +398,32 @@ public class ESFEntityStateLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName408;
-	private String[] _methodParameterTypes408;
-	private String _methodName409;
-	private String[] _methodParameterTypes409;
-	private String _methodName414;
-	private String[] _methodParameterTypes414;
-	private String _methodName415;
-	private String[] _methodParameterTypes415;
-	private String _methodName416;
-	private String[] _methodParameterTypes416;
-	private String _methodName417;
-	private String[] _methodParameterTypes417;
-	private String _methodName418;
-	private String[] _methodParameterTypes418;
-	private String _methodName419;
-	private String[] _methodParameterTypes419;
 	private String _methodName420;
 	private String[] _methodParameterTypes420;
 	private String _methodName421;
 	private String[] _methodParameterTypes421;
-	private String _methodName422;
-	private String[] _methodParameterTypes422;
-	private String _methodName423;
-	private String[] _methodParameterTypes423;
-	private String _methodName424;
-	private String[] _methodParameterTypes424;
-	private String _methodName425;
-	private String[] _methodParameterTypes425;
+	private String _methodName426;
+	private String[] _methodParameterTypes426;
+	private String _methodName427;
+	private String[] _methodParameterTypes427;
+	private String _methodName428;
+	private String[] _methodParameterTypes428;
+	private String _methodName429;
+	private String[] _methodParameterTypes429;
+	private String _methodName430;
+	private String[] _methodParameterTypes430;
+	private String _methodName431;
+	private String[] _methodParameterTypes431;
+	private String _methodName432;
+	private String[] _methodParameterTypes432;
+	private String _methodName433;
+	private String[] _methodParameterTypes433;
+	private String _methodName434;
+	private String[] _methodParameterTypes434;
+	private String _methodName435;
+	private String[] _methodParameterTypes435;
+	private String _methodName436;
+	private String[] _methodParameterTypes436;
+	private String _methodName437;
+	private String[] _methodParameterTypes437;
 }

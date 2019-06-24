@@ -26,6 +26,9 @@
 </portlet:renderURL>
 
 <portlet:renderURL var="editStaffURL">
+	<portlet:param name="id_esf_raduno" value="<%= String.valueOf(raduno.getId_esf_raduno()) %>"/>	
+	<portlet:param name="code" value="<%= raduno.getCodice() %>"/>	
+	<portlet:param name="mvcPath" value="/html/esfraduni/managementStaff.jsp" />	
 </portlet:renderURL>
 
 <portlet:actionURL var="viewURL"  name="viewRaduno">

@@ -7,7 +7,9 @@
 <%@page import="it.ethica.esf.service.ESFOrganizationLocalServiceUtil"%>
 <%@page import="it.ethica.esf.service.ESFRadunoAzzurriLocalServiceUtil"%>
 <%@page import="it.ethica.esf.service.ESFSportTypeLocalServiceUtil"%>
+<%@page import="it.ethica.esf.service.ESFShootingDirectorQualificationLocalServiceUtil"%>
 <%@page import="it.ethica.esf.service.VW_AzzurriLocalServiceUtil"%>
+<%@page import="it.ethica.esf.service.VW_StaffLocalServiceUtil"%>
 <%@page import="it.ethica.esf.model.ESFRadunoTipo"%>
 <%@page import="it.ethica.esf.util.DateUtilFormatter"%>
 <%@page import="it.ethica.esf.model.ESFRaduno"%>
@@ -18,9 +20,10 @@
 <%@page import="it.ethica.esf.model.ESFOrganization"%>
 <%@page import="it.ethica.esf.model.ESFSportType"%>
 <%@page import="it.ethica.esf.model.VW_Azzurri"%>
+<%@page import="it.ethica.esf.model.VW_Staff"%>
+<%@page import="it.ethica.esf.model.ESFNational"%>
+<%@page import="it.ethica.esf.model.ESFShootingDirectorQualification"%>
 <%@page import="it.ethica.esf.util.ManageDate"%>
-
-
 
 <%///////////////////// IMPORT MODULI JAVA //////////////////////%>
 <%@page import="java.util.HashMap"%>
@@ -45,6 +48,8 @@
 <%@page import="com.liferay.portal.kernel.dao.orm.DynamicQuery"%>
 <%@page import="com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil"%>
 <%@page import="com.liferay.portal.kernel.dao.orm.RestrictionsFactoryUtil"%>
+<%@page import="com.liferay.portal.kernel.dao.orm.QueryUtil"%>
+
 
 
 

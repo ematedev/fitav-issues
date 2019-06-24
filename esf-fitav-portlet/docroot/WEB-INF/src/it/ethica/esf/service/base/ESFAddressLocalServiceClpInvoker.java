@@ -108,92 +108,92 @@ public class ESFAddressLocalServiceClpInvoker {
 
 		_methodParameterTypes17 = new String[] { "it.ethica.esf.model.ESFAddress" };
 
-		_methodName426 = "getBeanIdentifier";
-
-		_methodParameterTypes426 = new String[] {  };
-
-		_methodName427 = "setBeanIdentifier";
-
-		_methodParameterTypes427 = new String[] { "java.lang.String" };
-
-		_methodName432 = "newESFAddress";
-
-		_methodParameterTypes432 = new String[] {  };
-
-		_methodName433 = "findByL_L";
-
-		_methodParameterTypes433 = new String[] { "double", "double" };
-
-		_methodName434 = "getESFAddresses";
-
-		_methodParameterTypes434 = new String[] {
-				"long", "java.lang.String", "long"
-			};
-
-		_methodName435 = "getNameRegion";
-
-		_methodParameterTypes435 = new String[] { "java.lang.String" };
-
-		_methodName436 = "getNameProvince";
-
-		_methodParameterTypes436 = new String[] {
-				"java.lang.String", "java.lang.String"
-			};
-
-		_methodName437 = "getNameCity";
-
-		_methodParameterTypes437 = new String[] {
-				"java.lang.String", "java.lang.String", "long"
-			};
-
-		_methodName438 = "findAllCountry";
+		_methodName438 = "getBeanIdentifier";
 
 		_methodParameterTypes438 = new String[] {  };
 
-		_methodName439 = "findAllCountry";
+		_methodName439 = "setBeanIdentifier";
 
-		_methodParameterTypes439 = new String[] { "int", "int" };
+		_methodParameterTypes439 = new String[] { "java.lang.String" };
 
-		_methodName440 = "findAllRegions";
+		_methodName444 = "newESFAddress";
 
-		_methodParameterTypes440 = new String[] {  };
+		_methodParameterTypes444 = new String[] {  };
 
-		_methodName441 = "findByCountry";
+		_methodName445 = "findByL_L";
 
-		_methodParameterTypes441 = new String[] { "java.lang.String" };
+		_methodParameterTypes445 = new String[] { "double", "double" };
 
-		_methodName442 = "findByCountry";
+		_methodName446 = "getESFAddresses";
 
-		_methodParameterTypes442 = new String[] { "java.lang.String", "int", "int" };
+		_methodParameterTypes446 = new String[] {
+				"long", "java.lang.String", "long"
+			};
 
-		_methodName443 = "findByC_R";
+		_methodName447 = "getNameRegion";
 
-		_methodParameterTypes443 = new String[] {
+		_methodParameterTypes447 = new String[] { "java.lang.String" };
+
+		_methodName448 = "getNameProvince";
+
+		_methodParameterTypes448 = new String[] {
 				"java.lang.String", "java.lang.String"
 			};
 
-		_methodName444 = "findByC_R";
+		_methodName449 = "getNameCity";
 
-		_methodParameterTypes444 = new String[] {
+		_methodParameterTypes449 = new String[] {
+				"java.lang.String", "java.lang.String", "long"
+			};
+
+		_methodName450 = "findAllCountry";
+
+		_methodParameterTypes450 = new String[] {  };
+
+		_methodName451 = "findAllCountry";
+
+		_methodParameterTypes451 = new String[] { "int", "int" };
+
+		_methodName452 = "findAllRegions";
+
+		_methodParameterTypes452 = new String[] {  };
+
+		_methodName453 = "findByCountry";
+
+		_methodParameterTypes453 = new String[] { "java.lang.String" };
+
+		_methodName454 = "findByCountry";
+
+		_methodParameterTypes454 = new String[] { "java.lang.String", "int", "int" };
+
+		_methodName455 = "findByC_R";
+
+		_methodParameterTypes455 = new String[] {
+				"java.lang.String", "java.lang.String"
+			};
+
+		_methodName456 = "findByC_R";
+
+		_methodParameterTypes456 = new String[] {
 				"java.lang.String", "java.lang.String", "int", "int"
 			};
 
-		_methodName445 = "findByC_R_P";
+		_methodName457 = "findByC_R_P";
 
-		_methodParameterTypes445 = new String[] {
+		_methodParameterTypes457 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String"
 			};
 
-		_methodName446 = "findByC_R_P";
+		_methodName458 = "findByC_R_P";
 
-		_methodParameterTypes446 = new String[] {
+		_methodParameterTypes458 = new String[] {
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"int", "int"
 			};
 
-		_methodName447 = "addESFAddress";
+		_methodName459 = "addESFAddress";
 
-		_methodParameterTypes447 = new String[] {
+		_methodParameterTypes459 = new String[] {
 				"long", "double", "java.lang.String", "java.lang.String",
 				"java.lang.String", "long", "double", "java.lang.String", "int",
 				"java.lang.String", "long", "java.lang.String",
@@ -202,9 +202,9 @@ public class ESFAddressLocalServiceClpInvoker {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName448 = "updateESFAddress";
+		_methodName460 = "updateESFAddress";
 
-		_methodParameterTypes448 = new String[] {
+		_methodParameterTypes460 = new String[] {
 				"long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "long", "double", "double",
 				"java.lang.String", "int", "java.lang.String", "long",
@@ -213,9 +213,9 @@ public class ESFAddressLocalServiceClpInvoker {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName449 = "deleteESFAddress";
+		_methodName461 = "deleteESFAddress";
 
-		_methodParameterTypes449 = new String[] {
+		_methodParameterTypes461 = new String[] {
 				"long", "com.liferay.portal.service.ServiceContext"
 			};
 	}
@@ -321,110 +321,110 @@ public class ESFAddressLocalServiceClpInvoker {
 			return ESFAddressLocalServiceUtil.updateESFAddress((it.ethica.esf.model.ESFAddress)arguments[0]);
 		}
 
-		if (_methodName426.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes426, parameterTypes)) {
+		if (_methodName438.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes438, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName427.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes427, parameterTypes)) {
+		if (_methodName439.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes439, parameterTypes)) {
 			ESFAddressLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName432.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes432, parameterTypes)) {
+		if (_methodName444.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes444, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.newESFAddress();
 		}
 
-		if (_methodName433.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes433, parameterTypes)) {
+		if (_methodName445.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes445, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.findByL_L(((Double)arguments[0]).doubleValue(),
 				((Double)arguments[1]).doubleValue());
 		}
 
-		if (_methodName434.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes434, parameterTypes)) {
+		if (_methodName446.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes446, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.getESFAddresses(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], ((Long)arguments[2]).longValue());
 		}
 
-		if (_methodName435.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes435, parameterTypes)) {
+		if (_methodName447.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes447, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.getNameRegion((java.lang.String)arguments[0]);
 		}
 
-		if (_methodName436.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes436, parameterTypes)) {
+		if (_methodName448.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes448, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.getNameProvince((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1]);
 		}
 
-		if (_methodName437.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes437, parameterTypes)) {
+		if (_methodName449.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes449, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.getNameCity((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], ((Long)arguments[2]).longValue());
 		}
 
-		if (_methodName438.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes438, parameterTypes)) {
+		if (_methodName450.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes450, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.findAllCountry();
 		}
 
-		if (_methodName439.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes439, parameterTypes)) {
+		if (_methodName451.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes451, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.findAllCountry(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
-		if (_methodName440.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes440, parameterTypes)) {
+		if (_methodName452.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes452, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.findAllRegions();
 		}
 
-		if (_methodName441.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes441, parameterTypes)) {
+		if (_methodName453.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes453, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.findByCountry((java.lang.String)arguments[0]);
 		}
 
-		if (_methodName442.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes442, parameterTypes)) {
+		if (_methodName454.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes454, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.findByCountry((java.lang.String)arguments[0],
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName443.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes443, parameterTypes)) {
+		if (_methodName455.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes455, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.findByC_R((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1]);
 		}
 
-		if (_methodName444.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes444, parameterTypes)) {
+		if (_methodName456.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes456, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.findByC_R((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1],
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
-		if (_methodName445.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes445, parameterTypes)) {
+		if (_methodName457.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes457, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.findByC_R_P((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2]);
 		}
 
-		if (_methodName446.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes446, parameterTypes)) {
+		if (_methodName458.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes458, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.findByC_R_P((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Integer)arguments[3]).intValue(),
 				((Integer)arguments[4]).intValue());
 		}
 
-		if (_methodName447.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes447, parameterTypes)) {
+		if (_methodName459.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes459, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.addESFAddress(((Long)arguments[0]).longValue(),
 				((Double)arguments[1]).doubleValue(),
 				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
@@ -446,8 +446,8 @@ public class ESFAddressLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[19]);
 		}
 
-		if (_methodName448.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes448, parameterTypes)) {
+		if (_methodName460.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes460, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.updateESFAddress(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
@@ -470,8 +470,8 @@ public class ESFAddressLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[20]);
 		}
 
-		if (_methodName449.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes449, parameterTypes)) {
+		if (_methodName461.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes461, parameterTypes)) {
 			return ESFAddressLocalServiceUtil.deleteESFAddress(((Long)arguments[0]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
@@ -515,34 +515,10 @@ public class ESFAddressLocalServiceClpInvoker {
 	private String[] _methodParameterTypes16;
 	private String _methodName17;
 	private String[] _methodParameterTypes17;
-	private String _methodName426;
-	private String[] _methodParameterTypes426;
-	private String _methodName427;
-	private String[] _methodParameterTypes427;
-	private String _methodName432;
-	private String[] _methodParameterTypes432;
-	private String _methodName433;
-	private String[] _methodParameterTypes433;
-	private String _methodName434;
-	private String[] _methodParameterTypes434;
-	private String _methodName435;
-	private String[] _methodParameterTypes435;
-	private String _methodName436;
-	private String[] _methodParameterTypes436;
-	private String _methodName437;
-	private String[] _methodParameterTypes437;
 	private String _methodName438;
 	private String[] _methodParameterTypes438;
 	private String _methodName439;
 	private String[] _methodParameterTypes439;
-	private String _methodName440;
-	private String[] _methodParameterTypes440;
-	private String _methodName441;
-	private String[] _methodParameterTypes441;
-	private String _methodName442;
-	private String[] _methodParameterTypes442;
-	private String _methodName443;
-	private String[] _methodParameterTypes443;
 	private String _methodName444;
 	private String[] _methodParameterTypes444;
 	private String _methodName445;
@@ -555,4 +531,28 @@ public class ESFAddressLocalServiceClpInvoker {
 	private String[] _methodParameterTypes448;
 	private String _methodName449;
 	private String[] _methodParameterTypes449;
+	private String _methodName450;
+	private String[] _methodParameterTypes450;
+	private String _methodName451;
+	private String[] _methodParameterTypes451;
+	private String _methodName452;
+	private String[] _methodParameterTypes452;
+	private String _methodName453;
+	private String[] _methodParameterTypes453;
+	private String _methodName454;
+	private String[] _methodParameterTypes454;
+	private String _methodName455;
+	private String[] _methodParameterTypes455;
+	private String _methodName456;
+	private String[] _methodParameterTypes456;
+	private String _methodName457;
+	private String[] _methodParameterTypes457;
+	private String _methodName458;
+	private String[] _methodParameterTypes458;
+	private String _methodName459;
+	private String[] _methodParameterTypes459;
+	private String _methodName460;
+	private String[] _methodParameterTypes460;
+	private String _methodName461;
+	private String[] _methodParameterTypes461;
 }

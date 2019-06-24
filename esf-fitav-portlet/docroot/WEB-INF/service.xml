@@ -2610,6 +2610,30 @@
             <finder-column name="id_esf_raduno"></finder-column>
         </finder>
     </entity>
+    <entity local-service="true" name="ESFRadunoStaff" remote-service="false">
+        <column name="id_esf_raduno_staff" type="long" primary="true"></column>
+        <column name="id_esf_raduno" type="long" primary="true"></column>
+        <column name="userId" type="long" primary="true"></column>
+        <finder name="findRadunoStaff" return-type="EsfRadunoAzzurri">
+            <finder-column name="id_esf_raduno"></finder-column>
+            <finder-column name="userId"></finder-column>
+        </finder>
+        <finder name="findByIdRaduno" return-type="Collection">
+            <finder-column name="id_esf_raduno"></finder-column>
+        </finder>
+    </entity>
+    <entity local-service="true" name="EsfRadunoShooters" remote-service="false">
+        <column name="id_esf_raduno_shooters" type="long" primary="true"></column>
+        <column name="id_esf_raduno" type="long" primary="true"></column>
+        <column name="userId" type="long" primary="true"></column>
+        <finder name="findRadunoShooters" return-type="EsfRadunoShooters">
+            <finder-column name="id_esf_raduno"></finder-column>
+            <finder-column name="userId"></finder-column>
+        </finder>
+        <finder name="findByRaduno" return-type="Collection">
+            <finder-column name="id_esf_raduno"></finder-column>
+        </finder>
+    </entity>
     <entity local-service="true" name="ESFRadunoTipo" remote-service="false">
         <column id-type="identity" name="id_esf_raduno_tipo" primary="true" type="long"></column>
         <column name="descrizione" type="String"></column>
@@ -2643,6 +2667,21 @@
         <column name="esfSportTypeId" type="long" primary="true"></column>
         <column name="name" type="String"></column>
         <column name="description" type="String"></column>
+        <column name="invitato" type="long"></column>
+    </entity>
+    <entity name="VW_Staff" local-service="true" remote-service="false" table="vw_staff">
+        <column name="userId" type="long" primary="true"></column>
+        <column name="emailAddress" type="String"></column>
+        <column name="firstName" type="String"></column>
+        <column name="lastName" type="String"></column>
+        <column name="createDate" type="Date"></column>
+        <column name="esfStartData" type="Date"></column>
+        <column name="esfEndData" type="Date"></column>
+        <column name="regionId" type="String" primary="true"></column>
+        <column name="provinceId" type="String" primary="true"></column>
+        <column name="esfShootingDirectorQualificationDesc" type="String"></column>
+        <column name="esfSportTypeId" type="long" primary="true"></column>
+        <column name="name" type="String"></column>
         <column name="invitato" type="long"></column>
     </entity>
 	

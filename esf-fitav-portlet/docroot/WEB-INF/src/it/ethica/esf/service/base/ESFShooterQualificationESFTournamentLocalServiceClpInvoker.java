@@ -122,13 +122,13 @@ public class ESFShooterQualificationESFTournamentLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFShooterQualificationESFTournament"
 			};
 
-		_methodName410 = "getBeanIdentifier";
+		_methodName422 = "getBeanIdentifier";
 
-		_methodParameterTypes410 = new String[] {  };
+		_methodParameterTypes422 = new String[] {  };
 
-		_methodName411 = "setBeanIdentifier";
+		_methodName423 = "setBeanIdentifier";
 
-		_methodParameterTypes411 = new String[] { "java.lang.String" };
+		_methodParameterTypes423 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -232,13 +232,13 @@ public class ESFShooterQualificationESFTournamentLocalServiceClpInvoker {
 			return ESFShooterQualificationESFTournamentLocalServiceUtil.updateESFShooterQualificationESFTournament((it.ethica.esf.model.ESFShooterQualificationESFTournament)arguments[0]);
 		}
 
-		if (_methodName410.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes410, parameterTypes)) {
+		if (_methodName422.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes422, parameterTypes)) {
 			return ESFShooterQualificationESFTournamentLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName411.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes411, parameterTypes)) {
+		if (_methodName423.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes423, parameterTypes)) {
 			ESFShooterQualificationESFTournamentLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
@@ -283,8 +283,8 @@ public class ESFShooterQualificationESFTournamentLocalServiceClpInvoker {
 	private String[] _methodParameterTypes16;
 	private String _methodName17;
 	private String[] _methodParameterTypes17;
-	private String _methodName410;
-	private String[] _methodParameterTypes410;
-	private String _methodName411;
-	private String[] _methodParameterTypes411;
+	private String _methodName422;
+	private String[] _methodParameterTypes422;
+	private String _methodName423;
+	private String[] _methodParameterTypes423;
 }
