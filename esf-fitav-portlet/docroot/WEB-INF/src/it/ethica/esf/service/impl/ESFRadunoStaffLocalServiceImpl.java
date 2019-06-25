@@ -18,8 +18,12 @@ import java.util.List;
 
 import com.liferay.portal.kernel.exception.SystemException;
 
+import it.ethica.esf.NoSuchRadunoAzzurriException;
+import it.ethica.esf.NoSuchRadunoStaffException;
 import it.ethica.esf.model.ESFRadunoAzzurri;
 import it.ethica.esf.model.ESFRadunoStaff;
+import it.ethica.esf.model.impl.ESFRadunoAzzurriImpl;
+import it.ethica.esf.model.impl.ESFRadunoStaffImpl;
 import it.ethica.esf.service.base.ESFRadunoStaffLocalServiceBaseImpl;
 
 /**
@@ -51,4 +55,48 @@ public class ESFRadunoStaffLocalServiceImpl
 		
 		return listaRadunoStaff;
 	}
+	
+	public void associaStaff(long id_esf_raduno, List<String> listaChecked, List<String> listaUnchecked) throws SystemException, NumberFormatException{
+		
+		if(id_esf_raduno == 0)
+			return;
+		
+		if(listaChecked == null)
+			return;
+		
+		if(listaUnchecked == null)
+			return;
+		
+		for(String idUnchecked : listaUnchecked){
+			
+			long userId = Long.valueOf(idUnchecked);
+			try {
+				esfRadunoStaffPersistence.removeByfindRadunoStaff(id_esf_raduno, userId);
+			} catch (NoSuchRadunoStaffException e) {
+				// TODO Auto-generated catch block
+				System.out.println("CANCELLO LA RIGA n. " + idUnchecked);
+				//e.printStackTrace();
+			}
+		}
+		
+		for(String idChecked : listaChecked){
+			long userId = Long.valueOf(idChecked);
+			
+			//ESFRadunoAzzurri raFetched;
+			try {
+				esfRadunoStaffPersistence.findByfindRadunoStaff(id_esf_raduno, userId);
+			} catch (NoSuchRadunoStaffException e) {
+				// TODO Auto-generated catch block
+				//e.printStackTrace();
+				ESFRadunoStaff rsNew = new ESFRadunoStaffImpl();
+				rsNew.setId_esf_raduno(id_esf_raduno);
+				rsNew.setUserId(userId);
+				
+				this.addESFRadunoStaff(rsNew);
+				System.out.println("INSERISCO LA RIGA n. " + userId);
+			}
+			
+		}		
+	}
+
 }

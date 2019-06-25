@@ -125,6 +125,12 @@ public class ESFRadunoStaffLocalServiceClpInvoker {
 		_methodName426 = "findById";
 
 		_methodParameterTypes426 = new String[] { "long" };
+
+		_methodName427 = "associaStaff";
+
+		_methodParameterTypes427 = new String[] {
+				"long", "java.util.List", "java.util.List"
+			};
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -233,6 +239,15 @@ public class ESFRadunoStaffLocalServiceClpInvoker {
 			return ESFRadunoStaffLocalServiceUtil.findById(((Long)arguments[0]).longValue());
 		}
 
+		if (_methodName427.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes427, parameterTypes)) {
+			ESFRadunoStaffLocalServiceUtil.associaStaff(((Long)arguments[0]).longValue(),
+				(java.util.List<java.lang.String>)arguments[1],
+				(java.util.List<java.lang.String>)arguments[2]);
+
+			return null;
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -274,4 +289,6 @@ public class ESFRadunoStaffLocalServiceClpInvoker {
 	private String[] _methodParameterTypes421;
 	private String _methodName426;
 	private String[] _methodParameterTypes426;
+	private String _methodName427;
+	private String[] _methodParameterTypes427;
 }

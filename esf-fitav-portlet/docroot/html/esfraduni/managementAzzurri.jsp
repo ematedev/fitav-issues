@@ -143,7 +143,6 @@
 					value="<%=Validator.isNotNull(azzurro.getEsfNationalId()) ? String.valueOf(azzurro.getEsfNationalId()) : StringPool.BLANK%>" />
 			<liferay-ui:search-container-column-text name="start-date" value="<%=startDate%>" />					
 			<liferay-ui:search-container-column-text name="end-date" value="<%=endFine%>" />					
-			<liferay-ui:search-container-column-text name="gnocco" value="<%=String.valueOf(azzurro.getInvitato())%>" />					
 <%
 	String checked = "";
 	//String valore = azzurro.getEsfNationalId();
@@ -160,7 +159,6 @@
 <% 
 	if(nNazionali != 0){
 %>
-	<b><%=nNazionali %></b>
 	<aui:input type="hidden" name="idListaMostrataAzzurri" value="<%=idColl %>" />
 	
 	<aui:button-row>

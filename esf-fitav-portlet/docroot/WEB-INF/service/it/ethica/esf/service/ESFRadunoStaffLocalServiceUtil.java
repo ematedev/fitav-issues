@@ -281,6 +281,14 @@ public class ESFRadunoStaffLocalServiceUtil {
 		return getService().findById(id_esf_raduno);
 	}
 
+	public static void associaStaff(long id_esf_raduno,
+		java.util.List<java.lang.String> listaChecked,
+		java.util.List<java.lang.String> listaUnchecked)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			java.lang.NumberFormatException {
+		getService().associaStaff(id_esf_raduno, listaChecked, listaUnchecked);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

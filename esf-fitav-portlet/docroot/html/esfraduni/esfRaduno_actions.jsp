@@ -23,6 +23,9 @@
 </portlet:renderURL>
 
 <portlet:renderURL var="editShooterURL">
+	<portlet:param name="id_esf_raduno" value="<%= String.valueOf(raduno.getId_esf_raduno()) %>"/>	
+	<portlet:param name="code" value="<%= raduno.getCodice() %>"/>	
+	<portlet:param name="mvcPath" value="/html/esfraduni/managementShooters.jsp" />	
 </portlet:renderURL>
 
 <portlet:renderURL var="editStaffURL">

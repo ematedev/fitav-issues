@@ -7,10 +7,11 @@
 	String name = ParamUtil.getString(request, "name");
 	String namespace = renderResponse.getNamespace();
 	String dataInizio = ParamUtil.getString(request, "startDate");
-	String esfShootingDirectorQualificationId = ParamUtil.getString(request, "esfShootingDirectorQualificationId");
+	String esfShootingDirectorQualificationId = ParamUtil.getString(request, "esfShootingDirectorQualification");
 	long esfSportType = ParamUtil.getLong(request, "esfSportType",0);
 	long esfListaInvitati = ParamUtil.getLong(request, "esfListaInvitati",0);
 	int nStaff = 0;
+	String idColl = "";
 	
 	
 	
@@ -36,7 +37,7 @@
 	StaffViewURL.setParameter("id_esf_raduno", id_esf_raduno);
 	StaffViewURL.setParameter("code", codice);
 	StaffViewURL.setParameter("name", name);
-	StaffViewURL.setParameter("esfShootingDirectorQualificationId", esfShootingDirectorQualificationId);
+	StaffViewURL.setParameter("esfShootingDirectorQualification", esfShootingDirectorQualificationId);
 	StaffViewURL.setParameter("esfSportType", String.valueOf(esfSportType));
 	StaffViewURL.setParameter("startDate", dataInizio);
 	StaffViewURL.setParameter("esfListaInvitati", String.valueOf(esfListaInvitati));
@@ -83,9 +84,9 @@
 		<aui:input inlineField="true" label="name" name="name" placeholder="name" 
 				type="text" value="<%=name %>"/> 
 		<aui:input inlineField="true" label="start-date" name="startDate" placeholder="start-date" size="" title="search-entries" type="text" />
-			<aui:select name="idEsfShootingDirectorQualification" id="idEsfShootingDirectorQualification"
+			<aui:select name="esfShootingDirectorQualification" id="esfShootingDirectorQualification"
 				inlineField="true">
-				<aui:option label=" - " value="0" />
+				<aui:option label=" - " value="" />
 <%				
 					for (ESFShootingDirectorQualification tipoQualifica : listaQualifiche) {
 						Boolean selezionato = false;
@@ -138,22 +139,79 @@
 
 <aui:form method="POST" action="<%=salvaStaffRadunoURL%>">
 	<liferay-ui:search-container delta="5" emptyResultsMessage="no-result" total="<%=nStaff%>" iteratorURL="<%=StaffViewURL%>" >
-		<liferay-ui:search-container-results results="<%=listaStaff %>"  />
-			<liferay-ui:search-container-row className="it.ethica.esf.model.VW_Staff" modelVar="staff">
-			</liferay-ui:search-container-row>
 <%
-			String startDate = DateUtilFormatter.formatDate(azzurro.getStartDate());
-			String endFine = DateUtilFormatter.formatDate(azzurro.getEndDate());
-			idColl += azzurro.getEsfNationalId() +"|";
+	List<VW_Staff> sottoListaStaff = ListUtil.subList(listaStaff, searchContainer.getStart(), searchContainer.getEnd());
+%>
+		<liferay-ui:search-container-results results="<%=sottoListaStaff %>"  />
+			<liferay-ui:search-container-row className="it.ethica.esf.model.VW_Staff" modelVar="staff">
+<%
+	String startDate = DateUtilFormatter.formatDate(staff.getEsfStartData());
+	idColl += String.valueOf(staff.getUserId()) +"|";
 %>
 				<liferay-ui:search-container-column-text name="name"
 						value="<%=(Validator.isNotNull(staff.getFirstName()) && Validator.isNotNull(staff.getLastName())) ? 
-								staff.getFirstName()) + StringPool.SPACE + staff.getLastName() : StringPool.BLANK%>" />
-				<liferay-ui:search-container-column-text name="codice"
-						value="<%=Validator.isNotNull(azzurro.getEsfNationalId()) ? String.valueOf(azzurro.getEsfNationalId()) : StringPool.BLANK%>" />
+								staff.getFirstName() + StringPool.SPACE + staff.getLastName() : StringPool.BLANK%>" />
+				<liferay-ui:search-container-column-text name="UserId"
+						value="<%=Validator.isNotNull(staff.getUserId()) ? String.valueOf(staff.getUserId()) : StringPool.BLANK%>" />
+				<liferay-ui:search-container-column-text name="qualifica" 
+				value="<%=Validator.isNotNull(staff.getEsfShootingDirectorQualificationDesc()) ? staff.getEsfShootingDirectorQualificationDesc() : StringPool.BLANK%>" />					
 				<liferay-ui:search-container-column-text name="start-date" value="<%=startDate%>" />					
+				<liferay-ui:search-container-column-text name="specialita'" 
+					value="<%=Validator.isNotNull(staff.getName()) ? staff.getName() : StringPool.BLANK%>" />					
+				<liferay-ui:search-container-column-text name="regione/provincia" 
+					value="<%= (Validator.isNotNull(staff.getRegionId()) || Validator.isNotNull(staff.getProvinceId())) ?
+					staff.getRegionId() + StringPool.SPACE + StringPool.SLASH + StringPool.SPACE + staff.getProvinceId() : StringPool.BLANK%>" />					
+<%
+	String checked = "";
+	//String valore = azzurro.getEsfNationalId();
+	if(staff.getInvitato()!=0)
+		checked = "checked=\"true\"";
+%>					
+			<liferay-ui:search-container-column-text name="invitato">
+				<input name="<portlet:namespace/>invitato" value="<%=staff.getUserId()%>" type="checkbox" <%=checked%> />
+			</liferay-ui:search-container-column-text>
 			
+			</liferay-ui:search-container-row>
 		<liferay-ui:search-iterator />
 	</liferay-ui:search-container>
+
+<% 
+	if(nStaff != 0){
+%>
+	<aui:input type="hidden" name="idListaMostrataStaff" value="<%=idColl %>" />
+	
+	<aui:button-row>
+		<aui:button type="cancel" id='<%=namespace + "check_all"%>' value="select all" />
+		<aui:button type="cancel" id='<%=namespace + "uncheck_all"%>' value="unselect all"/>
+	</aui:button-row>
+	<aui:button-row>
+		<aui:button type="submit" id='<%=namespace + "save_all"%>' value="save all" />
+	</aui:button-row>
+
+	<aui:script use="aui-base,node,aui-io-request,liferay-util-list-fields">
+		A.one('#<portlet:namespace/>check_all').on('click', function(event){
+			A.all('input[type=checkbox]').each(function(item, index, list) {
+				item.set('checked', true);	
+			});
+		});
+		
+		A.one('#<portlet:namespace/>uncheck_all').on('click', function(event){
+			//alert("UNCHECK ALL");
+			A.all('input[type=checkbox]').each(function(item, index, list) {
+				var checked = item.attr('checked');
+				//console.log(index +">>>>>>>>>>>>>>>" + checked); 
+				item.removeAttribute('checked');
+				item.set('checked', false);	
+				});
+		});
+		
+/* 		A.one('#<portlet:namespace/>save_all').on('click', function(event){
+			alert("SAVE ALL");
+		});
+ */
+	</aui:script>
+<%
+	}
+%>
 	
 </aui:form>

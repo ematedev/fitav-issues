@@ -252,4 +252,10 @@ public interface ESFRadunoStaffLocalService extends BaseLocalService,
 	public java.util.List<it.ethica.esf.model.ESFRadunoStaff> findById(
 		long id_esf_raduno)
 		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public void associaStaff(long id_esf_raduno,
+		java.util.List<java.lang.String> listaChecked,
+		java.util.List<java.lang.String> listaUnchecked)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			java.lang.NumberFormatException;
 }
