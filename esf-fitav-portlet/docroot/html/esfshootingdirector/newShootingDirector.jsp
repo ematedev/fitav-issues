@@ -96,6 +96,7 @@ annullaUrl.setParameter("jspPage", "/html/esfshootingdirector/view.jsp");
 			String codOrganizzazione = vm_tiratoriTesserati.getCodiceOrganizzazione();
 			
 		%>
+		<liferay-ui:search-container-row-parameter name="tableType" value="newDir"/>
 		
 		<liferay-ui:search-container-column-text value='<%= cognome %>' name="last-name" align="Center"/>
 

@@ -274,19 +274,19 @@ public interface ESFSpecificModel extends BaseModel<ESFSpecific>,
 	public Object clone();
 
 	@Override
-	public int compareTo(ESFSpecific esfSpecific);
+	public int compareTo(it.ethica.esf.model.ESFSpecific esfSpecific);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ESFSpecific> toCacheModel();
+	public CacheModel<it.ethica.esf.model.ESFSpecific> toCacheModel();
 
 	@Override
-	public ESFSpecific toEscapedModel();
+	public it.ethica.esf.model.ESFSpecific toEscapedModel();
 
 	@Override
-	public ESFSpecific toUnescapedModel();
+	public it.ethica.esf.model.ESFSpecific toUnescapedModel();
 
 	@Override
 	public String toString();

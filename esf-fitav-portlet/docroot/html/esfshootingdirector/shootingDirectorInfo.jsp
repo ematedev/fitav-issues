@@ -39,6 +39,7 @@ shDr = ESFUserLocalServiceUtil.fetchESFUser(esfUserId);
 if(Validator.isNotNull(shDr)){
 	//Ne ricava il nome e cognome
 	shDrName = shDr.getFirstName() + " " + shDr.getLastName(); 
+	
 }
 
 //Prende tutte le possibili qualifiche 
@@ -48,6 +49,7 @@ sportTypes = ESFSportTypeLocalServiceUtil.getAllESFSportTypes();
 
 
 %>
+<b>L'user id è [<%= esfUserId %>]</b>
 
 <!-- Messaggio in testa alla pagina -->
 <h3><liferay-ui:message key="infromation-shDR-x" arguments="<%=shDrName %>" /></h3>

@@ -489,6 +489,10 @@ public class ESFShooterCategoryESFMatchClp extends BaseModelImpl<ESFShooterCateg
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey().hashCode();
@@ -582,4 +586,5 @@ public class ESFShooterCategoryESFMatchClp extends BaseModelImpl<ESFShooterCateg
 	private Date _createDate;
 	private Date _modifiedDate;
 	private BaseModel<?> _esfShooterCategoryESFMatchRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

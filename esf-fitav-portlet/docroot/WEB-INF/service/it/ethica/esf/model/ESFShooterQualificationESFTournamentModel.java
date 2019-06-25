@@ -154,19 +154,19 @@ public interface ESFShooterQualificationESFTournamentModel extends BaseModel<ESF
 
 	@Override
 	public int compareTo(
-		ESFShooterQualificationESFTournament esfShooterQualificationESFTournament);
+		it.ethica.esf.model.ESFShooterQualificationESFTournament esfShooterQualificationESFTournament);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ESFShooterQualificationESFTournament> toCacheModel();
+	public CacheModel<it.ethica.esf.model.ESFShooterQualificationESFTournament> toCacheModel();
 
 	@Override
-	public ESFShooterQualificationESFTournament toEscapedModel();
+	public it.ethica.esf.model.ESFShooterQualificationESFTournament toEscapedModel();
 
 	@Override
-	public ESFShooterQualificationESFTournament toUnescapedModel();
+	public it.ethica.esf.model.ESFShooterQualificationESFTournament toUnescapedModel();
 
 	@Override
 	public String toString();

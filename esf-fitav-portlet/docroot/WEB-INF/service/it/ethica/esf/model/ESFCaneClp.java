@@ -577,6 +577,10 @@ public class ESFCaneClp extends BaseModelImpl<ESFCane> implements ESFCane {
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -691,4 +695,5 @@ public class ESFCaneClp extends BaseModelImpl<ESFCane> implements ESFCane {
 	private long _shooterId;
 	private long _esfGunTypeId;
 	private BaseModel<?> _esfCaneRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

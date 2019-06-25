@@ -509,6 +509,10 @@ public class ESFFornitureRelClp extends BaseModelImpl<ESFFornitureRel>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey().hashCode();
@@ -609,4 +613,5 @@ public class ESFFornitureRelClp extends BaseModelImpl<ESFFornitureRel>
 	private Date _modifiedDate;
 	private Date _assignmentDate;
 	private BaseModel<?> _esfFornitureRelRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

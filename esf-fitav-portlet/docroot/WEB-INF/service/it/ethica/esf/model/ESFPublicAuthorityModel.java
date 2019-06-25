@@ -153,19 +153,20 @@ public interface ESFPublicAuthorityModel extends BaseModel<ESFPublicAuthority> {
 	public Object clone();
 
 	@Override
-	public int compareTo(ESFPublicAuthority esfPublicAuthority);
+	public int compareTo(
+		it.ethica.esf.model.ESFPublicAuthority esfPublicAuthority);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ESFPublicAuthority> toCacheModel();
+	public CacheModel<it.ethica.esf.model.ESFPublicAuthority> toCacheModel();
 
 	@Override
-	public ESFPublicAuthority toEscapedModel();
+	public it.ethica.esf.model.ESFPublicAuthority toEscapedModel();
 
 	@Override
-	public ESFPublicAuthority toUnescapedModel();
+	public it.ethica.esf.model.ESFPublicAuthority toUnescapedModel();
 
 	@Override
 	public String toString();

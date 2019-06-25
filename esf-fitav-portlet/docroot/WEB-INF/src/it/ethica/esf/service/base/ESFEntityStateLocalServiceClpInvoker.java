@@ -106,75 +106,75 @@ public class ESFEntityStateLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFEntityState"
 			};
 
-		_methodName394 = "getBeanIdentifier";
+		_methodName396 = "getBeanIdentifier";
 
-		_methodParameterTypes394 = new String[] {  };
+		_methodParameterTypes396 = new String[] {  };
 
-		_methodName395 = "setBeanIdentifier";
+		_methodName397 = "setBeanIdentifier";
 
-		_methodParameterTypes395 = new String[] { "java.lang.String" };
+		_methodParameterTypes397 = new String[] { "java.lang.String" };
 
-		_methodName400 = "findESFEntityStateByCN";
+		_methodName402 = "findESFEntityStateByCN";
 
-		_methodParameterTypes400 = new String[] { "java.lang.String" };
+		_methodParameterTypes402 = new String[] { "java.lang.String" };
 
-		_methodName401 = "findESFEntityStateByC_PK";
-
-		_methodParameterTypes401 = new String[] { "java.lang.String", "long" };
-
-		_methodName402 = "findESFEntityStateByC_PK_S";
-
-		_methodParameterTypes402 = new String[] {
-				"java.lang.String", "long", "long"
-			};
-
-		_methodName403 = "findESFEntityStateByC_S";
+		_methodName403 = "findESFEntityStateByC_PK";
 
 		_methodParameterTypes403 = new String[] { "java.lang.String", "long" };
 
-		_methodName404 = "findESFEntityStateCName_CPk";
+		_methodName404 = "findESFEntityStateByC_PK_S";
 
-		_methodParameterTypes404 = new String[] { "java.lang.String", "long" };
+		_methodParameterTypes404 = new String[] {
+				"java.lang.String", "long", "long"
+			};
 
 		_methodName405 = "findESFEntityStateByC_S";
 
-		_methodParameterTypes405 = new String[] {
-				"java.lang.String", "long", "int", "int"
-			};
+		_methodParameterTypes405 = new String[] { "java.lang.String", "long" };
 
-		_methodName406 = "addEntityState";
+		_methodName406 = "findESFEntityStateCName_CPk";
 
-		_methodParameterTypes406 = new String[] {
-				"long", "long", "long", "java.lang.String", "long", "long"
-			};
+		_methodParameterTypes406 = new String[] { "java.lang.String", "long" };
 
-		_methodName407 = "addEntityState";
+		_methodName407 = "findESFEntityStateByC_S";
 
 		_methodParameterTypes407 = new String[] {
-				"long", "java.lang.String", "long", "long",
-				"com.liferay.portal.service.ServiceContext"
+				"java.lang.String", "long", "int", "int"
 			};
 
 		_methodName408 = "addEntityState";
 
 		_methodParameterTypes408 = new String[] {
+				"long", "long", "long", "java.lang.String", "long", "long"
+			};
+
+		_methodName409 = "addEntityState";
+
+		_methodParameterTypes409 = new String[] {
+				"long", "java.lang.String", "long", "long",
+				"com.liferay.portal.service.ServiceContext"
+			};
+
+		_methodName410 = "addEntityState";
+
+		_methodParameterTypes410 = new String[] {
 				"long", "java.lang.String", "long", "long", "java.util.Date",
 				"java.util.Date", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName409 = "updateEntityState";
+		_methodName411 = "updateEntityState";
 
-		_methodParameterTypes409 = new String[] {
+		_methodParameterTypes411 = new String[] {
 				"long", "long", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName410 = "findAllESFEntityStateByClassName_ClassPK";
+		_methodName412 = "findAllESFEntityStateByClassName_ClassPK";
 
-		_methodParameterTypes410 = new String[] { "java.lang.String", "long" };
+		_methodParameterTypes412 = new String[] { "java.lang.String", "long" };
 
-		_methodName411 = "findESShooterLastCardActive";
+		_methodName413 = "findESShooterLastCardActive";
 
-		_methodParameterTypes411 = new String[] { "long" };
+		_methodParameterTypes413 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -266,58 +266,58 @@ public class ESFEntityStateLocalServiceClpInvoker {
 			return ESFEntityStateLocalServiceUtil.updateESFEntityState((it.ethica.esf.model.ESFEntityState)arguments[0]);
 		}
 
-		if (_methodName394.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
+		if (_methodName396.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
 			return ESFEntityStateLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName395.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
+		if (_methodName397.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
 			ESFEntityStateLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName400.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes400, parameterTypes)) {
-			return ESFEntityStateLocalServiceUtil.findESFEntityStateByCN((java.lang.String)arguments[0]);
-		}
-
-		if (_methodName401.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes401, parameterTypes)) {
-			return ESFEntityStateLocalServiceUtil.findESFEntityStateByC_PK((java.lang.String)arguments[0],
-				((Long)arguments[1]).longValue());
-		}
-
 		if (_methodName402.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes402, parameterTypes)) {
-			return ESFEntityStateLocalServiceUtil.findESFEntityStateByC_PK_S((java.lang.String)arguments[0],
-				((Long)arguments[1]).longValue(),
-				((Long)arguments[2]).longValue());
+			return ESFEntityStateLocalServiceUtil.findESFEntityStateByCN((java.lang.String)arguments[0]);
 		}
 
 		if (_methodName403.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes403, parameterTypes)) {
-			return ESFEntityStateLocalServiceUtil.findESFEntityStateByC_S((java.lang.String)arguments[0],
+			return ESFEntityStateLocalServiceUtil.findESFEntityStateByC_PK((java.lang.String)arguments[0],
 				((Long)arguments[1]).longValue());
 		}
 
 		if (_methodName404.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes404, parameterTypes)) {
-			return ESFEntityStateLocalServiceUtil.findESFEntityStateCName_CPk((java.lang.String)arguments[0],
-				((Long)arguments[1]).longValue());
+			return ESFEntityStateLocalServiceUtil.findESFEntityStateByC_PK_S((java.lang.String)arguments[0],
+				((Long)arguments[1]).longValue(),
+				((Long)arguments[2]).longValue());
 		}
 
 		if (_methodName405.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes405, parameterTypes)) {
+			return ESFEntityStateLocalServiceUtil.findESFEntityStateByC_S((java.lang.String)arguments[0],
+				((Long)arguments[1]).longValue());
+		}
+
+		if (_methodName406.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes406, parameterTypes)) {
+			return ESFEntityStateLocalServiceUtil.findESFEntityStateCName_CPk((java.lang.String)arguments[0],
+				((Long)arguments[1]).longValue());
+		}
+
+		if (_methodName407.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes407, parameterTypes)) {
 			return ESFEntityStateLocalServiceUtil.findESFEntityStateByC_S((java.lang.String)arguments[0],
 				((Long)arguments[1]).longValue(),
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
-		if (_methodName406.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes406, parameterTypes)) {
+		if (_methodName408.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes408, parameterTypes)) {
 			return ESFEntityStateLocalServiceUtil.addEntityState(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -326,8 +326,8 @@ public class ESFEntityStateLocalServiceClpInvoker {
 				((Long)arguments[5]).longValue());
 		}
 
-		if (_methodName407.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes407, parameterTypes)) {
+		if (_methodName409.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes409, parameterTypes)) {
 			return ESFEntityStateLocalServiceUtil.addEntityState(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(),
@@ -335,8 +335,8 @@ public class ESFEntityStateLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[4]);
 		}
 
-		if (_methodName408.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes408, parameterTypes)) {
+		if (_methodName410.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes410, parameterTypes)) {
 			return ESFEntityStateLocalServiceUtil.addEntityState(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(),
@@ -345,21 +345,21 @@ public class ESFEntityStateLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[6]);
 		}
 
-		if (_methodName409.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes409, parameterTypes)) {
+		if (_methodName411.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes411, parameterTypes)) {
 			return ESFEntityStateLocalServiceUtil.updateEntityState(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[2]);
 		}
 
-		if (_methodName410.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes410, parameterTypes)) {
+		if (_methodName412.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes412, parameterTypes)) {
 			return ESFEntityStateLocalServiceUtil.findAllESFEntityStateByClassName_ClassPK((java.lang.String)arguments[0],
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName411.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes411, parameterTypes)) {
+		if (_methodName413.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes413, parameterTypes)) {
 			return ESFEntityStateLocalServiceUtil.findESShooterLastCardActive(((Long)arguments[0]).longValue());
 		}
 
@@ -398,14 +398,10 @@ public class ESFEntityStateLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName394;
-	private String[] _methodParameterTypes394;
-	private String _methodName395;
-	private String[] _methodParameterTypes395;
-	private String _methodName400;
-	private String[] _methodParameterTypes400;
-	private String _methodName401;
-	private String[] _methodParameterTypes401;
+	private String _methodName396;
+	private String[] _methodParameterTypes396;
+	private String _methodName397;
+	private String[] _methodParameterTypes397;
 	private String _methodName402;
 	private String[] _methodParameterTypes402;
 	private String _methodName403;
@@ -426,4 +422,8 @@ public class ESFEntityStateLocalServiceClpInvoker {
 	private String[] _methodParameterTypes410;
 	private String _methodName411;
 	private String[] _methodParameterTypes411;
+	private String _methodName412;
+	private String[] _methodParameterTypes412;
+	private String _methodName413;
+	private String[] _methodParameterTypes413;
 }

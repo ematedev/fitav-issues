@@ -167,19 +167,19 @@ public interface ESFTransitionModel extends BaseModel<ESFTransition> {
 	public Object clone();
 
 	@Override
-	public int compareTo(ESFTransition esfTransition);
+	public int compareTo(it.ethica.esf.model.ESFTransition esfTransition);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ESFTransition> toCacheModel();
+	public CacheModel<it.ethica.esf.model.ESFTransition> toCacheModel();
 
 	@Override
-	public ESFTransition toEscapedModel();
+	public it.ethica.esf.model.ESFTransition toEscapedModel();
 
 	@Override
-	public ESFTransition toUnescapedModel();
+	public it.ethica.esf.model.ESFTransition toUnescapedModel();
 
 	@Override
 	public String toString();

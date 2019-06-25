@@ -151,7 +151,7 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 		try {
 			
 			//Inizializzo la lista
-			List<VW_NomineDirettoriTiro> listaNomine = new ArrayList<>();
+			List<VW_NomineDirettoriTiro> listaNomine = new ArrayList<VW_NomineDirettoriTiro>();
 		
 			//Creo la DynamicQuery e effettuo i controlli sulle variabili
 			DynamicQuery dq = DynamicQueryFactoryUtil.forClass(VW_NomineDirettoriTiro.class, "Direttori", PortletClassLoaderUtil.getClassLoader());
@@ -195,7 +195,7 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 			listaNomine = VW_DatiDrettoreTiroLocalServiceUtil.dynamicQuery(dq); 
 			
 			//Ordino la lista
-			List<VW_NomineDirettoriTiro> listaModificabile = new ArrayList<>(listaNomine);
+			List<VW_NomineDirettoriTiro> listaModificabile = new ArrayList<VW_NomineDirettoriTiro>(listaNomine);
 			Collections.sort(listaModificabile, new CompareByData());
 			int elementiTrovati = listaNomine.size();
 			
@@ -254,7 +254,7 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 		try { 
   			
  			//Inizializzo la lista
-			List<VM_TiratoriTesserati> listaTiratori = new ArrayList<>();
+			List<VM_TiratoriTesserati> listaTiratori = new ArrayList<VM_TiratoriTesserati>();
 		
 			//Creo la DynamicQuery e effettuo i controlli sulle variabili
 			DynamicQuery dq = DynamicQueryFactoryUtil.forClass(VM_TiratoriTesserati.class, "Tiratori", PortletClassLoaderUtil.getClassLoader());
@@ -268,7 +268,7 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 			listaTiratori = VM_TiratoriTesseratiLocalServiceUtil.dynamicQuery(dq);
 			
 			//Ordino la lista
-			List<VM_TiratoriTesserati> listaModificabile = new ArrayList<>(listaTiratori);
+			List<VM_TiratoriTesserati> listaModificabile = new ArrayList<VM_TiratoriTesserati>(listaTiratori);
 			Collections.sort(listaModificabile, new CompareByNomeCognome());
 			
 			//Valorizzo i campi e ritorno alla pagina 
@@ -295,16 +295,6 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 			
 		}  
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	/**

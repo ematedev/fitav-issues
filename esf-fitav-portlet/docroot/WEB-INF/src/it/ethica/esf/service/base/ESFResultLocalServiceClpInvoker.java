@@ -100,65 +100,65 @@ public class ESFResultLocalServiceClpInvoker {
 
 		_methodParameterTypes15 = new String[] { "it.ethica.esf.model.ESFResult" };
 
-		_methodName394 = "getBeanIdentifier";
+		_methodName396 = "getBeanIdentifier";
 
-		_methodParameterTypes394 = new String[] {  };
+		_methodParameterTypes396 = new String[] {  };
 
-		_methodName395 = "setBeanIdentifier";
+		_methodName397 = "setBeanIdentifier";
 
-		_methodParameterTypes395 = new String[] { "java.lang.String" };
+		_methodParameterTypes397 = new String[] { "java.lang.String" };
 
-		_methodName400 = "inserted";
-
-		_methodParameterTypes400 = new String[] { "long" };
-
-		_methodName401 = "findByESFMatchid";
-
-		_methodParameterTypes401 = new String[] { "long" };
-
-		_methodName402 = "findByESFShooterId";
+		_methodName402 = "inserted";
 
 		_methodParameterTypes402 = new String[] { "long" };
 
-		_methodName403 = "findByESFMId_UId_STId";
+		_methodName403 = "findByESFMatchid";
 
-		_methodParameterTypes403 = new String[] { "long", "long", "long" };
+		_methodParameterTypes403 = new String[] { "long" };
 
-		_methodName404 = "findESFMId_UId_STId_Single";
+		_methodName404 = "findByESFShooterId";
 
-		_methodParameterTypes404 = new String[] { "long", "long", "long" };
+		_methodParameterTypes404 = new String[] { "long" };
 
-		_methodName405 = "findByESFMId_STId_SQId";
+		_methodName405 = "findByESFMId_UId_STId";
 
 		_methodParameterTypes405 = new String[] { "long", "long", "long" };
 
-		_methodName406 = "findByESFMId_STId_SQId_TEAM";
+		_methodName406 = "findESFMId_UId_STId_Single";
 
 		_methodParameterTypes406 = new String[] { "long", "long", "long" };
 
-		_methodName407 = "findByESFMId_STId_SQId_Single";
+		_methodName407 = "findByESFMId_STId_SQId";
 
 		_methodParameterTypes407 = new String[] { "long", "long", "long" };
 
-		_methodName408 = "findDescRanking";
+		_methodName408 = "findByESFMId_STId_SQId_TEAM";
 
-		_methodParameterTypes408 = new String[] { "long" };
+		_methodParameterTypes408 = new String[] { "long", "long", "long" };
 
-		_methodName409 = "findByESFMatchidDescRanking";
+		_methodName409 = "findByESFMId_STId_SQId_Single";
 
-		_methodParameterTypes409 = new String[] { "long", "java.lang.String" };
+		_methodParameterTypes409 = new String[] { "long", "long", "long" };
 
-		_methodName410 = "getESFResultByESFMatchId_ESFUserId_SportTypeId";
+		_methodName410 = "findDescRanking";
 
-		_methodParameterTypes410 = new String[] { "long", "long", "long" };
+		_methodParameterTypes410 = new String[] { "long" };
 
-		_methodName411 = "getESFResultByESFMatchId_ESFUserId_SportTypeId_Sigle";
+		_methodName411 = "findByESFMatchidDescRanking";
 
-		_methodParameterTypes411 = new String[] { "long", "long", "long" };
+		_methodParameterTypes411 = new String[] { "long", "java.lang.String" };
 
-		_methodName412 = "getESFResultByESFMatchId_ESFUserId_SportTypeId_QualificationId_Team";
+		_methodName412 = "getESFResultByESFMatchId_ESFUserId_SportTypeId";
 
-		_methodParameterTypes412 = new String[] { "long", "long", "long", "long" };
+		_methodParameterTypes412 = new String[] { "long", "long", "long" };
+
+		_methodName413 = "getESFResultByESFMatchId_ESFUserId_SportTypeId_Sigle";
+
+		_methodParameterTypes413 = new String[] { "long", "long", "long" };
+
+		_methodName414 = "getESFResultByESFMatchId_ESFUserId_SportTypeId_QualificationId_Team";
+
+		_methodParameterTypes414 = new String[] { "long", "long", "long", "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -250,95 +250,95 @@ public class ESFResultLocalServiceClpInvoker {
 			return ESFResultLocalServiceUtil.updateESFResult((it.ethica.esf.model.ESFResult)arguments[0]);
 		}
 
-		if (_methodName394.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes394, parameterTypes)) {
+		if (_methodName396.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
 			return ESFResultLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName395.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes395, parameterTypes)) {
+		if (_methodName397.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
 			ESFResultLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName400.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes400, parameterTypes)) {
-			return ESFResultLocalServiceUtil.inserted(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName401.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes401, parameterTypes)) {
-			return ESFResultLocalServiceUtil.findByESFMatchid(((Long)arguments[0]).longValue());
-		}
-
 		if (_methodName402.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes402, parameterTypes)) {
-			return ESFResultLocalServiceUtil.findByESFShooterId(((Long)arguments[0]).longValue());
+			return ESFResultLocalServiceUtil.inserted(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName403.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes403, parameterTypes)) {
-			return ESFResultLocalServiceUtil.findByESFMId_UId_STId(((Long)arguments[0]).longValue(),
-				((Long)arguments[1]).longValue(),
-				((Long)arguments[2]).longValue());
+			return ESFResultLocalServiceUtil.findByESFMatchid(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName404.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes404, parameterTypes)) {
-			return ESFResultLocalServiceUtil.findESFMId_UId_STId_Single(((Long)arguments[0]).longValue(),
-				((Long)arguments[1]).longValue(),
-				((Long)arguments[2]).longValue());
+			return ESFResultLocalServiceUtil.findByESFShooterId(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName405.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes405, parameterTypes)) {
-			return ESFResultLocalServiceUtil.findByESFMId_STId_SQId(((Long)arguments[0]).longValue(),
+			return ESFResultLocalServiceUtil.findByESFMId_UId_STId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue());
 		}
 
 		if (_methodName406.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes406, parameterTypes)) {
-			return ESFResultLocalServiceUtil.findByESFMId_STId_SQId_TEAM(((Long)arguments[0]).longValue(),
+			return ESFResultLocalServiceUtil.findESFMId_UId_STId_Single(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue());
 		}
 
 		if (_methodName407.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes407, parameterTypes)) {
-			return ESFResultLocalServiceUtil.findByESFMId_STId_SQId_Single(((Long)arguments[0]).longValue(),
+			return ESFResultLocalServiceUtil.findByESFMId_STId_SQId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue());
 		}
 
 		if (_methodName408.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes408, parameterTypes)) {
-			return ESFResultLocalServiceUtil.findDescRanking(((Long)arguments[0]).longValue());
+			return ESFResultLocalServiceUtil.findByESFMId_STId_SQId_TEAM(((Long)arguments[0]).longValue(),
+				((Long)arguments[1]).longValue(),
+				((Long)arguments[2]).longValue());
 		}
 
 		if (_methodName409.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes409, parameterTypes)) {
-			return ESFResultLocalServiceUtil.findByESFMatchidDescRanking(((Long)arguments[0]).longValue(),
-				(java.lang.String)arguments[1]);
+			return ESFResultLocalServiceUtil.findByESFMId_STId_SQId_Single(((Long)arguments[0]).longValue(),
+				((Long)arguments[1]).longValue(),
+				((Long)arguments[2]).longValue());
 		}
 
 		if (_methodName410.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes410, parameterTypes)) {
+			return ESFResultLocalServiceUtil.findDescRanking(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName411.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes411, parameterTypes)) {
+			return ESFResultLocalServiceUtil.findByESFMatchidDescRanking(((Long)arguments[0]).longValue(),
+				(java.lang.String)arguments[1]);
+		}
+
+		if (_methodName412.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes412, parameterTypes)) {
 			return ESFResultLocalServiceUtil.getESFResultByESFMatchId_ESFUserId_SportTypeId(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue());
 		}
 
-		if (_methodName411.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes411, parameterTypes)) {
+		if (_methodName413.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes413, parameterTypes)) {
 			return ESFResultLocalServiceUtil.getESFResultByESFMatchId_ESFUserId_SportTypeId_Sigle(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue());
 		}
 
-		if (_methodName412.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes412, parameterTypes)) {
+		if (_methodName414.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes414, parameterTypes)) {
 			return ESFResultLocalServiceUtil.getESFResultByESFMatchId_ESFUserId_SportTypeId_QualificationId_Team(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -380,14 +380,10 @@ public class ESFResultLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName394;
-	private String[] _methodParameterTypes394;
-	private String _methodName395;
-	private String[] _methodParameterTypes395;
-	private String _methodName400;
-	private String[] _methodParameterTypes400;
-	private String _methodName401;
-	private String[] _methodParameterTypes401;
+	private String _methodName396;
+	private String[] _methodParameterTypes396;
+	private String _methodName397;
+	private String[] _methodParameterTypes397;
 	private String _methodName402;
 	private String[] _methodParameterTypes402;
 	private String _methodName403;
@@ -410,4 +406,8 @@ public class ESFResultLocalServiceClpInvoker {
 	private String[] _methodParameterTypes411;
 	private String _methodName412;
 	private String[] _methodParameterTypes412;
+	private String _methodName413;
+	private String[] _methodParameterTypes413;
+	private String _methodName414;
+	private String[] _methodParameterTypes414;
 }

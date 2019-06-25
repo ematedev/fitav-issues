@@ -1,3 +1,4 @@
+<%@page import="it.ethica.esf.model.VM_TiratoriTesserati"%>
 <%@page import="it.ethica.esf.model.VW_NomineDirettoriTiro"%>
 <%@page import="com.liferay.portal.kernel.util.WebKeys"%>
 <%@page import="com.liferay.portal.kernel.dao.search.ResultRow"%>
@@ -7,10 +8,10 @@
 ResultRow row = (ResultRow) request.getAttribute(WebKeys.SEARCH_CONTAINER_RESULT_ROW);
 
 VW_NomineDirettoriTiro vw_shDr = null;
-ESFShootingDirector director = null;
+ESFShootingDirector director = null; 
 
-String tableType = (String) row.getParameter("tableType");
-boolean isView = "view".equals(tableType);
+String tableType = (String) row.getParameter("tableType"); 
+boolean isView = "view".equals(tableType); 
 long esfShootingDirectorId = 0;
 long esfUserId = 0;
 
@@ -18,7 +19,7 @@ if(isView){
 	vw_shDr = ( VW_NomineDirettoriTiro ) row.getObject();
 	esfShootingDirectorId = vw_shDr.getIdDirettoreTiro();
 	esfUserId = vw_shDr.getUserId();
-}else{
+} else{
 	director = (ESFShootingDirector) row.getObject();
 	esfShootingDirectorId = director.getEsfShootingDirectorId();
 	esfUserId = director.getEsfUserId();

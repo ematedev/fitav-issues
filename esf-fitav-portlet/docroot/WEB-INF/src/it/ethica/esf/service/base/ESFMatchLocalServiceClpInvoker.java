@@ -116,126 +116,126 @@ public class ESFMatchLocalServiceClpInvoker {
 
 		_methodParameterTypes19 = new String[] { "it.ethica.esf.model.ESFMatch" };
 
-		_methodName408 = "getBeanIdentifier";
+		_methodName410 = "getBeanIdentifier";
 
-		_methodParameterTypes408 = new String[] {  };
+		_methodParameterTypes410 = new String[] {  };
 
-		_methodName409 = "setBeanIdentifier";
+		_methodName411 = "setBeanIdentifier";
 
-		_methodParameterTypes409 = new String[] { "java.lang.String" };
+		_methodParameterTypes411 = new String[] { "java.lang.String" };
 
-		_methodName414 = "findESFMatchesByYearIsNational";
+		_methodName416 = "findESFMatchesByYearIsNational";
 
-		_methodParameterTypes414 = new String[] { "int", "boolean" };
+		_methodParameterTypes416 = new String[] { "int", "boolean" };
 
-		_methodName415 = "findESFMatchsByStateIsNational_C_S_M_C_O";
+		_methodName417 = "findESFMatchsByStateIsNational_C_S_M_C_O";
 
-		_methodParameterTypes415 = new String[] {
+		_methodParameterTypes417 = new String[] {
 				"int", "boolean", "java.lang.String", "java.util.Date", "long",
 				"long", "java.lang.String"
 			};
 
-		_methodName416 = "findESFMatchsByStateIsNational_C_S_M_C_O";
+		_methodName418 = "findESFMatchsByStateIsNational_C_S_M_C_O";
 
-		_methodParameterTypes416 = new String[] {
+		_methodParameterTypes418 = new String[] {
 				"int", "boolean", "java.lang.String", "java.util.Date", "long",
 				"long", "java.lang.String", "int", "int"
 			};
 
-		_methodName417 = "findESFMatchsByStateIsNational_C_S_M_C_A";
-
-		_methodParameterTypes417 = new String[] {
-				"int", "boolean", "java.lang.String", "java.util.Date", "long",
-				"long"
-			};
-
-		_methodName418 = "findESFMatchsByStateIsNational_C_S_M_C_A";
-
-		_methodParameterTypes418 = new String[] {
-				"int", "boolean", "java.lang.String", "java.util.Date", "long",
-				"long", "int", "int"
-			};
-
-		_methodName419 = "findESFMatchsByStateIsNational_C_S_M_C_I";
+		_methodName419 = "findESFMatchsByStateIsNational_C_S_M_C_A";
 
 		_methodParameterTypes419 = new String[] {
 				"int", "boolean", "java.lang.String", "java.util.Date", "long",
 				"long"
 			};
 
-		_methodName420 = "findESFMatchsByStateIsNational_C_S_M_C_I";
+		_methodName420 = "findESFMatchsByStateIsNational_C_S_M_C_A";
 
 		_methodParameterTypes420 = new String[] {
 				"int", "boolean", "java.lang.String", "java.util.Date", "long",
 				"long", "int", "int"
 			};
 
-		_methodName421 = "findESFMatchsByStateIsNational";
+		_methodName421 = "findESFMatchsByStateIsNational_C_S_M_C_I";
 
-		_methodParameterTypes421 = new String[] { "int", "boolean" };
+		_methodParameterTypes421 = new String[] {
+				"int", "boolean", "java.lang.String", "java.util.Date", "long",
+				"long"
+			};
 
-		_methodName422 = "findESFMatchsByStateIsNational";
+		_methodName422 = "findESFMatchsByStateIsNational_C_S_M_C_I";
 
-		_methodParameterTypes422 = new String[] { "int", "boolean", "int", "int" };
+		_methodParameterTypes422 = new String[] {
+				"int", "boolean", "java.lang.String", "java.util.Date", "long",
+				"long", "int", "int"
+			};
 
-		_methodName423 = "findESFMatchsByO_S_N";
+		_methodName423 = "findESFMatchsByStateIsNational";
 
-		_methodParameterTypes423 = new String[] {
+		_methodParameterTypes423 = new String[] { "int", "boolean" };
+
+		_methodName424 = "findESFMatchsByStateIsNational";
+
+		_methodParameterTypes424 = new String[] { "int", "boolean", "int", "int" };
+
+		_methodName425 = "findESFMatchsByO_S_N";
+
+		_methodParameterTypes425 = new String[] {
 				"long", "int", "boolean", "int", "int"
 			};
 
-		_methodName424 = "findbyIsChangeCategoryYear";
+		_methodName426 = "findbyIsChangeCategoryYear";
 
-		_methodParameterTypes424 = new String[] { "boolean", "long", "int" };
+		_methodParameterTypes426 = new String[] { "boolean", "long", "int" };
 
-		_methodName425 = "findbyIsChangeCategoryYearDescription";
+		_methodName427 = "findbyIsChangeCategoryYearDescription";
 
-		_methodParameterTypes425 = new String[] {
+		_methodParameterTypes427 = new String[] {
 				"boolean", "long", "int", "java.lang.Long"
 			};
 
-		_methodName426 = "getESFMatchesByMatchStartDate_T_A_D_N";
+		_methodName428 = "getESFMatchesByMatchStartDate_T_A_D_N";
 
-		_methodParameterTypes426 = new String[] {
+		_methodParameterTypes428 = new String[] {
 				"java.util.Date", "long", "long", "long", "boolean"
 			};
 
-		_methodName427 = "findMyMatches";
+		_methodName429 = "findMyMatches";
 
-		_methodParameterTypes427 = new String[] {
+		_methodParameterTypes429 = new String[] {
 				"long", "boolean", "long", "java.util.Date", "long", "long"
 			};
 
-		_methodName428 = "findByUI_iN_OI_sD_dId_STId";
+		_methodName430 = "findByUI_iN_OI_sD_dId_STId";
 
-		_methodParameterTypes428 = new String[] {
+		_methodParameterTypes430 = new String[] {
 				"long", "boolean", "long", "java.util.Date", "long", "long",
 				"int", "int"
 			};
 
-		_methodName429 = "findESFMatchsByO_S_N";
+		_methodName431 = "findESFMatchsByO_S_N";
 
-		_methodParameterTypes429 = new String[] { "long", "int", "boolean" };
-
-		_methodName430 = "findbyUserId_IsNational";
-
-		_methodParameterTypes430 = new String[] { "long", "boolean" };
-
-		_methodName431 = "findbyIsChangeCategory";
-
-		_methodParameterTypes431 = new String[] { "boolean", "long" };
+		_methodParameterTypes431 = new String[] { "long", "int", "boolean" };
 
 		_methodName432 = "findbyUserId_IsNational";
 
-		_methodParameterTypes432 = new String[] { "long", "boolean", "int", "int" };
+		_methodParameterTypes432 = new String[] { "long", "boolean" };
 
-		_methodName433 = "findbyMatchType";
+		_methodName433 = "findbyIsChangeCategory";
 
-		_methodParameterTypes433 = new String[] { "long" };
+		_methodParameterTypes433 = new String[] { "boolean", "long" };
 
-		_methodName434 = "addOrUpdateESFMatch";
+		_methodName434 = "findbyUserId_IsNational";
 
-		_methodParameterTypes434 = new String[] {
+		_methodParameterTypes434 = new String[] { "long", "boolean", "int", "int" };
+
+		_methodName435 = "findbyMatchType";
+
+		_methodParameterTypes435 = new String[] { "long" };
+
+		_methodName436 = "addOrUpdateESFMatch";
+
+		_methodParameterTypes436 = new String[] {
 				"long", "long", "long", "java.lang.String", "java.util.Date",
 				"java.util.Date", "java.lang.String", "long", "java.lang.String",
 				"boolean", "int", "long", "int", "int", "boolean", "boolean",
@@ -245,9 +245,9 @@ public class ESFMatchLocalServiceClpInvoker {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName435 = "addOrUpdateESFMatch";
+		_methodName437 = "addOrUpdateESFMatch";
 
-		_methodParameterTypes435 = new String[] {
+		_methodParameterTypes437 = new String[] {
 				"long", "long", "long", "java.lang.String", "java.util.Date",
 				"java.util.Date", "java.lang.String", "long", "java.lang.String",
 				"boolean", "int", "long", "int", "int", "boolean", "boolean",
@@ -258,9 +258,9 @@ public class ESFMatchLocalServiceClpInvoker {
 				"java.lang.String", "java.lang.String"
 			};
 
-		_methodName436 = "addOrUpdateESFMatch";
+		_methodName438 = "addOrUpdateESFMatch";
 
-		_methodParameterTypes436 = new String[] {
+		_methodParameterTypes438 = new String[] {
 				"long", "long", "long", "java.lang.String", "java.util.Date",
 				"java.util.Date", "java.lang.String", "long", "java.lang.String",
 				"boolean", "int", "long", "int", "int", "boolean", "boolean",
@@ -270,35 +270,35 @@ public class ESFMatchLocalServiceClpInvoker {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName437 = "deleteESFMatch";
+		_methodName439 = "deleteESFMatch";
 
-		_methodParameterTypes437 = new String[] {
+		_methodParameterTypes439 = new String[] {
 				"long", "com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName438 = "findbyeventType";
+		_methodName440 = "findbyeventType";
 
-		_methodParameterTypes438 = new String[] { "java.lang.String" };
+		_methodParameterTypes440 = new String[] { "java.lang.String" };
 
-		_methodName439 = "findByDescription";
-
-		_methodParameterTypes439 = new String[] { "long" };
-
-		_methodName440 = "findDelegationActiveMatch";
-
-		_methodParameterTypes440 = new String[] { "long" };
-
-		_methodName441 = "findUnfinishedMatch_UserId";
+		_methodName441 = "findByDescription";
 
 		_methodParameterTypes441 = new String[] { "long" };
 
-		_methodName442 = "getAllEsfMatchByResults";
+		_methodName442 = "findDelegationActiveMatch";
 
-		_methodParameterTypes442 = new String[] { "java.util.List" };
+		_methodParameterTypes442 = new String[] { "long" };
 
-		_methodName443 = "addOrUpdateOldESFMatch";
+		_methodName443 = "findUnfinishedMatch_UserId";
 
-		_methodParameterTypes443 = new String[] {
+		_methodParameterTypes443 = new String[] { "long" };
+
+		_methodName444 = "getAllEsfMatchByResults";
+
+		_methodParameterTypes444 = new String[] { "java.util.List" };
+
+		_methodName445 = "addOrUpdateOldESFMatch";
+
+		_methodParameterTypes445 = new String[] {
 				"long", "long", "long", "java.lang.String", "java.util.Date",
 				"java.util.Date", "java.lang.String", "long", "java.lang.String",
 				"boolean", "int", "long", "int", "int", "boolean", "boolean",
@@ -308,15 +308,15 @@ public class ESFMatchLocalServiceClpInvoker {
 				"com.liferay.portal.service.ServiceContext", "java.lang.String"
 			};
 
-		_methodName444 = "findMatchToDispute";
+		_methodName446 = "findMatchToDispute";
 
-		_methodParameterTypes444 = new String[] {
+		_methodParameterTypes446 = new String[] {
 				"java.lang.String", "boolean", "int", "int"
 			};
 
-		_methodName445 = "countMatchToDispute";
+		_methodName447 = "countMatchToDispute";
 
-		_methodParameterTypes445 = new String[] { "java.lang.String", "boolean" };
+		_methodParameterTypes447 = new String[] { "java.lang.String", "boolean" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -432,26 +432,26 @@ public class ESFMatchLocalServiceClpInvoker {
 			return ESFMatchLocalServiceUtil.updateESFMatch((it.ethica.esf.model.ESFMatch)arguments[0]);
 		}
 
-		if (_methodName408.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes408, parameterTypes)) {
+		if (_methodName410.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes410, parameterTypes)) {
 			return ESFMatchLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName409.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes409, parameterTypes)) {
+		if (_methodName411.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes411, parameterTypes)) {
 			ESFMatchLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName414.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes414, parameterTypes)) {
+		if (_methodName416.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes416, parameterTypes)) {
 			return ESFMatchLocalServiceUtil.findESFMatchesByYearIsNational(((Integer)arguments[0]).intValue(),
 				((Boolean)arguments[1]).booleanValue());
 		}
 
-		if (_methodName415.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes415, parameterTypes)) {
+		if (_methodName417.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes417, parameterTypes)) {
 			return ESFMatchLocalServiceUtil.findESFMatchsByStateIsNational_C_S_M_C_O(((Integer)arguments[0]).intValue(),
 				((Boolean)arguments[1]).booleanValue(),
 				(java.lang.String)arguments[2], (java.util.Date)arguments[3],
@@ -459,8 +459,8 @@ public class ESFMatchLocalServiceClpInvoker {
 				((Long)arguments[5]).longValue(), (java.lang.String)arguments[6]);
 		}
 
-		if (_methodName416.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes416, parameterTypes)) {
+		if (_methodName418.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes418, parameterTypes)) {
 			return ESFMatchLocalServiceUtil.findESFMatchsByStateIsNational_C_S_M_C_O(((Integer)arguments[0]).intValue(),
 				((Boolean)arguments[1]).booleanValue(),
 				(java.lang.String)arguments[2], (java.util.Date)arguments[3],
@@ -471,29 +471,9 @@ public class ESFMatchLocalServiceClpInvoker {
 				((Integer)arguments[8]).intValue());
 		}
 
-		if (_methodName417.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes417, parameterTypes)) {
-			return ESFMatchLocalServiceUtil.findESFMatchsByStateIsNational_C_S_M_C_A(((Integer)arguments[0]).intValue(),
-				((Boolean)arguments[1]).booleanValue(),
-				(java.lang.String)arguments[2], (java.util.Date)arguments[3],
-				((Long)arguments[4]).longValue(),
-				((Long)arguments[5]).longValue());
-		}
-
-		if (_methodName418.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes418, parameterTypes)) {
-			return ESFMatchLocalServiceUtil.findESFMatchsByStateIsNational_C_S_M_C_A(((Integer)arguments[0]).intValue(),
-				((Boolean)arguments[1]).booleanValue(),
-				(java.lang.String)arguments[2], (java.util.Date)arguments[3],
-				((Long)arguments[4]).longValue(),
-				((Long)arguments[5]).longValue(),
-				((Integer)arguments[6]).intValue(),
-				((Integer)arguments[7]).intValue());
-		}
-
 		if (_methodName419.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes419, parameterTypes)) {
-			return ESFMatchLocalServiceUtil.findESFMatchsByStateIsNational_C_S_M_C_I(((Integer)arguments[0]).intValue(),
+			return ESFMatchLocalServiceUtil.findESFMatchsByStateIsNational_C_S_M_C_A(((Integer)arguments[0]).intValue(),
 				((Boolean)arguments[1]).booleanValue(),
 				(java.lang.String)arguments[2], (java.util.Date)arguments[3],
 				((Long)arguments[4]).longValue(),
@@ -502,7 +482,7 @@ public class ESFMatchLocalServiceClpInvoker {
 
 		if (_methodName420.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes420, parameterTypes)) {
-			return ESFMatchLocalServiceUtil.findESFMatchsByStateIsNational_C_S_M_C_I(((Integer)arguments[0]).intValue(),
+			return ESFMatchLocalServiceUtil.findESFMatchsByStateIsNational_C_S_M_C_A(((Integer)arguments[0]).intValue(),
 				((Boolean)arguments[1]).booleanValue(),
 				(java.lang.String)arguments[2], (java.util.Date)arguments[3],
 				((Long)arguments[4]).longValue(),
@@ -513,20 +493,40 @@ public class ESFMatchLocalServiceClpInvoker {
 
 		if (_methodName421.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes421, parameterTypes)) {
-			return ESFMatchLocalServiceUtil.findESFMatchsByStateIsNational(((Integer)arguments[0]).intValue(),
-				((Boolean)arguments[1]).booleanValue());
+			return ESFMatchLocalServiceUtil.findESFMatchsByStateIsNational_C_S_M_C_I(((Integer)arguments[0]).intValue(),
+				((Boolean)arguments[1]).booleanValue(),
+				(java.lang.String)arguments[2], (java.util.Date)arguments[3],
+				((Long)arguments[4]).longValue(),
+				((Long)arguments[5]).longValue());
 		}
 
 		if (_methodName422.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes422, parameterTypes)) {
+			return ESFMatchLocalServiceUtil.findESFMatchsByStateIsNational_C_S_M_C_I(((Integer)arguments[0]).intValue(),
+				((Boolean)arguments[1]).booleanValue(),
+				(java.lang.String)arguments[2], (java.util.Date)arguments[3],
+				((Long)arguments[4]).longValue(),
+				((Long)arguments[5]).longValue(),
+				((Integer)arguments[6]).intValue(),
+				((Integer)arguments[7]).intValue());
+		}
+
+		if (_methodName423.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes423, parameterTypes)) {
+			return ESFMatchLocalServiceUtil.findESFMatchsByStateIsNational(((Integer)arguments[0]).intValue(),
+				((Boolean)arguments[1]).booleanValue());
+		}
+
+		if (_methodName424.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes424, parameterTypes)) {
 			return ESFMatchLocalServiceUtil.findESFMatchsByStateIsNational(((Integer)arguments[0]).intValue(),
 				((Boolean)arguments[1]).booleanValue(),
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
-		if (_methodName423.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes423, parameterTypes)) {
+		if (_methodName425.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes425, parameterTypes)) {
 			return ESFMatchLocalServiceUtil.findESFMatchsByO_S_N(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Boolean)arguments[2]).booleanValue(),
@@ -534,22 +534,22 @@ public class ESFMatchLocalServiceClpInvoker {
 				((Integer)arguments[4]).intValue());
 		}
 
-		if (_methodName424.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes424, parameterTypes)) {
+		if (_methodName426.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes426, parameterTypes)) {
 			return ESFMatchLocalServiceUtil.findbyIsChangeCategoryYear(((Boolean)arguments[0]).booleanValue(),
 				((Long)arguments[1]).longValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName425.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes425, parameterTypes)) {
+		if (_methodName427.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes427, parameterTypes)) {
 			return ESFMatchLocalServiceUtil.findbyIsChangeCategoryYearDescription(((Boolean)arguments[0]).booleanValue(),
 				((Long)arguments[1]).longValue(),
 				((Integer)arguments[2]).intValue(), (java.lang.Long)arguments[3]);
 		}
 
-		if (_methodName426.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes426, parameterTypes)) {
+		if (_methodName428.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes428, parameterTypes)) {
 			return ESFMatchLocalServiceUtil.getESFMatchesByMatchStartDate_T_A_D_N((java.util.Date)arguments[0],
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -557,8 +557,8 @@ public class ESFMatchLocalServiceClpInvoker {
 				((Boolean)arguments[4]).booleanValue());
 		}
 
-		if (_methodName427.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes427, parameterTypes)) {
+		if (_methodName429.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes429, parameterTypes)) {
 			return ESFMatchLocalServiceUtil.findMyMatches(((Long)arguments[0]).longValue(),
 				((Boolean)arguments[1]).booleanValue(),
 				((Long)arguments[2]).longValue(), (java.util.Date)arguments[3],
@@ -566,8 +566,8 @@ public class ESFMatchLocalServiceClpInvoker {
 				((Long)arguments[5]).longValue());
 		}
 
-		if (_methodName428.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes428, parameterTypes)) {
+		if (_methodName430.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes430, parameterTypes)) {
 			return ESFMatchLocalServiceUtil.findByUI_iN_OI_sD_dId_STId(((Long)arguments[0]).longValue(),
 				((Boolean)arguments[1]).booleanValue(),
 				((Long)arguments[2]).longValue(), (java.util.Date)arguments[3],
@@ -577,40 +577,40 @@ public class ESFMatchLocalServiceClpInvoker {
 				((Integer)arguments[7]).intValue());
 		}
 
-		if (_methodName429.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes429, parameterTypes)) {
+		if (_methodName431.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes431, parameterTypes)) {
 			return ESFMatchLocalServiceUtil.findESFMatchsByO_S_N(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Boolean)arguments[2]).booleanValue());
 		}
 
-		if (_methodName430.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes430, parameterTypes)) {
+		if (_methodName432.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes432, parameterTypes)) {
 			return ESFMatchLocalServiceUtil.findbyUserId_IsNational(((Long)arguments[0]).longValue(),
 				((Boolean)arguments[1]).booleanValue());
 		}
 
-		if (_methodName431.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes431, parameterTypes)) {
+		if (_methodName433.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes433, parameterTypes)) {
 			return ESFMatchLocalServiceUtil.findbyIsChangeCategory(((Boolean)arguments[0]).booleanValue(),
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName432.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes432, parameterTypes)) {
+		if (_methodName434.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes434, parameterTypes)) {
 			return ESFMatchLocalServiceUtil.findbyUserId_IsNational(((Long)arguments[0]).longValue(),
 				((Boolean)arguments[1]).booleanValue(),
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
-		if (_methodName433.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes433, parameterTypes)) {
+		if (_methodName435.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes435, parameterTypes)) {
 			return ESFMatchLocalServiceUtil.findbyMatchType(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName434.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes434, parameterTypes)) {
+		if (_methodName436.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes436, parameterTypes)) {
 			return ESFMatchLocalServiceUtil.addOrUpdateESFMatch(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -635,8 +635,8 @@ public class ESFMatchLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[25]);
 		}
 
-		if (_methodName435.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes435, parameterTypes)) {
+		if (_methodName437.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes437, parameterTypes)) {
 			return ESFMatchLocalServiceUtil.addOrUpdateESFMatch(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -664,8 +664,8 @@ public class ESFMatchLocalServiceClpInvoker {
 				(java.lang.String)arguments[28], (java.lang.String)arguments[29]);
 		}
 
-		if (_methodName436.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes436, parameterTypes)) {
+		if (_methodName438.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes438, parameterTypes)) {
 			return ESFMatchLocalServiceUtil.addOrUpdateESFMatch(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -691,39 +691,39 @@ public class ESFMatchLocalServiceClpInvoker {
 				(com.liferay.portal.service.ServiceContext)arguments[26]);
 		}
 
-		if (_methodName437.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes437, parameterTypes)) {
+		if (_methodName439.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes439, parameterTypes)) {
 			return ESFMatchLocalServiceUtil.deleteESFMatch(((Long)arguments[0]).longValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[1]);
 		}
 
-		if (_methodName438.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes438, parameterTypes)) {
-			return ESFMatchLocalServiceUtil.findbyeventType((java.lang.String)arguments[0]);
-		}
-
-		if (_methodName439.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes439, parameterTypes)) {
-			return ESFMatchLocalServiceUtil.findByDescription(((Long)arguments[0]).longValue());
-		}
-
 		if (_methodName440.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes440, parameterTypes)) {
-			return ESFMatchLocalServiceUtil.findDelegationActiveMatch(((Long)arguments[0]).longValue());
+			return ESFMatchLocalServiceUtil.findbyeventType((java.lang.String)arguments[0]);
 		}
 
 		if (_methodName441.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes441, parameterTypes)) {
-			return ESFMatchLocalServiceUtil.findUnfinishedMatch_UserId(((Long)arguments[0]).longValue());
+			return ESFMatchLocalServiceUtil.findByDescription(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName442.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes442, parameterTypes)) {
-			return ESFMatchLocalServiceUtil.getAllEsfMatchByResults((java.util.List<it.ethica.esf.model.ESFNationalMatchResult>)arguments[0]);
+			return ESFMatchLocalServiceUtil.findDelegationActiveMatch(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName443.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes443, parameterTypes)) {
+			return ESFMatchLocalServiceUtil.findUnfinishedMatch_UserId(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName444.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes444, parameterTypes)) {
+			return ESFMatchLocalServiceUtil.getAllEsfMatchByResults((java.util.List<it.ethica.esf.model.ESFNationalMatchResult>)arguments[0]);
+		}
+
+		if (_methodName445.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes445, parameterTypes)) {
 			return ESFMatchLocalServiceUtil.addOrUpdateOldESFMatch(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(),
@@ -749,16 +749,16 @@ public class ESFMatchLocalServiceClpInvoker {
 				(java.lang.String)arguments[26]);
 		}
 
-		if (_methodName444.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes444, parameterTypes)) {
+		if (_methodName446.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes446, parameterTypes)) {
 			return ESFMatchLocalServiceUtil.findMatchToDispute((java.lang.String)arguments[0],
 				((Boolean)arguments[1]).booleanValue(),
 				((Integer)arguments[2]).intValue(),
 				((Integer)arguments[3]).intValue());
 		}
 
-		if (_methodName445.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes445, parameterTypes)) {
+		if (_methodName447.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes447, parameterTypes)) {
 			return ESFMatchLocalServiceUtil.countMatchToDispute((java.lang.String)arguments[0],
 				((Boolean)arguments[1]).booleanValue());
 		}
@@ -806,14 +806,10 @@ public class ESFMatchLocalServiceClpInvoker {
 	private String[] _methodParameterTypes18;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
-	private String _methodName408;
-	private String[] _methodParameterTypes408;
-	private String _methodName409;
-	private String[] _methodParameterTypes409;
-	private String _methodName414;
-	private String[] _methodParameterTypes414;
-	private String _methodName415;
-	private String[] _methodParameterTypes415;
+	private String _methodName410;
+	private String[] _methodParameterTypes410;
+	private String _methodName411;
+	private String[] _methodParameterTypes411;
 	private String _methodName416;
 	private String[] _methodParameterTypes416;
 	private String _methodName417;
@@ -874,4 +870,8 @@ public class ESFMatchLocalServiceClpInvoker {
 	private String[] _methodParameterTypes444;
 	private String _methodName445;
 	private String[] _methodParameterTypes445;
+	private String _methodName446;
+	private String[] _methodParameterTypes446;
+	private String _methodName447;
+	private String[] _methodParameterTypes447;
 }

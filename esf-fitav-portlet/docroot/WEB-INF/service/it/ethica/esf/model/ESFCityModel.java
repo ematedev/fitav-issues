@@ -241,19 +241,19 @@ public interface ESFCityModel extends BaseModel<ESFCity> {
 	public Object clone();
 
 	@Override
-	public int compareTo(ESFCity esfCity);
+	public int compareTo(it.ethica.esf.model.ESFCity esfCity);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ESFCity> toCacheModel();
+	public CacheModel<it.ethica.esf.model.ESFCity> toCacheModel();
 
 	@Override
-	public ESFCity toEscapedModel();
+	public it.ethica.esf.model.ESFCity toEscapedModel();
 
 	@Override
-	public ESFCity toUnescapedModel();
+	public it.ethica.esf.model.ESFCity toUnescapedModel();
 
 	@Override
 	public String toString();

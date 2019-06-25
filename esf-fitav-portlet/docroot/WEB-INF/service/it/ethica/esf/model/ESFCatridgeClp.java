@@ -424,6 +424,10 @@ public class ESFCatridgeClp extends BaseModelImpl<ESFCatridge>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -503,4 +507,5 @@ public class ESFCatridgeClp extends BaseModelImpl<ESFCatridge>
 	private long _catridgeCaliber;
 	private String _note;
 	private BaseModel<?> _esfCatridgeRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

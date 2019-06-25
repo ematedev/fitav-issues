@@ -11,7 +11,7 @@ String mvcPath = ParamUtil.getString(request, "mvcPath");
 ResultRow row = (ResultRow) request.getAttribute(WebKeys.SEARCH_CONTAINER_RESULT_ROW);
 //Prende l'utente
 VM_TiratoriTesserati tiratore = (VM_TiratoriTesserati)row.getObject();
- 
+//System.out.printf("#########################################################[%s]\n",tiratore.getUserId);
 %>
 	<!-- Definisce la render url -->
 	<portlet:renderURL var="editURL">
@@ -20,7 +20,6 @@ VM_TiratoriTesserati tiratore = (VM_TiratoriTesserati)row.getObject();
 			<portlet:param name="mvcPath"
 				value='<%=templatePath + "shootingDirectorInfo.jsp"%>' />
 	</portlet:renderURL>
- 	
  	<!-- Definisce l'icona visualizza della tabella -->
 	<liferay-ui:icon image="edit" message="Visualizza e assegna" url="<%=editURL.toString()%>" />
  	
