@@ -193,11 +193,12 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 		
 			//Eseguo la query
 			listaNomine = VW_DatiDrettoreTiroLocalServiceUtil.dynamicQuery(dq); 
-			
+			int elementiTrovati = listaNomine.size();
+			_log.debug(String.format("Elementi nella lista: [%s]\n", elementiTrovati));
 			//Ordino la lista
 			List<VW_NomineDirettoriTiro> listaModificabile = new ArrayList<VW_NomineDirettoriTiro>(listaNomine);
-			Collections.sort(listaModificabile, new CompareByData());
-			int elementiTrovati = listaNomine.size();
+			Collections.sort(listaModificabile, new CompareByData()); 
+			_log.debug(String.format("Elementi nella lista modificabile: [%s]\n", listaModificabile.size()));
 			
 			//Valorizzo i campi e ritorno alla pagina 
 			request.setAttribute("listaNomine", listaModificabile);
@@ -207,15 +208,15 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 			request.setAttribute("successMessage", messaggio);
 			
 			//DA CANCELLARE
-			_log.debug(String.format("Elementi nella lista: [%s]\n", elementiTrovati));
-			_log.debug(String.format("Elementi nella lista modificabile: [%s]\n", listaModificabile.size()));
+			
+			
 			
 			//Se c'è bisogno valorizzare i campi del search container
 			if(delta != 0) { response.setRenderParameter("delta", String.valueOf(delta)); }
 			if(paginaRicercaCorrente != 0) { response.setRenderParameter("cur", String.valueOf(paginaRicercaCorrente)); }
 			
 		} catch (Exception e) {
-			
+			e.printStackTrace();
 			//Mando un messaggio di errore alla jsp
 			SessionErrors.add(request, "error-ricerca");
 			
