@@ -319,6 +319,10 @@ public class ESFPublicAuthorityClp extends BaseModelImpl<ESFPublicAuthority>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -376,4 +380,5 @@ public class ESFPublicAuthorityClp extends BaseModelImpl<ESFPublicAuthority>
 	private Date _modifiedDate;
 	private String _description;
 	private BaseModel<?> _esfPublicAuthorityRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

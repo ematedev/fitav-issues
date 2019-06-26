@@ -295,6 +295,10 @@ public class ESFJunioresClp extends BaseModelImpl<ESFJuniores>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -346,4 +350,5 @@ public class ESFJunioresClp extends BaseModelImpl<ESFJuniores>
 	private Date _startDate;
 	private Date _endDate;
 	private BaseModel<?> _esfJunioresRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

@@ -149,6 +149,7 @@
 	<bean id="it.ethica.esf.service.persistence.ESFSportTypePersistence" class="it.ethica.esf.service.persistence.ESFSportTypePersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFStateLocalService" class="it.ethica.esf.service.impl.ESFStateLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFStatePersistence" class="it.ethica.esf.service.persistence.ESFStatePersistenceImpl" parent="basePersistence" />
+	<bean id="it.ethica.esf.service.ESFStateAssEntityLocalService" class="it.ethica.esf.service.impl.ESFStateAssEntityLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFStateAssEntityPersistence" class="it.ethica.esf.service.persistence.ESFStateAssEntityPersistenceImpl" parent="basePersistence" />
 	<bean id="it.ethica.esf.service.ESFSuspensiveCodeLocalService" class="it.ethica.esf.service.impl.ESFSuspensiveCodeLocalServiceImpl" />
 	<bean id="it.ethica.esf.service.persistence.ESFSuspensiveCodePersistence" class="it.ethica.esf.service.persistence.ESFSuspensiveCodePersistenceImpl" parent="basePersistence" />

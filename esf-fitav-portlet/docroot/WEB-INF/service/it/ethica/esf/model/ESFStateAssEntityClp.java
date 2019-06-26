@@ -15,12 +15,14 @@
 package it.ethica.esf.model;
 
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.impl.BaseModelImpl;
 
 import it.ethica.esf.service.ClpSerializer;
+import it.ethica.esf.service.ESFStateAssEntityLocalServiceUtil;
 import it.ethica.esf.service.persistence.ESFStateAssEntityPK;
 
 import java.io.Serializable;
@@ -191,6 +193,16 @@ public class ESFStateAssEntityClp extends BaseModelImpl<ESFStateAssEntity>
 	}
 
 	@Override
+	public void persist() throws SystemException {
+		if (this.isNew()) {
+			ESFStateAssEntityLocalServiceUtil.addESFStateAssEntity(this);
+		}
+		else {
+			ESFStateAssEntityLocalServiceUtil.updateESFStateAssEntity(this);
+		}
+	}
+
+	@Override
 	public ESFStateAssEntity toEscapedModel() {
 		return (ESFStateAssEntity)ProxyUtil.newProxyInstance(ESFStateAssEntity.class.getClassLoader(),
 			new Class[] { ESFStateAssEntity.class },
@@ -236,6 +248,10 @@ public class ESFStateAssEntityClp extends BaseModelImpl<ESFStateAssEntity>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey().hashCode();
@@ -279,4 +295,5 @@ public class ESFStateAssEntityClp extends BaseModelImpl<ESFStateAssEntity>
 	private long _esfStateId;
 	private String _className;
 	private BaseModel<?> _esfStateAssEntityRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

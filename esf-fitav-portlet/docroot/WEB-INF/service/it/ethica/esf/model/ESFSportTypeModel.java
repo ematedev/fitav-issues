@@ -352,19 +352,19 @@ public interface ESFSportTypeModel extends BaseModel<ESFSportType>,
 	public Object clone();
 
 	@Override
-	public int compareTo(ESFSportType esfSportType);
+	public int compareTo(it.ethica.esf.model.ESFSportType esfSportType);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ESFSportType> toCacheModel();
+	public CacheModel<it.ethica.esf.model.ESFSportType> toCacheModel();
 
 	@Override
-	public ESFSportType toEscapedModel();
+	public it.ethica.esf.model.ESFSportType toEscapedModel();
 
 	@Override
-	public ESFSportType toUnescapedModel();
+	public it.ethica.esf.model.ESFSportType toUnescapedModel();
 
 	@Override
 	public String toString();

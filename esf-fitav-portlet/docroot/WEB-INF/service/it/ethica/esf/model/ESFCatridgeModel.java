@@ -211,19 +211,19 @@ public interface ESFCatridgeModel extends BaseModel<ESFCatridge> {
 	public Object clone();
 
 	@Override
-	public int compareTo(ESFCatridge esfCatridge);
+	public int compareTo(it.ethica.esf.model.ESFCatridge esfCatridge);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ESFCatridge> toCacheModel();
+	public CacheModel<it.ethica.esf.model.ESFCatridge> toCacheModel();
 
 	@Override
-	public ESFCatridge toEscapedModel();
+	public it.ethica.esf.model.ESFCatridge toEscapedModel();
 
 	@Override
-	public ESFCatridge toUnescapedModel();
+	public it.ethica.esf.model.ESFCatridge toUnescapedModel();
 
 	@Override
 	public String toString();

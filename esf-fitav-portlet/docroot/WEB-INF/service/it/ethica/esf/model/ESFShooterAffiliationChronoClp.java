@@ -513,6 +513,10 @@ public class ESFShooterAffiliationChronoClp extends BaseModelImpl<ESFShooterAffi
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -612,4 +616,5 @@ public class ESFShooterAffiliationChronoClp extends BaseModelImpl<ESFShooterAffi
 	private String _esfOrganization;
 	private String _note;
 	private BaseModel<?> _esfShooterAffiliationChronoRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

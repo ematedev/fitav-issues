@@ -347,6 +347,10 @@ public class ESFFieldESFElectronicClp extends BaseModelImpl<ESFFieldESFElectroni
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -411,4 +415,5 @@ public class ESFFieldESFElectronicClp extends BaseModelImpl<ESFFieldESFElectroni
 	private long _fieldId;
 	private String _description;
 	private BaseModel<?> _esfFieldESFElectronicRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

@@ -124,19 +124,19 @@ public interface ESFCountryModel extends BaseModel<ESFCountry> {
 	public Object clone();
 
 	@Override
-	public int compareTo(ESFCountry esfCountry);
+	public int compareTo(it.ethica.esf.model.ESFCountry esfCountry);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ESFCountry> toCacheModel();
+	public CacheModel<it.ethica.esf.model.ESFCountry> toCacheModel();
 
 	@Override
-	public ESFCountry toEscapedModel();
+	public it.ethica.esf.model.ESFCountry toEscapedModel();
 
 	@Override
-	public ESFCountry toUnescapedModel();
+	public it.ethica.esf.model.ESFCountry toUnescapedModel();
 
 	@Override
 	public String toString();

@@ -86,6 +86,7 @@ import it.ethica.esf.service.ESFShootingDirectorQualificationLocalServiceUtil;
 import it.ethica.esf.service.ESFSpecificLocalServiceUtil;
 import it.ethica.esf.service.ESFSpecificServiceUtil;
 import it.ethica.esf.service.ESFSportTypeLocalServiceUtil;
+import it.ethica.esf.service.ESFStateAssEntityLocalServiceUtil;
 import it.ethica.esf.service.ESFStateLocalServiceUtil;
 import it.ethica.esf.service.ESFSuspensiveCodeLocalServiceUtil;
 import it.ethica.esf.service.ESFSuspensiveShootingDirectorLocalServiceUtil;
@@ -256,6 +257,8 @@ public class ClpMessageListener extends BaseMessageListener {
 			ESFSportTypeLocalServiceUtil.clearService();
 
 			ESFStateLocalServiceUtil.clearService();
+
+			ESFStateAssEntityLocalServiceUtil.clearService();
 
 			ESFSuspensiveCodeLocalServiceUtil.clearService();
 

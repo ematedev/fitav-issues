@@ -280,6 +280,10 @@ public class ESFBrandClp extends BaseModelImpl<ESFBrand> implements ESFBrand {
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -330,4 +334,5 @@ public class ESFBrandClp extends BaseModelImpl<ESFBrand> implements ESFBrand {
 	private String _name;
 	private String _description;
 	private BaseModel<?> _esfBrandRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

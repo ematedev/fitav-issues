@@ -288,19 +288,19 @@ public interface ESFCaneModel extends BaseModel<ESFCane> {
 	public Object clone();
 
 	@Override
-	public int compareTo(ESFCane esfCane);
+	public int compareTo(it.ethica.esf.model.ESFCane esfCane);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ESFCane> toCacheModel();
+	public CacheModel<it.ethica.esf.model.ESFCane> toCacheModel();
 
 	@Override
-	public ESFCane toEscapedModel();
+	public it.ethica.esf.model.ESFCane toEscapedModel();
 
 	@Override
-	public ESFCane toUnescapedModel();
+	public it.ethica.esf.model.ESFCane toUnescapedModel();
 
 	@Override
 	public String toString();

@@ -287,6 +287,10 @@ public class ESFAnnualConiReportClp extends BaseModelImpl<ESFAnnualConiReport>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -337,4 +341,5 @@ public class ESFAnnualConiReportClp extends BaseModelImpl<ESFAnnualConiReport>
 	private long _assId;
 	private int _year;
 	private BaseModel<?> _esfAnnualConiReportRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

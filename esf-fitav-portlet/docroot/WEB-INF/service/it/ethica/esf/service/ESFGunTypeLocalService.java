@@ -16,6 +16,7 @@ package it.ethica.esf.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface ESFGunTypeLocalService extends BaseLocalService,
 	* @return the e s f gun type that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFGunType addESFGunType(
 		it.ethica.esf.model.ESFGunType esfGunType)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -72,6 +74,7 @@ public interface ESFGunTypeLocalService extends BaseLocalService,
 	* @throws PortalException if a e s f gun type with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFGunType deleteESFGunType(long esfGunTypeId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
@@ -83,6 +86,7 @@ public interface ESFGunTypeLocalService extends BaseLocalService,
 	* @return the e s f gun type that was removed
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFGunType deleteESFGunType(
 		it.ethica.esf.model.ESFGunType esfGunType)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -278,6 +282,7 @@ public interface ESFGunTypeLocalService extends BaseLocalService,
 	* @return the e s f gun type that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFGunType updateESFGunType(
 		it.ethica.esf.model.ESFGunType esfGunType)
 		throws com.liferay.portal.kernel.exception.SystemException;
