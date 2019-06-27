@@ -19,6 +19,7 @@ import com.liferay.portal.kernel.dao.orm.EntityCacheUtil;
 import com.liferay.portal.kernel.dao.orm.FinderCacheUtil;
 import com.liferay.portal.kernel.dao.orm.FinderPath;
 import com.liferay.portal.kernel.dao.orm.Query;
+import com.liferay.portal.kernel.dao.orm.QueryPos;
 import com.liferay.portal.kernel.dao.orm.QueryUtil;
 import com.liferay.portal.kernel.dao.orm.Session;
 import com.liferay.portal.kernel.exception.SystemException;
@@ -30,6 +31,7 @@ import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.kernel.util.PropsKeys;
 import com.liferay.portal.kernel.util.PropsUtil;
 import com.liferay.portal.kernel.util.StringBundler;
+import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.kernel.util.StringUtil;
 import com.liferay.portal.kernel.util.UnmodifiableList;
 import com.liferay.portal.model.CacheModel;
@@ -80,6 +82,225 @@ public class VW_AzzurriPersistenceImpl extends BasePersistenceImpl<VW_Azzurri>
 	public static final FinderPath FINDER_PATH_COUNT_ALL = new FinderPath(VW_AzzurriModelImpl.ENTITY_CACHE_ENABLED,
 			VW_AzzurriModelImpl.FINDER_CACHE_ENABLED, Long.class,
 			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countAll", new String[0]);
+	public static final FinderPath FINDER_PATH_FETCH_BY_FINDBYUSERID = new FinderPath(VW_AzzurriModelImpl.ENTITY_CACHE_ENABLED,
+			VW_AzzurriModelImpl.FINDER_CACHE_ENABLED, VW_AzzurriImpl.class,
+			FINDER_CLASS_NAME_ENTITY, "fetchByfindByUserId",
+			new String[] { Long.class.getName() },
+			VW_AzzurriModelImpl.ESFNATIONALID_COLUMN_BITMASK);
+	public static final FinderPath FINDER_PATH_COUNT_BY_FINDBYUSERID = new FinderPath(VW_AzzurriModelImpl.ENTITY_CACHE_ENABLED,
+			VW_AzzurriModelImpl.FINDER_CACHE_ENABLED, Long.class,
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByfindByUserId",
+			new String[] { Long.class.getName() });
+
+	/**
+	 * Returns the v w_ azzurri where esfNationalId = &#63; or throws a {@link it.ethica.esf.NoSuchVW_AzzurriException} if it could not be found.
+	 *
+	 * @param esfNationalId the esf national ID
+	 * @return the matching v w_ azzurri
+	 * @throws it.ethica.esf.NoSuchVW_AzzurriException if a matching v w_ azzurri could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public VW_Azzurri findByfindByUserId(long esfNationalId)
+		throws NoSuchVW_AzzurriException, SystemException {
+		VW_Azzurri vw_Azzurri = fetchByfindByUserId(esfNationalId);
+
+		if (vw_Azzurri == null) {
+			StringBundler msg = new StringBundler(4);
+
+			msg.append(_NO_SUCH_ENTITY_WITH_KEY);
+
+			msg.append("esfNationalId=");
+			msg.append(esfNationalId);
+
+			msg.append(StringPool.CLOSE_CURLY_BRACE);
+
+			if (_log.isWarnEnabled()) {
+				_log.warn(msg.toString());
+			}
+
+			throw new NoSuchVW_AzzurriException(msg.toString());
+		}
+
+		return vw_Azzurri;
+	}
+
+	/**
+	 * Returns the v w_ azzurri where esfNationalId = &#63; or returns <code>null</code> if it could not be found. Uses the finder cache.
+	 *
+	 * @param esfNationalId the esf national ID
+	 * @return the matching v w_ azzurri, or <code>null</code> if a matching v w_ azzurri could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public VW_Azzurri fetchByfindByUserId(long esfNationalId)
+		throws SystemException {
+		return fetchByfindByUserId(esfNationalId, true);
+	}
+
+	/**
+	 * Returns the v w_ azzurri where esfNationalId = &#63; or returns <code>null</code> if it could not be found, optionally using the finder cache.
+	 *
+	 * @param esfNationalId the esf national ID
+	 * @param retrieveFromCache whether to use the finder cache
+	 * @return the matching v w_ azzurri, or <code>null</code> if a matching v w_ azzurri could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public VW_Azzurri fetchByfindByUserId(long esfNationalId,
+		boolean retrieveFromCache) throws SystemException {
+		Object[] finderArgs = new Object[] { esfNationalId };
+
+		Object result = null;
+
+		if (retrieveFromCache) {
+			result = FinderCacheUtil.getResult(FINDER_PATH_FETCH_BY_FINDBYUSERID,
+					finderArgs, this);
+		}
+
+		if (result instanceof VW_Azzurri) {
+			VW_Azzurri vw_Azzurri = (VW_Azzurri)result;
+
+			if ((esfNationalId != vw_Azzurri.getEsfNationalId())) {
+				result = null;
+			}
+		}
+
+		if (result == null) {
+			StringBundler query = new StringBundler(3);
+
+			query.append(_SQL_SELECT_VW_AZZURRI_WHERE);
+
+			query.append(_FINDER_COLUMN_FINDBYUSERID_ESFNATIONALID_2);
+
+			String sql = query.toString();
+
+			Session session = null;
+
+			try {
+				session = openSession();
+
+				Query q = session.createQuery(sql);
+
+				QueryPos qPos = QueryPos.getInstance(q);
+
+				qPos.add(esfNationalId);
+
+				List<VW_Azzurri> list = q.list();
+
+				if (list.isEmpty()) {
+					FinderCacheUtil.putResult(FINDER_PATH_FETCH_BY_FINDBYUSERID,
+						finderArgs, list);
+				}
+				else {
+					if ((list.size() > 1) && _log.isWarnEnabled()) {
+						_log.warn(
+							"VW_AzzurriPersistenceImpl.fetchByfindByUserId(long, boolean) with parameters (" +
+							StringUtil.merge(finderArgs) +
+							") yields a result set with more than 1 result. This violates the logical unique restriction. There is no order guarantee on which result is returned by this finder.");
+					}
+
+					VW_Azzurri vw_Azzurri = list.get(0);
+
+					result = vw_Azzurri;
+
+					cacheResult(vw_Azzurri);
+
+					if ((vw_Azzurri.getEsfNationalId() != esfNationalId)) {
+						FinderCacheUtil.putResult(FINDER_PATH_FETCH_BY_FINDBYUSERID,
+							finderArgs, vw_Azzurri);
+					}
+				}
+			}
+			catch (Exception e) {
+				FinderCacheUtil.removeResult(FINDER_PATH_FETCH_BY_FINDBYUSERID,
+					finderArgs);
+
+				throw processException(e);
+			}
+			finally {
+				closeSession(session);
+			}
+		}
+
+		if (result instanceof List<?>) {
+			return null;
+		}
+		else {
+			return (VW_Azzurri)result;
+		}
+	}
+
+	/**
+	 * Removes the v w_ azzurri where esfNationalId = &#63; from the database.
+	 *
+	 * @param esfNationalId the esf national ID
+	 * @return the v w_ azzurri that was removed
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public VW_Azzurri removeByfindByUserId(long esfNationalId)
+		throws NoSuchVW_AzzurriException, SystemException {
+		VW_Azzurri vw_Azzurri = findByfindByUserId(esfNationalId);
+
+		return remove(vw_Azzurri);
+	}
+
+	/**
+	 * Returns the number of v w_ azzurris where esfNationalId = &#63;.
+	 *
+	 * @param esfNationalId the esf national ID
+	 * @return the number of matching v w_ azzurris
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public int countByfindByUserId(long esfNationalId)
+		throws SystemException {
+		FinderPath finderPath = FINDER_PATH_COUNT_BY_FINDBYUSERID;
+
+		Object[] finderArgs = new Object[] { esfNationalId };
+
+		Long count = (Long)FinderCacheUtil.getResult(finderPath, finderArgs,
+				this);
+
+		if (count == null) {
+			StringBundler query = new StringBundler(2);
+
+			query.append(_SQL_COUNT_VW_AZZURRI_WHERE);
+
+			query.append(_FINDER_COLUMN_FINDBYUSERID_ESFNATIONALID_2);
+
+			String sql = query.toString();
+
+			Session session = null;
+
+			try {
+				session = openSession();
+
+				Query q = session.createQuery(sql);
+
+				QueryPos qPos = QueryPos.getInstance(q);
+
+				qPos.add(esfNationalId);
+
+				count = (Long)q.uniqueResult();
+
+				FinderCacheUtil.putResult(finderPath, finderArgs, count);
+			}
+			catch (Exception e) {
+				FinderCacheUtil.removeResult(finderPath, finderArgs);
+
+				throw processException(e);
+			}
+			finally {
+				closeSession(session);
+			}
+		}
+
+		return count.intValue();
+	}
+
+	private static final String _FINDER_COLUMN_FINDBYUSERID_ESFNATIONALID_2 = "vw_Azzurri.id.esfNationalId = ?";
 
 	public VW_AzzurriPersistenceImpl() {
 		setModelClass(VW_Azzurri.class);
@@ -94,6 +315,9 @@ public class VW_AzzurriPersistenceImpl extends BasePersistenceImpl<VW_Azzurri>
 	public void cacheResult(VW_Azzurri vw_Azzurri) {
 		EntityCacheUtil.putResult(VW_AzzurriModelImpl.ENTITY_CACHE_ENABLED,
 			VW_AzzurriImpl.class, vw_Azzurri.getPrimaryKey(), vw_Azzurri);
+
+		FinderCacheUtil.putResult(FINDER_PATH_FETCH_BY_FINDBYUSERID,
+			new Object[] { vw_Azzurri.getEsfNationalId() }, vw_Azzurri);
 
 		vw_Azzurri.resetOriginalValues();
 	}
@@ -151,6 +375,8 @@ public class VW_AzzurriPersistenceImpl extends BasePersistenceImpl<VW_Azzurri>
 
 		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITH_PAGINATION);
 		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);
+
+		clearUniqueFindersCache(vw_Azzurri);
 	}
 
 	@Override
@@ -161,6 +387,49 @@ public class VW_AzzurriPersistenceImpl extends BasePersistenceImpl<VW_Azzurri>
 		for (VW_Azzurri vw_Azzurri : vw_Azzurris) {
 			EntityCacheUtil.removeResult(VW_AzzurriModelImpl.ENTITY_CACHE_ENABLED,
 				VW_AzzurriImpl.class, vw_Azzurri.getPrimaryKey());
+
+			clearUniqueFindersCache(vw_Azzurri);
+		}
+	}
+
+	protected void cacheUniqueFindersCache(VW_Azzurri vw_Azzurri) {
+		if (vw_Azzurri.isNew()) {
+			Object[] args = new Object[] { vw_Azzurri.getEsfNationalId() };
+
+			FinderCacheUtil.putResult(FINDER_PATH_COUNT_BY_FINDBYUSERID, args,
+				Long.valueOf(1));
+			FinderCacheUtil.putResult(FINDER_PATH_FETCH_BY_FINDBYUSERID, args,
+				vw_Azzurri);
+		}
+		else {
+			VW_AzzurriModelImpl vw_AzzurriModelImpl = (VW_AzzurriModelImpl)vw_Azzurri;
+
+			if ((vw_AzzurriModelImpl.getColumnBitmask() &
+					FINDER_PATH_FETCH_BY_FINDBYUSERID.getColumnBitmask()) != 0) {
+				Object[] args = new Object[] { vw_Azzurri.getEsfNationalId() };
+
+				FinderCacheUtil.putResult(FINDER_PATH_COUNT_BY_FINDBYUSERID,
+					args, Long.valueOf(1));
+				FinderCacheUtil.putResult(FINDER_PATH_FETCH_BY_FINDBYUSERID,
+					args, vw_Azzurri);
+			}
+		}
+	}
+
+	protected void clearUniqueFindersCache(VW_Azzurri vw_Azzurri) {
+		VW_AzzurriModelImpl vw_AzzurriModelImpl = (VW_AzzurriModelImpl)vw_Azzurri;
+
+		Object[] args = new Object[] { vw_Azzurri.getEsfNationalId() };
+
+		FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_FINDBYUSERID, args);
+		FinderCacheUtil.removeResult(FINDER_PATH_FETCH_BY_FINDBYUSERID, args);
+
+		if ((vw_AzzurriModelImpl.getColumnBitmask() &
+				FINDER_PATH_FETCH_BY_FINDBYUSERID.getColumnBitmask()) != 0) {
+			args = new Object[] { vw_AzzurriModelImpl.getOriginalEsfNationalId() };
+
+			FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_FINDBYUSERID, args);
+			FinderCacheUtil.removeResult(FINDER_PATH_FETCH_BY_FINDBYUSERID, args);
 		}
 	}
 
@@ -298,12 +567,15 @@ public class VW_AzzurriPersistenceImpl extends BasePersistenceImpl<VW_Azzurri>
 
 		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITH_PAGINATION);
 
-		if (isNew) {
+		if (isNew || !VW_AzzurriModelImpl.COLUMN_BITMASK_ENABLED) {
 			FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);
 		}
 
 		EntityCacheUtil.putResult(VW_AzzurriModelImpl.ENTITY_CACHE_ENABLED,
 			VW_AzzurriImpl.class, vw_Azzurri.getPrimaryKey(), vw_Azzurri);
+
+		clearUniqueFindersCache(vw_Azzurri);
+		cacheUniqueFindersCache(vw_Azzurri);
 
 		return vw_Azzurri;
 	}
@@ -636,9 +908,12 @@ public class VW_AzzurriPersistenceImpl extends BasePersistenceImpl<VW_Azzurri>
 	}
 
 	private static final String _SQL_SELECT_VW_AZZURRI = "SELECT vw_Azzurri FROM VW_Azzurri vw_Azzurri";
+	private static final String _SQL_SELECT_VW_AZZURRI_WHERE = "SELECT vw_Azzurri FROM VW_Azzurri vw_Azzurri WHERE ";
 	private static final String _SQL_COUNT_VW_AZZURRI = "SELECT COUNT(vw_Azzurri) FROM VW_Azzurri vw_Azzurri";
+	private static final String _SQL_COUNT_VW_AZZURRI_WHERE = "SELECT COUNT(vw_Azzurri) FROM VW_Azzurri vw_Azzurri WHERE ";
 	private static final String _ORDER_BY_ENTITY_ALIAS = "vw_Azzurri.";
 	private static final String _NO_SUCH_ENTITY_WITH_PRIMARY_KEY = "No VW_Azzurri exists with the primary key ";
+	private static final String _NO_SUCH_ENTITY_WITH_KEY = "No VW_Azzurri exists with the key {";
 	private static final boolean _HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE = GetterUtil.getBoolean(PropsUtil.get(
 				PropsKeys.HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE));
 	private static Log _log = LogFactoryUtil.getLog(VW_AzzurriPersistenceImpl.class);

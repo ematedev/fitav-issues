@@ -2668,6 +2668,9 @@
         <column name="name" type="String"></column>
         <column name="description" type="String"></column>
         <column name="invitato" type="long"></column>
+        <finder name="findByUserId" return-type="VW_Azzurri">
+            <finder-column name="esfNationalId"></finder-column>
+        </finder>
     </entity>
     <entity name="VW_Staff" local-service="true" remote-service="false" table="vw_staff">
         <column name="userId" type="long" primary="true"></column>
@@ -2683,6 +2686,23 @@
         <column name="esfSportTypeId" type="long" primary="true"></column>
         <column name="name" type="String"></column>
         <column name="invitato" type="long"></column>
+        <finder name="findByUserId" return-type="VW_Staff">
+            <finder-column name="userId"></finder-column>
+        </finder>
+    </entity>
+    <entity name="VW_Shooters" local-service="true" remote-service="false">
+        <column name="userId" type="long" primary="true"></column>
+        <column name="CodiceTessera" type="String"></column>
+        <column name="CodiceOrganizzazione" type="String"></column>
+        <column name="Nome" type="String"></column>
+        <column name="Cognome" type="String"></column>
+        <column name="Email" type="String"></column>
+        <column name="CF" type="String"></column>
+        <column name="organizationId" type="long" primary="true"></column>
+        <column name="invitato" type="int"></column>
+        <finder name="findByUserId" return-type="VW_Shooters">
+            <finder-column name="userId"></finder-column>
+        </finder>
     </entity>
 	
 	<exceptions>

@@ -2066,6 +2066,24 @@
 			<transient name="primaryKeyObj" />
 		</attributes>
 	</mapped-superclass>
+	<mapped-superclass class="it.ethica.esf.model.impl.VW_ShootersModelImpl">
+		<id-class class="it.ethica.esf.service.persistence.VW_ShootersPK" />
+		<attributes>
+			<id name="userId" />
+			<id name="organizationId" />
+			<basic name="CodiceTessera" />
+			<basic name="CodiceOrganizzazione" />
+			<basic name="Nome" />
+			<basic name="Cognome" />
+			<basic name="Email" />
+			<basic name="CF" />
+			<basic name="invitato" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
 	<mapped-superclass class="it.ethica.esf.model.impl.VW_StaffModelImpl">
 		<id-class class="it.ethica.esf.service.persistence.VW_StaffPK" />
 		<attributes>
@@ -2497,6 +2515,10 @@
 	</entity>
 	<entity class="it.ethica.esf.model.impl.VW_ESFListaIncarichiImpl" name="VW_ESFListaIncarichi">
 		<table name="VW_ESFListaIncarichi" />
+		<attributes />
+	</entity>
+	<entity class="it.ethica.esf.model.impl.VW_ShootersImpl" name="VW_Shooters">
+		<table name="VW_Shooters" />
 		<attributes />
 	</entity>
 	<entity class="it.ethica.esf.model.impl.VW_StaffImpl" name="VW_Staff">

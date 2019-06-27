@@ -2,12 +2,14 @@
 
 <%
 	long id_esf_raduno = ParamUtil.getLong(request, "id_esf_raduno"); 
+	String code = ParamUtil.getString(request, "code"); 
 
 	PortletURL tabURL = renderResponse.createRenderURL();
 	String tab = ParamUtil.getString(request, "myParam", "Generale");
 	tabURL.setParameter("mvcPath", "/html/esfraduni/managementRaduno.jsp");
 	tabURL.setParameter("tab", tab);
 	tabURL.setParameter("id_esf_raduno", String.valueOf(id_esf_raduno));	
+	tabURL.setParameter("code", code);	
 
 %>
 

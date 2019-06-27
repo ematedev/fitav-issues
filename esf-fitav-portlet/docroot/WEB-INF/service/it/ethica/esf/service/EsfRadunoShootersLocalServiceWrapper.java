@@ -289,6 +289,13 @@ public class EsfRadunoShootersLocalServiceWrapper
 			parameterTypes, arguments);
 	}
 
+	@Override
+	public java.util.List<it.ethica.esf.model.EsfRadunoShooters> findById(
+		long id_esf_raduno)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _esfRadunoShootersLocalService.findById(id_esf_raduno);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

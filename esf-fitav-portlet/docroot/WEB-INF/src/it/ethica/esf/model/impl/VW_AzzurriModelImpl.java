@@ -78,7 +78,11 @@ public class VW_AzzurriModelImpl extends BaseModelImpl<VW_Azzurri>
 	public static final boolean FINDER_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.finder.cache.enabled.it.ethica.esf.model.VW_Azzurri"),
 			true);
-	public static final boolean COLUMN_BITMASK_ENABLED = false;
+	public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
+				"value.object.column.bitmask.enabled.it.ethica.esf.model.VW_Azzurri"),
+			true);
+	public static long ESFNATIONALID_COLUMN_BITMASK = 1L;
+	public static long ESFSPORTTYPEID_COLUMN_BITMASK = 2L;
 	public static final long LOCK_EXPIRATION_TIME = GetterUtil.getLong(com.liferay.util.service.ServiceProps.get(
 				"lock.expiration.time.it.ethica.esf.model.VW_Azzurri"));
 
@@ -190,7 +194,19 @@ public class VW_AzzurriModelImpl extends BaseModelImpl<VW_Azzurri>
 
 	@Override
 	public void setEsfNationalId(long esfNationalId) {
+		_columnBitmask |= ESFNATIONALID_COLUMN_BITMASK;
+
+		if (!_setOriginalEsfNationalId) {
+			_setOriginalEsfNationalId = true;
+
+			_originalEsfNationalId = _esfNationalId;
+		}
+
 		_esfNationalId = esfNationalId;
+	}
+
+	public long getOriginalEsfNationalId() {
+		return _originalEsfNationalId;
 	}
 
 	@Override
@@ -278,6 +294,10 @@ public class VW_AzzurriModelImpl extends BaseModelImpl<VW_Azzurri>
 		_invitato = invitato;
 	}
 
+	public long getColumnBitmask() {
+		return _columnBitmask;
+	}
+
 	@Override
 	public VW_Azzurri toEscapedModel() {
 		if (_escapedModel == null) {
@@ -342,6 +362,13 @@ public class VW_AzzurriModelImpl extends BaseModelImpl<VW_Azzurri>
 
 	@Override
 	public void resetOriginalValues() {
+		VW_AzzurriModelImpl vw_AzzurriModelImpl = this;
+
+		vw_AzzurriModelImpl._originalEsfNationalId = vw_AzzurriModelImpl._esfNationalId;
+
+		vw_AzzurriModelImpl._setOriginalEsfNationalId = false;
+
+		vw_AzzurriModelImpl._columnBitmask = 0;
 	}
 
 	@Override
@@ -475,6 +502,8 @@ public class VW_AzzurriModelImpl extends BaseModelImpl<VW_Azzurri>
 			VW_Azzurri.class
 		};
 	private long _esfNationalId;
+	private long _originalEsfNationalId;
+	private boolean _setOriginalEsfNationalId;
 	private String _userName;
 	private Date _startDate;
 	private Date _endDate;
@@ -482,5 +511,6 @@ public class VW_AzzurriModelImpl extends BaseModelImpl<VW_Azzurri>
 	private String _name;
 	private String _description;
 	private long _invitato;
+	private long _columnBitmask;
 	private VW_Azzurri _escapedModel;
 }

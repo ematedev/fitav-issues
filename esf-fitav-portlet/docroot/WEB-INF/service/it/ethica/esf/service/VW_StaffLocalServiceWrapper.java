@@ -286,6 +286,13 @@ public class VW_StaffLocalServiceWrapper implements VW_StaffLocalService,
 			arguments);
 	}
 
+	@Override
+	public it.ethica.esf.model.VW_Staff cercaStaff(long userId)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			it.ethica.esf.NoSuchVW_StaffException {
+		return _vw_StaffLocalService.cercaStaff(userId);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

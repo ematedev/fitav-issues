@@ -92,6 +92,7 @@
 	<import class="it.ethica.esf.model.VW_Azzurri" />
 	<import class="it.ethica.esf.model.VW_DatiDrettoreTiro" />
 	<import class="it.ethica.esf.model.VW_ESFListaIncarichi" />
+	<import class="it.ethica.esf.model.VW_Shooters" />
 	<import class="it.ethica.esf.model.VW_Staff" />
 	<class name="it.ethica.esf.model.impl.ESFAddressImpl" table="ESFAddress">
 		<cache usage="read-write" />
@@ -1467,6 +1468,20 @@
 			<key-property name="firstName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		</composite-id>
 		<property name="endDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.VW_ShootersImpl" table="VW_Shooters">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.VW_ShootersPK">
+			<key-property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="organizationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
+		<property name="CodiceTessera" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CodiceOrganizzazione" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Nome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Cognome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CF" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="invitato" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
 	</class>
 	<class name="it.ethica.esf.model.impl.VW_StaffImpl" table="vw_staff">
 		<cache usage="read-write" />

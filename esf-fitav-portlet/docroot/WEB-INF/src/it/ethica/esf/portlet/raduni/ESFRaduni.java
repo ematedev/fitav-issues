@@ -53,6 +53,9 @@ import com.liferay.portal.kernel.upload.UploadPortletRequest;
 
 import it.ethica.esf.NoSuchRadunoAzzurriException;
 import it.ethica.esf.NoSuchRadunoException;
+import it.ethica.esf.NoSuchVW_AzzurriException;
+import it.ethica.esf.NoSuchVW_ShootersException;
+import it.ethica.esf.NoSuchVW_StaffException;
 import it.ethica.esf.model.ESFNational;
 import it.ethica.esf.model.ESFOrganization;
 import it.ethica.esf.model.ESFRaduno;
@@ -63,7 +66,10 @@ import it.ethica.esf.model.ESFRadunoSottotipo;
 import it.ethica.esf.model.ESFRadunoStaff;
 import it.ethica.esf.model.ESFRadunoTipo;
 import it.ethica.esf.model.ESFSportType;
+import it.ethica.esf.model.ESFUser;
+import it.ethica.esf.model.EsfRadunoShooters;
 import it.ethica.esf.model.VW_Azzurri;
+import it.ethica.esf.model.VW_Shooters;
 import it.ethica.esf.model.VW_Staff;
 import it.ethica.esf.model.impl.ESFRadunoAzzurriImpl;
 import it.ethica.esf.model.impl.ESFRadunoFilesImpl;
@@ -77,8 +83,12 @@ import it.ethica.esf.service.ESFRadunoSottotipiRadunoLocalServiceUtil;
 import it.ethica.esf.service.ESFRadunoStaffLocalServiceUtil;
 import it.ethica.esf.service.ESFRadunoTipoLocalServiceUtil;
 import it.ethica.esf.service.ESFSportTypeLocalServiceUtil;
+import it.ethica.esf.service.ESFUnitserviceLocalServiceUtil;
+import it.ethica.esf.service.ESFUserLocalServiceUtil;
+import it.ethica.esf.service.EsfRadunoShootersLocalServiceUtil;
 import it.ethica.esf.service.VW_AzzurriLocalService;
 import it.ethica.esf.service.VW_AzzurriLocalServiceUtil;
+import it.ethica.esf.service.VW_ShootersLocalServiceUtil;
 import it.ethica.esf.service.VW_StaffLocalServiceUtil;
 import it.ethica.esf.util.DateUtilFormatter;
 import it.ethica.esf.util.MissingDateException;
@@ -366,6 +376,7 @@ public class ESFRaduni extends MVCPortlet {
 			long id_esf_raduno = ParamUtil.getLong(request, "id_esf_raduno");
 			String code = ParamUtil.getString(request, "code");
 			String name = ParamUtil.getString(request, "name","");
+			String surname = ParamUtil.getString(request, "surname","");
 			Date startDate = ParamUtil.getDate(request, "startDate", DateUtilFormatter.getDefaultFormatter(), null);
 			long esfSportType = ParamUtil.getLong(request, "esfSportType",0);
 			String esfShootingDirectorQualification = ParamUtil.getString(request, "esfShootingDirectorQualification","");
@@ -393,10 +404,7 @@ public class ESFRaduni extends MVCPortlet {
 			// CREO LA DYNAMIC QUERY E INSERISCO LE CONDIZIONI
 			DynamicQuery dq = DynamicQueryFactoryUtil.forClass(VW_Staff.class, "Staff", PortletClassLoaderUtil.getClassLoader());
 			if (!name.isEmpty()){
-				Criterion criterion = null;
-				criterion =  RestrictionsFactoryUtil.like("Staff.firstName", "%" + name + "%");
-				criterion = RestrictionsFactoryUtil.or(criterion, RestrictionsFactoryUtil.like("Staff.lastName", StringPool.PERCENT + name + StringPool.PERCENT));
-				dq.add(criterion);
+				dq.add(RestrictionsFactoryUtil.like("Staff.firstName", StringPool.PERCENT + name + StringPool.PERCENT));
 				System.out.println("Nome [" + name + "]");
 				//dq.add(RestrictionsFactoryUtil.like("Staff.firstName", "%" + name + "%"));
 				
@@ -404,6 +412,11 @@ public class ESFRaduni extends MVCPortlet {
 //				dq.add(RestrictionsFactoryUtil.like("Staff.firstName", "%" + name + "%"));
 //				dq.add(RestrictionsFactoryUtil.like("Staff.lastName", "%" + name + "%"));
 			}
+			if (!surname.isEmpty()){
+				dq.add(RestrictionsFactoryUtil.like("Staff.lastName", StringPool.PERCENT + surname + StringPool.PERCENT));
+				System.out.println("Cognome [" + surname + "]");
+			}
+
 			if(startDate != null){
 				System.out.println("startDate [" + startDate + "]");
 				dq.add(RestrictionsFactoryUtil.ge("Staff.esfStartData", startDate));
@@ -466,6 +479,7 @@ public class ESFRaduni extends MVCPortlet {
 			response.setRenderParameter("id_esf_raduno", String.valueOf(id_esf_raduno));
 			response.setRenderParameter("code", code);
 			response.setRenderParameter("name", name);
+			response.setRenderParameter("surname", surname);
 			if(startDate != null)
 				response.setRenderParameter("startDate",  DateUtilFormatter.formatDate(startDate));
 			// TODO Auto-generated catch block
@@ -478,8 +492,8 @@ public class ESFRaduni extends MVCPortlet {
 				response.setRenderParameter("delta", String.valueOf(delta));
 			if(cur != 0)
 				response.setRenderParameter("cur", String.valueOf(cur));
-			System.out.println("delta [" + delta + "]");
-			System.out.println("cur [" + cur + "]");
+//			System.out.println("delta [" + delta + "]");
+//			System.out.println("cur [" + cur + "]");
 			
 			response.setRenderParameter("jspPage", goToURL);
 		} catch (SystemException e1) {
@@ -546,20 +560,123 @@ public class ESFRaduni extends MVCPortlet {
 	@ProcessAction(name="ricercaShooters")
 	public void ricercaShooters(ActionRequest request, ActionResponse response) {
 		System.out.println("################# RICERCA SHOOTERS #####################");
-		
 		long id_esf_raduno = ParamUtil.getLong(request, "id_esf_raduno");
 		String code = ParamUtil.getString(request, "code");
 		String name = ParamUtil.getString(request, "name","");
-		Date birthDate = ParamUtil.getDate(request, "birth-date", DateUtilFormatter.getDefaultFormatter(), null);
-		String namenumero_tessera = ParamUtil.getString(request, "numero_tessera","");
+		String surname = ParamUtil.getString(request, "surname","");
+		//Date birthDate = ParamUtil.getDate(request, "birth-date", DateUtilFormatter.getDefaultFormatter(), null);
+		String numero_tessera = ParamUtil.getString(request, "numero_tessera","");
 		long esfAssociation = ParamUtil.getLong(request, "esfAssociation",0);
+		long esfListaInvitati = ParamUtil.getLong(request, "esfListaInvitati",0);
+		int delta = ParamUtil.getInteger(request, "delta",0);
+		int cur = ParamUtil.getInteger(request, "cur",0);
+		String goToURL = ParamUtil.getString(request, "mvcPath");
+		String msg = "";
 		
 		System.out.println("id raduno [" + id_esf_raduno + "]");
 		System.out.println("codice [" + code + "]");
 		System.out.println("nome [" + name + "]");
-		System.out.println("data nascita [" + birthDate + "]");
-		System.out.println("namenumero_tessera [" + namenumero_tessera + "]");
+		System.out.println("surname [" + surname + "]");
+		//System.out.println("data nascita [" + birthDate + "]");
+		System.out.println("numero_tessera [" + numero_tessera + "]");
 		System.out.println("esfAssociation [" + esfAssociation + "]");
+
+		try {
+
+			List<EsfRadunoShooters> listaInvitatiShooters;
+			listaInvitatiShooters = EsfRadunoShootersLocalServiceUtil.getEsfRadunoShooterses(0, 2);
+
+			List<Long> listaIdInvitati = new ArrayList<>(); 
+			
+			// TRASFERISCO I VALORI NELLA LISTA DI LONG
+			for(EsfRadunoShooters rs : listaInvitatiShooters){
+				listaIdInvitati.add(rs.getUserId());
+			}
+		
+			// CREO LA DYNAMIC QUERY E INSERISCO LE CONDIZIONI
+			DynamicQuery dq = DynamicQueryFactoryUtil.forClass(VW_Shooters.class, "Shooters", PortletClassLoaderUtil.getClassLoader());
+			if (!name.isEmpty()){
+				dq.add(RestrictionsFactoryUtil.like("Shooters.Nome", StringPool.PERCENT + name + StringPool.PERCENT));
+				System.out.println("Nome [" + name + "]");
+			}
+			if (!surname.isEmpty()){
+				dq.add(RestrictionsFactoryUtil.like("Shooters.Cognome", StringPool.PERCENT + surname + StringPool.PERCENT));
+				System.out.println("Cognome [" + surname + "]");
+			}
+			if (!numero_tessera.isEmpty()){
+				dq.add(RestrictionsFactoryUtil.eq("Shooters.CodiceTessera", numero_tessera));
+				System.out.println("numero_tessera [" + numero_tessera + "]");
+			}
+			if(esfAssociation!=0){
+				System.out.println("esfAssociation [" + esfAssociation + "]");
+				dq.add(RestrictionsFactoryUtil.eq("Shooters.primaryKey.organizationId", esfAssociation));
+			}
+			
+			List<VW_Shooters> listaShooters = new ArrayList<>();
+			// PRENDO IL RISULTATO DELLA QUERY
+			List<VW_Shooters> listaShootersCompleta = VW_ShootersLocalServiceUtil.dynamicQuery(dq);
+			
+			// COPIO GLI ELEMENTI NELLA LISTA FINALE
+			int contatore = 0;
+			while(contatore < listaShootersCompleta.size()){
+				VW_Shooters current = listaShootersCompleta.get(contatore);
+				
+				// VEDO SE IL TIRATORE E' STATO INVITATO E SETTO LA VARIABILE A 1
+				if(listaIdInvitati.contains(current.getUserId())){
+					current.setInvitato(1);
+				}
+				
+				// CONTROLLO IL CAMPO DI RICERCA ---/INVITATI/NON INVITATI
+				// INSERISCO TUTTI, INVITATI E NON INVITATI
+				if(esfListaInvitati==0)
+					listaShooters.add(current);
+				// INSERISCO SOLO GLI INVITATI
+				else if (esfListaInvitati==2){
+					if(current.getInvitato()==1){
+						listaShooters.add(current);
+						}
+				} 
+				// INSERISCO SOLO I NON INVITATI
+				else if(current.getInvitato()==0){
+					listaShooters.add(current);					
+				}
+				contatore++;
+			}
+			
+			// MESSAGGIO
+			msg = "La ricerca ha prodotto '" + listaShooters.size()  + "' risultati!";
+			SessionMessages.add(request, "addSuccess");
+			request.setAttribute("successMessage", msg);			
+			response.setRenderParameter("jspPage", goToURL);
+
+			request.setAttribute("listaShooters", listaShooters);
+
+//			if(birthDate != null)
+//				response.setRenderParameter("birthDate",  DateUtilFormatter.formatDate(birthDate));
+
+			if (delta != 0)
+				response.setRenderParameter("delta", String.valueOf(delta));
+			if(cur != 0)
+				response.setRenderParameter("cur", String.valueOf(cur));
+			
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		 
+		}finally {
+
+			response.setRenderParameter("id_esf_raduno", String.valueOf(id_esf_raduno));
+			response.setRenderParameter("code", code);
+			response.setRenderParameter("name", name);
+			response.setRenderParameter("surname", surname);
+			// TODO Auto-generated catch block
+			response.setRenderParameter("numero_tessera", numero_tessera);
+			response.setRenderParameter("esfAssociation", String.valueOf(esfAssociation));
+			response.setRenderParameter("esfListaInvitati", String.valueOf(esfListaInvitati));
+		}
+
+		
+		
 		
 	}
 	
@@ -569,6 +686,79 @@ public class ESFRaduni extends MVCPortlet {
 
 	}
 
+	@ProcessAction(name="managementRaduno")
+	public void managementRaduno(ActionRequest request, ActionResponse response) {
+		System.out.println("################# MANAGEMENT RADUNO #####################");
+
+		long id_esf_raduno = ParamUtil.getLong(request, "id_esf_raduno");
+		String code = ParamUtil.getString(request, "code");
+		String goToURL = ParamUtil.getString(request, "mvcPath");
+		List<VW_Azzurri> listaAzzurri = null;
+		List<ESFRadunoAzzurri> listaAzzurriInvitati = null;
+		List<VW_Staff> listaStaff = null;
+		List<ESFRadunoStaff> listaStaffInvitati = null;
+		List<VW_Shooters> listaShooters = null;
+		List<EsfRadunoShooters> listaShootersInvitati = null;
+		List<ESFRadunoFiles> listaFiles = null;
+		
+		
+		try{
+			response.setRenderParameter("jspPage", goToURL);
+			
+			listaAzzurri = new ArrayList<>();
+			listaAzzurriInvitati = ESFRadunoAzzurriLocalServiceUtil.findById(id_esf_raduno);
+			listaStaff = new ArrayList<>();
+			listaStaffInvitati = ESFRadunoStaffLocalServiceUtil.findById(id_esf_raduno);
+			listaShooters = new ArrayList<>();
+			listaShootersInvitati = EsfRadunoShootersLocalServiceUtil.findById(id_esf_raduno);
+			listaFiles = ESFRadunoFilesLocalServiceUtil.findByRaduno(id_esf_raduno);
+			
+			for(ESFRadunoAzzurri ra : listaAzzurriInvitati){
+				VW_Azzurri invitato = VW_AzzurriLocalServiceUtil.cercaAzzurro(ra.getEsfNationalId());
+				
+				System.out.println("[Azzurri: " + ra.getEsfNationalId() + "]");
+				
+				listaAzzurri.add(invitato);
+			}
+
+			for(ESFRadunoStaff rs : listaStaffInvitati){
+				VW_Staff invitato = VW_StaffLocalServiceUtil.cercaStaff(rs.getUserId());
+				System.out.println("[Staff: " + rs.getUserId() + "]");
+				
+				listaStaff.add(invitato);
+			}
+			
+			for(EsfRadunoShooters rsh : listaShootersInvitati){
+				VW_Shooters invitato = VW_ShootersLocalServiceUtil.cercaShooter(id_esf_raduno);
+				System.out.println("[Shooters: " + rsh.getUserId() + "]");
+				listaShooters.add(invitato);
+			}
+			
+			request.setAttribute("listaAzzurri", listaAzzurri);
+			request.setAttribute("listaStaff", listaStaff);
+			request.setAttribute("listaShooters", listaShooters);
+			request.setAttribute("listaFiles", listaFiles);
+			
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoSuchVW_AzzurriException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoSuchVW_StaffException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoSuchVW_ShootersException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			response.setRenderParameter("id_esf_raduno", String.valueOf(id_esf_raduno));
+			response.setRenderParameter("code", code);
+
+		}
+		
+		
+	}
 	
 	
 	

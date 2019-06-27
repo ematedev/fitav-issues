@@ -14,6 +14,12 @@
 
 package it.ethica.esf.service.impl;
 
+import com.liferay.portal.kernel.exception.SystemException;
+
+import it.ethica.esf.NoSuchVW_ShootersException;
+import it.ethica.esf.NoSuchVW_StaffException;
+import it.ethica.esf.model.VW_Shooters;
+import it.ethica.esf.model.VW_Staff;
 import it.ethica.esf.service.base.VW_StaffLocalServiceBaseImpl;
 
 /**
@@ -36,4 +42,12 @@ public class VW_StaffLocalServiceImpl extends VW_StaffLocalServiceBaseImpl {
 	 *
 	 * Never reference this interface directly. Always use {@link it.ethica.esf.service.VW_StaffLocalServiceUtil} to access the v w_ staff local service.
 	 */
+	
+	public VW_Staff cercaStaff(long userId) throws NoSuchVW_StaffException, SystemException{
+		VW_Staff staff = null;
+		
+		staff = vw_StaffPersistence.findByfindByUserId(userId);
+		return staff;
+		}
+	
 }

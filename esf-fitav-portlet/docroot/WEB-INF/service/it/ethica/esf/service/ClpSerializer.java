@@ -115,6 +115,7 @@ import it.ethica.esf.model.EsfRadunoShootersClp;
 import it.ethica.esf.model.VW_AzzurriClp;
 import it.ethica.esf.model.VW_DatiDrettoreTiroClp;
 import it.ethica.esf.model.VW_ESFListaIncarichiClp;
+import it.ethica.esf.model.VW_ShootersClp;
 import it.ethica.esf.model.VW_StaffClp;
 
 import java.io.ObjectInputStream;
@@ -562,6 +563,10 @@ public class ClpSerializer {
 
 		if (oldModelClassName.equals(VW_ESFListaIncarichiClp.class.getName())) {
 			return translateInputVW_ESFListaIncarichi(oldModel);
+		}
+
+		if (oldModelClassName.equals(VW_ShootersClp.class.getName())) {
+			return translateInputVW_Shooters(oldModel);
 		}
 
 		if (oldModelClassName.equals(VW_StaffClp.class.getName())) {
@@ -1505,6 +1510,16 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+	public static Object translateInputVW_Shooters(BaseModel<?> oldModel) {
+		VW_ShootersClp oldClpModel = (VW_ShootersClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getVW_ShootersRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
 	public static Object translateInputVW_Staff(BaseModel<?> oldModel) {
 		VW_StaffClp oldClpModel = (VW_StaffClp)oldModel;
 
@@ -1948,6 +1963,10 @@ public class ClpSerializer {
 		if (oldModelClassName.equals(
 					"it.ethica.esf.model.impl.VW_ESFListaIncarichiImpl")) {
 			return translateOutputVW_ESFListaIncarichi(oldModel);
+		}
+
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.VW_ShootersImpl")) {
+			return translateOutputVW_Shooters(oldModel);
 		}
 
 		if (oldModelClassName.equals("it.ethica.esf.model.impl.VW_StaffImpl")) {
@@ -2470,6 +2489,10 @@ public class ClpSerializer {
 		if (className.equals(
 					"it.ethica.esf.NoSuchVW_ESFListaIncarichiException")) {
 			return new it.ethica.esf.NoSuchVW_ESFListaIncarichiException();
+		}
+
+		if (className.equals("it.ethica.esf.NoSuchVW_ShootersException")) {
+			return new it.ethica.esf.NoSuchVW_ShootersException();
 		}
 
 		if (className.equals("it.ethica.esf.NoSuchVW_StaffException")) {
@@ -3403,6 +3426,16 @@ public class ClpSerializer {
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
 		newModel.setVW_ESFListaIncarichiRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputVW_Shooters(BaseModel<?> oldModel) {
+		VW_ShootersClp newModel = new VW_ShootersClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setVW_ShootersRemoteModel(oldModel);
 
 		return newModel;
 	}

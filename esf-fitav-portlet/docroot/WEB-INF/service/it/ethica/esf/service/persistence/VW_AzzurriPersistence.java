@@ -38,6 +38,63 @@ public interface VW_AzzurriPersistence extends BasePersistence<VW_Azzurri> {
 	 */
 
 	/**
+	* Returns the v w_ azzurri where esfNationalId = &#63; or throws a {@link it.ethica.esf.NoSuchVW_AzzurriException} if it could not be found.
+	*
+	* @param esfNationalId the esf national ID
+	* @return the matching v w_ azzurri
+	* @throws it.ethica.esf.NoSuchVW_AzzurriException if a matching v w_ azzurri could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public it.ethica.esf.model.VW_Azzurri findByfindByUserId(long esfNationalId)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			it.ethica.esf.NoSuchVW_AzzurriException;
+
+	/**
+	* Returns the v w_ azzurri where esfNationalId = &#63; or returns <code>null</code> if it could not be found. Uses the finder cache.
+	*
+	* @param esfNationalId the esf national ID
+	* @return the matching v w_ azzurri, or <code>null</code> if a matching v w_ azzurri could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public it.ethica.esf.model.VW_Azzurri fetchByfindByUserId(
+		long esfNationalId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Returns the v w_ azzurri where esfNationalId = &#63; or returns <code>null</code> if it could not be found, optionally using the finder cache.
+	*
+	* @param esfNationalId the esf national ID
+	* @param retrieveFromCache whether to use the finder cache
+	* @return the matching v w_ azzurri, or <code>null</code> if a matching v w_ azzurri could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public it.ethica.esf.model.VW_Azzurri fetchByfindByUserId(
+		long esfNationalId, boolean retrieveFromCache)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Removes the v w_ azzurri where esfNationalId = &#63; from the database.
+	*
+	* @param esfNationalId the esf national ID
+	* @return the v w_ azzurri that was removed
+	* @throws SystemException if a system exception occurred
+	*/
+	public it.ethica.esf.model.VW_Azzurri removeByfindByUserId(
+		long esfNationalId)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			it.ethica.esf.NoSuchVW_AzzurriException;
+
+	/**
+	* Returns the number of v w_ azzurris where esfNationalId = &#63;.
+	*
+	* @param esfNationalId the esf national ID
+	* @return the number of matching v w_ azzurris
+	* @throws SystemException if a system exception occurred
+	*/
+	public int countByfindByUserId(long esfNationalId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
 	* Caches the v w_ azzurri in the entity cache if it is enabled.
 	*
 	* @param vw_Azzurri the v w_ azzurri

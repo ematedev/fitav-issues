@@ -5,6 +5,7 @@
 	String id_esf_raduno = ParamUtil.getString(request, "id_esf_raduno");
 	String codice = ParamUtil.getString(request, "code");
 	String name = ParamUtil.getString(request, "name");
+	String surname = ParamUtil.getString(request, "surname");
 	String namespace = renderResponse.getNamespace();
 	String dataInizio = ParamUtil.getString(request, "startDate");
 	String esfShootingDirectorQualificationId = ParamUtil.getString(request, "esfShootingDirectorQualification");
@@ -37,6 +38,7 @@
 	StaffViewURL.setParameter("id_esf_raduno", id_esf_raduno);
 	StaffViewURL.setParameter("code", codice);
 	StaffViewURL.setParameter("name", name);
+	StaffViewURL.setParameter("surname", surname);
 	StaffViewURL.setParameter("esfShootingDirectorQualification", esfShootingDirectorQualificationId);
 	StaffViewURL.setParameter("esfSportType", String.valueOf(esfSportType));
 	StaffViewURL.setParameter("startDate", dataInizio);
@@ -83,6 +85,8 @@
 		
 		<aui:input inlineField="true" label="name" name="name" placeholder="name" 
 				type="text" value="<%=name %>"/> 
+		<aui:input inlineField="true" label="surname" name="surname" placeholder="surname" 
+				type="text" value="<%=surname %>"/> 
 		<aui:input inlineField="true" label="start-date" name="startDate" placeholder="start-date" size="" title="search-entries" type="text" />
 			<aui:select name="esfShootingDirectorQualification" id="esfShootingDirectorQualification"
 				inlineField="true">
@@ -149,6 +153,9 @@
 	idColl += String.valueOf(staff.getUserId()) +"|";
 %>
 				<liferay-ui:search-container-column-text name="name"
+						value="<%=(Validator.isNotNull(staff.getFirstName()) && Validator.isNotNull(staff.getLastName())) ? 
+								staff.getFirstName() + StringPool.SPACE + staff.getLastName() : StringPool.BLANK%>" />
+				<liferay-ui:search-container-column-text name="surname"
 						value="<%=(Validator.isNotNull(staff.getFirstName()) && Validator.isNotNull(staff.getLastName())) ? 
 								staff.getFirstName() + StringPool.SPACE + staff.getLastName() : StringPool.BLANK%>" />
 				<liferay-ui:search-container-column-text name="UserId"

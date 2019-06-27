@@ -275,6 +275,12 @@ public class VW_AzzurriLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static it.ethica.esf.model.VW_Azzurri cercaAzzurro(long userId)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			it.ethica.esf.NoSuchVW_AzzurriException {
+		return getService().cercaAzzurro(userId);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

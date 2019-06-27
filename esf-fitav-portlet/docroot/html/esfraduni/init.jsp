@@ -10,6 +10,7 @@
 <%@page import="it.ethica.esf.service.ESFShootingDirectorQualificationLocalServiceUtil"%>
 <%@page import="it.ethica.esf.service.VW_AzzurriLocalServiceUtil"%>
 <%@page import="it.ethica.esf.service.VW_StaffLocalServiceUtil"%>
+<%@page import="it.ethica.esf.service.VW_ShootersLocalServiceUtil"%>
 <%@page import="it.ethica.esf.model.ESFRadunoTipo"%>
 <%@page import="it.ethica.esf.util.DateUtilFormatter"%>
 <%@page import="it.ethica.esf.model.ESFRaduno"%>
@@ -21,6 +22,7 @@
 <%@page import="it.ethica.esf.model.ESFSportType"%>
 <%@page import="it.ethica.esf.model.VW_Azzurri"%>
 <%@page import="it.ethica.esf.model.VW_Staff"%>
+<%@page import="it.ethica.esf.model.VW_Shooters"%>
 <%@page import="it.ethica.esf.model.ESFNational"%>
 <%@page import="it.ethica.esf.model.ESFShootingDirectorQualification"%>
 <%@page import="it.ethica.esf.util.ManageDate"%>

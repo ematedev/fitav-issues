@@ -381,8 +381,13 @@ create index IX_D86D8A30 on EsfRadunoShooters (id_esf_raduno, userId);
 
 create index IX_ED8BB4AF on VW_ESFListaIncarichi (esfOrganizationId);
 
+create index IX_F04E7485 on VW_Shooters (userId);
+
 create index IX_19A88904 on esforganization (type_);
 
+create index IX_62ACF8D8 on vw_azzurri (esfNationalId);
 create index IX_9881681F on vw_azzurri (id_esf_raduno);
 
 create index IX_7ED85A60 on vw_datidirettoretiro (esfShootingDirectorId);
+
+create index IX_ECEAA362 on vw_staff (userId);

@@ -1266,6 +1266,19 @@ create table VW_ESFlistaincarichi (
 	primary key (AnniPrecedenti, AnnoFineIncarico, AnnoInizioIncarico, AnnoCorrente, NomeRuolo, endDate, startDate, esfUserId, esfOrganizationId, lastName, firstName)
 );
 
+create table VW_Shooters (
+	userId LONG not null,
+	CodiceTessera VARCHAR(75) null,
+	CodiceOrganizzazione VARCHAR(75) null,
+	Nome VARCHAR(75) null,
+	Cognome VARCHAR(75) null,
+	Email VARCHAR(75) null,
+	CF VARCHAR(75) null,
+	organizationId LONG not null,
+	invitato INTEGER,
+	primary key (userId, organizationId)
+);
+
 create table esforganization (
 	esfOrganizationId LONG not null primary key,
 	code_ VARCHAR(75) null,

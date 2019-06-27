@@ -275,6 +275,12 @@ public class EsfRadunoShootersLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static java.util.List<it.ethica.esf.model.EsfRadunoShooters> findById(
+		long id_esf_raduno)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().findById(id_esf_raduno);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

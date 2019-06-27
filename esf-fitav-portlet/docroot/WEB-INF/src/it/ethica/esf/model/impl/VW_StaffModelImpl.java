@@ -85,7 +85,13 @@ public class VW_StaffModelImpl extends BaseModelImpl<VW_Staff>
 	public static final boolean FINDER_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.finder.cache.enabled.it.ethica.esf.model.VW_Staff"),
 			true);
-	public static final boolean COLUMN_BITMASK_ENABLED = false;
+	public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
+				"value.object.column.bitmask.enabled.it.ethica.esf.model.VW_Staff"),
+			true);
+	public static long USERID_COLUMN_BITMASK = 1L;
+	public static long REGIONID_COLUMN_BITMASK = 2L;
+	public static long PROVINCEID_COLUMN_BITMASK = 4L;
+	public static long ESFSPORTTYPEID_COLUMN_BITMASK = 8L;
 	public static final long LOCK_EXPIRATION_TIME = GetterUtil.getLong(com.liferay.util.service.ServiceProps.get(
 				"lock.expiration.time.it.ethica.esf.model.VW_Staff"));
 
@@ -236,6 +242,14 @@ public class VW_StaffModelImpl extends BaseModelImpl<VW_Staff>
 
 	@Override
 	public void setUserId(long userId) {
+		_columnBitmask |= USERID_COLUMN_BITMASK;
+
+		if (!_setOriginalUserId) {
+			_setOriginalUserId = true;
+
+			_originalUserId = _userId;
+		}
+
 		_userId = userId;
 	}
 
@@ -247,6 +261,10 @@ public class VW_StaffModelImpl extends BaseModelImpl<VW_Staff>
 	@Override
 	public void setUserUuid(String userUuid) {
 		_userUuid = userUuid;
+	}
+
+	public long getOriginalUserId() {
+		return _originalUserId;
 	}
 
 	@Override
@@ -405,6 +423,10 @@ public class VW_StaffModelImpl extends BaseModelImpl<VW_Staff>
 		_invitato = invitato;
 	}
 
+	public long getColumnBitmask() {
+		return _columnBitmask;
+	}
+
 	@Override
 	public VW_Staff toEscapedModel() {
 		if (_escapedModel == null) {
@@ -474,6 +496,13 @@ public class VW_StaffModelImpl extends BaseModelImpl<VW_Staff>
 
 	@Override
 	public void resetOriginalValues() {
+		VW_StaffModelImpl vw_StaffModelImpl = this;
+
+		vw_StaffModelImpl._originalUserId = vw_StaffModelImpl._userId;
+
+		vw_StaffModelImpl._setOriginalUserId = false;
+
+		vw_StaffModelImpl._columnBitmask = 0;
 	}
 
 	@Override
@@ -680,6 +709,8 @@ public class VW_StaffModelImpl extends BaseModelImpl<VW_Staff>
 		};
 	private long _userId;
 	private String _userUuid;
+	private long _originalUserId;
+	private boolean _setOriginalUserId;
 	private String _emailAddress;
 	private String _firstName;
 	private String _lastName;
@@ -692,5 +723,6 @@ public class VW_StaffModelImpl extends BaseModelImpl<VW_Staff>
 	private long _esfSportTypeId;
 	private String _name;
 	private long _invitato;
+	private long _columnBitmask;
 	private VW_Staff _escapedModel;
 }

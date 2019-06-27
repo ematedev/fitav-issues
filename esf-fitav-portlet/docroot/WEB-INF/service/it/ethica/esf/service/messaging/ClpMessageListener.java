@@ -108,6 +108,7 @@ import it.ethica.esf.service.EsfRadunoShootersLocalServiceUtil;
 import it.ethica.esf.service.VW_AzzurriLocalServiceUtil;
 import it.ethica.esf.service.VW_DatiDrettoreTiroLocalServiceUtil;
 import it.ethica.esf.service.VW_ESFListaIncarichiLocalServiceUtil;
+import it.ethica.esf.service.VW_ShootersLocalServiceUtil;
 import it.ethica.esf.service.VW_StaffLocalServiceUtil;
 
 /**
@@ -304,6 +305,8 @@ public class ClpMessageListener extends BaseMessageListener {
 			VW_DatiDrettoreTiroLocalServiceUtil.clearService();
 
 			VW_ESFListaIncarichiLocalServiceUtil.clearService();
+
+			VW_ShootersLocalServiceUtil.clearService();
 
 			VW_StaffLocalServiceUtil.clearService();
 		}

@@ -248,4 +248,8 @@ public interface VW_StaffLocalService extends BaseLocalService,
 	public java.lang.Object invokeMethod(java.lang.String name,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
+
+	public it.ethica.esf.model.VW_Staff cercaStaff(long userId)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			it.ethica.esf.NoSuchVW_StaffException;
 }

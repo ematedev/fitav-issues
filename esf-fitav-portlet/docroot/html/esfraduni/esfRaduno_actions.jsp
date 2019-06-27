@@ -45,11 +45,11 @@
 	<portlet:param name="site" value="<%= raduno.getAltra_sede_ospitante() %>"/>	
 </portlet:actionURL>
 
-<portlet:renderURL var="managementURL">
+<portlet:actionURL var="managementURL" name="managementRaduno">
 	<portlet:param name="id_esf_raduno" value="<%= String.valueOf(raduno.getId_esf_raduno()) %>"/>	
 	<portlet:param name="code" value="<%= raduno.getCodice() %>"/>	
 	<portlet:param name="mvcPath" value="/html/esfraduni/managementRaduno.jsp" />	
-</portlet:renderURL>
+</portlet:actionURL>
 
 <portlet:actionURL var="deleteURL" name="deleteRaduno">
 	<portlet:param name="idRaduno" value="<%= String.valueOf(raduno.getId_esf_raduno()) %>"/>	

@@ -110,6 +110,71 @@ public class VW_StaffUtil {
 	}
 
 	/**
+	* Returns the v w_ staff where userId = &#63; or throws a {@link it.ethica.esf.NoSuchVW_StaffException} if it could not be found.
+	*
+	* @param userId the user ID
+	* @return the matching v w_ staff
+	* @throws it.ethica.esf.NoSuchVW_StaffException if a matching v w_ staff could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static it.ethica.esf.model.VW_Staff findByfindByUserId(long userId)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			it.ethica.esf.NoSuchVW_StaffException {
+		return getPersistence().findByfindByUserId(userId);
+	}
+
+	/**
+	* Returns the v w_ staff where userId = &#63; or returns <code>null</code> if it could not be found. Uses the finder cache.
+	*
+	* @param userId the user ID
+	* @return the matching v w_ staff, or <code>null</code> if a matching v w_ staff could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static it.ethica.esf.model.VW_Staff fetchByfindByUserId(long userId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().fetchByfindByUserId(userId);
+	}
+
+	/**
+	* Returns the v w_ staff where userId = &#63; or returns <code>null</code> if it could not be found, optionally using the finder cache.
+	*
+	* @param userId the user ID
+	* @param retrieveFromCache whether to use the finder cache
+	* @return the matching v w_ staff, or <code>null</code> if a matching v w_ staff could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static it.ethica.esf.model.VW_Staff fetchByfindByUserId(
+		long userId, boolean retrieveFromCache)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().fetchByfindByUserId(userId, retrieveFromCache);
+	}
+
+	/**
+	* Removes the v w_ staff where userId = &#63; from the database.
+	*
+	* @param userId the user ID
+	* @return the v w_ staff that was removed
+	* @throws SystemException if a system exception occurred
+	*/
+	public static it.ethica.esf.model.VW_Staff removeByfindByUserId(long userId)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			it.ethica.esf.NoSuchVW_StaffException {
+		return getPersistence().removeByfindByUserId(userId);
+	}
+
+	/**
+	* Returns the number of v w_ staffs where userId = &#63;.
+	*
+	* @param userId the user ID
+	* @return the number of matching v w_ staffs
+	* @throws SystemException if a system exception occurred
+	*/
+	public static int countByfindByUserId(long userId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().countByfindByUserId(userId);
+	}
+
+	/**
 	* Caches the v w_ staff in the entity cache if it is enabled.
 	*
 	* @param vw_Staff the v w_ staff

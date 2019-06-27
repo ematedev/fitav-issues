@@ -1136,6 +1136,17 @@
 		<field name="lastName" type="String" />
 		<field name="firstName" type="String" />
 	</model>
+	<model name="it.ethica.esf.model.VW_Shooters">
+		<field name="userId" type="long" />
+		<field name="CodiceTessera" type="String" />
+		<field name="CodiceOrganizzazione" type="String" />
+		<field name="Nome" type="String" />
+		<field name="Cognome" type="String" />
+		<field name="Email" type="String" />
+		<field name="CF" type="String" />
+		<field name="organizationId" type="long" />
+		<field name="invitato" type="int" />
+	</model>
 	<model name="it.ethica.esf.model.VW_Staff">
 		<field name="userId" type="long" />
 		<field name="emailAddress" type="String" />

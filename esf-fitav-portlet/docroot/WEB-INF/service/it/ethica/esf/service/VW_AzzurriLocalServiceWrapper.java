@@ -287,6 +287,13 @@ public class VW_AzzurriLocalServiceWrapper implements VW_AzzurriLocalService,
 			arguments);
 	}
 
+	@Override
+	public it.ethica.esf.model.VW_Azzurri cercaAzzurro(long userId)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			it.ethica.esf.NoSuchVW_AzzurriException {
+		return _vw_AzzurriLocalService.cercaAzzurro(userId);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

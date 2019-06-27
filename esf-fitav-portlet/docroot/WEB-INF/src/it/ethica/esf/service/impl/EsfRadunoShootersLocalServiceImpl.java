@@ -14,6 +14,12 @@
 
 package it.ethica.esf.service.impl;
 
+import java.util.List;
+
+import com.liferay.portal.kernel.exception.SystemException;
+
+import it.ethica.esf.model.ESFRadunoAzzurri;
+import it.ethica.esf.model.EsfRadunoShooters;
 import it.ethica.esf.service.base.EsfRadunoShootersLocalServiceBaseImpl;
 
 /**
@@ -37,4 +43,12 @@ public class EsfRadunoShootersLocalServiceImpl
 	 *
 	 * Never reference this interface directly. Always use {@link it.ethica.esf.service.EsfRadunoShootersLocalServiceUtil} to access the esf raduno shooters local service.
 	 */
+	
+	public List<EsfRadunoShooters> findById(long id_esf_raduno) throws SystemException{
+		List<EsfRadunoShooters> listaRadunoShooters = null;
+		
+		listaRadunoShooters = esfRadunoShootersPersistence.findByfindByRaduno(id_esf_raduno);
+		
+		return listaRadunoShooters;
+	}
 }

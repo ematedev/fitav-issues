@@ -137,6 +137,7 @@ import it.ethica.esf.service.persistence.EsfRadunoShootersPersistence;
 import it.ethica.esf.service.persistence.VW_AzzurriPersistence;
 import it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPersistence;
 import it.ethica.esf.service.persistence.VW_ESFListaIncarichiPersistence;
+import it.ethica.esf.service.persistence.VW_ShootersPersistence;
 import it.ethica.esf.service.persistence.VW_StaffPK;
 import it.ethica.esf.service.persistence.VW_StaffPersistence;
 
@@ -4048,6 +4049,44 @@ public abstract class VW_StaffLocalServiceBaseImpl extends BaseLocalServiceImpl
 	}
 
 	/**
+	 * Returns the v w_ shooters local service.
+	 *
+	 * @return the v w_ shooters local service
+	 */
+	public it.ethica.esf.service.VW_ShootersLocalService getVW_ShootersLocalService() {
+		return vw_ShootersLocalService;
+	}
+
+	/**
+	 * Sets the v w_ shooters local service.
+	 *
+	 * @param vw_ShootersLocalService the v w_ shooters local service
+	 */
+	public void setVW_ShootersLocalService(
+		it.ethica.esf.service.VW_ShootersLocalService vw_ShootersLocalService) {
+		this.vw_ShootersLocalService = vw_ShootersLocalService;
+	}
+
+	/**
+	 * Returns the v w_ shooters persistence.
+	 *
+	 * @return the v w_ shooters persistence
+	 */
+	public VW_ShootersPersistence getVW_ShootersPersistence() {
+		return vw_ShootersPersistence;
+	}
+
+	/**
+	 * Sets the v w_ shooters persistence.
+	 *
+	 * @param vw_ShootersPersistence the v w_ shooters persistence
+	 */
+	public void setVW_ShootersPersistence(
+		VW_ShootersPersistence vw_ShootersPersistence) {
+		this.vw_ShootersPersistence = vw_ShootersPersistence;
+	}
+
+	/**
 	 * Returns the v w_ staff local service.
 	 *
 	 * @return the v w_ staff local service
@@ -4648,6 +4687,10 @@ public abstract class VW_StaffLocalServiceBaseImpl extends BaseLocalServiceImpl
 	protected it.ethica.esf.service.VW_ESFListaIncarichiLocalService vw_esfListaIncarichiLocalService;
 	@BeanReference(type = VW_ESFListaIncarichiPersistence.class)
 	protected VW_ESFListaIncarichiPersistence vw_esfListaIncarichiPersistence;
+	@BeanReference(type = it.ethica.esf.service.VW_ShootersLocalService.class)
+	protected it.ethica.esf.service.VW_ShootersLocalService vw_ShootersLocalService;
+	@BeanReference(type = VW_ShootersPersistence.class)
+	protected VW_ShootersPersistence vw_ShootersPersistence;
 	@BeanReference(type = it.ethica.esf.service.VW_StaffLocalService.class)
 	protected it.ethica.esf.service.VW_StaffLocalService vw_StaffLocalService;
 	@BeanReference(type = VW_StaffPersistence.class)

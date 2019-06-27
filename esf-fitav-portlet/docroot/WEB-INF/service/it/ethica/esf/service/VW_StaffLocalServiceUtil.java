@@ -275,6 +275,12 @@ public class VW_StaffLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static it.ethica.esf.model.VW_Staff cercaStaff(long userId)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			it.ethica.esf.NoSuchVW_StaffException {
+		return getService().cercaStaff(userId);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

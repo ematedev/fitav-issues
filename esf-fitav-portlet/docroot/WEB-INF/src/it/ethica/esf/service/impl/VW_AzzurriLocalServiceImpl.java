@@ -14,6 +14,10 @@
 
 package it.ethica.esf.service.impl;
 
+import com.liferay.portal.kernel.exception.SystemException;
+
+import it.ethica.esf.NoSuchVW_AzzurriException;
+import it.ethica.esf.model.VW_Azzurri;
 import it.ethica.esf.service.base.VW_AzzurriLocalServiceBaseImpl;
 
 /**
@@ -36,4 +40,12 @@ public class VW_AzzurriLocalServiceImpl extends VW_AzzurriLocalServiceBaseImpl {
 	 *
 	 * Never reference this interface directly. Always use {@link it.ethica.esf.service.VW_AzzurriLocalServiceUtil} to access the v w_ azzurri local service.
 	 */
+	
+	public VW_Azzurri cercaAzzurro(long userId) throws NoSuchVW_AzzurriException, SystemException{
+		VW_Azzurri azzurro = null;
+		
+		azzurro = vw_AzzurriPersistence.findByfindByUserId(userId);
+		return azzurro;
+	}
+	
 }
