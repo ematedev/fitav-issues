@@ -189,14 +189,15 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 				
 				//DA LEVARE
 				_log.debug(String.format("Specialita nome: [%s]\n", specialita));
-			}
-		
+			}  
 			//Eseguo la query
 			listaNomine = VW_DatiDrettoreTiroLocalServiceUtil.dynamicQuery(dq); 
 			int elementiTrovati = listaNomine.size();
 			_log.debug(String.format("Elementi nella lista: [%s]\n", elementiTrovati));
 			//Ordino la lista
+			long start = System.currentTimeMillis();
 			List<VW_NomineDirettoriTiro> listaModificabile = new ArrayList<VW_NomineDirettoriTiro>(listaNomine);
+			_log.debug(String.format("Sono trascorsi %s secondi", (System.currentTimeMillis() - start) / 1000F));
 			Collections.sort(listaModificabile, new CompareByData()); 
 			_log.debug(String.format("Elementi nella lista modificabile: [%s]\n", listaModificabile.size()));
 			
