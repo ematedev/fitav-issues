@@ -2605,6 +2605,123 @@
             <finder-column name="esfShootingDirectorId" comparator="="></finder-column>
         </finder>
     </entity>
+    <entity name="ESFRaduno" remote-service="false" local-service="true">
+        <column name="id_esf_raduno" type="long" primary="true" id-type="identity"></column>
+        <column name="codice" type="String"></column>
+        <column name="data_inizio" type="Date"></column>
+        <column name="data_fine" type="Date"></column>
+        <column name="tipo_raduno" type="long"></column>
+        <column name="id_sottotipo_raduno" type="long"></column>
+        <column name="note" type="String"></column>
+        <column name="id_associazione_ospitante" type="long"></column>
+        <column name="altra_sede_ospitante" type="String"></column>
+    </entity>
+    <entity local-service="true" name="ESFRadunoAzzurri" remote-service="false">
+        <column name="id_esf_raduno_azzurri" primary="true" type="long"></column>
+        <column name="id_esf_raduno" primary="true" type="long"></column>
+        <column name="esfNationalId" primary="true" type="long"></column>
+        <finder name="findRadunoAzzurri" return-type="ESFRadunoAzzurri">
+            <finder-column name="id_esf_raduno"></finder-column>
+            <finder-column name="esfNationalId"></finder-column>
+        </finder>
+        <finder name="findByIdRaduno" return-type="Collection">
+            <finder-column name="id_esf_raduno"></finder-column>
+        </finder>
+    </entity>
+    <entity local-service="true" name="ESFRadunoStaff" remote-service="false">
+        <column name="id_esf_raduno_staff" type="long" primary="true"></column>
+        <column name="id_esf_raduno" type="long" primary="true"></column>
+        <column name="userId" type="long" primary="true"></column>
+        <finder name="findRadunoStaff" return-type="EsfRadunoAzzurri">
+            <finder-column name="id_esf_raduno"></finder-column>
+            <finder-column name="userId"></finder-column>
+        </finder>
+        <finder name="findByIdRaduno" return-type="Collection">
+            <finder-column name="id_esf_raduno"></finder-column>
+        </finder>
+    </entity>
+    <entity local-service="true" name="EsfRadunoShooters" remote-service="false">
+        <column name="id_esf_raduno_shooters" type="long" primary="true"></column>
+        <column name="id_esf_raduno" type="long" primary="true"></column>
+        <column name="userId" type="long" primary="true"></column>
+        <finder name="findRadunoShooters" return-type="EsfRadunoShooters">
+            <finder-column name="id_esf_raduno"></finder-column>
+            <finder-column name="userId"></finder-column>
+        </finder>
+        <finder name="findByRaduno" return-type="Collection">
+            <finder-column name="id_esf_raduno"></finder-column>
+        </finder>
+    </entity>
+    <entity local-service="true" name="ESFRadunoTipo" remote-service="false">
+        <column id-type="identity" name="id_esf_raduno_tipo" primary="true" type="long"></column>
+        <column name="descrizione" type="String"></column>
+    </entity>
+    <entity name="ESFRadunoSottotipo" remote-service="false" local-service="true">
+        <column name="id_esf_raduno_sottotipo" type="long" primary="true" id-type="identity"></column>
+        <column name="descrizione" type="String"></column>
+    </entity>
+    <entity name="ESFRadunoSottotipiRaduno" remote-service="false" local-service="true">
+        <column name="id_esf_raduno_sottotipi_raduno" primary="true" type="long" id-type="identity"></column>
+        <column name="id_esf_raduno" type="long"></column>
+        <column name="id_esf_raduno_sottotipo" type="long"></column>
+        <finder name="findByIdEsfRaduno" return-type="Collection">
+            <finder-column name="id_esf_raduno"></finder-column>
+        </finder>
+    </entity>
+    <entity name="ESFRadunoFiles" local-service="true" remote-service="false">
+        <column name="id_esf_raduno_files" primary="true" type="long" id-type="identity"></column>
+        <column name="id_esf_raduno" type="long" primary="false"></column>
+        <column name="nome" type="String"></column>
+        <column name="path" type="String"></column>
+        <finder name="findByRaduno" return-type="Collection">
+            <finder-column name="id_esf_raduno"></finder-column>
+        </finder>
+    </entity>
+    <entity name="VW_Azzurri" local-service="true" remote-service="false" table="vw_azzurri">
+        <column name="esfNationalId" type="long" primary="true"></column>
+        <column name="userName" type="String"></column>
+        <column name="startDate" type="Date"></column>
+        <column name="endDate" type="Date"></column>
+        <column name="esfSportTypeId" type="long" primary="true"></column>
+        <column name="name" type="String"></column>
+        <column name="description" type="String"></column>
+        <column name="invitato" type="long"></column>
+        <finder name="findByUserId" return-type="VW_Azzurri">
+            <finder-column name="esfNationalId"></finder-column>
+        </finder>
+    </entity>
+    <entity name="VW_Staff" local-service="true" remote-service="false" table="vw_staff">
+        <column name="userId" type="long" primary="true"></column>
+        <column name="emailAddress" type="String"></column>
+        <column name="firstName" type="String"></column>
+        <column name="lastName" type="String"></column>
+        <column name="createDate" type="Date"></column>
+        <column name="esfStartData" type="Date"></column>
+        <column name="esfEndData" type="Date"></column>
+        <column name="regionId" type="String" primary="true"></column>
+        <column name="provinceId" type="String" primary="true"></column>
+        <column name="esfShootingDirectorQualificationDesc" type="String"></column>
+        <column name="esfSportTypeId" type="long" primary="true"></column>
+        <column name="name" type="String"></column>
+        <column name="invitato" type="long"></column>
+        <finder name="findByUserId" return-type="VW_Staff">
+            <finder-column name="userId"></finder-column>
+        </finder>
+    </entity>
+    <entity name="VW_Shooters" local-service="true" remote-service="false">
+        <column name="userId" type="long" primary="true"></column>
+        <column name="CodiceTessera" type="String"></column>
+        <column name="CodiceOrganizzazione" type="String"></column>
+        <column name="Nome" type="String"></column>
+        <column name="Cognome" type="String"></column>
+        <column name="Email" type="String"></column>
+        <column name="CF" type="String"></column>
+        <column name="organizationId" type="long" primary="true"></column>
+        <column name="invitato" type="int"></column>
+        <finder name="findByUserId" return-type="VW_Shooters">
+            <finder-column name="userId"></finder-column>
+        </finder>
+    </entity>
     <entity local-service="true" remote-service="false" json-enabled="false" name="VW_ESFIncarichiFederali" table="VW_ESFIncarichiFederali">
         <column name="esfUserId" type="long" primary="true"></column>
         <column name="esfFederalRoleId" type="long" primary="true"></column>

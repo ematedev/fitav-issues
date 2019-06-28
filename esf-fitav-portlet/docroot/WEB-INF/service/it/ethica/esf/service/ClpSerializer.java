@@ -76,6 +76,13 @@ import it.ethica.esf.model.ESFPartecipantTypeClp;
 import it.ethica.esf.model.ESFPhoneClp;
 import it.ethica.esf.model.ESFProvinceClp;
 import it.ethica.esf.model.ESFPublicAuthorityClp;
+import it.ethica.esf.model.ESFRadunoAzzurriClp;
+import it.ethica.esf.model.ESFRadunoClp;
+import it.ethica.esf.model.ESFRadunoFilesClp;
+import it.ethica.esf.model.ESFRadunoSottotipiRadunoClp;
+import it.ethica.esf.model.ESFRadunoSottotipoClp;
+import it.ethica.esf.model.ESFRadunoStaffClp;
+import it.ethica.esf.model.ESFRadunoTipoClp;
 import it.ethica.esf.model.ESFRegionClp;
 import it.ethica.esf.model.ESFRenewalClp;
 import it.ethica.esf.model.ESFResultClp;
@@ -104,9 +111,13 @@ import it.ethica.esf.model.ESFUserESFFederalRoleClp;
 import it.ethica.esf.model.ESFUserESFUserRoleClp;
 import it.ethica.esf.model.ESFUserRoleClp;
 import it.ethica.esf.model.ESFgunUserClp;
+import it.ethica.esf.model.EsfRadunoShootersClp;
+import it.ethica.esf.model.VW_AzzurriClp;
 import it.ethica.esf.model.VW_DatiDrettoreTiroClp;
 import it.ethica.esf.model.VW_ESFIncarichiFederaliClp;
 import it.ethica.esf.model.VW_ESFListaIncarichiClp;
+import it.ethica.esf.model.VW_ShootersClp;
+import it.ethica.esf.model.VW_StaffClp;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -395,6 +406,39 @@ public class ClpSerializer {
 			return translateInputESFPublicAuthority(oldModel);
 		}
 
+		if (oldModelClassName.equals(ESFRadunoClp.class.getName())) {
+			return translateInputESFRaduno(oldModel);
+		}
+
+		if (oldModelClassName.equals(ESFRadunoAzzurriClp.class.getName())) {
+			return translateInputESFRadunoAzzurri(oldModel);
+		}
+
+		if (oldModelClassName.equals(ESFRadunoFilesClp.class.getName())) {
+			return translateInputESFRadunoFiles(oldModel);
+		}
+
+		if (oldModelClassName.equals(EsfRadunoShootersClp.class.getName())) {
+			return translateInputEsfRadunoShooters(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					ESFRadunoSottotipiRadunoClp.class.getName())) {
+			return translateInputESFRadunoSottotipiRaduno(oldModel);
+		}
+
+		if (oldModelClassName.equals(ESFRadunoSottotipoClp.class.getName())) {
+			return translateInputESFRadunoSottotipo(oldModel);
+		}
+
+		if (oldModelClassName.equals(ESFRadunoStaffClp.class.getName())) {
+			return translateInputESFRadunoStaff(oldModel);
+		}
+
+		if (oldModelClassName.equals(ESFRadunoTipoClp.class.getName())) {
+			return translateInputESFRadunoTipo(oldModel);
+		}
+
 		if (oldModelClassName.equals(ESFRegionClp.class.getName())) {
 			return translateInputESFRegion(oldModel);
 		}
@@ -510,6 +554,10 @@ public class ClpSerializer {
 			return translateInputESFUserRole(oldModel);
 		}
 
+		if (oldModelClassName.equals(VW_AzzurriClp.class.getName())) {
+			return translateInputVW_Azzurri(oldModel);
+		}
+
 		if (oldModelClassName.equals(VW_DatiDrettoreTiroClp.class.getName())) {
 			return translateInputVW_DatiDrettoreTiro(oldModel);
 		}
@@ -520,6 +568,14 @@ public class ClpSerializer {
 
 		if (oldModelClassName.equals(VW_ESFListaIncarichiClp.class.getName())) {
 			return translateInputVW_ESFListaIncarichi(oldModel);
+		}
+
+		if (oldModelClassName.equals(VW_ShootersClp.class.getName())) {
+			return translateInputVW_Shooters(oldModel);
+		}
+
+		if (oldModelClassName.equals(VW_StaffClp.class.getName())) {
+			return translateInputVW_Staff(oldModel);
 		}
 
 		return oldModel;
@@ -1066,6 +1122,87 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+	public static Object translateInputESFRaduno(BaseModel<?> oldModel) {
+		ESFRadunoClp oldClpModel = (ESFRadunoClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getESFRadunoRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputESFRadunoAzzurri(BaseModel<?> oldModel) {
+		ESFRadunoAzzurriClp oldClpModel = (ESFRadunoAzzurriClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getESFRadunoAzzurriRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputESFRadunoFiles(BaseModel<?> oldModel) {
+		ESFRadunoFilesClp oldClpModel = (ESFRadunoFilesClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getESFRadunoFilesRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputEsfRadunoShooters(BaseModel<?> oldModel) {
+		EsfRadunoShootersClp oldClpModel = (EsfRadunoShootersClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getEsfRadunoShootersRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputESFRadunoSottotipiRaduno(
+		BaseModel<?> oldModel) {
+		ESFRadunoSottotipiRadunoClp oldClpModel = (ESFRadunoSottotipiRadunoClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getESFRadunoSottotipiRadunoRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputESFRadunoSottotipo(BaseModel<?> oldModel) {
+		ESFRadunoSottotipoClp oldClpModel = (ESFRadunoSottotipoClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getESFRadunoSottotipoRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputESFRadunoStaff(BaseModel<?> oldModel) {
+		ESFRadunoStaffClp oldClpModel = (ESFRadunoStaffClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getESFRadunoStaffRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputESFRadunoTipo(BaseModel<?> oldModel) {
+		ESFRadunoTipoClp oldClpModel = (ESFRadunoTipoClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getESFRadunoTipoRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
 	public static Object translateInputESFRegion(BaseModel<?> oldModel) {
 		ESFRegionClp oldClpModel = (ESFRegionClp)oldModel;
 
@@ -1346,6 +1483,16 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+	public static Object translateInputVW_Azzurri(BaseModel<?> oldModel) {
+		VW_AzzurriClp oldClpModel = (VW_AzzurriClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getVW_AzzurriRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
 	public static Object translateInputVW_DatiDrettoreTiro(
 		BaseModel<?> oldModel) {
 		VW_DatiDrettoreTiroClp oldClpModel = (VW_DatiDrettoreTiroClp)oldModel;
@@ -1373,6 +1520,26 @@ public class ClpSerializer {
 		VW_ESFListaIncarichiClp oldClpModel = (VW_ESFListaIncarichiClp)oldModel;
 
 		BaseModel<?> newModel = oldClpModel.getVW_ESFListaIncarichiRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputVW_Shooters(BaseModel<?> oldModel) {
+		VW_ShootersClp oldClpModel = (VW_ShootersClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getVW_ShootersRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputVW_Staff(BaseModel<?> oldModel) {
+		VW_StaffClp oldClpModel = (VW_StaffClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getVW_StaffRemoteModel();
 
 		newModel.setModelAttributes(oldClpModel.getModelAttributes());
 
@@ -1634,6 +1801,45 @@ public class ClpSerializer {
 			return translateOutputESFPublicAuthority(oldModel);
 		}
 
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFRadunoImpl")) {
+			return translateOutputESFRaduno(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFRadunoAzzurriImpl")) {
+			return translateOutputESFRadunoAzzurri(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFRadunoFilesImpl")) {
+			return translateOutputESFRadunoFiles(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.EsfRadunoShootersImpl")) {
+			return translateOutputEsfRadunoShooters(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFRadunoSottotipiRadunoImpl")) {
+			return translateOutputESFRadunoSottotipiRaduno(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFRadunoSottotipoImpl")) {
+			return translateOutputESFRadunoSottotipo(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFRadunoStaffImpl")) {
+			return translateOutputESFRadunoStaff(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"it.ethica.esf.model.impl.ESFRadunoTipoImpl")) {
+			return translateOutputESFRadunoTipo(oldModel);
+		}
+
 		if (oldModelClassName.equals("it.ethica.esf.model.impl.ESFRegionImpl")) {
 			return translateOutputESFRegion(oldModel);
 		}
@@ -1761,6 +1967,10 @@ public class ClpSerializer {
 			return translateOutputESFUserRole(oldModel);
 		}
 
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.VW_AzzurriImpl")) {
+			return translateOutputVW_Azzurri(oldModel);
+		}
+
 		if (oldModelClassName.equals(
 					"it.ethica.esf.model.impl.VW_DatiDrettoreTiroImpl")) {
 			return translateOutputVW_DatiDrettoreTiro(oldModel);
@@ -1774,6 +1984,14 @@ public class ClpSerializer {
 		if (oldModelClassName.equals(
 					"it.ethica.esf.model.impl.VW_ESFListaIncarichiImpl")) {
 			return translateOutputVW_ESFListaIncarichi(oldModel);
+		}
+
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.VW_ShootersImpl")) {
+			return translateOutputVW_Shooters(oldModel);
+		}
+
+		if (oldModelClassName.equals("it.ethica.esf.model.impl.VW_StaffImpl")) {
+			return translateOutputVW_Staff(oldModel);
 		}
 
 		return oldModel;
@@ -2132,6 +2350,39 @@ public class ClpSerializer {
 			return new it.ethica.esf.NoSuchPublicAuthorityException();
 		}
 
+		if (className.equals("it.ethica.esf.NoSuchRadunoException")) {
+			return new it.ethica.esf.NoSuchRadunoException();
+		}
+
+		if (className.equals("it.ethica.esf.NoSuchRadunoAzzurriException")) {
+			return new it.ethica.esf.NoSuchRadunoAzzurriException();
+		}
+
+		if (className.equals("it.ethica.esf.NoSuchRadunoFilesException")) {
+			return new it.ethica.esf.NoSuchRadunoFilesException();
+		}
+
+		if (className.equals("it.ethica.esf.NoSuchEsfRadunoShootersException")) {
+			return new it.ethica.esf.NoSuchEsfRadunoShootersException();
+		}
+
+		if (className.equals(
+					"it.ethica.esf.NoSuchRadunoSottotipiRadunoException")) {
+			return new it.ethica.esf.NoSuchRadunoSottotipiRadunoException();
+		}
+
+		if (className.equals("it.ethica.esf.NoSuchRadunoSottotipoException")) {
+			return new it.ethica.esf.NoSuchRadunoSottotipoException();
+		}
+
+		if (className.equals("it.ethica.esf.NoSuchRadunoStaffException")) {
+			return new it.ethica.esf.NoSuchRadunoStaffException();
+		}
+
+		if (className.equals("it.ethica.esf.NoSuchRadunoTipoException")) {
+			return new it.ethica.esf.NoSuchRadunoTipoException();
+		}
+
 		if (className.equals("it.ethica.esf.NoSuchRegionException")) {
 			return new it.ethica.esf.NoSuchRegionException();
 		}
@@ -2248,6 +2499,10 @@ public class ClpSerializer {
 			return new it.ethica.esf.NoSuchUserRoleException();
 		}
 
+		if (className.equals("it.ethica.esf.NoSuchVW_AzzurriException")) {
+			return new it.ethica.esf.NoSuchVW_AzzurriException();
+		}
+
 		if (className.equals("it.ethica.esf.NoSuchVW_DatiDrettoreTiroException")) {
 			return new it.ethica.esf.NoSuchVW_DatiDrettoreTiroException();
 		}
@@ -2260,6 +2515,14 @@ public class ClpSerializer {
 		if (className.equals(
 					"it.ethica.esf.NoSuchVW_ESFListaIncarichiException")) {
 			return new it.ethica.esf.NoSuchVW_ESFListaIncarichiException();
+		}
+
+		if (className.equals("it.ethica.esf.NoSuchVW_ShootersException")) {
+			return new it.ethica.esf.NoSuchVW_ShootersException();
+		}
+
+		if (className.equals("it.ethica.esf.NoSuchVW_StaffException")) {
+			return new it.ethica.esf.NoSuchVW_StaffException();
 		}
 
 		return throwable;
@@ -2797,6 +3060,88 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+	public static Object translateOutputESFRaduno(BaseModel<?> oldModel) {
+		ESFRadunoClp newModel = new ESFRadunoClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setESFRadunoRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputESFRadunoAzzurri(BaseModel<?> oldModel) {
+		ESFRadunoAzzurriClp newModel = new ESFRadunoAzzurriClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setESFRadunoAzzurriRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputESFRadunoFiles(BaseModel<?> oldModel) {
+		ESFRadunoFilesClp newModel = new ESFRadunoFilesClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setESFRadunoFilesRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputEsfRadunoShooters(BaseModel<?> oldModel) {
+		EsfRadunoShootersClp newModel = new EsfRadunoShootersClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setEsfRadunoShootersRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputESFRadunoSottotipiRaduno(
+		BaseModel<?> oldModel) {
+		ESFRadunoSottotipiRadunoClp newModel = new ESFRadunoSottotipiRadunoClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setESFRadunoSottotipiRadunoRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputESFRadunoSottotipo(
+		BaseModel<?> oldModel) {
+		ESFRadunoSottotipoClp newModel = new ESFRadunoSottotipoClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setESFRadunoSottotipoRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputESFRadunoStaff(BaseModel<?> oldModel) {
+		ESFRadunoStaffClp newModel = new ESFRadunoStaffClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setESFRadunoStaffRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputESFRadunoTipo(BaseModel<?> oldModel) {
+		ESFRadunoTipoClp newModel = new ESFRadunoTipoClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setESFRadunoTipoRemoteModel(oldModel);
+
+		return newModel;
+	}
+
 	public static Object translateOutputESFRegion(BaseModel<?> oldModel) {
 		ESFRegionClp newModel = new ESFRegionClp();
 
@@ -3079,6 +3424,16 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+	public static Object translateOutputVW_Azzurri(BaseModel<?> oldModel) {
+		VW_AzzurriClp newModel = new VW_AzzurriClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setVW_AzzurriRemoteModel(oldModel);
+
+		return newModel;
+	}
+
 	public static Object translateOutputVW_DatiDrettoreTiro(
 		BaseModel<?> oldModel) {
 		VW_DatiDrettoreTiroClp newModel = new VW_DatiDrettoreTiroClp();
@@ -3108,6 +3463,26 @@ public class ClpSerializer {
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
 		newModel.setVW_ESFListaIncarichiRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputVW_Shooters(BaseModel<?> oldModel) {
+		VW_ShootersClp newModel = new VW_ShootersClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setVW_ShootersRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputVW_Staff(BaseModel<?> oldModel) {
+		VW_StaffClp newModel = new VW_StaffClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setVW_StaffRemoteModel(oldModel);
 
 		return newModel;
 	}

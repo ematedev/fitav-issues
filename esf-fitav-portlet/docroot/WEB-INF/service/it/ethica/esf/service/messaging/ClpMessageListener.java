@@ -71,6 +71,13 @@ import it.ethica.esf.service.ESFPartecipantTypeLocalServiceUtil;
 import it.ethica.esf.service.ESFPhoneLocalServiceUtil;
 import it.ethica.esf.service.ESFProvinceLocalServiceUtil;
 import it.ethica.esf.service.ESFPublicAuthorityLocalServiceUtil;
+import it.ethica.esf.service.ESFRadunoAzzurriLocalServiceUtil;
+import it.ethica.esf.service.ESFRadunoFilesLocalServiceUtil;
+import it.ethica.esf.service.ESFRadunoLocalServiceUtil;
+import it.ethica.esf.service.ESFRadunoSottotipiRadunoLocalServiceUtil;
+import it.ethica.esf.service.ESFRadunoSottotipoLocalServiceUtil;
+import it.ethica.esf.service.ESFRadunoStaffLocalServiceUtil;
+import it.ethica.esf.service.ESFRadunoTipoLocalServiceUtil;
 import it.ethica.esf.service.ESFRegionLocalServiceUtil;
 import it.ethica.esf.service.ESFRenewalLocalServiceUtil;
 import it.ethica.esf.service.ESFResultLocalServiceUtil;
@@ -101,9 +108,13 @@ import it.ethica.esf.service.ESFUserLocalServiceUtil;
 import it.ethica.esf.service.ESFUserRoleLocalServiceUtil;
 import it.ethica.esf.service.ESFUserServiceUtil;
 import it.ethica.esf.service.ESFgunUserLocalServiceUtil;
+import it.ethica.esf.service.EsfRadunoShootersLocalServiceUtil;
+import it.ethica.esf.service.VW_AzzurriLocalServiceUtil;
 import it.ethica.esf.service.VW_DatiDrettoreTiroLocalServiceUtil;
 import it.ethica.esf.service.VW_ESFIncarichiFederaliLocalServiceUtil;
 import it.ethica.esf.service.VW_ESFListaIncarichiLocalServiceUtil;
+import it.ethica.esf.service.VW_ShootersLocalServiceUtil;
+import it.ethica.esf.service.VW_StaffLocalServiceUtil;
 
 /**
  * @author Ethica
@@ -226,6 +237,22 @@ public class ClpMessageListener extends BaseMessageListener {
 
 			ESFPublicAuthorityLocalServiceUtil.clearService();
 
+			ESFRadunoLocalServiceUtil.clearService();
+
+			ESFRadunoAzzurriLocalServiceUtil.clearService();
+
+			ESFRadunoFilesLocalServiceUtil.clearService();
+
+			EsfRadunoShootersLocalServiceUtil.clearService();
+
+			ESFRadunoSottotipiRadunoLocalServiceUtil.clearService();
+
+			ESFRadunoSottotipoLocalServiceUtil.clearService();
+
+			ESFRadunoStaffLocalServiceUtil.clearService();
+
+			ESFRadunoTipoLocalServiceUtil.clearService();
+
 			ESFRegionLocalServiceUtil.clearService();
 
 			ESFRenewalLocalServiceUtil.clearService();
@@ -282,11 +309,17 @@ public class ClpMessageListener extends BaseMessageListener {
 
 			ESFUserRoleLocalServiceUtil.clearService();
 
+			VW_AzzurriLocalServiceUtil.clearService();
+
 			VW_DatiDrettoreTiroLocalServiceUtil.clearService();
 
 			VW_ESFIncarichiFederaliLocalServiceUtil.clearService();
 
 			VW_ESFListaIncarichiLocalServiceUtil.clearService();
+
+			VW_ShootersLocalServiceUtil.clearService();
+
+			VW_StaffLocalServiceUtil.clearService();
 		}
 	}
 }

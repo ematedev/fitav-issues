@@ -715,7 +715,7 @@
 		<header-portlet-css>/css/ptTimeSelect.css</header-portlet-css>
 		<header-portlet-javascript>/js/jquery-1.10.2.js</header-portlet-javascript>
 		<header-portlet-javascript>/js/jquery-ui.js</header-portlet-javascript>
-		<header-portlet-javascript>/js/ptTimeSelect.js</header-portlet-javascript>
+        <header-portlet-javascript>/js/ptTimeSelect.js</header-portlet-javascript>
 		<footer-portlet-javascript>
 			/js/main.js
 		</footer-portlet-javascript>
@@ -830,10 +830,29 @@
 		<portlet-name>public-authority</portlet-name>
 		<icon>/icon.png</icon>
 		<header-portlet-css>/css/main.css</header-portlet-css>
+        <header-portlet-css>/css/.sass-cache/jquery-ui.css</header-portlet-css>
+        <header-portlet-css>/css/.sass-cache/ptTimeSelect.css</header-portlet-css>
+        <header-portlet-javascript>/js/jquery-1.10.2.js</header-portlet-javascript>
+        <header-portlet-javascript>/js/jquery-ui.js</header-portlet-javascript>
+        <header-portlet-javascript>/js/ptTimeSelect.js</header-portlet-javascript>
 		<footer-portlet-javascript>
 			/js/main.js
 		</footer-portlet-javascript>
 		<css-class-wrapper>public-authority-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>esf-raduni</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+        <header-portlet-css>/css/.sass-cache/jquery-ui.css</header-portlet-css>
+        <header-portlet-css>/css/.sass-cache/ptTimeSelect.css</header-portlet-css>
+        <header-portlet-javascript>/js/jquery-1.10.2.js</header-portlet-javascript>
+        <header-portlet-javascript>/js/jquery-ui.js</header-portlet-javascript>
+        <header-portlet-javascript>/js/ptTimeSelect.js</header-portlet-javascript>
+		<footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>esf-raduni-portlet</css-class-wrapper>
 	</portlet>
 	<role-mapper>
 		<role-name>administrator</role-name>

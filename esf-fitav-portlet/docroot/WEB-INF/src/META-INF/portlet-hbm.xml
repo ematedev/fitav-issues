@@ -54,6 +54,14 @@
 	<import class="it.ethica.esf.model.ESFPhone" />
 	<import class="it.ethica.esf.model.ESFProvince" />
 	<import class="it.ethica.esf.model.ESFPublicAuthority" />
+	<import class="it.ethica.esf.model.ESFRaduno" />
+	<import class="it.ethica.esf.model.ESFRadunoAzzurri" />
+	<import class="it.ethica.esf.model.ESFRadunoFiles" />
+	<import class="it.ethica.esf.model.EsfRadunoShooters" />
+	<import class="it.ethica.esf.model.ESFRadunoSottotipiRaduno" />
+	<import class="it.ethica.esf.model.ESFRadunoSottotipo" />
+	<import class="it.ethica.esf.model.ESFRadunoStaff" />
+	<import class="it.ethica.esf.model.ESFRadunoTipo" />
 	<import class="it.ethica.esf.model.ESFRegion" />
 	<import class="it.ethica.esf.model.ESFRenewal" />
 	<import class="it.ethica.esf.model.ESFResult" />
@@ -81,9 +89,12 @@
 	<import class="it.ethica.esf.model.ESFUserESFFederalRole" />
 	<import class="it.ethica.esf.model.ESFUserESFUserRole" />
 	<import class="it.ethica.esf.model.ESFUserRole" />
+	<import class="it.ethica.esf.model.VW_Azzurri" />
 	<import class="it.ethica.esf.model.VW_DatiDrettoreTiro" />
 	<import class="it.ethica.esf.model.VW_ESFIncarichiFederali" />
 	<import class="it.ethica.esf.model.VW_ESFListaIncarichi" />
+	<import class="it.ethica.esf.model.VW_Shooters" />
+	<import class="it.ethica.esf.model.VW_Staff" />
 	<class name="it.ethica.esf.model.impl.ESFAddressImpl" table="ESFAddress">
 		<cache usage="read-write" />
 		<id name="esfAddressId" type="long">
@@ -907,6 +918,75 @@
 		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
 		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
+	<class name="it.ethica.esf.model.impl.ESFRadunoImpl" table="ESFRaduno">
+		<cache usage="read-write" />
+		<id name="id_esf_raduno" type="long">
+			<generator class="identity" />
+		</id>
+		<property name="codice" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="data_inizio" type="org.hibernate.type.TimestampType" />
+		<property name="data_fine" type="org.hibernate.type.TimestampType" />
+		<property name="tipo_raduno" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="id_sottotipo_raduno" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="note" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="id_associazione_ospitante" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="altra_sede_ospitante" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFRadunoAzzurriImpl" table="ESFRadunoAzzurri">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.ESFRadunoAzzurriPK">
+			<key-property name="id_esf_raduno_azzurri" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="id_esf_raduno" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="esfNationalId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFRadunoFilesImpl" table="ESFRadunoFiles">
+		<cache usage="read-write" />
+		<id name="id_esf_raduno_files" type="long">
+			<generator class="identity" />
+		</id>
+		<property name="id_esf_raduno" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="nome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="path" type="com.liferay.portal.dao.orm.hibernate.StringType" column="path_" />
+	</class>
+	<class name="it.ethica.esf.model.impl.EsfRadunoShootersImpl" table="EsfRadunoShooters">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.EsfRadunoShootersPK">
+			<key-property name="id_esf_raduno_shooters" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="id_esf_raduno" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFRadunoSottotipiRadunoImpl" table="ESFRadunoSottotipiRaduno">
+		<cache usage="read-write" />
+		<id name="id_esf_raduno_sottotipi_raduno" type="long">
+			<generator class="identity" />
+		</id>
+		<property name="id_esf_raduno" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="id_esf_raduno_sottotipo" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFRadunoSottotipoImpl" table="ESFRadunoSottotipo">
+		<cache usage="read-write" />
+		<id name="id_esf_raduno_sottotipo" type="long">
+			<generator class="identity" />
+		</id>
+		<property name="descrizione" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFRadunoStaffImpl" table="ESFRadunoStaff">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.ESFRadunoStaffPK">
+			<key-property name="id_esf_raduno_staff" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="id_esf_raduno" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
+	</class>
+	<class name="it.ethica.esf.model.impl.ESFRadunoTipoImpl" table="ESFRadunoTipo">
+		<cache usage="read-write" />
+		<id name="id_esf_raduno_tipo" type="long">
+			<generator class="identity" />
+		</id>
+		<property name="descrizione" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
 	<class name="it.ethica.esf.model.impl.ESFRegionImpl" table="ESFRegion">
 		<cache usage="read-write" />
 		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.ESFRegionPK">
@@ -1350,6 +1430,19 @@
 		<property name="isOrgAdmin" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
 		<property name="isEditable" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
 	</class>
+	<class name="it.ethica.esf.model.impl.VW_AzzurriImpl" table="vw_azzurri">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.VW_AzzurriPK">
+			<key-property name="esfNationalId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="esfSportTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="startDate" type="org.hibernate.type.TimestampType" />
+		<property name="endDate" type="org.hibernate.type.TimestampType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="invitato" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
 	<class name="it.ethica.esf.model.impl.VW_DatiDrettoreTiroImpl" table="vw_datidirettoretiro">
 		<cache usage="read-write" />
 		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPK">
@@ -1386,5 +1479,37 @@
 			<key-property name="firstName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		</composite-id>
 		<property name="endDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.VW_ShootersImpl" table="VW_Shooters">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.VW_ShootersPK">
+			<key-property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="organizationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
+		<property name="CodiceTessera" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CodiceOrganizzazione" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Nome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Cognome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CF" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="invitato" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="it.ethica.esf.model.impl.VW_StaffImpl" table="vw_staff">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.VW_StaffPK">
+			<key-property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="regionId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="provinceId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="esfSportTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
+		<property name="emailAddress" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="firstName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="lastName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="esfStartData" type="org.hibernate.type.TimestampType" />
+		<property name="esfEndData" type="org.hibernate.type.TimestampType" />
+		<property name="esfShootingDirectorQualificationDesc" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="invitato" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 	</class>
 </hibernate-mapping>
