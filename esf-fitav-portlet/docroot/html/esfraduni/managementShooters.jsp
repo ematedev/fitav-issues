@@ -142,6 +142,8 @@
 		associazione = String.valueOf(shooter.getOrganizationId());
 	}
 %>
+			<liferay-ui:search-container-column-text name="id Utente"
+				value="<%=(shooter.getUserId()!=0) ? String.valueOf(shooter.getUserId()) : StringPool.BLANK%>" />
 			<liferay-ui:search-container-column-text name="name"
 				value="<%=(Validator.isNotNull(shooter.getNome())) ? shooter.getNome() : StringPool.BLANK%>" />
 			<liferay-ui:search-container-column-text name="surname"

@@ -252,4 +252,10 @@ public interface EsfRadunoShootersLocalService extends BaseLocalService,
 	public java.util.List<it.ethica.esf.model.EsfRadunoShooters> findById(
 		long id_esf_raduno)
 		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public void associaShooters(long id_esf_raduno,
+		java.util.List<java.lang.String> listaChecked,
+		java.util.List<java.lang.String> listaUnchecked)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			java.lang.NumberFormatException;
 }

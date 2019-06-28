@@ -18,8 +18,13 @@ import java.util.List;
 
 import com.liferay.portal.kernel.exception.SystemException;
 
+import it.ethica.esf.NoSuchEsfRadunoShootersException;
+import it.ethica.esf.NoSuchRadunoStaffException;
 import it.ethica.esf.model.ESFRadunoAzzurri;
+import it.ethica.esf.model.ESFRadunoStaff;
 import it.ethica.esf.model.EsfRadunoShooters;
+import it.ethica.esf.model.impl.ESFRadunoStaffImpl;
+import it.ethica.esf.model.impl.EsfRadunoShootersImpl;
 import it.ethica.esf.service.base.EsfRadunoShootersLocalServiceBaseImpl;
 
 /**
@@ -51,4 +56,44 @@ public class EsfRadunoShootersLocalServiceImpl
 		
 		return listaRadunoShooters;
 	}
+	
+		
+	public void associaShooters(long id_esf_raduno, List<String> listaChecked, List<String> listaUnchecked) throws SystemException, NumberFormatException{
+		
+		if(id_esf_raduno == 0)
+			return;
+		
+		if(listaChecked == null)
+			return;
+		
+		if(listaUnchecked == null)
+			return;
+		
+		for(String idUnchecked : listaUnchecked){
+			
+			long userId = Long.valueOf(idUnchecked);
+			try {
+				esfRadunoShootersPersistence.removeByfindRadunoShooters(id_esf_raduno, userId);
+			} catch (NoSuchEsfRadunoShootersException e) {
+				// TODO Auto-generated catch block
+				System.out.println("CANCELLO LA RIGA n. " + idUnchecked);
+				e.printStackTrace();
+			}
+		}
+		
+		for(String idChecked : listaChecked){
+			long userId = Long.valueOf(idChecked);
+			try {
+				esfRadunoShootersPersistence.findByfindRadunoShooters(id_esf_raduno, userId);
+			} catch (NoSuchEsfRadunoShootersException e) {
+				// TODO Auto-generated catch block
+				EsfRadunoShooters rsNew = new EsfRadunoShootersImpl();
+				rsNew.setId_esf_raduno(id_esf_raduno);
+				rsNew.setUserId(userId);
+				this.addEsfRadunoShooters(rsNew);
+				System.out.println("INSERISCO LA RIGA n. " + userId);
+			}
+
+		}
+	}		
 }

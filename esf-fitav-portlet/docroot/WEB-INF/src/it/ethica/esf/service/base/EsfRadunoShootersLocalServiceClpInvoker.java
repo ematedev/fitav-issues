@@ -125,6 +125,12 @@ public class EsfRadunoShootersLocalServiceClpInvoker {
 		_methodName430 = "findById";
 
 		_methodParameterTypes430 = new String[] { "long" };
+
+		_methodName431 = "associaShooters";
+
+		_methodParameterTypes431 = new String[] {
+				"long", "java.util.List", "java.util.List"
+			};
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -233,6 +239,15 @@ public class EsfRadunoShootersLocalServiceClpInvoker {
 			return EsfRadunoShootersLocalServiceUtil.findById(((Long)arguments[0]).longValue());
 		}
 
+		if (_methodName431.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes431, parameterTypes)) {
+			EsfRadunoShootersLocalServiceUtil.associaShooters(((Long)arguments[0]).longValue(),
+				(java.util.List<java.lang.String>)arguments[1],
+				(java.util.List<java.lang.String>)arguments[2]);
+
+			return null;
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -274,4 +289,6 @@ public class EsfRadunoShootersLocalServiceClpInvoker {
 	private String[] _methodParameterTypes425;
 	private String _methodName430;
 	private String[] _methodParameterTypes430;
+	private String _methodName431;
+	private String[] _methodParameterTypes431;
 }

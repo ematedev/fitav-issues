@@ -281,6 +281,14 @@ public class EsfRadunoShootersLocalServiceUtil {
 		return getService().findById(id_esf_raduno);
 	}
 
+	public static void associaShooters(long id_esf_raduno,
+		java.util.List<java.lang.String> listaChecked,
+		java.util.List<java.lang.String> listaUnchecked)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			java.lang.NumberFormatException {
+		getService().associaShooters(id_esf_raduno, listaChecked, listaUnchecked);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

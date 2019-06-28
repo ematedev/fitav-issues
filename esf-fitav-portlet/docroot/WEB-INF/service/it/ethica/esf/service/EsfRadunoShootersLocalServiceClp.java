@@ -127,6 +127,12 @@ public class EsfRadunoShootersLocalServiceClp
 		_methodName19 = "findById";
 
 		_methodParameterTypes19 = new String[] { "long" };
+
+		_methodName20 = "associaShooters";
+
+		_methodParameterTypes20 = new String[] {
+				"long", "java.util.List", "java.util.List"
+			};
 	}
 
 	@Override
@@ -723,6 +729,44 @@ public class EsfRadunoShootersLocalServiceClp
 		return (java.util.List<it.ethica.esf.model.EsfRadunoShooters>)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
+	public void associaShooters(long id_esf_raduno,
+		java.util.List<java.lang.String> listaChecked,
+		java.util.List<java.lang.String> listaUnchecked)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			java.lang.NumberFormatException {
+		try {
+			_invokableLocalService.invokeMethod(_methodName20,
+				_methodParameterTypes20,
+				new Object[] {
+					id_esf_raduno,
+					
+				ClpSerializer.translateInput(listaChecked),
+					
+				ClpSerializer.translateInput(listaUnchecked)
+				});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof java.lang.NumberFormatException) {
+				throw (java.lang.NumberFormatException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+	}
+
 	private InvokableLocalService _invokableLocalService;
 	private String _methodName0;
 	private String[] _methodParameterTypes0;
@@ -762,4 +806,6 @@ public class EsfRadunoShootersLocalServiceClp
 	private String[] _methodParameterTypes17;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
+	private String _methodName20;
+	private String[] _methodParameterTypes20;
 }

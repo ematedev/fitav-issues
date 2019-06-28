@@ -584,13 +584,14 @@ public class ESFRaduni extends MVCPortlet {
 		try {
 
 			List<EsfRadunoShooters> listaInvitatiShooters;
-			listaInvitatiShooters = EsfRadunoShootersLocalServiceUtil.getEsfRadunoShooterses(0, 2);
+			listaInvitatiShooters = EsfRadunoShootersLocalServiceUtil.findById(id_esf_raduno);
 
 			List<Long> listaIdInvitati = new ArrayList<>(); 
 			
 			// TRASFERISCO I VALORI NELLA LISTA DI LONG
 			for(EsfRadunoShooters rs : listaInvitatiShooters){
 				listaIdInvitati.add(rs.getUserId());
+				System.out.println("ID Utente Invitato [" + rs.getUserId() + "]");
 			}
 		
 			// CREO LA DYNAMIC QUERY E INSERISCO LE CONDIZIONI
@@ -684,6 +685,48 @@ public class ESFRaduni extends MVCPortlet {
 	public void salvaShootersRaduno(ActionRequest request, ActionResponse response) {
 		System.out.println("################# SALVA SHOOTERS RADUNO #####################");
 
+		try {
+			long id_esf_raduno = ParamUtil.getLong(request, "id_esf_raduno");
+			String code = ParamUtil.getString(request, "code");
+
+			String[] parametri = ParamUtil.getParameterValues(request, "invitato", new String[0]);
+			System.out.println("[LISTA COMPLETA " + ParamUtil.getString(request, "idListaMostrataShooters") + "]");
+
+			String delimiter = "\\|";
+			String[] listaIdShooters = ParamUtil.getString(request, "idListaMostrataShooters").split(delimiter);
+			
+			
+			List<String> listaChecked = new ArrayList<String>(Arrays.asList(parametri));
+			List<String> listaUnchecked = new ArrayList<>();
+			
+			for(String elemento : listaIdShooters){
+				
+				if(listaChecked.indexOf(elemento) == -1){
+					listaUnchecked.add(elemento);
+				}
+				System.out.println("LISTA COMPLETA ID: [" + elemento + "]");
+			}
+			
+			for(String elemento : listaChecked){
+				System.out.println("[LISTA CHECKED ID: " + elemento + "]");
+			}
+			for(String elemento : listaUnchecked){
+				System.out.println("[LISTA UNCHECKED ID: " + elemento + "]");
+			}
+			System.out.println("[" + id_esf_raduno + "]");
+			System.out.println("[" + code + "]");
+			EsfRadunoShootersLocalServiceUtil.associaShooters(id_esf_raduno, listaChecked, listaUnchecked);
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+				
+		
+		
 	}
 
 	@ProcessAction(name="managementRaduno")
@@ -729,7 +772,7 @@ public class ESFRaduni extends MVCPortlet {
 			}
 			
 			for(EsfRadunoShooters rsh : listaShootersInvitati){
-				VW_Shooters invitato = VW_ShootersLocalServiceUtil.cercaShooter(id_esf_raduno);
+				VW_Shooters invitato = VW_ShootersLocalServiceUtil.cercaShooter(rsh.getUserId());
 				System.out.println("[Shooters: " + rsh.getUserId() + "]");
 				listaShooters.add(invitato);
 			}

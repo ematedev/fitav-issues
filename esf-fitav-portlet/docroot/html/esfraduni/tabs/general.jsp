@@ -141,6 +141,31 @@
 	<aui:button onClick="<%=editStaffURL.toString() %>" value="Associa Staff" />
 </aui:button-row>
 <b>TIRATORI INVITATI <%=nShooters%></b><br/>
+
+<liferay-ui:search-container emptyResultsMessage="no-result" total="<%=nShooters%>" iteratorURL="<%=ManagementRadunoViewURL%>" >
+<%
+	List<VW_Shooters> sottoListaShooters = ListUtil.subList(listaShooters, searchContainer.getStart(), searchContainer.getEnd());
+%>
+		<liferay-ui:search-container-results results="<%=sottoListaShooters%>"  />
+			<liferay-ui:search-container-row className="it.ethica.esf.model.VW_Shooters" modelVar="shooter">
+<%
+	String associazione = StringPool.BLANK;
+	ESFOrganization organizzazione = null;
+	if (Validator.isNotNull(shooter.getOrganizationId())){
+		associazione = String.valueOf(shooter.getOrganizationId());
+	}
+%>
+			<liferay-ui:search-container-column-text name="name"
+				value="<%=(Validator.isNotNull(shooter.getNome())) ? shooter.getNome() : StringPool.BLANK%>" />
+			<liferay-ui:search-container-column-text name="surname"
+				value="<%=(Validator.isNotNull(shooter.getCognome())) ? shooter.getCognome() : StringPool.BLANK%>" />
+			<liferay-ui:search-container-column-text name="Numero Tessera"
+					value="<%=(Validator.isNotNull(shooter.getCodiceTessera())) ? shooter.getCodiceTessera() : StringPool.BLANK%>" />
+			<liferay-ui:search-container-column-text name="Associazione" value="<%=associazione%>" />
+		</liferay-ui:search-container-row>
+	<liferay-ui:search-iterator />
+</liferay-ui:search-container>	
+	
 <aui:button-row cssClass="esfmatch-admin-buttons">
 	<aui:button onClick="<%=editShooterURL.toString() %>" value="Associa Tiratori" />
 </aui:button-row>
