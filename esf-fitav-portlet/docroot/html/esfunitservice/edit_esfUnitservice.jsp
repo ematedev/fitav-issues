@@ -32,7 +32,7 @@
 		<aui:fieldset>
 			<aui:input type="hidden" name="esfUnitserviceId"
 				value='<%= esfUnitservice == null ? "" : esfUnitservice.getEsfUnitserviceId() %>' />
-			<aui:input name="description" />
+			<aui:input name="description" required="true" />
 		</aui:fieldset>
 
 		<aui:button-row>

@@ -3,8 +3,7 @@
 <%
 ESFState esfState = null;
 
-if(esfStateId > 0){
-	
+if(esfStateId > 0){	
 	esfState = ESFStateLocalServiceUtil.getESFState(esfStateId);
 }
 %>
@@ -13,14 +12,17 @@ if(esfStateId > 0){
 	name='<%= esfState == null ? "addESFState" : "updateESFState"%>'
 	var="editESFStateURL">
 	<portlet:param name="esfStateId" value="<%=String.valueOf(esfStateId)%>" />
+	<portlet:param name="errorBackURL" value='<%= templatePath +"edit_esfState.jsp" %>'/>
 </portlet:actionURL>
+
+<liferay-ui:error key="state-name-message" message="state-name-message" />
 
 <aui:form action="<%= editESFStateURL%>" method="post" name="fm">
 
 	<aui:model-context bean="<%= esfState %>" model="<%= ESFState.class %>" />
 	
 	<aui:fieldset>
-		<aui:input name="name" />
+		<aui:input name="name" required="true" />
 		<aui:input name="description" />
 		
 		<aui:button-row>

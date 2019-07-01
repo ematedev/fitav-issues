@@ -3,10 +3,8 @@
 <%@page import="it.ethica.esf.permission.ESFConfigurationStateModelPermission"%>
 <%@ include file="init.jsp"%>
 
-<liferay-ui:error key="state-assigned-message"
-	message="state-assigned-message" />
-<liferay-ui:error key="state-name-message"
-	message="state-name-message" />
+<liferay-ui:error key="state-assigned-message" message="state-assigned-message" />
+<liferay-ui:error key="state-name-message" message="state-name-message" />
 
 <aui:button-row cssClass="esfstate-admin-buttons">
 <c:if test="<%= ESFConfigurationStateModelPermission.contains(permissionChecker,scopeGroupId, ActionKeys.ESFCONFIGURATIONSTATE_ADD) %>">
@@ -16,7 +14,7 @@
 		</portlet:renderURL>
 
 		<aui:button onClick="<%= addESFStateURL.toString() %>"
-			value="Add-State" label="Add-State"/>
+			value="add-state" label="add-state"/>
 </c:if>			
 </aui:button-row>
 	
