@@ -261,6 +261,13 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 		int delta = ParamUtil.getInteger(request, "delta", 0);
 		int paginaRicercaCorrente = ParamUtil.getInteger(request, "cur", 0); 
 		
+		//LOG 		
+		_log.debug(String.format("Cognome: [%s]\n", cognome)); 
+		_log.debug(String.format("Nome: [%s]\n", nome));
+		_log.debug(String.format("Tessera: [%s]\n", tessera)); 
+		_log.debug(String.format("Delta: [%s]\n", delta));
+		_log.debug(String.format("Pagina corrente: [%s]\n", paginaRicercaCorrente));
+		
 		try { 
   			
  			//Inizializzo la lista
@@ -270,16 +277,31 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 			DynamicQuery dq = DynamicQueryFactoryUtil.forClass(VM_TiratoriTesserati.class, "Tiratori", PortletClassLoaderUtil.getClassLoader());
 			
 			//Restringo la ricerca se vengono valorizzati i campi
-			if(!cognome.isEmpty()) { dq.add(RestrictionsFactoryUtil.eq("Tiratori.primaryKey.Cognome", cognome)); }
-			if(!nome.isEmpty()) { dq.add(RestrictionsFactoryUtil.eq("Tiratori.primaryKey.Nome", nome)); } 
-			if(!tessera.isEmpty()) { dq.add(RestrictionsFactoryUtil.eq("Tiratori.primaryKey.CodiceTessera", tessera)); }
+			if(!cognome.isEmpty()) { 
+				dq.add(RestrictionsFactoryUtil.eq("Tiratori.primaryKey.Cognome", cognome));
+				_log.debug("Entrato in cognome");
+			}
+			if(!nome.isEmpty()) { 
+				dq.add(RestrictionsFactoryUtil.eq("Tiratori.primaryKey.Nome", nome));
+				_log.debug("Entrato in nome");
+			} 
+			if(!tessera.isEmpty()) { 
+				dq.add(RestrictionsFactoryUtil.eq("Tiratori.primaryKey.CodiceTessera", tessera));
+				_log.debug("Entrato in tessera");
+			}
 		
 			//Eseguo la query
-			listaTiratori = VM_TiratoriTesseratiLocalServiceUtil.dynamicQuery(dq);
+			long start = System.currentTimeMillis();
+			listaTiratori = VM_TiratoriTesseratiLocalServiceUtil.dynamicQuery(dq); 
+			long fine = System.currentTimeMillis();
+			_log.debug(String.format("La query ha impiegato %s secondi", (fine - start) / 1000F));
+			int elementiTrovati = listaTiratori.size();
+			_log.debug(String.format("Elementi nella lista: [%s]\n", elementiTrovati));
 			
 			//Ordino la lista
 			List<VM_TiratoriTesserati> listaModificabile = new ArrayList<VM_TiratoriTesserati>(listaTiratori);
 			Collections.sort(listaModificabile, new CompareByNomeCognome());
+			_log.debug(String.format("Elementi nella lista modificabile: [%s]\n", listaModificabile.size()));
 			
 			//Valorizzo i campi e ritorno alla pagina 
 			request.setAttribute("listaTiratori", listaModificabile);
@@ -293,6 +315,7 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 			
 			//Mando un messaggio di errore alla jsp
 			SessionErrors.add(request, "error-ricerca");
+			_log.error(e.getMessage());
 			
 		} finally {
 			
