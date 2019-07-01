@@ -126,19 +126,19 @@ public interface ESFShootingDirectorQualificationModel extends BaseModel<ESFShoo
 
 	@Override
 	public int compareTo(
-		it.ethica.esf.model.ESFShootingDirectorQualification esfShootingDirectorQualification);
+		ESFShootingDirectorQualification esfShootingDirectorQualification);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFShootingDirectorQualification> toCacheModel();
+	public CacheModel<ESFShootingDirectorQualification> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFShootingDirectorQualification toEscapedModel();
+	public ESFShootingDirectorQualification toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFShootingDirectorQualification toUnescapedModel();
+	public ESFShootingDirectorQualification toUnescapedModel();
 
 	@Override
 	public String toString();

@@ -123,19 +123,19 @@ public interface ESFJobModel extends BaseModel<ESFJob> {
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFJob esfJob);
+	public int compareTo(ESFJob esfJob);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFJob> toCacheModel();
+	public CacheModel<ESFJob> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFJob toEscapedModel();
+	public ESFJob toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFJob toUnescapedModel();
+	public ESFJob toUnescapedModel();
 
 	@Override
 	public String toString();

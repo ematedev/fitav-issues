@@ -126,6 +126,8 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 	 */
 	@ProcessAction(name="cercaNomineDirettoriTiro")
 	public void cercaNomineDirettoriTiro(ActionRequest request, ActionResponse response) {
+		//Prendo il tempo iniziale della action
+		long startAction = System.currentTimeMillis();
 		
 		//Prendo quello che mi serve dalla jsp
 		String cognome = ParamUtil.getString(request, "lastname", "");
@@ -138,7 +140,7 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 		int paginaRicercaCorrente = ParamUtil.getInteger(request, "cur", 0); 
 		
 		
-		//DA CANCELLARE
+		//LOG
 		_log.debug(String.format("Cognome: [%s]\n", cognome)); 
 		_log.debug(String.format("Nome: [%s]\n", nome));
 		_log.debug(String.format("Tessera: [%s]\n", tessera));
@@ -178,26 +180,31 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 						ESFShootingDirectorQualificationLocalServiceUtil.getESFShootingDirectorQualification(idQualifica);
 				String qualifica = qualificaDirettore.getEsfShootingDirectorQualificationDesc();
 				dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.Qualifica", qualifica)); 
-			
-				//DA LEVARE
 				_log.debug(String.format("Qualifica nome: [%s]\n", qualifica));
 			}
 			if(idSpecialita != 0) { 
 				ESFSportType tipoSport = ESFSportTypeLocalServiceUtil.getESFSportType(idSpecialita);
 				String specialita = tipoSport.getName();
 				dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.Specialita", specialita)); 
-				
-				//DA LEVARE
 				_log.debug(String.format("Specialita nome: [%s]\n", specialita));
-			}  
+			}
+			
+			//Eseguo il count
+			long start = System.currentTimeMillis();
+			//listaNomine = VW_DatiDrettoreTiroLocalServiceUtil.dynamicQuery(dq); 
+			long fine = System.currentTimeMillis();
+			_log.debug(String.format("Il count ha impiegato %s secondi", (fine - start) / 1000F));
+			
 			//Eseguo la query
+			start = System.currentTimeMillis();
 			listaNomine = VW_DatiDrettoreTiroLocalServiceUtil.dynamicQuery(dq); 
+			fine = System.currentTimeMillis();
+			_log.debug(String.format("La query ha impiegato %s secondi", (fine - start) / 1000F));
 			int elementiTrovati = listaNomine.size();
 			_log.debug(String.format("Elementi nella lista: [%s]\n", elementiTrovati));
+			
 			//Ordino la lista
-			long start = System.currentTimeMillis();
 			List<VW_NomineDirettoriTiro> listaModificabile = new ArrayList<VW_NomineDirettoriTiro>(listaNomine);
-			_log.debug(String.format("Sono trascorsi %s secondi", (System.currentTimeMillis() - start) / 1000F));
 			Collections.sort(listaModificabile, new CompareByData()); 
 			_log.debug(String.format("Elementi nella lista modificabile: [%s]\n", listaModificabile.size()));
 			
@@ -208,18 +215,15 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 			SessionMessages.add(request, "success-message"); 
 			request.setAttribute("successMessage", messaggio);
 			
-			//DA CANCELLARE
-			
-			
-			
 			//Se c'è bisogno valorizzare i campi del search container
 			if(delta != 0) { response.setRenderParameter("delta", String.valueOf(delta)); }
 			if(paginaRicercaCorrente != 0) { response.setRenderParameter("cur", String.valueOf(paginaRicercaCorrente)); }
 			
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (Exception e) { 
+			
 			//Mando un messaggio di errore alla jsp
 			SessionErrors.add(request, "error-ricerca");
+			_log.error(e.getMessage());
 			
 		} finally {
 			
@@ -231,8 +235,12 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 			response.setRenderParameter("card", tessera);
 			response.setRenderParameter("regionId", regione);
 			response.setRenderParameter("qualifica", String.valueOf(idQualifica));
-			response.setRenderParameter("specialita", String.valueOf(idSpecialita)); 
+			response.setRenderParameter("specialita", String.valueOf(idSpecialita));
 			
+			//Stampo il tempo totale della Action
+			_log.debug(String.format("La action ha impiegato %s secondi",  (System.currentTimeMillis() - startAction) / 1000F));
+			_log.debug("############################################################");
+		
 		}
 	}
 	

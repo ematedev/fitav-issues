@@ -519,10 +519,6 @@ public class ESFSpecificClp extends BaseModelImpl<ESFSpecific>
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -623,5 +619,4 @@ public class ESFSpecificClp extends BaseModelImpl<ESFSpecific>
 	private String _code;
 	private String _description;
 	private BaseModel<?> _esfSpecificRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

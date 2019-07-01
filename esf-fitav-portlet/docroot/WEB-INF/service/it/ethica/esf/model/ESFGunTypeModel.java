@@ -295,19 +295,19 @@ public interface ESFGunTypeModel extends BaseModel<ESFGunType>,
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFGunType esfGunType);
+	public int compareTo(ESFGunType esfGunType);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFGunType> toCacheModel();
+	public CacheModel<ESFGunType> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFGunType toEscapedModel();
+	public ESFGunType toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFGunType toUnescapedModel();
+	public ESFGunType toUnescapedModel();
 
 	@Override
 	public String toString();

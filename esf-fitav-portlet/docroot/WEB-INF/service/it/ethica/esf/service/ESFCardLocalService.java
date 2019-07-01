@@ -16,7 +16,6 @@ package it.ethica.esf.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -53,7 +52,6 @@ public interface ESFCardLocalService extends BaseLocalService,
 	* @return the e s f card that was added
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFCard addESFCard(
 		it.ethica.esf.model.ESFCard esfCard)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -74,7 +72,6 @@ public interface ESFCardLocalService extends BaseLocalService,
 	* @throws PortalException if a e s f card with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFCard deleteESFCard(long esfCardId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
@@ -86,7 +83,6 @@ public interface ESFCardLocalService extends BaseLocalService,
 	* @return the e s f card that was removed
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFCard deleteESFCard(
 		it.ethica.esf.model.ESFCard esfCard)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -281,7 +277,6 @@ public interface ESFCardLocalService extends BaseLocalService,
 	* @return the e s f card that was updated
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFCard updateESFCard(
 		it.ethica.esf.model.ESFCard esfCard)
 		throws com.liferay.portal.kernel.exception.SystemException;

@@ -243,19 +243,19 @@ public interface ESFShooterAffiliationChronoModel extends BaseModel<ESFShooterAf
 
 	@Override
 	public int compareTo(
-		it.ethica.esf.model.ESFShooterAffiliationChrono esfShooterAffiliationChrono);
+		ESFShooterAffiliationChrono esfShooterAffiliationChrono);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFShooterAffiliationChrono> toCacheModel();
+	public CacheModel<ESFShooterAffiliationChrono> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFShooterAffiliationChrono toEscapedModel();
+	public ESFShooterAffiliationChrono toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFShooterAffiliationChrono toUnescapedModel();
+	public ESFShooterAffiliationChrono toUnescapedModel();
 
 	@Override
 	public String toString();

@@ -598,19 +598,19 @@ public interface ESFOrganizationModel extends BaseModel<ESFOrganization> {
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFOrganization esfOrganization);
+	public int compareTo(ESFOrganization esfOrganization);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFOrganization> toCacheModel();
+	public CacheModel<ESFOrganization> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFOrganization toEscapedModel();
+	public ESFOrganization toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFOrganization toUnescapedModel();
+	public ESFOrganization toUnescapedModel();
 
 	@Override
 	public String toString();

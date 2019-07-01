@@ -420,19 +420,19 @@ public interface ESFFieldModel extends BaseModel<ESFField>, StagedGroupedModel {
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFField esfField);
+	public int compareTo(ESFField esfField);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFField> toCacheModel();
+	public CacheModel<ESFField> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFField toEscapedModel();
+	public ESFField toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFField toUnescapedModel();
+	public ESFField toUnescapedModel();
 
 	@Override
 	public String toString();

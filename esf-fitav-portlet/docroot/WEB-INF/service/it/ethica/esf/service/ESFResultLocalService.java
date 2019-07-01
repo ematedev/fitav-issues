@@ -16,7 +16,6 @@ package it.ethica.esf.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -53,7 +52,6 @@ public interface ESFResultLocalService extends BaseLocalService,
 	* @return the e s f result that was added
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFResult addESFResult(
 		it.ethica.esf.model.ESFResult esfResult)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -74,7 +72,6 @@ public interface ESFResultLocalService extends BaseLocalService,
 	* @throws PortalException if a e s f result with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFResult deleteESFResult(long esfResultId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
@@ -86,7 +83,6 @@ public interface ESFResultLocalService extends BaseLocalService,
 	* @return the e s f result that was removed
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFResult deleteESFResult(
 		it.ethica.esf.model.ESFResult esfResult)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -226,7 +222,6 @@ public interface ESFResultLocalService extends BaseLocalService,
 	* @return the e s f result that was updated
 	* @throws SystemException if a system exception occurred
 	*/
-	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFResult updateESFResult(
 		it.ethica.esf.model.ESFResult esfResult)
 		throws com.liferay.portal.kernel.exception.SystemException;
