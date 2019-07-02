@@ -341,6 +341,41 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 	public void addShooterDirector (ActionRequest actionRequest, ActionResponse actionResponse)
 		throws PortalException, SystemException, ParseException {
 		
+		//Nasconde il messaggio di errore predefinito
+		SessionMessages.add(actionRequest, PortalUtil.getPortletId(actionRequest) + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
+		
+		//Prendi l'id utente
+		long esfUserId = ParamUtil.getLong(actionRequest, "esfUserId");
+		//Prendi l'id del direttore di tiro
+		long shDtId = ParamUtil.getLong(actionRequest, "shDtId");
+		//Prendi l'id della specialità
+		long stId = ParamUtil.getLong(actionRequest, "stId");
+		
+		//Prendi la url dell'mvcPath
+		String mvcPath = ParamUtil.getString(actionRequest, "mvcPath");
+		
+		if(shDtId == 0 && stId == 0) {
+			SessionErrors.add(actionRequest, "error-campi");
+			actionRequest.setAttribute("errorMessage", "Non sono stati valorizzati i campi");
+			actionResponse.setRenderParameter("mvcPath", mvcPath); 
+			actionResponse.setRenderParameter("esfUserId", String.valueOf(esfUserId)); 
+			return;
+		} 
+		if(shDtId == 0) {
+			SessionErrors.add(actionRequest, "error-campi");
+			actionRequest.setAttribute("errorMessage", "Non è stato valorizzato il campo \"Qualifica\"");
+			actionResponse.setRenderParameter("mvcPath", mvcPath); 
+			actionResponse.setRenderParameter("esfUserId", String.valueOf(esfUserId)); 
+			return;
+		}
+		if(stId == 0) {
+			SessionErrors.add(actionRequest, "error-campi");
+			actionRequest.setAttribute("errorMessage", "Non è stato valorizzato il campo \"Specialita\"");
+			actionResponse.setRenderParameter("mvcPath", mvcPath); 
+			actionResponse.setRenderParameter("esfUserId", String.valueOf(esfUserId)); 
+			return;
+		}
+		
 		//Prendi l'oggetto ThemeDisplay
 		ThemeDisplay themeDisplay = (ThemeDisplay)actionRequest.getAttribute(WebKeys.THEME_DISPLAY);
 		//Definisci il formato della data
@@ -354,12 +389,7 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 		ESFShootingDirector shDts = new ESFShootingDirectorImpl();
 		ESFShootingDirector newShDts = new ESFShootingDirectorImpl();
 		
-		//Prendi l'id utente
-		long esfUserId = ParamUtil.getLong(actionRequest, "esfUserId");
-		//Prendi l'id del direttore di tiro
-		long shDtId = ParamUtil.getLong(actionRequest, "shDtId");
-		//Prendi l'id della specialità
-		long stId = ParamUtil.getLong(actionRequest, "stId");
+		
 		
 		//Prendi la data di inizio 
 		String startDateS = ParamUtil.getString(actionRequest, "startDate");
@@ -367,9 +397,6 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 		//Inizializza id regione e id province
 		String regionId = "";
 		String provinceId = "";
-		
-		//Prendi la url dell'mvcPath
-		String mvcPath = ParamUtil.getString(actionRequest, "mvcPath");
 		
 		//Inizializza data
 		Date startDate = null;
