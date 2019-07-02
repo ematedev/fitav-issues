@@ -231,7 +231,7 @@
 		</div>
 		
 		<div class="btn-field-align">
-			<aui:select name="description" label="event" inlineField="true">
+			<aui:select name="description" label="description" inlineField="true">
 				<aui:option label="-" value="0" />
 			<%
 				List<ESFDescription> esfDescriptions = ESFDescriptionLocalServiceUtil.findAllByNational(isNational);

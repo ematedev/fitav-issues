@@ -32,6 +32,6 @@ ESFState esfState = (ESFState)row.getObject();
 		<portlet:param name="esfStateId" value="<%= String.valueOf(esfState.getEsfStateId()) %>" />
 		<portlet:param name="mvcPath" value='<%= templatePath + "view_entity.jsp"%>' />
 	</portlet:renderURL>
-	<liferay-ui:icon image="edit" label="assign-entity" url="<%= assignURL.toString() %>"/>
+	<liferay-ui:icon image="edit" message="assign-entity" url="<%= assignURL.toString() %>"/>
 </c:if>
 </liferay-ui:icon-menu>

@@ -1,6 +1,6 @@
 <%@ include file="init.jsp"%>
 
-<h2><liferay-ui:message key="event" /></h2>
+<h2><liferay-ui:message key="description" /></h2>
 <%
 	ESFDescription esfDescription = null;
 

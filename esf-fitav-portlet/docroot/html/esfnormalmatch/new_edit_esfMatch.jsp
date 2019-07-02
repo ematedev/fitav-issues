@@ -237,7 +237,7 @@
 
 		
 	<div  class="btn-field-align">	
-		<aui:select name="esfMatchTypeId" lable="esfMatchTypeId" id="esfMatchTypeId" inlineField="true">
+		<aui:select name="esfMatchTypeId" lablel="esfMatchTypeId" id="esfMatchTypeId" inlineField="true">
 		<%-- 	<aui:option label="-" value="0" />   --%>
 			<%
 				boolean select = false;
