@@ -489,10 +489,6 @@ public class ESFUnitserviceClp extends BaseModelImpl<ESFUnitservice>
 		}
 	}
 
-	public Class<?> getClpSerializerClass() {
-		return _clpSerializerClass;
-	}
-
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -586,5 +582,4 @@ public class ESFUnitserviceClp extends BaseModelImpl<ESFUnitservice>
 	private Date _createDate;
 	private Date _modifiedDate;
 	private BaseModel<?> _esfUnitserviceRemoteModel;
-	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

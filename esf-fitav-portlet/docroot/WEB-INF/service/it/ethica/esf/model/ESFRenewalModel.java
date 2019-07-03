@@ -417,19 +417,19 @@ public interface ESFRenewalModel extends BaseModel<ESFRenewal> {
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFRenewal esfRenewal);
+	public int compareTo(ESFRenewal esfRenewal);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFRenewal> toCacheModel();
+	public CacheModel<ESFRenewal> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFRenewal toEscapedModel();
+	public ESFRenewal toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFRenewal toUnescapedModel();
+	public ESFRenewal toUnescapedModel();
 
 	@Override
 	public String toString();

@@ -1091,14 +1091,15 @@
 		<field name="firstName" type="String" />
 	</model>
 	<model name="it.ethica.esf.model.VW_NomineDirettoriTiro">
+		<field name="Autenticazione" type="int" />
+		<field name="CodiceTessera" type="String" />
 		<field name="UserId" type="int" />
 		<field name="IdDirettoreTiro" type="int" />
-		<field name="Nome" type="String" />
-		<field name="Cognome" type="String" />
-		<field name="CodiceTessera" type="String" />
 		<field name="Regione" type="String" />
-		<field name="Qualifica" type="String" />
 		<field name="Specialita" type="String" />
 		<field name="DataAssegnazione" type="Date" />
+		<field name="Qualifica" type="String" />
+		<field name="Nome" type="String" />
+		<field name="Cognome" type="String" />
 	</model>
 </model-hints>

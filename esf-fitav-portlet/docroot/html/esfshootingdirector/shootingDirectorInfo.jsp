@@ -48,13 +48,13 @@ shDts = ESFShootingDirectorQualificationLocalServiceUtil.getESFShootingDirectorQ
 sportTypes = ESFSportTypeLocalServiceUtil.getAllESFSportTypes();
 
 
-%>
-<b>L'user id è [<%= esfUserId %>]</b>
+%> 
 
 <!-- Messaggio in testa alla pagina -->
-<h3><liferay-ui:message key="infromation-shDR-x" arguments="<%=shDrName %>" /></h3>
+<h3><liferay-ui:message key="infromation-shDR-x" arguments="<%=shDrName %>" /></h3> 
 
 <!-- Definizione dei gestori degli errori -->
+<liferay-ui:error key="error-campi" message="${errorMessage}"/>
 <liferay-ui:error key="findingOld" message="findingOld" />
 <liferay-ui:error key="error-delete-shDr" message="error-delete-shDr" />
 

@@ -24,7 +24,6 @@ import java.util.Date;
 
 /**
  * @author Ethica
- * @generated
  */
 public class ESFUserESFUserRolePK implements Comparable<ESFUserESFUserRolePK>,
 	Serializable {

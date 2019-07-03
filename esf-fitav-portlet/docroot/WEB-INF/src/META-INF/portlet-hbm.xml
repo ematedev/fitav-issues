@@ -1389,15 +1389,16 @@
 	<class name="it.ethica.esf.model.impl.VW_NomineDirettoriTiroImpl" table="vw_nominedirettoritiro">
 		<cache usage="read-write" />
 		<composite-id name="primaryKey" class="it.ethica.esf.service.persistence.VW_NomineDirettoriTiroPK">
+			<key-property name="Autenticazione" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+			<key-property name="CodiceTessera" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 			<key-property name="UserId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
 			<key-property name="IdDirettoreTiro" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
-			<key-property name="Nome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-			<key-property name="Cognome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-			<key-property name="CodiceTessera" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 			<key-property name="Regione" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-			<key-property name="Qualifica" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 			<key-property name="Specialita" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 			<key-property name="DataAssegnazione" type="org.hibernate.type.TimestampType" />
+			<key-property name="Qualifica" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="Nome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="Cognome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		</composite-id>
 	</class>
 </hibernate-mapping>

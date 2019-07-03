@@ -470,19 +470,19 @@ public interface ESFTournamentModel extends BaseModel<ESFTournament>,
 	public Object clone();
 
 	@Override
-	public int compareTo(it.ethica.esf.model.ESFTournament esfTournament);
+	public int compareTo(ESFTournament esfTournament);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.ESFTournament> toCacheModel();
+	public CacheModel<ESFTournament> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.ESFTournament toEscapedModel();
+	public ESFTournament toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.ESFTournament toUnescapedModel();
+	public ESFTournament toUnescapedModel();
 
 	@Override
 	public String toString();

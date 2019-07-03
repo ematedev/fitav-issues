@@ -155,20 +155,19 @@ public interface VW_DatiDrettoreTiroModel extends BaseModel<VW_DatiDrettoreTiro>
 	public Object clone();
 
 	@Override
-	public int compareTo(
-		it.ethica.esf.model.VW_DatiDrettoreTiro vw_DatiDrettoreTiro);
+	public int compareTo(VW_DatiDrettoreTiro vw_DatiDrettoreTiro);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<it.ethica.esf.model.VW_DatiDrettoreTiro> toCacheModel();
+	public CacheModel<VW_DatiDrettoreTiro> toCacheModel();
 
 	@Override
-	public it.ethica.esf.model.VW_DatiDrettoreTiro toEscapedModel();
+	public VW_DatiDrettoreTiro toEscapedModel();
 
 	@Override
-	public it.ethica.esf.model.VW_DatiDrettoreTiro toUnescapedModel();
+	public VW_DatiDrettoreTiro toUnescapedModel();
 
 	@Override
 	public String toString();
