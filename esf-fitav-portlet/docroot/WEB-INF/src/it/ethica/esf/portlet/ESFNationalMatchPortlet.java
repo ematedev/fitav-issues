@@ -3323,6 +3323,7 @@ ServiceContext serviceContext =
 		String code = ParamUtil.getString(request, "code");
 		String sd = ParamUtil.getString(request, "startDate");
 		String ed = ParamUtil.getString(request, "endDate");
+		_log.debug("ESFNationalMatchPortlet - esfMatchId:"+esfMatchId+" - code: "+code);
 		boolean internationalPlace =
 			ParamUtil.getBoolean(request, "siteInternational");
 		Date startDate = null;
@@ -3330,8 +3331,7 @@ ServiceContext serviceContext =
 		try {
 			startDate = ManageDate.StringToDate(sd);
 			endDate = ManageDate.StringToDate(ed);
-		}
-		catch (ParseException e1) {
+		} catch (ParseException e1) {
 			e1.printStackTrace();
 			throw new PortalException(e1);
 		}
@@ -3368,15 +3368,13 @@ ServiceContext serviceContext =
 		String esfNationalSportTypeidString = "";
 		
 		for(String s : valuesSportType){
-
 			esfNationalSportTypeidString = esfNationalSportTypeidString+"-"+s;
 		}
 		
 		if (internationalPlace) {
 			esfAssociationId = 0;
 			site = "";
-		}
-		else {
+		} else {
 			notNationalAssotiation = "";
 			esfCountryId = 0;
 		}
@@ -3386,8 +3384,7 @@ ServiceContext serviceContext =
 		
 		if (startDate.after(endDate)) {
 			SessionErrors.add(request, "date-message");
-		}
-		else {
+		} else {
 			ESFMatch newMatch =
 				ESFMatchLocalServiceUtil.addOrUpdateESFMatch(
 					serviceContext.getUserId(), esfMatchId, esfAssociationId,
@@ -3420,12 +3417,12 @@ ServiceContext serviceContext =
 			
 			if (newMatch == null || newMatch.getPrimaryKey() == 0) {
 				SessionErrors.add(request, "match-error-operatiorn");
-			}
-			else if (esfMatchId == 0) {
+			} else if (esfMatchId == 0) {
 				SessionMessages.add(request, "match-success-insert");
-			}
-			else {
+				response.setRenderParameter("successMessage", newMatch.getCode());
+			} else {
 				SessionMessages.add(request, "match-success-update");
+				response.setRenderParameter("successMessage", newMatch.getCode());
 			}
 		}
 		response.setRenderParameter("mvcPath", templatePath + "view.jsp");

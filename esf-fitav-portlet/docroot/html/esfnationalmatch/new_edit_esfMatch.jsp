@@ -22,7 +22,7 @@
 	ESFOrganization esfMatchOrganization = null;
 	boolean disabled=false;
 	boolean checked = false;
-	
+	boolean isEdit = false;
 	boolean olimpicMatch = 
 			GetterUtil.getBoolean(
 				portletPreferences.getValue(
@@ -46,9 +46,11 @@
 	}else if(event){
 		typeEvent ="event";
 	}
-
+	String matchCodeValue = "";
 	if (esfMatchId > 0) {
 		esfMatch = ESFMatchLocalServiceUtil.getESFMatch(esfMatchId);
+		isEdit = true;
+		matchCodeValue = esfMatch.getCode();
 		if(esfMatch.getEsfAssociationId()>0){
 			esfMatchOrganization = ESFOrganizationLocalServiceUtil
 				.getESFOrganization(esfMatch.getEsfAssociationId());
@@ -80,40 +82,21 @@
 		displayTwo = "none";
 	}
 	
-	Calendar cal = Calendar.getInstance();
-	List <ESFMatch> esfMatches = ESFMatchLocalServiceUtil.
-							findESFMatchesByYearIsNational(
-										cal.get(cal.YEAR),isNational);
-	String matchCodeValue = "";
-	matchCodeValue = String.valueOf(cal.get(cal.YEAR)) + "_" +
-						String.valueOf(esfMatches.size() + 1);
-
-	
-	
 	String esfDescription = "";
 	List<ESFMatchType> esfMatchTypes = null;
 	esfMatchTypes = ESFMatchTypeLocalServiceUtil.findAllByNational(isNational);
 	ESFMatchType esfMatchType  = null;
 	if(esfMatchId >0) {
-		
-		esfMatchType  = ESFMatchTypeLocalServiceUtil.
+		esfMatchType = ESFMatchTypeLocalServiceUtil.
 				fetchESFMatchType(esfMatch.getEsfMatchTypeId());
-		
 		if(esfMatchType != null){
 			esfDescription = esfMatchType.getName();
+			
 		}
 	}
-	
-	User userLogged = themeDisplay.getUser();
-	
-	
-	List<Role> roles = userLogged.getRoles();
-	
-
+// 	User userLogged = themeDisplay.getUser();	
+// 	List<Role> roles = userLogged.getRoles();
 %>
-
-
-
 
 <portlet:resourceURL var="resourceURL" escapeXml="false" />
 
@@ -135,16 +118,8 @@
 
 <portlet:actionURL name="updateESFMatch" var="editESFMatchURL" />
 
-
-
-
-
-
 <aui:form action="<%=editESFMatchURL%>" name="fm">
-
 	<aui:model-context bean="<%=esfMatch%>" model="<%=ESFMatch.class%>" />
-
-	
 		<aui:input type="hidden" name="esfMatchId" value='<%=esfMatchId%>' />
 
 		<%
@@ -197,8 +172,10 @@
 		<aui:input name="eventType" type="hidden"
 			value="<%=typeEvent%>"></aui:input>
 		
-		<aui:input name="code"
-			value="<%=matchCodeValue%>"></aui:input>
+		<% if(isEdit){%>
+	   		<aui:input name="codeView" type="text" value="<%=matchCodeValue%>" disabled="true" />
+		<%} %>
+		<aui:input name="code" type="hidden" value="<%=matchCodeValue%>" />
 
 		<aui:input name="startDate" type="text" >
 			<aui:validator name="required" errorMessage="this-field-is-required" />
@@ -226,8 +203,7 @@
 				
 				<%} %>
 			</aui:select>
-			
-					<aui:button onClick="<%= add_MatchTypeURL.toString() %>" value="add-addr" />
+			<aui:button onClick="<%= add_MatchTypeURL.toString() %>" value="add-addr" />
 		</div>
 		
 		<div class="btn-field-align">
@@ -388,9 +364,7 @@ for(ESFSportType type : esfSportTypes){
 			checked="<%=esfMatch != null
 				? esfMatch.getIsJuniorMatch() : false%>" />
 				
-
-
-		<aui:input name="isOlimpicQualificationMatch" leable="isOlimpicQualificationMatch" 
+		<aui:input name="isOlimpicQualificationMatch" label="isOlimpicQualificationMatch" 
 			type="checkbox" checked="<%=esfMatch != null ? esfMatch.getIsOlimpicQualificationMatch() : false%>" />
 
 <%
@@ -428,17 +402,14 @@ for(ESFShooterQualification q : esfShooterQualifications){
         rightList="<%=rightList%>"
         rightTitle="selected"
     />
-		
-		
 
 	<aui:button-row>
-
-		<c:if test="<%= true /*ESFNationalMatchPermission.contains(permissionChecker,esfMatchId, ActionKeys.ESFNATIONALMATCH_UPDATE)*/ %>">
+	<!-- /*ESFNationalMatchPermission.contains(permissionChecker,esfMatchId, ActionKeys.ESFNATIONALMATCH_UPDATE)*/ -->
+		<c:if test="<%= true  %>">
 			<aui:button type="button" value="save"
 				id='<%=renderResponse.getNamespace()+"checkDraft"%>'>
 			</aui:button>
 		</c:if>
-		
 		<aui:button type="cancel" onClick="<%=viewURL%>"></aui:button>
 	</aui:button-row>
 

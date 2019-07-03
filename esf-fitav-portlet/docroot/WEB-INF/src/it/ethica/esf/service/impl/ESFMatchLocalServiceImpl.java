@@ -19,6 +19,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import com.liferay.portal.NoSuchUserException;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
 import com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil;
 import com.liferay.portal.kernel.dao.orm.OrderFactoryUtil;
@@ -896,7 +897,104 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 		return esfMatchs;
 	}
 	
-
+	private ESFMatch generateESFMatch(User operator, long userId, long esfMatchId,
+			long esfAssociationId, String code, Date startDate, Date endDate,
+			String startHour, long description, String note, boolean isDraft,
+			int numFields, long esfSportTypeId, int numDisk, int numDiskTeam,
+			boolean isIndividualMatch, boolean isTeamMatch,
+			boolean isJuniorMatch, long esfMatchTypeId, boolean isChangeCategoryMatch,
+			long[] esfShooterCategoryIds, long[] esfShooterQualificationIds,
+			long esfCountryId, String site, boolean isNational,
+			ESFEntityState esfEntityState, ServiceContext serviceContext,
+			String notNationalAssotiation, String eventType,
+			String esfNationalSportTypeidString, boolean isOlimpicQualificationMatch) throws SystemException, NoSuchUserException{
+		ESFMatch esfMatch = null;
+		ESFMatch lastCodeMatch = null;
+		int year = 0;
+		int seq = 0;
+		String lastCode = null;
+		String newCode = null;
+		long groupId = serviceContext.getScopeGroupId();
+		Date now = new Date();
+		
+		if (esfMatchId == 0) {
+			esfMatchId = counterLocalService.increment();
+			esfMatch = esfMatchPersistence.create(esfMatchId);
+		} else {
+			esfMatch = ESFMatchLocalServiceUtil.fetchESFMatch(esfMatchId);
+		}
+		if(code==null || code.trim().isEmpty()){
+			//Genero il codice
+			year = Calendar.getInstance().get(Calendar.YEAR);
+			_log.debug("Verifico il codice dell'ultimo match dell'anno corrente: "+year);
+			try {
+				lastCodeMatch = this.esfMatchPersistence
+						.findByMatchYear_Last(year, 
+								OrderByComparatorFactoryUtil
+								.create(ESFMatchModelImpl.TABLE_NAME, "matchYearSeq", true));
+			} catch (NoSuchMatchException e) {
+				lastCodeMatch = null;
+				_log.debug("Nessun match per l'anno corrente trovato", e);
+			}
+			_log.debug("Calcolo il codice da assegnare al match rispetto al vecchio");
+			
+			if(lastCodeMatch!=null){
+				//Se esiste un match di quest'anno
+				seq = lastCodeMatch.getMatchYearSeq();
+			}else{
+				//Altrimenti creo un codice fittizio con anno e 4 zeri finali
+				seq = 0;
+			}
+			lastCode = String.valueOf(year)
+					.concat(GenericUtility.getZeroPaddedString(String.valueOf(seq), 4));
+			seq++;
+			_log.debug("Ultimo codice  dell'anno: "+lastCode);
+			newCode = String.valueOf(year)
+					.concat(GenericUtility.getZeroPaddedString(String.valueOf(seq), 4));
+			_log.debug("Codice ricalcolato: "+newCode);
+		}else{
+			//Nel caso in cui arriva un codice allora è un update ed il codice non deve cambiare
+			newCode = code;
+			year = esfMatch.getMatchYear();
+			seq = esfMatch.getMatchYearSeq();
+		}
+		esfMatch.setUserId(userId);
+		esfMatch.setGroupId(groupId);
+		esfMatch.setCompanyId(operator.getCompanyId());
+		esfMatch.setUserName(operator.getFullName());
+		esfMatch.setCreateDate(serviceContext.getCreateDate(now));
+		esfMatch.setModifiedDate(serviceContext.getModifiedDate(now));
+		esfMatch.setExpandoBridgeAttributes(serviceContext);
+		esfMatch.setEsfAssociationId(esfAssociationId);
+		esfMatch.setCode(newCode);
+		esfMatch.setMatchYear(year);
+		esfMatch.setMatchYearSeq(seq);
+		esfMatch.setStartDate(startDate);
+		esfMatch.setEndDate(endDate);
+		esfMatch.setStartHour(startHour);
+		esfMatch.setDescription(description);
+		esfMatch.setNotes(note);
+		esfMatch.setIsDraft(isDraft);
+		esfMatch.setNumFields(numFields);
+		esfMatch.setEsfSportTypeId(esfSportTypeId);
+		esfMatch.setNumDisk(numDisk);
+		esfMatch.setNumDiskTeam(numDiskTeam);
+		esfMatch.setIsChangeCategoryMatch(isChangeCategoryMatch);
+		esfMatch.setIsIndividualMatch(isIndividualMatch);
+		esfMatch.setIsTeamMatch(isTeamMatch);
+		esfMatch.setIsJuniorMatch(isJuniorMatch);
+		esfMatch.setEsfMatchTypeId(esfMatchTypeId);
+		esfMatch.setCountryId(esfCountryId);
+		esfMatch.setSite(site);
+		esfMatch.setIsNational(isNational);
+		esfMatch.setIsOlimpicQualificationMatch(isOlimpicQualificationMatch);
+		esfMatch.setNotNationalAssotiation(notNationalAssotiation);
+		esfMatch.setEventType(eventType);
+		esfMatch.setEsfNationalSportTypeId(esfNationalSportTypeidString);
+		_log.debug("Salvataggio ESFMatch con codice: "+esfMatch.getCode());
+				
+		return esfMatch;
+	}
 
 
 	public ESFMatch addOrUpdateESFMatch(long userId, long esfMatchId,
@@ -909,94 +1007,95 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 			long esfCountryId, String site, boolean isNational,
 			ESFEntityState esfEntityState, ServiceContext serviceContext)
 			throws SystemException, PortalException {
-
+			
 		User operator = userPersistence.findByPrimaryKey(userId);
 		long groupId = serviceContext.getScopeGroupId();
-		ESFMatch lastCodeMatch = null;
 		Date now = new Date();
-		int year = 0;
-		int seq = 0;
-		ESFMatch esfMatch = null;
-		String lastCode = null;
-		String newCode = null;
-		if (esfMatchId == 0) {
-			esfMatchId = counterLocalService.increment();
-			esfMatch = esfMatchPersistence.create(esfMatchId);
-		} else {
-			esfMatch = ESFMatchLocalServiceUtil.fetchESFMatch(esfMatchId);
-		}
+//		ESFMatch lastCodeMatch = null;
+//		int year = 0;
+//		int seq = 0;
+		
+//		String lastCode = null;
+//		String newCode = null;
+		ESFMatch esfMatch = this.generateESFMatch(operator, userId, esfMatchId, esfAssociationId, code, startDate, endDate, startHour, description, note, isDraft, numFields, esfSportTypeId, numDisk, numDiskTeam, isIndividualMatch, isTeamMatch, isJuniorMatch, esfMatchTypeId, isChangeCategoryMatch, esfShooterCategoryIds, esfShooterQualificationIds, esfCountryId, site, isNational, esfEntityState, serviceContext, null, null, null, false);
+//		if (esfMatchId == 0) {
+//			esfMatchId = counterLocalService.increment();
+//			esfMatch = esfMatchPersistence.create(esfMatchId);
+//		} else {
+//			esfMatch = ESFMatchLocalServiceUtil.fetchESFMatch(esfMatchId);
+//		}
 		if (esfMatch != null) {
-			if(code==null || code.trim().isEmpty()){
-				//Genero il codice
-				year = Calendar.getInstance().get(Calendar.YEAR);
-				_log.debug("Verifico il codice dell'ultimo match dell'anno corrente: "+year);
-				try {
-					lastCodeMatch = this.esfMatchPersistence
-							.findByMatchYear_Last(year, 
-									OrderByComparatorFactoryUtil
-									.create(ESFMatchModelImpl.TABLE_NAME, "matchYearSeq", true));
-				} catch (NoSuchMatchException e) {
-					lastCodeMatch = null;
-					_log.debug("Nessun match per l'anno corrente trovato", e);
-				}
-				_log.debug("Calcolo il codice da assegnare al match rispetto al vecchio");
-				
-				if(lastCodeMatch!=null){
-					//Se esiste un match di quest'anno
-					seq = lastCodeMatch.getMatchYearSeq();
-				}else{
-					//Altrimenti creo un codice fittizio con anno e 4 zeri finali
-					seq = 0;
-				}
-				lastCode = String.valueOf(year)
-						.concat(GenericUtility.getZeroPaddedString(String.valueOf(seq), 4));
-				seq++;
-				_log.debug("Ultimo codice  dell'anno: "+lastCode);
-				newCode = String.valueOf(year)
-						.concat(GenericUtility.getZeroPaddedString(String.valueOf(seq), 4));
-				_log.debug("Codice ricalcolato: "+newCode);
-			}else{
-				//Nel caso in cui arriva un codice allora è un update ed il codice non deve cambiare
-				newCode = code;
-				year = esfMatch.getMatchYear();
-				seq = esfMatch.getMatchYearSeq();
-			}
-			esfMatch.setUserId(userId);
-			esfMatch.setGroupId(groupId);
-			esfMatch.setCompanyId(operator.getCompanyId());
-			esfMatch.setUserName(operator.getFullName());
-			esfMatch.setCreateDate(serviceContext.getCreateDate(now));
-			esfMatch.setModifiedDate(serviceContext.getModifiedDate(now));
-			esfMatch.setExpandoBridgeAttributes(serviceContext);
-			esfMatch.setEsfAssociationId(esfAssociationId);
-			esfMatch.setCode(newCode);
-			esfMatch.setMatchYear(year);
-			esfMatch.setMatchYearSeq(seq);
-			esfMatch.setStartDate(startDate);
-			esfMatch.setEndDate(endDate);
-			esfMatch.setStartHour(startHour);
-			esfMatch.setDescription(description);
-			esfMatch.setNotes(note);
-			esfMatch.setIsDraft(isDraft);
-			esfMatch.setNumFields(numFields);
-			esfMatch.setEsfSportTypeId(esfSportTypeId);
-			esfMatch.setNumDisk(numDisk);
-			esfMatch.setNumDiskTeam(numDiskTeam);
-			esfMatch.setIsChangeCategoryMatch(isChangeCategoryMatch);
-			esfMatch.setIsIndividualMatch(isIndividualMatch);
-			esfMatch.setIsTeamMatch(isTeamMatch);
-			esfMatch.setIsJuniorMatch(isJuniorMatch);
-			esfMatch.setEsfMatchTypeId(esfMatchTypeId);
-			esfMatch.setCountryId(esfCountryId);
-			esfMatch.setSite(site);
-			esfMatch.setIsNational(isNational);
+//			if(code==null || code.trim().isEmpty()){
+//				//Genero il codice
+//				year = Calendar.getInstance().get(Calendar.YEAR);
+//				_log.debug("Verifico il codice dell'ultimo match dell'anno corrente: "+year);
+//				try {
+//					lastCodeMatch = this.esfMatchPersistence
+//							.findByMatchYear_Last(year, 
+//									OrderByComparatorFactoryUtil
+//									.create(ESFMatchModelImpl.TABLE_NAME, "matchYearSeq", true));
+//				} catch (NoSuchMatchException e) {
+//					lastCodeMatch = null;
+//					_log.debug("Nessun match per l'anno corrente trovato", e);
+//				}
+//				_log.debug("Calcolo il codice da assegnare al match rispetto al vecchio");
+//				
+//				if(lastCodeMatch!=null){
+//					//Se esiste un match di quest'anno
+//					seq = lastCodeMatch.getMatchYearSeq();
+//				}else{
+//					//Altrimenti creo un codice fittizio con anno e 4 zeri finali
+//					seq = 0;
+//				}
+//				lastCode = String.valueOf(year)
+//						.concat(GenericUtility.getZeroPaddedString(String.valueOf(seq), 4));
+//				seq++;
+//				_log.debug("Ultimo codice  dell'anno: "+lastCode);
+//				newCode = String.valueOf(year)
+//						.concat(GenericUtility.getZeroPaddedString(String.valueOf(seq), 4));
+//				_log.debug("Codice ricalcolato: "+newCode);
+//			}else{
+//				//Nel caso in cui arriva un codice allora è un update ed il codice non deve cambiare
+//				newCode = code;
+//				year = esfMatch.getMatchYear();
+//				seq = esfMatch.getMatchYearSeq();
+//			}
+//			esfMatch.setUserId(userId);
+//			esfMatch.setGroupId(groupId);
+//			esfMatch.setCompanyId(operator.getCompanyId());
+//			esfMatch.setUserName(operator.getFullName());
+//			esfMatch.setCreateDate(serviceContext.getCreateDate(now));
+//			esfMatch.setModifiedDate(serviceContext.getModifiedDate(now));
+//			esfMatch.setExpandoBridgeAttributes(serviceContext);
+//			esfMatch.setEsfAssociationId(esfAssociationId);
+//			esfMatch.setCode(newCode);
+//			esfMatch.setMatchYear(year);
+//			esfMatch.setMatchYearSeq(seq);
+//			esfMatch.setStartDate(startDate);
+//			esfMatch.setEndDate(endDate);
+//			esfMatch.setStartHour(startHour);
+//			esfMatch.setDescription(description);
+//			esfMatch.setNotes(note);
+//			esfMatch.setIsDraft(isDraft);
+//			esfMatch.setNumFields(numFields);
+//			esfMatch.setEsfSportTypeId(esfSportTypeId);
+//			esfMatch.setNumDisk(numDisk);
+//			esfMatch.setNumDiskTeam(numDiskTeam);
+//			esfMatch.setIsChangeCategoryMatch(isChangeCategoryMatch);
+//			esfMatch.setIsIndividualMatch(isIndividualMatch);
+//			esfMatch.setIsTeamMatch(isTeamMatch);
+//			esfMatch.setIsJuniorMatch(isJuniorMatch);
+//			esfMatch.setEsfMatchTypeId(esfMatchTypeId);
+//			esfMatch.setCountryId(esfCountryId);
+//			esfMatch.setSite(site);
+//			esfMatch.setIsNational(isNational);
 			_log.debug("Salvataggio ESFMatch con codice: "+esfMatch.getCode());
 			esfMatch = this.trySave(esfMatch, 0);
 			_log.debug("Salvataggio ESFMatch con codice: "+esfMatch.getCode()+" - TERMINATO");
 			_log.debug("Add ESFEntityState: "+esfMatch.getCode());
 			ESFEntityStateLocalServiceUtil.addEntityState(
 					serviceContext.getUserId(), ESFMatch.class.getName(),
-					esfMatchId, esfEntityState.getEsfStateId(), serviceContext);
+					esfMatch.getEsfMatchId(), esfEntityState.getEsfStateId(), serviceContext);
 			_log.debug("Add ESFEntityState: "+esfMatch.getCode()+" - TERMINATO");
 			
 			if (esfShooterCategoryIds != null) {
@@ -1096,143 +1195,131 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 		return result;
 	}
 
-	public ESFMatch addOrUpdateESFMatch(long userId, long esfMatchId,
-		long esfAssociationId, String code, Date startDate, Date endDate,
-		String startHour, long description, String note, boolean isDraft,
-		int numFields, long esfSportTypeId, int numDisk, int numDiskTeam,
-		boolean isIndividualMatch, boolean isTeamMatch,
-		boolean isJuniorMatch, long esfMatchTypeId,  boolean isChangeCategoryMatch,
-		long[] esfShooterCategoryIds, long[] esfShooterQualificationIds,
-		long esfCountryId, String site, boolean isNational, boolean isOlimpicQualificationMatch,
-		ESFEntityState esfEntityState, ServiceContext serviceContext, String 
-		notNationalAssotiation, String eventType, String esfNationalSportTypeidString) throws SystemException, PortalException {
+	public ESFMatch addOrUpdateESFMatch(long userId, long esfMatchId, long esfAssociationId, String code,
+			Date startDate, Date endDate, String startHour, long description, String note, boolean isDraft,
+			int numFields, long esfSportTypeId, int numDisk, int numDiskTeam, boolean isIndividualMatch,
+			boolean isTeamMatch, boolean isJuniorMatch, long esfMatchTypeId, boolean isChangeCategoryMatch,
+			long[] esfShooterCategoryIds, long[] esfShooterQualificationIds, long esfCountryId, String site,
+			boolean isNational, boolean isOlimpicQualificationMatch, ESFEntityState esfEntityState,
+			ServiceContext serviceContext, String notNationalAssotiation, String eventType,
+			String esfNationalSportTypeidString) throws SystemException, PortalException {
 
 		User operator = userPersistence.findByPrimaryKey(userId);
 
-	long groupId = serviceContext.getScopeGroupId();
+		long groupId = serviceContext.getScopeGroupId();
 
-	Date now = new Date();
+		Date now = new Date();
 
-	ESFMatch esfMatch = null;
-	
-	if (esfMatchId == 0) {
-		esfMatchId = counterLocalService.increment();
-		esfMatch = esfMatchPersistence.create(esfMatchId);
+		ESFMatch esfMatch = this.generateESFMatch(operator, userId, esfMatchId, esfAssociationId, code, startDate, endDate, startHour, description, note, isDraft, numFields, esfSportTypeId, numDisk, numDiskTeam, isIndividualMatch, isTeamMatch, isJuniorMatch, esfMatchTypeId, isChangeCategoryMatch, esfShooterCategoryIds, esfShooterQualificationIds, esfCountryId, site, isNational, esfEntityState, serviceContext, notNationalAssotiation, eventType, esfNationalSportTypeidString, isOlimpicQualificationMatch);
 
-	} else {
-		esfMatch = ESFMatchLocalServiceUtil.fetchESFMatch(esfMatchId);
+//		if (esfMatchId == 0) {
+//			esfMatchId = counterLocalService.increment();
+//			esfMatch = esfMatchPersistence.create(esfMatchId);
+//		} else {
+//			esfMatch = ESFMatchLocalServiceUtil.fetchESFMatch(esfMatchId);
+//		}
 
-	}
-	
-	if (esfMatch != null) {
+		if (esfMatch != null) {
+//			esfMatch.setIsOlimpicQualificationMatch(isOlimpicQualificationMatch);
+//			esfMatch.setNotNationalAssotiation(notNationalAssotiation);
+//			esfMatch.setUserId(userId);
+//			esfMatch.setGroupId(groupId);
+//			esfMatch.setCompanyId(operator.getCompanyId());
+//			esfMatch.setUserName(operator.getFullName());
+//			esfMatch.setCreateDate(serviceContext.getCreateDate(now));
+//			esfMatch.setModifiedDate(serviceContext.getModifiedDate(now));
+//			esfMatch.setExpandoBridgeAttributes(serviceContext);
+//			esfMatch.setEsfAssociationId(esfAssociationId);
+//			esfMatch.setCode(code);
+//			esfMatch.setStartDate(startDate);
+//			esfMatch.setEndDate(endDate);
+//			esfMatch.setStartHour(startHour);
+//			esfMatch.setDescription(description);
+//			esfMatch.setNotes(note);
+//			esfMatch.setIsDraft(isDraft);
+//			esfMatch.setNumFields(numFields);
+//			esfMatch.setEsfSportTypeId(esfSportTypeId);
+//			esfMatch.setNumDisk(numDisk);
+//			esfMatch.setNumDiskTeam(numDiskTeam);
+//			esfMatch.setIsChangeCategoryMatch(isChangeCategoryMatch);
+//			esfMatch.setIsIndividualMatch(isIndividualMatch);
+//			esfMatch.setIsTeamMatch(isTeamMatch);
+//			esfMatch.setIsJuniorMatch(isJuniorMatch);
+//			esfMatch.setEsfMatchTypeId(esfMatchTypeId);
+//			esfMatch.setCountryId(esfCountryId);
+//			esfMatch.setSite(site);
+//			esfMatch.setIsNational(isNational);
+//			esfMatch.setEventType(eventType);
+//			esfMatch.setEsfNationalSportTypeId(esfNationalSportTypeidString);
+			// esfMatch.setIsFinal(isFinal);
+			// esfMatch.setEsfTorunamentId(esfTorunamentId);
 
-		esfMatch.setIsOlimpicQualificationMatch(isOlimpicQualificationMatch);
-		esfMatch.setNotNationalAssotiation(notNationalAssotiation);
-		esfMatch.setUserId(userId);
-		esfMatch.setGroupId(groupId);
-		esfMatch.setCompanyId(operator.getCompanyId());
-		esfMatch.setUserName(operator.getFullName());
-		esfMatch.setCreateDate(serviceContext.getCreateDate(now));
-		esfMatch.setModifiedDate(serviceContext.getModifiedDate(now));
-		esfMatch.setExpandoBridgeAttributes(serviceContext);
-		esfMatch.setEsfAssociationId(esfAssociationId);
-		esfMatch.setCode(code);
-		esfMatch.setStartDate(startDate);
-		esfMatch.setEndDate(endDate);
-		esfMatch.setStartHour(startHour);
-		esfMatch.setDescription(description);
-		esfMatch.setNotes(note);
-		esfMatch.setIsDraft(isDraft);
-		esfMatch.setNumFields(numFields);
-		esfMatch.setEsfSportTypeId(esfSportTypeId);
-		esfMatch.setNumDisk(numDisk);
-		esfMatch.setNumDiskTeam(numDiskTeam);
-		esfMatch.setIsChangeCategoryMatch(isChangeCategoryMatch);
-		esfMatch.setIsIndividualMatch(isIndividualMatch);
-		esfMatch.setIsTeamMatch(isTeamMatch);
-		esfMatch.setIsJuniorMatch(isJuniorMatch);
-		esfMatch.setEsfMatchTypeId(esfMatchTypeId);
-		esfMatch.setCountryId(esfCountryId);
-		esfMatch.setSite(site);
-		esfMatch.setIsNational(isNational);
-		esfMatch.setEventType(eventType);
-		esfMatch.setEsfNationalSportTypeId(esfNationalSportTypeidString);
-		// esfMatch.setIsFinal(isFinal);
-		// esfMatch.setEsfTorunamentId(esfTorunamentId);
+//			esfMatch = esfMatchPersistence.update(esfMatch);
+			esfMatch = this.trySave(esfMatch, 0);
 
-		esfMatch = esfMatchPersistence.update(esfMatch);
+			ESFEntityStateLocalServiceUtil.addEntityState(serviceContext.getUserId(), ESFMatch.class.getName(),
+					esfMatch.getEsfMatchId(), esfEntityState.getEsfStateId(), serviceContext);
 
-		ESFEntityStateLocalServiceUtil.addEntityState(
-				serviceContext.getUserId(), ESFMatch.class.getName(),
-				esfMatchId, esfEntityState.getEsfStateId(), serviceContext);
+			if (esfShooterCategoryIds != null) {
+				ESFShooterCategoryESFMatchLocalServiceUtil.deleteESFShooterCategoryByESFMatchId(esfMatchId);
+				for (long esfShooterCategoryId : esfShooterCategoryIds) {
 
-		if (esfShooterCategoryIds != null) {
-			ESFShooterCategoryESFMatchLocalServiceUtil
-					.deleteESFShooterCategoryByESFMatchId(esfMatchId);
-			for (long esfShooterCategoryId : esfShooterCategoryIds) {
+					ESFShooterCategoryESFMatchPK scmPK = new ESFShooterCategoryESFMatchPK(esfShooterCategoryId,
+							esfMatchId);
 
-				ESFShooterCategoryESFMatchPK scmPK = new ESFShooterCategoryESFMatchPK(
-						esfShooterCategoryId, esfMatchId);
+					ESFShooterCategoryESFMatch scm = ESFShooterCategoryESFMatchLocalServiceUtil
+							.createESFShooterCategoryESFMatch(scmPK);
 
-				ESFShooterCategoryESFMatch scm = ESFShooterCategoryESFMatchLocalServiceUtil
-						.createESFShooterCategoryESFMatch(scmPK);
+					scm.setCompanyId(operator.getCompanyId());
+					scm.setCreateDate(serviceContext.getCreateDate(now));
+					scm.setModifiedDate(serviceContext.getModifiedDate(now));
+					scm.setGroupId(groupId);
+					scm.setUserId(userId);
+					scm.setUserName(operator.getFullName());
 
-				scm.setCompanyId(operator.getCompanyId());
-				scm.setCreateDate(serviceContext.getCreateDate(now));
-				scm.setModifiedDate(serviceContext.getModifiedDate(now));
-				scm.setGroupId(groupId);
-				scm.setUserId(userId);
-				scm.setUserName(operator.getFullName());
-
-				ESFShooterCategoryESFMatchLocalServiceUtil
-						.updateESFShooterCategoryESFMatch(scm);
+					ESFShooterCategoryESFMatchLocalServiceUtil.updateESFShooterCategoryESFMatch(scm);
+				}
 			}
-		}
 
-		if (esfShooterQualificationIds != null) {
-			ESFShooterQualificationESFMatchLocalServiceUtil
-					.deleteESFShooterQualificationESFMatchId(esfMatchId);
+			if (esfShooterQualificationIds != null) {
+				ESFShooterQualificationESFMatchLocalServiceUtil.deleteESFShooterQualificationESFMatchId(esfMatchId);
 
-			for (long esfShooterQualificationId : esfShooterQualificationIds) {
+				for (long esfShooterQualificationId : esfShooterQualificationIds) {
 
-				ESFShooterQualificationESFMatchPK sqmPK = new ESFShooterQualificationESFMatchPK(
-						esfShooterQualificationId, esfMatchId);
+					ESFShooterQualificationESFMatchPK sqmPK = new ESFShooterQualificationESFMatchPK(
+							esfShooterQualificationId, esfMatchId);
 
-				ESFShooterQualificationESFMatch sqm = ESFShooterQualificationESFMatchLocalServiceUtil
-						.createESFShooterQualificationESFMatch(sqmPK);
+					ESFShooterQualificationESFMatch sqm = ESFShooterQualificationESFMatchLocalServiceUtil
+							.createESFShooterQualificationESFMatch(sqmPK);
 
-				sqm.setCompanyId(operator.getCompanyId());
-				sqm.setCreateDate(serviceContext.getCreateDate(now));
-				sqm.setModifiedDate(serviceContext.getModifiedDate(now));
-				sqm.setGroupId(groupId);
-				sqm.setUserId(userId);
-				sqm.setUserName(operator.getFullName());
+					sqm.setCompanyId(operator.getCompanyId());
+					sqm.setCreateDate(serviceContext.getCreateDate(now));
+					sqm.setModifiedDate(serviceContext.getModifiedDate(now));
+					sqm.setGroupId(groupId);
+					sqm.setUserId(userId);
+					sqm.setUserName(operator.getFullName());
 
-				ESFShooterQualificationESFMatchLocalServiceUtil
-						.updateESFShooterQualificationESFMatch(sqm);
+					ESFShooterQualificationESFMatchLocalServiceUtil.updateESFShooterQualificationESFMatch(sqm);
+				}
 			}
+
+			/*
+			 * resourceLocalService.addResources(esfMatch.getCompanyId(),
+			 * groupId, userId, ESFMatch.class.getName(), esfMatchId, false,
+			 * true, true);
+			 */
+
+			AssetEntry assetEntry = assetEntryLocalService.updateEntry(userId, groupId, esfMatch.getCreateDate(),
+					esfMatch.getModifiedDate(), ESFMatch.class.getName(), esfMatchId, esfMatch.getUuid(), 0,
+					serviceContext.getAssetCategoryIds(), serviceContext.getAssetTagNames(), true, null, null, null,
+					ContentTypes.TEXT_HTML, esfMatch.getStartHour(), null, null, null, null, 0, 0, null, false);
+
+			assetLinkLocalService.updateLinks(userId, assetEntry.getEntryId(), serviceContext.getAssetLinkEntryIds(),
+					AssetLinkConstants.TYPE_RELATED);
+
 		}
-		
-		/*resourceLocalService.addResources(esfMatch.getCompanyId(), groupId,
-				userId, ESFMatch.class.getName(), esfMatchId, false, true,
-				true);*/
-		
-		AssetEntry assetEntry = assetEntryLocalService.updateEntry(userId,
-				groupId, esfMatch.getCreateDate(),
-				esfMatch.getModifiedDate(), ESFMatch.class.getName(),
-				esfMatchId, esfMatch.getUuid(), 0,
-				serviceContext.getAssetCategoryIds(),
-				serviceContext.getAssetTagNames(), true, null, null, null,
-				ContentTypes.TEXT_HTML, esfMatch.getStartHour(), null,
-				null, null, null, 0, 0, null, false);
-
-		assetLinkLocalService.updateLinks(userId, assetEntry.getEntryId(),
-				serviceContext.getAssetLinkEntryIds(),
-				AssetLinkConstants.TYPE_RELATED);
-
+		return esfMatch;
 	}
-	return esfMatch;
-}
 
 	
 	/*
@@ -1259,50 +1346,51 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 
 	Date now = new Date();
 
-	ESFMatch esfMatch = null;
-	if (esfMatchId == 0) {
-		esfMatchId = counterLocalService.increment();
-		esfMatch = esfMatchPersistence.create(esfMatchId);
-	} else {
-		esfMatch = ESFMatchLocalServiceUtil.fetchESFMatch(esfMatchId);
-	}
+	ESFMatch esfMatch = this.generateESFMatch(operator, userId, esfMatchId, esfAssociationId, code, startDate, endDate, startHour, description, note, isDraft, numFields, esfSportTypeId, numDisk, numDiskTeam, isIndividualMatch, isTeamMatch, isJuniorMatch, esfMatchTypeId, isChangeCategoryMatch, esfShooterCategoryIds, esfShooterQualificationIds, esfCountryId, site, isNational, esfEntityState, serviceContext, null, null, null, isOlimpicQualificationMatch);
+//	if (esfMatchId == 0) {
+//		esfMatchId = counterLocalService.increment();
+//		esfMatch = esfMatchPersistence.create(esfMatchId);
+//	} else {
+//		esfMatch = ESFMatchLocalServiceUtil.fetchESFMatch(esfMatchId);
+//	}
 	if (esfMatch != null) {
-		esfMatch.setUserId(userId);
-		esfMatch.setGroupId(groupId);
-		esfMatch.setCompanyId(operator.getCompanyId());
-		esfMatch.setUserName(operator.getFullName());
-		esfMatch.setCreateDate(serviceContext.getCreateDate(now));
-		esfMatch.setModifiedDate(serviceContext.getModifiedDate(now));
-		esfMatch.setExpandoBridgeAttributes(serviceContext);
-		esfMatch.setEsfAssociationId(esfAssociationId);
-		esfMatch.setCode(code);
-		esfMatch.setStartDate(startDate);
-		esfMatch.setEndDate(endDate);
-		esfMatch.setStartHour(startHour);
-		esfMatch.setDescription(description);
-		esfMatch.setNotes(note);
-		esfMatch.setIsDraft(isDraft);
-		esfMatch.setNumFields(numFields);
-		esfMatch.setEsfSportTypeId(esfSportTypeId);
-		esfMatch.setNumDisk(numDisk);
-		esfMatch.setNumDiskTeam(numDiskTeam);
-		esfMatch.setIsChangeCategoryMatch(isChangeCategoryMatch);
-		esfMatch.setIsIndividualMatch(isIndividualMatch);
-		esfMatch.setIsTeamMatch(isTeamMatch);
-		esfMatch.setIsJuniorMatch(isJuniorMatch);
-		esfMatch.setEsfMatchTypeId(esfMatchTypeId);
-		esfMatch.setCountryId(esfCountryId);
-		esfMatch.setSite(site);
-		esfMatch.setIsNational(isNational);
-		// esfMatch.setIsFinal(isFinal);
-		// esfMatch.setEsfTorunamentId(esfTorunamentId);
-		esfMatch.setIsOlimpicQualificationMatch(isOlimpicQualificationMatch);
+//		esfMatch.setUserId(userId);
+//		esfMatch.setGroupId(groupId);
+//		esfMatch.setCompanyId(operator.getCompanyId());
+//		esfMatch.setUserName(operator.getFullName());
+//		esfMatch.setCreateDate(serviceContext.getCreateDate(now));
+//		esfMatch.setModifiedDate(serviceContext.getModifiedDate(now));
+//		esfMatch.setExpandoBridgeAttributes(serviceContext);
+//		esfMatch.setEsfAssociationId(esfAssociationId);
+//		esfMatch.setCode(code);
+//		esfMatch.setStartDate(startDate);
+//		esfMatch.setEndDate(endDate);
+//		esfMatch.setStartHour(startHour);
+//		esfMatch.setDescription(description);
+//		esfMatch.setNotes(note);
+//		esfMatch.setIsDraft(isDraft);
+//		esfMatch.setNumFields(numFields);
+//		esfMatch.setEsfSportTypeId(esfSportTypeId);
+//		esfMatch.setNumDisk(numDisk);
+//		esfMatch.setNumDiskTeam(numDiskTeam);
+//		esfMatch.setIsChangeCategoryMatch(isChangeCategoryMatch);
+//		esfMatch.setIsIndividualMatch(isIndividualMatch);
+//		esfMatch.setIsTeamMatch(isTeamMatch);
+//		esfMatch.setIsJuniorMatch(isJuniorMatch);
+//		esfMatch.setEsfMatchTypeId(esfMatchTypeId);
+//		esfMatch.setCountryId(esfCountryId);
+//		esfMatch.setSite(site);
+//		esfMatch.setIsNational(isNational);
+//		// esfMatch.setIsFinal(isFinal);
+//		// esfMatch.setEsfTorunamentId(esfTorunamentId);
+//		esfMatch.setIsOlimpicQualificationMatch(isOlimpicQualificationMatch);
 		
-		esfMatch = esfMatchPersistence.update(esfMatch);
+//		esfMatch = esfMatchPersistence.update(esfMatch);
+		esfMatch = this.trySave(esfMatch, 0);
 
 		ESFEntityStateLocalServiceUtil.addEntityState(
 				serviceContext.getUserId(), ESFMatch.class.getName(),
-				esfMatchId, esfEntityState.getEsfStateId(), serviceContext);
+				esfMatch.getEsfMatchId(), esfEntityState.getEsfStateId(), serviceContext);
 
 		if (esfShooterCategoryIds != null) {
 			ESFShooterCategoryESFMatchLocalServiceUtil

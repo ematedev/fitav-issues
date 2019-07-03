@@ -1,13 +1,15 @@
+<%@page import="com.liferay.portal.kernel.language.LanguageUtil"%>
 <%@page import="java.text.DateFormat"%>
 <%@include file="init.jsp"%>
 
 <% 
+	String successMessage = ParamUtil.getString(request, "successMessage", "");
 	String dateString = ParamUtil.getString(request, "startDate");
 	Date startDate = null;
 	if(Validator.isNotNull(dateString)){
 		startDate = ManageDate.StringToDate(dateString);
 	}
-
+	
 	long matchTypeId = ParamUtil.getLong(request, "matchType");
 	String code = ParamUtil.getString(request, "code");
 	long esfCountryId = ParamUtil.getLong(request, "esfCountryId");
@@ -61,16 +63,14 @@
 	</aui:script>
 
 	<c:if test="<%= ESFNationalMatchModelPermission.contains(permissionChecker,scopeGroupId, ActionKeys.ESFNATIONALMATCH_ADD) %>">
-		<aui:button-row cssClass="esfmatch-admin-buttons">
-		
+		<aui:button-row cssClass="esfmatch-admin-buttons">		
 			<portlet:renderURL var="addEsfMatchURL">
 				<portlet:param name="mvcPath" value='<%=templatePath + "new_edit_esfMatch.jsp"%>' />
 				<portlet:param name="esfMatchId" value='' />
 				<portlet:param name="organizationId" value="<%=String.valueOf(currentOrganizationId)%>" />
 				<portlet:param name="op" value="addAddr" />
 			</portlet:renderURL>
-			<aui:button onClick="<%= addEsfMatchURL.toString() %>" value="<%=addMatch%>" />
-		
+			<aui:button onClick="<%= addEsfMatchURL.toString() %>" value="<%=addMatch%>" />		
 		</aui:button-row>
 	</c:if>
 
@@ -120,7 +120,8 @@
 
 		<liferay-ui:success key="user-success-insertupdate" message="user-success-insertupdate-mess" />
 		<liferay-ui:error key="date-message" message="date-message" />
-		<liferay-ui:error key="match-success-insertupdate" message="match-success-insertupdate" />
+		<liferay-ui:success key="match-success-insert" message='<%= LanguageUtil.format(pageContext, "match-success-insert", successMessage) %>' />
+		<liferay-ui:success key="match-success-update" message='<%= LanguageUtil.format(pageContext, "match-success-update", successMessage) %>' />
 		
 		<liferay-ui:search-container emptyResultsMessage="no-results">
 
