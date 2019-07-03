@@ -137,19 +137,19 @@ public interface ESFTeamModel extends BaseModel<ESFTeam> {
 	public Object clone();
 
 	@Override
-	public int compareTo(ESFTeam esfTeam);
+	public int compareTo(it.ethica.esf.model.ESFTeam esfTeam);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ESFTeam> toCacheModel();
+	public CacheModel<it.ethica.esf.model.ESFTeam> toCacheModel();
 
 	@Override
-	public ESFTeam toEscapedModel();
+	public it.ethica.esf.model.ESFTeam toEscapedModel();
 
 	@Override
-	public ESFTeam toUnescapedModel();
+	public it.ethica.esf.model.ESFTeam toUnescapedModel();
 
 	@Override
 	public String toString();

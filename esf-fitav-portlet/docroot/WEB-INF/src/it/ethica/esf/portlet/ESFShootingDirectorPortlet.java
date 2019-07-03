@@ -126,8 +126,6 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 	 */
 	@ProcessAction(name="cercaNomineDirettoriTiro")
 	public void cercaNomineDirettoriTiro(ActionRequest request, ActionResponse response) {
-		//Prendo il tempo iniziale della action
-		long startAction = System.currentTimeMillis();
 		
 		//Prendo quello che mi serve dalla jsp
 		String cognome = ParamUtil.getString(request, "lastname", "");
@@ -140,7 +138,7 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 		int paginaRicercaCorrente = ParamUtil.getInteger(request, "cur", 0); 
 		
 		
-		//LOG
+		//DA CANCELLARE
 		_log.debug(String.format("Cognome: [%s]\n", cognome)); 
 		_log.debug(String.format("Nome: [%s]\n", nome));
 		_log.debug(String.format("Tessera: [%s]\n", tessera));
@@ -180,33 +178,26 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 						ESFShootingDirectorQualificationLocalServiceUtil.getESFShootingDirectorQualification(idQualifica);
 				String qualifica = qualificaDirettore.getEsfShootingDirectorQualificationDesc();
 				dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.Qualifica", qualifica)); 
+			
+				//DA LEVARE
 				_log.debug(String.format("Qualifica nome: [%s]\n", qualifica));
 			}
 			if(idSpecialita != 0) { 
 				ESFSportType tipoSport = ESFSportTypeLocalServiceUtil.getESFSportType(idSpecialita);
 				String specialita = tipoSport.getName();
 				dq.add(RestrictionsFactoryUtil.eq("Direttori.primaryKey.Specialita", specialita)); 
+				
+				//DA LEVARE
 				_log.debug(String.format("Specialita nome: [%s]\n", specialita));
 			}
-			
-			//Eseguo il count
-			long start = System.currentTimeMillis();
-			//listaNomine = VW_DatiDrettoreTiroLocalServiceUtil.dynamicQuery(dq); 
-			long fine = System.currentTimeMillis();
-			_log.debug(String.format("Il count ha impiegato %s secondi", (fine - start) / 1000F));
-			
+		
 			//Eseguo la query
-			start = System.currentTimeMillis();
 			listaNomine = VW_DatiDrettoreTiroLocalServiceUtil.dynamicQuery(dq); 
-			fine = System.currentTimeMillis();
-			_log.debug(String.format("La query ha impiegato %s secondi", (fine - start) / 1000F));
-			int elementiTrovati = listaNomine.size();
-			_log.debug(String.format("Elementi nella lista: [%s]\n", elementiTrovati));
 			
 			//Ordino la lista
 			List<VW_NomineDirettoriTiro> listaModificabile = new ArrayList<VW_NomineDirettoriTiro>(listaNomine);
-			Collections.sort(listaModificabile, new CompareByData()); 
-			_log.debug(String.format("Elementi nella lista modificabile: [%s]\n", listaModificabile.size()));
+			Collections.sort(listaModificabile, new CompareByData());
+			int elementiTrovati = listaNomine.size();
 			
 			//Valorizzo i campi e ritorno alla pagina 
 			request.setAttribute("listaNomine", listaModificabile);
@@ -215,15 +206,18 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 			SessionMessages.add(request, "success-message"); 
 			request.setAttribute("successMessage", messaggio);
 			
+			//DA CANCELLARE
+			_log.debug(String.format("Elementi nella lista: [%s]\n", elementiTrovati));
+			_log.debug(String.format("Elementi nella lista modificabile: [%s]\n", listaModificabile.size()));
+			
 			//Se c'è bisogno valorizzare i campi del search container
 			if(delta != 0) { response.setRenderParameter("delta", String.valueOf(delta)); }
 			if(paginaRicercaCorrente != 0) { response.setRenderParameter("cur", String.valueOf(paginaRicercaCorrente)); }
 			
-		} catch (Exception e) { 
+		} catch (Exception e) {
 			
 			//Mando un messaggio di errore alla jsp
 			SessionErrors.add(request, "error-ricerca");
-			_log.error(e.getMessage());
 			
 		} finally {
 			
@@ -235,12 +229,8 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 			response.setRenderParameter("card", tessera);
 			response.setRenderParameter("regionId", regione);
 			response.setRenderParameter("qualifica", String.valueOf(idQualifica));
-			response.setRenderParameter("specialita", String.valueOf(idSpecialita));
+			response.setRenderParameter("specialita", String.valueOf(idSpecialita)); 
 			
-			//Stampo il tempo totale della Action
-			_log.debug(String.format("La action ha impiegato %s secondi",  (System.currentTimeMillis() - startAction) / 1000F));
-			_log.debug("############################################################");
-		
 		}
 	}
 	
@@ -261,13 +251,6 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 		int delta = ParamUtil.getInteger(request, "delta", 0);
 		int paginaRicercaCorrente = ParamUtil.getInteger(request, "cur", 0); 
 		
-		//LOG 		
-		_log.debug(String.format("Cognome: [%s]\n", cognome)); 
-		_log.debug(String.format("Nome: [%s]\n", nome));
-		_log.debug(String.format("Tessera: [%s]\n", tessera)); 
-		_log.debug(String.format("Delta: [%s]\n", delta));
-		_log.debug(String.format("Pagina corrente: [%s]\n", paginaRicercaCorrente));
-		
 		try { 
   			
  			//Inizializzo la lista
@@ -277,31 +260,16 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 			DynamicQuery dq = DynamicQueryFactoryUtil.forClass(VM_TiratoriTesserati.class, "Tiratori", PortletClassLoaderUtil.getClassLoader());
 			
 			//Restringo la ricerca se vengono valorizzati i campi
-			if(!cognome.isEmpty()) { 
-				dq.add(RestrictionsFactoryUtil.eq("Tiratori.primaryKey.Cognome", cognome));
-				_log.debug("Entrato in cognome");
-			}
-			if(!nome.isEmpty()) { 
-				dq.add(RestrictionsFactoryUtil.eq("Tiratori.primaryKey.Nome", nome));
-				_log.debug("Entrato in nome");
-			} 
-			if(!tessera.isEmpty()) { 
-				dq.add(RestrictionsFactoryUtil.eq("Tiratori.primaryKey.CodiceTessera", tessera));
-				_log.debug("Entrato in tessera");
-			}
+			if(!cognome.isEmpty()) { dq.add(RestrictionsFactoryUtil.eq("Tiratori.primaryKey.Cognome", cognome)); }
+			if(!nome.isEmpty()) { dq.add(RestrictionsFactoryUtil.eq("Tiratori.primaryKey.Nome", nome)); } 
+			if(!tessera.isEmpty()) { dq.add(RestrictionsFactoryUtil.eq("Tiratori.primaryKey.CodiceTessera", tessera)); }
 		
 			//Eseguo la query
-			long start = System.currentTimeMillis();
-			listaTiratori = VM_TiratoriTesseratiLocalServiceUtil.dynamicQuery(dq); 
-			long fine = System.currentTimeMillis();
-			_log.debug(String.format("La query ha impiegato %s secondi", (fine - start) / 1000F));
-			int elementiTrovati = listaTiratori.size();
-			_log.debug(String.format("Elementi nella lista: [%s]\n", elementiTrovati));
+			listaTiratori = VM_TiratoriTesseratiLocalServiceUtil.dynamicQuery(dq);
 			
 			//Ordino la lista
 			List<VM_TiratoriTesserati> listaModificabile = new ArrayList<VM_TiratoriTesserati>(listaTiratori);
 			Collections.sort(listaModificabile, new CompareByNomeCognome());
-			_log.debug(String.format("Elementi nella lista modificabile: [%s]\n", listaModificabile.size()));
 			
 			//Valorizzo i campi e ritorno alla pagina 
 			request.setAttribute("listaTiratori", listaModificabile);
@@ -315,7 +283,6 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 			
 			//Mando un messaggio di errore alla jsp
 			SessionErrors.add(request, "error-ricerca");
-			_log.error(e.getMessage());
 			
 		} finally {
 			
@@ -341,41 +308,6 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 	public void addShooterDirector (ActionRequest actionRequest, ActionResponse actionResponse)
 		throws PortalException, SystemException, ParseException {
 		
-		//Nasconde il messaggio di errore predefinito
-		SessionMessages.add(actionRequest, PortalUtil.getPortletId(actionRequest) + SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
-		
-		//Prendi l'id utente
-		long esfUserId = ParamUtil.getLong(actionRequest, "esfUserId");
-		//Prendi l'id del direttore di tiro
-		long shDtId = ParamUtil.getLong(actionRequest, "shDtId");
-		//Prendi l'id della specialità
-		long stId = ParamUtil.getLong(actionRequest, "stId");
-		
-		//Prendi la url dell'mvcPath
-		String mvcPath = ParamUtil.getString(actionRequest, "mvcPath");
-		
-		if(shDtId == 0 && stId == 0) {
-			SessionErrors.add(actionRequest, "error-campi");
-			actionRequest.setAttribute("errorMessage", "Non sono stati valorizzati i campi");
-			actionResponse.setRenderParameter("mvcPath", mvcPath); 
-			actionResponse.setRenderParameter("esfUserId", String.valueOf(esfUserId)); 
-			return;
-		} 
-		if(shDtId == 0) {
-			SessionErrors.add(actionRequest, "error-campi");
-			actionRequest.setAttribute("errorMessage", "Non è stato valorizzato il campo \"Qualifica\"");
-			actionResponse.setRenderParameter("mvcPath", mvcPath); 
-			actionResponse.setRenderParameter("esfUserId", String.valueOf(esfUserId)); 
-			return;
-		}
-		if(stId == 0) {
-			SessionErrors.add(actionRequest, "error-campi");
-			actionRequest.setAttribute("errorMessage", "Non è stato valorizzato il campo \"Specialita\"");
-			actionResponse.setRenderParameter("mvcPath", mvcPath); 
-			actionResponse.setRenderParameter("esfUserId", String.valueOf(esfUserId)); 
-			return;
-		}
-		
 		//Prendi l'oggetto ThemeDisplay
 		ThemeDisplay themeDisplay = (ThemeDisplay)actionRequest.getAttribute(WebKeys.THEME_DISPLAY);
 		//Definisci il formato della data
@@ -389,7 +321,12 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 		ESFShootingDirector shDts = new ESFShootingDirectorImpl();
 		ESFShootingDirector newShDts = new ESFShootingDirectorImpl();
 		
-		
+		//Prendi l'id utente
+		long esfUserId = ParamUtil.getLong(actionRequest, "esfUserId");
+		//Prendi l'id del direttore di tiro
+		long shDtId = ParamUtil.getLong(actionRequest, "shDtId");
+		//Prendi l'id della specialità
+		long stId = ParamUtil.getLong(actionRequest, "stId");
 		
 		//Prendi la data di inizio 
 		String startDateS = ParamUtil.getString(actionRequest, "startDate");
@@ -397,6 +334,9 @@ public class ESFShootingDirectorPortlet extends MVCPortlet{
 		//Inizializza id regione e id province
 		String regionId = "";
 		String provinceId = "";
+		
+		//Prendi la url dell'mvcPath
+		String mvcPath = ParamUtil.getString(actionRequest, "mvcPath");
 		
 		//Inizializza data
 		Date startDate = null;

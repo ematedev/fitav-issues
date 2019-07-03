@@ -248,6 +248,10 @@ public class ESFStateAssEntityClp extends BaseModelImpl<ESFStateAssEntity>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey().hashCode();
@@ -291,4 +295,5 @@ public class ESFStateAssEntityClp extends BaseModelImpl<ESFStateAssEntity>
 	private long _esfStateId;
 	private String _className;
 	private BaseModel<?> _esfStateAssEntityRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

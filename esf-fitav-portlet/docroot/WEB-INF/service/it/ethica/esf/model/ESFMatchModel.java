@@ -693,19 +693,19 @@ public interface ESFMatchModel extends BaseModel<ESFMatch>, StagedGroupedModel {
 	public Object clone();
 
 	@Override
-	public int compareTo(ESFMatch esfMatch);
+	public int compareTo(it.ethica.esf.model.ESFMatch esfMatch);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ESFMatch> toCacheModel();
+	public CacheModel<it.ethica.esf.model.ESFMatch> toCacheModel();
 
 	@Override
-	public ESFMatch toEscapedModel();
+	public it.ethica.esf.model.ESFMatch toEscapedModel();
 
 	@Override
-	public ESFMatch toUnescapedModel();
+	public it.ethica.esf.model.ESFMatch toUnescapedModel();
 
 	@Override
 	public String toString();

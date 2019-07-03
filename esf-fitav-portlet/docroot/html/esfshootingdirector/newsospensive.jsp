@@ -1,5 +1,6 @@
 <%@page import="it.ethica.esf.service.ESFSuspensiveShootingDirectorLocalServiceUtil"%>
-<%@page import="it.ethica.esf.model.ESFSuspensiveShootingDirector"%> 
+<%@page import="it.ethica.esf.model.ESFSuspensiveShootingDirector"%>
+<%@page import="it.ethica.esf.model.ESFSuspensiveShooingDirector"%>
 <%@page import="com.liferay.portal.kernel.util.KeyValuePair"%>
 <%@page import="com.liferay.portal.kernel.util.CalendarFactoryUtil"%>
 <%@page import="java.util.Date"%>

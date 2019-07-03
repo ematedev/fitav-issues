@@ -1080,6 +1080,10 @@ public class ESFMatchResultClp extends BaseModelImpl<ESFMatchResult>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1306,4 +1310,5 @@ public class ESFMatchResultClp extends BaseModelImpl<ESFMatchResult>
 	private int _nextTotalPlayOff;
 	private String _fiscalCode;
 	private BaseModel<?> _esfMatchResultRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

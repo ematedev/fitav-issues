@@ -855,6 +855,10 @@ public class ESFNationalMatchResultClp extends BaseModelImpl<ESFNationalMatchRes
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1026,4 +1030,5 @@ public class ESFNationalMatchResultClp extends BaseModelImpl<ESFNationalMatchRes
 	private String _userNationality;
 	private long _esfUserQualification;
 	private BaseModel<?> _esfNationalMatchResultRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

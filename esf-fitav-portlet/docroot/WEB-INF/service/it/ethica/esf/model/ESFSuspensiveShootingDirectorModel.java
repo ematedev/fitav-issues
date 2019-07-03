@@ -438,19 +438,19 @@ public interface ESFSuspensiveShootingDirectorModel extends BaseModel<ESFSuspens
 
 	@Override
 	public int compareTo(
-		ESFSuspensiveShootingDirector esfSuspensiveShootingDirector);
+		it.ethica.esf.model.ESFSuspensiveShootingDirector esfSuspensiveShootingDirector);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ESFSuspensiveShootingDirector> toCacheModel();
+	public CacheModel<it.ethica.esf.model.ESFSuspensiveShootingDirector> toCacheModel();
 
 	@Override
-	public ESFSuspensiveShootingDirector toEscapedModel();
+	public it.ethica.esf.model.ESFSuspensiveShootingDirector toEscapedModel();
 
 	@Override
-	public ESFSuspensiveShootingDirector toUnescapedModel();
+	public it.ethica.esf.model.ESFSuspensiveShootingDirector toUnescapedModel();
 
 	@Override
 	public String toString();

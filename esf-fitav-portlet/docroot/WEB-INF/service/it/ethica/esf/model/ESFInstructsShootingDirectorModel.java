@@ -142,19 +142,19 @@ public interface ESFInstructsShootingDirectorModel extends BaseModel<ESFInstruct
 
 	@Override
 	public int compareTo(
-		ESFInstructsShootingDirector esfInstructsShootingDirector);
+		it.ethica.esf.model.ESFInstructsShootingDirector esfInstructsShootingDirector);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ESFInstructsShootingDirector> toCacheModel();
+	public CacheModel<it.ethica.esf.model.ESFInstructsShootingDirector> toCacheModel();
 
 	@Override
-	public ESFInstructsShootingDirector toEscapedModel();
+	public it.ethica.esf.model.ESFInstructsShootingDirector toEscapedModel();
 
 	@Override
-	public ESFInstructsShootingDirector toUnescapedModel();
+	public it.ethica.esf.model.ESFInstructsShootingDirector toUnescapedModel();
 
 	@Override
 	public String toString();

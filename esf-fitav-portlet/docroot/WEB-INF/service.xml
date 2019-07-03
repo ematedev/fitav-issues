@@ -2600,16 +2600,15 @@
         <column name="CF" primary="false" type="String"></column>
     </entity>
     <entity name="VW_NomineDirettoriTiro" table="vw_nominedirettoritiro" local-service="true" remote-service="false">
-        <column name="Autenticazione" type="int" primary="true"></column>
-        <column name="CodiceTessera" type="String" primary="true"></column>
         <column name="UserId" type="int" primary="true"></column>
         <column name="IdDirettoreTiro" type="int" primary="true"></column>
-        <column name="Regione" type="String" primary="true"></column>
-        <column name="Specialita" type="String" primary="true"></column>
-        <column name="DataAssegnazione" type="Date" primary="true"></column>
-        <column name="Qualifica" type="String" primary="true"></column>
         <column name="Nome" type="String" primary="true"></column>
         <column name="Cognome" type="String" primary="true"></column>
+        <column name="CodiceTessera" type="String" primary="true"></column>
+        <column name="Regione" type="String" primary="true"></column>
+        <column name="Qualifica" type="String" primary="true"></column>
+        <column name="Specialita" type="String" primary="true"></column>
+        <column name="DataAssegnazione" type="Date" primary="true"></column>
         <order>
             <order-column name="Nome" case-sensitive="false" order-by="desc"></order-column>
         </order>

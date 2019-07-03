@@ -868,6 +868,10 @@ public class ESFDepartureClp extends BaseModelImpl<ESFDeparture>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1046,4 +1050,5 @@ public class ESFDepartureClp extends BaseModelImpl<ESFDeparture>
 	private String _typeTravel;
 	private String _stopoverId;
 	private BaseModel<?> _esfDepartureRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

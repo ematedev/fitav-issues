@@ -1273,15 +1273,14 @@ create table vw_esflistaincarichi (
 );
 
 create table vw_nominedirettoritiro (
-	Autenticazione INTEGER not null,
-	CodiceTessera VARCHAR(75) not null,
 	UserId INTEGER not null,
 	IdDirettoreTiro INTEGER not null,
-	Regione VARCHAR(75) not null,
-	Specialita VARCHAR(75) not null,
-	DataAssegnazione DATE not null,
-	Qualifica VARCHAR(75) not null,
 	Nome VARCHAR(75) not null,
 	Cognome VARCHAR(75) not null,
-	primary key (Autenticazione, CodiceTessera, UserId, IdDirettoreTiro, Regione, Specialita, DataAssegnazione, Qualifica, Nome, Cognome)
+	CodiceTessera VARCHAR(75) not null,
+	Regione VARCHAR(75) not null,
+	Qualifica VARCHAR(75) not null,
+	Specialita VARCHAR(75) not null,
+	DataAssegnazione DATE not null,
+	primary key (UserId, IdDirettoreTiro, Nome, Cognome, CodiceTessera, Regione, Qualifica, Specialita, DataAssegnazione)
 );

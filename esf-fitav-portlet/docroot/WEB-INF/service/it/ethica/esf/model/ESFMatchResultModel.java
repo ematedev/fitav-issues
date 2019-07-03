@@ -525,19 +525,19 @@ public interface ESFMatchResultModel extends BaseModel<ESFMatchResult>,
 	public Object clone();
 
 	@Override
-	public int compareTo(ESFMatchResult esfMatchResult);
+	public int compareTo(it.ethica.esf.model.ESFMatchResult esfMatchResult);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ESFMatchResult> toCacheModel();
+	public CacheModel<it.ethica.esf.model.ESFMatchResult> toCacheModel();
 
 	@Override
-	public ESFMatchResult toEscapedModel();
+	public it.ethica.esf.model.ESFMatchResult toEscapedModel();
 
 	@Override
-	public ESFMatchResult toUnescapedModel();
+	public it.ethica.esf.model.ESFMatchResult toUnescapedModel();
 
 	@Override
 	public String toString();

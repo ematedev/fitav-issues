@@ -16,6 +16,7 @@ package it.ethica.esf.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface ESFEventTypeLocalService extends BaseLocalService,
 	* @return the e s f event type that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFEventType addESFEventType(
 		it.ethica.esf.model.ESFEventType esfEventType)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -73,6 +75,7 @@ public interface ESFEventTypeLocalService extends BaseLocalService,
 	* @throws PortalException if a e s f event type with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFEventType deleteESFEventType(
 		long esfEventTypeId)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -85,6 +88,7 @@ public interface ESFEventTypeLocalService extends BaseLocalService,
 	* @return the e s f event type that was removed
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.ESFEventType deleteESFEventType(
 		it.ethica.esf.model.ESFEventType esfEventType)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -225,6 +229,7 @@ public interface ESFEventTypeLocalService extends BaseLocalService,
 	* @return the e s f event type that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.ESFEventType updateESFEventType(
 		it.ethica.esf.model.ESFEventType esfEventType)
 		throws com.liferay.portal.kernel.exception.SystemException;

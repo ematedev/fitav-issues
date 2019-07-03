@@ -282,6 +282,10 @@ public class ESFStateClp extends BaseModelImpl<ESFState> implements ESFState {
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -332,4 +336,5 @@ public class ESFStateClp extends BaseModelImpl<ESFState> implements ESFState {
 	private String _name;
 	private String _description;
 	private BaseModel<?> _esfStateRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

@@ -1968,18 +1968,17 @@
 	<mapped-superclass class="it.ethica.esf.model.impl.VW_NomineDirettoriTiroModelImpl">
 		<id-class class="it.ethica.esf.service.persistence.VW_NomineDirettoriTiroPK" />
 		<attributes>
-			<id name="Autenticazione" />
-			<id name="CodiceTessera" />
 			<id name="UserId" />
 			<id name="IdDirettoreTiro" />
+			<id name="Nome" />
+			<id name="Cognome" />
+			<id name="CodiceTessera" />
 			<id name="Regione" />
+			<id name="Qualifica" />
 			<id name="Specialita" />
 			<id name="DataAssegnazione">
 				<temporal>TIMESTAMP</temporal>
 			</id>
-			<id name="Qualifica" />
-			<id name="Nome" />
-			<id name="Cognome" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />
