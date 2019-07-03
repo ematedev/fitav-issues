@@ -114,21 +114,21 @@ public class ESFRadunoStaffLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFRadunoStaff"
 			};
 
-		_methodName424 = "getBeanIdentifier";
+		_methodName444 = "getBeanIdentifier";
 
-		_methodParameterTypes424 = new String[] {  };
+		_methodParameterTypes444 = new String[] {  };
 
-		_methodName425 = "setBeanIdentifier";
+		_methodName445 = "setBeanIdentifier";
 
-		_methodParameterTypes425 = new String[] { "java.lang.String" };
+		_methodParameterTypes445 = new String[] { "java.lang.String" };
 
-		_methodName430 = "findById";
+		_methodName450 = "findById";
 
-		_methodParameterTypes430 = new String[] { "long" };
+		_methodParameterTypes450 = new String[] { "long" };
 
-		_methodName431 = "associaStaff";
+		_methodName451 = "associaStaff";
 
-		_methodParameterTypes431 = new String[] {
+		_methodParameterTypes451 = new String[] {
 				"long", "java.util.List", "java.util.List"
 			};
 	}
@@ -222,25 +222,25 @@ public class ESFRadunoStaffLocalServiceClpInvoker {
 			return ESFRadunoStaffLocalServiceUtil.updateESFRadunoStaff((it.ethica.esf.model.ESFRadunoStaff)arguments[0]);
 		}
 
-		if (_methodName424.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes424, parameterTypes)) {
+		if (_methodName444.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes444, parameterTypes)) {
 			return ESFRadunoStaffLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName425.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes425, parameterTypes)) {
+		if (_methodName445.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes445, parameterTypes)) {
 			ESFRadunoStaffLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName430.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes430, parameterTypes)) {
+		if (_methodName450.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes450, parameterTypes)) {
 			return ESFRadunoStaffLocalServiceUtil.findById(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName431.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes431, parameterTypes)) {
+		if (_methodName451.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes451, parameterTypes)) {
 			ESFRadunoStaffLocalServiceUtil.associaStaff(((Long)arguments[0]).longValue(),
 				(java.util.List<java.lang.String>)arguments[1],
 				(java.util.List<java.lang.String>)arguments[2]);
@@ -283,12 +283,12 @@ public class ESFRadunoStaffLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName424;
-	private String[] _methodParameterTypes424;
-	private String _methodName425;
-	private String[] _methodParameterTypes425;
-	private String _methodName430;
-	private String[] _methodParameterTypes430;
-	private String _methodName431;
-	private String[] _methodParameterTypes431;
+	private String _methodName444;
+	private String[] _methodParameterTypes444;
+	private String _methodName445;
+	private String[] _methodParameterTypes445;
+	private String _methodName450;
+	private String[] _methodParameterTypes450;
+	private String _methodName451;
+	private String[] _methodParameterTypes451;
 }

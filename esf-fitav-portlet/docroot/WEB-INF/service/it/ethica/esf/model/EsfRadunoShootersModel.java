@@ -153,19 +153,20 @@ public interface EsfRadunoShootersModel extends BaseModel<EsfRadunoShooters> {
 	public Object clone();
 
 	@Override
-	public int compareTo(EsfRadunoShooters esfRadunoShooters);
+	public int compareTo(
+		it.ethica.esf.model.EsfRadunoShooters esfRadunoShooters);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<EsfRadunoShooters> toCacheModel();
+	public CacheModel<it.ethica.esf.model.EsfRadunoShooters> toCacheModel();
 
 	@Override
-	public EsfRadunoShooters toEscapedModel();
+	public it.ethica.esf.model.EsfRadunoShooters toEscapedModel();
 
 	@Override
-	public EsfRadunoShooters toUnescapedModel();
+	public it.ethica.esf.model.EsfRadunoShooters toUnescapedModel();
 
 	@Override
 	public String toString();

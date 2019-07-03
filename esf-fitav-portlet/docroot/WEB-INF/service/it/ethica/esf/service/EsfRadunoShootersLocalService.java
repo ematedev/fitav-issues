@@ -16,6 +16,7 @@ package it.ethica.esf.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface EsfRadunoShootersLocalService extends BaseLocalService,
 	* @return the esf raduno shooters that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.EsfRadunoShooters addEsfRadunoShooters(
 		it.ethica.esf.model.EsfRadunoShooters esfRadunoShooters)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -73,6 +75,7 @@ public interface EsfRadunoShootersLocalService extends BaseLocalService,
 	* @throws PortalException if a esf raduno shooters with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.EsfRadunoShooters deleteEsfRadunoShooters(
 		it.ethica.esf.service.persistence.EsfRadunoShootersPK esfRadunoShootersPK)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -85,6 +88,7 @@ public interface EsfRadunoShootersLocalService extends BaseLocalService,
 	* @return the esf raduno shooters that was removed
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.EsfRadunoShooters deleteEsfRadunoShooters(
 		it.ethica.esf.model.EsfRadunoShooters esfRadunoShooters)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -226,6 +230,7 @@ public interface EsfRadunoShootersLocalService extends BaseLocalService,
 	* @return the esf raduno shooters that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.EsfRadunoShooters updateEsfRadunoShooters(
 		it.ethica.esf.model.EsfRadunoShooters esfRadunoShooters)
 		throws com.liferay.portal.kernel.exception.SystemException;

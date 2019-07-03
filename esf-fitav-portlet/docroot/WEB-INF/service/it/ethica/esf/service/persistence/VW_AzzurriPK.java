@@ -21,6 +21,7 @@ import java.io.Serializable;
 
 /**
  * @author Ethica
+ * @generated
  */
 public class VW_AzzurriPK implements Comparable<VW_AzzurriPK>, Serializable {
 	public long esfNationalId;

@@ -109,10 +109,12 @@ import it.ethica.esf.service.ESFUserRoleLocalServiceUtil;
 import it.ethica.esf.service.ESFUserServiceUtil;
 import it.ethica.esf.service.ESFgunUserLocalServiceUtil;
 import it.ethica.esf.service.EsfRadunoShootersLocalServiceUtil;
+import it.ethica.esf.service.VM_TiratoriTesseratiLocalServiceUtil;
 import it.ethica.esf.service.VW_AzzurriLocalServiceUtil;
 import it.ethica.esf.service.VW_DatiDrettoreTiroLocalServiceUtil;
 import it.ethica.esf.service.VW_ESFIncarichiFederaliLocalServiceUtil;
 import it.ethica.esf.service.VW_ESFListaIncarichiLocalServiceUtil;
+import it.ethica.esf.service.VW_NomineDirettoriTiroLocalServiceUtil;
 import it.ethica.esf.service.VW_ShootersLocalServiceUtil;
 import it.ethica.esf.service.VW_StaffLocalServiceUtil;
 
@@ -309,6 +311,8 @@ public class ClpMessageListener extends BaseMessageListener {
 
 			ESFUserRoleLocalServiceUtil.clearService();
 
+			VM_TiratoriTesseratiLocalServiceUtil.clearService();
+
 			VW_AzzurriLocalServiceUtil.clearService();
 
 			VW_DatiDrettoreTiroLocalServiceUtil.clearService();
@@ -316,6 +320,8 @@ public class ClpMessageListener extends BaseMessageListener {
 			VW_ESFIncarichiFederaliLocalServiceUtil.clearService();
 
 			VW_ESFListaIncarichiLocalServiceUtil.clearService();
+
+			VW_NomineDirettoriTiroLocalServiceUtil.clearService();
 
 			VW_ShootersLocalServiceUtil.clearService();
 

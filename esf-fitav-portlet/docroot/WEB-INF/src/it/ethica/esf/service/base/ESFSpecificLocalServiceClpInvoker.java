@@ -116,13 +116,13 @@ public class ESFSpecificLocalServiceClpInvoker {
 
 		_methodParameterTypes19 = new String[] { "it.ethica.esf.model.ESFSpecific" };
 
-		_methodName396 = "getBeanIdentifier";
+		_methodName448 = "getBeanIdentifier";
 
-		_methodParameterTypes396 = new String[] {  };
+		_methodParameterTypes448 = new String[] {  };
 
-		_methodName397 = "setBeanIdentifier";
+		_methodName449 = "setBeanIdentifier";
 
-		_methodParameterTypes397 = new String[] { "java.lang.String" };
+		_methodParameterTypes449 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -238,13 +238,13 @@ public class ESFSpecificLocalServiceClpInvoker {
 			return ESFSpecificLocalServiceUtil.updateESFSpecific((it.ethica.esf.model.ESFSpecific)arguments[0]);
 		}
 
-		if (_methodName396.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
+		if (_methodName448.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes448, parameterTypes)) {
 			return ESFSpecificLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName397.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
+		if (_methodName449.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes449, parameterTypes)) {
 			ESFSpecificLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
@@ -293,8 +293,8 @@ public class ESFSpecificLocalServiceClpInvoker {
 	private String[] _methodParameterTypes18;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
-	private String _methodName396;
-	private String[] _methodParameterTypes396;
-	private String _methodName397;
-	private String[] _methodParameterTypes397;
+	private String _methodName448;
+	private String[] _methodParameterTypes448;
+	private String _methodName449;
+	private String[] _methodParameterTypes449;
 }

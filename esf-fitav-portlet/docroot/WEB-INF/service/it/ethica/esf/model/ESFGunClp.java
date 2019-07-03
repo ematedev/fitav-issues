@@ -832,6 +832,10 @@ public class ESFGunClp extends BaseModelImpl<ESFGun> implements ESFGun {
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -996,4 +1000,5 @@ public class ESFGunClp extends BaseModelImpl<ESFGun> implements ESFGun {
 	private String _note;
 	private String _name;
 	private BaseModel<?> _esfGunRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

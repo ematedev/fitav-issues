@@ -317,6 +317,10 @@ public class ESFRadunoFilesClp extends BaseModelImpl<ESFRadunoFiles>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -374,4 +378,5 @@ public class ESFRadunoFilesClp extends BaseModelImpl<ESFRadunoFiles>
 	private String _nome;
 	private String _path;
 	private BaseModel<?> _esfRadunoFilesRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

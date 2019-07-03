@@ -296,6 +296,10 @@ public class EsfRadunoShootersClp extends BaseModelImpl<EsfRadunoShooters>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey().hashCode();
@@ -347,4 +351,5 @@ public class EsfRadunoShootersClp extends BaseModelImpl<EsfRadunoShooters>
 	private long _userId;
 	private String _userUuid;
 	private BaseModel<?> _esfRadunoShootersRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

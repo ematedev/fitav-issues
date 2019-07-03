@@ -475,6 +475,10 @@ public class ESFRadunoClp extends BaseModelImpl<ESFRaduno> implements ESFRaduno 
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -567,4 +571,5 @@ public class ESFRadunoClp extends BaseModelImpl<ESFRaduno> implements ESFRaduno 
 	private long _id_associazione_ospitante;
 	private String _altra_sede_ospitante;
 	private BaseModel<?> _esfRadunoRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

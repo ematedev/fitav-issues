@@ -476,6 +476,10 @@ public class VW_ShootersClp extends BaseModelImpl<VW_Shooters>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey().hashCode();
@@ -569,4 +573,5 @@ public class VW_ShootersClp extends BaseModelImpl<VW_Shooters>
 	private long _organizationId;
 	private int _invitato;
 	private BaseModel<?> _vw_ShootersRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

@@ -122,83 +122,83 @@ public class ESFFederalRoleLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFFederalRole"
 			};
 
-		_methodName396 = "getBeanIdentifier";
+		_methodName448 = "getBeanIdentifier";
 
-		_methodParameterTypes396 = new String[] {  };
+		_methodParameterTypes448 = new String[] {  };
 
-		_methodName397 = "setBeanIdentifier";
+		_methodName449 = "setBeanIdentifier";
 
-		_methodParameterTypes397 = new String[] { "java.lang.String" };
+		_methodParameterTypes449 = new String[] { "java.lang.String" };
 
-		_methodName402 = "findByESFUser";
+		_methodName454 = "findByESFUser";
 
-		_methodParameterTypes402 = new String[] { "long" };
+		_methodParameterTypes454 = new String[] { "long" };
 
-		_methodName403 = "findByESFFederalRole";
+		_methodName455 = "findByESFFederalRole";
 
-		_methodParameterTypes403 = new String[] { "long" };
+		_methodParameterTypes455 = new String[] { "long" };
 
-		_methodName404 = "updateEsfFederalRole";
+		_methodName456 = "updateEsfFederalRole";
 
-		_methodParameterTypes404 = new String[] {
+		_methodParameterTypes456 = new String[] {
 				"long", "java.lang.String", "java.lang.String", "boolean",
 				"boolean"
 			};
 
-		_methodName405 = "findByCode";
+		_methodName457 = "findByCode";
 
-		_methodParameterTypes405 = new String[] { "java.lang.String" };
+		_methodParameterTypes457 = new String[] { "java.lang.String" };
 
-		_methodName406 = "associateEsfUser";
+		_methodName458 = "associateEsfUser";
 
-		_methodParameterTypes406 = new String[] {
+		_methodParameterTypes458 = new String[] {
 				"long", "long", "long", "java.util.Date", "long",
 				"java.lang.String"
 			};
 
-		_methodName407 = "deAssociateEsfUser";
+		_methodName459 = "deAssociateEsfUser";
 
-		_methodParameterTypes407 = new String[] { "long", "long" };
+		_methodParameterTypes459 = new String[] { "long", "long" };
 
-		_methodName408 = "getAssociation";
+		_methodName460 = "getAssociation";
 
-		_methodParameterTypes408 = new String[] { "long", "long", "long" };
+		_methodParameterTypes460 = new String[] { "long", "long", "long" };
 
-		_methodName409 = "getActiveAssociationDate";
+		_methodName461 = "getActiveAssociationDate";
 
-		_methodParameterTypes409 = new String[] { "long", "long" };
+		_methodParameterTypes461 = new String[] { "long", "long" };
 
-		_methodName410 = "getEndAssociationDate";
+		_methodName462 = "getEndAssociationDate";
 
-		_methodParameterTypes410 = new String[] { "long", "long" };
+		_methodParameterTypes462 = new String[] { "long", "long" };
 
-		_methodName411 = "deleteEsfUserEsfFederalRole";
+		_methodName463 = "deleteEsfUserEsfFederalRole";
 
-		_methodParameterTypes411 = new String[] { "long", "long" };
+		_methodParameterTypes463 = new String[] { "long", "long" };
 
-		_methodName412 = "getAssociationsByEsfUser";
+		_methodName464 = "getAssociationsByEsfUser";
 
-		_methodParameterTypes412 = new String[] { "long" };
+		_methodParameterTypes464 = new String[] { "long" };
 
-		_methodName413 = "getAssociationsByEsfUserActive";
+		_methodName465 = "getAssociationsByEsfUserActive";
 
-		_methodParameterTypes413 = new String[] { "long", "boolean" };
+		_methodParameterTypes465 = new String[] { "long", "boolean" };
 
-		_methodName414 = "isAssociated";
+		_methodName466 = "isAssociated";
 
-		_methodParameterTypes414 = new String[] { "long", "long" };
+		_methodParameterTypes466 = new String[] { "long", "long" };
 
-		_methodName415 = "cleanEsfUserAssociation";
+		_methodName467 = "cleanEsfUserAssociation";
 
-		_methodParameterTypes415 = new String[] { "long" };
+		_methodParameterTypes467 = new String[] { "long" };
 
-		_methodName416 = "cleanEsfFederalRoleAssociation";
+		_methodName468 = "cleanEsfFederalRoleAssociation";
 
-		_methodParameterTypes416 = new String[] { "long" };
+		_methodParameterTypes468 = new String[] { "long" };
 
-		_methodName417 = "getFederalRoleSpecifics";
+		_methodName469 = "getFederalRoleSpecifics";
 
-		_methodParameterTypes417 = new String[] { "long" };
+		_methodParameterTypes469 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -314,43 +314,43 @@ public class ESFFederalRoleLocalServiceClpInvoker {
 			return ESFFederalRoleLocalServiceUtil.updateESFFederalRole((it.ethica.esf.model.ESFFederalRole)arguments[0]);
 		}
 
-		if (_methodName396.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes396, parameterTypes)) {
+		if (_methodName448.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes448, parameterTypes)) {
 			return ESFFederalRoleLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName397.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes397, parameterTypes)) {
+		if (_methodName449.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes449, parameterTypes)) {
 			ESFFederalRoleLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName402.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes402, parameterTypes)) {
+		if (_methodName454.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes454, parameterTypes)) {
 			return ESFFederalRoleLocalServiceUtil.findByESFUser(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName403.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes403, parameterTypes)) {
+		if (_methodName455.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes455, parameterTypes)) {
 			return ESFFederalRoleLocalServiceUtil.findByESFFederalRole(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName404.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes404, parameterTypes)) {
+		if (_methodName456.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes456, parameterTypes)) {
 			return ESFFederalRoleLocalServiceUtil.updateEsfFederalRole(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
 				((Boolean)arguments[3]).booleanValue(),
 				((Boolean)arguments[4]).booleanValue());
 		}
 
-		if (_methodName405.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes405, parameterTypes)) {
+		if (_methodName457.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes457, parameterTypes)) {
 			return ESFFederalRoleLocalServiceUtil.findByCode((java.lang.String)arguments[0]);
 		}
 
-		if (_methodName406.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes406, parameterTypes)) {
+		if (_methodName458.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes458, parameterTypes)) {
 			ESFFederalRoleLocalServiceUtil.associateEsfUser(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue(), (java.util.Date)arguments[3],
@@ -359,74 +359,74 @@ public class ESFFederalRoleLocalServiceClpInvoker {
 			return null;
 		}
 
-		if (_methodName407.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes407, parameterTypes)) {
+		if (_methodName459.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes459, parameterTypes)) {
 			ESFFederalRoleLocalServiceUtil.deAssociateEsfUser(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 
 			return null;
 		}
 
-		if (_methodName408.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes408, parameterTypes)) {
+		if (_methodName460.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes460, parameterTypes)) {
 			return ESFFederalRoleLocalServiceUtil.getAssociation(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Long)arguments[2]).longValue());
 		}
 
-		if (_methodName409.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes409, parameterTypes)) {
+		if (_methodName461.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes461, parameterTypes)) {
 			return ESFFederalRoleLocalServiceUtil.getActiveAssociationDate(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName410.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes410, parameterTypes)) {
+		if (_methodName462.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes462, parameterTypes)) {
 			return ESFFederalRoleLocalServiceUtil.getEndAssociationDate(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName411.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes411, parameterTypes)) {
+		if (_methodName463.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes463, parameterTypes)) {
 			ESFFederalRoleLocalServiceUtil.deleteEsfUserEsfFederalRole(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 
 			return null;
 		}
 
-		if (_methodName412.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes412, parameterTypes)) {
+		if (_methodName464.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes464, parameterTypes)) {
 			return ESFFederalRoleLocalServiceUtil.getAssociationsByEsfUser(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName413.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes413, parameterTypes)) {
+		if (_methodName465.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes465, parameterTypes)) {
 			return ESFFederalRoleLocalServiceUtil.getAssociationsByEsfUserActive(((Long)arguments[0]).longValue(),
 				((Boolean)arguments[1]).booleanValue());
 		}
 
-		if (_methodName414.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes414, parameterTypes)) {
+		if (_methodName466.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes466, parameterTypes)) {
 			return ESFFederalRoleLocalServiceUtil.isAssociated(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue());
 		}
 
-		if (_methodName415.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes415, parameterTypes)) {
+		if (_methodName467.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes467, parameterTypes)) {
 			ESFFederalRoleLocalServiceUtil.cleanEsfUserAssociation(((Long)arguments[0]).longValue());
 
 			return null;
 		}
 
-		if (_methodName416.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes416, parameterTypes)) {
+		if (_methodName468.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes468, parameterTypes)) {
 			ESFFederalRoleLocalServiceUtil.cleanEsfFederalRoleAssociation(((Long)arguments[0]).longValue());
 
 			return null;
 		}
 
-		if (_methodName417.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes417, parameterTypes)) {
+		if (_methodName469.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes469, parameterTypes)) {
 			return ESFFederalRoleLocalServiceUtil.getFederalRoleSpecifics(((Long)arguments[0]).longValue());
 		}
 
@@ -473,40 +473,40 @@ public class ESFFederalRoleLocalServiceClpInvoker {
 	private String[] _methodParameterTypes18;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
-	private String _methodName396;
-	private String[] _methodParameterTypes396;
-	private String _methodName397;
-	private String[] _methodParameterTypes397;
-	private String _methodName402;
-	private String[] _methodParameterTypes402;
-	private String _methodName403;
-	private String[] _methodParameterTypes403;
-	private String _methodName404;
-	private String[] _methodParameterTypes404;
-	private String _methodName405;
-	private String[] _methodParameterTypes405;
-	private String _methodName406;
-	private String[] _methodParameterTypes406;
-	private String _methodName407;
-	private String[] _methodParameterTypes407;
-	private String _methodName408;
-	private String[] _methodParameterTypes408;
-	private String _methodName409;
-	private String[] _methodParameterTypes409;
-	private String _methodName410;
-	private String[] _methodParameterTypes410;
-	private String _methodName411;
-	private String[] _methodParameterTypes411;
-	private String _methodName412;
-	private String[] _methodParameterTypes412;
-	private String _methodName413;
-	private String[] _methodParameterTypes413;
-	private String _methodName414;
-	private String[] _methodParameterTypes414;
-	private String _methodName415;
-	private String[] _methodParameterTypes415;
-	private String _methodName416;
-	private String[] _methodParameterTypes416;
-	private String _methodName417;
-	private String[] _methodParameterTypes417;
+	private String _methodName448;
+	private String[] _methodParameterTypes448;
+	private String _methodName449;
+	private String[] _methodParameterTypes449;
+	private String _methodName454;
+	private String[] _methodParameterTypes454;
+	private String _methodName455;
+	private String[] _methodParameterTypes455;
+	private String _methodName456;
+	private String[] _methodParameterTypes456;
+	private String _methodName457;
+	private String[] _methodParameterTypes457;
+	private String _methodName458;
+	private String[] _methodParameterTypes458;
+	private String _methodName459;
+	private String[] _methodParameterTypes459;
+	private String _methodName460;
+	private String[] _methodParameterTypes460;
+	private String _methodName461;
+	private String[] _methodParameterTypes461;
+	private String _methodName462;
+	private String[] _methodParameterTypes462;
+	private String _methodName463;
+	private String[] _methodParameterTypes463;
+	private String _methodName464;
+	private String[] _methodParameterTypes464;
+	private String _methodName465;
+	private String[] _methodParameterTypes465;
+	private String _methodName466;
+	private String[] _methodParameterTypes466;
+	private String _methodName467;
+	private String[] _methodParameterTypes467;
+	private String _methodName468;
+	private String[] _methodParameterTypes468;
+	private String _methodName469;
+	private String[] _methodParameterTypes469;
 }

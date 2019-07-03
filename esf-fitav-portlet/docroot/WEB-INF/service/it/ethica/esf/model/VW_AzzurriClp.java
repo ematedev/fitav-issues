@@ -433,6 +433,10 @@ public class VW_AzzurriClp extends BaseModelImpl<VW_Azzurri>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey().hashCode();
@@ -518,4 +522,5 @@ public class VW_AzzurriClp extends BaseModelImpl<VW_Azzurri>
 	private String _description;
 	private long _invitato;
 	private BaseModel<?> _vw_AzzurriRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

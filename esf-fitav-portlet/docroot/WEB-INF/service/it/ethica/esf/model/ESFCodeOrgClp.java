@@ -320,6 +320,10 @@ public class ESFCodeOrgClp extends BaseModelImpl<ESFCodeOrg>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -377,4 +381,5 @@ public class ESFCodeOrgClp extends BaseModelImpl<ESFCodeOrg>
 	private String _code;
 	private long _sequence;
 	private BaseModel<?> _esfCodeOrgRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

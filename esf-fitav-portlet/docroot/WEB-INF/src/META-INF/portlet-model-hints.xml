@@ -444,6 +444,8 @@
 		<field name="isChangeCategoryMatch" type="boolean" />
 		<field name="esfNationalSportTypeId" type="String" />
 		<field name="oldCode" type="String" />
+		<field name="matchYear" type="int" />
+		<field name="matchYearSeq" type="int" />
 	</model>
 	<model name="it.ethica.esf.model.ESFMatchResult">
 		<field name="esfMatchResultId" type="long" />
@@ -687,6 +689,51 @@
 		<field name="createDate" type="Date" />
 		<field name="modifiedDate" type="Date" />
 		<field name="description" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.ESFRaduno">
+		<field name="id_esf_raduno" type="long" />
+		<field name="codice" type="String" />
+		<field name="data_inizio" type="Date" />
+		<field name="data_fine" type="Date" />
+		<field name="tipo_raduno" type="long" />
+		<field name="id_sottotipo_raduno" type="long" />
+		<field name="note" type="String" />
+		<field name="id_associazione_ospitante" type="long" />
+		<field name="altra_sede_ospitante" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.ESFRadunoAzzurri">
+		<field name="id_esf_raduno_azzurri" type="long" />
+		<field name="id_esf_raduno" type="long" />
+		<field name="esfNationalId" type="long" />
+	</model>
+	<model name="it.ethica.esf.model.ESFRadunoFiles">
+		<field name="id_esf_raduno_files" type="long" />
+		<field name="id_esf_raduno" type="long" />
+		<field name="nome" type="String" />
+		<field name="path" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.EsfRadunoShooters">
+		<field name="id_esf_raduno_shooters" type="long" />
+		<field name="id_esf_raduno" type="long" />
+		<field name="userId" type="long" />
+	</model>
+	<model name="it.ethica.esf.model.ESFRadunoSottotipiRaduno">
+		<field name="id_esf_raduno_sottotipi_raduno" type="long" />
+		<field name="id_esf_raduno" type="long" />
+		<field name="id_esf_raduno_sottotipo" type="long" />
+	</model>
+	<model name="it.ethica.esf.model.ESFRadunoSottotipo">
+		<field name="id_esf_raduno_sottotipo" type="long" />
+		<field name="descrizione" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.ESFRadunoStaff">
+		<field name="id_esf_raduno_staff" type="long" />
+		<field name="id_esf_raduno" type="long" />
+		<field name="userId" type="long" />
+	</model>
+	<model name="it.ethica.esf.model.ESFRadunoTipo">
+		<field name="id_esf_raduno_tipo" type="long" />
+		<field name="descrizione" type="String" />
 	</model>
 	<model name="it.ethica.esf.model.ESFRegion">
 		<field name="idRegion" type="String" />
@@ -1071,11 +1118,30 @@
 		<field name="Email" type="String" />
 		<field name="CF" type="String" />
 	</model>
+	<model name="it.ethica.esf.model.VW_Azzurri">
+		<field name="esfNationalId" type="long" />
+		<field name="userName" type="String" />
+		<field name="startDate" type="Date" />
+		<field name="endDate" type="Date" />
+		<field name="esfSportTypeId" type="long" />
+		<field name="name" type="String" />
+		<field name="description" type="String" />
+		<field name="invitato" type="long" />
+	</model>
 	<model name="it.ethica.esf.model.VW_DatiDrettoreTiro">
 		<field name="esfShootingDirectorId" type="long" />
 		<field name="Nome" type="String" />
 		<field name="Cognome" type="String" />
 		<field name="CodiceRegione" type="String" />
+	</model>
+	<model name="it.ethica.esf.model.VW_ESFIncarichiFederali">
+		<field name="esfUserId" type="long" />
+		<field name="esfFederalRoleId" type="long" />
+		<field name="code_" type="String" />
+		<field name="description" type="String" />
+		<field name="startDate" type="long" />
+		<field name="endDate" type="Date" />
+		<field name="active_" type="boolean" />
 	</model>
 	<model name="it.ethica.esf.model.VW_ESFListaIncarichi">
 		<field name="AnniPrecedenti" type="int" />
@@ -1100,5 +1166,31 @@
 		<field name="Qualifica" type="String" />
 		<field name="Specialita" type="String" />
 		<field name="DataAssegnazione" type="Date" />
+	</model>
+	<model name="it.ethica.esf.model.VW_Shooters">
+		<field name="userId" type="long" />
+		<field name="CodiceTessera" type="String" />
+		<field name="CodiceOrganizzazione" type="String" />
+		<field name="Nome" type="String" />
+		<field name="Cognome" type="String" />
+		<field name="Email" type="String" />
+		<field name="CF" type="String" />
+		<field name="organizationId" type="long" />
+		<field name="invitato" type="int" />
+	</model>
+	<model name="it.ethica.esf.model.VW_Staff">
+		<field name="userId" type="long" />
+		<field name="emailAddress" type="String" />
+		<field name="firstName" type="String" />
+		<field name="lastName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="esfStartData" type="Date" />
+		<field name="esfEndData" type="Date" />
+		<field name="regionId" type="String" />
+		<field name="provinceId" type="String" />
+		<field name="esfShootingDirectorQualificationDesc" type="String" />
+		<field name="esfSportTypeId" type="long" />
+		<field name="name" type="String" />
+		<field name="invitato" type="long" />
 	</model>
 </model-hints>

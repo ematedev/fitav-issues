@@ -244,19 +244,19 @@ public interface VW_ShootersModel extends BaseModel<VW_Shooters> {
 	public Object clone();
 
 	@Override
-	public int compareTo(VW_Shooters vw_Shooters);
+	public int compareTo(it.ethica.esf.model.VW_Shooters vw_Shooters);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<VW_Shooters> toCacheModel();
+	public CacheModel<it.ethica.esf.model.VW_Shooters> toCacheModel();
 
 	@Override
-	public VW_Shooters toEscapedModel();
+	public it.ethica.esf.model.VW_Shooters toEscapedModel();
 
 	@Override
-	public VW_Shooters toUnescapedModel();
+	public it.ethica.esf.model.VW_Shooters toUnescapedModel();
 
 	@Override
 	public String toString();

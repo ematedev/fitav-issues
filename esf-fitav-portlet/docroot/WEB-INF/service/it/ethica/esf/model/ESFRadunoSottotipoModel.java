@@ -123,19 +123,20 @@ public interface ESFRadunoSottotipoModel extends BaseModel<ESFRadunoSottotipo> {
 	public Object clone();
 
 	@Override
-	public int compareTo(ESFRadunoSottotipo esfRadunoSottotipo);
+	public int compareTo(
+		it.ethica.esf.model.ESFRadunoSottotipo esfRadunoSottotipo);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ESFRadunoSottotipo> toCacheModel();
+	public CacheModel<it.ethica.esf.model.ESFRadunoSottotipo> toCacheModel();
 
 	@Override
-	public ESFRadunoSottotipo toEscapedModel();
+	public it.ethica.esf.model.ESFRadunoSottotipo toEscapedModel();
 
 	@Override
-	public ESFRadunoSottotipo toUnescapedModel();
+	public it.ethica.esf.model.ESFRadunoSottotipo toUnescapedModel();
 
 	@Override
 	public String toString();

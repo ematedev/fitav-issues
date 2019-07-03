@@ -152,19 +152,19 @@ public interface ESFRadunoFilesModel extends BaseModel<ESFRadunoFiles> {
 	public Object clone();
 
 	@Override
-	public int compareTo(ESFRadunoFiles esfRadunoFiles);
+	public int compareTo(it.ethica.esf.model.ESFRadunoFiles esfRadunoFiles);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ESFRadunoFiles> toCacheModel();
+	public CacheModel<it.ethica.esf.model.ESFRadunoFiles> toCacheModel();
 
 	@Override
-	public ESFRadunoFiles toEscapedModel();
+	public it.ethica.esf.model.ESFRadunoFiles toEscapedModel();
 
 	@Override
-	public ESFRadunoFiles toUnescapedModel();
+	public it.ethica.esf.model.ESFRadunoFiles toUnescapedModel();
 
 	@Override
 	public String toString();

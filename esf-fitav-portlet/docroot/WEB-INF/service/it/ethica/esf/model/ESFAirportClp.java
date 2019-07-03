@@ -314,6 +314,10 @@ public class ESFAirportClp extends BaseModelImpl<ESFAirport>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -371,4 +375,5 @@ public class ESFAirportClp extends BaseModelImpl<ESFAirport>
 	private String _city;
 	private String _country;
 	private BaseModel<?> _esfAirportRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

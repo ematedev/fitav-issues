@@ -106,17 +106,17 @@ public class ESFRadunoSottotipoLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFRadunoSottotipo"
 			};
 
-		_methodName424 = "getBeanIdentifier";
+		_methodName444 = "getBeanIdentifier";
 
-		_methodParameterTypes424 = new String[] {  };
+		_methodParameterTypes444 = new String[] {  };
 
-		_methodName425 = "setBeanIdentifier";
+		_methodName445 = "setBeanIdentifier";
 
-		_methodParameterTypes425 = new String[] { "java.lang.String" };
+		_methodParameterTypes445 = new String[] { "java.lang.String" };
 
-		_methodName430 = "findAllSottoTipi";
+		_methodName450 = "findAllSottoTipi";
 
-		_methodParameterTypes430 = new String[] {  };
+		_methodParameterTypes450 = new String[] {  };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -208,20 +208,20 @@ public class ESFRadunoSottotipoLocalServiceClpInvoker {
 			return ESFRadunoSottotipoLocalServiceUtil.updateESFRadunoSottotipo((it.ethica.esf.model.ESFRadunoSottotipo)arguments[0]);
 		}
 
-		if (_methodName424.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes424, parameterTypes)) {
+		if (_methodName444.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes444, parameterTypes)) {
 			return ESFRadunoSottotipoLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName425.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes425, parameterTypes)) {
+		if (_methodName445.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes445, parameterTypes)) {
 			ESFRadunoSottotipoLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName430.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes430, parameterTypes)) {
+		if (_methodName450.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes450, parameterTypes)) {
 			return ESFRadunoSottotipoLocalServiceUtil.findAllSottoTipi();
 		}
 
@@ -260,10 +260,10 @@ public class ESFRadunoSottotipoLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName424;
-	private String[] _methodParameterTypes424;
-	private String _methodName425;
-	private String[] _methodParameterTypes425;
-	private String _methodName430;
-	private String[] _methodParameterTypes430;
+	private String _methodName444;
+	private String[] _methodParameterTypes444;
+	private String _methodName445;
+	private String[] _methodParameterTypes445;
+	private String _methodName450;
+	private String[] _methodParameterTypes450;
 }

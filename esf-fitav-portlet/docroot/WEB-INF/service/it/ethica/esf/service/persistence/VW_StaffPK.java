@@ -21,6 +21,7 @@ import java.io.Serializable;
 
 /**
  * @author Ethica
+ * @generated
  */
 public class VW_StaffPK implements Comparable<VW_StaffPK>, Serializable {
 	public long userId;

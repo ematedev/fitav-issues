@@ -213,19 +213,19 @@ public interface VW_AzzurriModel extends BaseModel<VW_Azzurri> {
 	public Object clone();
 
 	@Override
-	public int compareTo(VW_Azzurri vw_Azzurri);
+	public int compareTo(it.ethica.esf.model.VW_Azzurri vw_Azzurri);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<VW_Azzurri> toCacheModel();
+	public CacheModel<it.ethica.esf.model.VW_Azzurri> toCacheModel();
 
 	@Override
-	public VW_Azzurri toEscapedModel();
+	public it.ethica.esf.model.VW_Azzurri toEscapedModel();
 
 	@Override
-	public VW_Azzurri toUnescapedModel();
+	public it.ethica.esf.model.VW_Azzurri toUnescapedModel();
 
 	@Override
 	public String toString();

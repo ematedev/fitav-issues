@@ -605,6 +605,10 @@ public class VW_StaffClp extends BaseModelImpl<VW_Staff> implements VW_Staff {
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey().hashCode();
@@ -726,4 +730,5 @@ public class VW_StaffClp extends BaseModelImpl<VW_Staff> implements VW_Staff {
 	private String _name;
 	private long _invitato;
 	private BaseModel<?> _vw_StaffRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

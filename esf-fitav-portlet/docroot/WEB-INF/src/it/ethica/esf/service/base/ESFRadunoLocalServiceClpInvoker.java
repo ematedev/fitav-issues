@@ -100,41 +100,41 @@ public class ESFRadunoLocalServiceClpInvoker {
 
 		_methodParameterTypes15 = new String[] { "it.ethica.esf.model.ESFRaduno" };
 
-		_methodName424 = "getBeanIdentifier";
+		_methodName444 = "getBeanIdentifier";
 
-		_methodParameterTypes424 = new String[] {  };
+		_methodParameterTypes444 = new String[] {  };
 
-		_methodName425 = "setBeanIdentifier";
+		_methodName445 = "setBeanIdentifier";
 
-		_methodParameterTypes425 = new String[] { "java.lang.String" };
+		_methodParameterTypes445 = new String[] { "java.lang.String" };
 
-		_methodName430 = "findAllRaduni";
+		_methodName450 = "findAllRaduni";
 
-		_methodParameterTypes430 = new String[] {  };
+		_methodParameterTypes450 = new String[] {  };
 
-		_methodName431 = "countAllRaduni";
+		_methodName451 = "countAllRaduni";
 
-		_methodParameterTypes431 = new String[] {  };
+		_methodParameterTypes451 = new String[] {  };
 
-		_methodName432 = "findById";
+		_methodName452 = "findById";
 
-		_methodParameterTypes432 = new String[] { "long" };
+		_methodParameterTypes452 = new String[] { "long" };
 
-		_methodName433 = "inserisciRaduno";
+		_methodName453 = "inserisciRaduno";
 
-		_methodParameterTypes433 = new String[] {
+		_methodParameterTypes453 = new String[] {
 				"it.ethica.esf.model.ESFRaduno", "java.lang.String[][]"
 			};
 
-		_methodName434 = "aggiornaRaduno";
+		_methodName454 = "aggiornaRaduno";
 
-		_methodParameterTypes434 = new String[] {
+		_methodParameterTypes454 = new String[] {
 				"it.ethica.esf.model.ESFRaduno", "java.lang.String[][]"
 			};
 
-		_methodName435 = "cancellaRaduno";
+		_methodName455 = "cancellaRaduno";
 
-		_methodParameterTypes435 = new String[] { "long" };
+		_methodParameterTypes455 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -226,47 +226,47 @@ public class ESFRadunoLocalServiceClpInvoker {
 			return ESFRadunoLocalServiceUtil.updateESFRaduno((it.ethica.esf.model.ESFRaduno)arguments[0]);
 		}
 
-		if (_methodName424.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes424, parameterTypes)) {
+		if (_methodName444.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes444, parameterTypes)) {
 			return ESFRadunoLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName425.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes425, parameterTypes)) {
+		if (_methodName445.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes445, parameterTypes)) {
 			ESFRadunoLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName430.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes430, parameterTypes)) {
+		if (_methodName450.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes450, parameterTypes)) {
 			return ESFRadunoLocalServiceUtil.findAllRaduni();
 		}
 
-		if (_methodName431.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes431, parameterTypes)) {
+		if (_methodName451.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes451, parameterTypes)) {
 			return ESFRadunoLocalServiceUtil.countAllRaduni();
 		}
 
-		if (_methodName432.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes432, parameterTypes)) {
+		if (_methodName452.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes452, parameterTypes)) {
 			return ESFRadunoLocalServiceUtil.findById(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName433.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes433, parameterTypes)) {
+		if (_methodName453.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes453, parameterTypes)) {
 			return ESFRadunoLocalServiceUtil.inserisciRaduno((it.ethica.esf.model.ESFRaduno)arguments[0],
 				(java.lang.String[])arguments[1]);
 		}
 
-		if (_methodName434.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes434, parameterTypes)) {
+		if (_methodName454.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes454, parameterTypes)) {
 			return ESFRadunoLocalServiceUtil.aggiornaRaduno((it.ethica.esf.model.ESFRaduno)arguments[0],
 				(java.lang.String[])arguments[1]);
 		}
 
-		if (_methodName435.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes435, parameterTypes)) {
+		if (_methodName455.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes455, parameterTypes)) {
 			return ESFRadunoLocalServiceUtil.cancellaRaduno(((Long)arguments[0]).longValue());
 		}
 
@@ -305,20 +305,20 @@ public class ESFRadunoLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName424;
-	private String[] _methodParameterTypes424;
-	private String _methodName425;
-	private String[] _methodParameterTypes425;
-	private String _methodName430;
-	private String[] _methodParameterTypes430;
-	private String _methodName431;
-	private String[] _methodParameterTypes431;
-	private String _methodName432;
-	private String[] _methodParameterTypes432;
-	private String _methodName433;
-	private String[] _methodParameterTypes433;
-	private String _methodName434;
-	private String[] _methodParameterTypes434;
-	private String _methodName435;
-	private String[] _methodParameterTypes435;
+	private String _methodName444;
+	private String[] _methodParameterTypes444;
+	private String _methodName445;
+	private String[] _methodParameterTypes445;
+	private String _methodName450;
+	private String[] _methodParameterTypes450;
+	private String _methodName451;
+	private String[] _methodParameterTypes451;
+	private String _methodName452;
+	private String[] _methodParameterTypes452;
+	private String _methodName453;
+	private String[] _methodParameterTypes453;
+	private String _methodName454;
+	private String[] _methodParameterTypes454;
+	private String _methodName455;
+	private String[] _methodParameterTypes455;
 }

@@ -114,21 +114,21 @@ public class ESFRadunoAzzurriLocalServiceClpInvoker {
 				"it.ethica.esf.model.ESFRadunoAzzurri"
 			};
 
-		_methodName424 = "getBeanIdentifier";
+		_methodName444 = "getBeanIdentifier";
 
-		_methodParameterTypes424 = new String[] {  };
+		_methodParameterTypes444 = new String[] {  };
 
-		_methodName425 = "setBeanIdentifier";
+		_methodName445 = "setBeanIdentifier";
 
-		_methodParameterTypes425 = new String[] { "java.lang.String" };
+		_methodParameterTypes445 = new String[] { "java.lang.String" };
 
-		_methodName430 = "findById";
+		_methodName450 = "findById";
 
-		_methodParameterTypes430 = new String[] { "long" };
+		_methodParameterTypes450 = new String[] { "long" };
 
-		_methodName431 = "associaAzzurri";
+		_methodName451 = "associaAzzurri";
 
-		_methodParameterTypes431 = new String[] {
+		_methodParameterTypes451 = new String[] {
 				"long", "java.util.List", "java.util.List"
 			};
 	}
@@ -222,25 +222,25 @@ public class ESFRadunoAzzurriLocalServiceClpInvoker {
 			return ESFRadunoAzzurriLocalServiceUtil.updateESFRadunoAzzurri((it.ethica.esf.model.ESFRadunoAzzurri)arguments[0]);
 		}
 
-		if (_methodName424.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes424, parameterTypes)) {
+		if (_methodName444.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes444, parameterTypes)) {
 			return ESFRadunoAzzurriLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName425.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes425, parameterTypes)) {
+		if (_methodName445.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes445, parameterTypes)) {
 			ESFRadunoAzzurriLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName430.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes430, parameterTypes)) {
+		if (_methodName450.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes450, parameterTypes)) {
 			return ESFRadunoAzzurriLocalServiceUtil.findById(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName431.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes431, parameterTypes)) {
+		if (_methodName451.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes451, parameterTypes)) {
 			ESFRadunoAzzurriLocalServiceUtil.associaAzzurri(((Long)arguments[0]).longValue(),
 				(java.util.List<java.lang.String>)arguments[1],
 				(java.util.List<java.lang.String>)arguments[2]);
@@ -283,12 +283,12 @@ public class ESFRadunoAzzurriLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName424;
-	private String[] _methodParameterTypes424;
-	private String _methodName425;
-	private String[] _methodParameterTypes425;
-	private String _methodName430;
-	private String[] _methodParameterTypes430;
-	private String _methodName431;
-	private String[] _methodParameterTypes431;
+	private String _methodName444;
+	private String[] _methodParameterTypes444;
+	private String _methodName445;
+	private String[] _methodParameterTypes445;
+	private String _methodName450;
+	private String[] _methodParameterTypes450;
+	private String _methodName451;
+	private String[] _methodParameterTypes451;
 }

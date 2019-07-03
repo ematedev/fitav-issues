@@ -445,6 +445,10 @@ public class ESFHistoricalAssociationClp extends BaseModelImpl<ESFHistoricalAsso
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -530,4 +534,5 @@ public class ESFHistoricalAssociationClp extends BaseModelImpl<ESFHistoricalAsso
 	private long _stateId;
 	private long _variationId;
 	private BaseModel<?> _esfHistoricalAssociationRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

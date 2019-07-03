@@ -304,19 +304,19 @@ public interface VW_StaffModel extends BaseModel<VW_Staff> {
 	public Object clone();
 
 	@Override
-	public int compareTo(VW_Staff vw_Staff);
+	public int compareTo(it.ethica.esf.model.VW_Staff vw_Staff);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<VW_Staff> toCacheModel();
+	public CacheModel<it.ethica.esf.model.VW_Staff> toCacheModel();
 
 	@Override
-	public VW_Staff toEscapedModel();
+	public it.ethica.esf.model.VW_Staff toEscapedModel();
 
 	@Override
-	public VW_Staff toUnescapedModel();
+	public it.ethica.esf.model.VW_Staff toUnescapedModel();
 
 	@Override
 	public String toString();

@@ -285,6 +285,10 @@ public class ESFRadunoAzzurriClp extends BaseModelImpl<ESFRadunoAzzurri>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey().hashCode();
@@ -335,4 +339,5 @@ public class ESFRadunoAzzurriClp extends BaseModelImpl<ESFRadunoAzzurri>
 	private long _id_esf_raduno;
 	private long _esfNationalId;
 	private BaseModel<?> _esfRadunoAzzurriRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

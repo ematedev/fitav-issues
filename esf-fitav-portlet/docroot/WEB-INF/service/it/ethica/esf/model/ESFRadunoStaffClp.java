@@ -294,6 +294,10 @@ public class ESFRadunoStaffClp extends BaseModelImpl<ESFRadunoStaff>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey().hashCode();
@@ -345,4 +349,5 @@ public class ESFRadunoStaffClp extends BaseModelImpl<ESFRadunoStaff>
 	private long _userId;
 	private String _userUuid;
 	private BaseModel<?> _esfRadunoStaffRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

@@ -254,6 +254,10 @@ public class ESFRadunoTipoClp extends BaseModelImpl<ESFRadunoTipo>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -297,4 +301,5 @@ public class ESFRadunoTipoClp extends BaseModelImpl<ESFRadunoTipo>
 	private long _id_esf_raduno_tipo;
 	private String _descrizione;
 	private BaseModel<?> _esfRadunoTipoRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

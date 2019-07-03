@@ -16,6 +16,7 @@ package it.ethica.esf.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface VW_StaffLocalService extends BaseLocalService,
 	* @return the v w_ staff that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.VW_Staff addVW_Staff(
 		it.ethica.esf.model.VW_Staff vw_Staff)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -73,6 +75,7 @@ public interface VW_StaffLocalService extends BaseLocalService,
 	* @throws PortalException if a v w_ staff with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.VW_Staff deleteVW_Staff(
 		it.ethica.esf.service.persistence.VW_StaffPK vw_StaffPK)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -85,6 +88,7 @@ public interface VW_StaffLocalService extends BaseLocalService,
 	* @return the v w_ staff that was removed
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public it.ethica.esf.model.VW_Staff deleteVW_Staff(
 		it.ethica.esf.model.VW_Staff vw_Staff)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -226,6 +230,7 @@ public interface VW_StaffLocalService extends BaseLocalService,
 	* @return the v w_ staff that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public it.ethica.esf.model.VW_Staff updateVW_Staff(
 		it.ethica.esf.model.VW_Staff vw_Staff)
 		throws com.liferay.portal.kernel.exception.SystemException;

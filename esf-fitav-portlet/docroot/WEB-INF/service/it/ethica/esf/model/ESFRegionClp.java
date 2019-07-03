@@ -282,6 +282,10 @@ public class ESFRegionClp extends BaseModelImpl<ESFRegion> implements ESFRegion 
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return getPrimaryKey().hashCode();
@@ -332,4 +336,5 @@ public class ESFRegionClp extends BaseModelImpl<ESFRegion> implements ESFRegion 
 	private String _idCountry;
 	private String _name;
 	private BaseModel<?> _esfRegionRemoteModel;
+	private Class<?> _clpSerializerClass = it.ethica.esf.service.ClpSerializer.class;
 }

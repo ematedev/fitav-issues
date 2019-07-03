@@ -134,9 +134,12 @@ import it.ethica.esf.service.persistence.ESFUserRolePersistence;
 import it.ethica.esf.service.persistence.ESFgunUserFinder;
 import it.ethica.esf.service.persistence.ESFgunUserPersistence;
 import it.ethica.esf.service.persistence.EsfRadunoShootersPersistence;
+import it.ethica.esf.service.persistence.VM_TiratoriTesseratiPersistence;
 import it.ethica.esf.service.persistence.VW_AzzurriPersistence;
 import it.ethica.esf.service.persistence.VW_DatiDrettoreTiroPersistence;
+import it.ethica.esf.service.persistence.VW_ESFIncarichiFederaliPersistence;
 import it.ethica.esf.service.persistence.VW_ESFListaIncarichiPersistence;
+import it.ethica.esf.service.persistence.VW_NomineDirettoriTiroPersistence;
 import it.ethica.esf.service.persistence.VW_ShootersPersistence;
 import it.ethica.esf.service.persistence.VW_StaffPersistence;
 
@@ -1204,6 +1207,25 @@ public abstract class ESFRadunoSottotipiRadunoLocalServiceBaseImpl
 	}
 
 	/**
+	 * Returns the e s f federal role remote service.
+	 *
+	 * @return the e s f federal role remote service
+	 */
+	public it.ethica.esf.service.ESFFederalRoleService getESFFederalRoleService() {
+		return esfFederalRoleService;
+	}
+
+	/**
+	 * Sets the e s f federal role remote service.
+	 *
+	 * @param esfFederalRoleService the e s f federal role remote service
+	 */
+	public void setESFFederalRoleService(
+		it.ethica.esf.service.ESFFederalRoleService esfFederalRoleService) {
+		this.esfFederalRoleService = esfFederalRoleService;
+	}
+
+	/**
 	 * Returns the e s f federal role persistence.
 	 *
 	 * @return the e s f federal role persistence
@@ -1258,6 +1280,25 @@ public abstract class ESFRadunoSottotipiRadunoLocalServiceBaseImpl
 	public void setESFFederalRoleESFSpecificLocalService(
 		it.ethica.esf.service.ESFFederalRoleESFSpecificLocalService esfFederalRoleESFSpecificLocalService) {
 		this.esfFederalRoleESFSpecificLocalService = esfFederalRoleESFSpecificLocalService;
+	}
+
+	/**
+	 * Returns the e s f federal role e s f specific remote service.
+	 *
+	 * @return the e s f federal role e s f specific remote service
+	 */
+	public it.ethica.esf.service.ESFFederalRoleESFSpecificService getESFFederalRoleESFSpecificService() {
+		return esfFederalRoleESFSpecificService;
+	}
+
+	/**
+	 * Sets the e s f federal role e s f specific remote service.
+	 *
+	 * @param esfFederalRoleESFSpecificService the e s f federal role e s f specific remote service
+	 */
+	public void setESFFederalRoleESFSpecificService(
+		it.ethica.esf.service.ESFFederalRoleESFSpecificService esfFederalRoleESFSpecificService) {
+		this.esfFederalRoleESFSpecificService = esfFederalRoleESFSpecificService;
 	}
 
 	/**
@@ -3341,6 +3382,25 @@ public abstract class ESFRadunoSottotipiRadunoLocalServiceBaseImpl
 	}
 
 	/**
+	 * Returns the e s f specific remote service.
+	 *
+	 * @return the e s f specific remote service
+	 */
+	public it.ethica.esf.service.ESFSpecificService getESFSpecificService() {
+		return esfSpecificService;
+	}
+
+	/**
+	 * Sets the e s f specific remote service.
+	 *
+	 * @param esfSpecificService the e s f specific remote service
+	 */
+	public void setESFSpecificService(
+		it.ethica.esf.service.ESFSpecificService esfSpecificService) {
+		this.esfSpecificService = esfSpecificService;
+	}
+
+	/**
 	 * Returns the e s f specific persistence.
 	 *
 	 * @return the e s f specific persistence
@@ -3719,6 +3779,25 @@ public abstract class ESFRadunoSottotipiRadunoLocalServiceBaseImpl
 	}
 
 	/**
+	 * Returns the e s f user remote service.
+	 *
+	 * @return the e s f user remote service
+	 */
+	public it.ethica.esf.service.ESFUserService getESFUserService() {
+		return esfUserService;
+	}
+
+	/**
+	 * Sets the e s f user remote service.
+	 *
+	 * @param esfUserService the e s f user remote service
+	 */
+	public void setESFUserService(
+		it.ethica.esf.service.ESFUserService esfUserService) {
+		this.esfUserService = esfUserService;
+	}
+
+	/**
 	 * Returns the e s f user persistence.
 	 *
 	 * @return the e s f user persistence
@@ -3945,6 +4024,44 @@ public abstract class ESFRadunoSottotipiRadunoLocalServiceBaseImpl
 	}
 
 	/**
+	 * Returns the v m_ tiratori tesserati local service.
+	 *
+	 * @return the v m_ tiratori tesserati local service
+	 */
+	public it.ethica.esf.service.VM_TiratoriTesseratiLocalService getVM_TiratoriTesseratiLocalService() {
+		return vm_TiratoriTesseratiLocalService;
+	}
+
+	/**
+	 * Sets the v m_ tiratori tesserati local service.
+	 *
+	 * @param vm_TiratoriTesseratiLocalService the v m_ tiratori tesserati local service
+	 */
+	public void setVM_TiratoriTesseratiLocalService(
+		it.ethica.esf.service.VM_TiratoriTesseratiLocalService vm_TiratoriTesseratiLocalService) {
+		this.vm_TiratoriTesseratiLocalService = vm_TiratoriTesseratiLocalService;
+	}
+
+	/**
+	 * Returns the v m_ tiratori tesserati persistence.
+	 *
+	 * @return the v m_ tiratori tesserati persistence
+	 */
+	public VM_TiratoriTesseratiPersistence getVM_TiratoriTesseratiPersistence() {
+		return vm_TiratoriTesseratiPersistence;
+	}
+
+	/**
+	 * Sets the v m_ tiratori tesserati persistence.
+	 *
+	 * @param vm_TiratoriTesseratiPersistence the v m_ tiratori tesserati persistence
+	 */
+	public void setVM_TiratoriTesseratiPersistence(
+		VM_TiratoriTesseratiPersistence vm_TiratoriTesseratiPersistence) {
+		this.vm_TiratoriTesseratiPersistence = vm_TiratoriTesseratiPersistence;
+	}
+
+	/**
 	 * Returns the v w_ azzurri local service.
 	 *
 	 * @return the v w_ azzurri local service
@@ -4021,6 +4138,44 @@ public abstract class ESFRadunoSottotipiRadunoLocalServiceBaseImpl
 	}
 
 	/**
+	 * Returns the v w_ e s f incarichi federali local service.
+	 *
+	 * @return the v w_ e s f incarichi federali local service
+	 */
+	public it.ethica.esf.service.VW_ESFIncarichiFederaliLocalService getVW_ESFIncarichiFederaliLocalService() {
+		return vw_esfIncarichiFederaliLocalService;
+	}
+
+	/**
+	 * Sets the v w_ e s f incarichi federali local service.
+	 *
+	 * @param vw_esfIncarichiFederaliLocalService the v w_ e s f incarichi federali local service
+	 */
+	public void setVW_ESFIncarichiFederaliLocalService(
+		it.ethica.esf.service.VW_ESFIncarichiFederaliLocalService vw_esfIncarichiFederaliLocalService) {
+		this.vw_esfIncarichiFederaliLocalService = vw_esfIncarichiFederaliLocalService;
+	}
+
+	/**
+	 * Returns the v w_ e s f incarichi federali persistence.
+	 *
+	 * @return the v w_ e s f incarichi federali persistence
+	 */
+	public VW_ESFIncarichiFederaliPersistence getVW_ESFIncarichiFederaliPersistence() {
+		return vw_esfIncarichiFederaliPersistence;
+	}
+
+	/**
+	 * Sets the v w_ e s f incarichi federali persistence.
+	 *
+	 * @param vw_esfIncarichiFederaliPersistence the v w_ e s f incarichi federali persistence
+	 */
+	public void setVW_ESFIncarichiFederaliPersistence(
+		VW_ESFIncarichiFederaliPersistence vw_esfIncarichiFederaliPersistence) {
+		this.vw_esfIncarichiFederaliPersistence = vw_esfIncarichiFederaliPersistence;
+	}
+
+	/**
 	 * Returns the v w_ e s f lista incarichi local service.
 	 *
 	 * @return the v w_ e s f lista incarichi local service
@@ -4056,6 +4211,44 @@ public abstract class ESFRadunoSottotipiRadunoLocalServiceBaseImpl
 	public void setVW_ESFListaIncarichiPersistence(
 		VW_ESFListaIncarichiPersistence vw_esfListaIncarichiPersistence) {
 		this.vw_esfListaIncarichiPersistence = vw_esfListaIncarichiPersistence;
+	}
+
+	/**
+	 * Returns the v w_ nomine direttori tiro local service.
+	 *
+	 * @return the v w_ nomine direttori tiro local service
+	 */
+	public it.ethica.esf.service.VW_NomineDirettoriTiroLocalService getVW_NomineDirettoriTiroLocalService() {
+		return vw_NomineDirettoriTiroLocalService;
+	}
+
+	/**
+	 * Sets the v w_ nomine direttori tiro local service.
+	 *
+	 * @param vw_NomineDirettoriTiroLocalService the v w_ nomine direttori tiro local service
+	 */
+	public void setVW_NomineDirettoriTiroLocalService(
+		it.ethica.esf.service.VW_NomineDirettoriTiroLocalService vw_NomineDirettoriTiroLocalService) {
+		this.vw_NomineDirettoriTiroLocalService = vw_NomineDirettoriTiroLocalService;
+	}
+
+	/**
+	 * Returns the v w_ nomine direttori tiro persistence.
+	 *
+	 * @return the v w_ nomine direttori tiro persistence
+	 */
+	public VW_NomineDirettoriTiroPersistence getVW_NomineDirettoriTiroPersistence() {
+		return vw_NomineDirettoriTiroPersistence;
+	}
+
+	/**
+	 * Sets the v w_ nomine direttori tiro persistence.
+	 *
+	 * @param vw_NomineDirettoriTiroPersistence the v w_ nomine direttori tiro persistence
+	 */
+	public void setVW_NomineDirettoriTiroPersistence(
+		VW_NomineDirettoriTiroPersistence vw_NomineDirettoriTiroPersistence) {
+		this.vw_NomineDirettoriTiroPersistence = vw_NomineDirettoriTiroPersistence;
 	}
 
 	/**
@@ -4395,12 +4588,16 @@ public abstract class ESFRadunoSottotipiRadunoLocalServiceBaseImpl
 	protected ESFEventTypePersistence esfEventTypePersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFFederalRoleLocalService.class)
 	protected it.ethica.esf.service.ESFFederalRoleLocalService esfFederalRoleLocalService;
+	@BeanReference(type = it.ethica.esf.service.ESFFederalRoleService.class)
+	protected it.ethica.esf.service.ESFFederalRoleService esfFederalRoleService;
 	@BeanReference(type = ESFFederalRolePersistence.class)
 	protected ESFFederalRolePersistence esfFederalRolePersistence;
 	@BeanReference(type = ESFFederalRoleFinder.class)
 	protected ESFFederalRoleFinder esfFederalRoleFinder;
 	@BeanReference(type = it.ethica.esf.service.ESFFederalRoleESFSpecificLocalService.class)
 	protected it.ethica.esf.service.ESFFederalRoleESFSpecificLocalService esfFederalRoleESFSpecificLocalService;
+	@BeanReference(type = it.ethica.esf.service.ESFFederalRoleESFSpecificService.class)
+	protected it.ethica.esf.service.ESFFederalRoleESFSpecificService esfFederalRoleESFSpecificService;
 	@BeanReference(type = ESFFederalRoleESFSpecificPersistence.class)
 	protected ESFFederalRoleESFSpecificPersistence esfFederalRoleESFSpecificPersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFFieldLocalService.class)
@@ -4621,6 +4818,8 @@ public abstract class ESFRadunoSottotipiRadunoLocalServiceBaseImpl
 	protected ESFShootingDirectorQualificationPersistence esfShootingDirectorQualificationPersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFSpecificLocalService.class)
 	protected it.ethica.esf.service.ESFSpecificLocalService esfSpecificLocalService;
+	@BeanReference(type = it.ethica.esf.service.ESFSpecificService.class)
+	protected it.ethica.esf.service.ESFSpecificService esfSpecificService;
 	@BeanReference(type = ESFSpecificPersistence.class)
 	protected ESFSpecificPersistence esfSpecificPersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFSportTypeLocalService.class)
@@ -4661,6 +4860,8 @@ public abstract class ESFRadunoSottotipiRadunoLocalServiceBaseImpl
 	protected ESFUnitservicePersistence esfUnitservicePersistence;
 	@BeanReference(type = it.ethica.esf.service.ESFUserLocalService.class)
 	protected it.ethica.esf.service.ESFUserLocalService esfUserLocalService;
+	@BeanReference(type = it.ethica.esf.service.ESFUserService.class)
+	protected it.ethica.esf.service.ESFUserService esfUserService;
 	@BeanReference(type = ESFUserPersistence.class)
 	protected ESFUserPersistence esfUserPersistence;
 	@BeanReference(type = ESFUserFinder.class)
@@ -4685,6 +4886,10 @@ public abstract class ESFRadunoSottotipiRadunoLocalServiceBaseImpl
 	protected it.ethica.esf.service.ESFUserRoleLocalService esfUserRoleLocalService;
 	@BeanReference(type = ESFUserRolePersistence.class)
 	protected ESFUserRolePersistence esfUserRolePersistence;
+	@BeanReference(type = it.ethica.esf.service.VM_TiratoriTesseratiLocalService.class)
+	protected it.ethica.esf.service.VM_TiratoriTesseratiLocalService vm_TiratoriTesseratiLocalService;
+	@BeanReference(type = VM_TiratoriTesseratiPersistence.class)
+	protected VM_TiratoriTesseratiPersistence vm_TiratoriTesseratiPersistence;
 	@BeanReference(type = it.ethica.esf.service.VW_AzzurriLocalService.class)
 	protected it.ethica.esf.service.VW_AzzurriLocalService vw_AzzurriLocalService;
 	@BeanReference(type = VW_AzzurriPersistence.class)
@@ -4693,10 +4898,18 @@ public abstract class ESFRadunoSottotipiRadunoLocalServiceBaseImpl
 	protected it.ethica.esf.service.VW_DatiDrettoreTiroLocalService vw_DatiDrettoreTiroLocalService;
 	@BeanReference(type = VW_DatiDrettoreTiroPersistence.class)
 	protected VW_DatiDrettoreTiroPersistence vw_DatiDrettoreTiroPersistence;
+	@BeanReference(type = it.ethica.esf.service.VW_ESFIncarichiFederaliLocalService.class)
+	protected it.ethica.esf.service.VW_ESFIncarichiFederaliLocalService vw_esfIncarichiFederaliLocalService;
+	@BeanReference(type = VW_ESFIncarichiFederaliPersistence.class)
+	protected VW_ESFIncarichiFederaliPersistence vw_esfIncarichiFederaliPersistence;
 	@BeanReference(type = it.ethica.esf.service.VW_ESFListaIncarichiLocalService.class)
 	protected it.ethica.esf.service.VW_ESFListaIncarichiLocalService vw_esfListaIncarichiLocalService;
 	@BeanReference(type = VW_ESFListaIncarichiPersistence.class)
 	protected VW_ESFListaIncarichiPersistence vw_esfListaIncarichiPersistence;
+	@BeanReference(type = it.ethica.esf.service.VW_NomineDirettoriTiroLocalService.class)
+	protected it.ethica.esf.service.VW_NomineDirettoriTiroLocalService vw_NomineDirettoriTiroLocalService;
+	@BeanReference(type = VW_NomineDirettoriTiroPersistence.class)
+	protected VW_NomineDirettoriTiroPersistence vw_NomineDirettoriTiroPersistence;
 	@BeanReference(type = it.ethica.esf.service.VW_ShootersLocalService.class)
 	protected it.ethica.esf.service.VW_ShootersLocalService vw_ShootersLocalService;
 	@BeanReference(type = VW_ShootersPersistence.class)
