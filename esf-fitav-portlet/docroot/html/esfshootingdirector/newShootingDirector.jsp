@@ -1,3 +1,8 @@
+<%@page import="com.liferay.portal.kernel.util.ListUtil"%>
+<%@page import="com.liferay.portlet.PortletURLUtil"%>
+<%@page import="it.ethica.esf.model.impl.VM_TiratoriTesseratiImpl"%>
+<%@page import="it.ethica.esf.model.VM_TiratoriTesserati"%>
+<%@page import="it.ethica.esf.service.VM_TiratoriTesseratiLocalServiceUtil"%>
 <%@page import="java.util.Collections"%>
 <%@page import="org.apache.commons.beanutils.BeanComparator"%>
 <%@page import="it.ethica.esf.service.ESFOrganizationLocalServiceUtil"%>
@@ -6,49 +11,45 @@
 
 <h3>Creazione Nuovi Direttori di Tiro</h3>
 
-<%
+<%  
+Object listaTiratoriObject = request.getAttribute("listaTiratori");
+List<VM_TiratoriTesserati> listaTiratori = new ArrayList<VM_TiratoriTesserati>();
 
-String firstname = ParamUtil.getString(request, "firstname");
-String lastname = ParamUtil.getString(request, "lastname");
-String cardCode = ParamUtil.getString(request, "card");
+if(listaTiratoriObject != null) {
+	listaTiratori = (List<VM_TiratoriTesserati>)listaTiratoriObject;
+}   
 
-PortletURL viewassURL = renderResponse.createRenderURL();
+//Iterator url per il search container
+PortletURL iteratorActionUrl = renderResponse.createActionURL();
+iteratorActionUrl.setParameter("mvcPath", "/html/esfshootingdirector/newShootingDirector.jsp");
+iteratorActionUrl.setParameter("javax.portlet.action", "cercaTiratoriTesserati");
+iteratorActionUrl.setParameter("lastname", ParamUtil.getString(request, "lastname"));
+iteratorActionUrl.setParameter("firstname", ParamUtil.getString(request, "firstname"));
+iteratorActionUrl.setParameter("card", ParamUtil.getString(request, "card"));
 
-viewassURL.setParameter(
-	"mvcPath", "/html/esfshootingdirector/newShootingDirector.jsp");
-viewassURL.setParameter("firstname", firstname);
-viewassURL.setParameter("lastname", lastname);
-viewassURL.setParameter("cardCode", cardCode);
-	
-String orderByCol = ParamUtil.getString(request, "orderByCol","lastName");
-String orderByType = ParamUtil
-	.getString(request, "orderByType","asc");
-String sortingOrder = orderByType;
+//Url bottone annulla
+PortletURL annullaUrl = renderResponse.createRenderURL();
+annullaUrl.setParameter("jspPage", "/html/esfshootingdirector/view.jsp");
 
-if (orderByType.equals("desc")) {
-	orderByType = "asc";
-} else {
-	orderByType = "desc";
-}
+%> 
 
-if (Validator.isNull(orderByType)) {
-	orderByType = "desc";
-}
+<!-- Gestione messaggi -->
+<liferay-ui:error key="error-ricerca" message="E' occorso un errore durante la ricerca" />
 
-%>
-
+<!-- Bottone annulla...riporta alla pagina view.jsp -->
 <aui:button-row cssClass="esfshooter-admin-buttons">
-	<aui:button onClick="<%= viewURL.toString() %>" value="cancel" />
+	<aui:button onClick="<%= annullaUrl.toString() %>" value="cancel" />
 </aui:button-row>
 
-<liferay-portlet:renderURL varImpl="searchNewShDrURL">
-	<portlet:param name="mvcPath" value='<%= "/html/esfshootingdirector/newShootingDirector.jsp"%>' />
-</liferay-portlet:renderURL>
+<!-- Action che comunica con la portlet -->
+<portlet:actionURL var="searchUrl" name="cercaTiratoriTesserati"></portlet:actionURL>
 
-<aui:form action="<%=searchNewShDrURL%>" method="get" name="fm">
 
-	<liferay-portlet:renderURLParams varImpl="searchNewShDrURL" />
-
+<!-- Definisce il form della ricerca -->
+<aui:form action="<%=searchUrl%>" method="POST" name="fm">
+		
+		
+		<!-- Struttura del form di ricerca -->
 		<div class="search-form">
 		
 			<span class="aui-search-bar"> 
@@ -68,94 +69,53 @@ if (Validator.isNull(orderByType)) {
 	
 </aui:form>
 
-
-<liferay-ui:search-container emptyResultsMessage="no-result" iteratorURL="<%=viewassURL%>" orderByType="<%=orderByType%>">
-
-	<liferay-ui:search-container-results>
-		<%
-		List<ESFUser> esfusersSE = new ArrayList<ESFUser>();
-		List<ESFUser> esfusers = new ArrayList<ESFUser>();
-		int esfusersTot = 0 ;
-
-		esfusersSE = ESFUserLocalServiceUtil.getAllShooterByLikeF_C_S(
-			firstname, lastname, cardCode, currentOrganizationId, searchContainer.getStart(),
-				searchContainer.getEnd());
-					
-		esfusers = ESFUserLocalServiceUtil.getAllShooterByLikeF_C_S(
-			firstname, lastname, cardCode,currentOrganizationId);
-		
-		pageContext.setAttribute("total", esfusers !=null ? esfusers.size() : 0);
-		
-		
-		List<ESFUser> esfusersSESortable = new ArrayList<ESFUser>(esfusersSE);
-		
-		if (Validator.isNotNull(orderByCol)) {
-			BeanComparator beanComparator = new BeanComparator(
-					orderByCol);
-			
-		Collections.sort(esfusersSESortable,
-				beanComparator);
-		
-			if (sortingOrder.equalsIgnoreCase("desc")) {
+<% 
 	
-				Collections
-						.reverse(esfusersSESortable);
-			}
-		} 
-			
-			pageContext.setAttribute("results", esfusersSESortable);
-			
+	//_log.debug("################ Sono ancora vivo ####################")
+%>
+<!-- Definisce la tabella dove vengono visualizzati i membri -->
+<liferay-ui:search-container  delta="20" deltaConfigurable="true" emptyResultsMessage="no-result" iteratorURL="<%=iteratorActionUrl%>">
+	
+	<!-- Definisce il contenitore dei risultati della chiamata al DB -->
+	<liferay-ui:search-container-results>
+		<% 
+			pageContext.setAttribute("results", ListUtil.subList(listaTiratori, searchContainer.getStart(), searchContainer.getEnd()));
+			pageContext.setAttribute("total", listaTiratori.size()); 
 		%>
 	</liferay-ui:search-container-results>
-
-	<liferay-ui:search-container-row className="it.ethica.esf.model.ESFUser" modelVar="esfUser">
-
-		<liferay-ui:search-container-column-text property="lastName" orderable="true" orderableProperty="lastName" name="last-name" />
-
-		<liferay-ui:search-container-column-text property="firstName" name="first-name" />
-
-		<liferay-ui:search-container-column-text value="<%=esfUser.getFiscalCode()%>" name="fiscalCode" />
-
-		<liferay-ui:search-container-column-text name="user-email">
+	<!-- Definisce la struttura di un elemento -->
+	<liferay-ui:search-container-row className="it.ethica.esf.model.VM_TiratoriTesserati" modelVar="vm_tiratoriTesserati">
 		
-			<a href="mailto:<%=esfUser.getUserEmail()%>" target="_top"><p><%=esfUser.getUserEmail()%></p></a>
-		
-		</liferay-ui:search-container-column-text>
 		<%
+			// Prendo i campi dall'oggetto 
+			String nome = vm_tiratoriTesserati.getNome();
+			String cognome = vm_tiratoriTesserati.getCognome();
+			String cf = vm_tiratoriTesserati.getCF();
+			String email = vm_tiratoriTesserati.getEmail();
+			String codTessera = vm_tiratoriTesserati.getCodiceTessera();
+			String codOrganizzazione = vm_tiratoriTesserati.getCodiceOrganizzazione();
+			
+		%>
+		<liferay-ui:search-container-row-parameter name="tableType" value="newDir"/>
 		
-			ESFCard userCard= null;
-			String userCardCode ="";
-			List<ESFCard> cardstest = new ArrayList<ESFCard>();
-			
-			try{
-				cardstest = ESFCardLocalServiceUtil.findActualUserCards(esfUser.getEsfUserId());
-				
-				if(Validator.isNotNull(cardstest) && 0 < cardstest.size()){
-					userCardCode = cardstest.get(0).getCode();
-				}
-				
-			}
-			catch(Exception e){
-				
-			}
-		%>
+		<liferay-ui:search-container-column-text value='<%= cognome %>' name="last-name" align="Center"/>
 
-		<liferay-ui:search-container-column-text value="<%=userCardCode %>" name="card" />
+		<liferay-ui:search-container-column-text value="<%= nome %>" name="first-name" align="Center"/>
 
-		<%
-			String orgName = "";
-			
-			if(Validator.isNotNull(cardstest) && 0 < cardstest.size() && 
-					Validator.isNotNull(cardstest.get(0)) && Validator.isNotNull( ESFOrganizationLocalServiceUtil.fetchESFOrganization(cardstest.get(0).getEsfOrganizationId())) &&
-						Validator.isNotNull( ESFOrganizationLocalServiceUtil.fetchESFOrganization(cardstest.get(0).getEsfOrganizationId()).getCode())){
-				orgName =  ESFOrganizationLocalServiceUtil.fetchESFOrganization(cardstest.get(0).getEsfOrganizationId()).getCode();
-			}
-		%>
+		<liferay-ui:search-container-column-text value="<%= cf %>" name="fiscalCode" align="Center"/>
 
-		<liferay-ui:search-container-column-text value="<%=orgName%>" name="orgName" />
+		<liferay-ui:search-container-column-text value="<%= email %>" name="user-email" align="Center">
+		
+			<a href="mailto:<%= email %>" target="_top"><p><%= email %></p></a>
+		
+		</liferay-ui:search-container-column-text> 
 
-		<liferay-ui:search-container-column-jsp
-				path='<%=templatePath + "addNewShDtaction.jsp"%>' align="right" />
+		<liferay-ui:search-container-column-text value='<%= codTessera != null ? codTessera : "" %>' name="card" align="Center" />
+ 
+		<liferay-ui:search-container-column-text value="<%= codOrganizzazione %>" name="orgName" align="Center"/>
+		
+		<!-- Definisce il pulsante visualizza -->
+		<liferay-ui:search-container-column-jsp path='<%=templatePath + "addNewShDtaction.jsp"%>' align="right"  />
 				
 	</liferay-ui:search-container-row>
 

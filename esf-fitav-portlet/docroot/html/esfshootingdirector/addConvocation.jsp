@@ -13,6 +13,7 @@
 <%@include file="init.jsp"%>
 
 <%
+
 long directorId = ParamUtil.getLong(request, "directorId");
 String matchCode = ParamUtil.getString(request, "matchCode");
 ESFUser shDr = new ESFUserImpl();
@@ -30,8 +31,7 @@ PortletURL viewassURL = renderResponse.createRenderURL();
 
 viewassURL.setParameter(
 	"mvcPath",  "/html/esfshooteingdirector/addConvocation.jsp");
-viewassURL.setParameter("matchCode", matchCode);
-
+viewassURL.setParameter("matchCode", matchCode); 
 
 %>
 

@@ -1,20 +1,23 @@
+<%@page import="it.ethica.esf.model.VW_NomineDirettoriTiro"%>
 <%@page import="com.liferay.portal.kernel.util.WebKeys"%>
 <%@page import="com.liferay.portal.kernel.dao.search.ResultRow"%>
 <%@include file="init.jsp"%>
 
 <%
 
-ResultRow row =
-	(ResultRow) request.getAttribute(WebKeys.SEARCH_CONTAINER_RESULT_ROW);
+ResultRow row = (ResultRow) request.getAttribute(WebKeys.SEARCH_CONTAINER_RESULT_ROW);
 
-ESFShootingDirector shDr = ( ESFShootingDirector) row.getObject();
-long esfUserId = shDr.getEsfUserId();
+VW_NomineDirettoriTiro direttore = (VW_NomineDirettoriTiro)row.getObject();
+
+//Da implementare l'user id sulla vista
+long esfUserId = direttore.getUserId();
+
 %>
 <liferay-ui:icon-menu>
 
 	<portlet:renderURL var="editURL">
 			<portlet:param name="esfUserId"
-				value="<%= String.valueOf(shDr.getEsfUserId())%>" />
+				value="<%= String.valueOf(esfUserId)%>" />
 			<portlet:param name="mvcPath"
 				value='<%=templatePath + "shootingDirectorInfo.jsp"%>' />
 	</portlet:renderURL>
@@ -23,7 +26,7 @@ long esfUserId = shDr.getEsfUserId();
 	
 	<portlet:renderURL var="addSospensiveURL">
 			<portlet:param name="esfUserId"
-				value="<%= String.valueOf(shDr.getEsfUserId())%>" />
+				value="<%= String.valueOf(esfUserId)%>" />
 			<portlet:param name="mvcPath"
 				value='<%=templatePath + "newsospensive.jsp"%>' />
 	</portlet:renderURL>
@@ -32,7 +35,7 @@ long esfUserId = shDr.getEsfUserId();
 	
 	<portlet:actionURL name="deleteESFShdr" var="deleteURL">
 			<portlet:param name="shDrId"
-				value="<%=String.valueOf(shDr.getEsfShootingDirectorId())%>" />
+				value="<%=String.valueOf(direttore.getIdDirettoreTiro()) %>" />
 	</portlet:actionURL>
 		
 	<liferay-ui:icon-delete url="<%=deleteURL.toString()%>" confirmation="delete_confirm"/>

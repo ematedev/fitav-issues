@@ -1241,6 +1241,17 @@ create table esforganization (
 	type_ INTEGER
 );
 
+create table vm_tiratoritesserati (
+	userId INTEGER not null,
+	CodiceTessera VARCHAR(75) not null,
+	CodiceOrganizzazione VARCHAR(75) not null,
+	Nome VARCHAR(75) not null,
+	Cognome VARCHAR(75) not null,
+	Email VARCHAR(75) not null,
+	CF VARCHAR(75) null,
+	primary key (userId, CodiceTessera, CodiceOrganizzazione, Nome, Cognome, Email)
+);
+
 create table vw_datidirettoretiro (
 	esfShootingDirectorId LONG not null,
 	Nome VARCHAR(75) not null,
@@ -1261,4 +1272,17 @@ create table vw_esflistaincarichi (
 	lastName VARCHAR(75) not null,
 	firstName VARCHAR(75) not null,
 	primary key (AnniPrecedenti, AnnoInizioIncarico, AnnoCorrente, NomeRuolo, endDate, startDate, esfUserId, esfOrganizationId, lastName, firstName)
+);
+
+create table vw_nominedirettoritiro (
+	UserId INTEGER not null,
+	IdDirettoreTiro INTEGER not null,
+	Nome VARCHAR(75) not null,
+	Cognome VARCHAR(75) not null,
+	CodiceTessera VARCHAR(75) not null,
+	Regione VARCHAR(75) not null,
+	Qualifica VARCHAR(75) not null,
+	Specialita VARCHAR(75) not null,
+	DataAssegnazione DATE not null,
+	primary key (UserId, IdDirettoreTiro, Nome, Cognome, CodiceTessera, Regione, Qualifica, Specialita, DataAssegnazione)
 );
