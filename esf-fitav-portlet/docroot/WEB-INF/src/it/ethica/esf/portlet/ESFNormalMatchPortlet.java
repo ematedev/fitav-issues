@@ -1,6 +1,7 @@
 
 package it.ethica.esf.portlet;
 
+import it.ethica.esf.model.ESFDescription;
 import it.ethica.esf.model.ESFEntityState;
 import it.ethica.esf.model.ESFMatch;
 import it.ethica.esf.model.ESFMatchType;
@@ -895,21 +896,24 @@ public class ESFNormalMatchPortlet extends MVCPortlet {
 			ServiceContext serviceContext =
 				ServiceContextFactory.getInstance(
 					ESFMatchTypePortlet.class.getName(), request);
-
-			long esfDescriptionId = ParamUtil.getLong(request, "esfDescriptionId");
+			ESFDescription description = null;
+			long esfDescription = ParamUtil.getLong(request, "esfDescription");
+			long esfMatchTypeId = ParamUtil.getLong(request, "esfMatchTypeId");
 			long esfMatchId = ParamUtil.getLong(request, "esfMatchId");
 			String name = ParamUtil.getString(request, "name");
 			boolean isNational = ParamUtil.getBoolean(request, "isNational");
-			if (esfDescriptionId > 0) {
-				ESFDescriptionLocalServiceUtil.updateEsfDescription(
-					esfDescriptionId, name, isNational, serviceContext);
-			}
-			else {
-				ESFDescriptionLocalServiceUtil.addEsfDescription(
+			if (esfDescription > 0) {
+				description = ESFDescriptionLocalServiceUtil.updateEsfDescription(
+					esfDescription, name, isNational, serviceContext);
+			} else {
+				description = ESFDescriptionLocalServiceUtil.addEsfDescription(
 					name, isNational, serviceContext);
 			}
+			esfDescription = description.getEsfDescriptionId();
 			response.setRenderParameter("mvcPath", templatePath+"new_edit_esfMatch.jsp");
 			response.setRenderParameter("esfMatchId",String.valueOf(esfMatchId) );
+			response.setRenderParameter("esfMatchTypeId",String.valueOf(esfMatchTypeId) );
+			response.setRenderParameter("esfDescription",String.valueOf(esfDescription) );
 		}
 	
 	public void editESFMatchType(ActionRequest request, ActionResponse response)
@@ -921,28 +925,26 @@ public class ESFNormalMatchPortlet extends MVCPortlet {
 			
 			long esfMatchId = ParamUtil.getLong(request, "esfMatchId");
 			long esfMatchTypeId = ParamUtil.getLong(request, "esfMatchTypeId");
+			long esfDescription = ParamUtil.getLong(request, "esfDescription");
 			String name = ParamUtil.getString(request, "name");
 			boolean isCategoryQualification =
 				ParamUtil.getBoolean(request, "isCategoryQualification");
 			boolean isNational = ParamUtil.getBoolean(request, "isNational");
-			
+			ESFMatchType matchType = null;
 			if (esfMatchTypeId > 0) {
-
-				ESFMatchTypeLocalServiceUtil.updateEsfMatchType(
+				matchType = ESFMatchTypeLocalServiceUtil.updateEsfMatchType(
 					esfMatchTypeId, name, isCategoryQualification, isNational,
 					 serviceContext);
-
-			}
-			else {
-
-				ESFMatchTypeLocalServiceUtil.addEsfMatchType(
+			} else {
+				matchType = ESFMatchTypeLocalServiceUtil.addEsfMatchType(
 					name, isCategoryQualification, isNational,
 					serviceContext);
 			}
-			
+			esfMatchTypeId = matchType.getEsfMatchTypeId();
 			response.setRenderParameter("mvcPath", templatePath+"new_edit_esfMatch.jsp");
 			response.setRenderParameter("esfMatchId",String.valueOf(esfMatchId) );
-
+			response.setRenderParameter("esfMatchTypeId",String.valueOf(esfMatchTypeId) );
+			response.setRenderParameter("esfDescription",String.valueOf(esfDescription) );
 		}
 	
 	public void updateResult(ActionRequest request, ActionResponse response)

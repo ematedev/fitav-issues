@@ -100,7 +100,7 @@
 				<%}%>
 			</aui:select>
 				
-			<aui:select name="esfCountryId" leable="esfCountryId">
+			<aui:select name="esfCountryId" label="esfCountryId">
 				<aui:option label="-" value="0" />
 			<%
 				List<Country> countries = CountryServiceUtil.getCountries();

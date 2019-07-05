@@ -4,11 +4,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,7 +14,6 @@ import java.util.Map;
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 import javax.portlet.PortletException;
-import javax.portlet.PortletURL;
 import javax.portlet.ProcessAction;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
@@ -24,39 +21,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.el.util.Validation;
 
-import com.itextpdf.text.pdf.hyphenation.TernaryTree.Iterator;
-import com.liferay.portal.kernel.dao.orm.Criterion;
-import com.liferay.portal.kernel.dao.orm.Disjunction;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
 import com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil;
-import com.liferay.portal.kernel.dao.orm.QueryUtil;
 import com.liferay.portal.kernel.dao.orm.RestrictionsFactoryUtil;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.portlet.PortletClassLoaderUtil;
-import com.liferay.portal.kernel.util.KeyValuePair;
-import com.liferay.portal.kernel.util.ListUtil;
-import com.liferay.portal.kernel.util.ParamUtil;
-import com.liferay.portal.kernel.util.PropsUtil;
-import com.liferay.portal.kernel.util.StringPool;
-import com.liferay.portal.kernel.util.WebKeys;
-import com.liferay.portal.model.Group;
-import com.liferay.portal.service.GroupLocalServiceUtil;
-import com.liferay.portal.theme.ThemeDisplay;
-import com.liferay.portal.util.PortalUtil;
-import com.liferay.util.bridges.mvc.MVCPortlet;
 import com.liferay.portal.kernel.servlet.ServletResponseUtil;
 import com.liferay.portal.kernel.servlet.SessionMessages;
 import com.liferay.portal.kernel.upload.UploadPortletRequest;
+import com.liferay.portal.kernel.util.KeyValuePair;
+import com.liferay.portal.kernel.util.ParamUtil;
+import com.liferay.portal.kernel.util.PropsUtil;
+import com.liferay.portal.kernel.util.StringPool;
+import com.liferay.portal.util.PortalUtil;
+import com.liferay.util.bridges.mvc.MVCPortlet;
 
-import it.ethica.esf.NoSuchRadunoAzzurriException;
 import it.ethica.esf.NoSuchRadunoException;
 import it.ethica.esf.NoSuchVW_AzzurriException;
 import it.ethica.esf.NoSuchVW_ShootersException;
 import it.ethica.esf.NoSuchVW_StaffException;
-import it.ethica.esf.model.ESFNational;
 import it.ethica.esf.model.ESFOrganization;
 import it.ethica.esf.model.ESFRaduno;
 import it.ethica.esf.model.ESFRadunoAzzurri;
@@ -65,16 +50,12 @@ import it.ethica.esf.model.ESFRadunoSottotipiRaduno;
 import it.ethica.esf.model.ESFRadunoSottotipo;
 import it.ethica.esf.model.ESFRadunoStaff;
 import it.ethica.esf.model.ESFRadunoTipo;
-import it.ethica.esf.model.ESFSportType;
-import it.ethica.esf.model.ESFUser;
 import it.ethica.esf.model.EsfRadunoShooters;
 import it.ethica.esf.model.VW_Azzurri;
 import it.ethica.esf.model.VW_Shooters;
 import it.ethica.esf.model.VW_Staff;
-import it.ethica.esf.model.impl.ESFRadunoAzzurriImpl;
 import it.ethica.esf.model.impl.ESFRadunoFilesImpl;
 import it.ethica.esf.model.impl.ESFRadunoImpl;
-import it.ethica.esf.service.ESFNationalLocalServiceUtil;
 import it.ethica.esf.service.ESFOrganizationLocalServiceUtil;
 import it.ethica.esf.service.ESFRadunoAzzurriLocalServiceUtil;
 import it.ethica.esf.service.ESFRadunoFilesLocalServiceUtil;
@@ -82,11 +63,7 @@ import it.ethica.esf.service.ESFRadunoLocalServiceUtil;
 import it.ethica.esf.service.ESFRadunoSottotipiRadunoLocalServiceUtil;
 import it.ethica.esf.service.ESFRadunoStaffLocalServiceUtil;
 import it.ethica.esf.service.ESFRadunoTipoLocalServiceUtil;
-import it.ethica.esf.service.ESFSportTypeLocalServiceUtil;
-import it.ethica.esf.service.ESFUnitserviceLocalServiceUtil;
-import it.ethica.esf.service.ESFUserLocalServiceUtil;
 import it.ethica.esf.service.EsfRadunoShootersLocalServiceUtil;
-import it.ethica.esf.service.VW_AzzurriLocalService;
 import it.ethica.esf.service.VW_AzzurriLocalServiceUtil;
 import it.ethica.esf.service.VW_ShootersLocalServiceUtil;
 import it.ethica.esf.service.VW_StaffLocalServiceUtil;
@@ -109,7 +86,7 @@ public class ESFRaduni extends MVCPortlet {
 			return ESFRadunoTipoLocalServiceUtil.findAllTipi();
 		} catch ( SystemException se ) {
 		// se va male...
-			System.out.println("ERRORE : Non è stato possibile terminare l'azione di ricerca di TUTTI i RADUNI");
+			System.out.println("ERRORE : Non ï¿½ stato possibile terminare l'azione di ricerca di TUTTI i RADUNI");
 			throw se;
 		}
 	}
@@ -126,7 +103,7 @@ public class ESFRaduni extends MVCPortlet {
 			return ESFRadunoSottotipiRadunoLocalServiceUtil.findAllSottoTipi();
 		} catch ( SystemException se ) {
 		// se va male...
-			System.out.println("ERRORE : Non è stato possibile terminare l'azione di ricerca di TUTTI i SOTTO TIPI RADUNO");
+			System.out.println("ERRORE : Non ï¿½ stato possibile terminare l'azione di ricerca di TUTTI i SOTTO TIPI RADUNO");
 			throw se;
 		}
 			
@@ -193,7 +170,7 @@ public class ESFRaduni extends MVCPortlet {
 			String errorInsertMessage = "";
 
 		// se va male...
-			System.out.println("!!!!!!!   ERRORE : Non è stato possibile terminare l'azione di ASSEGNAZIONE DI ATTRIBUTO ALLA REQUEST !!!!!!!!!!");
+			System.out.println("!!!!!!!   ERRORE : Non ï¿½ stato possibile terminare l'azione di ASSEGNAZIONE DI ATTRIBUTO ALLA REQUEST !!!!!!!!!!");
 			SessionMessages.add(request, "errorInsert");
 			request.setAttribute("errorInsertMessage", errorInsertMessage);
 		}
@@ -230,7 +207,7 @@ public class ESFRaduni extends MVCPortlet {
 			
 			// PRENDO LA LISTA DEGLI INVITATI
 			List<ESFRadunoAzzurri> listaInvitatiRaduno = ESFRadunoAzzurriLocalServiceUtil.findById(id_esf_raduno);
-			List<Long> listaIdInvitati = new ArrayList<>(); 
+			List<Long> listaIdInvitati = new ArrayList<Long>(); 
 			
 			// TRASFERISCO I VALORI NELLA LISTA DI LONG
 			for(ESFRadunoAzzurri ra : listaInvitatiRaduno){
@@ -252,7 +229,7 @@ public class ESFRaduni extends MVCPortlet {
 			// VALORIZZO LA LISTA DEI NAZIONALI CON LE CONDIZIONI DELLA QUERY
 			//List<VW_Azzurri> listaAzzurri = new ArrayList<>(VW_AzzurriLocalServiceUtil.dynamicQuery(dq));
 			// CREO LA LISTA DEGLI AZZURRI
-			List<VW_Azzurri> listaAzzurri = new ArrayList<>();
+			List<VW_Azzurri> listaAzzurri = new ArrayList<VW_Azzurri>();
 			// PRENDO IL RISULTATO DELLA QUERY
 			List<VW_Azzurri> listaAzzurriCompleta = VW_AzzurriLocalServiceUtil.dynamicQuery(dq);
 			
@@ -336,7 +313,7 @@ public class ESFRaduni extends MVCPortlet {
 			
 			
 			List<String> listaChecked = new ArrayList<String>(Arrays.asList(parametri));
-			List<String> listaUnchecked = new ArrayList<>();
+			List<String> listaUnchecked = new ArrayList<String>();
 			
 			for(String elemento : ListaIdAzzurri){
 				
@@ -394,7 +371,7 @@ public class ESFRaduni extends MVCPortlet {
 //			System.out.println("id lista invitati [" + esfListaInvitati + "]");
 
 			List<ESFRadunoStaff> listaInvitatiStaff = ESFRadunoStaffLocalServiceUtil.findById(id_esf_raduno);
-			List<Long> listaIdInvitati = new ArrayList<>(); 
+			List<Long> listaIdInvitati = new ArrayList<Long>(); 
 			
 			// TRASFERISCO I VALORI NELLA LISTA DI LONG
 			for(ESFRadunoStaff rs : listaInvitatiStaff){
@@ -433,7 +410,7 @@ public class ESFRaduni extends MVCPortlet {
 				dq.add(RestrictionsFactoryUtil.eq("Staff.esfShootingDirectorQualificationDesc", esfShootingDirectorQualification));
 			}
 			
-			List<VW_Staff> listaStaff = new ArrayList<>();
+			List<VW_Staff> listaStaff = new ArrayList<VW_Staff>();
 			// PRENDO IL RISULTATO DELLA QUERY
 			List<VW_Staff> listaStaffCompleta = VW_StaffLocalServiceUtil.dynamicQuery(dq);
 			
@@ -523,7 +500,7 @@ public class ESFRaduni extends MVCPortlet {
 			
 			
 			List<String> listaChecked = new ArrayList<String>(Arrays.asList(parametri));
-			List<String> listaUnchecked = new ArrayList<>();
+			List<String> listaUnchecked = new ArrayList<String>();
 			
 			for(String elemento : listaIdStaff){
 				
@@ -586,7 +563,7 @@ public class ESFRaduni extends MVCPortlet {
 			List<EsfRadunoShooters> listaInvitatiShooters;
 			listaInvitatiShooters = EsfRadunoShootersLocalServiceUtil.findById(id_esf_raduno);
 
-			List<Long> listaIdInvitati = new ArrayList<>(); 
+			List<Long> listaIdInvitati = new ArrayList<Long>(); 
 			
 			// TRASFERISCO I VALORI NELLA LISTA DI LONG
 			for(EsfRadunoShooters rs : listaInvitatiShooters){
@@ -613,7 +590,7 @@ public class ESFRaduni extends MVCPortlet {
 				dq.add(RestrictionsFactoryUtil.eq("Shooters.primaryKey.organizationId", esfAssociation));
 			}
 			
-			List<VW_Shooters> listaShooters = new ArrayList<>();
+			List<VW_Shooters> listaShooters = new ArrayList<VW_Shooters>();
 			// PRENDO IL RISULTATO DELLA QUERY
 			List<VW_Shooters> listaShootersCompleta = VW_ShootersLocalServiceUtil.dynamicQuery(dq);
 			
@@ -697,7 +674,7 @@ public class ESFRaduni extends MVCPortlet {
 			
 			
 			List<String> listaChecked = new ArrayList<String>(Arrays.asList(parametri));
-			List<String> listaUnchecked = new ArrayList<>();
+			List<String> listaUnchecked = new ArrayList<String>();
 			
 			for(String elemento : listaIdShooters){
 				
@@ -748,11 +725,11 @@ public class ESFRaduni extends MVCPortlet {
 		try{
 			response.setRenderParameter("jspPage", goToURL);
 			
-			listaAzzurri = new ArrayList<>();
+			listaAzzurri = new ArrayList<VW_Azzurri>();
 			listaAzzurriInvitati = ESFRadunoAzzurriLocalServiceUtil.findById(id_esf_raduno);
-			listaStaff = new ArrayList<>();
+			listaStaff = new ArrayList<VW_Staff>();
 			listaStaffInvitati = ESFRadunoStaffLocalServiceUtil.findById(id_esf_raduno);
-			listaShooters = new ArrayList<>();
+			listaShooters = new ArrayList<VW_Shooters>();
 			listaShootersInvitati = EsfRadunoShootersLocalServiceUtil.findById(id_esf_raduno);
 			listaFiles = ESFRadunoFilesLocalServiceUtil.findByRaduno(id_esf_raduno);
 			
@@ -881,7 +858,7 @@ public class ESFRaduni extends MVCPortlet {
 			
 		} catch ( SystemException se ) {
 		// se va male...
-			System.out.println("!!!!!!!   ERRORE : Non è stato possibile terminare l'azione di ASSEGNAZIONE DI ATTRIBUTO ALLA REQUEST !!!!!!!!!!");
+			System.out.println("!!!!!!!   ERRORE : Non ï¿½ stato possibile terminare l'azione di ASSEGNAZIONE DI ATTRIBUTO ALLA REQUEST !!!!!!!!!!");
 			throw se;
 		}
 		
@@ -905,13 +882,16 @@ public class ESFRaduni extends MVCPortlet {
 			
 			ESFRaduno esfSalvato = ESFRadunoLocalServiceUtil.inserisciRaduno(esfRaduno, valoriSottoTipiScelti);
 
-			successMessage = "Il Raduno con codice " + esfSalvato.getCodice() + " è stato creato con successo!";
+			successMessage = "Il Raduno con codice " + esfSalvato.getCodice() + " ï¿½ stato creato con successo!";
 			SessionMessages.add(request, "addSuccess");
 			request.setAttribute("successMessage", successMessage);
-		} catch (SystemException | NoSuchRadunoException e) {
+		} catch (SystemException e) {
 			String errorMessage = "";
-
-			// TODO Auto-generated catch block
+			e.printStackTrace();
+			SessionMessages.add(request, "errorMsg");
+			request.setAttribute("errorMessage", errorMessage);
+		} catch (NoSuchRadunoException e) {
+			String errorMessage = "";
 			e.printStackTrace();
 			SessionMessages.add(request, "errorMsg");
 			request.setAttribute("errorMessage", errorMessage);
@@ -932,13 +912,19 @@ public class ESFRaduni extends MVCPortlet {
 			
 			ESFRadunoLocalServiceUtil.aggiornaRaduno(esfRaduno, valoriSottoTipiScelti);
 			
-			successMessage = "Il Raduno con codice " + esfRaduno.getCodice() + " è stato modificato con successo!";
+			successMessage = "Il Raduno con codice " + esfRaduno.getCodice() + " ï¿½ stato modificato con successo!";
 			SessionMessages.add(request, "addSuccess");
 			request.setAttribute("successMessage", successMessage);
 			
-		} catch (SystemException | NoSuchRadunoException e) {
+		} catch (SystemException e) {
 			String errorMessage = "";
 
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			SessionMessages.add(request, "errorMsg");
+			request.setAttribute("errorMessage", errorMessage);
+		} catch (NoSuchRadunoException e) {
+			String errorMessage = "";
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			SessionMessages.add(request, "errorMsg");
@@ -1005,11 +991,11 @@ public class ESFRaduni extends MVCPortlet {
 		ESFRaduno radunoCancellato = ESFRadunoLocalServiceUtil.cancellaRaduno(id_esf_raduno);
 		
 		if (radunoCancellato != null){
-			msg = "Il Raduno con Codice '" + radunoCancellato.getCodice() + "' è stato cancellato!";
+			msg = "Il Raduno con Codice '" + radunoCancellato.getCodice() + "' ï¿½ stato cancellato!";
 			SessionMessages.add(request, "addSuccess");
 			request.setAttribute("successMessage", msg);
 		}else{
-			msg = "Non è stato possibile cancellare Il Raduno !";
+			msg = "Non ï¿½ stato possibile cancellare Il Raduno !";
 			SessionMessages.add(request, "errorMsg");
 			request.setAttribute("errorMessage", msg);
 		}
@@ -1070,7 +1056,10 @@ public class ESFRaduni extends MVCPortlet {
 			request.setAttribute("listaSottoTipiScelti", listaSottoTipiScelti);
 
 		
-		} catch (SystemException | PortalException e) {
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (PortalException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
@@ -1143,7 +1132,7 @@ public class ESFRaduni extends MVCPortlet {
 			FileUtils.copyFile(uploadedFile, filePath);
 			
 			
-			String msg = "Il File '" + nomeOriginale	 + "' è stato Uplodato!";
+			String msg = "Il File '" + nomeOriginale	 + "' ï¿½ stato Uplodato!";
 			SessionMessages.add(request, "addSuccess");
 			request.setAttribute("successMessage", msg);
 			
@@ -1197,7 +1186,7 @@ public class ESFRaduni extends MVCPortlet {
 
 			FileUtils.deleteQuietly(file);
 			ESFRaduno raduno = ESFRadunoLocalServiceUtil.findById(id_esf_raduno);
-			String msg = "Il File '" + fileCancellato.getNome()	 + "' è stato Cancellato!";
+			String msg = "Il File '" + fileCancellato.getNome()	 + "' ï¿½ stato Cancellato!";
 			SessionMessages.add(request, "addSuccess");
 			request.setAttribute("successMessage", msg);
 			String goToURL = "/html/esfraduni/upload/uploadFileRaduno.jsp";

@@ -1,7 +1,7 @@
 <%@ include file="init.jsp"%>
 
 <%
-	String tabs = ParamUtil.getString(request, "tabs1", "Assegnati");
+	String tabs = ParamUtil.getString(request, "tabs", "Assegnati");
 
 	PortletURL portletURL = renderResponse.createRenderURL();
 
@@ -11,18 +11,16 @@
 	portletURL.setParameter("esfStateId", String.valueOf(esfStateId));
 	portletURL.setParameter("tabs", tabs);
 
-	String tabNames = "Assegnati, Non Assegnati";
+	String tabNames = "Assegnati,Non Assegnati";
 %>
 
-<liferay-ui:error key="assigned-state-error"
-	message="assigned-state-error" />
+<liferay-ui:error key="assigned-state-error" message="assigned-state-error" />
 
-<liferay-ui:tabs names="<%=tabNames%>" url="<%=portletURL.toString()%>" >
-	<c:if test='<%=tabs.equals("Assegnati")%>'>
-		<%@ include file="/html/esfconfigurationstate/tabs/assigned.jsp"%> 
-	</c:if>
-	
-	<c:if test='<%=tabs.equals("Non Assegnati")%>'>
+<liferay-ui:tabs names="<%=tabNames%>" url="<%=portletURL.toString()%>" refresh="false" >
+	<liferay-ui:section>
+		<%@ include file="/html/esfconfigurationstate/tabs/assigned.jsp"%>
+	</liferay-ui:section>
+	<liferay-ui:section>
 		<%@ include file="/html/esfconfigurationstate/tabs/noassigned.jsp"%>
-	</c:if>
+	</liferay-ui:section>
 </liferay-ui:tabs>

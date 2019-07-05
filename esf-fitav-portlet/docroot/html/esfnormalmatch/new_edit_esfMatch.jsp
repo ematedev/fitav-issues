@@ -12,7 +12,8 @@
 
 	boolean disabled=false;
 	boolean isEdit = false;
-	long esfDescription = 0;
+	long esfDescription = ParamUtil.getLong(request, "esfDescription", 0);
+	long esfMatchTypeId = ParamUtil.getLong(request, "esfMatchTypeId", 0);
 	if (esfMatchId > 0) {
 		//Se id > 0 allora sto editando un match esistente
 		esfMatch = ESFMatchLocalServiceUtil.getESFMatch(esfMatchId);
@@ -21,7 +22,14 @@
 				.getESFOrganization(esfMatch.getEsfAssociationId());
 		}
 		matchCodeValue= esfMatch.getCode();
-		esfDescription= esfMatch.getDescription();
+		if(esfDescription==0){	//Se non arriva come parametro allora lo leggo dall'entita
+			esfDescription= esfMatch.getDescription();
+		}
+		if(esfMatchTypeId==0){	//Se non arriva come parametro allora lo leggo dall'entita
+			esfMatchTypeId = esfMatch.getEsfMatchTypeId();
+		}
+		//Se uno dei due id arriva come parametro allora vuol dire che ne ho aggiunto uno nuovo
+		//e quindi lo seleziono nel menu a tendina al posto di quello che era salvato precedentemente
 		isEdit = true;		
 	}
 	
@@ -52,7 +60,6 @@
 	//matchCodeValue = String.valueOf(cal.get(cal.YEAR)) + String.valueOf(esfMatches.size() + 1);
 	List<ESFMatchType> esfMatchTypes = null;
 	esfMatchTypes  = ESFMatchTypeLocalServiceUtil.findAllByNational(false);
-	
 %>
 
 <portlet:resourceURL var="resourceURL" escapeXml="false" />
@@ -60,11 +67,13 @@
 <portlet:renderURL  var="add_DescriptionURL">
 		<portlet:param name="mvcPath" value='<%=templatePath+"edit_esfDescription.jsp" %>' />
 		<portlet:param name="esfMatchId" value='<%=String.valueOf(esfMatchId) %>' />
+		<portlet:param name="esfMatchTypeId" value='<%=String.valueOf(esfMatchTypeId) %>' />
 </portlet:renderURL>
 
 <portlet:renderURL  var="add_MatchTypeURL">
 		<portlet:param name="mvcPath" value='<%=templatePath+"edit_esfMatchType.jsp" %>' />
 		<portlet:param name="esfMatchId" value='<%=String.valueOf(esfMatchId) %>' />
+		<portlet:param name="esfDescription" value='<%=String.valueOf(esfDescription) %>' />
 </portlet:renderURL>
 
 <portlet:renderURL var="chooseAssociationURL"
@@ -84,16 +93,13 @@
 		<aui:input type="hidden" name="esfMatchId" value='<%=esfMatchId%>' />
 
 		<%
-				Calendar calendar = CalendarFactoryUtil.getCalendar();
-				String	startDate = ManageDate.CalendarToString(calendar);
-				String endDate = ManageDate.CalendarToString(calendar);
-
-				SimpleDateFormat format1 = new SimpleDateFormat("dd/MM/yyyy");
+				String startDate = null;
+				String endDate = null;
+				SimpleDateFormat format1 = new SimpleDateFormat("MM/dd/yyyy");
 				if(esfMatchId>0){
 					startDate = format1.format(esfMatch.getStartDate());
 					endDate = format1.format(esfMatch.getEndDate());
-				}
-				else{
+				}else{
 					startDate= format1.format(new Date());
 					endDate= format1.format(new Date());
 				}
@@ -243,8 +249,7 @@
 				boolean select = false;
 			
 				for(ESFMatchType esfMatchType : esfMatchTypes){
-					if(Validator.isNotNull(esfMatch) && Validator.isNotNull(esfMatch.getEsfMatchTypeId())
-							&& esfMatch.getEsfMatchTypeId() == esfMatchType.getEsfMatchTypeId()){
+					if(esfMatchTypeId == esfMatchType.getEsfMatchTypeId()){
 						select = true;
 					}
 			%>
@@ -255,16 +260,12 @@
 			%>
 		</aui:select>
 		<%if(esfMatchId > 0){ %>
-			<c:if test="<%=ESFNormalMatchPermission.contains(permissionChecker,esfMatchId, ActionKeys.ESFNORMALMATCH_MATCHTYPE_ADD) %>">
-		
+			<c:if test="<%=ESFNormalMatchPermission.contains(permissionChecker,esfMatchId, ActionKeys.ESFNORMALMATCH_MATCHTYPE_ADD) %>">	
 				<aui:button onClick="<%= add_MatchTypeURL.toString() %>" value="add-addr" />
-			
 			</c:if>
 		<%}else{ %>
-			<c:if test="<%=ESFNormalMatchModelPermission.contains(permissionChecker,portletGroupId, ActionKeys.ESFNORMALMATCH_MATCHTYPE_ADD)%>">	
-
+			<c:if test="<%=ESFNormalMatchModelPermission.contains(permissionChecker,portletGroupId, ActionKeys.ESFNORMALMATCH_MATCHTYPE_ADD)%>">
 				<aui:button onClick="<%= add_MatchTypeURL.toString() %>" value="add-addr" />
-		
 			</c:if>
 		<% }%>
 </div>

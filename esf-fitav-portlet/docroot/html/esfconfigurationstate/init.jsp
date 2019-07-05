@@ -11,8 +11,6 @@
 <%
 long esfStateId = ParamUtil.getLong(request, "esfStateId");
 long groupId = themeDisplay.getLayout().getGroupId();
-
-
 %>
 
 <portlet:actionURL name="updateESFStateAssEntity"

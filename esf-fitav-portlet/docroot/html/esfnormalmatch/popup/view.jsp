@@ -13,7 +13,6 @@ PortletURL viewassURL = renderResponse.createRenderURL();
 		"mvcPath", templatePath+"popup/view.jsp");
 	viewassURL.setParameter("code", code);
 	viewassURL.setParameter("name", name);
-
 %>
 
 <liferay-portlet:renderURL varImpl="searchURL">
@@ -38,11 +37,10 @@ PortletURL viewassURL = renderResponse.createRenderURL();
 
 	<liferay-ui:search-container-results
 		results="<%=ESFOrganizationLocalServiceUtil.
-		findESFOrganizationsByT_C_N(ESFKeys.ESFOrganizationTypeId.ASSOCIATION, 
-				code, name, ESFKeys.ESFStateType.ENABLE, searchContainer.getStart(), searchContainer.getEnd())%>"
+				findAllLeafOrganizations(currentOrganizationId, 
+				code, name, searchContainer.getStart(), searchContainer.getEnd())%>"
 		total="<%=ESFOrganizationLocalServiceUtil.
-				findESFOrganizationsByT_C_N(ESFKeys.ESFOrganizationTypeId.ASSOCIATION, 
-						code, name, ESFKeys.ESFStateType.ENABLE).size()%>" />
+				findAllLeafOrganizations(currentOrganizationId, code, name).size()%>" />
 
 	<liferay-ui:search-container-row
 		className="it.ethica.esf.model.ESFOrganization" modelVar="esfOrganization">
