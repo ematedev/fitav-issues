@@ -290,6 +290,11 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 		try {
 			List<ESFMatch> activeNationalMatches = 
 							findESFMatchsByStateIsNational(state, isNational) ;
+			if(activeNationalMatches!=null)
+				_log.debug("Match trovati per stato: "+state+" e isNational: "+isNational+" - "+activeNationalMatches.size());
+			else
+				_log.debug("Match trovati per stato: "+state+" e isNational: "+isNational+" - NULL");
+			
 			if (activeNationalMatches == null || activeNationalMatches.size() <= 0)
 				return esfMatchs;
 			
@@ -301,7 +306,11 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 				classPKs[i] = m.getEsfMatchId();
 				i++;
 			}
-
+			_log.debug("Dati query"+
+					   " - Code: "+code+
+					   " - StartDate: "+startDate+
+					   " - MatchType: "+esfMatchType+
+					   " - Association: "+assotiationName);
 			DynamicQuery matchQuery = DynamicQueryFactoryUtil.forClass(
 					ESFMatch.class, "matchQuery",
 					PortletClassLoaderUtil.getClassLoader());
@@ -316,11 +325,11 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 					.ge(startDate));
 			}
 			
-			if(Validator.isNotNull(esfMatchType)){
+			if(Validator.isNotNull(esfMatchType) && esfMatchType>0){
 				matchQuery.add(PropertyFactoryUtil.forName("matchQuery.esfMatchTypeId")
 					.eq(esfMatchType));
 			}
-			if(Validator.isNotNull(assotiationName)){
+			if(Validator.isNotNull(assotiationName) && assotiationName>0){
 				matchQuery.add(PropertyFactoryUtil.forName("matchQuery.esfAssociationId")
 					.eq(assotiationName));
 			}

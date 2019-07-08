@@ -22,12 +22,9 @@
 <aui:form action="<%=editESFDescriptionURL%>" name="fm">
 	<aui:model-context bean="<%= description%>" model="<%=ESFDescription.class%>" />
 	<aui:fieldset>				
-		<aui:input name="name"></aui:input>
+		<aui:input name="name" required="true"></aui:input>
 		<aui:input name="isNational"
-			label="isNational" type="checkbox"
-			value='<%=esfDescription != null
-							? esfDescription.getIsNational()
-							: StringPool.BLANK%>'></aui:input>
+			label="isNational" type="checkbox"></aui:input>
 	</aui:fieldset>
 	<aui:button-row>
 		<aui:button type="submit"></aui:button>

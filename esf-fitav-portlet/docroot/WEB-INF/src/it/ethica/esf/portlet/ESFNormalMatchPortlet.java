@@ -124,40 +124,34 @@ public class ESFNormalMatchPortlet extends MVCPortlet {
 			actionRequest, actionResponse, "esfnormalmatch");
 
 	}
+
 	@Override
-	public void render(RenderRequest request, RenderResponse response)
-		throws IOException, PortletException {
-		
+	public void render(RenderRequest request, RenderResponse response) throws IOException, PortletException {
 		String esfMatchId = ParamUtil.getString(request, "esfMatchId");
 		String firstName = ParamUtil.getString(request, "firstName");
-		boolean flag=ParamUtil.getBoolean(request, "isEditShooter");
-		if(flag){
-		ShooterUtility su = new ShooterUtility();
-		su.init(this.getPortletConfig());
-		su.render(request, response);
+		boolean flag = ParamUtil.getBoolean(request, "isEditShooter");
+		if (flag) {
+			ShooterUtility su = new ShooterUtility();
+			su.init(this.getPortletConfig());
+			su.render(request, response);
+		} else {
+			ESFJsonUtil esfJsonUtil = new ESFJsonUtil();
+			String op = ParamUtil.getString(request, "op");
+			if (op.equals("addAddr")) {
+				try {
+					esfJsonUtil.prepareJSONAddAssociations(request, response);
+				} catch (PortalException e) {
+					e.printStackTrace();
+				}
+			} else if (op.equals("updAddr")) {
+				try {
+					esfJsonUtil.prepareJSONUpdAssociationsFields(request, response);
+				} catch (PortalException e) {
+					e.printStackTrace();
+				}
+			}
+			super.render(request, response);
 		}
-		else{
-		ESFJsonUtil esfJsonUtil = new ESFJsonUtil();
-
-		String op = ParamUtil.getString(request, "op");
-		if (op.equals("addAddr")) {
-			try {
-				esfJsonUtil.prepareJSONAddAssociations(request, response);
-			}
-			catch (PortalException e) {
-				e.printStackTrace();
-			}
-		}
-		else if (op.equals("updAddr")) {
-			try {
-				esfJsonUtil.prepareJSONUpdAssociationsFields(request, response);
-			}
-			catch (PortalException e) {
-				e.printStackTrace();
-			}
-		}
-		super.render(request, response);
-	}
 	}
 	
 	@Override

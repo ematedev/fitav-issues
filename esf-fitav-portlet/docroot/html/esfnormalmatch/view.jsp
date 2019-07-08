@@ -16,8 +16,6 @@
 	}
 	
 	String successMessage = ParamUtil.getString(request, "successMessage", "");
-// 	successMessage = LanguageUtil.format(pageContext, "match-success-insert", successMessage);
-	
 	
 	long matchTypeId = ParamUtil.getLong(request, "matchType");
 	String code = ParamUtil.getString(request, "code");
@@ -26,67 +24,54 @@
 	List<ESFMatchType> esfMatchType = 
 					ESFMatchTypeLocalServiceUtil.findAllByNational(isNational);
 
-	/* // TODO GRINALDI ID 34 2019
-	List <ESFOrganization> temp = 
-	ESFOrganizationLocalServiceUtil.getESFOrganizations(
-		com.liferay.portal.kernel.dao.orm.QueryUtil.ALL_POS,
-		com.liferay.portal.kernel.dao.orm.QueryUtil.ALL_POS);
-	*/
-
 	List <ESFOrganization> esfOrganizations = 
 			ESFOrganizationLocalServiceUtil.findByType((int)ESFKeys.ESFOrganizationTypeId.ASSOCIATION,
 					com.liferay.portal.kernel.dao.orm.QueryUtil.ALL_POS,
 					com.liferay.portal.kernel.dao.orm.QueryUtil.ALL_POS);
 
-	
-	/* // TODO GRINALDI ID 34 2019
-	List<ESFOrganization>esfOrganizations=new ArrayList<ESFOrganization>();
-	for(ESFOrganization org: temp)
-		if(org.getType()==ESFKeys.ESFOrganizationTypeId.ASSOCIATION)
-			esfOrganizations.add(org);
-	*/
-	
-	
+	boolean searchActive = 
+			Validator.isNotNull(dateString) || 
+			matchTypeId > 0 || 
+			assotiationName > 0 ||
+			Validator.isNotNull(code);	
 %>
 
 <aui:script use="aui-base,node,aui-io-request">
-		$(function() {
-			$("#<portlet:namespace/>startDate").datepicker();
-			$("#<portlet:namespace/>startDate").datepicker("option",
-					"dateFormat", "dd/mm/yy");
-			$("#<portlet:namespace/>startDate").datepicker("setDate",
-			'<%= dateString %>');
-		});
-	</aui:script>
+	$(function() {
+		$("#<portlet:namespace/>startDate").datepicker();
+		$("#<portlet:namespace/>startDate").datepicker("option",
+				"dateFormat", "dd/mm/yy");
+		$("#<portlet:namespace/>startDate").datepicker("setDate",
+		'<%= dateString %>');
+	});
+</aui:script>
 
-		<liferay-ui:success key="user-success-insertupdate"
-			message="user-success-insertupdate-mess" />
-		<liferay-ui:error key="date-message" message="date-message" />
-		<liferay-ui:success key="match-success-insert" message='<%= LanguageUtil.format(pageContext, "match-success-insert", successMessage) %>'  />
-		<liferay-ui:success key="match-success-update" message='<%= LanguageUtil.format(pageContext, "match-success-update", successMessage) %>' />
-		
-		<aui:button-row cssClass="esfmatch-admin-buttons">
-		
-			<c:if test="<%= ESFNormalMatchModelPermission.contains(permissionChecker,scopeGroupId, ActionKeys.ESFNORMALMATCH_ADD) %>">	
-				<portlet:renderURL var="addEsfMatchURL">
-					<portlet:param name="mvcPath" value='<%=templatePath + "new_edit_esfMatch.jsp"%>' />
-					<portlet:param name="op" value="addAddr" />
-				</portlet:renderURL>
-				<aui:button onClick="<%= addEsfMatchURL.toString() %>" value="add-match" />
-			</c:if>
-			
-			<c:if test="<%= returned %>">	
-				<portlet:renderURL var="returnURL">
-					<portlet:param name="mvcPath" value='<%=templatePath+"view.jsp" %>' />
-				</portlet:renderURL>
-				<aui:button onClick="<%= returnURL.toString() %>" value="go-back" />	
-			</c:if>
+<liferay-ui:success key="user-success-insertupdate" message="user-success-insertupdate-mess" />
+<liferay-ui:error key="date-message" message="date-message" />
+<liferay-ui:success key="match-success-insert" message='<%= LanguageUtil.format(pageContext, "match-success-insert", successMessage) %>'  />
+<liferay-ui:success key="match-success-update" message='<%= LanguageUtil.format(pageContext, "match-success-update", successMessage) %>' />
+
+<aui:button-row cssClass="esfmatch-admin-buttons">
+	<c:if test="<%= ESFNormalMatchModelPermission.contains(permissionChecker,scopeGroupId, ActionKeys.ESFNORMALMATCH_ADD) %>">	
+		<portlet:renderURL var="addEsfMatchURL">
+			<portlet:param name="mvcPath" value='<%=templatePath + "new_edit_esfMatch.jsp"%>' />
+			<portlet:param name="op" value="addAddr" />
+		</portlet:renderURL>
+		<aui:button onClick="<%= addEsfMatchURL.toString() %>" value="add-match" />
+	</c:if>	
+	<c:if test="<%= returned %>">	
+		<portlet:renderURL var="returnURL">
+			<portlet:param name="mvcPath" value='<%=templatePath+"view.jsp" %>' />
+		</portlet:renderURL>
+		<aui:button onClick="<%= returnURL.toString() %>" value="go-back" />	
+	</c:if>
 </aui:button-row>
 
 <aui:form action="<%=searchURL%>" method="get">
 	<liferay-portlet:renderURLParams varImpl="searchURL" />
 	<div class="search-form">
 		<span class="aui-search-bar"> 
+			<aui:input name="searchActive" value="<%=searchActive%>" type="hidden"/>
 			<aui:input name="returned" value="<%=true%>" type="hidden"/>
 			<aui:input inlineField="<%=true%>" label="code" name="code"
 				placeholder="code" size="" title="search-entries"
@@ -127,6 +112,12 @@
 		</span>
 	</div>
 </aui:form>
+
+<%if(!searchActive){ %>
+	<div class="alert alert-warning">
+		<%= LanguageUtil.get(pageContext, "match-search-fields") %>
+	</div>
+<%} %>
 
 <liferay-portlet:renderURL varImpl="iteratorURL">
 	<portlet:param name="mvcPath" value='<%=templatePath + "view.jsp"%>' />

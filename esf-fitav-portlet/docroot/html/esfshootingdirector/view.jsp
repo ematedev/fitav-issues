@@ -143,7 +143,7 @@ iteratorActionUrl.setParameter("specialita", ParamUtil.getString(request, "speci
 		%>
 		<liferay-ui:search-container-row-parameter name="tableType" value="view"/>
 		<!-- Vengono definite le colonne della tabella e le variabili ad esse collegate -->
-		<liferay-ui:search-container-column-text name="card" value="<%= direttore.getAutenticazione() %>"/>
+		<liferay-ui:search-container-column-text name="stato" value="<%= String.valueOf(direttore.getAutenticazione()) %>"/>
 		<liferay-ui:search-container-column-text name="name" value='<%= String.format("%s %s", cognome, nome) %>' />
 		<liferay-ui:search-container-column-text name="card" value="<%= codTessera %>"/>
 		<liferay-ui:search-container-column-text name="region-code" value="<%= codRegione %>" />
