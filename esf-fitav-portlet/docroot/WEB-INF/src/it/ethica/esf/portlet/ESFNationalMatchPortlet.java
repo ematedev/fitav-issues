@@ -3392,7 +3392,7 @@ ServiceContext serviceContext =
 					isDraft, numFields, esfSportTypeId, numDisk, numDiskTeam,
 					isIndividualMatch, isTeamMatch, isJuniorMatch,
 					esfMatchTypeId, isChangeCategoryMatch, esfShooterCategoryIds,
-					esfShooterQualificationIds, esfCountryId, site, true,
+					esfShooterQualificationIds, esfCountryId, site, true, false,
 					isOlimpicQualificationMatch, esfEntityState,
 					serviceContext, notNationalAssotiation, eventType, esfNationalSportTypeidString);
 			/*
@@ -3430,7 +3430,7 @@ ServiceContext serviceContext =
 
 	public void addESFNationalDelegation(
 		ActionRequest request, ActionResponse response) {
-
+		
 		long esfUserId = ParamUtil.getLong(request, "esfUserId");
 		long esfMatchId = ParamUtil.getLong(request, "esfMatchId");
 		long esfPartecipantTypeId = ParamUtil.getLong(request, "esfPartecipantTypeId");

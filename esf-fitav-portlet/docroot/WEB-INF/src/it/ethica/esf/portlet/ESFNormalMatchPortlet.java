@@ -361,6 +361,7 @@ public class ESFNormalMatchPortlet extends MVCPortlet {
 			ParamUtil.getBoolean(request, "isChangeCategoryMatch");
 		boolean isTeamMatch = ParamUtil.getBoolean(request, "isTeamMatch");
 		boolean isJuniorMatch = ParamUtil.getBoolean(request, "isJuniorMatch");
+		boolean hasPenality = ParamUtil.getBoolean(request, "hasPenality");
 		long esfMatchTypeId = ParamUtil.getLong(request, "esfMatchTypeId");
 		String[] valuesQ = ParamUtil.getParameterValues(request, "values", new String[0]);
 		String[] valuesSC = ParamUtil.getParameterValues(request, "valuesSC", new String[0]);
@@ -394,7 +395,7 @@ public class ESFNormalMatchPortlet extends MVCPortlet {
 					isDraft, numFields, esfSportTypeId, numDisk, numDiskTeam,
 					isIndividualMatch, isTeamMatch, isJuniorMatch,
 					esfMatchTypeId, isChangeCategoryMatch , esfShooterCategoryIds,
-					esfShooterQualificationIds, esfCountryId, site, isNational,
+					esfShooterQualificationIds, esfCountryId, site, isNational, hasPenality, 
 					esfEntityState, serviceContext);
 			
 			if (newMatch == null || newMatch.getPrimaryKey() == 0) {

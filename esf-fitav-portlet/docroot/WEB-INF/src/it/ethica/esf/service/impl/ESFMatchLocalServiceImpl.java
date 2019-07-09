@@ -913,7 +913,7 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 			boolean isIndividualMatch, boolean isTeamMatch,
 			boolean isJuniorMatch, long esfMatchTypeId, boolean isChangeCategoryMatch,
 			long[] esfShooterCategoryIds, long[] esfShooterQualificationIds,
-			long esfCountryId, String site, boolean isNational,
+			long esfCountryId, String site, boolean isNational, boolean hasPenality,
 			ESFEntityState esfEntityState, ServiceContext serviceContext,
 			String notNationalAssotiation, String eventType,
 			String esfNationalSportTypeidString, boolean isOlimpicQualificationMatch) throws SystemException, NoSuchUserException{
@@ -1000,6 +1000,7 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 		esfMatch.setNotNationalAssotiation(notNationalAssotiation);
 		esfMatch.setEventType(eventType);
 		esfMatch.setEsfNationalSportTypeId(esfNationalSportTypeidString);
+		esfMatch.setHasPenality(hasPenality);
 		_log.debug("Salvataggio ESFMatch con codice: "+esfMatch.getCode());
 				
 		return esfMatch;
@@ -1013,7 +1014,7 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 			boolean isIndividualMatch, boolean isTeamMatch,
 			boolean isJuniorMatch, long esfMatchTypeId, boolean isChangeCategoryMatch,
 			long[] esfShooterCategoryIds, long[] esfShooterQualificationIds,
-			long esfCountryId, String site, boolean isNational,
+			long esfCountryId, String site, boolean isNational, boolean hasPenality,
 			ESFEntityState esfEntityState, ServiceContext serviceContext)
 			throws SystemException, PortalException {
 			
@@ -1026,7 +1027,7 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 		
 //		String lastCode = null;
 //		String newCode = null;
-		ESFMatch esfMatch = this.generateESFMatch(operator, userId, esfMatchId, esfAssociationId, code, startDate, endDate, startHour, description, note, isDraft, numFields, esfSportTypeId, numDisk, numDiskTeam, isIndividualMatch, isTeamMatch, isJuniorMatch, esfMatchTypeId, isChangeCategoryMatch, esfShooterCategoryIds, esfShooterQualificationIds, esfCountryId, site, isNational, esfEntityState, serviceContext, null, null, null, false);
+		ESFMatch esfMatch = this.generateESFMatch(operator, userId, esfMatchId, esfAssociationId, code, startDate, endDate, startHour, description, note, isDraft, numFields, esfSportTypeId, numDisk, numDiskTeam, isIndividualMatch, isTeamMatch, isJuniorMatch, esfMatchTypeId, isChangeCategoryMatch, esfShooterCategoryIds, esfShooterQualificationIds, esfCountryId, site, isNational, hasPenality, esfEntityState, serviceContext, null, null, null, false);
 //		if (esfMatchId == 0) {
 //			esfMatchId = counterLocalService.increment();
 //			esfMatch = esfMatchPersistence.create(esfMatchId);
@@ -1209,7 +1210,7 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 			int numFields, long esfSportTypeId, int numDisk, int numDiskTeam, boolean isIndividualMatch,
 			boolean isTeamMatch, boolean isJuniorMatch, long esfMatchTypeId, boolean isChangeCategoryMatch,
 			long[] esfShooterCategoryIds, long[] esfShooterQualificationIds, long esfCountryId, String site,
-			boolean isNational, boolean isOlimpicQualificationMatch, ESFEntityState esfEntityState,
+			boolean isNational, boolean hasPenality, boolean isOlimpicQualificationMatch, ESFEntityState esfEntityState,
 			ServiceContext serviceContext, String notNationalAssotiation, String eventType,
 			String esfNationalSportTypeidString) throws SystemException, PortalException {
 
@@ -1219,7 +1220,7 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 
 		Date now = new Date();
 
-		ESFMatch esfMatch = this.generateESFMatch(operator, userId, esfMatchId, esfAssociationId, code, startDate, endDate, startHour, description, note, isDraft, numFields, esfSportTypeId, numDisk, numDiskTeam, isIndividualMatch, isTeamMatch, isJuniorMatch, esfMatchTypeId, isChangeCategoryMatch, esfShooterCategoryIds, esfShooterQualificationIds, esfCountryId, site, isNational, esfEntityState, serviceContext, notNationalAssotiation, eventType, esfNationalSportTypeidString, isOlimpicQualificationMatch);
+		ESFMatch esfMatch = this.generateESFMatch(operator, userId, esfMatchId, esfAssociationId, code, startDate, endDate, startHour, description, note, isDraft, numFields, esfSportTypeId, numDisk, numDiskTeam, isIndividualMatch, isTeamMatch, isJuniorMatch, esfMatchTypeId, isChangeCategoryMatch, esfShooterCategoryIds, esfShooterQualificationIds, esfCountryId, site, isNational, hasPenality, esfEntityState, serviceContext, notNationalAssotiation, eventType, esfNationalSportTypeidString, isOlimpicQualificationMatch);
 
 //		if (esfMatchId == 0) {
 //			esfMatchId = counterLocalService.increment();
@@ -1344,7 +1345,7 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 		boolean isIndividualMatch, boolean isTeamMatch,
 		boolean isJuniorMatch, long esfMatchTypeId,  boolean isChangeCategoryMatch,
 		long[] esfShooterCategoryIds, long[] esfShooterQualificationIds,
-		long esfCountryId, String site, boolean isNational, 
+		long esfCountryId, String site, boolean isNational, boolean hasPenality,
 		boolean isOlimpicQualificationMatch, ESFEntityState esfEntityState, 
 		ServiceContext serviceContext)
 		throws SystemException, PortalException {
@@ -1355,7 +1356,7 @@ public class ESFMatchLocalServiceImpl extends ESFMatchLocalServiceBaseImpl {
 
 	Date now = new Date();
 
-	ESFMatch esfMatch = this.generateESFMatch(operator, userId, esfMatchId, esfAssociationId, code, startDate, endDate, startHour, description, note, isDraft, numFields, esfSportTypeId, numDisk, numDiskTeam, isIndividualMatch, isTeamMatch, isJuniorMatch, esfMatchTypeId, isChangeCategoryMatch, esfShooterCategoryIds, esfShooterQualificationIds, esfCountryId, site, isNational, esfEntityState, serviceContext, null, null, null, isOlimpicQualificationMatch);
+	ESFMatch esfMatch = this.generateESFMatch(operator, userId, esfMatchId, esfAssociationId, code, startDate, endDate, startHour, description, note, isDraft, numFields, esfSportTypeId, numDisk, numDiskTeam, isIndividualMatch, isTeamMatch, isJuniorMatch, esfMatchTypeId, isChangeCategoryMatch, esfShooterCategoryIds, esfShooterQualificationIds, esfCountryId, site, isNational, hasPenality, esfEntityState, serviceContext, null, null, null, isOlimpicQualificationMatch);
 //	if (esfMatchId == 0) {
 //		esfMatchId = counterLocalService.increment();
 //		esfMatch = esfMatchPersistence.create(esfMatchId);
